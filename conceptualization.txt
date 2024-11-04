@@ -509,6 +509,9 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* lowers effectiveness in perception, negotiation, avoidance of certain locations (some locations become unavailable in a fear state)
 		* terror
 			* everything from fear but the only non-closed off options for movement are those that take you out of the current situation
+
+
+***ALL OF THE BELOW is kind of a TODO -- i only feel final about the above***
 	* puzzles
 		* escape room
 		* ...others
@@ -525,8 +528,11 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 		* belongs to a player selected one of three classes
 		* perhaps they also come from a player selected choice of three backgrounds?
 		* perhaps they (can? must?) join forces with other classes to acheive their goal?
+		* how did they get there? where did they come from?
+			* "from up north" "passing thru" "something else vague, then drop it"
+			* of course it's not lazy storytelling, it's an adversarial game!
 	* antagonist
-		* unnamed main force in control of the (city? world?) which the player is acting against, but not by direct resistance – more like how technically frodo was acting agains sauron but sauron was largely unaware of frodo as an individual
+		* unnamed main force in control of the (city? world?) which the player is acting against, but not by direct resistance – more like how technically frodo was acting against sauron but sauron was largely unaware of frodo as an individual
 		* mainly, the antagonist will be nature/setting
 	* other
 		* the street magician/musician	
@@ -535,17 +541,18 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 		* tom bombadil
 		* the city itself
 			* this will be important for setting the magical tone
-			* random shit like a haunted bell that rings at odd hours, reacting to the players choices? or random?
+			* random shit like a haunted bell that rings at odd hours (reacting to the players choices? or random?)
 			* inanimate objects with personality
 		* someone dialogue-y/banter-y
 		* someone who the player will have to make a conscious choice not to include in the party.  party max size is, say, 3 (and will work best if it's one of each class) but there will be an initial npc who can be cast aside but that's not what the game streamlines the player into
 * ending
 	* something extremely unexpected
+		* that's good, right? just say "something unexpected?" is that information dense enough to base a narrative off of?
 	* several choices based on interactions during the game
 	* definitely one where something turns the sun off – that's the medium ending
 		* see dyson sphere
 	* one bleak and hopeless, which doesn't invalidate the efforts of the player but does bum them right out - that's the bad ending.  think annihilation lighthouse, infinite loop
-	* one where you planeshift in some way to an unknown but hopeful fate.  the exact mechanics of the planeshift are tbd and are the extremely unexpected thing.  like how in a dark room, you start gathering dirt and twigs and end in space.  invert the starting conditions completely
+	* one where you planeshift in some way to an unknown but hopeful fate.  the exact mechanics of the planeshift are tbd and are the extremely unexpected thing (left as an exercise to the...dev).  like how in a dark room, you start gathering dirt and twigs and end in space.  invert the starting conditions completely
 		* possibly, depending on what you do during the game, there is a version of this with company and a version alone.  the version alone is slightly worse.
 		* this is open to all 3 player classes – certain classes are not precluded from the good ending.  but one might be more inclined to it?
 		* if we take planeshift to be literal, then a magic user will be more inclined to this ending
@@ -589,6 +596,10 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 	* generate the menu
 	* hint mechanics
 	* make a list of npcs
+		* there will be a generic list of npc's who can come up in any zone (scavenger, wanderer, citizen, that sorta thing)
+		* there will also be specific npc's who are regionally generic (badlands might have scientist, for example)
+		* there will also be specific story-vital npc's who come up once and that's it (potential party members, for example)
+		* then there are enemies
 	* make a list of npc allies, decide when you meet them (it has to be all 3, i guess, in the beginning)
 	* decide on how many endings there will be, and what they will be
 		* weave in the planeshift
