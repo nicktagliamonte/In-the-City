@@ -1,0 +1,595 @@
+I am trying to get some exact text from this to use in-game, so this is a rough concept map with some flowery descriptive language
+* atmosphere
+	* Overall Tone:
+		* The world is stark and unforgiving, designed to keep the player slightly on edge. Each challenge serves as a reminder of the player character’s precarious place within this environment.
+		* The game balances tension with fleeting moments of humor or wonder, creating emotional highs and lows that mirror the harsh but complex nature of the setting.
+		* An adversarial spirit is embedded into the game itself, subtly positioning it as an opposing force. The game’s world doesn’t "want" the player to survive but also doesn’t actively intervene in obvious ways, lending it a brooding indifference that feels quietly hostile.
+	* Adversarial Spirit:
+		* Survival as a Battle of Wills: The player’s true adversary is the world itself. It manifests in relentless challenges: harsh weather, dwindling resources, and a landscape that is both ancient and ever-changing.
+		* Sparse Exposition: Minimal hand-holding and few explanations make the player feel as though they’re constantly missing information, intensifying the sense of a hostile or indifferent universe.
+		* Nature as a Character: The environment is a silent opponent—trees seem to loom, shadows twist in unnatural ways, and buildings groan as if resentful of intrusion.
+	* Primary Atmosphere - Spooky:
+		* Visual and Descriptive Tone: The world, especially Philadelphia in this distant future, is tinged with a feeling of haunted history. There’s an eerie sense of places abandoned for too long, with everyday items or remnants of the old world now feeling alien and unsettling.
+		* Sounds and Silence: The game might use brief sound descriptors like "a faint rustling nearby" or "a distant, hollow clang," heightening the tension in sparse descriptions.
+		* Familiarity Made Strange: Broken-down infrastructure and relics of present-day life are now enigmatic artifacts, their purposes lost to time, adding an eerie layer to exploration.
+	* Secondary Atmosphere - Mysterious:
+		* Layered Narratives: The world suggests stories without fully telling them. Unmarked graves, strange symbols, and old machinery invite curiosity, rewarding players who dig deeper into lore.
+		* Discovery of the Unseen: Traps, technology, and old documents are encoded with mysteries that the player unravels, sometimes to their detriment, adding a feeling that truth here comes with risk.
+		* Secrets Unfolding: Encounters and settings subtly reveal the past through surreal encounters, providing tantalizing but incomplete glimpses of the world’s history and hinting at what went wrong.
+	* Tertiary Atmosphere - Foreboding:
+		* Sense of Imminent Threat: There’s always a looming sense that something could go wrong. Even in “safe” areas, there’s a feeling that the peace is temporary or conditional.
+		* Environmental Triggers: Players may encounter signs of impending danger—clouds darkening, strange weather patterns, animals acting strangely—all hinting that the world is gearing up for something dire.
+		* Unfinished Business: As players progress, they encounter remnants of other adventurers or communities that almost survived. This undercurrent of failed attempts creates an uneasy feeling that they’re following in the footsteps of those who did not make it.
+	* Moments of Levity:
+		* Dark or Dry Humor: Oddball characters may have a dry sense of humor or offer sly observations about the absurdity of the world, helping to break tension.
+		* Whimsical Artifacts: Some relics or pieces of “magic” (advanced tech) have unintended functions or bizarre effects, providing rare, lighthearted moments in the otherwise grim journey.
+		* NPCs with Quirks: The few allies or informants the player encounters may have distinct, quirky personalities that contrast with the desolate world, offering refreshing, albeit brief, companionship.
+	* Moments of Surrealism:
+		* Nature as a Force Beyond Understanding: The flora and fauna of this far-future Philadelphia exhibit strange, otherworldly characteristics—plants may hum at night, stones emit faint glows, and animals behave with eerie intelligence.
+		* Techno-Magic Anomalies: Some of the “magic” (technology) the player interacts with may behave unpredictably, creating strange experiences that defy logic. An artifact may temporarily distort perception or transport the player to a vision of the past.
+		* Reality Slippage: Occasionally, as players dig deeper, they experience moments that feel disjointed, where past and present collide, or where environments subtly shift, hinting at a fractured or layered reality.
+* setting
+	* stylized philly based on a dark room/annihilation
+	* far future, there is a dyson sphere
+		* creates an eerie glow that illuminates the world during the night, casting strange shadows and giving the area a surreal quality, while also affecting local flora and fauna, leading to bizarre mutations and increased wildlife activity that can be both helpful and dangerous for players.
+		* causes sporadic power surges, which can enhance or disrupt certain bartering transactions
+			* some scavengers claim to have found "magical" items that behave unpredictably.
+			* the power surges and flickering lights can make it harder to predict pathways
+		* causes gravitational anomalies (really only in manayunk)
+	* regions (in order of the game, these are basically "levels")
+		* dead zone (far northeast)
+			* Description: Far beyond the remnants of Philadelphia's inner neighborhoods lies an abandoned stretch of the Far Northeast. This place was once a residential and commercial zone, but it has long since fallen silent, now a decaying graveyard of overgrown homes and derelict strip malls.
+			* Purpose: A gentle introduction to the game’s mechanics, emphasizing a haunting solitude and the primal need for survival in the quietest, emptiest parts of the world.
+			* Atmosphere: Desolate, eerie silence hangs over the area. The landscape feels almost frozen in time, as if it’s waiting. Shadows stretch long across cracked asphalt, and nature has begun to reclaim everything. There’s a hint of something more under the silence, but it’s too faint to tell what it is.
+			* Safe Zone: The safe zone is located in the remains of the airport, surrounded by crumbling buildings and overgrown vegetation. Here, players can find makeshift shelter and a few friendly scavengers who offer resources and information about the area.  meet the first of each class who can be integrated into the party
+			* Economic Zone: The economic zone is situated around an old shopping plaza at the outskirts of the region, where scavengers gather to barter goods and share information. This area has remnants of functioning commerce, albeit in a very makeshift manner, with stalls created from salvaged materials.
+			* Hidden Zones:
+				* Hidden Zone 1: The Forgotten Playground - An overgrown park with rusting playground equipment and hidden caches of supplies buried under the foliage. Players can find useful items here but must navigate through treacherous underbrush and possibly confront mutated creatures.
+				* Hidden Zone 2: The Abandoned Subway Entrance - An old subway station entrance that has collapsed but contains a hidden path to the subway tunnels below, which are rumored to lead to safer areas or even secrets left behind by the previous inhabitants of the city.
+			* Caves/Basements:
+				* Cave 1: The Caves of Echoes - A series of small caves that echo strange sounds, making navigation challenging. The caves house various mutated wildlife and offer hidden treasures for those brave enough to explore.
+				* Cave 2: The Old Water Treatment Plant - A dark, flooded basement filled with stagnant water and remnants of machinery. This area can be hazardous but holds valuable resources and potential clues about the past.
+				* Cave 3: The Ruins of the Library - A partially collapsed library where players can search for old books that might hold clues or hints for puzzles in the game. However, it is also a haven for hostile entities drawn to the whispers of knowledge.
+		* market ruins (downtown, reading terminal, chinatown)
+			* Description: Unlike the abandoned Northeast, this area closer to the city center still has signs of life. Makeshift markets, scavenger groups, and wanderers cross paths here. Some parts have been transformed into ad hoc shelters, while others house small, dangerous black markets.
+			* Purpose: Introduces bartering, resource gathering, and basic negotiation elements. The player learns to navigate mildly populated areas and deal with the unique challenges of scavenging where others might be competing for resources.
+			* Atmosphere: Bustling, with a sense of guarded camaraderie. Makeshift stalls sell scavenged goods, and old billboards create surreal visuals as they’re used for tents and shade. Faint music or laughter may float over the rustling crowd, but there’s a constant awareness of danger just below the surface.
+			* Safe Zone: The safe zone is located in an old market hall within the Reading Terminal, where players can find temporary shelter, barter for supplies, and gather information from the diverse group of scavengers and traders who frequent the area.
+			* Economic Zone: The economic zone consists of the bustling market stalls set up in the ruins of Chinatown, where scavengers and traders barter goods from salvaged technology, food supplies, and magical artifacts. This vibrant hub is always filled with activity, creating both opportunities and risks for players.
+			* Hidden Zones:
+				* Hidden Zone 1: The Forgotten Alley - A narrow, shadowy alley filled with remnants of past lives, such as old electronics and personal items. Players can discover valuable resources but may encounter hostile scavengers or traps set by those who want to protect their territory.
+				* Hidden Zone 2: The Abandoned Theater - An old, decrepit theater where faded advertisements still cling to the walls. Inside, players can find hidden caches of supplies, as well as remnants of performances that might provide clues or puzzles related to the world’s history.
+			* Caves/Basements:
+				* Cave 1: The Old Sewers - An extensive network of underground tunnels that once served as the city’s sewer system. Players can navigate these tunnels to find hidden resources but must be cautious of dangerous creatures that have made this area their home.
+				* Cave 2: The Market Cellars - Dark, damp cellars beneath the market hall that were used for storing goods. These cellars hold both valuable supplies and the potential for encounters with rival scavenger groups or hostile creatures.
+				* Cave 3: The Ruins of the Old Print Shop - This basement area houses remnants of a once-thriving print shop. Amid the rusted printing presses and scattered papers, players can discover rare documents, maps, and schematics that might reveal hidden locations or craft recipes. However, the area is also home to aggressive bookkeeper spirits, who guard the secrets of the printed word and may attack intruders.
+		* shadowed streets (cobbs creek)
+			* Drought! the drought effect is active here, despite the creek which continues to wind through the region ironically, mockingly.  items are more expensive here, water is somewhate a scarce resource
+			* Description: This West Philly neighborhood retains a dense urban structure, with narrow alleys, dimly lit streets, and empty buildings. The creek still runs through it, but signs of human occupation—makeshift barricades, damaged cars, and broken streetlights—are more prevalent than nature.
+			* Purpose: Tests stealth, agility, and early resource gathering skills. Players must navigate narrow alleys and climb debris to explore this partially hostile, partially mystical area.  After stocking up in region 2, the player is now tasked with conserving these resources.
+			* Atmosphere: Hauntingly urban. Streetlights flicker, casting long shadows against graffiti-tagged walls. The creek runs quietly, sometimes carrying debris or reflecting unnatural light, adding a surreal feel to the otherwise stark streets. A faint scent of smoke or exhaust lingers, a reminder of the battles once fought here.
+			* Safe Zone: The safe zone is now an old church that has been fortified with barricades and serves as a sanctuary for those seeking refuge. The community here has organized a barter system for resources and offers protection from outside threats.
+			* Economic Zone: The economic zone consists of a few alleyways where scavengers trade water and food supplies, often bartering for essential goods while avoiding the dangers lurking in the shadows.
+			* Hidden Zones:
+				* Hidden Zone 1: A hidden rooftop garden where a group of resourceful survivors grow crops, providing a crucial food supply.
+				* Hidden Zone 2: An underground fight club, where players can engage in organized brawls for food and other resources, gaining experience and reputation.
+			* Caves/Dungeons/Basements:
+				* Cave 1: An old abandoned subway tunnel that leads deeper into the city, filled with remnants of past travelers and hidden dangers.
+				* Cave 2: A dilapidated warehouse that has become a makeshift hideout for a gang of scavengers, filled with traps and valuable items.
+				* Cave 3: A secret speakeasy located behind a false wall in one of the buildings, containing hidden caches of supplies and clues about the area’s history.
+		* the overgrown galleries (art museum)
+			* Description: The Art Museum stands mostly as it was, but eerie distortions have taken hold, creating fractured echoes of past visitors and memories that linger in the halls. Some rooms are visibly damaged, with cracked walls and broken displays, but the structure itself remains intact and imposing.
+			* Purpose: Introduces mid-level puzzles and perception-based challenges. The player encounters visual and auditory illusions, blending the remnants of the art with surreal phenomena, which subtly challenge their sense of reality.
+			* Atmosphere: Mysterious and unsettling. The empty museum is a quiet labyrinth, with paintings and sculptures casting unusual shadows. Sometimes, faint whispers or ghostly footsteps echo from within the galleries, making it feel as if the past is trapped here. Sunlight filtering through broken windows creates strange patterns, as if the building is bending light itself.
+			* Safe Zone: The safe zone is located at Logan Square, where the fountain has taken on a magical aura. It can communicate with players, offering guidance and cryptic hints about the challenges ahead. The fountain's water flows with an otherworldly glow, and haunted voices can be heard in the splashes
+			* Economic Zone: The economic zone is set in the museum’s gift shop, transformed into a vibrant market where survivors trade scavenged art supplies, magical curiosities, and even fragmented memories. The wares include items that bend perception, offering players unique advantages in navigating the surreal environment.
+			* Hidden Zones:
+				* Hidden Zone 1: An art restoration room that has become a twisting workshop, with supplies scattered in impossible configurations. Players must solve spatial puzzles to access hidden crafting materials and unique magical items.
+				* Hidden Zone 2: A secret storage area behind a false wall, filled with rare books that shift titles and meanings. Players can discover valuable lore and items that aid in their quest, but only if they can decipher the shifting languages.
+			* Caves/Dungeons/Basements:
+				* Cave 1: A forgotten basement with surreal installations that defy logic, featuring distorted sculptures that seem to change shape and form, providing both challenges and unexpected advantages.
+				* Cave 2: A hidden observatory with an ever-changing view of the outside world. The environment within reflects the player’s thoughts, creating a mirror-like maze that players must navigate while evading the dangers lurking in the shadows.
+				* Cave 3: An underground passage to a neighboring building, filled with forgotten art supplies that are imbued with magical properties. The materials shift in nature based on the player’s intentions, allowing for creative crafting opportunities.
+		* The Metalwoods (fdr park/stadiums)
+			* Description: This overgrown park is filled with unnatural, mutated flora and murky waters. At its center lurks a Water Monster, an apex predator that serves as one of the game’s most formidable foes. Murky waters conceal a creature with a Dark Souls-level difficulty, creating a high-risk, high-reward situation.
+			* Purpose: Offers high-stakes resource collection and an advanced combat scenario (basically the only one of the game). The park requires careful preparation and strategic use of traps, as the player must avoid or confront the Water Monster.
+			* Atmosphere: Dark, intense, and foreboding. Twisted trees and thick underbrush make visibility challenging, while the murky, still water hides unknown dangers. The water itself feels almost alive, and the monster’s presence permeates the air. Mechanical and organic components blend in disturbing ways, creating an unnatural wilderness.
+			* Safe Zone: The safe zone is located at the remnants of a once-bustling picnic area, now overgrown but still retaining an air of safety. Players can rest here and interact with friendly NPCs who have made this area their home.
+			* Economic Zone: A makeshift market established among the park’s clearings, where scavengers trade unique plants and resources harvested from the surrounding woods.
+			* Hidden Zones:
+				* Zone 1: A sunken garden filled with magical plants that can either heal or harm, concealed beneath a dense canopy of vines.
+				* Zone 2: An abandoned maintenance shed that serves as a hideout for rogue NPCs, filled with remnants of old tools and strange magical artifacts.
+			* Caves/Basements:
+				* Cave 1: An underground tunnel system that weaves through the park, rumored to lead to hidden treasures and dangerous creatures.
+				* Cave 2: A flooded area beneath the old observation tower, requiring players to navigate through murky waters to uncover supplies.
+				* Cave 3: An underground shrine dedicated to nature spirits, containing puzzles and magical items tied to the park’s history and ecology.
+		* liacouras haunts (temple)
+			* Description: Centered around the Liacouras Walk bell tower, this area is thick with spectral phenomena. Ghostly figures move in and out of sight, drawn to the player’s presence in increasingly unnerving ways. The bell tower's chime resonates with a frequency that disrupts the fabric of reality, causing strange temporal anomalies and ghostly apparitions that flicker in and out of existence; the area is shrouded in an ethereal mist that sustains a unique ecosystem, preserving the local flora despite the surrounding decay..
+			* Purpose: Heightens the player’s need for stealth and strategy, especially as the spectral activity becomes more unpredictable. The tower’s bell tolls at seemingly random intervals, disorienting the player. Introduces high-level puzzles and memory-based challenges. The first true test of magical “trap” setting, with rewards tied to player ingenuity.
+			* Atmosphere: Tense and claustrophobic. The city feels closer here, and every corner holds a shadow or a faint whisper. The toll of the bell reverberates through the air, adding an oppressive weight as ghostly figures appear to react to the sound.
+			* Safe Zone: The safe zone is located in the tech center, which has been fortified and repurposed as a sanctuary. Here, players can rest, heal, and prepare for their encounters with the supernatural.
+			* Economic Zone: The economic zone consists of food stalls next to the tech center, where players can barter for sustenance and rare ingredients, often imbued with minor magical properties.
+			* Hidden Zones:
+				* Spectral Library: A hidden zone within the university's old archives, filled with ghostly librarians who guide players through puzzles related to lost knowledge and ancient spells.
+				* Memory Garden: An overgrown courtyard that reveals memories of past students and staff. Players can interact with these memories to uncover lore and hints for solving the region's challenges.
+			* Caves/Basements:
+				* The SERC Sub-basement: Beneath the Science Education and Research Center lies a dimly lit sub-basement, filled with remnants of outdated experiments and broken equipment. The air is thick with the scent of chemicals, and the shadows seem to move of their own accord. Strange sounds echo through the hallways—distant whispers and the faint beeping of machinery long forgotten. Players must navigate through unstable shelves, risking collapse at any moment, while avoiding lurking shadows that may be remnants of failed experiments or the restless spirits of those who perished here.
+				* The Temple of Horrors: This hidden area within the temple itself is an unsettling blend of sacred space and something twisted. Cracked stone walls and peeling murals depict unsettling scenes of rituals long abandoned. As players delve deeper, they may encounter areas that shift and change, distorting their perception of reality. Eerie chanting reverberates through the air, and flickering candles cast unnatural shadows, creating a maze-like atmosphere where the lines between the sacred and the profane blur
+				* The Forgotten Auditorium: This dilapidated lecture hall remains steeped in an oppressive atmosphere, with dust-covered seats and a stage that feels alive with sinister energy. Players navigate through rows of empty seats, their own heartbeats echoing loudly in the silence. Strange illusions manifest on the stage, reenacting past horrors that have unfolded within these walls. The air is thick with dread as players may encounter entities that mimic their fears, compelling them to confront personal nightmares while heightening the psychological horror of the experience.
+		* steel shores (port richmond)
+			* Description: The Port Richmond waterfront has developed an odd, almost magical charm over the years. Warehouses and containers form bizarre, maze-like patterns along the river, and strange lights dance across the water at night.
+			* Purpose: Offers a lighthearted break with puzzles that incorporate humor and levity. The area allows the player to experiment with magical traps and enjoy some more surreal, whimsical moments in a safe environment.
+			* Atmosphere: Whimsical and playful. Odd reflections, laughter on the wind, and strange graffiti lend a surreal, funhouse vibe to the area. It’s the kind of place where the player might accidentally step into a puddle that feels far deeper than it looks, only to find a “helpful” specter nearby offering nonsensical advice.
+			* Safe Zone: The safe zone is located on a wharf, a fortified pier where players can find respite. It features friendly specters who offer advice and minor magical items, making it a hub of safety and community.
+			* Economic Zone: The economic zone is a lively market along the waterfront where players can barter for unique, magical items and sustenance crafted from the local flora.
+			* Hidden Zones:
+				* Reflective Tidepool: A mystical tidepool that reveals alternate realities, allowing players to glimpse their past or potential futures while navigating through challenges.
+				* Luminescent Marsh: An enchanted marsh under the bridge filled with bioluminescent plants and magical creatures
+			* Caves/Basements:
+				* The Abandoned Mill: Once a bustling hub, this forsaken site is now a labyrinth of rusted machinery and broken walls. Players will find themselves navigating through claustrophobic spaces, encountering spectral workers and remnants of forgotten crafts.
+				* The Old Brewery Cellar: A dark, winding cellar beneath an ancient brewery, filled with barrels of long-fermented brews that have taken on a life of their own. Players must contend with shifting illusions and uncanny guardians that protect hidden treasures.
+				* The Forgotten Warehouse: A dilapidated structure filled with remnants of maritime history. Inside, players must navigate shifting shadows and eerie sounds while piecing together clues from the past, as the very walls seem to come alive with memory.
+		* the badlands (kensington)
+			* DROUGHT! the drought effect alters economic exchange rates
+			* Description: A sprawling, chaotic district marked by the remains of abandoned labs, scattered alleyways, and old tech markets. The zone is hostile, and strange experiments lie dormant but deadly in its shadows.
+			* Purpose: High-stakes resource gathering and crafting with elevated risk. Rogue NPCs and advanced tech-magic traps add a layer of danger, while puzzles here reward the player with rare, powerful items.
+			* Atmosphere: Dark and volatile, with a sense of chaos and disorder. Flickering street lights, mysterious noises, and unsteady ground make every step feel risky.
+			* Safe Zone: The Rusty Haven serves as the safe zone, a fortified community center repurposed from an old warehouse. Here, players can rest, trade supplies, and hear rumors about the dangers lurking outside. It’s a sanctuary amidst the chaos, with makeshift defenses and a strong sense of camaraderie among its inhabitants.
+			* Economic Zone: see cave 3
+			* Hidden Zones:
+				* The Abandoned El Station: An old elevated train station where the structure is crumbling and chaos reigns. Players can explore the deserted platforms and tunnels, finding remnants of old ticket booths and graffiti-covered walls that tell stories of those who passed through. The area is rife with scavengers and traps set by rival groups trying to claim the territory.
+				* The Wreckage Yard: A chaotic maze of abandoned vehicles and machinery. Players can sift through the wreckage to find useful parts and supplies, but the area is unstable and prone to collapses, adding an element of danger to exploration. This zone is also frequented by rogue tech enthusiasts who have made the yard their makeshift home.
+			* Caves/Basements:
+				* The Hidden Workshop: A dark, makeshift workshop located beneath a disused storefront. This underground area is cluttered with strange devices and remnants of failed experiments. Players must navigate through a maze of discarded tech and traps while searching for valuable resources and potential allies.
+				* The Ruined Factory: An old factory filled with rusty machinery and shadows. Players must traverse this hazardous environment, avoiding malfunctioning equipment and aggressive scavengers. Among the debris, they can find rare materials and hidden rooms containing secrets of the area’s industrial past.
+				* The Subterranean Market: A series of interconnected basements that have been turned into a chaotic black market. Players must navigate the tight corridors, dealing with shady merchants and unpredictable rival factions. The atmosphere is tense, filled with the sounds of bartering and conflict, as players hunt for unique items and trade opportunities.
+		* the shattered cliffs/edge of the world (manayunk/roxborough)
+			* Description: A jagged cliffside overlooking what’s left of the city. Weathered bridges, makeshift paths, and dangerous cliffs provide a test of dexterity and perseverance.  sections of the city have fallen into the river and makeshift bridges span the new chasms.
+			* Purpose: Focuses on survival skills, testing everything learned thus far. The player gathers rare resources while avoiding environmental hazards and making use of agility and stamina.
+			* Atmosphere: Majestic but harrowing. The views across the city are breathtaking, but the dangerous paths and constant sound of falling rocks give the area an edge-of-the-world feel, as if crossing into another realm.
+			* Safe Zone: The safe zone is nestled in a sturdy old lodge at the base of the cliffs, where players can rest and strategize while enjoying breathtaking views of the shattered landscape.
+			* Economic Zone: A makeshift market set up by the locals who have adapted to life among the cliffs, offering handmade tools and survival gear crafted from scavenged materials.
+			* Hidden Zones:
+				* The Overlook Sanctuary: A serene but haunting spot at the cliff's edge where players can reflect on their journey. Ancient stone carvings provide lore about the area, and there are hints of hidden paths leading to deeper secrets.
+				* The Echoing Caves: A series of underground caverns that amplify sounds, making every step feel magnified. Players can uncover clues and rare resources hidden within, but they must be cautious of the disorienting acoustics.
+			* Caves/Basements:
+				* The Crumbling Watchtower: An old guard tower, now mostly collapsed, where players can find remnants of the past and navigate through hidden compartments to discover powerful relics.
+				* The Ruins of Old Estates: The remains of luxurious homes that have fallen into decay, filled with traps and remnants of old-world wealth. Players must explore cautiously to gather useful items while avoiding the hazards.
+				* The Subterranean Cliffs: A network of caves that runs beneath the cliff face, containing ancient artifacts and the echoes of past lives. The caves are dimly lit, with narrow passages that require agility to navigate safely.
+		* the heart of the loop (city hall)
+			* Description: City Hall has transformed into a strange, quasi-organic structure with haunting echoes of its past. Beneath its towering spires lies a deep, shadowy labyrinth that radiates eerie power. Drawn from Annihilation, this zone warps reality in subtle but sinister ways.
+			* Purpose: The final area, pushing the player to the limits of their abilities and mental endurance. Challenges here involve surreal, cyclical puzzles that require navigating repeated and altered paths.
+			* Atmosphere: Ominous, disorienting, and timeless. City Hall feels alive and yet dead, trapped in a state of endless twilight. The deeper the player ventures, the stranger the environment becomes, as if the place itself resists or mocks the player’s attempts to make sense of it. Descriptions of the world around the player will alternate between descending into a pit and ascending a spire, without explaination.  
+			* Safe Zone: The safe zone is a small, fortified courtyard outside City Hall, where players can catch their breath and gather before diving into the chaos within. Here, whispers of past leaders linger, offering cryptic guidance.
+			* Economic Zone: A compact market area just outside the courtyard, where a few scavengers and traders exchange rare artifacts and magical components, allowing players to barter for essential supplies before the final push.
+			* Hidden Zones:
+				* The Clocktower Archives: A secret library hidden within the clocktower, containing forbidden knowledge and ancient tomes that players can access through a series of challenging puzzles.
+				* The Phantom Gallery: A mystical exhibition space filled with living art and hauntingly beautiful displays. Players can interact with the art to unlock memories and insights into the world’s lore.
+			* Caves/Basements
+				* there are none here, this is the finale.  it's all a cave, it's all a basement, it's all a tower – over and over again
+* inclusions
+	* ascii maps
+		* big one of whole city
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.......@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...............@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....................@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.............................@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....................................@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...\..................................@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.......\.........DEAD ZONE...............@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...........\................................@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...............\...............................@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...................\.............................@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@.........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.......................\...........................@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@...............@@@@@@@@.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...........................\.....................@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@....................@@@..........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@................................\_____________________@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@...................../.................@@@@@@@@@@@@@@@@@@@@@@@@@...................................................@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@....................../.....................@@@@@@@@@@@@@@@@@@@@....................................................@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@....SHATTERED........../.........................@@@@@@@@@@@@@@@@@@@...............................................@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@......CLIFFS............/.............................@@@@@@@@@@@@@@@@................................................@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@........................./...............................@@@@@@@@@@@..................................................@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@....................../..................................@@@.......................................................@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@.................../..........................................................................................@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@................/.........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@............./........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@........../........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@....../...........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@./............................................................._______________.............@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@........................___________........................|BADLANDS.......\........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.LIACOURAS.|.......................|________........\.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.HAUNTS....|................................\@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@..|.....................|___________|......................________@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@.......|.......................................................|STEEL.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@|.OVERGROWN|.......................................................|SHORES....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@....|.GALLERIES|.......................................................|________@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@..\.....|__________|..............................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@......\.........................______.............................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@....SHADOWED|.......................|HEART.|.....................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@....STREETS.|.......................|OF THE|..............................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@..........|.......................|LOOP..|...____________________@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@...|.................................|....................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@..................................|....MARKET.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@..................................|....RUINS......@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@..................................|_____________@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@...............................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@............................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@..........................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@..............................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@..............................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@.................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@..................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@...................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@....................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@....................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@....................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@....................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@.......__________________..........................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@......|.................|.....................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@.....|....METALWOODS...|.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@..@@@@@@@@@....|..@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@...|@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		* for regional positioning
+			* advise on cardinal directions and approx distance (in unit squares) from safe point, economic zone
+	* predefined set of commands
+		* look: Provides a description of your current surroundings, including notable items, exits, and any characters present.
+		* move [direction]: Allows the player to navigate the game world in a specified direction (e.g., north, south, east, west).
+		* examine [object]: Gives a detailed description of a specific object in the environment, helping players understand its significance or how to interact with it.
+		* take [object]: Allows the player to pick up an item and add it to their inventory.
+		* drop [object]: Lets the player drop an item from their inventory back into the environment.
+		* inventory: Displays a list of items currently held by the player.
+		* use [object]: Activates or utilizes an item from the player's inventory, which could be essential for solving puzzles.
+		* talk to [character]: Initiates a conversation with a non-player character (NPC), leading to potential quests or information.
+		* search [area/object]: Looks for hidden items or clues in a specific area or object, which may yield unexpected results.
+		* craft: Enters a menu for crafting items
+		* combat commands: fight (enters fight menu), flee (leaves the fight with consequences), item (enters an inventory menu)
+		* menu: enters main menu with options including
+			* map
+			* commands
+		* where am i: describes location (region, relative distance and cardinal direction to safe zone/economic zone)
+		* hide: attempts to hide or otherwise conceal presence
+		* fight [character]: initiates combat
+		* say [content]: says the contents of [content] (to the character being spoken to if in dialogue, else just into the air)
+		* help: Provides a brief overview of available commands and their functions.
+		* hint: gives a hint about best next move
+		* save: Saves the current game state, allowing players to return to this point later.
+		* load: Loads a previously saved game state.
+		* quit: Exits the game, asking for confirmation before closing.
+	* combat
+		* encounter setup and frequency
+			* probability/zone system:
+				* safe zone: no chance of combat encounter
+					* there is a primary "base" in each region with precisely zero chance of combat encounter
+				* mobile safety:
+					* "conveyance" referred to by npc's at varying points as both a machine and a beast, as both being driven and being ridden
+					* highwaymen may fight, and depending on how nice the thing looks the chance of this will go up.  but they are much much safer in/on this than walking
+					* this will resolve weight limits but then the player has to choose what to bring out with them on excursions
+				* economic zone
+					* there is an economic zone in each region with things like shops
+					* in this zone there is an extremely low but non-zero chance of encounter
+					* social tension
+						* some encounters are non-combatant interactions that might escalate depending on the players choice or reputation in this zone
+				* medium: the first unit of distance away from safety, medium encounter frequency
+				* danger zone: highest chance of encounter
+				* cave/dungeon: chance increases as the dungeon progresses
+			* some special encounters are scripted or triggered by story progression to ensure specific plot moments
+		* nature of combat/enemies
+			* wildlife, environmental hazards
+				* react to player actions
+					* loud noises, food presence
+			* desperate npc's
+				* some may be open to negotiation
+				* others act erratically
+			* emphasis on avoiding conflict or creative problem solving
+				* stealth, negotiation, using found objects
+			* minimal, turn based combat
+				* [Fight] [Flee] [Items]
+				* Submenus under [Fight] and [Items] are intentionally simple
+			* only the pc selects actions, npc alliles auto attack or assist based on set tactics
+			* initiative
+				* pre-determined each encounter
+				* more powerful enemies get higher mods to their initiative rolls
+		* factors affecting combat
+			* weather
+			* visibility
+			* resources
+				* each encounter impacts resources (health, tools)
+					* reinforces the need to avoid unnecessary fights
+		* combat methods
+			* weapon attack
+				* weapons weaken over time before eventually being destroyed
+			* melee attack
+				* takes energy - defined by str or con
+			* magic attack
+				* takes focus - defined by int or wis
+		* rewards
+			* experience, but this is not the only way to level up
+			* resources, but this is not the only way to get resources
+				* but it may be a good way to get resources which are "higher level" (read: require more resources to craft or purchase) than the players current state would allow
+	* economic system
+		* resources
+			* base: water
+				* low scarcity
+				* no barter value
+				* weight: 1 unit
+			* common: scrap material
+				* Description: Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).
+				* Uses: Repairs, minor crafting, simple weapons, basic traps, and barter with lower-tier NPCs.
+				* Scarcity Level: Low.
+				* Barter Value: 1 unit.
+				* Weight: 1 unit
+			* moderate: food rations
+				* Description: Preserved and easily portable food items (canned goods, dried meats, grains).
+				* Uses: Essential for survival and health regeneration; high trade value in all zones.
+				* Scarcity Level: Moderate; limited to specific zones and encounters.
+				* Barter Value: 5 units
+				* weight: 2 units
+			* uncommon: medical supplies
+				* Description: Basic first aid, bandages, antiseptics, pain relievers. Essential for recovery and minor healing.
+				* Uses: Restores health, crucial for sustaining longer exploration and surviving encounters.
+				* Scarcity Level: Uncommon; frequently found in economic zones or near settlements but rare in hostile areas.
+				* Barter Value: 10 units.
+				* weight: 3 units
+			* Rare: Fuel and Energy Cells
+				* Description: Old fuel canisters, batteries, or specialized cells needed for running machinery and transportation.
+				* Uses: Powers conveyance, lights, or small machinery; has high barter value with specialized NPCs.
+				* Scarcity Level: Rare; found in high-danger zones or from specific NPCs in exchanges.
+				* Barter Value: 25 units.
+				* weight: 4 units
+			* Very Rare: Ancient Relics
+				* Description: Unique and mysterious items from before the collapse (e.g., an old watch, rare jewelry, strange technological artifacts).
+				* Uses: Mostly valuable for bartering, unlocking certain story elements, or as powerful talismans.
+				* Scarcity Level: Very rare; found only in hidden or high-risk zones.
+				* Barter Value: 50 units.
+				* weight: 5 units
+		* inventory
+			* initial strict weight limit
+				* start at 12 units and increase by 2 per level
+				* npc adds 5 units and increase by 1 per level
+				* items need to be stored in safe zones – this means that until the conveyance is unlocked, every new region is like starting from near scratch as you can't take items with you beyond the weight limit per character
+			* conveyance
+				* unlock by mid-game (this is the event that defines "mid-game")
+				* weight limit on excursion from conveyance is still there, but this removes the weight limit outside the safe zone
+				* encounter chance goes up as the weight stored in the conveyance goes up
+				* needs fuel – prior to the conveyance being unlocked, fuel is only a bartering item and it is not used otherwise
+		* exchange rates
+			* Core Exchange Table: Behind the scenes, each resource has a base value (as noted above) used for general bartering.
+			* NPC Preferences: Certain NPCs may value specific resources higher based on their needs (e.g., a traveling healer values medical supplies more highly than fuel).
+			* Fluctuations: Events in the game can shift demand (e.g., droughts make food scarcer, making it more valuable in certain zones).
+		* specialized trades
+			* item combinations
+				* players can suggest bartering items in combination to get higher tier resources
+			* high value bartering
+				* high value npcs only accept ancient relics in exchange for unique items, hints, or rare/story progressing supplies
+	* trap system
+		* key resource gathering mechanic
+		* resources can be gathered manually, but this improves efficiency
+		* items gained from these traps immediately transport to the safe zone inventory
+		* types
+			* small trap
+				* early game
+				* cost 1 scrap
+					* therefore weigh 1 unit
+				* one time use 
+				* yield scrap/water -> food -> medical
+				* expire 1 day/night cycle after being set
+			* big trap
+				* mid game
+				* cost 2 scrap, 1 food
+					* therefore weigh 4 units
+				* yield scrap/water/food -> medical -> energy -> relics
+				* one tiem use
+				* expire 2 day/night cycle after being set
+			* defense trap
+				* end game
+				* set behind you on excursions
+				* cost 3 scrap, 2 fuel
+					* therefore weigh 11 units
+				* yield scrap/water/food/medical -> energy -> relic
+				* one time use
+				* expire 3 day/night cycle after being set
+		* efficiency is higher at night
+		* higher risk higher reward
+			* placing them somewhere dangerous will increase cahnce of success
+		* effectiveness changes in different areas
+		* when traps expire or succeed, a message comes up notifying you
+	* leveling system
+		* start at 1
+		* typically end the game around 20, so expect a progression of 6-7 levels per game stage (early->mid->end game)
+			* that can equate to an expected 2 levels per region
+		* progression mechanics
+			* health increase
+				* specific starting values depend on class and are in accordance with a d&d type stat sheet
+			* carry capacity
+				* increase by 2 units for most but 3 units per level for the tank-y character
+			* stats
+				* stat sheet increases
+					* more detail in the class system section – not player choice, defined level up mechanic for the classes
+		* xp system
+			* gain for defeating enemies or resolving conflict
+			* gain for collecting resources, setting traps, completing tasks
+			* gain for completing quests or advancing the narrative – significant gain, keep story on track (advance to some minimum threshold level for story progression)
+			* gain for puzzle solving
+		* all characters in a party get the same amount of xp from all tasks
+		* growth function: XP(next) = XP(current) * 1.1
+			* growth function for xp recieved: XP(next) = XP(current) * 1.07
+				* as the game progresses, tasks give more xp and levels require more xp, but the level function grows faster than the received function to the amount of time for level progression gets longer
+	* class system
+		* attributes
+			* strength, dex, constitution, intelligence, wisdom, charasma
+			* need starting values per class, level up values per class
+			* need to know how these values impact health, energy, focus
+			* str
+				* impacts melee attack (hand to hand or weapon) power
+				* impacts melee attack hit chance
+				* impacts skill checks for things like breaking down doors, feats of str
+			* dex
+				* impacts initiative
+				* impacts ranged attack
+				* impacts dodge
+				* impacts stealth
+				* impacts skill checks for things like lockpicking
+			* con
+				* impacts health
+				* impacts ac
+				* impacts resistance to status effects
+				* impacts recovery time
+			* int
+				* impacts options/perceptions in puzzles
+				* impacts spell power
+				* impacts skill checks for things like knowledge, lore, information
+				* impacts crafting of items
+			* wis
+				* impacts focus
+				* impacts negotiation (detect lies, assess motives)
+				* impacts skill checks related to tracking, foraging, understanding the environment
+			* charasma
+				* impacts negotiation and deescalation
+				* impacts morale in combat, giving boosts to others skills/attributes
+		* classes
+			* technologist
+				* magic user
+				* primary int, wis
+				* crafting
+				* puzzle solving
+				* can create traps or gadgets unavailable to other classes
+			* survivalist
+				* physical class
+				* resource gathering, longer expiditions
+				* primary str, dex
+				* can access areas unavailable to other classes through nimbleness
+			* negotiator
+				* bard type
+				* primary wis, cha
+				* resolve conflict
+				* leverage npc for resources or hints
+				* persuasion and insight allows access to hidden resources, unique interaction outcomes
+		* starting stats
+			* technologist
+				* str 6 dex 8 con 8 int 12 wis 10 cha 6 health 18 carry 13
+				* str +.5 dex +.6 con +.7 int +1.2 wis +1 cha +.5 health +2 carry +1.5
+			* survivalist
+				* str 10 dex 12 con 10 int 6 wis 6 cha 8 health 22 carry 15
+				* str +1.2 dex +1.4 con +.9 int +.4 wis +.4 cha +.6 health + 3 carry + 2.5
+			* negotiator
+				* str 8 dex 8 con 10 int 8 wis 12 cha 12 health 20 carry 14
+				* str +.8 dex +.6 con +.8 int +.5 wis +1.2 cha +1.4 health +2.5 carry +2
+	* character development
+		* fear to indiference is the arc – this is a downer game
+		* early/mid/end game are broken into intro/conflict/transformation/conclusiong
+			* 1: introduction
+			* 2: inciting incident
+			* 3: choices and consequences
+			* 4: choices and consequences, allies and enemies
+			* 5: critical choices
+			* 6: critical choices, confrontation
+			* 7: reflection
+			* 8: reflection
+			* 9: reflection
+			* 10: confrontation, resolution of the arc
+	* status conditions
+		* hunger
+			* lower move speed
+			* lower ability for stealth
+			* lower ability in a fight (to hit, and lowered damage)
+		* thirst
+			* diminished stamina
+			* eventually, slow health drain
+			* lowered perception (distracted by thirst)
+		* exhaustion
+			* penalties to all actions 
+			* amplify fear
+			* reduced recovery
+		* fear
+			* lowers effectiveness in perception, negotiation, avoidance of certain locations (some locations become unavailable in a fear state)
+		* terror
+			* everything from fear but the only non-closed off options for movement are those that take you out of the current situation
+	* puzzles
+		* escape room
+		* ...others
+	* ethics
+		* decisions and connections made with npc's in game will be relevant to the ending
+		* probably something that seems like a necessary part of the game will actually be bad and wrong
+			* see a dark room's "huts and a village is actually slavery and gives you a slightly worse ending" schtick
+	* hints
+		* should there be a "hint" command that brings out some vague-ish tip? maybe
+		* earn hints, these are also a resource
+* characters
+	* main
+		* unnamed
+		* belongs to a player selected one of three classes
+		* perhaps they also come from a player selected choice of three backgrounds?
+		* perhaps they (can? must?) join forces with other classes to acheive their goal?
+	* antagonist
+		* unnamed main force in control of the (city? world?) which the player is acting against, but not by direct resistance – more like how technically frodo was acting agains sauron but sauron was largely unaware of frodo as an individual
+		* mainly, the antagonist will be nature/setting
+	* other
+		* the street magician/musician	
+			* so you think i sit around and do fucking magic tricks all day?
+			* no, you've misunderstood the core concept of musician
+		* tom bombadil
+		* the city itself
+			* this will be important for setting the magical tone
+			* random shit like a haunted bell that rings at odd hours, reacting to the players choices? or random?
+			* inanimate objects with personality
+		* someone dialogue-y/banter-y
+		* someone who the player will have to make a conscious choice not to include in the party.  party max size is, say, 3 (and will work best if it's one of each class) but there will be an initial npc who can be cast aside but that's not what the game streamlines the player into
+* ending
+	* something extremely unexpected
+	* several choices based on interactions during the game
+	* definitely one where something turns the sun off – that's the medium ending
+		* see dyson sphere
+	* one bleak and hopeless, which doesn't invalidate the efforts of the player but does bum them right out - that's the bad ending.  think annihilation lighthouse, infinite loop
+	* one where you planeshift in some way to an unknown but hopeful fate.  the exact mechanics of the planeshift are tbd and are the extremely unexpected thing.  like how in a dark room, you start gathering dirt and twigs and end in space.  invert the starting conditions completely
+		* possibly, depending on what you do during the game, there is a version of this with company and a version alone.  the version alone is slightly worse.
+		* this is open to all 3 player classes – certain classes are not precluded from the good ending.  but one might be more inclined to it?
+		* if we take planeshift to be literal, then a magic user will be more inclined to this ending
+		* perhaps the shift is to the real world, or to the "universe" that the user is playing the game in
+		* perhaps it is to another point in time, and we see that although this works out well for the player character, there is subtle implication that their presence earlier in time causes the events which lead to the games starting conditions
+			* this will mean that all 3 endings are kind of a downer
+				* either something bleak and hopeless happens, or the sun turns off, or things work out for you the player positively but in a way which will inevitable end in the events of the game
+	* almost all playthroughs will result in the medium ending.  not quite to the extent that the other two are easter eggs, but things definitely don't streamline to them
+	* easter egg ending
+		* for doing something ridiculous like avoiding all combat or winning every combat, or forgoing a conveyance completely, or never using a trap
+* gameplay
+	* exploration and puzzles
+	* resource management and gathering
+	* region-by-region you stave off some threat or other such negative influence
+		* this seems to be the core goal, but in fact you are actually working towards the plane shift found in the good ending
+	* relatively simple
+	* the game is (relatively) on rails.  it's not too massively open world
+	* there are side quests, if you can call it that.  
+		* short, one off things done for npc's
+		* most won't effect the ending, but some will
+		* or maybe they will all contribute to some weight score, defining future encounters and endings
+* non-specific ideas
+	* the player Character is competing against nature/setting in more or less a survival situation
+		* they can become incapacitated as a failure state.  this will reset them to the last safe condition
+		* perhaps to some city wide or current region "home base"
+	* but in addition to that, in some ways the player is competing against the game
+		* the state of the world in game is immovable and deeply entrenched
+			* think about like...if an alien came to earth and was pretending to be human, they may engage in discussion about the upcoming election.  but they won't experience exposition in these discussions from the magna carta to now to understand how democracy became the prevailing political philorophy in the west. they'll just have to pass off knowing enough to blend in that specific conversation
+		* as a result, there is little exposition for the player and information needs to be gathered through context clues
+		* every ending will be a downer in some way, it's just a matter of degree
+		* this is somewhat inspired by the dark souls games
+	* rewards should be frequent and small to keep people hooked
+	* graffiti should offer exposition to the larger backstory
+* TODO: 
+	* full storyboarding, particularly of character development section
+	* create a list of every in-game item
+	* fleshed out puzzles – i have the list of them, but i need to incorporate them into the story, make them fit the flavor of various regions
+	* figure out ethics and npc interactions
+	* list specific quests - necessary and optional
+	* decide on the "ethics" twist
+	* generate the menu
+	* hint mechanics
+	* make a list of npcs
+	* make a list of npc allies, decide when you meet them (it has to be all 3, i guess, in the beginning)
+	* decide on how many endings there will be, and what they will be
+		* weave in the planeshift
+	* list of relevant and irrelevant graffiti
