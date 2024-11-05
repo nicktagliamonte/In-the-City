@@ -1,0 +1,20 @@
+Side Quest: Old Neighborhood Ties
+Objective: Assist a resident, Martha, in locating a memento left behind in her old rowhouse. In return, she offers a reward from her personal stash of supplies.
+
+Quest Overview: Martha is an elderly survivor who used to live nearby before she was forced to leave her rowhouse. She tells the player about an old photo album hidden beneath a loose floorboard in her former home. The album has no intrinsic value, but it’s deeply meaningful to her, and she offers the player a generous supply of water, food, and scrap if they retrieve it.
+
+Quest Steps:
+
+Locate Martha’s Rowhouse:
+
+The player heads to a nearby rowhouse block, navigating through debris and dodging potential threats. The rowhouses are partially collapsed, making access difficult.
+Search for the Album:
+
+Inside Martha’s old home, the player finds evidence of her past life—personal items scattered around, broken furniture, and faded family photos. The album is hidden beneath a loose floorboard in the bedroom.
+Encounter Obstacles:
+
+As the player searches, they’re interrupted by a rival scavenger who’s also rummaging for supplies. The player can negotiate with, avoid, or fight the scavenger.
+Return the Album to Martha:
+
+Upon bringing the album back, Martha rewards the player with rations, a small cache of scrap, and a modest XP boost.
+Atmosphere: The quest gives the player a somber glimpse into the lives of former residents, showing that the city isn’t just a battleground but a place with human history and forgotten memories.

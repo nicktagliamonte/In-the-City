@@ -68,8 +68,8 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* Description: This West Philly neighborhood retains a dense urban structure, with narrow alleys, dimly lit streets, and empty buildings. The creek still runs through it, but signs of human occupation—makeshift barricades, damaged cars, and broken streetlights—are more prevalent than nature.
 			* Purpose: Tests stealth, agility, and early resource gathering skills. Players must navigate narrow alleys and climb debris to explore this partially hostile, partially mystical area.  After stocking up in region 2, the player is now tasked with conserving these resources.
 			* Atmosphere: Hauntingly urban. Streetlights flicker, casting long shadows against graffiti-tagged walls. The creek runs quietly, sometimes carrying debris or reflecting unnatural light, adding a surreal feel to the otherwise stark streets. A faint scent of smoke or exhaust lingers, a reminder of the battles once fought here.
-			* Safe Zone: The safe zone is now an old church that has been fortified with barricades and serves as a sanctuary for those seeking refuge. The community here has organized a barter system for resources and offers protection from outside threats.
-			* Economic Zone: The economic zone consists of a few alleyways where scavengers trade water and food supplies, often bartering for essential goods while avoiding the dangers lurking in the shadows.
+			* Safe Zone: The Cobbs Creek Library, located on the edge of Cobbs Creek Park, is transformed into the Forgotten Refuge, the player’s primary safe zone if they successfully claim it. The building’s basement has been reinforced and outfitted with basic storage and supplies. The Veiled Blades, if they remain, make occasional appearances to maintain their alliance or monitor the player’s presence.
+			* Economic Zone: This intersection, now called the Baltimore Market, serves as an informal trade post for survivors passing through Cobbs Creek. A mix of tents, crates, and temporary shelters line the street, creating an open market vibe. Survivors barter food, water, tools, and “magical” artifacts here, making it a valuable resource point in the Market Ruins.  This is the only real "open air" sections of this region which is otherwise labarythine alleys.
 			* Hidden Zones:
 				* Hidden Zone 1: A hidden rooftop garden where a group of resourceful survivors grow crops, providing a crucial food supply.
 				* Hidden Zone 2: An underground fight club, where players can engage in organized brawls for food and other resources, gaining experience and reputation.
@@ -77,12 +77,12 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 				* Cave 1: An old abandoned subway tunnel that leads deeper into the city, filled with remnants of past travelers and hidden dangers.
 				* Cave 2: A dilapidated warehouse that has become a makeshift hideout for a gang of scavengers, filled with traps and valuable items.
 				* Cave 3: A secret speakeasy located behind a false wall in one of the buildings, containing hidden caches of supplies and clues about the area’s history.
-		* the overgrown galleries (art museum)
+		* the shattered galleries (art museum)
 			* Description: The Art Museum stands mostly as it was, but eerie distortions have taken hold, creating fractured echoes of past visitors and memories that linger in the halls. Some rooms are visibly damaged, with cracked walls and broken displays, but the structure itself remains intact and imposing.
 			* Purpose: Introduces mid-level puzzles and perception-based challenges. The player encounters visual and auditory illusions, blending the remnants of the art with surreal phenomena, which subtly challenge their sense of reality.
 			* Atmosphere: Mysterious and unsettling. The empty museum is a quiet labyrinth, with paintings and sculptures casting unusual shadows. Sometimes, faint whispers or ghostly footsteps echo from within the galleries, making it feel as if the past is trapped here. Sunlight filtering through broken windows creates strange patterns, as if the building is bending light itself.
-			* Safe Zone: The safe zone is located at Logan Square, where the fountain has taken on a magical aura. It can communicate with players, offering guidance and cryptic hints about the challenges ahead. The fountain's water flows with an otherworldly glow, and haunted voices can be heard in the splashes
-			* Economic Zone: The economic zone is set in the museum’s gift shop, transformed into a vibrant market where survivors trade scavenged art supplies, magical curiosities, and even fragmented memories. The wares include items that bend perception, offering players unique advantages in navigating the surreal environment.
+			* Safe Zone: The Broken Atrium is a partially sheltered area near the museum’s west entrance. Once an art installation space, it has now been adapted into a makeshift shelter, with scattered furniture and supplies left by previous survivors. Though not as fortified as other safe zones, it offers a temporary reprieve from the museum’s labyrinthine challenges.
+			* Economic Zone: there also kind of isn't one
 			* Hidden Zones:
 				* Hidden Zone 1: An art restoration room that has become a twisting workshop, with supplies scattered in impossible configurations. Players must solve spatial puzzles to access hidden crafting materials and unique magical items.
 				* Hidden Zone 2: A secret storage area behind a false wall, filled with rare books that shift titles and meanings. Players can discover valuable lore and items that aid in their quest, but only if they can decipher the shifting languages.
@@ -479,7 +479,7 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* negotiator
 				* str 8 dex 8 con 10 int 8 wis 12 cha 12 health 20 carry 14
 				* str +.8 dex +.6 con +.8 int +.5 wis +1.2 cha +1.4 health +2.5 carry +2
-	* character development
+	* character development (this is the full storyboard section)
 		* fear to indiference is the arc – this is a downer game
 		* early/mid/end game are broken into intro/conflict/transformation/conclusiong
 			* 1: introduction
@@ -492,6 +492,79 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* 8: reflection
 			* 9: reflection
 			* 10: confrontation, resolution of the arc
+		* remember that the busker is in every one of the below -- his quest is in manayunk
+		* prologue
+			* the player wakes up in a backyard on maxwell place, alone.  they wander through the dead zone hearing creaking and rustling, but seeing no one
+			* they have no thirst or hunger but do have fear
+			* they see light in the distance and come to st jeromes -- this regions safe zone.
+			* it is already safe, without quest, as section 1 begins (real gameplay gets rolling below)
+		* the dead zone	
+			* player joins those gathered near the church scrapping and makes tense conversation
+			* some allusions are made to what is being scrapped and why -- it's all that remains available to those stuck here
+			* optional quest - the broken chain
+			* player meets jack, a survivalist	
+				* potential group member number 1
+			* player meets olivia, an amateur technologist
+				* potential group member number 2
+			* vague advice about survival is given, but not all of it is good
+			* the player has the opportunity to explore the school, but is unable to proceed very far.  this is a very on-rails experience
+			* a scavenger points them to market ruins.  the journey is long and will take a certain quantity of food, but if the player frankford->delaware ave->arch they'll get there in a few hours
+				* vignettes of the journey are shared and the player is allowed to gather resources on the trip.  passing by future points of interest will just produce a "can't go there yet" type message
+		* market ruins
+			* decayed network of street vendors and scavengers haggling over scraps
+			* makeshift stalls line what used to be storefronts
+			* main story quest 1 - claiming the shelter
+			* optional quest - 
+			* meet alvin, a negotiator
+				* potential group member 3
+				* A trader NPC with a dark sense of humor teaches the player how to haggle and scavenge, while offering hints about the city’s power structure and the strange artifacts that some survivors wield. 
+				* sees the busker who controls weather “They call it magic, but it’s just skeletongs,” the trader says, smiling faintly and looking up.
+			* no matter how the player secured the safe zone, the Watchers want it back.  the player must leave the region quickly
+				* if the player helped harv or is otherwise of good reputation, they are guided to cobbs creek and told to see a bookstore owner
+					* in this case, the journey takes 2 hours and little food
+				* else, it is more harrowing and a likely source of exhaustion as food stores may be too low
+					* call it 3.5 hours, lucky to make it 
+				* south to walnut then cut west
+				* it's possible here that the player simply does not have enough food and needs to repeat section 2 or spend a night camping to scavenge during the journey
+			* the traps are fully expanded on here, as is crafting
+		* shadowed streets
+			* the strange power surges from streetlights make visibility low
+			* broken windows
+			* shadows flicker at the edge of players vision
+			* tom bombadil in a bookstore
+				* walnut and 52
+			* the player is exhausted by constant fear
+			* “Fear will only keep you trapped. But you’ll learn.” The player witnesses the old survivor hiding rather than engaging
+			* Survival here means hardening oneself, not by overcoming fear, but by embracing the indifference of those who have lived in the ruins longest
+			* main quest - forgotten refuge
+			* side quest - old neighborhood ties
+			* by now, it is evident that artifacts are of importance.  player group decides to go to the museum in search
+		* shattered galleries
+			* this is mostly about puzzles
+			* it's mostly quest driven, as there's barely a safe zone and no economic zone
+			* main - into the shattered depths
+			* optional - a shattered memory
+			* logan square - find the conveyance
+			* Within the museum, the player encounters an NPC who claims to be a historian of sorts, hoarding relics of the past. Through dialogue, the player learns fragmented tales of the city’s downfall, how the “magic” is just the city’s decaying power grid reanimating itself.
+				* they talk like that 1 nosleep story, regularly breaking the fourth wall and making comments on spelling/the text format
+				* Transition to Region 5: The historian points toward FDR Park, hinting that the park hides dangerous secrets.
+				* given the water monster, this is an act of malice
+			* Character Development: This experience deepens the player’s shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
+		* Metalwoods
+			* this is another weird one -- it's a strategy level
+			* main quest - confronting the water monster
+			* optional quest - lost in the murk
+			* there is a safe zone, but barely
+			* same with economic
+			* it is near impossible to beat the water monster, and even if you do it instills party-wide fear that drive you up town to temple in a blur of flashing lights
+			* this is a fall away from indiference
+		* leacouras haunts
+			* i'm clearly loosing steam
+			* main - echoes of the past
+			* side - fleeting memories
+			* the player is forced back towards indifference by the memories
+			* the ghost tells you you have always been friends (see side quest)
+			* the player or party wanders, aimless, back up frankford before winding up accidentally in port richmond
 	* status conditions
 		* hunger
 			* lower move speed
@@ -604,3 +677,5 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 	* decide on how many endings there will be, and what they will be
 		* weave in the planeshift
 	* list of relevant and irrelevant graffiti
+	* break this file up into multiple smaller files
+		* update the readme
