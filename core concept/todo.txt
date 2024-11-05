@@ -1,0 +1,40 @@
+1. Create a List of Every In-Game Item
+    Begin by categorizing items by their function (e.g., consumables, barter items, rare relics, quest-specific items) and scarcity. Define each item’s role, usage, and place in the economy and progression.
+
+2. Organize file structure
+    Break up the conceptualization file into probably like a dozen accurately named files.
+    Updating the map is a subcategory of this, i'll fix it when i give it it's own home.
+
+2. List of Puzzles and Incorporate Into the Story
+    Once the storyboarding is done, align puzzles with the flavor and setting of each region. This will add depth to exploration and reward players who engage with the world.
+
+3. Define Ethics and NPC Interactions
+    Decide how the player’s ethical choices impact gameplay. For example, decide if making certain "necessary" sacrifices influences the story or if ethical actions affect NPC relationships and reputation.
+
+4. Ethics Twist Decision
+    This is a core part of the game's theme, so explore options for a central twist that aligns with the atmosphere of adversarial mystery. For example, you could reveal that a necessary quest task was morally ambiguous, affecting the outcome.
+
+5. Generate the Menu
+    Create a draft of the user interface and navigation. A clear, well-organized menu can elevate the player experience, especially for a text-based game.
+
+6. Define Hint Mechanics
+    Decide on how hints are earned (perhaps via progress, certain achievements, or bartering). Plan a "vague-but-helpful" system that fits the game's mysterious tone.
+
+7. List of NPCs
+    Generic NPCs: Scavenger, wanderer, shopkeeper, etc., who appear in multiple zones.
+    Regionally Specific NPCs: Unique to certain areas
+        subtype: mythological figures
+    Story-Critical NPCs: Defined characters that affect the narrative directly, such as potential allies and key quest-givers.
+    Enemies
+    **nora joyce pearl
+    **douglas
+    **stacey
+
+8. Define NPC Allies and Meeting Points (partly done in storyboard)
+    Sketch out the initial meeting points and conditions for each potential ally. These allies will shape the player’s journey and affect gameplay in a team dynamic.
+
+9. Determine Number and Nature of Endings
+    Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
+
+10. Graffiti List
+    List snippets of graffiti that provide backstory and environmental context without overt exposition, reinforcing the adversarial feel.

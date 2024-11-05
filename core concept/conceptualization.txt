@@ -120,29 +120,15 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* Description: The Port Richmond waterfront has developed an odd, almost magical charm over the years. Warehouses and containers form bizarre, maze-like patterns along the river, and strange lights dance across the water at night.
 			* Purpose: Offers a lighthearted break with puzzles that incorporate humor and levity. The area allows the player to experiment with magical traps and enjoy some more surreal, whimsical moments in a safe environment.
 			* Atmosphere: Whimsical and playful. Odd reflections, laughter on the wind, and strange graffiti lend a surreal, funhouse vibe to the area. It’s the kind of place where the player might accidentally step into a puddle that feels far deeper than it looks, only to find a “helpful” specter nearby offering nonsensical advice.
-			* Safe Zone: The safe zone is located on a wharf, a fortified pier where players can find respite. It features friendly specters who offer advice and minor magical items, making it a hub of safety and community.
-			* Economic Zone: The economic zone is a lively market along the waterfront where players can barter for unique, magical items and sustenance crafted from the local flora.
+			* Safe Zone: richmond power plant, a fortified pier where players can find respite. It features friendly specters who offer advice and minor magical items, making it a hub of safety and community.
+			* Economic Zone: The economic zone is inland a few blocks among maze like alleyways where players can barter for unique, magical items and sustenance crafted from the local flora.
 			* Hidden Zones:
 				* Reflective Tidepool: A mystical tidepool that reveals alternate realities, allowing players to glimpse their past or potential futures while navigating through challenges.
-				* Luminescent Marsh: An enchanted marsh under the bridge filled with bioluminescent plants and magical creatures
+				* Hidden Record Store: A dusty but well-preserved record store, still haunted by Theo, the music-loving ghost. This store is filled with strange echoes, remnants of music, and mysterious messages left for those brave enough to explore.
 			* Caves/Basements:
 				* The Abandoned Mill: Once a bustling hub, this forsaken site is now a labyrinth of rusted machinery and broken walls. Players will find themselves navigating through claustrophobic spaces, encountering spectral workers and remnants of forgotten crafts.
 				* The Old Brewery Cellar: A dark, winding cellar beneath an ancient brewery, filled with barrels of long-fermented brews that have taken on a life of their own. Players must contend with shifting illusions and uncanny guardians that protect hidden treasures.
 				* The Forgotten Warehouse: A dilapidated structure filled with remnants of maritime history. Inside, players must navigate shifting shadows and eerie sounds while piecing together clues from the past, as the very walls seem to come alive with memory.
-		* the badlands (kensington)
-			* DROUGHT! the drought effect alters economic exchange rates
-			* Description: A sprawling, chaotic district marked by the remains of abandoned labs, scattered alleyways, and old tech markets. The zone is hostile, and strange experiments lie dormant but deadly in its shadows.
-			* Purpose: High-stakes resource gathering and crafting with elevated risk. Rogue NPCs and advanced tech-magic traps add a layer of danger, while puzzles here reward the player with rare, powerful items.
-			* Atmosphere: Dark and volatile, with a sense of chaos and disorder. Flickering street lights, mysterious noises, and unsteady ground make every step feel risky.
-			* Safe Zone: The Rusty Haven serves as the safe zone, a fortified community center repurposed from an old warehouse. Here, players can rest, trade supplies, and hear rumors about the dangers lurking outside. It’s a sanctuary amidst the chaos, with makeshift defenses and a strong sense of camaraderie among its inhabitants.
-			* Economic Zone: see cave 3
-			* Hidden Zones:
-				* The Abandoned El Station: An old elevated train station where the structure is crumbling and chaos reigns. Players can explore the deserted platforms and tunnels, finding remnants of old ticket booths and graffiti-covered walls that tell stories of those who passed through. The area is rife with scavengers and traps set by rival groups trying to claim the territory.
-				* The Wreckage Yard: A chaotic maze of abandoned vehicles and machinery. Players can sift through the wreckage to find useful parts and supplies, but the area is unstable and prone to collapses, adding an element of danger to exploration. This zone is also frequented by rogue tech enthusiasts who have made the yard their makeshift home.
-			* Caves/Basements:
-				* The Hidden Workshop: A dark, makeshift workshop located beneath a disused storefront. This underground area is cluttered with strange devices and remnants of failed experiments. Players must navigate through a maze of discarded tech and traps while searching for valuable resources and potential allies.
-				* The Ruined Factory: An old factory filled with rusty machinery and shadows. Players must traverse this hazardous environment, avoiding malfunctioning equipment and aggressive scavengers. Among the debris, they can find rare materials and hidden rooms containing secrets of the area’s industrial past.
-				* The Subterranean Market: A series of interconnected basements that have been turned into a chaotic black market. Players must navigate the tight corridors, dealing with shady merchants and unpredictable rival factions. The atmosphere is tense, filled with the sounds of bartering and conflict, as players hunt for unique items and trade opportunities.
 		* the shattered cliffs/edge of the world (manayunk/roxborough)
 			* Description: A jagged cliffside overlooking what’s left of the city. Weathered bridges, makeshift paths, and dangerous cliffs provide a test of dexterity and perseverance.  sections of the city have fallen into the river and makeshift bridges span the new chasms.
 			* Purpose: Focuses on survival skills, testing everything learned thus far. The player gathers rare resources while avoiding environmental hazards and making use of agility and stamina.
@@ -161,12 +147,9 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* Purpose: The final area, pushing the player to the limits of their abilities and mental endurance. Challenges here involve surreal, cyclical puzzles that require navigating repeated and altered paths.
 			* Atmosphere: Ominous, disorienting, and timeless. City Hall feels alive and yet dead, trapped in a state of endless twilight. The deeper the player ventures, the stranger the environment becomes, as if the place itself resists or mocks the player’s attempts to make sense of it. Descriptions of the world around the player will alternate between descending into a pit and ascending a spire, without explaination.  
 			* Safe Zone: The safe zone is a small, fortified courtyard outside City Hall, where players can catch their breath and gather before diving into the chaos within. Here, whispers of past leaders linger, offering cryptic guidance.
-			* Economic Zone: A compact market area just outside the courtyard, where a few scavengers and traders exchange rare artifacts and magical components, allowing players to barter for essential supplies before the final push.
-			* Hidden Zones:
-				* The Clocktower Archives: A secret library hidden within the clocktower, containing forbidden knowledge and ancient tomes that players can access through a series of challenging puzzles.
-				* The Phantom Gallery: A mystical exhibition space filled with living art and hauntingly beautiful displays. Players can interact with the art to unlock memories and insights into the world’s lore.
-			* Caves/Basements
-				* there are none here, this is the finale.  it's all a cave, it's all a basement, it's all a tower – over and over again
+			* Economic Zone: n/a -- this is the endgame sequence
+			* Hidden Zones: n/a -- this is the endgame sequence
+			* Caves/Basements: there are none here, this is the finale.  it's all a cave, it's all a basement, it's all a tower – over and over again
 * inclusions
 	* ascii maps
 		* big one of whole city
@@ -197,10 +180,10 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			@@@@@@@@@@@@@@@@@@@@@............./........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			@@@@@@@@@@@@@@@@@@@@@@@........../........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			@@@@@@@@@@@@@@@@@@@@@@@@@@....../...........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@
-			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@./............................................................._______________.............@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@........................___________........................|BADLANDS.......\........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.LIACOURAS.|.......................|________........\.@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.HAUNTS....|................................\@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@./.........................................................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@........................___________.................................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.LIACOURAS.|..........................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.....................|.HAUNTS....|.................................@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@..|.....................|___________|......................________@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			@@@@@@@@@@@@@@@@@@@@@@@@@@@.......|.......................................................|STEEL.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			@@@@@@@@@@@@@@@@@@@@@@@|.OVERGROWN|.......................................................|SHORES....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -550,6 +533,7 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 				* Transition to Region 5: The historian points toward FDR Park, hinting that the park hides dangerous secrets.
 				* given the water monster, this is an act of malice
 			* Character Development: This experience deepens the player’s shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
+			* Akkorokamui 
 		* Metalwoods
 			* this is another weird one -- it's a strategy level
 			* main quest - confronting the water monster
@@ -558,13 +542,30 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* same with economic
 			* it is near impossible to beat the water monster, and even if you do it instills party-wide fear that drive you up town to temple in a blur of flashing lights
 			* this is a fall away from indiference
+			* there is a fomorian npc
 		* leacouras haunts
-			* i'm clearly loosing steam
 			* main - echoes of the past
 			* side - fleeting memories
 			* the player is forced back towards indifference by the memories
 			* the ghost tells you you have always been friends (see side quest)
 			* the player or party wanders, aimless, back up frankford before winding up accidentally in port richmond
+			* there is a "mimic" type npc who doesn't offer anything and just fucks with you
+		* steel shores
+			* main - enchanted alleys
+			* side - Homunculus's heart
+			* this whole region is relatively safe.  the last 3 have been various versions of fucked up and this is a more pure, more populated section
+			* some kind of trickster god npc is prominent here, but good natured.  kitsune type
+			* continue looking for the relative security of the dead zone, the party proceeds north to the badlands
+		* shattered cliffs
+			* char dev: the player is confronted with survival in a different, somehow less primal form
+			* The lessons of indifference learned in previous regions begin to clash with the harsh, visceral experiences of the Badlands.
+			* The dynamic within the group shifts as they begin to question their motivations
+			* main - circuit breaker
+			* side - tangled signals
+			* the ai tells the player that there is a reason for their presence here.  the ai tells the player that the answer is in center city
+		* heart of the loop
+			* this is an endgame sequence.  by entering, the player becomes immune to the fear effect
+			* see "endgame" for specifics
 	* status conditions
 		* hunger
 			* lower move speed
@@ -618,6 +619,7 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 			* inanimate objects with personality
 		* someone dialogue-y/banter-y
 		* someone who the player will have to make a conscious choice not to include in the party.  party max size is, say, 3 (and will work best if it's one of each class) but there will be an initial npc who can be cast aside but that's not what the game streamlines the player into
+		* mythological figures.  not necessarily one per region, but several that fit the flavor when appropriate
 * ending
 	* something extremely unexpected
 		* that's good, right? just say "something unexpected?" is that information dense enough to base a narrative off of?
@@ -647,35 +649,3 @@ I am trying to get some exact text from this to use in-game, so this is a rough 
 		* short, one off things done for npc's
 		* most won't effect the ending, but some will
 		* or maybe they will all contribute to some weight score, defining future encounters and endings
-* non-specific ideas
-	* the player Character is competing against nature/setting in more or less a survival situation
-		* they can become incapacitated as a failure state.  this will reset them to the last safe condition
-		* perhaps to some city wide or current region "home base"
-	* but in addition to that, in some ways the player is competing against the game
-		* the state of the world in game is immovable and deeply entrenched
-			* think about like...if an alien came to earth and was pretending to be human, they may engage in discussion about the upcoming election.  but they won't experience exposition in these discussions from the magna carta to now to understand how democracy became the prevailing political philorophy in the west. they'll just have to pass off knowing enough to blend in that specific conversation
-		* as a result, there is little exposition for the player and information needs to be gathered through context clues
-		* every ending will be a downer in some way, it's just a matter of degree
-		* this is somewhat inspired by the dark souls games
-	* rewards should be frequent and small to keep people hooked
-	* graffiti should offer exposition to the larger backstory
-* TODO: 
-	* full storyboarding, particularly of character development section
-	* create a list of every in-game item
-	* fleshed out puzzles – i have the list of them, but i need to incorporate them into the story, make them fit the flavor of various regions
-	* figure out ethics and npc interactions
-	* list specific quests - necessary and optional
-	* decide on the "ethics" twist
-	* generate the menu
-	* hint mechanics
-	* make a list of npcs
-		* there will be a generic list of npc's who can come up in any zone (scavenger, wanderer, citizen, that sorta thing)
-		* there will also be specific npc's who are regionally generic (badlands might have scientist, for example)
-		* there will also be specific story-vital npc's who come up once and that's it (potential party members, for example)
-		* then there are enemies
-	* make a list of npc allies, decide when you meet them (it has to be all 3, i guess, in the beginning)
-	* decide on how many endings there will be, and what they will be
-		* weave in the planeshift
-	* list of relevant and irrelevant graffiti
-	* break this file up into multiple smaller files
-		* update the readme

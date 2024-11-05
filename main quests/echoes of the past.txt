@@ -1,27 +1,23 @@
 Main Quest: Echoes of the Past
-Objective: Navigate the spectral phenomena surrounding the Liacouras Walk bell tower to uncover hidden memories and the truth about the area’s history.
+Objective: Investigate the source of the eerie bell tolls, which seem to be connected to a ghostly presence haunting Liacouras Walk.
 
-Quest Overview: As players explore the area, they will experience disorienting events and cryptic messages that challenge their perception of reality. The environment itself seems to play tricks on them, and they must distinguish between genuine threats and fabrications.
+Quest Overview: The player hears rumors of a ghost near the Liacouras Walk belltower who tolls the bell at strange hours, seemingly warning of impending danger. However, as the player approaches the bell, strange things start happening: pathways twist back on themselves, conversations with NPCs seem to reset or change, and some NPCs appear to deny things the player has already done. The quest itself may feel circular, as if the player is going in loops.
 
 Quest Steps:
 
-Haunting Whispers:
+Follow the Sound of the Bell:
 
-Players begin to hear whispers that seem to lead them in various directions. Sometimes, these whispers give hints about the next objective, while other times, they lead to traps or dead ends.
-Gaslighting Element: The whispers may change or become contradictory, prompting players to question what is real. They might hear someone calling their name or referencing past choices in a way that suggests the game knows them intimately.
-The Bell Tower’s Toll:
+The player is drawn toward the belltower by the irregular tolling of the bell. As they get closer, the area around them subtly shifts. Pathways and streets change direction, and some doors appear and disappear.
+Encounter NPCs Who Deny Reality:
 
-As players approach the bell tower, the tolling of the bell resonates with their character, causing them to relive a memory linked to their past (a failed mission, a lost ally, etc.). The tolling alters their perceptions, making shadows seem to flicker closer.
-Gaslighting Element: After hearing the bell toll, players may briefly see visions of themselves in different contexts (e.g., as a hero, as a failure) or experience time distortions, leading to confusion about what they are experiencing.
-The Library of Forgotten Knowledge:
+The player meets a series of NPCs near the tower, but each one denies the player’s experiences. Some NPCs mention things like, “You were never here before” or “I don’t know who you are,” even if they’ve interacted previously.
+One NPC, Miranda, says she knows how to reach the bell, only to laugh and deny ever saying this when the player approaches her again.
+Attempt to Reach the Belltower:
 
-Players must find a way into the spectral library, which contains ancient spells and lost memories. The ghostly librarians present puzzles that test the player's knowledge, but the questions seem to change based on the player's earlier answers.
-Gaslighting Element: Occasionally, players will find notes or journal entries that seem to reference actions they haven’t taken or choices they haven't made, leaving them questioning their own decisions and reality.
-Garden of Echoes:
+The player tries to reach the bell, but every time they think they’re close, they’re inexplicably returned to an earlier point. Environmental cues, like fading footprints or whispering voices, lead them down dead ends or repeat paths.
+At one point, they encounter a ghostly figure that looks like the player character. This apparition appears for a moment, then disappears, as if hinting that the player has been here before—or perhaps always.
+Confront the Bell Ghost:
 
-In the Memory Garden, players encounter memories of past students. These memories can either aid or hinder the player, revealing clues or misleading them into believing they have missed critical information.
-Gaslighting Element: Some memories will manifest as false images of loved ones or allies, leading players to act against their better judgment. After interacting with these memories, players may find that they have no lasting impact on the environment, reinforcing a sense of futility.
-Confronting the Spirit:
-
-At the quest's climax, players must confront a powerful spirit that embodies their deepest fears and regrets. This spirit can manipulate the environment and project visions that confuse the player.
-Gaslighting Element: The spirit may reveal truths about the player’s past but twist them into accusations or falsehoods. As players attempt to fight or reason with the spirit, the ground may shift, altering the battlefield in ways that play tricks on their sense of reality.
+Eventually, the player reaches the belltower, where a ghostly figure awaits. This figure seems familiar, as if they are somehow connected to the player. However, as the player approaches, the figure fades, and the bell tolls loudly.
+When the player looks back, the figure has disappeared, leaving a cryptic note on the ground: “You are not who you think you are.”
+Outcome: The player is left questioning their own identity and purpose in the city. They gain no physical reward but acquire a sense of foreboding and self-doubt that carries through future encounters. This quest sets the tone for the Liacouras Haunts, embedding mistrust and disorientation.
