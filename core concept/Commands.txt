@@ -1,0 +1,23 @@
+* look: Provides a description of your current surroundings, including notable items, exits, and any characters present.
+* move [direction]: Allows the player to navigate the game world in a specified direction (e.g., north, south, east, west).
+* examine [object]: Gives a detailed description of a specific object in the environment, helping players understand its significance or how to interact with it.
+* take [object]: Allows the player to pick up an item and add it to their inventory.
+* drop [object]: Lets the player drop an item from their inventory back into the environment.
+* inventory: Displays a list of items currently held by the player.
+* use [object]: Activates or utilizes an item from the player's inventory, which could be essential for solving puzzles.
+* talk to [character]: Initiates a conversation with a non-player character (NPC), leading to potential quests or information.
+* search [area/object]: Looks for hidden items or clues in a specific area or object, which may yield unexpected results.
+* craft: Enters a menu for crafting items
+* combat commands: fight (enters fight menu), flee (leaves the fight with consequences), item (enters an inventory menu)
+* menu: enters main menu with options including
+    * map
+    * commands
+* where am i: describes location (region, relative distance and cardinal direction to safe zone/economic zone)
+* hide: attempts to hide or otherwise conceal presence
+* fight [character]: initiates combat
+* say [content]: says the contents of [content] (to the character being spoken to if in dialogue, else just into the air)
+* help: Provides a brief overview of available commands and their functions.
+* hint: gives a hint about best next move
+* save: Saves the current game state, allowing players to return to this point later.
+* load: Loads a previously saved game state.
+* quit: Exits the game, asking for confirmation before closing.

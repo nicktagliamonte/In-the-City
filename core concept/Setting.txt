@@ -1,0 +1,122 @@
+setting
+	* stylized philly based on a dark room/annihilation
+	* far future, there is a dyson sphere
+		* creates an eerie glow that illuminates the world during the night, casting strange shadows and giving the area a surreal quality, while also affecting local flora and fauna, leading to bizarre mutations and increased wildlife activity that can be both helpful and dangerous for players.
+		* causes sporadic power surges, which can enhance or disrupt certain bartering transactions
+			* some scavengers claim to have found "magical" items that behave unpredictably.
+			* the power surges and flickering lights can make it harder to predict pathways
+		* causes gravitational anomalies (really only in manayunk)
+	* regions (in order of the game, these are basically "levels")
+		* dead zone (far northeast)
+			* Description: Far beyond the remnants of Philadelphia's inner neighborhoods lies an abandoned stretch of the Far Northeast. This place was once a residential and commercial zone, but it has long since fallen silent, now a decaying graveyard of overgrown homes and derelict strip malls.
+			* Purpose: A gentle introduction to the game’s mechanics, emphasizing a haunting solitude and the primal need for survival in the quietest, emptiest parts of the world.
+			* Atmosphere: Desolate, eerie silence hangs over the area. The landscape feels almost frozen in time, as if it’s waiting. Shadows stretch long across cracked asphalt, and nature has begun to reclaim everything. There’s a hint of something more under the silence, but it’s too faint to tell what it is.
+			* Safe Zone: The safe zone is located in the remains of the airport, surrounded by crumbling buildings and overgrown vegetation. Here, players can find makeshift shelter and a few friendly scavengers who offer resources and information about the area.  meet the first of each class who can be integrated into the party
+			* Economic Zone: The economic zone is situated around an old shopping plaza at the outskirts of the region, where scavengers gather to barter goods and share information. This area has remnants of functioning commerce, albeit in a very makeshift manner, with stalls created from salvaged materials.
+			* Hidden Zones:
+				* Hidden Zone 1: The Forgotten Playground - An overgrown park with rusting playground equipment and hidden caches of supplies buried under the foliage. Players can find useful items here but must navigate through treacherous underbrush and possibly confront mutated creatures.
+				* Hidden Zone 2: The Abandoned Subway Entrance - An old subway station entrance that has collapsed but contains a hidden path to the subway tunnels below, which are rumored to lead to safer areas or even secrets left behind by the previous inhabitants of the city.
+			* Caves/Basements:
+				* Cave 1: The Caves of Echoes - A series of small caves that echo strange sounds, making navigation challenging. The caves house various mutated wildlife and offer hidden treasures for those brave enough to explore.
+				* Cave 2: The Old Water Treatment Plant - A dark, flooded basement filled with stagnant water and remnants of machinery. This area can be hazardous but holds valuable resources and potential clues about the past.
+				* Cave 3: The Ruins of the Library - A partially collapsed library where players can search for old books that might hold clues or hints for puzzles in the game. However, it is also a haven for hostile entities drawn to the whispers of knowledge.
+		* market ruins (downtown, reading terminal, chinatown)
+			* Description: Unlike the abandoned Northeast, this area closer to the city center still has signs of life. Makeshift markets, scavenger groups, and wanderers cross paths here. Some parts have been transformed into ad hoc shelters, while others house small, dangerous black markets.
+			* Purpose: Introduces bartering, resource gathering, and basic negotiation elements. The player learns to navigate mildly populated areas and deal with the unique challenges of scavenging where others might be competing for resources.
+			* Atmosphere: Bustling, with a sense of guarded camaraderie. Makeshift stalls sell scavenged goods, and old billboards create surreal visuals as they’re used for tents and shade. Faint music or laughter may float over the rustling crowd, but there’s a constant awareness of danger just below the surface.
+			* Safe Zone: The safe zone is located in an old market hall within the Reading Terminal, where players can find temporary shelter, barter for supplies, and gather information from the diverse group of scavengers and traders who frequent the area.
+			* Economic Zone: The economic zone consists of the bustling market stalls set up in the ruins of Chinatown, where scavengers and traders barter goods from salvaged technology, food supplies, and magical artifacts. This vibrant hub is always filled with activity, creating both opportunities and risks for players.
+			* Hidden Zones:
+				* Hidden Zone 1: The Forgotten Alley - A narrow, shadowy alley filled with remnants of past lives, such as old electronics and personal items. Players can discover valuable resources but may encounter hostile scavengers or traps set by those who want to protect their territory.
+				* Hidden Zone 2: The Abandoned Theater - An old, decrepit theater where faded advertisements still cling to the walls. Inside, players can find hidden caches of supplies, as well as remnants of performances that might provide clues or puzzles related to the world’s history.
+			* Caves/Basements:
+				* Cave 1: The Old Sewers - An extensive network of underground tunnels that once served as the city’s sewer system. Players can navigate these tunnels to find hidden resources but must be cautious of dangerous creatures that have made this area their home.
+				* Cave 2: The Market Cellars - Dark, damp cellars beneath the market hall that were used for storing goods. These cellars hold both valuable supplies and the potential for encounters with rival scavenger groups or hostile creatures.
+				* Cave 3: The Ruins of the Old Print Shop - This basement area houses remnants of a once-thriving print shop. Amid the rusted printing presses and scattered papers, players can discover rare documents, maps, and schematics that might reveal hidden locations or craft recipes. However, the area is also home to aggressive bookkeeper spirits, who guard the secrets of the printed word and may attack intruders.
+		* shadowed streets (cobbs creek)
+			* Drought! the drought effect is active here, despite the creek which continues to wind through the region ironically, mockingly.  items are more expensive here, water is somewhate a scarce resource
+			* Description: This West Philly neighborhood retains a dense urban structure, with narrow alleys, dimly lit streets, and empty buildings. The creek still runs through it, but signs of human occupation—makeshift barricades, damaged cars, and broken streetlights—are more prevalent than nature.
+			* Purpose: Tests stealth, agility, and early resource gathering skills. Players must navigate narrow alleys and climb debris to explore this partially hostile, partially mystical area.  After stocking up in region 2, the player is now tasked with conserving these resources.
+			* Atmosphere: Hauntingly urban. Streetlights flicker, casting long shadows against graffiti-tagged walls. The creek runs quietly, sometimes carrying debris or reflecting unnatural light, adding a surreal feel to the otherwise stark streets. A faint scent of smoke or exhaust lingers, a reminder of the battles once fought here.
+			* Safe Zone: The Cobbs Creek Library, located on the edge of Cobbs Creek Park, is transformed into the Forgotten Refuge, the player’s primary safe zone if they successfully claim it. The building’s basement has been reinforced and outfitted with basic storage and supplies. The Veiled Blades, if they remain, make occasional appearances to maintain their alliance or monitor the player’s presence.
+			* Economic Zone: This intersection, now called the Baltimore Market, serves as an informal trade post for survivors passing through Cobbs Creek. A mix of tents, crates, and temporary shelters line the street, creating an open market vibe. Survivors barter food, water, tools, and “magical” artifacts here, making it a valuable resource point in the Market Ruins.  This is the only real "open air" sections of this region which is otherwise labarythine alleys.
+			* Hidden Zones:
+				* Hidden Zone 1: A hidden rooftop garden where a group of resourceful survivors grow crops, providing a crucial food supply.
+				* Hidden Zone 2: An underground fight club, where players can engage in organized brawls for food and other resources, gaining experience and reputation.
+			* Caves/Dungeons/Basements:
+				* Cave 1: An old abandoned subway tunnel that leads deeper into the city, filled with remnants of past travelers and hidden dangers.
+				* Cave 2: A dilapidated warehouse that has become a makeshift hideout for a gang of scavengers, filled with traps and valuable items.
+				* Cave 3: A secret speakeasy located behind a false wall in one of the buildings, containing hidden caches of supplies and clues about the area’s history.
+		* the shattered galleries (art museum)
+			* Description: The Art Museum stands mostly as it was, but eerie distortions have taken hold, creating fractured echoes of past visitors and memories that linger in the halls. Some rooms are visibly damaged, with cracked walls and broken displays, but the structure itself remains intact and imposing.
+			* Purpose: Introduces mid-level puzzles and perception-based challenges. The player encounters visual and auditory illusions, blending the remnants of the art with surreal phenomena, which subtly challenge their sense of reality.
+			* Atmosphere: Mysterious and unsettling. The empty museum is a quiet labyrinth, with paintings and sculptures casting unusual shadows. Sometimes, faint whispers or ghostly footsteps echo from within the galleries, making it feel as if the past is trapped here. Sunlight filtering through broken windows creates strange patterns, as if the building is bending light itself.
+			* Safe Zone: The Broken Atrium is a partially sheltered area near the museum’s west entrance. Once an art installation space, it has now been adapted into a makeshift shelter, with scattered furniture and supplies left by previous survivors. Though not as fortified as other safe zones, it offers a temporary reprieve from the museum’s labyrinthine challenges.
+			* Economic Zone: there also kind of isn't one
+			* Hidden Zones:
+				* Hidden Zone 1: An art restoration room that has become a twisting workshop, with supplies scattered in impossible configurations. Players must solve spatial puzzles to access hidden crafting materials and unique magical items.
+				* Hidden Zone 2: A secret storage area behind a false wall, filled with rare books that shift titles and meanings. Players can discover valuable lore and items that aid in their quest, but only if they can decipher the shifting languages.
+			* Caves/Dungeons/Basements:
+				* Cave 1: A forgotten basement with surreal installations that defy logic, featuring distorted sculptures that seem to change shape and form, providing both challenges and unexpected advantages.
+				* Cave 2: A hidden observatory with an ever-changing view of the outside world. The environment within reflects the player’s thoughts, creating a mirror-like maze that players must navigate while evading the dangers lurking in the shadows.
+				* Cave 3: An underground passage to a neighboring building, filled with forgotten art supplies that are imbued with magical properties. The materials shift in nature based on the player’s intentions, allowing for creative crafting opportunities.
+		* The Metalwoods (fdr park/stadiums)
+			* Description: This overgrown park is filled with unnatural, mutated flora and murky waters. At its center lurks a Water Monster, an apex predator that serves as one of the game’s most formidable foes. Murky waters conceal a creature with a Dark Souls-level difficulty, creating a high-risk, high-reward situation.
+			* Purpose: Offers high-stakes resource collection and an advanced combat scenario (basically the only one of the game). The park requires careful preparation and strategic use of traps, as the player must avoid or confront the Water Monster.
+			* Atmosphere: Dark, intense, and foreboding. Twisted trees and thick underbrush make visibility challenging, while the murky, still water hides unknown dangers. The water itself feels almost alive, and the monster’s presence permeates the air. Mechanical and organic components blend in disturbing ways, creating an unnatural wilderness.
+			* Safe Zone: The safe zone is located at the remnants of a once-bustling picnic area, now overgrown but still retaining an air of safety. Players can rest here and interact with friendly NPCs who have made this area their home.
+			* Economic Zone: A makeshift market established among the park’s clearings, where scavengers trade unique plants and resources harvested from the surrounding woods.
+			* Hidden Zones:
+				* Zone 1: A sunken garden filled with magical plants that can either heal or harm, concealed beneath a dense canopy of vines.
+				* Zone 2: An abandoned maintenance shed that serves as a hideout for rogue NPCs, filled with remnants of old tools and strange magical artifacts.
+			* Caves/Basements:
+				* Cave 1: An underground tunnel system that weaves through the park, rumored to lead to hidden treasures and dangerous creatures.
+				* Cave 2: A flooded area beneath the old observation tower, requiring players to navigate through murky waters to uncover supplies.
+				* Cave 3: An underground shrine dedicated to nature spirits, containing puzzles and magical items tied to the park’s history and ecology.
+		* liacouras haunts (temple)
+			* Description: Centered around the Liacouras Walk bell tower, this area is thick with spectral phenomena. Ghostly figures move in and out of sight, drawn to the player’s presence in increasingly unnerving ways. The bell tower's chime resonates with a frequency that disrupts the fabric of reality, causing strange temporal anomalies and ghostly apparitions that flicker in and out of existence; the area is shrouded in an ethereal mist that sustains a unique ecosystem, preserving the local flora despite the surrounding decay..
+			* Purpose: Heightens the player’s need for stealth and strategy, especially as the spectral activity becomes more unpredictable. The tower’s bell tolls at seemingly random intervals, disorienting the player. Introduces high-level puzzles and memory-based challenges. The first true test of magical “trap” setting, with rewards tied to player ingenuity.
+			* Atmosphere: Tense and claustrophobic. The city feels closer here, and every corner holds a shadow or a faint whisper. The toll of the bell reverberates through the air, adding an oppressive weight as ghostly figures appear to react to the sound.
+			* Safe Zone: The safe zone is located in the tech center, which has been fortified and repurposed as a sanctuary. Here, players can rest, heal, and prepare for their encounters with the supernatural.
+			* Economic Zone: The economic zone consists of food stalls next to the tech center, where players can barter for sustenance and rare ingredients, often imbued with minor magical properties.
+			* Hidden Zones:
+				* Spectral Library: A hidden zone within the university's old archives, filled with ghostly librarians who guide players through puzzles related to lost knowledge and ancient spells.
+				* Memory Garden: An overgrown courtyard that reveals memories of past students and staff. Players can interact with these memories to uncover lore and hints for solving the region's challenges.
+			* Caves/Basements:
+				* The SERC Sub-basement: Beneath the Science Education and Research Center lies a dimly lit sub-basement, filled with remnants of outdated experiments and broken equipment. The air is thick with the scent of chemicals, and the shadows seem to move of their own accord. Strange sounds echo through the hallways—distant whispers and the faint beeping of machinery long forgotten. Players must navigate through unstable shelves, risking collapse at any moment, while avoiding lurking shadows that may be remnants of failed experiments or the restless spirits of those who perished here.
+				* The Temple of Horrors: This hidden area within the temple itself is an unsettling blend of sacred space and something twisted. Cracked stone walls and peeling murals depict unsettling scenes of rituals long abandoned. As players delve deeper, they may encounter areas that shift and change, distorting their perception of reality. Eerie chanting reverberates through the air, and flickering candles cast unnatural shadows, creating a maze-like atmosphere where the lines between the sacred and the profane blur
+				* The Forgotten Auditorium: This dilapidated lecture hall remains steeped in an oppressive atmosphere, with dust-covered seats and a stage that feels alive with sinister energy. Players navigate through rows of empty seats, their own heartbeats echoing loudly in the silence. Strange illusions manifest on the stage, reenacting past horrors that have unfolded within these walls. The air is thick with dread as players may encounter entities that mimic their fears, compelling them to confront personal nightmares while heightening the psychological horror of the experience.
+		* steel shores (port richmond)
+			* Description: The Port Richmond waterfront has developed an odd, almost magical charm over the years. Warehouses and containers form bizarre, maze-like patterns along the river, and strange lights dance across the water at night.
+			* Purpose: Offers a lighthearted break with puzzles that incorporate humor and levity. The area allows the player to experiment with magical traps and enjoy some more surreal, whimsical moments in a safe environment.
+			* Atmosphere: Whimsical and playful. Odd reflections, laughter on the wind, and strange graffiti lend a surreal, funhouse vibe to the area. It’s the kind of place where the player might accidentally step into a puddle that feels far deeper than it looks, only to find a “helpful” specter nearby offering nonsensical advice.
+			* Safe Zone: richmond power plant, a fortified pier where players can find respite. It features friendly specters who offer advice and minor magical items, making it a hub of safety and community.
+			* Economic Zone: The economic zone is inland a few blocks among maze like alleyways where players can barter for unique, magical items and sustenance crafted from the local flora.
+			* Hidden Zones:
+				* Reflective Tidepool: A mystical tidepool that reveals alternate realities, allowing players to glimpse their past or potential futures while navigating through challenges.
+				* Hidden Record Store: A dusty but well-preserved record store, still haunted by Theo, the music-loving ghost. This store is filled with strange echoes, remnants of music, and mysterious messages left for those brave enough to explore.
+			* Caves/Basements:
+				* The Abandoned Mill: Once a bustling hub, this forsaken site is now a labyrinth of rusted machinery and broken walls. Players will find themselves navigating through claustrophobic spaces, encountering spectral workers and remnants of forgotten crafts.
+				* The Old Brewery Cellar: A dark, winding cellar beneath an ancient brewery, filled with barrels of long-fermented brews that have taken on a life of their own. Players must contend with shifting illusions and uncanny guardians that protect hidden treasures.
+				* The Forgotten Warehouse: A dilapidated structure filled with remnants of maritime history. Inside, players must navigate shifting shadows and eerie sounds while piecing together clues from the past, as the very walls seem to come alive with memory.
+		* the shattered cliffs/edge of the world (manayunk/roxborough)
+			* Description: A jagged cliffside overlooking what’s left of the city. Weathered bridges, makeshift paths, and dangerous cliffs provide a test of dexterity and perseverance.  sections of the city have fallen into the river and makeshift bridges span the new chasms.
+			* Purpose: Focuses on survival skills, testing everything learned thus far. The player gathers rare resources while avoiding environmental hazards and making use of agility and stamina.
+			* Atmosphere: Majestic but harrowing. The views across the city are breathtaking, but the dangerous paths and constant sound of falling rocks give the area an edge-of-the-world feel, as if crossing into another realm.
+			* Safe Zone: The safe zone is nestled in a sturdy old lodge at the base of the cliffs, where players can rest and strategize while enjoying breathtaking views of the shattered landscape.
+			* Economic Zone: A makeshift market set up by the locals who have adapted to life among the cliffs, offering handmade tools and survival gear crafted from scavenged materials.
+			* Hidden Zones:
+				* The Overlook Sanctuary: A serene but haunting spot at the cliff's edge where players can reflect on their journey. Ancient stone carvings provide lore about the area, and there are hints of hidden paths leading to deeper secrets.
+				* The Echoing Caves: A series of underground caverns that amplify sounds, making every step feel magnified. Players can uncover clues and rare resources hidden within, but they must be cautious of the disorienting acoustics.
+			* Caves/Basements:
+				* The Crumbling Watchtower: An old guard tower, now mostly collapsed, where players can find remnants of the past and navigate through hidden compartments to discover powerful relics.
+				* The Ruins of Old Estates: The remains of luxurious homes that have fallen into decay, filled with traps and remnants of old-world wealth. Players must explore cautiously to gather useful items while avoiding the hazards.
+				* The Subterranean Cliffs: A network of caves that runs beneath the cliff face, containing ancient artifacts and the echoes of past lives. The caves are dimly lit, with narrow passages that require agility to navigate safely.
+		* the heart of the loop (city hall)
+			* Description: City Hall has transformed into a strange, quasi-organic structure with haunting echoes of its past. Beneath its towering spires lies a deep, shadowy labyrinth that radiates eerie power. Drawn from Annihilation, this zone warps reality in subtle but sinister ways.
+			* Purpose: The final area, pushing the player to the limits of their abilities and mental endurance. Challenges here involve surreal, cyclical puzzles that require navigating repeated and altered paths.
+			* Atmosphere: Ominous, disorienting, and timeless. City Hall feels alive and yet dead, trapped in a state of endless twilight. The deeper the player ventures, the stranger the environment becomes, as if the place itself resists or mocks the player’s attempts to make sense of it. Descriptions of the world around the player will alternate between descending into a pit and ascending a spire, without explaination.  
+			* Safe Zone: The safe zone is a small, fortified courtyard outside City Hall, where players can catch their breath and gather before diving into the chaos within. Here, whispers of past leaders linger, offering cryptic guidance.
+			* Economic Zone: n/a -- this is the endgame sequence
+			* Hidden Zones: n/a -- this is the endgame sequence
+			* Caves/Basements: there are none here, this is the finale.  it's all a cave, it's all a basement, it's all a tower – over and over again

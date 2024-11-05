@@ -1,0 +1,55 @@
+economic system
+* resources
+    * base: water
+        * low scarcity
+        * no barter value
+        * weight: 1 unit
+    * common: scrap material
+        * Description: Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).
+        * Uses: Repairs, minor crafting, simple weapons, basic traps, and barter with lower-tier NPCs.
+        * Scarcity Level: Low.
+        * Barter Value: 1 unit.
+        * Weight: 1 unit
+    * moderate: food rations
+        * Description: Preserved and easily portable food items (canned goods, dried meats, grains).
+        * Uses: Essential for survival and health regeneration; high trade value in all zones.
+        * Scarcity Level: Moderate; limited to specific zones and encounters.
+        * Barter Value: 5 units
+        * weight: 2 units
+    * uncommon: medical supplies
+        * Description: Basic first aid, bandages, antiseptics, pain relievers. Essential for recovery and minor healing.
+        * Uses: Restores health, crucial for sustaining longer exploration and surviving encounters.
+        * Scarcity Level: Uncommon; frequently found in economic zones or near settlements but rare in hostile areas.
+        * Barter Value: 10 units.
+        * weight: 3 units
+    * Rare: Fuel and Energy Cells
+        * Description: Old fuel canisters, batteries, or specialized cells needed for running machinery and transportation.
+        * Uses: Powers conveyance, lights, or small machinery; has high barter value with specialized NPCs.
+        * Scarcity Level: Rare; found in high-danger zones or from specific NPCs in exchanges.
+        * Barter Value: 25 units.
+        * weight: 4 units
+    * Very Rare: Ancient Relics
+        * Description: Unique and mysterious items from before the collapse (e.g., an old watch, rare jewelry, strange technological artifacts).
+        * Uses: Mostly valuable for bartering, unlocking certain story elements, or as powerful talismans.
+        * Scarcity Level: Very rare; found only in hidden or high-risk zones.
+        * Barter Value: 50 units.
+        * weight: 5 units
+* inventory
+    * initial strict weight limit
+        * start at 12 units and increase by 2 per level
+        * npc adds 5 units and increase by 1 per level
+        * items need to be stored in safe zones – this means that until the conveyance is unlocked, every new region is like starting from near scratch as you can't take items with you beyond the weight limit per character
+    * conveyance
+        * unlock by mid-game (this is the event that defines "mid-game")
+        * weight limit on excursion from conveyance is still there, but this removes the weight limit outside the safe zone
+        * encounter chance goes up as the weight stored in the conveyance goes up
+        * needs fuel – prior to the conveyance being unlocked, fuel is only a bartering item and it is not used otherwise
+* exchange rates
+    * Core Exchange Table: Behind the scenes, each resource has a base value (as noted above) used for general bartering.
+    * NPC Preferences: Certain NPCs may value specific resources higher based on their needs (e.g., a traveling healer values medical supplies more highly than fuel).
+    * Fluctuations: Events in the game can shift demand (e.g., droughts make food scarcer, making it more valuable in certain zones).
+* specialized trades
+    * item combinations
+        * players can suggest bartering items in combination to get higher tier resources
+    * high value bartering
+        * high value npcs only accept ancient relics in exchange for unique items, hints, or rare/story progressing supplies

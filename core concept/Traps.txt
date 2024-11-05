@@ -1,0 +1,31 @@
+* key resource gathering mechanic
+* resources can be gathered manually, but this improves efficiency
+* items gained from these traps immediately transport to the safe zone inventory
+* types
+    * small trap
+        * early game
+        * cost 1 scrap
+            * therefore weigh 1 unit
+        * one time use 
+        * yield scrap/water -> food -> medical
+        * expire 1 day/night cycle after being set
+    * big trap
+        * mid game
+        * cost 2 scrap, 1 food
+            * therefore weigh 4 units
+        * yield scrap/water/food -> medical -> energy -> relics
+        * one tiem use
+        * expire 2 day/night cycle after being set
+    * defense trap
+        * end game
+        * set behind you on excursions
+        * cost 3 scrap, 2 fuel
+            * therefore weigh 11 units
+        * yield scrap/water/food/medical -> energy -> relic
+        * one time use
+        * expire 3 day/night cycle after being set
+* efficiency is higher at night
+* higher risk higher reward
+    * placing them somewhere dangerous will increase cahnce of success
+* effectiveness changes in different areas
+* when traps expire or succeed, a message comes up notifying you

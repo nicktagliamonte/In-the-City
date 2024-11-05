@@ -1,0 +1,20 @@
+* start at 1
+* typically end the game around 20, so expect a progression of 6-7 levels per game stage (early->mid->end game)
+    * that can equate to an expected 2 levels per region
+* progression mechanics
+    * health increase
+        * specific starting values depend on class and are in accordance with a d&d type stat sheet
+    * carry capacity
+        * increase by 2 units for most but 3 units per level for the tank-y character
+    * stats
+        * stat sheet increases
+            * more detail in the class system section – not player choice, defined level up mechanic for the classes
+* xp system
+    * gain for defeating enemies or resolving conflict
+    * gain for collecting resources, setting traps, completing tasks
+    * gain for completing quests or advancing the narrative – significant gain, keep story on track (advance to some minimum threshold level for story progression)
+    * gain for puzzle solving
+* all characters in a party get the same amount of xp from all tasks
+* growth function: XP(next) = XP(current) * 1.1
+    * growth function for xp recieved: XP(next) = XP(current) * 1.07
+        * as the game progresses, tasks give more xp and levels require more xp, but the level function grows faster than the received function to the amount of time for level progression gets longer
