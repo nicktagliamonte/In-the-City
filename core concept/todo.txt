@@ -1,19 +1,10 @@
-1. List of Puzzles and Incorporate Into the Story
-    Once the storyboarding is done, align puzzles with the flavor and setting of each region. This will add depth to exploration and reward players who engage with the world.
-
-2. Define Ethics and NPC Interactions
-    Decide how the player’s ethical choices impact gameplay. For example, decide if making certain "necessary" sacrifices influences the story or if ethical actions affect NPC relationships and reputation.
-
-3. Ethics Twist Decision
-    This is a core part of the game's theme, so explore options for a central twist that aligns with the atmosphere of adversarial mystery. For example, you could reveal that a necessary quest task was morally ambiguous, affecting the outcome.
-
-4. Generate the Menu
+1. Generate the Menu
     Create a draft of the user interface and navigation. A clear, well-organized menu can elevate the player experience, especially for a text-based game.
 
-5. Define Hint Mechanics
+2. Define Hint Mechanics
     Decide on how hints are earned (perhaps via progress, certain achievements, or bartering). Plan a "vague-but-helpful" system that fits the game's mysterious tone.
 
-6. List of NPCs
+3. List of NPCs
     Generic NPCs: Scavenger, wanderer, shopkeeper, etc., who appear in multiple zones.
     Regionally Specific NPCs: Unique to certain areas
         subtype: mythological figures
@@ -23,13 +14,13 @@
     **douglas
     **stacey
 
-7. Define NPC Allies and Meeting Points (partly done in storyboard)
+4. Define NPC Allies and Meeting Points (partly done in storyboard)
     Sketch out the initial meeting points and conditions for each potential ally. These allies will shape the player’s journey and affect gameplay in a team dynamic.
 
-8. Determine Number and Nature of Endings
+5. Determine Number and Nature of Endings
     Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
 
-9. Graffiti List
+6. Graffiti List
     List snippets of graffiti that provide backstory and environmental context without overt exposition, reinforcing the adversarial feel.
 
-10. update the map
+7. update the map
