@@ -1,85 +1,7 @@
-1. Generate the Menu
-    Create a draft of the user interface and navigation. A clear, well-organized menu can elevate the player experience, especially for a text-based game.
-        Quests
-        Inventory
-        Equipment
-        Map
-        Hint
-        Manual/Instructions
-        Save
-        Load
-        Exit the Game
-        Close the Menu
------------------------------------------------------
-There will have to be 9 different maps, and the one that gets calledwill have to depend on the current level
-    possibly, see how terminal ascii-based "animations" work -- consider having the boundry of the current area alternate | \ - / |  and so on if i can figure out how to make those animations work
------------------------------------------------------
-        Quests
-        Active:
-            Description:
-            Next step:
-            *and so on*
-        Completed:
-            List name and description
-        *IF* there are more than can fit on one page, display more with a next option
-        Display completed from newest to oldest
------------------------------------------------------
-        Inventory
-            Carried
-                Resources
-                Traps
-                Weapons
-                Armor
-                Other
-            Stored
-                Resources
-                Traps
-                Weapons
-                Armor
-                Other
------------------------------------------------------
-        Equipment
-            PC
-                weapon
-                armor
-                other
-            npc1
-                weapon
-                armor
-                other
-            npc2
-                weapon
-                armor    
-                other
-            *npc1 and npc2 are only visible IF they exist in the party*
------------------------------------------------------
-        Hint
-            Display hint, or advise that there are none available
-                advise on how to get them
------------------------------------------------------
-        Manual
-            Objective
-            List of Commands
------------------------------------------------------
-        Save
-            *open system file explorer to choose save location*
------------------------------------------------------
-        Load
-            *open system file explorer to choose a file to load*
------------------------------------------------------
-        Exit the Game
-            Confirm (y/n)
------------------------------------------------------
-        Close the Menu
-            it just closes
-        
-        
-        
-
-2. Define Hint Mechanics
+1. Define Hint Mechanics
     Decide on how hints are earned (perhaps via progress, certain achievements, or bartering). Plan a "vague-but-helpful" system that fits the game's mysterious tone.
 
-3. List of NPCs
+2. List of NPCs
     Generic NPCs: Scavenger, wanderer, shopkeeper, etc., who appear in multiple zones.
     Regionally Specific NPCs: Unique to certain areas
         subtype: mythological figures
@@ -89,15 +11,15 @@ There will have to be 9 different maps, and the one that gets calledwill have to
     **douglas
     **stacey
 
-4. Define NPC Allies and Meeting Points (partly done in storyboard)
+3. Define NPC Allies and Meeting Points (partly done in storyboard)
     Sketch out the initial meeting points and conditions for each potential ally. These allies will shape the player’s journey and affect gameplay in a team dynamic.
 
-5. Determine Number and Nature of Endings
+4. Determine Number and Nature of Endings
     Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
 
-6. Graffiti List
+5. Graffiti List
     List snippets of graffiti that provide backstory and environmental context without overt exposition, reinforcing the adversarial feel.
 
-7. update the map
+6. update the map
 
-8. generate ascii headers
+7. generate ascii headers
