@@ -24,3 +24,5 @@
     List snippets of graffiti that provide backstory and environmental context without overt exposition, reinforcing the adversarial feel.
 
 7. update the map
+
+8. generate ascii headers
