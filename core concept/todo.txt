@@ -17,3 +17,7 @@
 4. update the map
 
 5. generate ascii headers
+
+6. Most Quests are in a "first draft" state
+    update them narratively 
+    integrate the npc list as quest givers, etc

@@ -3,6 +3,9 @@ In the ruins, the player encounters three merchants—each with a unique but ove
 
 Setup: Each merchant has a description, one major item the player needs, and two or three additional items they’re willing to exchange, but each will only agree to a trade if the player has something specific or can meet a condition. For instance:
 
+Nora, Joyce, and Pearl are the quest givers.
+moirai? (research)
+
 Merchant A: Has a water purification tablet but only trades it for food rations and one additional item of low value.
 Merchant B: Has a fuel canister and will trade it for a rare scavenged tool or a piece of technology.
 Merchant C: Offers a map of the area but only accepts two items of moderate value, which could be things like medical supplies or durable clothing.

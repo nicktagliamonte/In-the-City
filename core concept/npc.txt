@@ -1,0 +1,36 @@
+Categories:
+    Generic
+        Scavenger
+        desperate wanderer
+        acolyte
+        bandit
+
+        shopkeeper
+        medic
+        engineer
+        drifter
+    Region specific Generic
+        dead zone - father/mother/child/family
+        market ruins - grifter
+        cobbs creek - hermit
+        shattered galleries - cultist
+        metalwoods - dryad (research)
+        liacouras - phantom
+        steel shores - busker
+        shattered cliffs - Watcher
+        city hall - (generic npc's here will be modeled on the player themselves)
+    region specific mythological
+        dead zone - Sloth (norse, get the right name)
+        market ruins - Hermes
+        shadowed streets - Stribog
+        shattered galleries - akkorokamui
+        metalwoods - fomorian
+        Liacouras haunts - mimic
+        steel shores - kitsune
+        shattered cliffs - Asterius
+        heart of the loop - i need one, something Lovecraftian with religious undertones.  azathoth is a suggestion but it's also ripped right from lovecraft
+    allies
+    Enemies
+    party members
+    quest givers
+    more detailed misc/flavor characters
