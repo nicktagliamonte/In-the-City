@@ -1,7 +1,4 @@
-1. Define Hint Mechanics
-    Decide on how hints are earned (perhaps via progress, certain achievements, or bartering). Plan a "vague-but-helpful" system that fits the game's mysterious tone.
-
-2. List of NPCs
+1. List of NPCs
     Generic NPCs: Scavenger, wanderer, shopkeeper, etc., who appear in multiple zones.
     Regionally Specific NPCs: Unique to certain areas
         subtype: mythological figures
@@ -11,15 +8,12 @@
     **douglas
     **stacey
 
-3. Define NPC Allies and Meeting Points (partly done in storyboard)
+2. Define NPC Allies and Meeting Points (partly done in storyboard)
     Sketch out the initial meeting points and conditions for each potential ally. These allies will shape the player’s journey and affect gameplay in a team dynamic.
 
-4. Determine Number and Nature of Endings
+3. Determine Number and Nature of Endings
     Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
 
-5. Graffiti List
-    List snippets of graffiti that provide backstory and environmental context without overt exposition, reinforcing the adversarial feel.
+4. update the map
 
-6. update the map
-
-7. generate ascii headers
+5. generate ascii headers
