@@ -25,3 +25,22 @@ The Vault Room - Shattered Memories:
 At the museum’s heart lies the Forgotten Vault, a reinforced room displaying fractured art pieces and artifacts. To open the vault, the player must align fragments of a distorted mural across the walls, revealing an access code hidden in the mural’s design.
 Puzzle: This final puzzle combines memory and perception, as the player rearranges wall fragments in the correct sequence to unlock the vault.
 Outcome: After solving the central puzzles, the player gains access to the vault, which contains unique resources: a rare relic, valuable medkits, and a small stash of rations. This is one of the richest caches the player will find, making the challenge well worth the effort.
+
+Puzzle 1: The Infinite Hallway (Escape Room)
+Description:
+The player steps into a gallery room lined with art pieces that seem familiar yet slightly off, as if they’re from a dream or memory. Once inside, the door they entered from has disappeared. Ahead, there’s only a hallway leading deeper into the museum.
+
+Objective:
+Escape the gallery room by solving clues embedded within the paintings on the walls.
+
+Details:
+
+Each painting seems to represent an event or object from earlier in the game (like a dog collar or a street sign), distorted as if seen through a lens. The player quickly realizes that these paintings change when viewed from different angles.
+On one wall, a large painting titled Exit shows a series of symbols that look like directions or positions.
+If the player touches or interacts with each painting in a specific order, corresponding to these symbols, they hear a sound as if something in the room shifts or clicks into place.
+At a certain point, the lights flicker, and for a brief moment, one painting shows an image of a door. When the player turns back to that spot, the door is real and functional.
+Solution:
+The player must decipher the sequence on the Exit painting and interact with each of the other paintings accordingly. This sequence triggers the door’s appearance, allowing them to escape.
+
+Hint:
+Written faintly in the bottom corner of the Exit painting are the words, “Only by following the brush strokes of memory will you find the way out,” guiding players to look closely at the distorted depictions of familiar items.

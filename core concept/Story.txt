@@ -32,7 +32,7 @@
 			* decayed network of street vendors and scavengers haggling over scraps
 			* makeshift stalls line what used to be storefronts
 			* main story quest 1 - claiming the shelter
-			* optional quest - 
+			* optional quest - The Mismatched Merchants
 			* meet alvin, a negotiator
 				* potential group member 3
 				* A trader NPC with a dark sense of humor teaches the player how to haggle and scavenge, while offering hints about the city’s power structure and the strange artifacts that some survivors wield. 
