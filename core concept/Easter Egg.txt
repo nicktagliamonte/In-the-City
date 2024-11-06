@@ -1,4 +1,4 @@
-Am I actually going to waste time writing an entirely unique ending that will never be experienced outside of testing?
+Am I actually going to waste time writing and coding an entirely unique ending that will never be experienced outside of testing?
     yes
 will it be the only even vaguely hopeful ending available in this game?
     also yes
@@ -6,13 +6,17 @@ will it be the only even vaguely hopeful ending available in this game?
 The Living Conveyance Twist
 Twist: "Your conveyance is a living thing that you have been using."
 
-Context: The vehicle or means of transportation that the player has been using (whether it’s a robotic car, a futuristic bike, or some other mode of conveyance) turns out to be alive, or has absorbed part of the player’s essence to fuel its operations. It’s not just a tool—it has consciousness or some connection to the environment, and the player has been exploiting it unknowingly.
-Easter Egg: Players who choose to never use the conveyance or choose alternative methods of transport would unlock an ending where they realize that by avoiding the conveyance, they saved the creature (or technology) from being exploited, or helped it maintain its integrity. This could also reveal that the conveyance was a vital part of the environment’s balance, and the player's actions kept things in harmony.
-Ending: As the final moments approach, you are faced with the choice to use the conveyance and be sent back in time. But you, having either avoided or dismissed the conveyance throughout the game, are now met with an alternate reality. Instead of riding the living conveyance back to a better time, you are instead transported to the same moment—but you’re not on the conveyance. You're standing beside it.
-You stand in front of the conveyance, no longer bound to its mechanisms, as the world around you shifts. The time travel that was to happen has not been triggered by your actions—instead, you’ve caused it to never happen at all. Without the conveyance, the cycle never starts, and yet the conveyance itself is the catalyst for change. You feel its silent gaze upon you, and, for the first time, you realize that you were never meant to use it.
+Context: The conveyance that the player has been using turns out to be alive, and has has absorbed part of the player’s essence to fuel its operations. It’s not just a tool—it has consciousness and connection to the environment, and the player has been exploiting it unknowingly.
+Easter Egg: Players who choose to never use the conveyance or choose alternative methods of transport would unlock an ending where they realize that by avoiding the conveyance, they saved the creature from being exploited, or helped it maintain its integrity. 
+            This also reveals that the conveyance was a vital part of the environment’s balance, and the player's actions kept things in harmony.
 
-Rather than being swept back to a better time, the conveyance’s deep, sorrowful hum tells you that it has allowed you to break the loop—it was never meant to take you anywhere. Instead, you were meant to choose a path where time is not controlled by it.
-
-The game’s final moments show you a glimpse of a peaceful, untouched world that you helped preserve by opting out of the conveyance's cyclical trap. By rejecting it, you’ve freed yourself—and potentially others—from being ensnared in a loop that was never meant to be.
-
-Final Message: "Perhaps this time... it will be different."
+Ending: As the final moments approach, you are faced with the choice to use the conveyance and be sent back in time. But you, having either avoided or dismissed the conveyance throughout the game, are now met with an alternate reality. 
+        Instead of riding the living conveyance back to a better time which will ultimately end in this time -- this game -- because of your presence, you are instead transported to the same moment — but you’re not on the conveyance. You're standing beside it.
+        You stand beside the conveyance, no longer bound to its mechanisms, as the world around you shifts. The time travel that was to happen has not been triggered by your actions—instead, you’ve caused it to never happen at all. Without the conveyance, the cycle never starts. 
+        You feel its silent gaze upon you, and, for the first time, you realize that you were never meant to use it.
+        
+        Rather than being swept back to a better time, the conveyance’s deep hum tells you that it has allowed you to break the loop—it was never meant to take you anywhere. Instead, you were meant to choose a path where it is not controlled by time.
+        
+        The game’s final moments show you a glimpse of a peaceful, untouched world that you helped preserve by opting out. You’ve freed yourself—and others—from being ensnared in a loop that was never meant to be.
+        
+        Final Message: "Perhaps this time... it will be different."
