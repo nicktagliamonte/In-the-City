@@ -47,6 +47,7 @@
         * resolve conflict
         * leverage npc for resources or hints
         * persuasion and insight allows access to hidden resources, unique interaction outcomes
+        * floor price for negotiations is 5% less than other classes
 * starting stats
     * technologist
         * str 6 dex 8 con 8 int 12 wis 10 cha 6 health 18 carry 13 energy ?

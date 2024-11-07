@@ -7,12 +7,13 @@
 * use [object]: Activates or utilizes an item from the player's inventory, which could be essential for solving puzzles.
 * talk to [character]: Initiates a conversation with a non-player character (NPC), leading to potential quests or information.
 * search [area/object]: Looks for hidden items or clues in a specific area or object, which may yield unexpected results.
+* counter [price]: dialogue specific option that will attempt to counter a price from a sales based npc.  successive failed attempts will end the interaction
 * craft: Enters a menu for crafting items
 * combat commands: fight (enters fight menu), flee (leaves the fight with consequences), item (enters an inventory menu)
 * menu: enters main menu with options including
     * map
     * commands
-* where am i: describes location (region, relative distance and cardinal direction to safe zone/economic zone)
+* locate: describes location (region, relative distance and cardinal direction to safe zone/economic zone)
 * hide: attempts to hide or otherwise conceal presence
 * fight [character]: initiates combat
 * say [content]: says the contents of [content] (to the character being spoken to if in dialogue, else just into the air)

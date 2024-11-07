@@ -1,15 +1,4 @@
-Puzzle 1: "The Door Code" - Basic Observation & Logic Puzzle
-Setting: The player encounters a locked metal door in an old, crumbling building. A panel next to it has faded markings and four rotating dials.
-
-Puzzle: To open the door, the player needs to figure out the correct code by examining their surroundings.
-
-Hints & Clues:
-
-Nearby, there’s a graffiti-covered wall with a series of numbers partially scratched out, such as "12-??-45-78."
-Observing the area, the player might find scraps of paper or messages on walls giving hints like "Second number is one less than the first" or "The final digit matches the first."
-Solution: The player must rotate the dials to match the numbers in the correct order, based on context clues.
-
-Purpose: This puzzle teaches players to investigate and connect hints from the environment, preparing them for more complex logic-based challenges.
+WHERE APPROPRIATE, HAVE THESE PUZZLES "BE" THE HIDDEN AREA FOR THE REGION
 
 Puzzle 2: "The Rations Stash" - Resource Management & Exploration
 Setting: In a dim basement room, the player finds an old storage cabinet chained shut. They’ll need a tool to open it but have to work with limited resources to make it usable.
@@ -26,28 +15,28 @@ Solution: The player finds a combination of items and assembles them to create a
 
 Purpose: This puzzle reinforces resourcefulness, exploration, and experimentation, which will be crucial in later, more challenging puzzles.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Puzzle 1: The Mismatched Merchants
-In the ruins, the player encounters three merchants—each with a unique but overlapping set of resources that they are willing to barter. Each merchant has one essential item the player needs but will only trade under specific conditions.
+Puzzle Concept: The Three-Step Chinese Puzzle Box
+Location: Deep within the dungeon, surrounded by dim torchlight and the echoes of dripping water, the player finds an ornate Chinese puzzle box resting on an ancient stone pedestal. The box has intricate carvings depicting cycles of life and hidden mechanisms that must be manipulated to open it.
 
-Setup: Each merchant has a description, one major item the player needs, and two or three additional items they’re willing to exchange, but each will only agree to a trade if the player has something specific or can meet a condition. For instance:
+Objective: Solve the puzzle box to reveal a hidden key or artifact necessary to progress further in the dungeon.
 
-Merchant A: Has a water purification tablet but only trades it for food rations and one additional item of low value.
-Merchant B: Has a fuel canister and will trade it for a rare scavenged tool or a piece of technology.
-Merchant C: Offers a map of the area but only accepts two items of moderate value, which could be things like medical supplies or durable clothing.
-Puzzle Mechanics: The player needs to determine how to acquire each desired item by figuring out a chain of trades between merchants. For example, trading with Merchant A might unlock a resource that Merchant B desires, which then helps secure the trade with Merchant C.
-
-see side quests/mismatched merchants.txt for more
-
-Puzzle 2: Locked Chest with Negotiation Codes
-While exploring the arch street, the player finds an old, battered chest with a numeric lock. To open it, they need to gather information from NPCs about the lock's code.
-
-Setup: The player has to talk to various NPCs scattered around the marketplace to piece together parts of the code. Each NPC offers clues as to one of the code numbers, but they may not always give up their information freely. Players will need to trade or negotiate to get these crucial hints. For example:
-
-NPC 1: Has knowledge of the first number and offers it in exchange for a simple item, like a scrap of fabric or small tool.
-NPC 2: Knows the second number but only gives it if the player shares information about a hidden area in the arch street.
-NPC 3: Knows the third number but requires the player to help with a small side task, like clearing an obstacle nearby or finding a minor item.
+Step 1: The Sliding Panel
+Mechanic: The player must slide panels on the side of the box into the correct sequence to reveal a hidden engraving. The panels feature four symbols: water, flame, wind, and stone.
+Clue: Engraved on the pedestal is a faded inscription: “First, calm before the storm.”
+Solution: The correct sequence is moving the panel with water first, followed by the panel with wind.
+Feedback: Once the correct sequence is entered, the box makes a subtle clicking sound, and a small panel unlocks, allowing the player to move to the next step.
+Step 2: Rotating Rings
+Mechanic: The middle of the box features three concentric rings that can rotate, each marked with parts of a symbol. The player must align the rings to form a complete image of a dragon, symbolizing power and wisdom.
+Clue: A mural on the wall nearby shows a dragon with its body coiled, with faint arrows pointing in the order of its segments.
+Solution: Rotate the rings until the dragon is correctly assembled. Players must start by aligning the tail, middle section, and then the head.
+Feedback: The rings snap into place, and a soft glow emanates from the carvings, signaling progress.
+Step 3: Pressure Plates
+Mechanic: The top of the box reveals three small pressure plates, each marked with a unique symbol: an eye, a hand, and a crescent moon. The player must press these plates in the correct sequence to complete the puzzle.
+Clue: A scrap of parchment found in a corner reads: “See, touch, sleep—the way to peace.”
+Solution: The player must press the plates in the order of the eye, the hand, and then the crescent moon.
+Feedback: When pressed in the correct sequence, the box emits a final click, and its lid opens, revealing the hidden key or artifact inside.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Puzzle 1: The Shifting Alleyways
+Puzzle 1: The Shifting Alleyways - this is to find one of this areas hidden zones
 Description:
 As the player moves through cobbs creek, the power surges affect their surroundings, and alleys seem to reconfigure themselves. Some paths that appear straightforward during a power surge will shift when the lights flicker out, creating an unpredictable maze.
 
@@ -97,42 +86,7 @@ At certain intervals, the player may encounter a statue pointing or looking towa
 Solution:
 The player needs to carefully observe the small details that change between loops to figure out the correct path. By aligning their movements with visual cues and subtle hints, they finally reach a landing that doesn’t loop back but instead leads them deeper into the Art Museum.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-Puzzle: Rusted Roots Maze
-Description:
-The player enters a dense section of the Metalwoods where twisted metal trees form a maze-like barrier. The ground is damp, and pools of standing water are scattered around, but these pools surge with intermittent, sparking electrical currents. One wrong step, and the player could be fried by an unexpected jolt of electricity.
-
-Objective:
-Navigate through the maze by observing and timing the patterns of the electricity to cross safely.
-
-Details:
-
-Scattered throughout the maze are pools of water that conduct electrical surges from exposed wires in the twisted trees. The surges pulse at regular intervals, but certain pools pulse out of sync with the others.
-Near the entrance to the maze, there’s a note scrawled on a piece of metal scrap that says, “Watch the rhythm, and the way will unfold. Misstep, and you’ll become part of the woods.”
-By paying close attention to the timing of the surges, the player can identify safe moments to cross between sections of the maze.
-Midway through the puzzle, they find a rusted metal lever half-buried in the ground. Pulling it allows them to control a few specific pools, diverting the current in them long enough to safely navigate the more challenging areas of the maze.
-Solution:
-The player has to carefully time their movements based on the patterns of the electrical surges, using the lever strategically to control some of the most dangerous pools as they progress. Once they navigate past the final pool and step onto safe ground, they’ll see the path ahead open up.
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-Puzzle: The Echoing Bell Tower
-Description:
-The player approaches the Haunts’ iconic bell tower, which seems to resonate with an unnatural energy. The only way forward is through this tower, but as they ascend, they encounter looping staircases and disorienting echoes that seem to mock their progress. Each time they go up a certain number of steps, they find themselves seemingly back at the base again, as if they hadn’t moved at all.
-
-Objective:
-Break the illusion to escape the loop and reach the top of the tower.
-
-Details:
-
-Each time the player completes a loop, they notice subtle changes, like the inscription on the walls slightly shifting, a lantern swinging slower, or their own footsteps echoing back phrases they haven’t said.
-Scattered throughout the staircase are tiny inscriptions that read, “Remember what you hear,” and “Truth hides between the chimes.”
-If they listen carefully, they’ll occasionally hear faint bells chiming in an inconsistent pattern. This pattern is actually a clue: each ring corresponds to a floor number, indicating when they need to turn back instead of continuing upwards.
-After a few loops, they also find an old, cracked hand mirror, which subtly reflects words and inscriptions differently than they appear in real life.
-Solution:
-To escape the loop, the player must follow the bell chimes carefully. For example, if the bells ring twice and then once, they should ascend two flights, then descend one. This sequence is intentionally misleading without careful observation and reliance on sound. The mirror will occasionally flash words in the reflections that don’t match what’s actually written, hinting when a player is about to take a wrong turn.
-
-Hint:
-In one of the loops, faint graffiti on the wall reads, “Echoes lie; trust the gaps,” which nudges players to pay attention to the moments between bell chimes rather than only the sounds themselves.
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-Puzzle 1: The Bargaining Seagull
+Puzzle 1: The Bargaining Seagull - encountered IF the player has the golden can
 Description:
 The player encounters a rather smug-looking seagull perched atop a crate of supplies that they clearly need. The seagull squawks incessantly each time the player reaches for the supplies, clearly expecting a trade. The bird has gathered a small "nest" of odd trinkets around it, including shiny bottle caps, a couple of shells, a plastic fork, and what appears to be an old piece of jewelry.
 
@@ -143,9 +97,9 @@ Details:
 
 The player can examine the seagull’s collection, noticing that everything the bird has hoarded is either shiny or reflective.
 If the player tries to simply take the supplies, the seagull flaps around and squawks angrily, making it clear it’s not letting them off easily.
-The player has a few common items in their inventory that they might not have thought valuable—an empty candy wrapper, a button, and a tin can lid.
+The player has the golden can
 Solution:
-The player needs to offer one of the shiny items to the seagull, which will happily accept it and fly off with its new treasure, leaving the supplies behind. If the player offers the wrong item (like something not shiny), the seagull will simply give them a disappointed look and ruffle its feathers, as if judging their lack of understanding.
+The player needs to offer it to the seagull, which will happily accept it and fly off with its new treasure, leaving the supplies behind. If the player offers the wrong item (like something not shiny), the seagull will simply give them a disappointed look and ruffle its feathers, as if judging their lack of understanding.
 
 Hint:
 In graffiti nearby, a phrase reads, “One bird’s trash is another’s treasure.” This playful clue hints at the seagull’s fondness for shiny junk.

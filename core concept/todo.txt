@@ -1,28 +1,4 @@
-1. Most Quests are in a "first draft" state
-    update them narratively 
-    integrate the npc list as quest givers, etc
-    put items into quests correctly
-
-2. add a dead zone main quest (prologue)
-
-3.  do a final draft on all the puzzles
-    realistically, they should all be involved in each quest...right?
-
-4. alignment/reputation -- define the whole system
-    then update all npc's
-
-5. define chance encounter frequency for each encounterable npc in each region
-    also add health for all combat related npc
-    add detection chance for combat related npc
-
-6. the negotiator needs special prices
-
-7. you need a bartering system for shopkeepers
-    add command: counter
-        should the player be rewarded for using persuasive language?
-
-8. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
-
-9. gonna have to do the storyboarding/define branching paths
-
-10. make code todo
+make code todo
+    just want to have it recorded that dialogue will be fully scripted
+    basically all flavor text will come as i code individual regions
+    define chance encounter frequency region by region, npc by npc, at code time

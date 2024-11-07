@@ -1,18 +1,17 @@
-Optional Side Quest: Lost in the Murk
-Objective: Help a lost NPC navigate through the Metalwoods to find their way back to safety.
+uzzle: Rusted Roots Maze
+Description:
+The player enters a dense section of the Metalwoods where twisted metal trees form a maze-like barrier. The ground is damp, and pools of standing water are scattered around, but these pools surge with intermittent, sparking electrical currents. One wrong step, and the player could be fried by an unexpected jolt of electricity.
 
-Quest Overview: Players encounter a frantic survivor named Kira, who has been separated from her group while foraging in the Metalwoods. She seeks help to find her way back, fearing the fomorian might still be lurking nearby.
+Objective:
+Navigate through the maze by observing and timing the patterns of the electricity to cross safely.
 
-Quest Steps:
+Details:
 
-Meet Kira:
-Upon finding Kira, players learn about her lost companions and the dangers lurking in the woods. She offers a reward in return for their assistance.
+Scattered throughout the maze are pools of water that conduct electrical surges from exposed wires in the twisted trees. The surges pulse at regular intervals, but certain pools pulse out of sync with the others.
+Near the entrance to the maze, there’s a note scrawled on a piece of metal scrap that says, “Watch the rhythm, and the way will unfold. Misstep, and you’ll become part of the woods.”
+By paying close attention to the timing of the surges, the player can identify safe moments to cross between sections of the maze.
+Midway through the puzzle, they find a rusted metal lever half-buried in the ground. Pulling it allows them to control a few specific pools, diverting the current in them long enough to safely navigate the more challenging areas of the maze.
+Solution:
+The player has to carefully time their movements based on the patterns of the electrical surges, using the lever strategically to control some of the most dangerous pools as they progress. Once they navigate past the final pool and step onto safe ground, they’ll see the path ahead open up.
 
-Navigate Together:
-Players must guide Kira through the park, avoiding areas where the fomorian is known to roam. Along the way, they can gather additional resources and clues about the area’s dangers.
-
-Face the Threat:
-As they navigate, players encounter the fomorian and must work together with Kira to either distract it or set up a trap to ensure their escape.
-
-Return to Safety:
-If players successfully lead Kira back to the picnic area, they receive the leather wallet flavor item and resource as a reward, along with insight into the history of the Metalwoods.
+The player encounters the leather wallet in this section.
