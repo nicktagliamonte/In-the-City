@@ -1,43 +1,31 @@
 import java.util.Scanner;
 
 public class GameEngine {
-    Scanner scanner = new Scanner(System.in);
+    private GameState gameState = new GameState();
+    private Scanner scanner = new Scanner(System.in);
+    private Player player = new Player();
 
     public void startGame() {
         boolean isRunning = true;
         while (isRunning) {
-            //capture and process user input
-            String command = scanner.nextLine();
-            //parse the command
+            System.out.print("Enter command: ");
+            String input = scanner.nextLine();
+            String[] splitInput = input.split(" ", 2);
+            String commandName = splitInput[0].toLowerCase();
+            String[] args = (splitInput.length > 1) ? splitInput[1].split(" ") : new String[0];
 
-            //game state management
-                //this will rely on classes like player, map, and gamestate
-            
-            //render or print outputs
-            //get a message to render (some variety of methods will generate these i think, then there will be a getMessage method)
-            String message = command;
-            render(message);
+            GameCommand command = GameCommand.fromString(commandName);
+            if (command != null) {
+                command.execute(args, gameState);
+            } else {
+                System.out.println("Unknown command.");
+            }
 
-            if (command.equalsIgnoreCase("quit")) {
+            if (commandName.equals("quit")) {
                 isRunning = false;
             }
         }
         scanner.close();
         System.out.println("Thanks for playing!");
     }
-
-    public void render(String message) {
-        System.out.println(message);
-    }
-
-    /**
-    public void triggerEvent(String eventName) {
-        switch (eventName) {
-            case "findTreasure":
-                System.out.println("You found a hidden treasure!");
-                break;
-            // Add more events as needed
-        }
-    } 
-    */
 }
