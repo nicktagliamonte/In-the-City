@@ -1,36 +1,33 @@
 1. Determine Number and Nature of Endings
     Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
+        ORGANICALLY, IT'S PRobably shaping up to be "easter egg" as the regular good ending.  time loop/plane shift as the medium.  and the sun turning off as the bad.  i really need to define the condition on which the sun turns off.
 
-2. update the map
+2. generate ascii headers
 
-3. generate ascii headers
-
-4. Most Quests are in a "first draft" state
+3. Most Quests are in a "first draft" state
     update them narratively 
     integrate the npc list as quest givers, etc
-    decide whether there should be a (7) add npc's to give quests
+    put items into quests correctly
 
-5. add a dead zone main quest (prologue)
+4. add a dead zone main quest (prologue)
 
-6. rename regions to be...better
+5. rename regions to be...better
 
-7. put the items into the quests correctly
+6.  do a final draft on all the puzzles
 
-8.  do a final draft on all the puzzles
-
-9. alignment/reputation -- define the whole system
+7. alignment/reputation -- define the whole system
     then update all npc's
 
-10. define chance encounter frequency for each encounterable npc in each region
+8. define chance encounter frequency for each encounterable npc in each region
     also add health for all combat related npc
     add detection chance for combat related npc
 
-11. the negotiator needs special prices
+9. the negotiator needs special prices
 
-12. you need a bartering system for shopkeepers
+10. you need a bartering system for shopkeepers
     add command: counter
         should the player be rewarded for using persuasive language?
 
-13. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
+11. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
 
-14. make code todo
+12. make code todo
