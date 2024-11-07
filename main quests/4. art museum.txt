@@ -1,11 +1,11 @@
 Main Quest: Into the Shattered Depths
-Objective: Reach the heart of the Shattered Galleries and solve the central puzzle to unlock the “Forgotten Vault,” a hidden area rumored to hold resources and artifacts from the old world.
+Objective: Reach the heart of the art museum and solve the central puzzle to unlock the “Forgotten Vault,” a hidden area rumored to hold resources and artifacts from the old world.
 
 Quest Overview: The player begins in the main gallery of the Art Museum, only to find that typical navigation techniques don’t work here. Paths twist, rooms seem to rearrange themselves, and strange sounds lure the player in the wrong direction. They must solve a series of perception-based puzzles to reach the core of the museum and unlock the vault.
 
 Quest Steps:
 
-Enter the Shattered Galleries:
+Enter the art museum:
 
 Upon entry, the player is immediately struck by the strange geometry of the space. Doorways lead back to where they started, staircases loop endlessly, and objects seem to change positions when out of sight.
 Solve the Hallway of Shifting Perspectives:

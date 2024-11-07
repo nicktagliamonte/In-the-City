@@ -20,4 +20,4 @@ Confront the Bell Ghost:
 
 Eventually, the player reaches the belltower, where a ghostly figure awaits. This figure seems familiar, as if they are somehow connected to the player. However, as the player approaches, the figure fades, and the bell tolls loudly.
 When the player looks back, the figure has disappeared, leaving a cryptic note on the ground: “You are not who you think you are.”
-Outcome: The player is left questioning their own identity and purpose in the city. They gain no physical reward but acquire a sense of foreboding and self-doubt that carries through future encounters. This quest sets the tone for the Liacouras Haunts, embedding mistrust and disorientation.
+Outcome: The player is left questioning their own identity and purpose in the city. They gain no physical reward but acquire a sense of foreboding and self-doubt that carries through future encounters. This quest sets the tone for the liacouras, embedding mistrust and disorientation.

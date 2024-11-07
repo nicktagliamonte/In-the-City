@@ -1,10 +1,10 @@
 Quest Title: Circuit Breaker
-Quest Giver: eli, a former engineer who runs a hidden laboratory on the outskirts of the shattered cliffs.
+Quest Giver: eli, a former engineer who runs a hidden laboratory on the outskirts of the edge of the world.
 
 THE AI IS THE CAUSE FOR THE DREAM STATE IN THIS REGION AND REACTIVATED THE DYSON SPHERE ITSELF.
 
 Quest Objectives:
-Location: The Shattered Cliffs/Edge of the World
+Location: The edge of the world/Edge of the World
 
 Quest Details:
 Quest Initiation:

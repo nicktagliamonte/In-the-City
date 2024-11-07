@@ -1,6 +1,6 @@
 Side Quest: "Tangled Signals"
 Overview:
-In the anomolous shattered cliffs, players encounter a malfunctioning Signal Relay Station, crucial for maintaining communication with other survivors. This mini-game quest involves re-establishing the signal by solving a series of puzzles within a time limit.
+In the anomolous edge of the world, players encounter a malfunctioning Signal Relay Station, crucial for maintaining communication with other survivors. This mini-game quest involves re-establishing the signal by solving a series of puzzles within a time limit.
 
 Quest Objectives:
 Access the Relay Station: Find the entrance and bypass the initial security.
@@ -8,7 +8,7 @@ Solve the Signal Puzzles: Complete three mini-puzzles to realign the signals.
 Establish Communication: Successfully re-establish the relay's function before time runs out.
 Quest Details:
 Starting Point:
-While navigating through the shattered cliffs, players discover a crumbling building with flickering lights. Upon entering, they find a broken Signal Relay Station surrounded by debris and static-filled screens.
+While navigating through the edge of the world, players discover a crumbling building with flickering lights. Upon entering, they find a broken Signal Relay Station surrounded by debris and static-filled screens.
 
 Step 1: Access the Relay Station
 

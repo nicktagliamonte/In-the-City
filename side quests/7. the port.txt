@@ -3,7 +3,7 @@ Quest Giver: Rusty, a very dumb humunculus who has lost the magical core that po
 
 Objective: Help Rusty find a new magical core to restore his abilities and unlock the secrets of his creation.
 
-Quest Overview: Rusty, a homunculus made from an odd assortment of shifting clay, roams the Steel Shores area. Despite his playful demeanor, he is deeply concerned because his magical core—a glowing crystal that gives him life—has been stolen. He believes that someone in the area has hidden it among the whimsical maze of warehouses and docks. The player must help Rusty locate his core while uncovering the mysteries of his origins and the magical energy that sustains him.
+Quest Overview: Rusty, a homunculus made from an odd assortment of shifting clay, roams the the port area. Despite his playful demeanor, he is deeply concerned because his magical core—a glowing crystal that gives him life—has been stolen. He believes that someone in the area has hidden it among the whimsical maze of warehouses and docks. The player must help Rusty locate his core while uncovering the mysteries of his origins and the magical energy that sustains him.
 
 Quest Steps:
 Meet Rusty:
@@ -18,7 +18,7 @@ In the old brewery cellar, the player encounters a group of playful sprites who 
 Example Challenge: Solve a riddle or navigate a small maze created by the sprites to retrieve the core without angering them.
 Magical Assistance:
 
-After successfully completing the challenge, the sprites reveal that the core is not just a simple crystal; it’s a powerful artifact that connects to the magical energy of Steel Shores. They explain that it must be recharged at a specific location to regain its full power.
+After successfully completing the challenge, the sprites reveal that the core is not just a simple crystal; it’s a powerful artifact that connects to the magical energy of the port. They explain that it must be recharged at a specific location to regain its full power.
 The player must now accompany the sprites to a hidden spot—the Reflective Tidepool—where the core can absorb the magical essence of the area.
 Recharging the Core:
 
@@ -27,9 +27,9 @@ As the ritual progresses, strange illusions may appear, showcasing different pos
 Return to Rusty:
 
 Once the core is successfully recharged, the player returns to Rusty and hands over the core. He gratefully installs it back into his chest, causing him to glow with renewed energy and magic.
-Rusty reveals his true form as a guardian of the Steel Shores, unlocking new abilities for the player and enhancing the area’s magical ambiance.
+Rusty reveals his true form as a guardian of the the port, unlocking new abilities for the player and enhancing the area’s magical ambiance.
 Reward:
 The player receives a unique item called “Rusty’s Charm,” which grants bonuses related to magical interactions, such as enhanced luck in bartering or the ability to temporarily summon Rusty for assistance in puzzles or minor encounters.
-Additionally, unlocking Rusty's true form may open new pathways or quests in the Steel Shores region, as he becomes a guide to hidden magical secrets.
+Additionally, unlocking Rusty's true form may open new pathways or quests in the the port region, as he becomes a guide to hidden magical secrets.
 Atmosphere Impact:
-This quest reinforces the whimsical and playful atmosphere of Steel Shores while introducing fantasy elements through Rusty's character. It emphasizes the theme of cooperation between magical beings and humans, adding depth to the region's lore and engaging players in the fantastical charm of the area.
+This quest reinforces the whimsical and playful atmosphere of the port while introducing fantasy elements through Rusty's character. It emphasizes the theme of cooperation between magical beings and humans, adding depth to the region's lore and engaging players in the fantastical charm of the area.

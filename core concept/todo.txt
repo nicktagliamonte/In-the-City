@@ -1,33 +1,27 @@
-1. Determine Number and Nature of Endings
-    Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
-        ORGANICALLY, IT'S PRobably shaping up to be "easter egg" as the regular good ending.  time loop/plane shift as the medium.  and the sun turning off as the bad.  i really need to define the condition on which the sun turns off.
-
-2. generate ascii headers
-
-3. Most Quests are in a "first draft" state
+1. Most Quests are in a "first draft" state
     update them narratively 
     integrate the npc list as quest givers, etc
     put items into quests correctly
 
-4. add a dead zone main quest (prologue)
+2. add a dead zone main quest (prologue)
 
-5. rename regions to be...better
+3.  do a final draft on all the puzzles
 
-6.  do a final draft on all the puzzles
-
-7. alignment/reputation -- define the whole system
+4. alignment/reputation -- define the whole system
     then update all npc's
 
-8. define chance encounter frequency for each encounterable npc in each region
+5. define chance encounter frequency for each encounterable npc in each region
     also add health for all combat related npc
     add detection chance for combat related npc
 
-9. the negotiator needs special prices
+6. the negotiator needs special prices
 
-10. you need a bartering system for shopkeepers
+7. you need a bartering system for shopkeepers
     add command: counter
         should the player be rewarded for using persuasive language?
 
-11. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
+8. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
 
-12. make code todo
+9. gonna have to do the storyboarding/define branching paths
+
+10. make code todo

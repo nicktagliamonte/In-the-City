@@ -26,9 +26,9 @@
 				* potential group member number 2
 			* vague advice about survival is given, but not all of it is good
 			* the player has the opportunity to explore the school, but is unable to proceed very far.  this is a very on-rails experience
-			* a scavenger points them to market ruins.  the journey is long and will take a certain quantity of food, but if the player frankford->delaware ave->arch they'll get there in a few hours
+			* a scavenger points them to arch street.  the journey is long and will take a certain quantity of food, but if the player frankford->delaware ave->arch they'll get there in a few hours
 				* vignettes of the journey are shared and the player is allowed to gather resources on the trip.  passing by future points of interest will just produce a "can't go there yet" type message
-		* market ruins
+		* arch street
 			* decayed network of street vendors and scavengers haggling over scraps
 			* makeshift stalls line what used to be storefronts
 			* main story quest 1 - claiming the shelter
@@ -44,7 +44,7 @@
 				* south to walnut then cut west
 				* it's possible here that the player simply does not have enough food and needs to repeat section 2 or spend a night camping to scavenge during the journey
 			* the traps are fully expanded on here, as is crafting
-		* shadowed streets
+		* cobbs creek
 			* the strange power surges from streetlights make visibility low
 			* broken windows
 			* shadows flicker at the edge of players vision
@@ -56,7 +56,7 @@
 			* main quest - forgotten refuge
 			* side quest - old neighborhood ties
 			* by now, it is evident that artifacts are of importance.  player group decides to go to the museum in search
-		* shattered galleries
+		* art museum
 			* this is mostly about puzzles
 			* it's mostly quest driven, as there's barely a safe zone and no economic zone
 			* main - into the shattered depths
@@ -84,19 +84,19 @@
 			* the ghost tells you you have always been friends (see side quest)
 			* the player or party wanders, aimless, back up frankford before winding up accidentally in port richmond
 			* there is a "mimic" type npc who doesn't offer anything and just fucks with you
-		* steel shores
+		* the port
 			* main - enchanted alleys
 			* side - Homunculus's heart
 			* this whole region is relatively safe.  the last 3 have been various versions of fucked up and this is a more pure, more populated section
 			* some kind of trickster god npc is prominent here, but good natured.  kitsune type
 			* continue looking for the relative security of the dead zone, the party proceeds north to the badlands
-		* shattered cliffs
+		* edge of the world
 			* char dev: the player is confronted with survival in a different, somehow less primal form
 			* The lessons of indifference learned in previous regions begin to clash with the harsh, visceral experiences of the Badlands.
 			* The dynamic within the group shifts as they begin to question their motivations
 			* main - circuit breaker
 			* side - tangled signals
 			* the ai tells the player that there is a reason for their presence here.  the ai tells the player that the answer is in center city
-		* heart of the loop
+		* endgame
 			* this is an endgame sequence.  by entering, the player becomes immune to the fear effect
 			* see "main quests/endgame.txt" for specifics

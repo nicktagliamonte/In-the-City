@@ -24,8 +24,8 @@ Player Command Example:
 Response:
     You ascend the staircase, but with every step, the world above and below blurs together. Shadows stretch and compress, revealing glimpses of distant memories that twist into the form of lost souls seeking escape. The higher you go, the more disoriented you feel—are you ascending or descending? Time begins to lose meaning.
 
-Confront the Heart of the Loop:
-At the pinnacle (or nadir), you arrive at an ethereal chamber filled with pulsating light. In the center lies the heart of the loop, a swirling mass of energy that emanates a profound sense of despair and hope. Here, you must confront the essence of the loop and make a choice that will determine the fate of your journey
+Confront the endgame:
+At the pinnacle (or nadir), you arrive at an ethereal chamber filled with pulsating light. In the center lies the endgame, a swirling mass of energy that emanates a profound sense of despair and hope. Here, you must confront the essence of the loop and make a choice that will determine the fate of your journey
 Player Command Example:
     approach the heart
 Response:

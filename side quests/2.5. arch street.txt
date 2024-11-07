@@ -1,9 +1,9 @@
 Optional Quest: The Golden Can
-Location: Market Ruins - Abandoned Storefront
+Location: arch street - Abandoned Storefront
 Objective: Help an eccentric scavenger retrieve an item locked inside an old storage facility.
 
 Quest Overview
-While exploring the Market Ruins, the player encounters an eccentric scavenger named Harv. Harv is known among survivors as a slightly unhinged collector of oddities and discarded treasures. He’s nervously guarding the door to an old, locked storage facility, muttering about "the golden can" hidden inside. Harv insists it’s a relic that could make him “rich beyond reason” and begs the player for help retrieving it, offering a share of whatever’s inside.
+While exploring the arch street, the player encounters an eccentric scavenger named Harv. Harv is known among survivors as a slightly unhinged collector of oddities and discarded treasures. He’s nervously guarding the door to an old, locked storage facility, muttering about "the golden can" hidden inside. Harv insists it’s a relic that could make him “rich beyond reason” and begs the player for help retrieving it, offering a share of whatever’s inside.
 
 Quest Steps
 Speak with Harv

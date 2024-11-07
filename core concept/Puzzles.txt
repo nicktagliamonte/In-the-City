@@ -39,17 +39,17 @@ Puzzle Mechanics: The player needs to determine how to acquire each desired item
 see side quests/mismatched merchants.txt for more
 
 Puzzle 2: Locked Chest with Negotiation Codes
-While exploring the Market Ruins, the player finds an old, battered chest with a numeric lock. To open it, they need to gather information from NPCs about the lock's code.
+While exploring the arch street, the player finds an old, battered chest with a numeric lock. To open it, they need to gather information from NPCs about the lock's code.
 
 Setup: The player has to talk to various NPCs scattered around the marketplace to piece together parts of the code. Each NPC offers clues as to one of the code numbers, but they may not always give up their information freely. Players will need to trade or negotiate to get these crucial hints. For example:
 
 NPC 1: Has knowledge of the first number and offers it in exchange for a simple item, like a scrap of fabric or small tool.
-NPC 2: Knows the second number but only gives it if the player shares information about a hidden area in the Market Ruins.
+NPC 2: Knows the second number but only gives it if the player shares information about a hidden area in the arch street.
 NPC 3: Knows the third number but requires the player to help with a small side task, like clearing an obstacle nearby or finding a minor item.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Puzzle 1: The Shifting Alleyways
 Description:
-As the player moves through Shadowed Streets, the power surges affect their surroundings, and alleys seem to reconfigure themselves. Some paths that appear straightforward during a power surge will shift when the lights flicker out, creating an unpredictable maze.
+As the player moves through cobbs creek, the power surges affect their surroundings, and alleys seem to reconfigure themselves. Some paths that appear straightforward during a power surge will shift when the lights flicker out, creating an unpredictable maze.
 
 Objective:
 Navigate the alleys to reach an exit by keeping track of subtle changes in the alleyway layout each time the lights flicker.

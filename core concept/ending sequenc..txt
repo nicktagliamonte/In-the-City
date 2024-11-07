@@ -1,9 +1,4 @@
-Am I actually going to waste time writing and coding an entirely unique ending that will never be experienced outside of testing?
-    yes
-will it be the only even vaguely hopeful ending available in this game?
-    also yes
-
-The Living Conveyance Twist
+1. The Good Ending: The Living Conveyance Twist
 Twist: "Your conveyance is a living thing that you have been using."
 
 Context: The conveyance that the player has been using turns out to be alive, and has has absorbed part of the player’s essence to fuel its operations. It’s not just a tool—it has consciousness and connection to the environment, and the player has been exploiting it unknowingly.
@@ -19,4 +14,16 @@ Ending: As the final moments approach, you are faced with the choice to use the 
         
         The game’s final moments show you a glimpse of a peaceful, untouched world that you helped preserve by opting out. You’ve freed yourself—and others—from being ensnared in a loop that was never meant to be.
         
-        Final Message: "Perhaps this time... it will be different."
+        Final Message: "Thank you"
+
+2. The Medium Ending: Cyclical Repeats
+Context: As the final moments approach, you are faced with the choice to use the conveyance and be sent back in time. Accepting, you find yourself suddenly alone, in a world with a more 
+recognizable layout for the player.  Cheers go off around you as you are congratulated.  The sphere went up, and you (an undying entity outside of time) are being congratulated for it.
+You sit back accepting the congratulations, shut off to the joy in the room, while you recognize what is to come and where you'll wind up.
+
+Final Message: "Perhaps this time...it will be different."
+
+3. The Bad Ending: The Sun Turns Off
+Context: As the final moments approach, you are faced with the choice to use the conveyance and be sent back in time.  Rejecting, Jormundr speaks with the voice of the AI.  you have 
+chosen poorly.  Darkness falls.  Looking outside, at the one constant of the game -- the sun and the sphere (whose control lights peeked over the horizon even at night) is nowhere to be seen.
+Everything shuts down around you.

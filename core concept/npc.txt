@@ -54,14 +54,14 @@ the conveyance itself
     Flavor Text: "You don’t understand... I need this. Just a little more…"
     Variation:
         In Dead Zone, the Wanderer is simply a pitiful shell of someone trying to survive.
-        In Market Ruins, the Wanderer has a few rags of valuable goods, but is more aggressive and tries to haggle or trade, though poorly.
-        In Liacouras Haunts, the Wanderer might be slightly more cunning, using the environment to their advantage.
-        In Shattered Cliffs, they function as automatons, with glazed over eyes.
+        In arch street, the Wanderer has a few rags of valuable goods, but is more aggressive and tries to haggle or trade, though poorly.
+        In liacouras, the Wanderer might be slightly more cunning, using the environment to their advantage.
+        In edge of the world, they function as automatons, with glazed over eyes.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
     Name: Acolyte
     Role: Strongest random enemy (adversarial, with escalating damage)
-    Location: Regions starting from Cobbs Creek onward, becoming more common with each region until they dominate the Shattered Cliffs.
+    Location: Regions starting from Cobbs Creek onward, becoming more common with each region until they dominate the edge of the world.
 2. Description
     Physical Appearance: Cloaked in tattered, yet ceremonial robes, the Acolyte's face is often obscured by a hood, revealing only glowing eyes or strange, ritualistic markings on their skin. They carry a staff or scepter adorned with symbols of their mysterious faith. The robe may have subtle signs of wear, and their movements often appear deliberate and ritualistic, as if invoking some dark power.
     Personality: The Acolyte is cold and unfeeling, driven by an almost fanatical devotion to their obscure deity or belief system. They speak cryptically, often in riddles or chants, and are quick to strike at any who challenge their faith. Their actions are ruthless and calculating, always aimed at fulfilling some greater, unseen purpose.
@@ -71,11 +71,11 @@ Conversation Options: "The stars are aligned." / "The end is nigh, you cannot es
 Hints Provided: Occasionally mutters cryptic warnings like, “The path you walk will lead you to ruin,” or “The void is already watching.”
 Combat Stats:
     Cobbs Creek: 1d6 damage (basic strikes or magic-based attacks).
-    galleries: 1d8 damage (ranged attacks, magic-enhanced strikes).
+    art museum: 1d8 damage (ranged attacks, magic-enhanced strikes).
     metalwoods: 1d10 damage (magic attacks).
     liacouras: 1d12 damage (dark magic, more complex and focused spells).
-    steel shores: 2d6 damage (powerful force magic, channeling energy into their attacks).
-    shattered cliffs: 2d8 damage (enhanced magical effects, with a greater focus on illusion and psychic attacks).
+    the port: 2d6 damage (powerful force magic, channeling energy into their attacks).
+    edge of the world: 2d8 damage (enhanced magical effects, with a greater focus on illusion and psychic attacks).
     endgame: 2d10 damage (magic that warps reality and induces fear).
 4. Behavior and AI
     Movement/Behavior: random encounter (chance increases with stage)
@@ -83,7 +83,7 @@ Combat Stats:
 5. Notes and Variations
     Flavor Text: "They have shown you to me..." / "You will not escape judgment."
     Variation:
-        In the Shattered Galleries, the Acolyte’s attacks become more elaborate and dangerous, using a variety of magic that influences the environment (e.g., twisting gravity or summoning dark shadows).
+        In the art museum, the Acolyte’s attacks become more elaborate and dangerous, using a variety of magic that influences the environment (e.g., twisting gravity or summoning dark shadows).
         Across all regions, the Acolyte’s demeanor remains the same, though their power becomes progressively more potent as they get stronger.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
@@ -97,12 +97,12 @@ Combat Stats:
 3. Gameplay Elements
     Conversation Options: "Hand over what you got, quick!" / "Don't make me make this ugly." / "You won't leave here in one piece."
     Combat Stats:
-        market ruins: 1d4 damage (basic attacks with blunt or sharp weapons).
+        arch street: 1d4 damage (basic attacks with blunt or sharp weapons).
         cobbs creek: 1d6 damage (mix of ranged and melee, including more frequent use of firearms or makeshift ranged weapons).
-        galleries: 1d8 damage (increased use of firearms, more tactical use of cover and positioning).
+        art museum: 1d8 damage (increased use of firearms, more tactical use of cover and positioning).
         metalwoods: 1d10 damage (aggressive melee and ranged combat with added unpredictability, such as throwing explosive traps).
         liacouras: 1d12 damage (fierce combat style, more precise attacks with stronger weapons, such as crossbows or knives).
-        Steel Shores: 2d6 damage (more brutal, chaotic attacks with a mix of firearms and melee combat, sometimes involving scavenged explosives).
+        the port: 2d6 damage (more brutal, chaotic attacks with a mix of firearms and melee combat, sometimes involving scavenged explosives).
         cliffs: 2d8 damage (advanced, dangerous strategies with a mix of firearms, traps, and direct assault).
         Endgame: 2d10 damage (the highest level of combat proficiency, involving expert tactics and powerful weaponry, including grenades and specialized weaponry).4. Behavior and AI
     Movement/Behavior: The Highwayman appears suddenly between levels when the player transitions from one area to another. They may show up at random moments as the player prepares to enter a new region, often interrupting their journey with a surprise attack. They will never be encountered in a particular region itself, but only when the player moves between stages. They will always approach with the intent to steal from the player or kill them if they resist.
@@ -132,7 +132,7 @@ Schedules: Available during safe zones or market times in economic zones. May no
 
 5. Notes and Variations
 Flavor Text: “Everything has a price, friend. Even your safety.”
-Variation: In the Shattered Cliffs, the Shopkeeper may be a bit more guarded and worn, offering more specialized equipment for harsh environments
+Variation: In the edge of the world, the Shopkeeper may be a bit more guarded and worn, offering more specialized equipment for harsh environments
 =================================================================================================================================================================================================================================================================================================================================
 Medic
 Name: Medic
@@ -181,7 +181,7 @@ Schedules: Found in tech-heavy zones or when the player needs repairs. They may 
 
 5. Notes and Variations
 Flavor Text: “Ah, this old thing? I can have it up and running in no time!”
-Variation: In the Shattered Galleries, the Engineer may specialize in advanced technology or strange devices, offering the player upgrades or tools that tap into the surreal elements of the region.
+Variation: In the art museum, the Engineer may specialize in advanced technology or strange devices, offering the player upgrades or tools that tap into the surreal elements of the region.
 =================================================================================================================================================================================================================================================================================================================================
 Drifter
 Name: Drifter
@@ -216,9 +216,9 @@ Hints Provided: generic banter, region specific
     Description: A quiet family. Their appearance is faded, often looking like a fragmented memory—fathers and mothers with sorrowful eyes, children caught in a moment of loss. They sometimes speak in fragmented sentences, repeating old conversations.
     Behavior: Non-threatening
 =================================================================================================================================================================================================================================================================================================================================
-2. Market Ruins - Grifter
+2. arch street - Grifter
     Role: Negotiation-based enemy (Deceptive Merchant)
-    Location: In the abandoned market district of the Market Ruins.
+    Location: In the abandoned market district of the arch street.
     Description: A slick, opportunistic character who uses charm and persuasion to deceive. The Grifter deals in counterfeit items and promises false deals, preying on the player’s desperation. Their appearance is flashy but disheveled, wearing a mix of rags and stolen luxury goods.
     Behavior: Actively tries to con the player into a bad deal, offering seemingly great trades but eventually leading to disadvantageous outcomes. Can be reasoned with or exposed if the player has good negotiation skills.
     Adversarial: If the player refuses or catches on, they may become aggressive or flee.
@@ -230,10 +230,10 @@ Hints Provided: generic banter, region specific
     Description: A solitary figure, living far from any society. Their appearance is wild, often unkempt and dressed in rags, their face obscured by long hair or a hood. They carry little to no belongings.
     Behavior: The Hermit doesn’t want to engage with anyone, often either ignoring or shooing the player away. They are uninterested in trade, conversation, or assistance. They might mutter cryptic phrases but offer nothing useful.
 =================================================================================================================================================================================================================================================================================================================================
-4. Shattered Galleries - Cultist
+4. art museum - Cultist
     Role: Cultist (Adversarial)
-    Location: Deep within the Shattered Galleries, in ritualistic areas.
-    Description: Dressed in tattered robes adorned with strange symbols, the Cultist is obsessed with some dark belief or force within the Galleries. Their eyes are wide and unblinking, constantly muttering incantations or nonsense.
+    Location: Deep within the art museum, in ritualistic areas.
+    Description: Dressed in tattered robes adorned with strange symbols, the Cultist is obsessed with some dark belief or force within the art museum. Their eyes are wide and unblinking, constantly muttering incantations or nonsense.
     Behavior: Hostile towards outsiders, seeing them as threats to their beliefs. The Cultist might attack on sight or try to manipulate the player with confusing, contradictory statements.
     Adversarial: If the player engages, the Cultist is likely to attack with dark magic or summon strange, unsettling creatures.
 =================================================================================================================================================================================================================================================================================================================================
@@ -243,22 +243,22 @@ Hints Provided: generic banter, region specific
     Description: An ancient, tree-like being whose body is intertwined with the forest. The Dryad is a living tree spirit, rooted to the land, but clearly suffering—its bark cracked and leaves withered.
     Behavior: The Dryad is neutral, offering information on the forest's strange ecology but is too weakened to fully communicate. It will ask for help in healing or understanding the forest’s strange affliction.
 =================================================================================================================================================================================================================================================================================================================================
-6. Liacouras Haunts - Phantom
+6. liacouras - Phantom
     Role: Phantom (Vaguely Benevolent)
-    Location: The eerie, foggy streets and ruined buildings of Liacouras Haunts.
+    Location: The eerie, foggy streets and ruined buildings of liacouras.
     Description: A translucent, ethereal figure, neither fully alive nor dead. The Phantom may take on the appearance of someone familiar to the player, like a loved one or a friend. They emit a soft glow and are often surrounded by an aura of sadness.
     Behavior: Benevolent, providing vague guidance or comfort to the player. The Phantom speaks in riddles or cryptic phrases but generally offers advice on navigating the region or avoiding traps. They do not interact in physical combat but may offer assistance when needed.
 =================================================================================================================================================================================================================================================================================================================================
-7. Steel Shores - Busker
+7. the port - Busker
     Role: Busker (Benevolent but Kinda Grifty)
-    Location: The whimsical, lively waterfront areas of Steel Shores.
+    Location: The whimsical, lively waterfront areas of the port.
     Description: A street performer, often playing an instrument or performing tricks for an audience. The Busker is a cheerful, scrappy individual who lives off tips and entertainment. Their clothing is colorful but worn, and their performance is often upbeat, though they may ask for more than they're owed.
     Behavior: Benevolent but somewhat opportunistic, the Busker might offer songs or performances that boost the player’s morale or provide hints about the region’s secrets. They’ll ask for a donation or trade in return, though they may ask for more than the player is willing to give.
     Adversarial or Friendly: If the player refuses to give a tip or trade, the Busker may become more persistent or try to trick the player into giving.
 =================================================================================================================================================================================================================================================================================================================================
-8. Shattered Cliffs - Watcher
+8. edge of the world - Watcher
     Role: Watcher (Neutral, Dreamlike)
-    Location: The surreal cliffs, dreamlike atmosphere of the Shattered Cliffs.
+    Location: The surreal cliffs, dreamlike atmosphere of the edge of the world.
     Description: A tall, thin figure, barely more than a silhouette, with eyes that shimmer like stars. The Watcher seems to exist out of time, their body often flickering in and out of focus as if they’re not entirely present in the physical world.
     Behavior: Neutral, enigmatic, and dreamlike. The Watcher observes the player from a distance, offering cryptic words and occasionally guiding them toward hidden paths or important locations. Their advice often seems nonsensical but may reveal hidden truths.
     Adversarial or Friendly: The Watcher may react to player decisions, sometimes guiding them, other times remaining distant or offering challenges in the form of riddles or tasks.
@@ -329,7 +329,7 @@ Notes:
 Skogsrå as Protector: In Nordic folklore, the Skogsrå is a protector of the forest, often guiding travelers away from danger. In this urbanized setting, the entity continues this role, guarding the secrets of the school and ensuring the dark, hidden corners of St. Jerome’s stay undisturbed.
 Symbolism of the Past: The Skogsrå embodies the school’s painful past, as a place that’s seen too much, heard too many whispered prayers, and witnessed the darkness of both a religious institution and the city’s decline. She is as much a guardian of its history as she is a spirit of sorrow and caution.
 =================================================================================================================================================================================================================================================================================================================================
-Market Ruins - Hermes
+arch street - Hermes
 Creature: Hermes
 Origin: Greek Mythology
 
@@ -338,7 +338,7 @@ Appearance:
 Form: A slick, fast-talking figure in a worn-out suit, shoes scuffed, with a perpetual smirk. His wings, once proud on his sandals, are now rusted and patched with makeshift fabric, still allowing for occasional flares of speed. His eyes are sharp, filled with quick wit, and his demeanor is ever-changing, shifting between charm and mischief.
 Attributes: Carrying an old briefcase, filled with trinkets, broken tech, and symbols of forgotten commerce. His movements are quick, like a street vendor who’s always looking for the next deal.
 Role and Purpose:
-Hermes serves as the embodiment of commerce and negotiation in the Market Ruins. He's a trickster, a dealer, and an intermediary between the remnants of the old world’s economy and the survivors of the new world. His purpose is to barter information and items, but always at a price, often leading to manipulation or deceit.
+Hermes serves as the embodiment of commerce and negotiation in the arch street. He's a trickster, a dealer, and an intermediary between the remnants of the old world’s economy and the survivors of the new world. His purpose is to barter information and items, but always at a price, often leading to manipulation or deceit.
 
 Behavior:
 
@@ -356,12 +356,12 @@ Charming and Wily: Hermes is smooth-talking, often switching between flattery, p
 Cunning: He’s a master of making deals that benefit him and knows how to leverage any piece of information or item the player has.
 Behavior and AI:
 
-Movement: Always shifting through the Market Ruins, engaging with survivors, scavengers, and the player at random intervals. His physical presence is fleeting, like a shadow in the market, always appearing when least expected.
+Movement: Always shifting through the arch street, engaging with survivors, scavengers, and the player at random intervals. His physical presence is fleeting, like a shadow in the market, always appearing when least expected.
 Reactions to Player Choices:
 If the player attempts to haggle or negotiate, Hermes will twist the deal to his advantage, offering a deal that seems good but may come with unforeseen consequences.
 If the player refuses or challenges his offers, he may grow dismissive or make veiled threats.
 =================================================================================================================================================================================================================================================================================================================================
-Shadowed Streets - Stribog
+cobbs creek - Stribog
 Creature: Stribog
 Origin: Slavic Mythology (God of Winds, Storms, and the Sky)
 
@@ -370,7 +370,7 @@ Appearance:
 Form: A tall, imposing figure wrapped in tattered, wind-blown robes. His body appears to ripple like the air itself, shifting between solid form and a more ethereal, translucent presence. His eyes flicker like distant lightning, glowing in the shadows of the streets. The cloak constantly billows as if stirred by a storm, even when the air is still.
 Attributes: He carries no visible weapon, but his hands are often raised as if controlling the wind itself, summoning gusts and faint tornado-like movements around him. His presence can feel both distant and overwhelming, as though a storm is always on the verge of breaking.
 Role and Purpose:
-Stribog is a harbinger of change, embodying the force of nature that shifts the world around him. In the Shadowed Streets, he is an omen and a force of influence, appearing in moments when the winds of fate are about to change. His nature is neither good nor evil, but instead marked by the unpredictable nature of the winds—sometimes he brings hope, other times destruction.
+Stribog is a harbinger of change, embodying the force of nature that shifts the world around him. In the cobbs creek, he is an omen and a force of influence, appearing in moments when the winds of fate are about to change. His nature is neither good nor evil, but instead marked by the unpredictable nature of the winds—sometimes he brings hope, other times destruction.
 
 Behavior:
 
@@ -390,28 +390,28 @@ Reactions to Player Choices:
 If the player challenges him or questions his intentions, Stribog may remain silent or speak cryptically, offering no clear answers.
 If the player seems resigned to their fate or is overly cautious, he might offer a guiding word, pushing them forward into uncertainty.
 =================================================================================================================================================================================================================================================================================================================================
-Shattered Galleries - Akkorokamui
+art museum - Akkorokamui
 Creature: Akkorokamui
 Origin: Ainu Mythology (Giant sea serpent, often described as a colossal, god-like creature of the deep sea)
 
 Appearance:
 
-Form: Akkorokamui takes the shape of an immense, serpentine creature that appears to float effortlessly through the shadows of the Shattered Galleries. Its body is a mix of ethereal, watery scales and fragmented, jagged forms, as though it is a being both from the deep ocean and the fragmented ruins of the world. Its length is unfathomable, twisting in the darkness with parts of its body slipping through cracks in the environment like liquid.
+Form: Akkorokamui takes the shape of an immense, serpentine creature that appears to float effortlessly through the shadows of the art museum. Its body is a mix of ethereal, watery scales and fragmented, jagged forms, as though it is a being both from the deep ocean and the fragmented ruins of the world. Its length is unfathomable, twisting in the darkness with parts of its body slipping through cracks in the environment like liquid.
 Attributes: The serpent is marked with glowing, eerie eyes that appear as if they are staring straight through the player. Its body is segmented like the wreckage of ancient, rusted machinery, its movements slow yet terrifyingly deliberate. Sometimes its form appears to break apart into swirling water and mist, only to reform elsewhere.
 Role and Purpose:
 
-Akkorokamui is a creature of deep, ancient power, dwelling in the remnants of a world submerged and fractured. It is neither benevolent nor malevolent—its presence is simply an overwhelming force of nature that cannot be reasoned with. In the Shattered Galleries, it manifests as a terrifying force of chaos, erasing all traces of order and sanity within its proximity.
+Akkorokamui is a creature of deep, ancient power, dwelling in the remnants of a world submerged and fractured. It is neither benevolent nor malevolent—its presence is simply an overwhelming force of nature that cannot be reasoned with. In the art museum, it manifests as a terrifying force of chaos, erasing all traces of order and sanity within its proximity.
 Behavior:
 
 Imposing and Unstoppable: Akkorokamui is a passive yet terrifying force. Its very presence distorts reality and space around it, causing the environment to shift and break down. Its movements are erratic, as if the boundaries of reality and the physical world no longer have any control over it.
 Oblivious to the Player’s Presence: While it poses a constant threat, Akkorokamui never directly targets the player. Instead, it creates an oppressive atmosphere, shifting the environment as it passes by. Areas around its presence may collapse or become submerged in shadowy water, and some corridors or rooms are warped into unnatural forms, echoing the creature's divine indifference to the players' existence.
 Special Abilities:
 
-Reality Distortion: Akkorokamui’s presence distorts time and space in the Shattered Galleries. Rooms may warp into endless corridors or vanish entirely. Hallways may collapse, or once accessible locations become suddenly impassable.
+Reality Distortion: Akkorokamui’s presence distorts time and space in the art museum. Rooms may warp into endless corridors or vanish entirely. Hallways may collapse, or once accessible locations become suddenly impassable.
 Water and Mist Manipulation: The creature’s form is tied to water and oceanic elements, and as it moves, it brings with it a creeping tide of mist or water that coats the environment. The mist makes it harder for the player to see, and the water makes the ground slick, requiring cautious movement to avoid falling or slipping.
 Movement/Behavior:
 
-Akkorokamui moves unpredictably through the Shattered Galleries, appearing without warning and passing through walls or floors as if it is part of the very structure itself. There is no way to anticipate its path; players may only sense its approach when the environment begins to shift, mist grows heavier, and the walls seem to breathe in and out.
+Akkorokamui moves unpredictably through the art museum, appearing without warning and passing through walls or floors as if it is part of the very structure itself. There is no way to anticipate its path; players may only sense its approach when the environment begins to shift, mist grows heavier, and the walls seem to breathe in and out.
 As the player nears its territory, a low hum or distant, guttural sound may be heard, reminiscent of an ocean’s depths or thunder breaking on the horizon.
 It does not attack directly but creates an overwhelming sense of danger by altering the world itself, pushing the player to react with caution. The player may need to find ways to circumvent the creature’s influence or wait for its passage.
 Notes:
@@ -463,17 +463,17 @@ Notes and Variations
 Flavor Text: "The water churns with its anger..." / "The depth of the lake is where it thrives."
 Variation: The Fomorian’s abilities change when it is submerged in deeper water. If the player is fighting it near a large body of water, the creature will adapt its attacks, utilizing the surrounding environment more efficiently (e.g., summoning water creatures, pulling the player underwater).
 =================================================================================================================================================================================================================================================================================================================================
-Chaneque - The Unseen Mimic (Liacouras Haunts)
+Chaneque - The Unseen Mimic (liacouras)
 Basic Information
 
 Name: Chaneque (also known as "The Unseen Mimic")
 Role: Unbeatable Monster (Adversarial, Psychological Threat)
-Location: Liacouras Haunts – in the crumbling, mist-laden alleys and abandoned buildings around the old campus, it hides in the shadows, waiting for its next victim.
+Location: liacouras – in the crumbling, mist-laden alleys and abandoned buildings around the old campus, it hides in the shadows, waiting for its next victim.
 Description
 
 Physical Appearance: The Chaneque is a shape-shifting entity, initially appearing as a human figure, but one that constantly shifts in subtle ways, never fully solid. Its form is a distorted silhouette, cloaked in tattered garments that flicker between different colors and textures, as if its skin is constantly mutating. Its eyes, however, are the same: black pools that reflect the player’s fear. When the Chaneque takes the form of a specific person or object, it mimics the essence of its target, but with a slight, uncanny distortion. A voice that seems a little too distant. A shadow too long.
 Personality: The Chaneque is manipulative, playful in a sinister way. It does not speak with words, but instead communicates through visual and auditory illusions, leading the player to believe they are interacting with something familiar. It feeds off the confusion and fear of its victims, taking particular pleasure in causing them to question their own senses. It does not attack directly, instead preferring to toy with the player, keeping them disoriented and vulnerable.
-Background: Born from an ancient, chaotic force that distorts reality and perception, the Chaneque has existed in the underbelly of urban spaces for centuries. It has no true form, no singular identity, and preys on those who stray too far from the safe zones. It lurks in the heart of Liacouras Haunts, manipulating the world around it and trapping the player in loops of false perception. Its presence is more a psychological and existential threat than a physical one.
+Background: Born from an ancient, chaotic force that distorts reality and perception, the Chaneque has existed in the underbelly of urban spaces for centuries. It has no true form, no singular identity, and preys on those who stray too far from the safe zones. It lurks in the heart of liacouras, manipulating the world around it and trapping the player in loops of false perception. Its presence is more a psychological and existential threat than a physical one.
 Gameplay Elements
 
 Combat Stats: The Chaneque cannot be defeated in combat. Attempting to engage it will only result in the player becoming more disoriented or trapped.
@@ -501,19 +501,19 @@ Behavior and AI
 
 Movement/Behavior: The Chaneque moves fluidly and unpredictably. It does not chase the player, but it constantly reappears in places where they do not expect it. It manipulates the environment to force the player into making decisions that lead them deeper into its control. The player might try to escape, but the path they choose often turns out to be the wrong one, with the entity already waiting.
 Reactions to Player Choices: If the player chooses to attack or confront the Chaneque, they will be further disoriented. It will not engage in combat, but instead use their aggression to lead them into more dangerous areas, trapping them in its maze of illusions.
-Schedules: The Chaneque is always present in Liacouras Haunts, but it does not always manifest directly. It may remain passive for a time, only to suddenly show up when the player’s guard is down, using its mimicry to surprise them.
+Schedules: The Chaneque is always present in liacouras, but it does not always manifest directly. It may remain passive for a time, only to suddenly show up when the player’s guard is down, using its mimicry to surprise them.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
 Name: Ashi
 Role: Technologist ally (temporary party member)
-Location: Steel Shores
+Location: the port
 
 2. Description
 Physical Appearance: A lithe, agile fox with a sleek coat that shifts between coppery orange and metallic silver, glinting with an almost holographic effect. Her eyes are bright, playful, and hold a knowing glimmer, always observing more than they reveal. The faint glow of foxfire occasionally dances around her tail or paws, hinting at her mystical nature.
 
 Personality: Yua is an enigmatic, playful trickster with a keen mind and a sharp wit. Though she aids the player with genuine intent, she enjoys playful misdirection and clever riddles to test their problem-solving skills. Her telepathic speech is warm, slightly teasing, and filled with cryptic undertones, leaving the player wondering if she knows more than she lets on.
 
-Background: Known as a guardian of lost secrets and technological wonders, Yua is said to have roamed Steel Shores long before the city’s fall. She is both a guide and a gatekeeper, appearing to those who show a blend of intelligence, curiosity, and respect for the old ways. Her motives are unclear, but her assistance has turned the tide in many desperate situations.
+Background: Known as a guardian of lost secrets and technological wonders, Yua is said to have roamed the port long before the city’s fall. She is both a guide and a gatekeeper, appearing to those who show a blend of intelligence, curiosity, and respect for the old ways. Her motives are unclear, but her assistance has turned the tide in many desperate situations.
 
 3. Gameplay Elements
 Interactions:
@@ -526,39 +526,39 @@ Combat Stats: High dexterity and intelligence; abilities include evasion, magica
 Movement/Behavior: Yua prowls gracefully, staying just out of reach until needed. She’s quick to dart into unseen corners, occasionally appearing atop crumbling structures as a watchful presence.
 Reactions to Player Choices: Will remain loyal to thoughtful and observant players but may withdraw (though not turn hostile) if recklessness becomes a pattern.
 =================================================================================================================================================================================================================================================================================================================================
-Asterius - The Minotaur (Shattered Cliffs)
+Asterius - The Minotaur (edge of the world)
 Basic Information
 
 Name: Asterius
 Role: Legendary Being / Passive Encounter
-Location: Shattered Cliffs – Often found wandering near the edge of the cliffs or within the remnants of the old estates. His presence is associated with the eerie, dreamlike atmosphere of the region.
+Location: edge of the world – Often found wandering near the edge of the cliffs or within the remnants of the old estates. His presence is associated with the eerie, dreamlike atmosphere of the region.
 Description
 
 Physical Appearance: Asterius is a towering creature, half-man, half-beast, with the body of a muscular human and the head of a bull. His fur is matted and weathered, blending with the jagged, rocky terrain of the cliffs. His horns curve upwards like ancient spires, and his eyes, though humanoid, gleam with an unsettling intelligence. His form is a ghostly silhouette against the backdrop of the broken city, looming yet passive, seemingly lost in thought or roaming aimlessly.
 Personality: Asterius is quiet, solitary, and indifferent to the player. He moves with a slow, deliberate pace, often appearing to be deep in contemplation or following some ancient, unknown path. His demeanor suggests a creature that has seen countless years, with little concern for the happenings around him. There is an aura of melancholy around him, as though he carries the weight of an impossible past and is condemned to wander in silence.
-Background: Asterius is an ancient entity, a remnant of a forgotten time. Legend has it that he was once a protector or guardian of the Shattered Cliffs, but the region's collapse and ruin have left him with little purpose. He is not a creature of vengeance or hostility, but rather one of quiet mourning and reflection. The exact cause of his existence is unclear, but he may have been cursed or bound to the cliffs long ago. He represents both the decay and the endurance of ancient forces, unable to escape the region’s relentless erosion.
+Background: Asterius is an ancient entity, a remnant of a forgotten time. Legend has it that he was once a protector or guardian of the edge of the world, but the region's collapse and ruin have left him with little purpose. He is not a creature of vengeance or hostility, but rather one of quiet mourning and reflection. The exact cause of his existence is unclear, but he may have been cursed or bound to the cliffs long ago. He represents both the decay and the endurance of ancient forces, unable to escape the region’s relentless erosion.
 Gameplay Elements
 
 Interactions:
-Minimal Interactivity: The player cannot engage Asterius in combat, nor can they initiate a conversation with him. He exists as a silent presence, observing the player without intervening. His role is to add depth to the atmosphere of the Shattered Cliffs, a symbol of the ancient world lost to time.
+Minimal Interactivity: The player cannot engage Asterius in combat, nor can they initiate a conversation with him. He exists as a silent presence, observing the player without intervening. His role is to add depth to the atmosphere of the edge of the world, a symbol of the ancient world lost to time.
 Hints Provided: None. Asterius does not offer guidance, nor does he interact with the player in a meaningful way. He is a passive element of the environment, serving to underscore the desolation and mystery of the cliffs.
 Behavior and AI
 
 Movement/Behavior: Asterius moves slowly through the region, particularly near the edges of the cliffs or among the ruins of the old estates. He appears to be wandering aimlessly, with no clear destination. His path is erratic, as though he is lost in his own thoughts or memories, though he never ventures into the more dangerous or inaccessible areas of the cliffs.
 Reactions to Player Choices: Asterius does not react to the player's actions. He will not acknowledge the player’s presence unless the player comes very close, and even then, he will only continue on his way without change in his behavior.
-Schedules: Asterius is always present in the Shattered Cliffs but only appears in certain locations and during certain times of day. His movements are slow and aimless, and he can be found at various locations depending on the player’s progress through the area.
+Schedules: Asterius is always present in the edge of the world but only appears in certain locations and during certain times of day. His movements are slow and aimless, and he can be found at various locations depending on the player’s progress through the area.
 Notes and Variations
 
 Flavor Text: "The great bull-man lingers, his steps heavy yet silent on the broken ground. He pays no heed to those who pass, his eyes lost in the distance."
-Variation: Asterius’s appearance is more pronounced at certain times of the day, particularly during twilight or stormy weather. His silhouette becomes a more prominent feature against the shifting, chaotic backdrop of the Shattered Cliffs.
+Variation: Asterius’s appearance is more pronounced at certain times of the day, particularly during twilight or stormy weather. His silhouette becomes a more prominent feature against the shifting, chaotic backdrop of the edge of the world.
 Special Events: There are no major events or interactions with Asterius. He is purely a passive, atmospheric presence. However, the player may encounter him at different points, perhaps as a visual or emotional anchor that connects the shattered landscape with the ancient world that once was.
 =================================================================================================================================================================================================================================================================================================================================
-Jörmungandr - The World Serpent (Heart of the Loop)
+Jörmungandr - The World Serpent (endgame)
 Basic Information
 
 Name: Jörmungandr
 Role: Boss Entity / Apocalyptic Force
-Location: Heart of the Loop – The final region, deep within the convergence of twisted time and space.
+Location: endgame – The final region, deep within the convergence of twisted time and space.
 Description
 
 Physical Appearance: Jörmungandr manifests as an immense serpent, its scaled body coiling around the collapsing structure of reality itself. The serpent's form is partly submerged in swirling, tempestuous energies, with its body stretching infinitely through the fractured timeline. Its eyes glow with an eerie, cosmic light, ever-watchful and aware of every movement.
@@ -597,7 +597,7 @@ Wisdom (WIS): 14
 Charisma (CHA): 8
 Special: Stealth Bonus (Increased ability to remain undetected by enemies)
 =================================================================================================================================================================================================================================================================================================================================
-Market Ruins - Gina
+arch street - Gina
 Class: Negotiator
 Description: Partner to your negotiator party member here; knows every trader by name, a skilled barterer, and dead-set on avoiding her sibling’s knack for bad deals.
 Combat Stats:
@@ -610,7 +610,7 @@ Wisdom (WIS): 14
 Charisma (CHA): 18
 Special: Persuasion Mastery (Improved negotiation, can reduce enemy aggression)
 =================================================================================================================================================================================================================================================================================================================================
-Shadowed Streets - Quill
+cobbs creek - Quill
 Class: Survivalist
 Description: A silent tracker who despises the stribog for reasons they don’t discuss; can see in the darkest alleyways but is nearly incapacitated by daylight.
 Combat Stats:
@@ -623,9 +623,9 @@ Wisdom (WIS): 18
 Charisma (CHA): 10
 Special: Night Vision (Can see perfectly in darkness, advantage on stealth and tracking at night)
 =================================================================================================================================================================================================================================================================================================================================
-Shattered Galleries - Ersa
+art museum - Ersa
 Class: Technologist
-Description: Disguised as a cultist, Ersa’s fascination with the mystical galleries borders on obsession, believing they’ve uncovered secrets no one else understands.
+Description: Disguised as a cultist, Ersa’s fascination with the mystical art museum borders on obsession, believing they’ve uncovered secrets no one else understands.
 Combat Stats:
 Health: 150
 Strength (STR): 10
@@ -649,7 +649,7 @@ Wisdom (WIS): 10
 Charisma (CHA): 18
 Special: Trap Knowledge (Can quickly disarm traps or set new ones to distract enemies)
 =================================================================================================================================================================================================================================================================================================================================
-Liacouras Haunts - Renna
+liacouras - Renna
 Class: Survivalist
 Description: A self-taught fighter and scavenger, Renna is endlessly resourceful and offers expert knowledge of the crumbling surroundings, particularly when it comes to traps.
 Combat Stats:
@@ -662,7 +662,7 @@ Wisdom (WIS): 18
 Charisma (CHA): 10
 Special: Trap Master (Can set traps for enemies and detect hidden traps in the environment)
 =================================================================================================================================================================================================================================================================================================================================
-Steel Shores - Kitsune (Yumi, Ashi, or Rika)
+the port - Kitsune (Yumi, Ashi, or Rika)
 Class: Technologist
 Description: Playful and cunning, this kitsune blends tech with enchantments, frequently selling useful magical “gadgets” that don’t always work as intended.
 Combat Stats:
@@ -675,7 +675,7 @@ Wisdom (WIS): 16
 Charisma (CHA): 16
 Special: Illusion (Can create brief, disorienting illusions to mislead enemies or assist in stealth)
 =================================================================================================================================================================================================================================================================================================================================
-Shattered Cliffs - Finn
+edge of the world - Finn
 Class: Negotiator
 Description: An odd bird with a keen sense for reading people; Finn is both an expert negotiator and a bit of a wanderer, drawn to the cliffs for reasons even he can’t quite explain.
 Combat Stats:
@@ -699,15 +699,15 @@ Special: Mind Games (Can read enemy intentions, giving advantage on persuasion o
                      /$$  \ $$                                        | $$                                                                                                                                
                     |  $$$$$$/                                        | $$                                                                                                                                
                      \______/                                         |__/                                                                                                                                
-Market Ruins - Bandits (Main Quest)
+arch street - Bandits (Main Quest)
 Basic Information
 Name: Bandits
 Role: Enemy
-Location: Market Ruins
+Location: arch street
 Description
 Physical Appearance: Scruffy, wearing mismatched armor, often with face coverings or masks.
 Personality: Aggressive, opportunistic, quick to violence when threatened.
-Background: A group of raiders preying on the remnants of the Market Ruins, trying to carve out a living by stealing from traders and travelers.
+Background: A group of raiders preying on the remnants of the arch street, trying to carve out a living by stealing from traders and travelers.
 Gameplay Elements
 Combat Stats:
 Health: 50
@@ -720,15 +720,15 @@ Movement/Behavior: They patrol specific areas or hide, attacking when the player
 Reactions to Player Choices: If the player engages diplomatically, they may offer some barter or threaten the player for a higher price.
 Schedules: They operate mostly during the night and early morning.
 =================================================================================================================================================================================================================================================================================================================================
-Shattered Cliffs - Climbers
+edge of the world - Climbers
 Basic Information
 Name: Climbers
 Role: Enemy
-Location: Shattered Cliffs
+Location: edge of the world
 Description
 Physical Appearance: Worn, ragged clothing, weathered by harsh conditions, often with climbing gear strapped to their bodies.
 Personality: Silent, determined, and tough, with a fierce will to survive.
-Background: Survivors of the Shattered Cliffs who have adapted to the harsh environment, clinging to the cliffs and enduring its dangers.
+Background: Survivors of the edge of the world who have adapted to the harsh environment, clinging to the cliffs and enduring its dangers.
 Gameplay Elements
 Combat Stats:
 Health: 60
@@ -800,7 +800,7 @@ Special Events: Occasionally triggers hidden effects in the environment, like po
 =================================================================================================================================================================================================================================================================================================================================
 Milo (Negotiator)
 Role: Party Member (Negotiator)
-Location: Market Ruins
+Location: arch street
 
 Description:
 Milo is a master of words, a smooth talker who always finds the silver lining in any situation. He’s charming, well-dressed, and carries himself with a confident swagger that makes others gravitate toward him. Despite his polished appearance, there’s a certain wildness in his eyes—he’s been through a lot, but he knows how to navigate the chaos using his wit and charm. Milo has a natural ability to read people, discerning their intentions in the blink of an eye. He sees every encounter as a potential deal to be struck, always working to find a win-win situation, even if it’s a little tilted in his favor.
@@ -831,12 +831,12 @@ Reactions to Player Choices: He’s quick to suggest diplomatic solutions to con
 1. Basic Information
 Name: Nora, Joyce, and Pearl
 Role: Puzzle-focused barterers, loosely modeled after the Three Fates
-Location: market ruins
+Location: arch street
 
 2. Description
 Physical Appearance:
 
-Nora: Wears flowing garments of muted grey, blending seamlessly into the misty atmosphere of the market ruins. Her kind eyes and soft, lined face convey warmth, though there’s a guarded wariness in her gaze.
+Nora: Wears flowing garments of muted grey, blending seamlessly into the misty atmosphere of the arch street. Her kind eyes and soft, lined face convey warmth, though there’s a guarded wariness in her gaze.
 Joyce: Also clad in grey, with a distinctive shock of white hair that falls over her face, partially obscuring her wide, restless eyes. She is slight in build, often hunching her shoulders and fidgeting with her hands. Joyce is the most skittish of the trio, constantly glancing over her shoulder as if expecting a sudden interruption.
 Pearl: Dressed in layers of white streaked with patches of brown and grey, reminiscent of dappled stone or a bird’s plumage. Her movements are sharp, and she has an alert expression, with eyes that seem to miss nothing. Pearl’s fingers are always in motion, sorting through her satchel or rearranging small trinkets.
 Personality:
@@ -886,7 +886,7 @@ Nico occasionally mutters cryptic phrases that hint at hidden solutions or fores
 1. Basic Information
 Name: Rusty
 Role: Quest Giver (Side Quest – "Homunculus's Heart")
-Location: Steel Shores, wandering near the docks and warehouses
+Location: the port, wandering near the docks and warehouses
 
 2. Description
 Physical Appearance: Rusty is a small, humanoid figure made of mismatched, cracked clay and metal fragments. His form appears rough and unfinished, with dull seams running through his body. His face is static and expressionless, with eyes that flicker like dying embers, giving him a hollow, unsettling presence.
@@ -915,7 +915,7 @@ Character Outline for Eli (Inspired by Ex Machina)
 
 Name: Eli
 Role: Quest Giver (Side Quest – "Circuit Breaker")
-Location: The Shattered Cliffs/Edge of the World (Hidden Laboratory on the outskirts)
+Location: The edge of the world/Edge of the World (Hidden Laboratory on the outskirts)
 2. Description
 
 Physical Appearance: Eli is a man in his late 30s to early 40s, lean with a sharp, angular face and piercing eyes. His dark hair is carefully maintained but slightly tousled, and his clothes are simple: a dark sweater, faded jeans, and a jacket that has seen better days. He doesn’t make much of an effort to appear anything but utilitarian, and his demeanor gives off a sense of controlled intelligence, as if every word and action is carefully calculated. There’s an air of quiet arrogance around him, a subtle detachment as if he's mentally a few steps ahead of anyone around him.
@@ -923,7 +923,7 @@ Physical Appearance: Eli is a man in his late 30s to early 40s, lean with a shar
 Personality: Eli is reserved, analytical, and often cold, though not without charm. He’s a man of few words but precise ones. He speaks slowly, almost deliberately, with a slight air of condescension when addressing those he deems less capable. His social interactions are minimal, and he prefers to keep things transactional, especially when dealing with people who aren’t as immersed in the technical world as he is. He has a profound confidence in his intellect, bordering on hubris, and doesn’t believe in doing anything unless it serves a greater purpose. Despite his aloofness, Eli is not outright hostile; he’s more indifferent, choosing to engage only when absolutely necessary.
 
 3. Background
-Eli is a former engineer and AI specialist who, in his earlier career, worked on cutting-edge research involving artificial intelligence and machine learning. He was once a promising young engineer but became disillusioned by the corporate world and its ethical ambiguities, particularly around AI and machine autonomy. His work with Nico on the Dyson Sphere and other advanced technologies left him haunted by the unintended consequences of their research. Seeking solace from the fallout of their work, Eli retreated to the Shattered Cliffs, where he has continued his studies in isolation. His obsession with understanding the gravitational anomalies and their connection to the ancient Dyson Sphere is both personal and professional, and he believes that the knowledge he gains here could either save or doom what remains of civilization.
+Eli is a former engineer and AI specialist who, in his earlier career, worked on cutting-edge research involving artificial intelligence and machine learning. He was once a promising young engineer but became disillusioned by the corporate world and its ethical ambiguities, particularly around AI and machine autonomy. His work with Nico on the Dyson Sphere and other advanced technologies left him haunted by the unintended consequences of their research. Seeking solace from the fallout of their work, Eli retreated to the edge of the world, where he has continued his studies in isolation. His obsession with understanding the gravitational anomalies and their connection to the ancient Dyson Sphere is both personal and professional, and he believes that the knowledge he gains here could either save or doom what remains of civilization.
 
 4. Behavior and Motivation
 Eli is motivated by an insatiable desire for understanding, particularly the intersection of artificial intelligence and the strange anomalies created by the Dyson Sphere. He views his work as a necessary step in advancing human knowledge, often dismissing others who do not share his conviction. He doesn’t see the world in terms of moral right or wrong, but rather in terms of potential and progress. Eli’s former relationship with Nico is a source of tension for him, as he believes Nico’s radical views are a dangerous diversion from meaningful progress. Eli is a firm believer that some knowledge is too dangerous to wield, and his interactions with the player will often reflect this pragmatic and somewhat detached view.
@@ -1024,14 +1024,14 @@ A tall, slender dryad with bark-like skin that flakes away in metallic patches, 
 Personality and Impact:
 Rustleaf is bitter and wary of humans but offers cryptic, rusty wisdom about nature and the ever-encroaching presence of metal in her world. She makes allusions to rust and decay, reflecting her state as something caught between two worlds — the natural and the mechanical.
 =================================================================================================================================================================================================================================================================================================================================
-Grumbler Joe (Liacouras Haunts)
+Grumbler Joe (liacouras)
 Physical Description:
 A hunched, scruffy man in mismatched, tattered clothes. His face is weathered and lined with age, yet his eyes burn with a strange intensity. His beard is unkempt, and his overall appearance seems to suggest someone who’s been through more than their fair share of hardships. His posture is stooped, but there’s a quickness in his movements when he’s recounting tales.
 Personality and Impact:
 Though his demeanor is grizzled and sometimes defeatist, Grumbler Joe’s deep knowledge of the supernatural and his uncanny ability to talk about phantoms in the alleys makes him a valuable source of information. His wisdom comes in short, almost disjointed bursts, and he’s not shy about complaining.
 Grumbler Joe beat cancer TODAY and owns all these houses up by gratz.
 =================================================================================================================================================================================================================================================================================================================================
-Steel Shores
+the port
 Tumble Ditchwater:
 
 Physical Description: Tall and lanky, always moving restlessly, his clothes are mismatched and perpetually out of place, as if he’s always running from something. His face is gaunt, and his eyes constantly dart about, as if searching for something. His clothes flap loosely, adding to his appearance of constant motion.
@@ -1049,7 +1049,7 @@ Windowned Qib:
 Physical Description: A disheveled figure with ragged clothes, his posture slouched in exhaustion. His skin is pale, his eyes dull, and his hair unkempt. His hands are worn and dirty, and his voice is hoarse.
 Personality and Impact: Windowned Qib is the epitome of despair, his fractured speech reflecting his pessimistic view of the world. His cryptic statements leave a lingering sense of dread.
 =================================================================================================================================================================================================================================================================================================================================
-The Cliff Scribe (Shattered Cliffs)
+The Cliff Scribe (edge of the world)
 Physical Description:
 A ghostly figure, translucent yet solid enough to leave faint indentations in the rock as they carve with a small, jagged stone. They wear tattered robes that shift like mist, and their long, skeletal fingers etch symbols into the cliff face. The figure’s face is partially obscured by their hood, but when visible, it’s devoid of emotion.
 Personality and Impact:
