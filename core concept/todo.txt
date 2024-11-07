@@ -1,23 +1,36 @@
-1. List of NPCs
-    Generic NPCs: Scavenger, wanderer, shopkeeper, etc., who appear in multiple zones.
-    Regionally Specific NPCs: Unique to certain areas
-        subtype: mythological figures
-    Story-Critical NPCs: Defined characters that affect the narrative directly, such as potential allies and key quest-givers.
-    Enemies
-    **nora joyce pearl
-    **douglas
-    **stacey
-
-2. Define NPC Allies and Meeting Points (partly done in storyboard)
-    Sketch out the initial meeting points and conditions for each potential ally. These allies will shape the player’s journey and affect gameplay in a team dynamic.
-
-3. Determine Number and Nature of Endings
+1. Determine Number and Nature of Endings
     Finalize the possible endings and any conditions leading to each, such as planeshift, the Dyson Sphere turning off the sun, or an endless loop. For each, define how player actions and choices throughout the game lead toward specific endings.
 
-4. update the map
+2. update the map
 
-5. generate ascii headers
+3. generate ascii headers
 
-6. Most Quests are in a "first draft" state
+4. Most Quests are in a "first draft" state
     update them narratively 
     integrate the npc list as quest givers, etc
+    decide whether there should be a (7) add npc's to give quests
+
+5. add a dead zone main quest (prologue)
+
+6. rename regions to be...better
+
+7. put the items into the quests correctly
+
+8.  do a final draft on all the puzzles
+
+9. alignment/reputation -- define the whole system
+    then update all npc's
+
+10. define chance encounter frequency for each encounterable npc in each region
+    also add health for all combat related npc
+    add detection chance for combat related npc
+
+11. the negotiator needs special prices
+
+12. you need a bartering system for shopkeepers
+    add command: counter
+        should the player be rewarded for using persuasive language?
+
+13. dialogue should be fully scripted!!!!! that way negotiator can have extra options!!!!
+
+14. make code todo
