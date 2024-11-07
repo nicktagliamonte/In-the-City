@@ -6,6 +6,7 @@
 2. add a dead zone main quest (prologue)
 
 3.  do a final draft on all the puzzles
+    realistically, they should all be involved in each quest...right?
 
 4. alignment/reputation -- define the whole system
     then update all npc's

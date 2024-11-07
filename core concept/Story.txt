@@ -65,16 +65,16 @@
 			* Within the museum, the player encounters an NPC who claims to be a historian of sorts, hoarding relics of the past. Through dialogue, the player learns fragmented tales of the city’s downfall, how the “magic” is just the city’s decaying power grid reanimating itself.
 				* they talk like that 1 nosleep story, regularly breaking the fourth wall and making comments on spelling/the text format
 				* Transition to Region 5: The historian points toward FDR Park, hinting that the park hides dangerous secrets.
-				* given the water monster, this is an act of malice
+				* given the fomorian, this is an act of malice
 			* Character Development: This experience deepens the player’s shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
 			* Akkorokamui 
 		* Metalwoods
 			* this is another weird one -- it's a strategy level
-			* main quest - confronting the water monster
+			* main quest - confronting the fomorian
 			* optional quest - lost in the murk
 			* there is a safe zone, but barely
 			* same with economic
-			* it is near impossible to beat the water monster, and even if you do it instills party-wide fear that drive you up town to temple in a blur of flashing lights
+			* it is near impossible to beat the fomorian, and even if you do it instills party-wide fear that drive you up town to temple in a blur of flashing lights
 			* this is a fall away from indiference
 			* there is a fomorian npc
 		* leacouras haunts
@@ -97,6 +97,7 @@
 			* main - circuit breaker
 			* side - tangled signals
 			* the ai tells the player that there is a reason for their presence here.  the ai tells the player that the answer is in center city
+			* stacey is found here later than you usually encounter her.  if you give her the casio watch, she joins you in the endgame.
 		* endgame
 			* this is an endgame sequence.  by entering, the player becomes immune to the fear effect
 			* see "main quests/endgame.txt" for specifics

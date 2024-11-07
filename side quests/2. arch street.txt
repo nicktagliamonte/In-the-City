@@ -8,7 +8,7 @@ moirai? (research)
 
 Merchant A: Has a water purification tablet but only trades it for food rations and one additional item of low value.
 Merchant B: Has a fuel canister and will trade it for a rare scavenged tool or a piece of technology.
-Merchant C: Offers a map of the area but only accepts two items of moderate value, which could be things like medical supplies or durable clothing.
+Merchant C: Offers a map of the museum but only accepts two items of moderate value, which could be things like medical supplies or durable clothing.
 Puzzle Mechanics: The player needs to determine how to acquire each desired item by figuring out a chain of trades between merchants. For example, trading with Merchant A might unlock a resource that Merchant B desires, which then helps secure the trade with Merchant C.
 
 Determine What Each Merchant Wants:
@@ -31,3 +31,5 @@ Step 3: Finally, go to Merchant C.
 The player still has medical supplies in their inventory and now also has the water purification tablet (a high-value item in the ruins).
 Offering medical supplies and the water purification tablet should be sufficient to satisfy Merchant C, who then provides the map of the area.
 Outcome: By following this sequence, the player successfully acquires all three desired items (the water purification tablet, fuel canister, and map) using only the initial resources and careful bartering with each merchant.
+
+no morality change but getting the museum map will make that region much easier

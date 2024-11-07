@@ -11,25 +11,24 @@ Meet Rusty:
 The player finds Rusty near the Richmond Power Plant, trying to piece together the remnants of his last memory before the core was stolen. He explains that he’s felt weaker and more clumsy without it and pleads for the player’s help.
 Gather Clues:
 
-Rusty shares that he saw a group of mischievous sprites playing near the old brewery cellar just before his core went missing. The player must visit this area to gather clues about the sprites’ whereabouts and any potential leads on the core's location.
-Confront the Sprites:
+Rusty shares that he saw a group of mischievous sprites playing near the old brewery cellar just before his core went missing. The player must visit this area to gather clues about one of the flavor npc's’ whereabouts and any potential leads on the core's location.
+Confront one of the flavor npc's:
 
-In the old brewery cellar, the player encounters a group of playful sprites who are hoarding various shiny objects, including Rusty's core. The sprites challenge the player to a game of wits or a series of lighthearted puzzles to win back the core.
-Example Challenge: Solve a riddle or navigate a small maze created by the sprites to retrieve the core without angering them.
+In the old brewery cellar, the player encounters a group of playful sprites who are hoarding various shiny objects, including Rusty's core. one of the flavor npc's challenge the player to a game of wits or a series of lighthearted puzzles to win back the core.
+Example Challenge: Solve a riddle or navigate a small maze created by one of the flavor npc's to retrieve the core without angering them.
 Magical Assistance:
 
-After successfully completing the challenge, the sprites reveal that the core is not just a simple crystal; it’s a powerful artifact that connects to the magical energy of the port. They explain that it must be recharged at a specific location to regain its full power.
-The player must now accompany the sprites to a hidden spot—the Reflective Tidepool—where the core can absorb the magical essence of the area.
+After successfully completing the challenge, one of the flavor npc's reveal that the core is not just a simple crystal; it’s a powerful artifact that connects to the magical energy of the port. They explain that it must be recharged at a specific location to regain its full power.
+The player must now accompany one of the flavor npc's to a hidden spot—the Reflective Tidepool—where the core can absorb the magical essence of the area.
 Recharging the Core:
 
-At the Reflective Tidepool, the player must engage in a mini-game where they help the sprites perform a magical ritual to recharge the core. This involves timing, rhythm, and possibly some quick decision-making to complete the ritual successfully.
+At the Reflective Tidepool, the player must engage in a mini-game where they help one of the flavor npc's perform a magical ritual to recharge the core. This involves timing, rhythm, and possibly some quick decision-making to complete the ritual successfully.
 As the ritual progresses, strange illusions may appear, showcasing different possibilities for Rusty’s life and potential transformations he could undergo with the recharged core.
 Return to Rusty:
 
 Once the core is successfully recharged, the player returns to Rusty and hands over the core. He gratefully installs it back into his chest, causing him to glow with renewed energy and magic.
 Rusty reveals his true form as a guardian of the the port, unlocking new abilities for the player and enhancing the area’s magical ambiance.
 Reward:
-The player receives a unique item called “Rusty’s Charm,” which grants bonuses related to magical interactions, such as enhanced luck in bartering or the ability to temporarily summon Rusty for assistance in puzzles or minor encounters.
-Additionally, unlocking Rusty's true form may open new pathways or quests in the the port region, as he becomes a guide to hidden magical secrets.
+The player receives a pair of round-lensed glasses which grants bonuses related to magical interactions, such as enhanced luck
 Atmosphere Impact:
 This quest reinforces the whimsical and playful atmosphere of the port while introducing fantasy elements through Rusty's character. It emphasizes the theme of cooperation between magical beings and humans, adding depth to the region's lore and engaging players in the fantastical charm of the area.

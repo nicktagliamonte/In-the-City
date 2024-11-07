@@ -352,13 +352,13 @@ Items
             Effect: +16 AC
             cost: 300
 12. specific special relics
-    Dull Knife with Kana on It: A dull knife, its blade etched with kana characters, the handle broken and splintered
-    Vali 2: A compact tube amplifier, its metal casing scratched and glass tube shattered
-    Casio Watch: A faded digital watch, its screen cracked but still displaying the time.  It's right twice a day
-    Card with the Serenity Prayer: A tattered card bearing the Serenity Prayer, its edges dog-eared.  a name can vaguelly be seen near the top, what was once a serene 
+    *Dull Knife with Kana on It: A dull knife, its blade etched with kana characters, the handle broken and splintered
+    *Vali 2: A compact tube amplifier, its metal casing scratched and glass tube shattered
+    *Casio Watch: A faded digital watch, its screen cracked but still displaying the time.  It's right twice a day
+    *Card with the Serenity Prayer: A tattered card bearing the Serenity Prayer, its edges dog-eared.  a name can vaguelly be seen near the top, what was once a serene 
                                     image of mountains on the opposite side.
-    Leather Wallet with Faded ID: A worn leather wallet, its edges frayed, containing a faded ID
-    Dog Collar: A weathered dog collar, its once vibrant color muted and scratched
-    Round Lensed Glasses: A pair of round-lensed glasses, one lens cracked, their frame bent
-    Wooden and Gold Ring: A handcrafted wooden ring inlaid with gold, showing signs of wear
-    Aquamarine Ring: A delicate aquamarine ring, its stone slightly clouded but still catching the light
+    *Leather Wallet with Faded ID: A worn leather wallet, its edges frayed, containing a faded ID
+    *Dog Collar: A weathered dog collar, its once vibrant color muted and scratched
+    *Round Lensed Glasses: A pair of round-lensed glasses, one lens cracked, their frame bent
+    *Wooden and Gold Ring: A handcrafted wooden ring inlaid with gold, showing signs of wear
+    *Aquamarine Ring: A delicate aquamarine ring, its stone slightly clouded but still catching the light

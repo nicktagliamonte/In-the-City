@@ -1,30 +1,14 @@
-Main Quest: Into the Shattered Depths
-Objective: Reach the heart of the art museum and solve the central puzzle to unlock the “Forgotten Vault,” a hidden area rumored to hold resources and artifacts from the old world.
+Main Quest: Working title house of leaves . txt
+Objective: Reach the heart of the art museum and solve the central puzzle to unlock the “Forgotten Vault,” a hidden area with resources and artifacts
 
 Quest Overview: The player begins in the main gallery of the Art Museum, only to find that typical navigation techniques don’t work here. Paths twist, rooms seem to rearrange themselves, and strange sounds lure the player in the wrong direction. They must solve a series of perception-based puzzles to reach the core of the museum and unlock the vault.
 
-Quest Steps:
-
-Enter the art museum:
-
-Upon entry, the player is immediately struck by the strange geometry of the space. Doorways lead back to where they started, staircases loop endlessly, and objects seem to change positions when out of sight.
-Solve the Hallway of Shifting Perspectives:
-
-The player must walk through a long hallway where paintings hang on both sides. Each painting seems to “watch” the player, and the hallway appears to stretch endlessly.
-Puzzle: The player must stop, examine certain paintings, and look for clues in each one’s details to unlock a hidden door at the hallway’s end.
-The Room of Mirrored Echoes:
-
-In this room, mirrors reflect distorted versions of the space, some of which show hidden objects or doors that aren’t visible in reality.
-Puzzle: The player must manipulate objects in the room based on what they see in the mirrors, using reflections to reveal hidden doors and avoid false exits.
-The Stairs to Nowhere:
-
-A grand staircase at the center of the museum twists up toward the ceiling but seems to lead nowhere. As the player ascends, they find themselves back at the bottom unless they take specific, seemingly random steps.
-Puzzle: The player must decipher a sequence of steps or symbols on the stairs to progress upward, breaking the loop and reaching a hidden landing with the final room.
-The Vault Room - Shattered Memories:
-
-At the museum’s heart lies the Forgotten Vault, a reinforced room displaying fractured art pieces and artifacts. To open the vault, the player must align fragments of a distorted mural across the walls, revealing an access code hidden in the mural’s design.
-Puzzle: This final puzzle combines memory and perception, as the player rearranges wall fragments in the correct sequence to unlock the vault.
-Outcome: After solving the central puzzles, the player gains access to the vault, which contains unique resources: a rare relic, valuable medkits, and a small stash of rations. This is one of the richest caches the player will find, making the challenge well worth the effort.
+Quest Steps:It's just region exploration with the following specifics
+it's a maze (maze-like, really.  i can develop a map at the time with an online generator in just afew minutes)
+having the map allows you to skip the puzzle portion of hallway -- see arch st side quest
+staircase: escher influence (puzzle.txt)
+hallway: seems to just get longer, it will continue to do so until the player enters the correct gallery room.  it's one where they have to walk back and forth past the door to this gallery room a few times before it appears.
+gallery: this is the escape room
 
 Puzzle 1: The Infinite Hallway (Escape Room)
 Description:
@@ -35,12 +19,11 @@ Escape the gallery room by solving clues embedded within the paintings on the wa
 
 Details:
 
-Each painting seems to represent an event or object from earlier in the game (like a dog collar or a street sign), distorted as if seen through a lens. The player quickly realizes that these paintings change when viewed from different angles.
+paintings, distorted as if seen through a lens. The player quickly realizes that these paintings change when viewed from different angles.
 On one wall, a large painting titled Exit shows a series of symbols that look like directions or positions.
 If the player touches or interacts with each painting in a specific order, corresponding to these symbols, they hear a sound as if something in the room shifts or clicks into place.
 At a certain point, the lights flicker, and for a brief moment, one painting shows an image of a door. When the player turns back to that spot, the door is real and functional.
 Solution:
 The player must decipher the sequence on the Exit painting and interact with each of the other paintings accordingly. This sequence triggers the door’s appearance, allowing them to escape.
 
-Hint:
-Written faintly in the bottom corner of the Exit painting are the words, “Only by following the brush strokes of memory will you find the way out,” guiding players to look closely at the distorted depictions of familiar items.
+outcome: base it off time to solve! or number of wrong moves.  heavy good, slight good, heavy bad.

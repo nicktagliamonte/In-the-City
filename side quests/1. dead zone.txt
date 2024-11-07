@@ -24,3 +24,4 @@ Moral Choice (Optional)
 
 The journal entry ends with a plea: “Please, if you have strength, leave something for those who come after.” The player can choose to leave one item from their inventory as a small gesture for future survivors, which grants a slight boost in their ethical alignment.
 Alternatively, they can ignore the plea and take all items, with no negative consequence beyond missing the alignment boost.
+One of the items is the knife with kana

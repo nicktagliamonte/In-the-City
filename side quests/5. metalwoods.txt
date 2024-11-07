@@ -1,7 +1,7 @@
 Optional Side Quest: Lost in the Murk
 Objective: Help a lost NPC navigate through the Metalwoods to find their way back to safety.
 
-Quest Overview: Players encounter a frantic survivor named Kira, who has been separated from her group while foraging in the Metalwoods. She seeks help to find her way back, fearing the Water Monster might still be lurking nearby.
+Quest Overview: Players encounter a frantic survivor named Kira, who has been separated from her group while foraging in the Metalwoods. She seeks help to find her way back, fearing the fomorian might still be lurking nearby.
 
 Quest Steps:
 
@@ -9,10 +9,10 @@ Meet Kira:
 Upon finding Kira, players learn about her lost companions and the dangers lurking in the woods. She offers a reward in return for their assistance.
 
 Navigate Together:
-Players must guide Kira through the park, avoiding areas where the Water Monster is known to roam. Along the way, they can gather additional resources and clues about the area’s dangers.
+Players must guide Kira through the park, avoiding areas where the fomorian is known to roam. Along the way, they can gather additional resources and clues about the area’s dangers.
 
 Face the Threat:
-As they navigate, players encounter the Water Monster and must work together with Kira to either distract it or set up a trap to ensure their escape.
+As they navigate, players encounter the fomorian and must work together with Kira to either distract it or set up a trap to ensure their escape.
 
 Return to Safety:
-If players successfully lead Kira back to the picnic area, they receive a unique item or resource as a reward, along with insight into the history of the Metalwoods.
+If players successfully lead Kira back to the picnic area, they receive the leather wallet flavor item and resource as a reward, along with insight into the history of the Metalwoods.

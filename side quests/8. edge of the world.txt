@@ -26,4 +26,4 @@ Step 3: Establish Communication
 Once all puzzles are solved, players initiate the relay. A timer counts down, and they must maintain stability on the final screen by quickly tapping the correct button as it appears to prevent the signal from dropping again.
 
 Conclusion:
-Upon successfully re-establishing communication, players receive a brief message from a nearby survivor group, providing valuable information or a hint for their next objective. Completing this mini-game side quest rewards players with a unique item related to communication, like a Signal Flare, which can be used to call for help in dangerous situations.
+Upon successfully re-establishing communication, players receive a brief message from a nearby survivor group, providing valuable information or a hint for their next objective. Completing this mini-game side quest rewards players with a wooden and gold ring (flavor item), which will boost good ending chance

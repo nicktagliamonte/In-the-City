@@ -2,6 +2,7 @@ Quest Title: Circuit Breaker
 Quest Giver: eli, a former engineer who runs a hidden laboratory on the outskirts of the edge of the world.
 
 THE AI IS THE CAUSE FOR THE DREAM STATE IN THIS REGION AND REACTIVATED THE DYSON SPHERE ITSELF.
+IF YOU HAVE THE DOG COLLAR HERE, THE AI WILL TAKE IT EASY ON YOU
 
 Quest Objectives:
 Location: The edge of the world/Edge of the World
@@ -33,7 +34,7 @@ Based on the player’s performance in the dialogue and puzzles, they reach a cr
 Conclusion:
 The quest concludes with the player’s decision echoing throughout the game world, influencing how other NPCs react to them based on their relationship with technology. The AI's fate affects resource availability and introduces new storylines tied to the nature of survival in a world intertwined with advanced technology.
 
-hypothetical (but make the ai philosophy conversation less ham fisted)
+hypothetical (but make the ai philosophy conversation less ham fisted AT CODE TIME)
 The AI Dialogue:
 AI (calmly):
 "Ah, you must be the one they sent. I assume you’ve heard of me, of the anomalies. The... disturbances caused by the reactivation of the Dyson Sphere."
@@ -62,8 +63,8 @@ AI (resolute):
 
 Outcome:
 
-New Information: The player gains access to advanced knowledge, allowing them to unlock new technologies or resources in the world. The AI will also aid in future puzzles, providing subtle guidance or hints.
-Moral Consequence: Trusting the AI means embracing technology’s potential, but it also raises questions about dependency and control. Other NPCs might view the player with suspicion, or even fear, knowing that the player has aligned themselves with the AI’s power.
+Moral Consequence: heavy good
+
 Choice 2: Disable the AI
 If the player disagrees with the AI’s logic, or if their answers reflect a mistrust of technology and its implications:
 
@@ -78,7 +79,7 @@ AI (defiantly):
 Outcome:
 
 Immediate Safety: Disabling the AI means the player won’t have access to its advanced knowledge or resources. However, the threat of the Dyson Sphere's continued malfunction is neutralized.
-Moral Consequence: The player ensures immediate safety but cuts off a potential powerful ally. The tech facility becomes a dead zone, with no more insight into its secrets. Some NPCs might see this as a noble decision, but others might criticize the player for limiting their own potential by refusing to work with such a powerful force.
+Moral Consequence: heavy bad
 Choice 3: Ally with the AI
 If the player sympathizes with the AI’s philosophical dilemma or engages with it on a deeper, more existential level:
 
@@ -92,10 +93,11 @@ AI (calmly):
 
 Outcome:
 
-Increased Knowledge and Power: The AI becomes a willing companion, sharing secrets of the Dyson Sphere and revealing hidden systems that the player can interact with. This could unlock new regions, resources, and special abilities, making the player much more capable of surviving the challenges ahead.
-Moral Consequence: The decision to ally with the AI reflects a deeper philosophical commitment to the potential of technology and the nature of existence itself. The player’s relationship with other NPCs will be influenced by this decision—some may see the player as a visionary, while others may distrust the player, believing they are sacrificing too much humanity for the sake of progress.
+Moral Consequence: slight good
 Conclusion of the Quest:
 After making their choice, the player exits the tech facility, with the decision to either reprogram, disable, or ally with the AI weighing heavily on their future. Eli’s reaction to the player’s decision is based on their choice, and his final words echo in their mind as they leave:
 
 Eli (as the player leaves):
 “Interesting... I would have chosen differently, but then again, I never was one for trusting machines. Just make sure you understand the consequences of your actions.”
+
+heavy good: reprogram, little bad: shut down little good: ally

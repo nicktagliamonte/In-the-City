@@ -1,20 +1,39 @@
-Side Quest: Old Neighborhood Ties
-Objective: Assist a resident, Martha, in locating a memento left behind in her old rowhouse. In return, she offers a reward from her personal stash of supplies.
+Optional Quest: The Golden Can
+Location: cobbs creek
+Objective: Help an eccentric scavenger retrieve an item locked inside an old storage facility.
 
-Quest Overview: Martha is an elderly survivor who used to live nearby before she was forced to leave her rowhouse. She tells the player about an old photo album hidden beneath a loose floorboard in her former home. The album has no intrinsic value, but it’s deeply meaningful to her, and she offers the player a generous supply of water, food, and scrap if they retrieve it.
+Quest Overview
+While exploring the arch street, the player encounters an eccentric scavenger named Harv. Harv is known among survivors as a slightly unhinged collector of oddities and discarded treasures. He’s nervously guarding the door to an old, locked storage facility, muttering about "the golden can" hidden inside. Harv insists it’s a relic that could make him “rich beyond reason” and begs the player for help retrieving it, offering a share of whatever’s inside.
 
-Quest Steps:
+Quest Steps
+Speak with Harv
 
-Locate Martha’s Rowhouse:
+The player talks to Harv, who goes on a rambling spiel about the “golden can.” He’s convinced it holds something of great value but admits he’s afraid to go in alone due to rumors of traps and aggressive scavengers who may be lying in wait.
+Option to Negotiate: Harv offers the player a 50/50 split of the loot but can be persuaded to increase their share through skillful dialogue, especially if the player’s Charisma or Wisdom is high.
+Enter the Storage Facility
 
-The player heads to a nearby rowhouse block, navigating through debris and dodging potential threats. The rowhouses are partially collapsed, making access difficult.
-Search for the Album:
+Once inside, the player finds the storage facility is dark and maze-like, with rows of crates and shelves blocking their line of sight. Signs of previous attempts to scavenge are evident: overturned boxes, broken glass, and a few scattered belongings hint at prior scuffles.
+The golden can is supposedly deep within, in a storage room marked by a crude symbol on the wall.
+Encounter Obstacles
 
-Inside Martha’s old home, the player finds evidence of her past life—personal items scattered around, broken furniture, and faded family photos. The album is hidden beneath a loose floorboard in the bedroom.
-Encounter Obstacles:
+Environmental Hazards: The player encounters scattered hazards, such as broken glass that slows movement and overturned shelves that make noise if disturbed. If they choose to navigate quietly, they avoid alerting other scavengers.
+Other Scavengers: As the player moves deeper, they encounter a small group of scavengers. They can sneak past them, engage in combat, or attempt to bluff their way by claiming to be part of a scavenger faction.
+Locate the Golden Can
 
-As the player searches, they’re interrupted by a rival scavenger who’s also rummaging for supplies. The player can negotiate with, avoid, or fight the scavenger.
-Return the Album to Martha:
+After navigating the facility, the player finds the golden can on a dusty shelf, hidden among a pile of cans that have no apparent value. Upon inspection, the "golden can" is just a shiny, empty metal can—Harv’s prized “relic” is essentially worthless, though it appears to have sentimental value.
+Decision Point
 
-Upon bringing the album back, Martha rewards the player with rations, a small cache of scrap, and a modest XP boost.
-Atmosphere: The quest gives the player a somber glimpse into the lives of former residents, showing that the city isn’t just a battleground but a place with human history and forgotten memories.
+Option A: Lie to Harv
+The player can return to Harv, embellish the story, and claim the can has mystical properties. Harv enthusiastically thanks the player and rewards them with some of his gathered supplies.
+Option B: Tell Harv the Truth
+The player tells Harv it’s just a plain can. Disappointed but grateful, he still gives them a small reward for their help, but he now mutters in disbelief about the "relic."
+Option C: Keep the Can
+The player can decide to keep the can for themselves. If they do, Harv is disappointed and reluctantly gives them a portion of his supplies, all the while muttering about the “curse of the golden can.”
+Quest Rewards
+Option A (Lie): Harv rewards the player with some rare barter items, such as a ration pack and a medical kit, in exchange for making him believe in the can’s value. This also gives the player a sneak bonus used in the metalwoods
+Option B (Tell the Truth): Harv gives a lesser reward, such as scrap metal and a basic medkit.
+Option C (Keep the Can): If the player keeps the can, they receive extra resources from Harv, though they also carry an apparently worthless, shiny can in their inventory. (Later in the game, it could come in handy if the player encounters a superstitious NPC or a unique barter scenario.)
+Atmospheric Elements
+Harv’s Demeanor: Harv has an odd mix of hope and desperation, showing how the city’s harsh conditions have warped even basic values. His fixation on the can hints at a world where small things are blown out of proportion, reflecting the scarcity mindset.
+Storage Facility Details: The facility is dark, eerie, and claustrophobic, with barely any natural light filtering in. Each room feels like a trap waiting to be sprung, enhancing the game’s tense and adversarial atmosphere.
+NPC Reactions: After completing the quest, other scavengers occasionally comment about the “golden can,” treating Harv’s obsession with mild pity, as if they know he’s clinging to illusions in a broken world.

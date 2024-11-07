@@ -3,6 +3,8 @@ Objective: Investigate the source of the eerie bell tolls, which seem to be conn
 
 Quest Overview: The player hears rumors of a ghost near the Liacouras Walk belltower who tolls the bell at strange hours, seemingly warning of impending danger. However, as the player approaches the bell, strange things start happening: pathways twist back on themselves, conversations with NPCs seem to reset or change, and some NPCs appear to deny things the player has already done. The quest itself may feel circular, as if the player is going in loops.
 
+IF YOU HAVE THE FUNERAL CARD FLAVOR ITEM, CONVERSATION OPTIONS WON'T INCLUDE AGREEABILITY
+
 Quest Steps:
 
 Follow the Sound of the Bell:
@@ -11,7 +13,7 @@ The player is drawn toward the belltower by the irregular tolling of the bell. A
 Encounter NPCs Who Deny Reality:
 
 The player meets a series of NPCs near the tower, but each one denies the player’s experiences. Some NPCs mention things like, “You were never here before” or “I don’t know who you are,” even if they’ve interacted previously.
-One NPC, Miranda, says she knows how to reach the bell, only to laugh and deny ever saying this when the player approaches her again.
+One NPC says she knows how to reach the bell, only to laugh and deny ever saying this when the player approaches her again.
 Attempt to Reach the Belltower:
 
 The player tries to reach the bell, but every time they think they’re close, they’re inexplicably returned to an earlier point. Environmental cues, like fading footprints or whispering voices, lead them down dead ends or repeat paths.
@@ -21,3 +23,5 @@ Confront the Bell Ghost:
 Eventually, the player reaches the belltower, where a ghostly figure awaits. This figure seems familiar, as if they are somehow connected to the player. However, as the player approaches, the figure fades, and the bell tolls loudly.
 When the player looks back, the figure has disappeared, leaving a cryptic note on the ground: “You are not who you think you are.”
 Outcome: The player is left questioning their own identity and purpose in the city. They gain no physical reward but acquire a sense of foreboding and self-doubt that carries through future encounters. This quest sets the tone for the liacouras, embedding mistrust and disorientation.
+
+outcome based on conversation choices: anger is slightly good, acceptance slightly bad, aggreance very bad
