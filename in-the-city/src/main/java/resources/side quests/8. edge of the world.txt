@@ -1,0 +1,29 @@
+Side Quest: "Tangled Signals"
+Overview:
+In the anomolous edge of the world, players encounter a malfunctioning Signal Relay Station, crucial for maintaining communication with other survivors. This mini-game quest involves re-establishing the signal by solving a series of puzzles within a time limit.
+
+Quest Objectives:
+Access the Relay Station: Find the entrance and bypass the initial security.
+Solve the Signal Puzzles: Complete three mini-puzzles to realign the signals.
+Establish Communication: Successfully re-establish the relay's function before time runs out.
+Quest Details:
+Starting Point:
+While navigating through the edge of the world, players discover a crumbling building with flickering lights. Upon entering, they find a broken Signal Relay Station surrounded by debris and static-filled screens.
+
+Step 1: Access the Relay Station
+
+Players must first bypass the security lock on the door, which involves a simple pattern recognition puzzle. They must identify the correct sequence of symbols to unlock it.
+Step 2: Solve the Signal Puzzles
+Inside the station, players face three distinct signal puzzles:
+
+Frequency Tuner: Players [rotate a dial] to match the correct frequency while avoiding interference signals. A mini-game mechanic could involve quickly tapping in rhythm with a visual cue, increasing difficulty if they miss beats.
+
+Cable Connections: Players must connect a series of colored wires to their corresponding ports in a limited number of moves. This puzzle requires logical deduction to ensure the correct pathways are made without crossing wires.
+
+Signal Strength: Players manipulate a set of levers to balance the signal strength gauge. They need to adjust the levers in a specific order to stabilize the reading before it resets.
+
+Step 3: Establish Communication
+Once all puzzles are solved, players initiate the relay. A timer counts down, and they must maintain stability on the final screen by quickly tapping the correct button as it appears to prevent the signal from dropping again.
+
+Conclusion:
+Upon successfully re-establishing communication, players receive a brief message from a nearby survivor group, providing valuable information or a hint for their next objective. Completing this mini-game side quest rewards players with a wooden and gold ring (flavor item), which will boost good ending chance

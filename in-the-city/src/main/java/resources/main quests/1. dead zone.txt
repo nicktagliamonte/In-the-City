@@ -1,0 +1,42 @@
+Tutorial Quest: “First Light in the Dead Zone”
+Objective: Survive your initial hours in the Dead Zone by exploring your surroundings, gathering resources, learning to navigate combat and stealth, and encountering the idea of side quests.
+
+Step 1: Awakening and Initial Exploration
+Narrative: The player awakens in a desolate area surrounded by overgrown, decaying buildings and scattered remnants of the past. The morning light barely penetrates the thick canopy of vines and broken metal structures.
+Gameplay: The player’s first task is to explore their immediate surroundings. They come across an old, rusted storage locker and must decide whether to pry it open. This introduces the concept of resource gathering when they find basic supplies: a scrap metal shard (potential weapon) and a few units of water.
+Hint: A prompt subtly introduces the idea that exploring hidden areas can yield helpful resources.
+Step 2: The Sound of Footsteps – Sneaking Tutorial
+Narrative: As the player explores further, distant footsteps and shuffling sounds echo through the empty streets. The player must avoid detection by using the environment—hiding behind debris and moving carefully through shadows.
+Gameplay: This step introduces stealth mechanics. Players must avoid being seen by a wandering hostile scavenger, learning that movement noise and visibility impact detection. If they remain unseen, they learn that sometimes avoiding a fight is better for survival.
+Hint: A short on-screen note introduces the benefits of staying hidden and the potential consequences of drawing attention.
+Step 3: Combat Basics
+Narrative: Despite careful movement, the player is eventually forced into a confrontation when they stumble upon a hostile creature—a mutated rat drawn by noise.
+Gameplay: This encounter serves as an introduction to combat mechanics. The player uses the scrap metal shard found earlier as a weapon. The tutorial explains turn-based combat, the use of [Fight], [Flee], and [Items], and how conserving resources like health items is crucial.
+Hint: A prompt advises on basic combat strategy, including when fleeing might be a wise option.
+Step 4: Gathering and Conservation
+Narrative: After the fight, the player finds themselves low on energy and realizes they need to gather more resources to continue. They discover an overgrown park with edible roots and abandoned canisters of water that must be rationed.
+Gameplay: The player is introduced to resource gathering and conservation. They learn to manage their limited carry capacity and must choose what to take and leave behind. This step emphasizes the importance of thinking ahead and prioritizing resources.
+Hint: A tip appears, suggesting that gathering more than needed can weigh the player down but not having enough may leave them vulnerable later.
+Step 5: introduce puzzles
+Puzzle 1: "The Door Code" - Basic Observation & Logic Puzzle
+Setting: The player encounters a locked metal door in an old, crumbling building. A panel next to it has faded markings and four rotating dials.
+
+Puzzle: To open the door, the player needs to figure out the correct code by examining their surroundings.
+
+Hints & Clues:
+
+Nearby, there’s a graffiti-covered wall with a series of numbers partially scratched out, such as "12-??-45-78."
+Observing the area, the player finds a scrap of paper that says 3.141_
+Solution: The player must rotate the dials to match the numbers in the correct order, based on context clues.
+
+Purpose: This puzzle teaches players to investigate and connect hints from the environment, preparing them for more complex logic-based challenges.
+
+Completion and Takeaways
+At the end of this quest, the player will have a basic understanding of:
+
+Exploration: Searching the environment for supplies and hidden clues.
+Stealth: Using caution to avoid detection and potential danger.
+Combat: Engaging in turn-based encounters and making tactical decisions.
+Resource Management: Collecting and conserving supplies for survival.
+
+this drops you off right where the side quest is encountered

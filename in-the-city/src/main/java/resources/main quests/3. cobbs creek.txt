@@ -1,0 +1,28 @@
+Main Quest: The Quiet Refuge
+Objective: Establish an alliance or secure the area by driving out a rival faction to claim a safe haven.
+
+Quest Overview: The player hears rumors of an old underground bunker hidden beneath a former public library that served as a shelter during a prior crisis. The bunker, known as the Forgotten Refuge, is fortified and well-hidden, making it an ideal safe zone. However, it is currently controlled by a small group, who don’t welcome outsiders.
+
+The player has to decide between forming an alliance with the group or forcibly claiming the bunker as their own.
+
+Quest Steps:
+
+Investigate the Refuge:
+
+The player learns from Nico about the Refuge and its potential as a safe zone. It’s located under the Cobbs Creek Library (a real present-day library), which has been converted into a makeshift headquarters by the group.
+Engage with the group:
+
+Upon reaching the library, the player encounters the Nico, who details the quest (see npc.txt). 
+Choose an Approach:
+
+Option A: Form an Alliance – The player can negotiate with the group, agreeing to share resources or perform tasks in exchange for shared use of the safe zone. This option opens up occasional help from group members in nearby encounters.
+Option B: Forceful Takeover – The player can decide to drive the group out. This requires a mix of combat and strategic trap-setting, as the group defend the bunker with traps of their own.
+
+Nico is unhappy if you pick A, but what are you gonna do about it? nothing. 
+If you pick B, nico gives you a casio watch (items.txt flavor items)
+
+Secure the Refuge:
+
+After negotiations or a takeover, the player gains access to the bunker as a safe zone, providing storage, a place to heal, and limited supplies.
+
+this is a direct rehashing of the last region in terms of effect -- it's basically the same quest with a different giver.  this time, results can be slight good slight bad or heavy bad.

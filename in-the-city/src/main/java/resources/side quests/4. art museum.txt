@@ -1,0 +1,14 @@
+Optional Side Quest: A Shattered Memory
+Objective: Help a fellow survivor recover a lost memory within the shifting halls.
+
+Quest Overview: In the main gallery, the player meets Ersa, a cultist searching for a funeral card she claims to have lost “in a dream.” She explains that she last saw it in one of the museum’s shifting rooms, but the layout has since changed. ersa is deeply troubled, as though finding the funeral card will help her remember something important.
+
+Quest Steps:
+
+Speak with ersa: The player learns about her vague, dreamlike memory of the funeral card, her lost keepsake. She offers a portion of her supplies if the player agrees to search.
+Explore the Museum for Clues: As the player solves other puzzles, they occasionally encounter distorted echoes of ersa’s memories—fleeting sounds or visions showing a young woman exploring the museum.
+Find the funeral card: The player finally locates the funeral card in a small, almost invisible compartment within the Room of armor. Returning it to ersa reveals an unexpected twist: she has no memory of the funeral card or the player, as if she has been caught in the museum’s strange influence herself.  As a result of the confusion, the player keeps the funeral card.
+Outcome:
+
+Reward: the funeral card itself. The encounter leaves them with the unnerving impression that the museum alters not just space, but memory.
+Atmospheric Impact: ersa’s fragmented memory and lack of recall hint at the museum’s power, reinforcing the idea that this space erodes both time and perception.

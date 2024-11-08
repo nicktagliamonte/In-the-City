@@ -1,0 +1,103 @@
+* fear to indiference is the arc – this is a downer game
+		* early/mid/end game are broken into intro/conflict/transformation/conclusiong
+			* 1: introduction
+			* 2: inciting incident
+			* 3: choices and consequences
+			* 4: choices and consequences, allies and enemies
+			* 5: critical choices
+			* 6: critical choices, confrontation
+			* 7: reflection
+			* 8: reflection
+			* 9: reflection
+			* 10: confrontation, resolution of the arc
+		* remember that the busker is in every one of the below -- his quest is in manayunk
+		* prologue
+			* the player wakes up in a backyard on maxwell place, alone.  they wander through the dead zone hearing creaking and rustling, but seeing no one
+			* they have no thirst or hunger but do have fear
+			* they see light in the distance and come to st jeromes -- this regions safe zone.
+			* it is already safe, without quest, as section 1 begins (real gameplay gets rolling below)
+		* the dead zone	
+			* player joins those gathered near the church scrapping and makes tense conversation
+			* some allusions are made to what is being scrapped and why -- it's all that remains available to those stuck here
+			* optional quest - the broken chain
+			* player meets jack, a survivalist	
+				* potential group member number 1
+			* player meets olivia, an amateur technologist
+				* potential group member number 2
+			* vague advice about survival is given, but not all of it is good
+			* the player has the opportunity to explore the school, but is unable to proceed very far.  this is a very on-rails experience
+			* a scavenger points them to arch street.  the journey is long and will take a certain quantity of food, but if the player frankford->delaware ave->arch they'll get there in a few hours
+				* vignettes of the journey are shared and the player is allowed to gather resources on the trip.  passing by future points of interest will just produce a "can't go there yet" type message
+		* arch street
+			* decayed network of street vendors and scavengers haggling over scraps
+			* makeshift stalls line what used to be storefronts
+			* main story quest 1 - claiming the shelter
+			* optional quest - The Mismatched Merchants
+			* meet Milo, a negotiator
+				* potential group member 3
+				* Whatever Milo's sisters name is and he teach the player how to haggle and scavenge, while offering hints about the city’s power structure and the strange artifacts that some survivors wield.
+			* no matter how the player secured the safe zone, the Watchers want it back.  the player must leave the region quickly
+				* if the player helped harv or is otherwise of good reputation, they are guided to cobbs creek and told to see a bookstore owner
+					* in this case, the journey takes 2 hours and little food
+				* else, it is more harrowing and a likely source of exhaustion as food stores may be too low
+					* call it 3.5 hours, lucky to make it 
+				* south to walnut then cut west
+				* it's possible here that the player simply does not have enough food and needs to repeat section 2 or spend a night camping to scavenge during the journey
+			* the traps are fully expanded on here, as is crafting
+		* cobbs creek
+			* the strange power surges from streetlights make visibility low
+			* broken windows
+			* shadows flicker at the edge of players vision
+			* tom bombadil in a bookstore
+				* walnut and 52
+			* the player is exhausted by constant fear
+			* “Fear will only keep you trapped. But you’ll learn.” The player witnesses the old survivor hiding rather than engaging
+			* Survival here means hardening oneself, not by overcoming fear, but by embracing the indifference of those who have lived in the ruins longest
+			* main quest - forgotten refuge
+			* side quest - old neighborhood ties
+			* by now, it is evident that artifacts are of importance.  player group decides to go to the museum in search
+		* art museum
+			* this is mostly about puzzles
+			* it's mostly quest driven, as there's barely a safe zone and no economic zone
+			* main - into the shattered depths
+			* optional - a shattered memory
+			* logan square - find the conveyance
+			* Within the museum, the player encounters an NPC who claims to be a historian of sorts, hoarding relics of the past. Through dialogue, the player learns fragmented tales of the city’s downfall, how the “magic” is just the city’s decaying power grid reanimating itself.
+				* they talk like that 1 nosleep story, regularly breaking the fourth wall and making comments on spelling/the text format
+				* Transition to Region 5: The historian points toward FDR Park, hinting that the park hides dangerous secrets.
+				* given the fomorian, this is an act of malice
+			* Character Development: This experience deepens the player’s shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
+			* Akkorokamui 
+		* Metalwoods
+			* this is another weird one -- it's a strategy level
+			* main quest - confronting the fomorian
+			* optional quest - lost in the murk
+			* there is a safe zone, but barely
+			* same with economic
+			* it is near impossible to beat the fomorian, and even if you do it instills party-wide fear that drive you up town to temple in a blur of flashing lights
+			* this is a fall away from indiference
+			* there is a fomorian npc
+		* leacouras haunts
+			* main - echoes of the past
+			* side - fleeting memories
+			* the player is forced back towards indifference by the memories
+			* the ghost tells you you have always been friends (see side quest)
+			* the player or party wanders, aimless, back up frankford before winding up accidentally in port richmond
+			* there is a "mimic" type npc who doesn't offer anything and just fucks with you
+		* the port
+			* main - enchanted alleys
+			* side - Homunculus's heart
+			* this whole region is relatively safe.  the last 3 have been various versions of fucked up and this is a more pure, more populated section
+			* some kind of trickster god npc is prominent here, but good natured.  kitsune type
+			* continue looking for the relative security of the dead zone, the party proceeds north to the badlands
+		* edge of the world
+			* char dev: the player is confronted with survival in a different, somehow less primal form
+			* The lessons of indifference learned in previous regions begin to clash with the harsh, visceral experiences of the Badlands.
+			* The dynamic within the group shifts as they begin to question their motivations
+			* main - circuit breaker
+			* side - tangled signals
+			* the ai tells the player that there is a reason for their presence here.  the ai tells the player that the answer is in center city
+			* stacey is found here later than you usually encounter her.  if you give her the casio watch, she joins you in the endgame.
+		* endgame
+			* this is an endgame sequence.  by entering, the player becomes immune to the fear effect
+			* see "main quests/endgame.txt" for specifics

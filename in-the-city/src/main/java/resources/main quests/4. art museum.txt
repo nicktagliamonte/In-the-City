@@ -1,0 +1,29 @@
+Main Quest: Working title house of leaves . txt
+Objective: Reach the heart of the art museum and solve the central puzzle to unlock the “Forgotten Vault,” a hidden area with resources and artifacts
+
+Quest Overview: The player begins in the main gallery of the Art Museum, only to find that typical navigation techniques don’t work here. Paths twist, rooms seem to rearrange themselves, and strange sounds lure the player in the wrong direction. They must solve a series of perception-based puzzles to reach the core of the museum and unlock the vault.
+
+Quest Steps:It's just region exploration with the following specifics
+it's a maze (maze-like, really.  i can develop a map at the time with an online generator in just afew minutes)
+having the map allows you to skip the puzzle portion of hallway -- see arch st side quest
+staircase: escher influence (puzzle.txt)
+hallway: seems to just get longer, it will continue to do so until the player enters the correct gallery room.  it's one where they have to walk back and forth past the door to this gallery room a few times before it appears.
+gallery: this is the escape room
+
+Puzzle 1: The Infinite Hallway (Escape Room)
+Description:
+The player steps into a gallery room lined with art pieces that seem familiar yet slightly off, as if they’re from a dream or memory. Once inside, the door they entered from has disappeared. Ahead, there’s only a hallway leading deeper into the museum.
+
+Objective:
+Escape the gallery room by solving clues embedded within the paintings on the walls.
+
+Details:
+
+paintings, distorted as if seen through a lens. The player quickly realizes that these paintings change when viewed from different angles.
+On one wall, a large painting titled Exit shows a series of symbols that look like directions or positions.
+If the player touches or interacts with each painting in a specific order, corresponding to these symbols, they hear a sound as if something in the room shifts or clicks into place.
+At a certain point, the lights flicker, and for a brief moment, one painting shows an image of a door. When the player turns back to that spot, the door is real and functional.
+Solution:
+The player must decipher the sequence on the Exit painting and interact with each of the other paintings accordingly. This sequence triggers the door’s appearance, allowing them to escape.
+
+outcome: base it off time to solve! or number of wrong moves.  heavy good, slight good, heavy bad.

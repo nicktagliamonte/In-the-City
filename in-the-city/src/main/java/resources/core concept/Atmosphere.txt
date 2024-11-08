@@ -1,0 +1,29 @@
+atmosphere
+	* Overall Tone:
+		* The world is stark and unforgiving, designed to keep the player slightly on edge. Each challenge serves as a reminder of the player character’s precarious place within this environment.
+		* The game balances tension with fleeting moments of humor or wonder, creating emotional highs and lows that mirror the harsh but complex nature of the setting.
+		* An adversarial spirit is embedded into the game itself, subtly positioning it as an opposing force. The game’s world doesn’t "want" the player to survive but also doesn’t actively intervene in obvious ways, lending it a brooding indifference that feels quietly hostile.
+	* Adversarial Spirit:
+		* Survival as a Battle of Wills: The player’s true adversary is the world itself. It manifests in relentless challenges: harsh weather, dwindling resources, and a landscape that is both ancient and ever-changing.
+		* Sparse Exposition: Minimal hand-holding and few explanations make the player feel as though they’re constantly missing information, intensifying the sense of a hostile or indifferent universe.
+		* Nature as a Character: The environment is a silent opponent—trees seem to loom, shadows twist in unnatural ways, and buildings groan as if resentful of intrusion.
+	* Primary Atmosphere - Spooky:
+		* Visual and Descriptive Tone: The world, especially Philadelphia in this distant future, is tinged with a feeling of haunted history. There’s an eerie sense of places abandoned for too long, with everyday items or remnants of the old world now feeling alien and unsettling.
+		* Sounds and Silence: The game might use brief sound descriptors like "a faint rustling nearby" or "a distant, hollow clang," heightening the tension in sparse descriptions.
+		* Familiarity Made Strange: Broken-down infrastructure and relics of present-day life are now enigmatic artifacts, their purposes lost to time, adding an eerie layer to exploration.
+	* Secondary Atmosphere - Mysterious:
+		* Layered Narratives: The world suggests stories without fully telling them. Unmarked graves, strange symbols, and old machinery invite curiosity, rewarding players who dig deeper into lore.
+		* Discovery of the Unseen: Traps, technology, and old documents are encoded with mysteries that the player unravels, sometimes to their detriment, adding a feeling that truth here comes with risk.
+		* Secrets Unfolding: Encounters and settings subtly reveal the past through surreal encounters, providing tantalizing but incomplete glimpses of the world’s history and hinting at what went wrong.
+	* Tertiary Atmosphere - Foreboding:
+		* Sense of Imminent Threat: There’s always a looming sense that something could go wrong. Even in “safe” areas, there’s a feeling that the peace is temporary or conditional.
+		* Environmental Triggers: Players may encounter signs of impending danger—clouds darkening, strange weather patterns, animals acting strangely—all hinting that the world is gearing up for something dire.
+		* Unfinished Business: As players progress, they encounter remnants of other adventurers or communities that almost survived. This undercurrent of failed attempts creates an uneasy feeling that they’re following in the footsteps of those who did not make it.
+	* Moments of Levity:
+		* Dark or Dry Humor: Oddball characters may have a dry sense of humor or offer sly observations about the absurdity of the world, helping to break tension.
+		* Whimsical Artifacts: Some relics or pieces of “magic” (advanced tech) have unintended functions or bizarre effects, providing rare, lighthearted moments in the otherwise grim journey.
+		* NPCs with Quirks: The few allies or informants the player encounters may have distinct, quirky personalities that contrast with the desolate world, offering refreshing, albeit brief, companionship.
+	* Moments of Surrealism:
+		* Nature as a Force Beyond Understanding: The flora and fauna of this far-future Philadelphia exhibit strange, otherworldly characteristics—plants may hum at night, stones emit faint glows, and animals behave with eerie intelligence.
+		* Techno-Magic Anomalies: Some of the “magic” (technology) the player interacts with may behave unpredictably, creating strange experiences that defy logic. An artifact may temporarily distort perception or transport the player to a vision of the past.
+		* Reality Slippage: Occasionally, as players dig deeper, they experience moments that feel disjointed, where past and present collide, or where environments subtly shift, hinting at a fractured or layered reality.

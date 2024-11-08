@@ -1,0 +1,50 @@
+* encounter setup and frequency
+    * probability/zone system:
+        * safe zone: no chance of combat encounter
+            * there is a primary "base" in each region with precisely zero chance of combat encounter
+        * mobile safety:
+            * "conveyance" referred to by npc's at varying points as both a machine and a beast, as both being driven and being ridden
+            * highwaymen may fight, and depending on how nice the thing looks the chance of this will go up.  but they are much much safer in/on this than walking
+            * this will resolve weight limits but then the player has to choose what to bring out with them on excursions
+        * economic zone
+            * there is an economic zone in each region with things like shops
+            * in this zone there is an extremely low but non-zero chance of encounter
+            * social tension
+                * some encounters are non-combatant interactions that might escalate depending on the players choice or reputation in this zone
+        * medium: the first unit of distance away from safety, medium encounter frequency
+        * danger zone: highest chance of encounter
+        * cave/dungeon: chance increases as the dungeon progresses
+    * some special encounters are scripted or triggered by story progression to ensure specific plot moments
+* nature of combat/enemies
+    * wildlife, environmental hazards
+        * react to player actions
+            * loud noises, food presence
+    * desperate npc's
+        * some may be open to negotiation
+        * others act erratically
+    * emphasis on avoiding conflict or creative problem solving
+        * stealth, negotiation, using found objects
+    * minimal, turn based combat
+        * [Fight] [Flee] [Items]
+        * Submenus under [Fight] and [Items] are intentionally simple
+    * only the pc selects actions, npc alliles auto attack or assist based on set tactics
+    * initiative
+        * pre-determined each encounter
+        * more powerful enemies get higher mods to their initiative rolls
+* factors affecting combat
+    * weather
+    * visibility
+    * resources
+        * each encounter impacts resources (health, tools)
+            * reinforces the need to avoid unnecessary fights
+* combat methods
+    * weapon attack
+        * weapons weaken over time before eventually being destroyed
+    * melee attack
+        * takes energy - defined by str or con
+    * magic attack
+        * takes focus - defined by int or wis
+* rewards
+    * experience, but this is not the only way to level up
+    * resources, but this is not the only way to get resources
+        * but it may be a good way to get resources which are "higher level" (read: require more resources to craft or purchase) than the players current state would allow

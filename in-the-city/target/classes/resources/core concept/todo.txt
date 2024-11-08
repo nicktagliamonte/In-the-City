@@ -1,0 +1,22 @@
+make code todo
+    just want to have it recorded that dialogue will be fully scripted
+    basically all flavor text will come as i code individual regions
+    define chance encounter frequency region by region, npc by npc, at code time
+
+Phase 5: Modular Expansions
+Introduce a Map class for defining locations and paths.
+Add a CombatSystem class if your game includes battles.
+
+Phase 6: codebase creation
+create files for all items
+and all spells
+and all npc's
+organize the filestructure
+
+Phase 7: persistance
+Create methods for saving and loading game states to test persistence.
+figure out how to initialize a region's rooms and when
+
+//i'll need some sort of codebase step.  class files for every item, spell, quest, everything
+//given how room is developing, i'll need to make a method in gamestate (or wherever things are update) to initialize a region's rooms (perhaps from json?)
+//possibly make modification in main as well

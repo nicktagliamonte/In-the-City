@@ -1,0 +1,64 @@
+***ALL OF THE BELOW is kind of a TODO -- i only feel final about the above***
+	* puzzles
+		* escape room
+		* ...others
+	* ethics
+		* decisions and connections made with npc's in game will be relevant to the ending
+		* probably something that seems like a necessary part of the game will actually be bad and wrong
+			* see a dark room's "huts and a village is actually slavery and gives you a slightly worse ending" schtick
+	* hints
+		* should there be a "hint" command that brings out some vague-ish tip? maybe
+		* earn hints, these are also a resource
+* characters
+	* main
+		* unnamed
+		* belongs to a player selected one of three classes
+		* perhaps they also come from a player selected choice of three backgrounds?
+		* perhaps they (can? must?) join forces with other classes to acheive their goal?
+		* how did they get there? where did they come from?
+			* "from up north" "passing thru" "something else vague, then drop it"
+			* of course it's not lazy storytelling, it's an adversarial game!
+	* antagonist
+		* unnamed main force in control of the (city? world?) which the player is acting against, but not by direct resistance – more like how technically frodo was acting against sauron but sauron was largely unaware of frodo as an individual
+		* mainly, the antagonist will be nature/setting
+	* other
+		* the street magician/musician	
+			* so you think i sit around and do fucking magic tricks all day?
+			* no, you've misunderstood the core concept of musician
+		* tom bombadil
+		* the city itself
+			* this will be important for setting the magical tone
+			* random shit like a haunted bell that rings at odd hours (reacting to the players choices? or random?)
+			* inanimate objects with personality
+		* someone dialogue-y/banter-y
+		* someone who the player will have to make a conscious choice not to include in the party.  party max size is, say, 3 (and will work best if it's one of each class) but there will be an initial npc who can be cast aside but that's not what the game streamlines the player into
+		* mythological figures.  not necessarily one per region, but several that fit the flavor when appropriate
+* ending
+	* something extremely unexpected
+		* that's good, right? just say "something unexpected?" is that information dense enough to base a narrative off of?
+	* several choices based on interactions during the game
+	* definitely one where something turns the sun off – that's the medium ending
+		* see dyson sphere
+	* one bleak and hopeless, which doesn't invalidate the efforts of the player but does bum them right out - that's the bad ending.  think annihilation lighthouse, infinite loop
+	* one where you planeshift in some way to an unknown but hopeful fate.  the exact mechanics of the planeshift are tbd and are the extremely unexpected thing (left as an exercise to the...dev).  like how in a dark room, you start gathering dirt and twigs and end in space.  invert the starting conditions completely
+		* possibly, depending on what you do during the game, there is a version of this with company and a version alone.  the version alone is slightly worse.
+		* this is open to all 3 player classes – certain classes are not precluded from the good ending.  but one might be more inclined to it?
+		* if we take planeshift to be literal, then a magic user will be more inclined to this ending
+		* perhaps the shift is to the real world, or to the "universe" that the user is playing the game in
+		* perhaps it is to another point in time, and we see that although this works out well for the player character, there is subtle implication that their presence earlier in time causes the events which lead to the games starting conditions
+			* this will mean that all 3 endings are kind of a downer
+				* either something bleak and hopeless happens, or the sun turns off, or things work out for you the player positively but in a way which will inevitable end in the events of the game
+	* almost all playthroughs will result in the medium ending.  not quite to the extent that the other two are easter eggs, but things definitely don't streamline to them
+	* easter egg ending
+		* for doing something ridiculous like avoiding all combat or winning every combat, or forgoing a conveyance completely, or never using a trap
+* gameplay
+	* exploration and puzzles
+	* resource management and gathering
+	* region-by-region you stave off some threat or other such negative influence
+		* this seems to be the core goal, but in fact you are actually working towards the plane shift found in the good ending
+	* relatively simple
+	* the game is (relatively) on rails.  it's not too massively open world
+	* there are side quests, if you can call it that.  
+		* short, one off things done for npc's
+		* most won't effect the ending, but some will
+		* or maybe they will all contribute to some weight score, defining future encounters and endings

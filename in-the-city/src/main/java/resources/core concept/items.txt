@@ -1,0 +1,364 @@
+Items
+1. resource items
+    * base: water
+        * low scarcity
+        * no barter value
+        * weight: 1 unit
+    * common: scrap material
+        * Description: Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).
+        * Uses: Repairs, minor crafting, simple weapons, basic traps, and barter with lower-tier NPCs.
+        * Scarcity Level: Low.
+        * Barter Value: 1 unit.
+        * Weight: 1 unit
+    * moderate: food rations
+        * Description: Preserved and easily portable food items (canned goods, dried meats, grains).
+        * Uses: Essential for survival and health regeneration; high trade value in all zones.
+        * Scarcity Level: Moderate; limited to specific zones and encounters.
+        * Barter Value: 5 units
+        * weight: 2 units
+    * uncommon: medical supplies
+        * Description: Basic first aid, bandages, antiseptics, pain relievers. Essential for recovery and minor healing.
+        * Uses: Restores health, crucial for sustaining longer exploration and surviving encounters.
+        * Scarcity Level: Uncommon; frequently found in economic zones or near settlements but rare in hostile areas.
+        * Barter Value: 10 units.
+        * weight: 3 units
+    * Rare: Fuel and Energy Cells
+        * Description: Old fuel canisters, batteries, or specialized cells needed for running machinery and transportation.
+        * Uses: Powers conveyance, lights, or small machinery; has high barter value with specialized NPCs.
+        * Scarcity Level: Rare; found in high-danger zones or from specific NPCs in exchanges.
+        * Barter Value: 25 units.
+        * weight: 4 units
+    * Very Rare: Ancient Relics
+        * Description: Unique and mysterious items from before the collapse (e.g., an old watch, rare jewelry, strange technological artifacts).
+        * Uses: Mostly valuable for bartering, unlocking certain story elements, or as powerful talismans.
+        * Scarcity Level: Very rare; found only in hidden or high-risk zones.
+        * Barter Value: 50 units.
+        * weight: 5 units
+2. crafting supplies
+    * Description: A versatile, compact toolkit containing essential materials and tools for crafting and repairing various items. The kit includes wires, circuit boards, adhesive, and an assortment of small mechanical parts, all neatly organized in a rugged, weather-resistant case. The case is adorned with symbols and instructions that only a skilled Technologist can fully appreciate.
+    * Use: This toolkit allows the Technologist class to craft new items, upgrade existing gear, or repair damaged equipment. It can be used at any crafting station or during downtime in safe zones to create unique gadgets or modify weapons. When equipped, the toolkit provides a crafting efficiency bonus, reducing the resource costs for crafting by a small percentage.
+    * Weight: 2 units
+    * First encountered: stage 3
+3. lockingpicking tools
+    * Description: A finely crafted set of lockpicking tools housed in a durable leather pouch. The kit includes various picks, tension wrenches, and rakes, each designed for different lock types. The tools are sturdy and posess a weight beyond what it seems they should, showing signs of frequent use and expert craftsmanship, with a technological underpinning that could account for their frequent success. The pouch also has compartments for small spare parts and a small flashlight for dark environments.
+    * Use: This toolkit allows the Survivalist class to pick locks on doors, chests, and other secure locations throughout the game world. Successfully using these tools can grant access to hidden areas, rare resources, or shortcuts. When equipped, the lockpicking tools increase the chances of a successful pick, providing a bonus to skill checks related to lockpicking.
+    * Weight: 3 units
+    * First encountered: stage 3
+4. cryptic amulet
+    * Description: An ornate amulet crafted from an iridescent stone that seems to shift colors in the light. Its surface is etched with cryptic symbols and surrounded by a delicate chain. When worn, the amulet emits a faint, soothing hum, almost like a whisper, which calms those around the wearer.
+    * Use: This amulet is the special item for the Negotiator class, enhancing their ability to communicate and persuade. When equipped, it grants bonuses to charisma and negotiation rolls, allowing the wearer to defuse tense situations or sway opinions in their favor. Additionally, the Whispering Amulet can be used once per day to cast a charm effect, temporarily boosting the goodwill of NPCs towards the wearer, making them more receptive to offers or requests.
+    * weight: 2 units
+    * First encountered: stage 3
+5. melee weapons (give use an energy cost)
+    1. Rusty Knife
+        Description: A crude, rusted blade with a jagged edge. It's seen better days but can still cut through soft materials.
+        Cost: 5 generic units
+        Weight: 1 unit
+        Damage: 1d4
+    2. Improvised Club
+        Description: A heavy stick or pipe, worn from use but sturdy enough to deliver a solid blow.
+        Cost: 10 generic units
+        Weight: 2 units
+        Damage: 1d6
+    3. Machete
+        Description: A sharp, broad blade designed for slicing through vegetation, now repurposed as a weapon.
+        Cost: 15 generic units
+        Weight: 3 units
+        Damage: 1d8
+    4. Survival Axe
+        Description: A compact axe designed for outdoor survival, featuring a sharp edge and a sturdy grip.
+        Cost: 25 generic units
+        Weight: 4 units
+        Damage: 1d10
+    5. Energy Blade
+        Description: A futuristic weapon that generates a blade of pure energy, slicing through materials with ease.
+        Cost: 50 generic units
+        Weight: 3 units
+        Damage: 2d6
+    6. Retractable Staff
+        Description: A lightweight staff that can extend and retract, equipped with shock-absorbing technology for combat.
+        Cost: 40 generic units
+        Weight: 2.5 units
+        Damage: 1d10
+    7. Pulse Katana
+        Description: A sleek, high-tech katana with a vibrating blade that cuts through armor and flesh alike.
+        Cost: 75 generic units
+        Weight: 3 units
+        Damage: 2d8
+    8. Nano-Spear
+        Description: A spear with a shaft made of a flexible, nanomaterial that can change length and shape.
+        Cost: 85 generic units
+        Weight: 4 units
+        Damage: 2d6
+    9. Plasma Scythe
+        Description: A massive weapon resembling a farming scythe, but with a plasma edge that can cut through almost anything.
+        Cost: 150 generic units
+        Weight: 6 units
+        Damage: 3d8
+6. ranged weapons (give use an energy cost)
+    1. Slingshot
+        Description: A simple, handcrafted slingshot made from elastic materials and a sturdy frame, effective for small projectiles.
+        Cost: 5 generic units
+        Weight: 1 unit
+        Damage: 1d4
+    2. Reinforced Crossbow
+        Description: A durable crossbow with a metal frame, capable of firing bolts with significant force.
+        Cost: 15 generic units
+        Weight: 4 units
+        Damage: 1d8
+    3. Rusted Pistol
+        Description: An old but functional sidearm, the rusted pistol is a reliable weapon for close to mid-range combat.
+        Cost: 25 generic units
+        Weight: 2 units
+        Damage: 1d10
+    4. Compact Plasma Pistol
+        Description: A lightweight pistol that fires bolts of superheated plasma, capable of melting through light armor.
+        Cost: 50 generic units
+        Weight: 2.5 units
+        Damage: 2d6
+    5. Energy Rifle
+        Description: A high-powered rifle that uses energy cells to fire concentrated beams of energy, highly effective at range.
+        Cost: 75 generic units
+        Weight: 4 units
+        Damage: 2d8
+    6. Tactical SMG
+        Description: A compact submachine gun designed for close-quarters combat. Its lightweight frame and high rate of fire make it ideal for quick engagements.
+        Cost: 85 generic units
+        Weight: 4 units
+        Damage: 2d6
+    7. Smart Rifle
+        Description: A futuristic rifle equipped with targeting systems and smart ammunition that adjusts trajectory for precision shots.
+        Cost: 100 generic units
+        Weight: 5 units
+        Damage: 3d6
+    8. Railgun
+        Description: A powerful energy weapon that uses magnetic fields to launch projectiles at incredible speeds, causing massive damage.
+        Cost: 120 generic units
+        Weight: 7 units
+        Damage: 3d8
+    9. Voidcaster
+        Description: A highly advanced weapon that manipulates gravitational forces to fire projectiles that warp space around them, creating devastating effects.
+        Cost: 200 generic units
+        Weight: 8 units
+        Damage: 4d6
+7. spells
+    (a) combat
+    Direct Attack Spells
+        1. Plasma Bolt
+            Description: Launches a concentrated bolt of superheated plasma that explodes on impact.
+            Damage: 1d4 energy damage.
+            Casting Cost: 1 
+        2. Ion Surge
+            Description: Releases a wave of ionized particles that zaps enemies within a short range.
+            Damage: 1d6 electric damage.
+            Casting Cost: 2 
+        3. Particle Stream
+            Description: Fires a continuous stream of high-velocity particles that shred through armor.
+            Damage: 1d8 piercing damage (sustained for 2 rounds).
+            Casting Cost: 3 
+        4. EMP Pulse
+            Description: Generates an electromagnetic pulse that disrupts electronics and stuns living targets.
+            Damage: 1d8 energy damage and stuns the target for 1 turn.
+            Casting Cost: 3 
+        5. Gravity Well
+            Description: Creates a localized gravitational field that crushes foes and hurls them back.
+            Damage: 2d4 kinetic damage.
+            Casting Cost: 4 
+        6. Nano Swarm
+            Description: Releases a swarm of nanobots that attack enemies, causing tearing and corrosive damage.
+            Damage: 2d4 acid damage over 2 rounds (1d4 damage each round).
+            Casting Cost: 4 
+        7. Cryo Burst
+            Description: Unleashes a blast of freezing energy that encases targets in ice.
+            Damage: 2d6 cold damage and reduces the target's movement for 1 turn.
+            Casting Cost: 5 
+        8. Thermal Lance
+            Description: Fires a concentrated beam of heat energy that burns through armor and flesh.
+            Damage: 2d6 fire damage.
+            Casting Cost: 5 
+        9. Arcane Conduit
+            Description: Channels raw energy into a powerful discharge that arcs between multiple enemies.
+            Damage: 3d4 electric damage to each enemy within a 5-foot radius.
+            Casting Cost: 6 
+8. traps
+    (a) non magical
+        * small trap
+            * cost 1 scrap
+                * therefore weigh 1 unit
+            * one time use 
+            * yield scrap/water -> food -> medical
+            * expire 1 day/night cycle after being set
+        * big trap
+            * cost 2 scrap, 1 food
+                * therefore weigh 4 units
+            * yield scrap/water/food -> medical -> energy -> relics
+            * one tiem use
+            * expire 2 day/night cycle after being set
+		* defense trap
+            * set behind you on excursions
+            * cost 3 scrap, 2 fuel
+                * therefore weigh 11 units
+            * yield scrap/water/food/medical -> energy -> relic
+            * one time use
+            * expire 3 day/night cycle after being set
+    (b) magical (honestly, just a buffed version of the above.  higher success chance, larger payout)
+        * small enhanced trap
+            * cost 1 scrap
+                * therefore weigh 1 unit
+            * one time use 
+            * yield scrap/water -> food -> medical
+            * expire 1 day/night cycle after being set
+        * big enhanced trap
+            * cost 2 scrap, 1 food
+                * therefore weigh 4 units
+            * yield scrap/water/food -> medical -> energy -> relics
+            * one tiem use
+            * expire 2 day/night cycle after being set
+		* enhanced defense trap
+            * set behind you on excursions
+            * cost 3 scrap, 2 fuel
+                * therefore weigh 11 units
+            * yield scrap/water/food/medical -> energy -> relic
+            * one time use
+            * expire 3 day/night cycle after being set
+9. collectables
+    Balance Wheel
+    Escapement
+    Gear Train
+    Main Spring
+    Dial
+    Hands
+    Case
+    Crown
+    Pallet Fork
+10. buff items
+    (a) str
+        Strength Gauntlets
+            Description: Sturdy leather gauntlets reinforced with metal plates, offering both protection and strength enhancement.
+            Weight: 2 units
+            Effect: +1 to Strength (STR)
+        Titan's Belt
+            Description: A wide belt crafted from durable material, said to be imbued with the strength of ancient giants.
+            Weight: 3 units
+            Effect: +2 to Strength (STR)
+    (b) dex
+        Cloak of Agility
+            Description: A lightweight, shimmering cloak that enhances the wearer’s speed and reflexes.
+            Weight: 1.5 units
+            Effect: +1 to Dexterity (DEX)
+        Boots of Precision
+            Description: Sleek, flexible boots designed to enhance the wearer's agility and balance.
+            Weight: 2 units
+            Effect: +2 to Dexterity (DEX)
+    (c) con
+        Belt of Fortitude
+            Description: A heavy belt made of thick leather, infused with ancient runes that bolster the wearer’s resilience.
+            Weight: 3 units
+            Effect: +1 to Constitution (CON)
+        Amulet of Resilience
+            Description: A protective amulet that enhances the wearer’s vitality and fortitude against harsh conditions.
+            Weight: 0.5 units
+            Effect: +2 to Constitution (CON)
+    (d) int
+        Headband of Insight
+            Description: An ornate headband set with a small gemstone that glows faintly, enhancing mental acuity.
+            Weight: 0.5 units
+            Effect: +1 to Intelligence (INT)
+        Scholar's Robe
+            Description: A flowing robe adorned with symbols of knowledge, enhancing the wearer’s mental capabilities.
+            Weight: 2 units
+            Effect: +2 to Intelligence (INT)
+    (e) wis
+        Amulet of Wisdom
+            Description: A mystical amulet that resonates with the wearer’s inner strength and understanding of the world.
+            Weight: 0.5 units
+            Effect: +1 to Wisdom (WIS)
+        Tome of Understanding
+            Description: A worn book that grants deeper insights into the complexities of the world when worn.
+            Weight: 1 unit
+            Effect: +2 to Wisdom (WIS)
+    (f) cha
+    Ring of Charisma
+        Description: A finely crafted ring that sparkles with an otherworldly light, making the wearer more persuasive and charming.
+        Weight: 0.2 units
+        Effect: +1 to Charisma (CHA)
+    Cloak of Presence
+        Description: A richly colored cloak that gives the wearer an imposing aura, enhancing their social interactions.
+        Weight: 1.5 units
+        Effect: +2 to Charisma (CHA)
+11. armor
+    Level 2: Light Protection
+        Light Leather Armor
+            Description: Flexible leather armor designed for ease of movement while offering modest protection.
+            Weight: 3 units
+            Effect: +2 AC
+            cost: 50
+        Padded Armor
+            Description: Armor made of quilted fabric that absorbs impacts, providing decent protection.
+            Weight: 4 units
+            Effect: +2 AC
+            cost: 40
+        Studded Leather Armor
+            Description: Leather armor reinforced with metal studs for additional protection without sacrificing agility.
+            Weight: 3.5 units
+            Effect: +3 AC
+            cost: 60
+    Level 4: Heavy Protection
+        Breastplate
+            Description: A solid chest plate offering excellent protection while allowing for some movement.
+            Weight: 6 units
+            Effect: +6 AC
+            cost: 80
+        Half-Plate Armor
+            Description: Armor covering the torso and limbs, balancing protection and mobility.
+            Weight: 8 units
+            Effect: +7 AC
+            cost: 100
+        Chainmail
+            Description: Full body chainmail providing significant protection but weighing the wearer down.
+            Weight: 9 units
+            Effect: +6 AC
+            cost: 90
+    Level 6: Advanced Protection
+        Powered Exosuit
+            Description: A lightweight exoskeleton enhancing the wearer's strength and resilience.
+            Weight: 10 units
+            Effect: +10 AC
+            cost: 150
+        Combat Armor
+            Description: Advanced armor integrating technology for maximum defense against both physical and magical attacks.
+            Weight: 12 units
+            Effect: +11 AC
+            cost: 180
+        Radiation Suit
+            Description: A specialized suit protecting against environmental hazards, including radiation and toxins.
+            Weight: 8 units
+            Effect: +10 AC
+            cost: 120
+    Level 8: Legendary Protection
+        Titanium Composite Armor
+            Description: Armor made of reinforced titanium, incredibly tough and lightweight.
+            Weight: 11 units
+            Effect: +14 AC
+            cost: 220
+        Integrated Tactical Armor
+            Description: Advanced combat armor with built-in technology for enhanced battle readiness.
+            Weight: 14 units
+            Effect: +15 AC
+            cost: 250
+        Bioengineered Exosuit
+            Description: An exosuit with biological enhancements that adapt to the wearer’s movements and needs.
+            Weight: 15 units
+            Effect: +16 AC
+            cost: 300
+12. specific special relics
+    *Dull Knife with Kana on It: A dull knife, its blade etched with kana characters, the handle broken and splintered
+    *Vali 2: A compact tube amplifier, its metal casing scratched and glass tube shattered
+    *Casio Watch: A faded digital watch, its screen cracked but still displaying the time.  It's right twice a day
+    *Card with the Serenity Prayer: A tattered card bearing the Serenity Prayer, its edges dog-eared.  a name can vaguelly be seen near the top, what was once a serene 
+                                    image of mountains on the opposite side.
+    *Leather Wallet with Faded ID: A worn leather wallet, its edges frayed, containing a faded ID
+    *Dog Collar: A weathered dog collar, its once vibrant color muted and scratched
+    *Round Lensed Glasses: A pair of round-lensed glasses, one lens cracked, their frame bent
+    *Wooden and Gold Ring: A handcrafted wooden ring inlaid with gold, showing signs of wear
+    *Aquamarine Ring: A delicate aquamarine ring, its stone slightly clouded but still catching the light

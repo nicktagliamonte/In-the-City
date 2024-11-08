@@ -1,0 +1,7 @@
+behind the scenes, you basically get a score from 0-1 which takes the form of 0-.2 brute, .2-.7 negotiator, .8-1 trickster
+price mods are +10%, 0, -10% respectively
+language options will be best for negotiator -- this represents a buff to charm
+brute gets a buff to str
+trickster gets an int buff
+
+i can throw in flavor text when making the underlying game enging to state transitions -- "you're getting physically weaker but smarter and kinder" etc

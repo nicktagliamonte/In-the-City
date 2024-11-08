@@ -1,0 +1,24 @@
+{
+    "regionName": "Ancient Dungeon",
+    "rooms": [
+      {
+        "name": "Entrance Hall",
+        "description": "A large hall with towering stone pillars.",
+        "width": 10,
+        "height": 10,
+        "transitionEvent": {
+          "description": "You hear a distant rumble as you enter."
+        }
+      },
+      {
+        "name": "Chamber of Secrets",
+        "description": "A dark chamber with mysterious symbols carved into the walls.",
+        "width": 8,
+        "height": 8,
+        "transitionEvent": {
+          "description": "A chilling wind sweeps through the room."
+        }
+      }
+    ]
+  }
+  

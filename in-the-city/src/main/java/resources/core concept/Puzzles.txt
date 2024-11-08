@@ -1,0 +1,171 @@
+WHERE APPROPRIATE, HAVE THESE PUZZLES "BE" THE HIDDEN AREA FOR THE REGION
+
+Puzzle 2: "The Rations Stash" - Resource Management & Exploration
+Setting: In a dim basement room, the player finds an old storage cabinet chained shut. They’ll need a tool to open it but have to work with limited resources to make it usable.
+
+Puzzle:
+
+The player finds a pair of rusted bolt cutters nearby, but they’re missing a handle.
+There are various items in the basement (e.g., broken wood, duct tape, a crowbar), but only one combination will work.
+Hints & Clues:
+
+Examining each item yields hints. For example, “The wood is sturdy but too short” or “The crowbar has a bent tip but might fit with something else.”
+Once the player finds the right items and attempts to combine them (e.g., duct tape + crowbar + handle fragment), they can create a makeshift handle to get the bolt cutters working.
+Solution: The player finds a combination of items and assembles them to create a functional tool, allowing them to open the cabinet and find essential survival rations.
+
+Purpose: This puzzle reinforces resourcefulness, exploration, and experimentation, which will be crucial in later, more challenging puzzles.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puzzle Concept: The Three-Step Chinese Puzzle Box
+Location: Deep within the dungeon, surrounded by dim torchlight and the echoes of dripping water, the player finds an ornate Chinese puzzle box resting on an ancient stone pedestal. The box has intricate carvings depicting cycles of life and hidden mechanisms that must be manipulated to open it.
+
+Objective: Solve the puzzle box to reveal a hidden key or artifact necessary to progress further in the dungeon.
+
+Step 1: The Sliding Panel
+Mechanic: The player must slide panels on the side of the box into the correct sequence to reveal a hidden engraving. The panels feature four symbols: water, flame, wind, and stone.
+Clue: Engraved on the pedestal is a faded inscription: “First, calm before the storm.”
+Solution: The correct sequence is moving the panel with water first, followed by the panel with wind.
+Feedback: Once the correct sequence is entered, the box makes a subtle clicking sound, and a small panel unlocks, allowing the player to move to the next step.
+Step 2: Rotating Rings
+Mechanic: The middle of the box features three concentric rings that can rotate, each marked with parts of a symbol. The player must align the rings to form a complete image of a dragon, symbolizing power and wisdom.
+Clue: A mural on the wall nearby shows a dragon with its body coiled, with faint arrows pointing in the order of its segments.
+Solution: Rotate the rings until the dragon is correctly assembled. Players must start by aligning the tail, middle section, and then the head.
+Feedback: The rings snap into place, and a soft glow emanates from the carvings, signaling progress.
+Step 3: Pressure Plates
+Mechanic: The top of the box reveals three small pressure plates, each marked with a unique symbol: an eye, a hand, and a crescent moon. The player must press these plates in the correct sequence to complete the puzzle.
+Clue: A scrap of parchment found in a corner reads: “See, touch, sleep—the way to peace.”
+Solution: The player must press the plates in the order of the eye, the hand, and then the crescent moon.
+Feedback: When pressed in the correct sequence, the box emits a final click, and its lid opens, revealing the hidden key or artifact inside.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puzzle 1: The Shifting Alleyways - this is to find one of this areas hidden zones
+Description:
+As the player moves through cobbs creek, the power surges affect their surroundings, and alleys seem to reconfigure themselves. Some paths that appear straightforward during a power surge will shift when the lights flicker out, creating an unpredictable maze.
+
+Objective:
+Navigate the alleys to reach an exit by keeping track of subtle changes in the alleyway layout each time the lights flicker.
+
+Details:
+
+The player notices that each time the lights flicker, some alleys appear shorter, others longer, and new dead-ends emerge.
+Hints of graffiti or marks on walls subtly indicate stable paths, but they’re only visible in specific lighting conditions.
+Solution:
+The player must move cautiously, testing each path during different lighting intervals to find a consistent route. By following the graffiti or markings visible in a specific lighting pattern, they eventually reach an alley that doesn’t change and leads to the exit.
+
+Hint:
+A message scrawled on a wall says, “The path may shift in shadow, but true signs remain.” This encourages the player to focus on finding symbols or markings that persist despite the shifting light.
+
+Puzzle 2: The Broken Streetlamp Code
+Description:
+In the middle of an intersection is a set of four streetlamps that flicker irregularly, casting alternating shadows. At the center of this intersection is a locked box with an electronic panel, and it appears that the lights themselves somehow form the “combination” needed to unlock it.
+
+Objective:
+Decode the flickering pattern of the streetlamps to determine the passcode and unlock the box.
+
+Details:
+
+Each streetlamp flickers in a particular pattern, going from dim to bright in different intervals.
+When the player observes closely, they notice the lamps flash in sequence and realize it forms a numeric code.
+The streetlamps flicker at varying speeds, but one is slower than the others. This slower lamp flashes once for the first number in the code, twice for the second number, and so forth.
+Solution:
+The player must observe the lamps in sequence and count each flicker to deduce a three- or four-digit code. Once entered into the panel, the box unlocks, revealing useful supplies or a clue.
+
+Hint:
+A discarded notebook nearby has a scribbled message: “Focus on the one that blinks last. Follow its lead to unlock the way.”
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puzzle 2: The Escher Staircase
+Description:
+The player enters a grand hall with a grand staircase ascending in multiple directions, looping around in impossible configurations. Each time they ascend, they seem to end up back where they started but with slight changes in their surroundings, like the color of the paintings or the position of statues.
+
+Objective:
+Navigate the impossible staircase by using specific visual cues to find the one path that will actually lead forward.
+
+Details:
+
+When the player climbs the stairs, they sometimes find themselves facing a wall with a painting of the room they just left. Occasionally, they might see their own figure painted in the distance.
+Small cues, such as slightly tilted frames, shadows pointing in different directions, or mirrors that show the staircase going down instead of up, hint at which direction to take.
+At certain intervals, the player may encounter a statue pointing or looking toward an archway that disappears when approached directly, revealing a hidden staircase if viewed at an angle.
+Solution:
+The player needs to carefully observe the small details that change between loops to figure out the correct path. By aligning their movements with visual cues and subtle hints, they finally reach a landing that doesn’t loop back but instead leads them deeper into the Art Museum.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puzzle 1: The Bargaining Seagull - encountered IF the player has the golden can
+Description:
+The player encounters a rather smug-looking seagull perched atop a crate of supplies that they clearly need. The seagull squawks incessantly each time the player reaches for the supplies, clearly expecting a trade. The bird has gathered a small "nest" of odd trinkets around it, including shiny bottle caps, a couple of shells, a plastic fork, and what appears to be an old piece of jewelry.
+
+Objective:
+Figure out what the seagull wants in exchange for the supplies.
+
+Details:
+
+The player can examine the seagull’s collection, noticing that everything the bird has hoarded is either shiny or reflective.
+If the player tries to simply take the supplies, the seagull flaps around and squawks angrily, making it clear it’s not letting them off easily.
+The player has the golden can
+Solution:
+The player needs to offer it to the seagull, which will happily accept it and fly off with its new treasure, leaving the supplies behind. If the player offers the wrong item (like something not shiny), the seagull will simply give them a disappointed look and ruffle its feathers, as if judging their lack of understanding.
+
+Hint:
+In graffiti nearby, a phrase reads, “One bird’s trash is another’s treasure.” This playful clue hints at the seagull’s fondness for shiny junk.
+
+Puzzle 2: "The Developer’s Debugging"
+Description:
+As you wander through the vibrant streets of Port Richmond, you stumble across a dusty, forgotten arcade machine in [a hidden zone]. The screen flickers to life as you approach, the words “Welcome to Debugging Simulator” flashing on the screen. There’s a single red button beneath the screen that seems to beckon you.
+
+You press it.
+
+The screen glitches, and a message appears:
+"Error 404: Puzzle Not Found. Please input solution below."
+
+After a few seconds of confusion, you realize that the puzzle you need to solve is...in the interface itself. The game has no puzzle—yet, the system seems to expect you to fix it somehow. You hear a distant voice from the machine:
+"Good luck. The real challenge is navigating your own choices."
+
+Objective:
+The player must type a solution into the game, with the understanding that the puzzle is about what the game expects you to do.
+
+Solution:
+
+The player is prompted to type a solution.
+If the player types something like “solve puzzle” or “debug” or “fix it,” the machine will give a sarcastic message like, “You think it's that easy? Try thinking.”
+Intermittently, the puzzle will spit out "weird...it works on my machine."
+The solution is a play on the concept of "reset." If the player types "reset" "turn off" "off/on" anything like that into the game’s prompt, the screen flashes and the arcade machine suddenly pops out a small token—your reward. The game then resets the message to something less cryptic:
+“Great job, you've debugged the system. Next time, maybe try reading the instructions, huh?”
+Hint:
+
+If the player has been exploring, they might notice a small sign hanging near the arcade machine that reads:
+“Have you tried turning it off and back on again?”
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Puzzle 1: "The Disorienting Overlook"
+Description:
+You come upon a grand overlook, its edge suspended impossibly over the chasm below. The wind is eerily still, and a strange hum vibrates the air. The view is like something from a dream—mountains, valleys, and oceans, all stretched and contorted in unnatural angles. The path forward is blocked by a large stone archway, with three jagged rocks floating within it. There’s no sign of how to proceed, but you feel an uncanny pull toward the floating rocks.
+
+As you step closer, the gravitational anomalies begin to distort your perception: the arch seems to spin slowly, and the floating rocks rotate in ways they shouldn’t. When you look directly at them, they appear to move, but when you look away, they stay suspended in place.
+
+Objective:
+The player must move through the archway by manipulating the floating rocks to create a path forward.
+
+Solution:
+The floating rocks seem to respond to the player's movement, but they only rotate or shift when the player is not looking directly at them. The puzzle lies in the strange gravitational forces at play. To move forward, the player must step toward the arch, but at the last second, they must turn their head or close their eyes (metaphorically), causing the rocks to shift and form a path as they are out of sight.
+
+If the player stares at the rocks too long, they will appear to grow larger or smaller, warping the path entirely. The key is to approach while distracted or turned away, then make quick, timed movements to avoid overthinking the disorienting effects.
+
+Hint:
+
+A whisper echoes from the chasm:
+"You cannot control what you see, but you can control where you look."
+
+Puzzle 2: "The Inverted Bridge"
+Description:
+The cliffs have an eerie quality—gravity seems to pull in different directions here. You’ve come to what looks like a bridge, or at least the skeletal remains of one, crossing a large gap. The strange thing is, the bridge isn’t where it seems. One side leads directly into the chasm, but the other side leads into the sky. The platform beneath your feet doesn’t seem solid, either, as though it’s floating in mid-air. Every step you take feels precarious, as if the ground itself could flip at any moment.
+
+At the far side, you see what appears to be a locked gate, but the mechanism is completely inaccessible. The bridge does not function like a normal bridge, and any attempt to cross in a straight line results in disorientation, with the world shifting unnaturally.
+
+Objective:
+The player needs to figure out how to use the gravitational anomalies to cross to the other side, avoiding the illusion of the “normal” path.
+
+Solution:
+The gravitational anomalies in this area have made the bridge a shifting construct, where up and down are no longer obvious. To get across, the player must figure out how to walk sideways by following the inverted structure of the bridge, inverting their sense of gravity for a brief moment. The "true path" is sideways and appears as an odd, parallel line that only becomes apparent when the player steps off the main structure, aligning their gravity with the anomaly.
+
+Once they move far enough to the side, the bridge seems to “flip,” and the player can walk along what seemed to be a wall. The gate will now be accessible, and the bridge will have opened in its proper orientation.
+
+Hint:
+
+As you step closer to the edge of the bridge, a voice murmurs, "Sometimes, the way forward isn’t up, and it isn’t down. It’s… sideways."
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+for city hall, see endgame.txt

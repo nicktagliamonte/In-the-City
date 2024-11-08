@@ -1,0 +1,42 @@
+endgame
+
+HAVING THE GLASSES INCREASES LUCK AS IT RELATES TO THIS Puzzle
+
+IFF YOU GAVE STACEY THE CASIO WATCH, YOU CAN ENCOUNTER THE AQUAMARINE RING HERE.  THIS IS ANOTHER WAY TO UNLOCK THE GOOD ENDING.
+
+Quest Steps:
+Enter City Hall:
+    As you step inside, the light shifts around you, momentarily blinding you before revealing a vast, spiraling corridor. The walls pulse with a rhythm reminiscent of a heartbeat, almost as if the structure itself is alive, watching your every move. You can feel the weight of the air, thick and charged with unspent energy.
+
+Navigate the Labyrinth:
+    You take your first steps down the corridor, where the path splits. Each direction seems equally foreboding. Choosing one path leads you into a room that echoes with your footsteps, but as you turn, you find yourself back at the entrance, as if the hall is playing tricks on your perception.
+        You step into the corridor to the left, but the walls seem to ripple like water. Suddenly, you're back at the entrance, the corridor twisting back on itself, mocking your choice. The air grows colder, and the whispers grow louder, urging you to reconsider your path.
+
+Solve the Cyclical Puzzle:
+You must discern the patterns in the labyrinth. Shadows flicker, revealing symbols on the walls that appear and disappear, offering cryptic hints. You realize that each room reflects a piece of a larger puzzle—a series of choices leading to your final ascent or descent.
+
+Symbol Selection: 
+You encounter three symbols: a spiral, a tower, and a pit. The choice you make will dictate your next steps. Observing the patterns in the shadows provides clues about which path to take next.
+Player Command Example:
+    touch the spiral symbol
+Response:
+    As your fingers graze the spiral, the room begins to spin, and you feel gravity shift. The path beneath you changes, and suddenly, you're standing at the base of a spiraling staircase that seems to lead both up and down simultaneously.
+
+Ascend/Descend the Tower:
+Climbing the staircase feels like an act of defiance against the shifting nature of the space around you. With every step, the atmosphere warps further—sounds become echoes, and the walls bleed into one another. You begin to realize that you are not just climbing up; you are also delving deeper into the core of the loop.
+Player Command Example:
+    climb staircase
+Response:
+    You ascend the staircase, but with every step, the world above and below blurs together. Shadows stretch and compress, revealing glimpses of distant memories that twist into the form of lost souls seeking escape. The higher you go, the more disoriented you feel—are you ascending or descending? Time begins to lose meaning.
+
+Confront the endgame:
+At the pinnacle (or nadir), you arrive at an ethereal chamber filled with pulsating light. In the center lies the endgame, a swirling mass of energy that emanates a profound sense of despair and hope. Here, you must confront the essence of the loop and make a choice that will determine the fate of your journey
+Player Command Example:
+    approach the heart
+Response:
+    You step closer to the heart, feeling the vibrations resonate through your entire being. The light coalesces into shapes—visions of your past choices and future possibilities. As you reach out, a voice echoes in your mind, asking, “What do you seek in this endless loop?” The choice lies before you: to embrace the chaos, to seek clarity, or to escape the cycle altogether.
+
+Conclusion:
+This quest serves as the climactic culmination of your journey, testing not just your skills but your understanding of the nature of reality, choice, and consequence. Each step deeper into City Hall unveils the layers of complexity you’ve faced throughout the game, drawing you closer to an understanding of the loop’s true nature.
+
+*based on the gameplay style, enter ending sequence

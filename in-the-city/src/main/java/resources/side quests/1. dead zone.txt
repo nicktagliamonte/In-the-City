@@ -1,0 +1,27 @@
+the broken chain
+Quest Overview
+While searching for basic supplies in the Dead Zone, the player stumbles upon a partially hidden path leading to an overgrown cul-de-sac. At the end of the road, they find a locked house with a handwritten note on the door. The note is smudged, but it reads:
+
+“Left in a hurry. If you find the bike and fix it, you can get what’s inside. My gift, for anyone who still cares to survive.”
+
+Nearby, leaning against a fence, is a rusty bicycle with a broken chain. Fixing it appears simple but will require specific resources, all scattered around the cul-de-sac. The house itself is locked, and the note implies the bike is somehow key to unlocking it.
+
+Quest Steps
+Examine the Bike
+
+The player inspects the bicycle and finds the chain is broken, with the bike rendered unusable. They notice that it could be repaired with a few pieces of scrap and a basic tool kit.
+Gather Resources
+
+Nearby areas in the cul-de-sac contain some scrap metal, abandoned tools, and potentially usable items. As the player explores, they find pieces they need to repair the chain, though a few items are buried or hidden under debris.
+A total of 2 pieces of scrap and a wrench are needed to repair the bike.
+Repair the Bike
+
+Once the resources are gathered, the player can attempt to fix the bike. Upon repairing it, they find a mechanism attached to the chain that, when rotated, triggers a click from the lock on the house’s door. The house is now accessible.
+Enter the House
+
+Inside, the player finds a small cache of useful items—a medkit, some rations, and a water container. There’s also a journal that briefly recounts the life of the former resident, describing their struggles to survive in the aftermath of the city’s collapse and their attempts to make this house a sanctuary.
+Moral Choice (Optional)
+
+The journal entry ends with a plea: “Please, if you have strength, leave something for those who come after.” The player can choose to leave one item from their inventory as a small gesture for future survivors, which grants a slight boost in their ethical alignment.
+Alternatively, they can ignore the plea and take all items, with no negative consequence beyond missing the alignment boost.
+One of the items is the knife with kana
