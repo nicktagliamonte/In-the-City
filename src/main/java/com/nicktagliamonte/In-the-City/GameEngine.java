@@ -15,7 +15,7 @@ public class GameEngine {
             String input = scanner.nextLine();
             String[] splitInput = input.split(" ", 2);
             String commandName = splitInput[0].toLowerCase();
-            String[] args = (splitInput.length > 1) ? splitInput[1].split(" ") : new String[0];
+            String[] args = (splitInput.length > 1) ? new String[] { splitInput[1] } : new String[0];
 
             GameCommand command = GameCommand.fromString(commandName);
 

@@ -6,7 +6,6 @@ make code todo
 Phase 3: Basic Character Management
 
 Create a Player class and add fields like health and inventory.
-Add simple commands to pick up items or check inventory.
 Test by verifying that item pickups and health updates work as expected.
 
 Phase 4: Event and Interaction System
