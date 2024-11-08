@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,13 +8,17 @@ public class GameState {
     private Map<String, String> roomDescriptions;
     private Map<String, List<Item>> itemsInRooms;
     private Map<String, List<Person>> charactersInRooms;
+    public Player player;
+    public GameEngine gameEngine;
 
     // Constructor
-    public GameState() {
+    public GameState(Player player, GameEngine gameEngine) {
         // Initialize the game state, including descriptions and room contents
         roomDescriptions = new HashMap<>();
         itemsInRooms = new HashMap<>();
         charactersInRooms = new HashMap<>();
+        this.player = player;
+        this.gameEngine = gameEngine;
 
         currentLocation = "Starting Room";
     }
@@ -37,11 +40,47 @@ public class GameState {
     }
 
     public String changeLocation(String direction) {
-        // TODO Auto-generated method stub
         StringBuilder sb = new StringBuilder("You move ");
         sb.append(direction);
         return sb.toString();
     }
 
-    // Additional methods to change location, add/remove items, etc.
+    public Player getPlayer() {
+        return player;
+    }
+
+    public GameEngine getGameEngine() {
+        return gameEngine;
+    }
+
+    public String getDirectionsToRegion() {
+        //this is i think going to be a pathfinding operation.  this is going to be massively difficult to implement
+        String ret = "working";
+        return ret;
+    }
+
+    public String getDirectionsToEconomicZone() {
+        //this is i think going to be a pathfinding operation.  this is going to be massively difficult to implement
+        String ret = "working";
+        return ret;
+    }
+
+    public String toSerializableFormat() {
+        //this one is going to also be somewhat of an undertaking
+        return "working";
+    }
+
+    public void fromSerializableFormat(String data) {
+        // Parse the data and populate the game state
+        // Example: Deserialize JSON or parse plain text to restore fields
+        //this is a minor nightmare when it comes time.
+    }
+
+    public void enterDialogue(Person character) {
+        //I'm not wholly clear on what this will look like
+    }
+
+    public void enterCombat(Person character) {
+        //not wholly clear on this either
+    }
 }

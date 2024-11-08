@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Player extends Person {
     private CharacterClass characterClass;
     private double strength;
@@ -87,5 +89,41 @@ public class Player extends Person {
 
     public void setMaxCarryWeight(double maxCarryWeight) {
         this.maxCarryWeight = maxCarryWeight;
+    }
+
+    public void listInventory() {
+        List<Item> inventory = super.getInventory();
+        if (inventory == null) {
+            System.out.println("No items in inventory");
+        } else {
+            inventory.forEach(item -> System.out.println(item));
+        }
+    }
+
+    public void hide() {
+        //unsure of exact gameplay elements here, i think this will require feedback from gamestate
+        //like the success chance depends on the adversaries in the region
+        System.out.println("working");
+    }
+
+    public void useHint() {
+        //gonna need to add a field and a setter for hints
+        //in this method, there will be a check on the hints available 
+        //then display hint and alter the counter
+        System.out.println("working");
+    }
+
+    public Item getItemFromInventory(String itemName) {
+        List<Item> inventory = super.getInventory();
+        if (inventory == null) {
+            System.out.println("No items in inventory");
+        } else {
+            for (Item item : inventory) {
+                if (item.getName().equalsIgnoreCase(itemName)) {
+                    return item;
+                }
+            }
+        }
+        return null;
     }
 }
