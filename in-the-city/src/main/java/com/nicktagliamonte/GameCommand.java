@@ -6,8 +6,8 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             // Get the current position from GameState
-            String currentLocation = gameState.getCurrentLocation().getName();
-            String roomDescription = gameState.getRoomDescription(currentLocation);
+            String currentRoom = gameState.getcurrentRoom().getName();
+            String roomDescription = gameState.getRoomDescription(currentRoom);
             List<Item> visibleItems = gameState.getItemsInCurrentRoom();
             List<Person> characters = gameState.getCharactersInCurrentRoom();
 
@@ -29,7 +29,7 @@ public enum GameCommand {
 
             // Print the message
             System.out.println(message.toString());
-            gameState.getCurrentLocation().viewAdjascentRooms();
+            gameState.getcurrentRoom().viewAdjascentRooms();
         }
     },
     MOVE {
@@ -185,7 +185,7 @@ public enum GameCommand {
         public void execute(String[] args, GameState gameState) {
             // TODO: this will need to be a different format to indicate the overall game region and give more workable information, 
             // once i'm out of this two room test environment
-            Room region = gameState.getCurrentLocation();
+            Region region = gameState.getCurrentRegion();
             String safeZone = gameState.getDirectionsToRegion();
             String economicZone = gameState.getDirectionsToEconomicZone();
             System.out.println("You are in " + region);

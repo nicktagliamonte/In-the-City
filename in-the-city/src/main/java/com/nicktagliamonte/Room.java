@@ -13,21 +13,24 @@ public class Room {
     private int playerY; // Current Y position of the player in the room
     private Map<String, Room> adjacentRooms;
     private TransitionEvent transitionEvent;
+    private boolean hasPlayer;
 
-    public Room(String name, String description, int width, int height, TransitionEvent transitionEvent) {
+    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent) {
         this.name = name;
         this.description = description;
         this.width = width;
         this.height = height;
-        // Initialize player position, for example, starting at (0,0)
-        this.playerX = 0;
-        this.playerY = 0;
-        this.adjacentRooms = new HashMap<>();
+        this.hasPlayer = hasPlayer;
+        if (hasPlayer) {
+            this.playerX = 0;
+            this.playerY = 0;
+        }
         this.transitionEvent = transitionEvent;
+        this.adjacentRooms = new HashMap<String, Room>();
     }
 
-    public void addAdjacentRoom(int x, int y, Room room) {
-        adjacentRooms.put(x + "," + y, room);
+    public void setAdjacencies(Map<String, Room> adjacentRooms) {
+        this.adjacentRooms = adjacentRooms;
     }
 
     public void triggerTransitionEvent() {
@@ -113,8 +116,16 @@ public class Room {
     }
 
     public void viewAdjascentRooms() {
+        if (adjacentRooms == null) {
+            System.out.println("no adjascent rooms");
+            return;
+        }
         for (String key : adjacentRooms.keySet()) {
             System.out.println("There is an exit at " + key);
         }
+    }
+
+    public boolean hasPlayer() {
+        return hasPlayer;
     }
 }

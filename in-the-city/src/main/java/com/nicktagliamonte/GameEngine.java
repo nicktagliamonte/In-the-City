@@ -3,7 +3,9 @@ import java.util.*;
 
 public class GameEngine {
     public Player player = new Player();
-    private GameState gameState = new GameState(player, this);
+    private GameState gameState = new GameState(player, this,
+     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\com\\nicktagliamonte\\test_region.json", 
+     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\com\\nicktagliamonte\\test_adjacencies.json");
     private Scanner scanner = new Scanner(System.in);
     
 
@@ -46,7 +48,7 @@ public class GameEngine {
     }
 
     public void saveGame() {
-        String saveData = gameState.toSerializableFormat();
+        //String saveData = gameState.toSerializableFormat();
         //logic to save 'saveData' to a file
         System.out.println("Game saved successfully");
     }

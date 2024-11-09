@@ -1,4 +1,5 @@
 package com.nicktagliamonte;
+
 public class Main {
     public static void main(String[] args) {
         // Instantiate the game engine

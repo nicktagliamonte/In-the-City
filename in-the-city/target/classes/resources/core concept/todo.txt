@@ -4,6 +4,11 @@ make code todo
     define chance encounter frequency region by region, npc by npc, at code time
 
 Phase 5: Modular Expansions
+
+JSON
+GOTTA LOAD AN ADJASCENCY LIST FOR ADJASCENT ROOMS FROM JSON
+THATS THE BIG NEXT STEP
+
 Introduce a Map class for defining locations and paths.
 Add a CombatSystem class if your game includes battles.
 
