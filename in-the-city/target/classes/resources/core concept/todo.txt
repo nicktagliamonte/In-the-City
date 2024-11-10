@@ -1,6 +1,6 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
     put an item in a room   
-        figure out how to add that to json
+        figure out how to add that to json ***WORKING!!! IT IS WORKING AND UPDATING ITEMS AS YOU GO ROOM TO ROOM***
         ========================================================================================================================================================
         make sure you can interact with the item
     make the menu
