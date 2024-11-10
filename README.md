@@ -1,6 +1,73 @@
 # In the City
-A text based adventure game set approximately in Philadelphia in a far future world.  I'm not married to the name.  
-Currently, this repo is being used for tracking updates on storyboarding and planning -- I have not started coding yet.  
-If you're a potential employer, there is nothing here that showcases my coding ability but feel free to read some of these concept and storyboard documents if you're curious.  
+A text based adventure game set approximately in Philadelphia in a far future world.
+this repository is still *mostly* concepts and storyboards, but i have started coding
+  currently the game enging works, the main loop works, and i can read and initialize a set of rooms for the player to explore from json
+  
+=========================================================================================================================================================================================================================
+coming steps:
+Phase 6: Working demo
+    keep adding individual game elements in a "test data" format
+    decide what to do with the gamestate.initializecurrentroom method   
+        do we need new rooms to alter that hasplayer flag? should the flag actually be isStartingRoom?
+    put an item in a room   
+        figure out how to add that to json
+        make sure you can interact with the item
+    make the menu
+        figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
+            this will also be important when crafting, and in combat, and probably in dialogue states
+                DONT mess with any crafting
+    put a friend in the room   
+        enable talking to them
+        enable bartering with them
+    put an enemy in the room
+        enable fighting them
+        enable hiding from them
+    put a boundary obstacle in the room 
+        non-square rooms will be enabled with this.  probably so will buildings, so don't make the message too blatantly about being at the room edge
+    put crafting in the room
+        make the crafting menu, make a trap item, make the trap, make sure it works
+    put a hint in the (room? game state? player inventory?)
+        make sure the hint is useable.  don't worry about regeneration yet
+    put timed events in the game    
+        start with hint regeneration
+        have some kind of clock tick that calls to random events periodically
+            or have those events result from player movement.  decide here
+                can technically change it later
+    put a morality field in the player object
+        this really doesn't have to do anything yet and is as easy to update as health
+            (when i'm typing this, i haven't begun thinking about coding combat.  maybe health was a nightmare to update, who knows)
+    put a safe zone in the game 
+        make the random events that are combat based not occur in the safe room
+        build out the feature to locate the safe zone
+    put an economic zone in the game    
+        make the random events that are combat based not occur in the safe zone
+        make random barter events 
+            have them only occur in the economic zone (yes, really.  when you're setting up the metalwoods, 
+                                                        is some guy gonna try to sell you a fish while you're fighting the fomorian?)
+        build out the feature to locate the economic zone
+          the real work for this will have been done in safe zone
+    put a quest in the (room? game? npc friend?)
+        decide what quests do to gamestate
+        decide how to check for quest progress/completion
+        decide how to accept quests
+        decide whether quests come from java or json
+            the json idea might be stupid
+    reassess demo at this time  
+        in the planning stage, currently seems like this is a full demo
+        next will be codebase creation
+
+Phase 6: codebase creation
+    create files for all items
+    and all spells
+    and all npc's
+    and everything and anything else from the concept documents
+
+Phase 7: persistance
+    Create methods for saving and loading game states to test persistence.
+    figure out when to initialize a region's rooms (and everything else)
+
+Phase 8: the actual game itself -- start coding the levels one-by-one, modularly add them to the game to replace the test/demo items
+
+================================================================================================================================================================================================================================================================================
 If you somehow stumbled onto this page and are interested in someday playing a text based adventure game set in a far future Philadelphia which draws primary influence from "A dark room" "Unsleeping City" and "Annihilation" and is overall kind of a bummer, 
 don't read conceptualization.txt because it contains massive spoilers
