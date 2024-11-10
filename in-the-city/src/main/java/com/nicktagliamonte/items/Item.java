@@ -2,7 +2,7 @@ package com.nicktagliamonte.items;
 
 import com.nicktagliamonte.game.GameState;
 
-public abstract class Item {
+public class Item {
     private String name;
     private String description;
     private double weight;
@@ -25,5 +25,7 @@ public abstract class Item {
         return weight;
     }
     
-    public abstract void use(GameState gameState);
+    public void use(GameState gameState) {
+        throw new UnsupportedOperationException("Subclasses must override use(GameState gameState)");
+    }
 }

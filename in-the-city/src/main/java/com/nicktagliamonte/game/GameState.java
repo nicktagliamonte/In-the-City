@@ -5,6 +5,8 @@ import com.nicktagliamonte.items.*;
 import com.nicktagliamonte.rooms.*;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,27 +21,26 @@ import java.util.Map;
 public class GameState {
     private Region currentRegion;
     private Room currentRoom;
-    private Map<String, List<Item>> itemsInRooms;
     private Map<String, List<Person>> charactersInRooms;
     public Player player;
     public GameEngine gameEngine;
 
     // Constructor
-    public GameState(Player player, GameEngine gameEngine, String regionFilePath, String adjacencyFilePath) {
+    public GameState(Player player, GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath) {
         // Initialize the game state, including descriptions and room contents
-        itemsInRooms = new HashMap<>();
         charactersInRooms = new HashMap<>();
         this.player = player;
         this.gameEngine = gameEngine;
-        loadRegion(regionFilePath, adjacencyFilePath);
+        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath);
     }
 
-    private void loadRegion(String regionFilePath, String adjacenciesFilePath) {
+    private void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath) {
         Gson gson = new Gson();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
             System.out.println("Region loaded: " + currentRegion.getRegionName());
             loadAdjacencyList(adjacenciesFilePath);
+            loaditemsInRoom(itemsFilePath);
             System.out.println("loaded adjacent rooms");
             initializeCurrentRoom();
         } catch (IOException e) {
@@ -93,6 +94,66 @@ public class GameState {
         }
     }
 
+    private void loaditemsInRoom(String itemsFilePath) {
+        Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Item.class, new ItemDeserializer())
+            .create();
+
+        try (FileReader itemsReader = new FileReader(itemsFilePath)) {
+            // Parse the JSON structure for rooms and their coordinates with item details
+            JsonObject jsonObject = gson.fromJson(itemsReader, JsonObject.class);
+            JsonObject itemsJson = jsonObject.getAsJsonObject("items");
+
+            Map<String, Map<String, Item>> tempItemsMap = new HashMap<>();
+
+            // Iterate over each room and parse item data
+            for (Map.Entry<String, JsonElement> roomEntry : itemsJson.entrySet()) {
+                String roomName = roomEntry.getKey();
+                JsonObject roomItemsJson = roomEntry.getValue().getAsJsonObject();
+                Map<String, Item> itemsMap = new HashMap<>();
+
+                // Iterate over each coordinate and parse item info
+                for (Map.Entry<String, JsonElement> coordinateEntry : roomItemsJson.entrySet()) {
+                    String coordinates = coordinateEntry.getKey();
+                    JsonObject itemJson = coordinateEntry.getValue().getAsJsonObject();
+
+                    // Deserialize the item using the custom ItemDeserializer
+                    Item item = gson.fromJson(itemJson, Item.class); // Deserialize item at the coordinate level
+
+                    // Add the item to the map for the current room
+                    itemsMap.put(coordinates, item);
+                }
+
+                // Add this room's item map to the main map
+                tempItemsMap.put(roomName, itemsMap);
+            }
+
+            // Create a mapping of room names to actual Room objects
+            Map<String, Room> roomNameToRoomMap = new HashMap<>();
+            for (Room room : currentRegion.getRooms()) {
+                roomNameToRoomMap.put(room.getName(), room);
+            }
+
+            // Set the items in each room
+            for (Map.Entry<String, Map<String, Item>> roomEntry : tempItemsMap.entrySet()) {
+                String roomName = roomEntry.getKey();
+                Map<String, Item> itemsInRoom = roomEntry.getValue();
+
+                // Find the actual Room object by name
+                Room currentRoom = roomNameToRoomMap.get(roomName);
+                
+                if (currentRoom != null) {
+                    currentRoom.setItemsInRoom(itemsInRoom); // Set items for this room
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //specifically used for initializing the starting room
+        //when i'm loading save games, i'll probably need to find a way to make it so that the last room which contained the player doesn't conflict with this
     private void initializeCurrentRoom() {
         for (Room room : currentRegion.getRooms()) {
             if (room.hasPlayer()) {
@@ -101,8 +162,8 @@ public class GameState {
         }
     }
 
-    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath) {
-        loadRegion(newRegionFilePath, newAdjacencyFilePath);
+    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath) {
+        loadRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath);
     }
 
     public Region getCurrentRegion() {
@@ -115,10 +176,6 @@ public class GameState {
 
     public String getRoomDescription(String location) {
         return currentRoom.getDescription();
-    }
-
-    public List<Item> getItemsInCurrentRoom() {
-        return itemsInRooms.getOrDefault(currentRoom, new ArrayList<>());
     }
 
     public List<Person> getCharactersInCurrentRoom() {

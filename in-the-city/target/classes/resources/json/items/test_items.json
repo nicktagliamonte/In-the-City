@@ -1,0 +1,26 @@
+{
+  "items": {
+    "Room 1": {
+      "(1,1)": {
+        "type": "FuelCell",
+        "name": "Key",
+        "description": "A rusty key with an ornate bow.",
+        "weight": 0.1
+      },
+      "(2,3)": {
+        "type": "FuelCell",
+        "name": "Lantern",
+        "description": "An old lantern with flickering light.",
+        "weight": 1.5
+      }
+    },
+    "Room 2": {
+      "(0,0)": {
+        "type": "FuelCell",
+        "name": "Map",
+        "description": "A map of the region with various markings.",
+        "weight": 0.2
+      }
+    }
+  }
+}

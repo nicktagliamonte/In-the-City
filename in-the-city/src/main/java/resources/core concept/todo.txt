@@ -1,14 +1,7 @@
-make code todo
-    just want to have it recorded that dialogue will be fully scripted
-    basically all flavor text will come as i code individual regions
-    define chance encounter frequency region by region, npc by npc, at code time
-
-Phase 6: Working demo
-    keep adding individual game elements in a "test data" format
-    decide what to do with the gamestate.initializecurrentroom method   
-        do we need new rooms to alter that hasplayer flag? should the flag actually be isStartingRoom?
+Phase 6: Working demo - keep adding individual game elements in a "test data" format
     put an item in a room   
-        figure out how to add that to json
+        figure out how to add that to json ***WORKING!!! IT IS WORKING AND UPDATING ITEMS AS YOU GO ROOM TO ROOM***
+        ========================================================================================================================================================
         make sure you can interact with the item
     make the menu
         figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
@@ -48,6 +41,11 @@ Phase 6: Working demo
         decide how to accept quests
         decide whether quests come from java or json
             the json idea might be stupid
+    make a map of the room
+        draw it first
+        then ascii it
+        then figure out where it should be accessed from
+            also should encountering items or whatever update the map?
     reassess demo at this time  
         in the planning stage, currently seems like this is a full demo
         next will be codebase creation
@@ -62,4 +60,4 @@ Phase 7: persistance
     Create methods for saving and loading game states to test persistence.
     figure out when to initialize a region's rooms (and everything else)
 
-Phase 8: the actual game itself
+Phase 8: the actual game itself -- start coding the levels one-by-one, modularly add them to the game

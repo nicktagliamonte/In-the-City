@@ -4,6 +4,8 @@ package com.nicktagliamonte.rooms;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.nicktagliamonte.items.Item;
+
 public class Room {
     private String name;
     private String description;
@@ -12,6 +14,7 @@ public class Room {
     private int playerX; // Current X position of the player in the room
     private int playerY; // Current Y position of the player in the room
     private Map<String, Room> adjacentRooms;
+    private Map<String, Item> itemsInRoom;
     private TransitionEvent transitionEvent;
     private boolean hasPlayer;
 
@@ -31,6 +34,10 @@ public class Room {
 
     public void setAdjacencies(Map<String, Room> adjacentRooms) {
         this.adjacentRooms = adjacentRooms;
+    }
+
+    public void setItemsInRoom(Map<String, Item> itemsInRoom) {
+        this.itemsInRoom = itemsInRoom;
     }
 
     public void triggerTransitionEvent() {
@@ -107,5 +114,9 @@ public class Room {
 
     public boolean hasPlayer() {
         return hasPlayer;
+    }
+
+    public Map<String, Item> getItemsInRoom() {
+        return itemsInRoom;
     }
 }

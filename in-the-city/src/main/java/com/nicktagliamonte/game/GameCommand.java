@@ -1,5 +1,7 @@
 package com.nicktagliamonte.game;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
@@ -11,7 +13,7 @@ public enum GameCommand {
             // Get the current position from GameState
             String currentRoom = gameState.getcurrentRoom().getName();
             String roomDescription = gameState.getRoomDescription(currentRoom);
-            List<Item> visibleItems = gameState.getItemsInCurrentRoom();
+            Map<String, Item> visibleItems = gameState.getcurrentRoom().getItemsInRoom();
             List<Person> characters = gameState.getCharactersInCurrentRoom();
 
             // Construct the dynamic message based on the game state
@@ -19,7 +21,20 @@ public enum GameCommand {
             message.append("You look around and see: \n").append(roomDescription).append("\n");
 
             if (!visibleItems.isEmpty()) {
-                message.append("Items here: ").append(String.join(", ", visibleItems.toString())).append("\n");
+                message.append("Items here: ");
+                // Iterate over the entries of the visibleItems map
+                for (Map.Entry<String, Item> entry : visibleItems.entrySet()) {
+                    // For each item, append its name and key (coordinates)
+                    message.append(entry.getValue().getName())
+                           .append(" at ")
+                           .append(entry.getKey());
+                    
+                    // Add a comma between items, but not after the last item
+                    if (visibleItems.size() > 1 && !entry.equals(visibleItems.entrySet().toArray()[visibleItems.size() - 1])) {
+                        message.append(", ");
+                    }
+                }
+                message.append("\n");
             } else {
                 message.append("There are no notable items here.\n");
             }
@@ -55,7 +70,7 @@ public enum GameCommand {
                 System.out.println("You need to specify an item to examine");
                 return;
             }
-            List<Item> itemsInRoom = gameState.getItemsInCurrentRoom();
+            Collection<Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom().values();
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
@@ -80,7 +95,7 @@ public enum GameCommand {
                 return;
             }
 
-            List<Item> itemsInRoom = gameState.getItemsInCurrentRoom();
+            Collection<Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom().values();
             Item itemToTake = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
