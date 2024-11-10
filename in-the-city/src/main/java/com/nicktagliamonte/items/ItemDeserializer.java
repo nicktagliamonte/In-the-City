@@ -26,7 +26,7 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
         // Handle different types based on the "type" field
         switch (itemType) {
             case "FuelCell":
-                return new FuelCell(name, description, weight);
+                return new FuelCell();
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

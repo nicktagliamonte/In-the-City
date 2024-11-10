@@ -6,19 +6,27 @@ import com.nicktagliamonte.items.Item;
 
 public class Person {
     private String name;
-    private int health;
-    private int energy;
+    private double health;
+    private double energy;
     private List<Item> inventory; // General inventory for all characters (could be used for NPCs)
 
-    public Person() {
+    // Constructor, getters, setters, etc.
+    public Person(String name) {
+        this.name = name;
+        this.inventory = new ArrayList<>();
     }
 
-    // Constructor, getters, setters, etc.
+    public Person(String name, List<Item> inventory) {
+        this.name = name;
+        this.inventory = inventory;
+    }
+
     public Person(String name, int health, int energy) {
         this.name = name;
         this.health = health;
         this.energy = energy;
         this.inventory = new ArrayList<>();
+        System.out.println("here");
     }
 
     public void addItem(Item item) {
@@ -33,19 +41,19 @@ public class Person {
         this.name = name;
     }
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 
-    public int getEnergy() {
+    public double getEnergy() {
         return energy;
     }
 
-    public void setEnergy(int energy) {
+    public void setEnergy(double energy) {
         this.energy = energy;
     }
 

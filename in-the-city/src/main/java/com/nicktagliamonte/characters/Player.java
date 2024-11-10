@@ -13,21 +13,18 @@ public class Player extends Person {
     private double charisma;
     private double maxCarryWeight;
 
-    public Player() {
-        super();
-    }
-
-    public Player(String name, int health, int energy, CharacterClass characterClass, double strength, double dexterity,
-            double constitution, double intelligence, double wisdom, double charisma, double maxCarryWeight) {
-        super(name, health, energy);
+    public Player(String name, CharacterClass characterClass) {
+        super(name);
         this.characterClass = characterClass;
-        this.strength = strength;
-        this.dexterity = dexterity;
-        this.constitution = constitution;
-        this.intelligence = intelligence;
-        this.wisdom = wisdom;
-        this.charisma = charisma;
-        this.maxCarryWeight = maxCarryWeight;
+        this.strength = characterClass.getStrength();
+        this.dexterity = characterClass.getDexterity();
+        this.constitution = characterClass.getConstitution();
+        this.intelligence = characterClass.getIntelligence();
+        this.wisdom = characterClass.getWisdom();
+        this.charisma = characterClass.getCharisma();
+        this.maxCarryWeight = characterClass.getMaxCarryWeight();
+        super.setEnergy(characterClass.getEnergy());
+        super.setHealth(characterClass.getHealth());
     }
 
     public CharacterClass getCharacterClass() {

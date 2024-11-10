@@ -4,8 +4,8 @@ import com.nicktagliamonte.characters.*;
 import java.util.*;
 
 public class GameEngine {
-    public Player player = new Player();
-    private GameState gameState = new GameState(player, this,
+    public Player player;
+    private GameState gameState = new GameState(this,
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json");

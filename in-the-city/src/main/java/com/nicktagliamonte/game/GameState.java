@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class GameState {
     private Region currentRegion;
@@ -26,12 +27,28 @@ public class GameState {
     public GameEngine gameEngine;
 
     // Constructor
-    public GameState(Player player, GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath) {
+    public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath) {
         // Initialize the game state, including descriptions and room contents
-        charactersInRooms = new HashMap<>();
-        this.player = player;
         this.gameEngine = gameEngine;
+        initializePlayer();
+        charactersInRooms = new HashMap<>();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath);
+    }
+
+    public void initializePlayer() {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a name: ");
+        String name = scanner.nextLine();
+        CharacterClass characterClass;
+        do {
+            System.out.println("Enter a class (survivalist, technologist, or negotiator): ");
+            String classInput = scanner.nextLine();
+            characterClass = CharacterClass.createCharacterClass(classInput);
+        } while (characterClass == null);
+        
+        this.player = new Player(name, characterClass);
+        gameEngine.player = this.player;
     }
 
     private void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath) {
@@ -138,6 +155,9 @@ public class GameState {
             for (Map.Entry<String, Map<String, Item>> roomEntry : tempItemsMap.entrySet()) {
                 String roomName = roomEntry.getKey();
                 Map<String, Item> itemsInRoom = roomEntry.getValue();
+                for (Item item : itemsInRoom.values()) {
+                    System.out.println(item.getWeight());
+                }
 
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);

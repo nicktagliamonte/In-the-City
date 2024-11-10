@@ -1,10 +1,11 @@
 package com.nicktagliamonte.game;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import com.nicktagliamonte.characters.*;
-import com.nicktagliamonte.items.*;
+import com.nicktagliamonte.characters.Person;
+import com.nicktagliamonte.items.Item;
 
 public enum GameCommand {
     LOOK {
@@ -105,7 +106,7 @@ public enum GameCommand {
             }
 
             if (itemToTake != null) {
-                if (gameState.getPlayer().getMaxCarryWeight() < itemToTake.getWeight()) {
+                if (gameState.getPlayer().getMaxCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
                 } else {

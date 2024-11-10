@@ -1,13 +1,21 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
-    put an item in a room   
-        figure out how to add that to json ***WORKING!!! IT IS WORKING AND UPDATING ITEMS AS YOU GO ROOM TO ROOM***
-        ========================================================================================================================================================
+ITEMS IN THE ROOM:
+    put an item in a room
         make sure you can interact with the item
-    make the menu
-        figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
-            this will also be important when crafting, and in combat, and probably in dialogue states
-                DONT fuck with any crafting
+            take
+                max carry weight check -- need a regularly updated field regarding the carry weight remaining.
+                need to remove the item from items in room once it's taken
+                need to make sure that if there are multiple items of a type in the room, you only take one of them.  it can be any, but just ONE
+            use
+                the specifics of this will come from building out the item types, but for now as long as it displays the relevant message that's fine
+                lets add a consumable flag.  if you use an item and it is consumable, it is removed from your inventory as well as displaying the message
+            drop
+                update remaining carry weight
+                add the item to the items in room list
+                    have the location be the players current location
+
     put a friend in the room   
+        figure out how to initialize health and other stats for non-players
         enable talking to them
         enable bartering with them
     put an enemy in the room
@@ -17,24 +25,37 @@ Phase 6: Working demo - keep adding individual game elements in a "test data" fo
         non-square rooms will be enabled with this.  probably so will buildings, so don't make the message too blatantly about being at the room edge
     put crafting in the room
         make the crafting menu, make a trap item, make the trap, make sure it works
+
+GAME STATE MODIFICATIONS
+    make the menu
+        figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
+            this will also be important when crafting, and in combat, and probably in dialogue states
+                DONT fuck with any crafting
     put a hint in the (room? game state? player inventory?)
-        make sure the hint is useable.  don't worry about regeneration yet
+        make sure the hint is useable.  regeneration is the next step
     put timed events in the game    
         start with hint regeneration
+        how about health regeneration as well
         have some kind of clock tick that calls to random events periodically
             or have those events result from player movement.  decide here
                 can technically change it later
+    add status effects
+        this is a natural follow up to having health regen -- some status effects will cause health drain
+        having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status"
     put a morality field in the player object
         this really doesn't have to do anything yet and is as easy to update as health
             (when i'm typing this, i haven't begun thinking about coding combat.  maybe health was a nightmare to update, who knows)
-    put a safe zone in the game 
+    put a safe zone in the game (at this stage, it'll be room 1 out of the two)
         make the random events that are combat based not occur in the safe room
         build out the feature to locate the safe zone
-    put an economic zone in the game    
+            this one is a job and a half
+    put an economic zone in the game (at this stage, probably make room 1 safe, room 2 economic, and add an adversarial room 3)
         make the random events that are combat based not occur in the safe zone
         make random barter events 
             have them only occur in the economic zone (yes, really.  when you're setting up the metalwoods, 
                                                         is some guy gonna try to sell you a fish while you're fighting the fomorian?)
+
+MISC UPDATES                                                        
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
         decide how to check for quest progress/completion
@@ -50,14 +71,15 @@ Phase 6: Working demo - keep adding individual game elements in a "test data" fo
         in the planning stage, currently seems like this is a full demo
         next will be codebase creation
 
-Phase 6: codebase creation
+NEXT PHASES
+Phase 7: codebase creation
     create files for all items
     and all spells
     and all npc's
     and everything and anything else
 
-Phase 7: persistance
+Phase 8: persistance
     Create methods for saving and loading game states to test persistence.
     figure out when to initialize a region's rooms (and everything else)
 
-Phase 8: the actual game itself -- start coding the levels one-by-one, modularly add them to the game
+Phase 9: the actual game itself -- start coding the levels one-by-one, modularly add them to the game
