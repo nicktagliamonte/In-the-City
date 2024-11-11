@@ -5,13 +5,15 @@
         "type": "FuelCell",
         "name": "Key",
         "description": "A rusty key with an ornate bow.",
-        "weight": 0.1
+        "weight": 0.1,
+        "consumable": true
       },
       "(2,3)": {
         "type": "FuelCell",
         "name": "Lantern",
         "description": "An old lantern with flickering light.",
-        "weight": 1.5
+        "weight": 1.5,
+        "consumable": true
       }
     },
     "Room 2": {
@@ -19,7 +21,8 @@
         "type": "FuelCell",
         "name": "Map",
         "description": "A map of the region with various markings.",
-        "weight": 0.2
+        "weight": 0.2,
+        "consumable": true
       }
     }
   }

@@ -155,9 +155,6 @@ public class GameState {
             for (Map.Entry<String, Map<String, Item>> roomEntry : tempItemsMap.entrySet()) {
                 String roomName = roomEntry.getKey();
                 Map<String, Item> itemsInRoom = roomEntry.getValue();
-                for (Item item : itemsInRoom.values()) {
-                    System.out.println(item.getWeight());
-                }
 
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);

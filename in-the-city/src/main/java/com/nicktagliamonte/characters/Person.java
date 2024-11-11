@@ -8,7 +8,7 @@ public class Person {
     private String name;
     private double health;
     private double energy;
-    private List<Item> inventory; // General inventory for all characters (could be used for NPCs)
+    protected List<Item> inventory; // General inventory for all characters (could be used for NPCs)
 
     // Constructor, getters, setters, etc.
     public Person(String name) {

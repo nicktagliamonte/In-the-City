@@ -40,6 +40,14 @@ public class Room {
         this.itemsInRoom = itemsInRoom;
     }
 
+    public void removeItemFromRoom(String location) {
+        this.itemsInRoom.remove(location);
+    }
+
+    public void addItemToRoom(String location, Item item) {
+        this.itemsInRoom.put(location, item);
+    }
+
     public void triggerTransitionEvent() {
         System.out.println(transitionEvent.getDescription());
     }
@@ -91,7 +99,7 @@ public class Room {
     }    
 
     public String getPlayerPosition() {
-        return "Current position: (" + playerX + ", " + playerY + ")";
+        return "(" + playerX + ", " + playerY + ")";
     }
 
     public String getName() {

@@ -3,6 +3,7 @@ package com.nicktagliamonte.game;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Item;
@@ -96,18 +97,22 @@ public enum GameCommand {
                 return;
             }
 
-            Collection<Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom().values();
+            Map<String, Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom();
+            String itemLocation = null;
             Item itemToTake = null;
-            for (Item item : itemsInRoom) {
-                if (item.getName().equalsIgnoreCase(args[0])) {
-                    itemToTake = item;
+            for (Entry<String, Item> item : itemsInRoom.entrySet()) {
+                if (item.getValue().getName().equalsIgnoreCase(args[0])) {
+                    itemToTake = item.getValue();
+                    itemLocation = item.getKey();
                     break;
                 }
             }
 
             if (itemToTake != null) {
-                if (gameState.getPlayer().getMaxCarryWeight() > itemToTake.getWeight()) {
+                if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
+                    gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
+                    gameState.getcurrentRoom().removeItemFromRoom(itemLocation);
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
                 } else {
                     System.out.println("That item is too heavy.");
@@ -145,6 +150,9 @@ public enum GameCommand {
             } else {
                 itemsInInventory.remove(itemToDrop);
                 gameState.getPlayer().setInventory(itemsInInventory);
+                gameState.getPlayer().increaseRemainingCarryWeight(itemToDrop.getWeight());
+                gameState.getcurrentRoom().addItemToRoom(gameState.getcurrentRoom().getPlayerPosition(), itemToDrop);
+                System.out.println("Dropped " + itemToDrop.getName());
             }            
         }
     },

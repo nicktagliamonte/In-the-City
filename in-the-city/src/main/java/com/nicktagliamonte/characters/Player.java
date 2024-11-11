@@ -12,6 +12,7 @@ public class Player extends Person {
     private double wisdom;
     private double charisma;
     private double maxCarryWeight;
+    private double remainingCarryWeight;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -23,6 +24,7 @@ public class Player extends Person {
         this.wisdom = characterClass.getWisdom();
         this.charisma = characterClass.getCharisma();
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
+        this.remainingCarryWeight = this.maxCarryWeight;
         super.setEnergy(characterClass.getEnergy());
         super.setHealth(characterClass.getHealth());
     }
@@ -91,12 +93,24 @@ public class Player extends Person {
         this.maxCarryWeight = maxCarryWeight;
     }
 
+    public double getRemainingCarryWeight() {
+        return remainingCarryWeight;
+    }
+
+    public void reduceRemainingCarryWeight(double input) {
+        this.remainingCarryWeight -= input;
+    }
+
+    public void increaseRemainingCarryWeight(double input) {
+        this.remainingCarryWeight += input;
+    }
+
     public void listInventory() {
         List<Item> inventory = super.getInventory();
-        if (inventory == null) {
+        if (inventory.isEmpty()) {
             System.out.println("No items in inventory");
         } else {
-            inventory.forEach(item -> System.out.println(item));
+            inventory.forEach(item -> System.out.println(item.getName()));
         }
     }
 
@@ -120,6 +134,9 @@ public class Player extends Person {
         } else {
             for (Item item : inventory) {
                 if (item.getName().equalsIgnoreCase(itemName)) {
+                    if (item.getIsConsumable()) {
+                        super.inventory.remove(item);
+                    }
                     return item;
                 }
             }

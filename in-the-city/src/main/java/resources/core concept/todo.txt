@@ -1,19 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
-ITEMS IN THE ROOM:
-    put an item in a room
-        make sure you can interact with the item
-            take
-                max carry weight check -- need a regularly updated field regarding the carry weight remaining.
-                need to remove the item from items in room once it's taken
-                need to make sure that if there are multiple items of a type in the room, you only take one of them.  it can be any, but just ONE
-            use
-                the specifics of this will come from building out the item types, but for now as long as it displays the relevant message that's fine
-                lets add a consumable flag.  if you use an item and it is consumable, it is removed from your inventory as well as displaying the message
-            drop
-                update remaining carry weight
-                add the item to the items in room list
-                    have the location be the players current location
-
+THINGS IN THE ROOM:
     put a friend in the room   
         figure out how to initialize health and other stats for non-players
         enable talking to them
@@ -27,6 +13,13 @@ ITEMS IN THE ROOM:
         make the crafting menu, make a trap item, make the trap, make sure it works
 
 GAME STATE MODIFICATIONS
+    add an "introduction" screen
+        this will be called from a method in game engine (which when i get to persistance, can be put in an if/else depending on what is passed into main)
+        just introduce the game before proceeding
+    introduce a new region
+        first forray into large-scale game state modifications -- take some action which changes the region.  load a new set of rooms, items, characters, etc
+            make sure that it initializes the player in the room, that the players inventory carries over, that old region objects are not still interactable
+            there will be no going back -- this game is story driven not open world, so don't need to worry about persistance of taken objects for previous regions
     make the menu
         figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
             this will also be important when crafting, and in combat, and probably in dialogue states
@@ -58,6 +51,7 @@ GAME STATE MODIFICATIONS
 MISC UPDATES                                                        
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
+            probably it will have to change the region (major quests at least) once complete
         decide how to check for quest progress/completion
         decide how to accept quests
         decide whether quests come from java or json
@@ -67,9 +61,15 @@ MISC UPDATES
         then ascii it
         then figure out where it should be accessed from
             also should encountering items or whatever update the map?
+    player leveling mechanics
+        pay attention to the fact that both max and remaining carry weight will need to increase
     reassess demo at this time  
         in the planning stage, currently seems like this is a full demo
         next will be codebase creation
+    (assuming that the demo is in fact done) host the demo
+        find out what changes need to be made to host the demo online
+            if that isn't reasonable, update readme to provide detailed description of running the game
+        tell friends to test it
 
 NEXT PHASES
 Phase 7: codebase creation

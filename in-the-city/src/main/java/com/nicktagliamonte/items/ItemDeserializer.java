@@ -22,6 +22,7 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
         String name = jsonObject.get("name").getAsString();
         String description = jsonObject.get("description").getAsString();
         double weight = jsonObject.get("weight").getAsDouble();
+        boolean isConsumable = jsonObject.get("consumable").getAsBoolean();
 
         // Handle different types based on the "type" field
         switch (itemType) {
