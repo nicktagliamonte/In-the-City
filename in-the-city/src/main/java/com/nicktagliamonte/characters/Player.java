@@ -136,6 +136,7 @@ public class Player extends Person {
                 if (item.getName().equalsIgnoreCase(itemName)) {
                     if (item.getIsConsumable()) {
                         super.inventory.remove(item);
+                        increaseRemainingCarryWeight(item.getWeight());
                     }
                     return item;
                 }
