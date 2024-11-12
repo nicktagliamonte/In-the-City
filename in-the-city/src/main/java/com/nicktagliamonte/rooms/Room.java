@@ -4,6 +4,7 @@ package com.nicktagliamonte.rooms;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.items.Item;
 
 public class Room {
@@ -15,6 +16,7 @@ public class Room {
     private int playerY; // Current Y position of the player in the room
     private Map<String, Room> adjacentRooms;
     private Map<String, Item> itemsInRoom;
+    private Map<String, NPC> peopleInRoom;
     private TransitionEvent transitionEvent;
     private boolean hasPlayer;
 
@@ -36,6 +38,10 @@ public class Room {
         this.adjacentRooms = adjacentRooms;
     }
 
+    public Map<String, Item> getItemsInRoom() {
+        return itemsInRoom;
+    }
+
     public void setItemsInRoom(Map<String, Item> itemsInRoom) {
         this.itemsInRoom = itemsInRoom;
     }
@@ -46,6 +52,24 @@ public class Room {
 
     public void addItemToRoom(String location, Item item) {
         this.itemsInRoom.put(location, item);
+    }
+
+    public Map<String, NPC> getPeopleInRoom() {
+        return peopleInRoom;
+    }
+
+    public void setPeopleInRoom(Map<String, NPC> peopleInRoom) {
+        this.peopleInRoom = peopleInRoom;
+    }
+
+    public void removePersonFromRoom(String location) {
+        this.peopleInRoom.remove(location);
+        //TODO: when implementing combat, have the attack which leads to an NPC death call this method with their location (similar to removeItemFromRoom method above)
+    }
+    //make dying remove the person from room, then work on the below
+
+    public void addPersonToRoom(String location, NPC person) {
+        this.peopleInRoom.put(location, person);
     }
 
     public void triggerTransitionEvent() {
@@ -122,9 +146,5 @@ public class Room {
 
     public boolean hasPlayer() {
         return hasPlayer;
-    }
-
-    public Map<String, Item> getItemsInRoom() {
-        return itemsInRoom;
     }
 }

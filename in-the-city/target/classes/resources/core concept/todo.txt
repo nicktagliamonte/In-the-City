@@ -1,34 +1,21 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put a friend in the room   
-        figure out how to initialize health and other stats for non-players
-            create npc class which extends person
-                create a friendly class which extends npc (yes really)
-                decide on which fields go where -- that means considering enemy here, not in the next item.  same w neutral.  shared behavior goes in npc class
-            initialize npc from json
-                i'll need a custom npc deserializer for this
-                    it'll have a switch statement for npcType and a type field in the json:
-                        switch (npcType) {
-                            case "friend":
-                                double luck = jsonObject.has("luck") ? jsonObject.get("luck").getAsDouble() : 0.0;
-                                return new Friend(
-                                    jsonObject.get("name").getAsString(),
-                                    jsonObject.get("dialogue").getAsString(),
-                                    luck
-                                );}
-                        where luck can actually be any number of custom attributes in their own ternary operator lines, depending on the class fields
-                basically a direct copy of the item deserializer and initialization, but with different fields
+    put a friend in the room
         enable talking to them
-        enable bartering with them
+            dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
+            which vary based on both player class and npc type.  i'm not sure yet where to store those options
     put an enemy in the room
         create an adversary class which extends npc
-        enable fighting them
-        enable hiding from them
+        update deserializer as needed
+        the player cannot talk to the enemy class
+        it needs an isEnemy method
     put a neutral in the room
         create an neutral class which extends npc
-        enable fighting, hiding, and bartering with them
+        update deserializer as needed
+        needs both isFriend and isEnemy
     put a party member in the room
         decide on class file
+        update deserializer as needed
         have a means to add them to the party
         have updates to carry weight for the player, don't worry about having them have an inventory
     put a boundary obstacle in the room 
@@ -43,8 +30,20 @@ GAME STATE MODIFICATIONS
         figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
             this will also be important when crafting, and in combat, and probably in dialogue states
                 DONT mess with any crafting
-    put crafting in the room
+    put crafting in the gamestate
         make the crafting menu, make a trap item, make the trap, make sure it works
+    add dialogue gamestate
+        dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
+        which vary based on both player class and npc type.  i'm not sure yet where to store those options
+        this will impact friend and neutral npc's
+    add bartering gamestate
+        barter should be a subset of the dialogue gamestate.  the player's success on a proposed negotiation is determined by some combination of player char
+        and npc shrewdness.  the npc should have essentially canned phrases based on whether the barter is a player success or player failure.
+        some npc interactions which are entered into as the result of random events should be immediately in barter mode
+    add combat gamestate
+        this will impact enemy and neutral npc's
+            enable fighting and hiding
+    ***now make sure talking to, fighting, and bartering with neutrals works
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
     put timed events in the game    
@@ -63,13 +62,19 @@ GAME STATE MODIFICATIONS
         make the random events that are combat based not occur in the safe room
         build out the feature to locate the safe zone
             this one is a job and a half
+            could i just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])
     put an economic zone in the game (at this stage, probably make room 1 safe, room 2 economic, and add an adversarial room 3)
         make the random events that are combat based not occur in the safe zone
         make random barter events 
             have them only occur in the economic zone (yes, really.  when you're setting up the metalwoods, 
                                                         is some guy gonna try to sell you a fish while you're fighting the fomorian?)
 
-MISC UPDATES                                                        
+MISC UPDATES   
+    update the inventory function
+        rather than listing a million fuel cells if you hold a million fuel cells, format as
+            fuel cell   50
+            otherItem   1
+            etc                                                     
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
             probably it will have to change the region (major quests at least) once complete

@@ -19,7 +19,7 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
             throw new JsonParseException("Item type is missing from the JSON");
         }
 
-        String itemType = jsonObject.get("type").getAsString();  // Assumes a "type" field in the JSON
+        String itemType = jsonObject.get("type").getAsString();
         String name = jsonObject.get("name").getAsString();
         String description = jsonObject.get("description").getAsString();
         double weight = jsonObject.get("weight").getAsDouble();

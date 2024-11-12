@@ -1,0 +1,48 @@
+{
+    "people": {
+        "Room 1": {
+            "(1,2)": {
+                "type": "friend",
+                "name": "testName",
+                "health": 50.0,
+                "energy": 50.0,
+                "inventory": {
+                    "item1": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    },
+                    "item2": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    }
+                },
+                "description": "a friendly face",
+                "maxHealth": 50.0,
+                "dialogue": [
+                    "It's good to see you.",
+                    "How are you doing?"
+                ],
+                "shrewdness": 3,
+                "hints": [
+                    "looks like hints are working!"
+                ],
+                "barterSuccessDialogue": [
+                    "for you, fine."
+                ],
+                "barterFailDialogue": [
+                    "I just can't go that low, sorry"
+                ],
+                "questDialogue": [
+                    "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
+                ],
+                "canGiveQuest": false
+            }
+        }
+    }
+}

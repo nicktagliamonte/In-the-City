@@ -87,4 +87,12 @@ public class NPC extends Person {
             System.out.println(super.getName() + " is fully dead.");
         }
     }
+
+    public String getRandomDialogue() {
+        return dialogue.get((int) (Math.random() * dialogue.size()));
+    }
+
+    public boolean isFriend() {
+        return this instanceof Friend;
+    }
 }

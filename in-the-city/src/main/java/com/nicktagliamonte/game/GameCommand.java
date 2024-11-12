@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Item;
 
@@ -16,7 +17,7 @@ public enum GameCommand {
             String currentRoom = gameState.getcurrentRoom().getName();
             String roomDescription = gameState.getRoomDescription(currentRoom);
             Map<String, Item> visibleItems = gameState.getcurrentRoom().getItemsInRoom();
-            List<Person> characters = gameState.getCharactersInCurrentRoom();
+            Map<String, NPC> characters = gameState.getcurrentRoom().getPeopleInRoom();
 
             // Construct the dynamic message based on the game state
             StringBuilder message = new StringBuilder();
@@ -42,9 +43,18 @@ public enum GameCommand {
             }
 
             if (!characters.isEmpty()) {
-                message.append("Characters present: ").append(String.join(", ", characters.toString())).append("\n");
+                message.append("People here: ");
+                for (Map.Entry<String, NPC> entry : characters.entrySet()) {
+                    message.append(entry.getValue().getName())
+                           .append(" at ")
+                           .append(entry.getKey());
+                    
+                    if (characters.size() > 1 && !entry.equals(characters.entrySet().toArray()[visibleItems.size() - 1])) {
+                        message.append(", ");
+                    }
+                }
             } else {
-                message.append("There is no one else here.");
+                message.append("There are no notable items here.\n");
             }
 
             // Print the message
@@ -189,15 +199,17 @@ public enum GameCommand {
                 return;
             }
 
-            List<Person> characters = gameState.getCharactersInCurrentRoom();
+            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
             String chosenCharacter = args[0];
 
-            for (Person character : characters) {
+            for (NPC character : characters) {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
-                    gameState.enterDialogue(character);
+                    if (character.isFriend()) {
+                        System.out.println(character.getRandomDialogue());
+                    }
+                    //TODO: replace the above with something like gameState.enterDialogue(character);
                 }
             }
-            System.out.println("I don't recognize that name");
         }
     },
     MENU {
@@ -234,7 +246,7 @@ public enum GameCommand {
                 return;
             }
 
-            List<Person> characters = gameState.getCharactersInCurrentRoom();
+            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
             String chosenCharacter = args[0];
 
             for (Person character : characters) {

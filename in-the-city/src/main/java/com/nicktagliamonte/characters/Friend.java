@@ -15,8 +15,7 @@ public class Friend extends NPC {
 
     public Friend(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,
                   List<String> dialogue, double shrewdness, List<String> hints, List<String> barterSuccessDialogue, 
-                  List<String> barterFailureDialogue, List<String> questDialogue, boolean canGiveQuest, 
-                  Map<String, Integer> barterInventory, int influence) {
+                  List<String> barterFailureDialogue, List<String> questDialogue, boolean canGiveQuest) {
         super(name, health, energy, inventory, description, maxHealth, dialogue);
         this.shrewdness = shrewdness;
         this.hints = hints;
@@ -26,6 +25,7 @@ public class Friend extends NPC {
         this.canGiveQuest = canGiveQuest;
     }
 
+    //TODO: update all below bartering interaction methods
     public String initiateBarter(int playerCharisma) {
         boolean success = checkBarterSuccess(playerCharisma);
         return respondToBarter(success);
@@ -36,11 +36,15 @@ public class Friend extends NPC {
     }
 
     private String respondToBarter(boolean success) {
-        return success ? getRandomDialogue(barterSuccessDialogue) : getRandomDialogue(barterFailureDialogue);
+        return success ? getBarterDialogue(barterSuccessDialogue) : getBarterDialogue(barterFailureDialogue);
     }
 
-    private String getRandomDialogue(List<String> dialogueList) {
+    private String getBarterDialogue(List<String> dialogueList) {
         return dialogueList.get((int) (Math.random() * dialogueList.size()));
+    }
+
+    public String talk() {
+        return super.getRandomDialogue();
     }
 
     public String getHint() {
@@ -51,6 +55,10 @@ public class Friend extends NPC {
         if (canGiveQuest) {
             //TODO: figure this out much later, when i'm adding quests.
         }
-        System.out.println(questDialogue);
+        System.out.println(questDialogue.get(0));
+    }
+
+    public boolean isFriend() {
+        return true;
     }
 }
