@@ -10,14 +10,16 @@ public class Person {
     private double energy;
     protected List<Item> inventory; // General inventory for all characters (could be used for NPCs)
 
-    // Constructor, getters, setters, etc.
+    //constructor for the player character, custom attributes in Player.java subclass
     public Person(String name) {
         this.name = name;
         this.inventory = new ArrayList<>();
     }
 
-    public Person(String name, List<Item> inventory) {
+    public Person(String name, double health, double energy, List<Item> inventory) {
         this.name = name;
+        this.health = health;
+        this.energy = energy;
         this.inventory = inventory;
     }
 
