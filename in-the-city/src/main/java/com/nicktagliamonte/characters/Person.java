@@ -22,15 +22,7 @@ public class Person {
         this.energy = energy;
         this.inventory = inventory;
     }
-
-    public Person(String name, int health, int energy) {
-        this.name = name;
-        this.health = health;
-        this.energy = energy;
-        this.inventory = new ArrayList<>();
-        System.out.println("here");
-    }
-
+    
     public void addItem(Item item) {
         inventory.add(item);
     }

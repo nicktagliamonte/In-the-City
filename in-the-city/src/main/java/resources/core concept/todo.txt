@@ -19,7 +19,11 @@ THINGS IN THE ROOM:
                         where luck can actually be any number of custom attributes in their own ternary operator lines, depending on the class fields
                 basically a direct copy of the item deserializer and initialization, but with different fields
         enable talking to them
+            dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
+            which vary based on both player class and npc type.  i'm not sure yet where to store those options
         enable bartering with them
+            barter should be a subset of the dialogue gamestate.  the player's success on a proposed negotiation is determined by some combination of player char
+            and npc shrewdness.  the npc should have essentially canned phrases based on whether the barter is a player success or player failure.
     put an enemy in the room
         create an adversary class which extends npc
         enable fighting them
