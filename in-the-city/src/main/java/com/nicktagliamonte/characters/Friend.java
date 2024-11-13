@@ -1,7 +1,6 @@
 package com.nicktagliamonte.characters;
 
 import java.util.List;
-import java.util.Map;
 
 import com.nicktagliamonte.items.Item;
 
@@ -56,9 +55,5 @@ public class Friend extends NPC {
             //TODO: figure this out much later, when i'm adding quests.
         }
         System.out.println(questDialogue.get(0));
-    }
-
-    public boolean isFriend() {
-        return true;
     }
 }

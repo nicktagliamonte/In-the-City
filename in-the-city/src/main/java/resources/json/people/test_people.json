@@ -42,6 +42,33 @@
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
                 ],
                 "canGiveQuest": false
+            },
+            "(2,4)": {
+                "type": "adversary",
+                "name": "testName2",
+                "health": 50.0,
+                "energy": 50.0,
+                "inventory": {
+                    "item1": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    },
+                    "item2": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    }
+                },
+                "description": "a baaaaad guy.  dump him, girl",
+                "maxHealth": 50.0,
+                "dialogue": [],
+                "attackSpeed": 3,
+                "damage": 5
             }
         }
     }

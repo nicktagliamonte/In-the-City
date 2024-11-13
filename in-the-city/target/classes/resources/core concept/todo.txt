@@ -1,14 +1,13 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put a friend in the room
-        enable talking to them
-            dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
-            which vary based on both player class and npc type.  i'm not sure yet where to store those options
     put an enemy in the room
         create an adversary class which extends npc
         update deserializer as needed
         the player cannot talk to the enemy class
         it needs an isEnemy method
+        
+        MAKE SURE DIALOGUE CAN BE AN EMPTY ARRAY
+        MAKE SURE TALK PRINTS SOMETHING ABOUT THIS PERSON NOT WANTING TO TALK IF DIALOGUE IS EMPTY
     put a neutral in the room
         create an neutral class which extends npc
         update deserializer as needed
@@ -70,11 +69,15 @@ GAME STATE MODIFICATIONS
                                                         is some guy gonna try to sell you a fish while you're fighting the fomorian?)
 
 MISC UPDATES   
+    There is a deathsaving throw mechanic for the Friend class but not for you the player   
+        add it
     update the inventory function
         rather than listing a million fuel cells if you hold a million fuel cells, format as
             fuel cell   50
             otherItem   1
-            etc                                                     
+            etc      
+    update the talk command
+        it'll be relatively straightforward to make the player type "talk to [person]" and just disregard the first arg from GameCommand_TALK
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
             probably it will have to change the region (major quests at least) once complete
@@ -106,6 +109,7 @@ MISC UPDATES
 NEXT PHASES
 Phase 7: codebase creation
     create files for all items
+        if the deserializer gives you issues, put json methods in the switch statements rather then before it (see characterdeserializer)
     and all spells
     and all npc's
     and everything and anything else

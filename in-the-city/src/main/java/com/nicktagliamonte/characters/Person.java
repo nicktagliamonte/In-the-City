@@ -22,7 +22,7 @@ public class Person {
         this.energy = energy;
         this.inventory = inventory;
     }
-    
+
     public void addItem(Item item) {
         inventory.add(item);
     }

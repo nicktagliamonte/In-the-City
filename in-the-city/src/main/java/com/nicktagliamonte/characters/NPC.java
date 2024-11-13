@@ -1,21 +1,20 @@
 package com.nicktagliamonte.characters;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.nicktagliamonte.items.Item;
 
 public class NPC extends Person {
     private String description;
-    private double maxHealth;
     private List<String> dialogue;
+    private double maxHealth;
     private int deathSavingThrows;
 
     public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth, List<String> dialogue) {
         super(name, maxHealth, energy, inventory);
         this.description = description;
-        this.maxHealth = maxHealth;
         this.dialogue = dialogue;
+        this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
     }
 
@@ -24,7 +23,7 @@ public class NPC extends Person {
     }
 
     public boolean isDead() {
-        if (super.getHealth() <= -maxHealth) {
+        if (this.getHealth() <= -maxHealth) {
             return true;
         } else {
             return false;
@@ -89,10 +88,19 @@ public class NPC extends Person {
     }
 
     public String getRandomDialogue() {
-        return dialogue.get((int) (Math.random() * dialogue.size()));
+        if (dialogue.isEmpty()) {
+            return (this.getName() + " does not want to talk to you.  Perhaps you should not want to talk to them either.");
+        } else {
+            return dialogue.get((int) (Math.random() * dialogue.size()));
+        }
     }
 
     public boolean isFriend() {
         return this instanceof Friend;
+        //TODO: Once i have neutral, switch to: return (this instanceof Friend || this instanceof Neutral);
+    }
+
+    public boolean isAdversary() {
+        return this instanceof Adversary;
     }
 }

@@ -204,10 +204,8 @@ public enum GameCommand {
 
             for (NPC character : characters) {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
-                    if (character.isFriend()) {
-                        System.out.println(character.getRandomDialogue());
-                        return;
-                    }
+                    System.out.println(character.getRandomDialogue());
+                    return;
                     //TODO: replace the above with something like gameState.enterDialogue(character);
                 }
             }
