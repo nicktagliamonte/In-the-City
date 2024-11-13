@@ -1,23 +1,15 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put a party member in the room
-        decide on class file
-            NOTE: they will need an exp gain and leveling function
-            NOTE: add the same to the pc here if it doesn't already exist
-        update deserializer as needed
-        have a means to add them to the party
-            which means have gamestate hold a List<Person> currentParty = {playerCharacter, //up to 2 others}
-                note that the party can have AT MOST 3 members with AT MOST 1 of each character class
-        have updates to carry weight for the player, don't worry about having them have an inventory
     put a boundary obstacle in the room 
         this is a non intersectable item, but it probably wont be the ONLY non intersectable item
             add the class file and update the deserializer
-            make it so that these items don't come up in the look function.  if the player is never explicitly made aware of the boundaryItem being present, they cannot take it.  also make the name some
-            crazy alphanumeric string so that take will never come to pass.
+            make it so that these items don't come up in the look function.  if the player is never explicitly made aware of the boundaryItem being present, 
+            they cannot take it.  also make the name some crazy alphanumeric string so that take will never come to pass.
             so add a flag to item for isIntersectable
             update movement s/t trying to overlap an item for which isIntersectable = false; will fail with a unique message
         non-square rooms will be enabled with this
             try here to figure out the situation with putting adjacencies on boundary obstacle.  make room 1 a circle
+    put trim command on all args in command entry
 
 GAME STATE MODIFICATIONS
     introduce a new region
@@ -28,8 +20,12 @@ GAME STATE MODIFICATIONS
         figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
             this will also be important when crafting, and in combat, and probably in dialogue states
                 DONT mess with any crafting
+        make sure to include a way to equip items
+            this will be relevant to the combat system
     put crafting in the gamestate
         make the crafting menu, make a trap item, make the trap, make sure it works
+            for small and large traps, this is easy.  just make sure something appears in them after sufficient time and transfer that into the inventory
+            for defense traps...do i just have there be some variable chance among adversaries in the room with the trap that it fully kills them?
     add dialogue gamestate
         dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
         which vary based on both player class and npc type.  i'm not sure yet where to store those options
@@ -42,6 +38,7 @@ GAME STATE MODIFICATIONS
         this will impact enemy and neutral npc's
             enable fighting and hiding
                 which mean setting up how enemies will attack YOU as well as their response to you attacking them
+        make sure equipped items are working for all party members
     ***now make sure talking to, fighting, and bartering with neutrals works
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
@@ -60,6 +57,8 @@ GAME STATE MODIFICATIONS
             (when i'm typing this, i haven't begun thinking about coding combat.  maybe health was a nightmare to update, who knows)
     put a safe zone in the game (at this stage, it'll be room 1 out of the two)
         make the random events that are combat based not occur in the safe room
+        make the safe room have an inventory
+            make trapped items appear in that inventory
         build out the feature to locate the safe zone
             this one is a job and a half
             could i just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])
@@ -76,7 +75,8 @@ MISC UPDATES
         rather than listing a million fuel cells if you hold a million fuel cells, format as
             fuel cell   50
             otherItem   1
-            etc      
+            etc  
+        also make sure it shows the inventory for the whole party    
     update the talk command
         it'll be relatively straightforward to make the player type "talk to [person]" and just disregard the first arg from GameCommand_TALK
     Do i want a theivery mechanic?
@@ -88,6 +88,7 @@ MISC UPDATES
         decide how to accept quests
         decide whether quests come from java or json
             the json idea might be stupid
+        at this point, implement leveling for party members and npc's
     make a map of the room
         draw it first
         then ascii it
@@ -115,6 +116,7 @@ Phase 7: codebase creation
     and all spells
     and all npc's
     and everything and anything else
+        pay close attention to the conveyance.  it'll be basically an npc i guess.  it will have an inventory with functionally no weight limit
 
 Phase 8: persistance
     Create methods for saving and loading game states to test persistence.

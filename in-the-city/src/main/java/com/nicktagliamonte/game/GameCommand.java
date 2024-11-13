@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Item;
 
@@ -18,6 +19,7 @@ public enum GameCommand {
             String roomDescription = gameState.getRoomDescription(currentRoom);
             Map<String, Item> visibleItems = gameState.getcurrentRoom().getItemsInRoom();
             Map<String, NPC> characters = gameState.getcurrentRoom().getPeopleInRoom();
+            List<NPC> party = gameState.getCurrentParty();
 
             // Construct the dynamic message based on the game state
             StringBuilder message = new StringBuilder();
@@ -53,8 +55,22 @@ public enum GameCommand {
                         message.append(", ");
                     }
                 }
+                message.append("\n");
             } else {
                 message.append("There are no notable people here.\n");
+            }
+
+            if (!party.isEmpty()) {
+                message.append("Party members here: ");
+                for (NPC partyMember : party) {
+                    message.append(partyMember.getName());
+
+                    if (party.size() > 1 && !partyMember.equals(party.toArray()[party.size() - 1])) {
+                        message.append(", ");
+                    }
+                }
+            } else {
+                message.append("There are no party members with you.");
             }
 
             // Print the message
@@ -200,6 +216,7 @@ public enum GameCommand {
             }
 
             Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
+            List<NPC> party = gameState.getCurrentParty();
             String chosenCharacter = args[0];
 
             for (NPC character : characters) {
@@ -209,7 +226,33 @@ public enum GameCommand {
                     //TODO: replace the above with something like gameState.enterDialogue(character);
                 }
             }
+            for (NPC partyMember : party) {
+                if (partyMember.getName().equalsIgnoreCase(chosenCharacter)) {
+                    System.out.println(partyMember.getRandomDialogue());
+                    return;
+                    //TODO: replace the above with something like gameState.enterDialogue(character);
+                }
+            }
             System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
+        }
+    },
+    JOIN {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            Map<String, NPC> characters = gameState.getcurrentRoom().getPeopleInRoom();
+            String memberToJoin = args[0];
+
+            for (Entry<String, NPC> character : characters.entrySet()) {
+                if (character.getValue().getName().equalsIgnoreCase(memberToJoin)) {
+                    if (character.getValue() instanceof PartyMember) {
+                        boolean success = gameState.addPartyMember((PartyMember) character.getValue());
+                        if (success) {
+                            gameState.getcurrentRoom().removePersonFromRoom(character.getKey());
+                            return;
+                        }
+                    }
+                }
+            }
         }
     },
     MENU {

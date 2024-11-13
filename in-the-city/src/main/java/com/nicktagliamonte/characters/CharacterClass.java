@@ -1,5 +1,6 @@
 package com.nicktagliamonte.characters;
 public class CharacterClass {
+    private String className;
     private double strength;
     private double dexterity;
     private double constitution;
@@ -12,6 +13,7 @@ public class CharacterClass {
 
     public CharacterClass(String className) {
         if (className.equalsIgnoreCase("survivalist")) {
+            this.className = "survivalist";
             this.strength = 10;
             this.dexterity = 8;
             this.constitution = 10;
@@ -22,6 +24,7 @@ public class CharacterClass {
             this.energy = 5;
             this.health = 22;
         } else if (className.equalsIgnoreCase("technologist")) {
+            this.className = "technologist";
             this.strength = 6;
             this.dexterity = 8;
             this.constitution = 8;
@@ -32,6 +35,7 @@ public class CharacterClass {
             this.energy = 5;
             this.health = 18;
         } else if (className.equalsIgnoreCase("negotiator")) {
+            this.className = "negotiator";
             this.strength = 8;
             this.dexterity = 8;
             this.constitution = 10;
@@ -51,6 +55,10 @@ public class CharacterClass {
             System.out.println("Invalid character class. Please try again.");
             return null;
         }
+    }
+
+    public String getClassName() {
+        return className;
     }
 
     public double getStrength() {

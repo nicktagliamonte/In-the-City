@@ -13,7 +13,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -22,6 +24,7 @@ public class GameState {
     private Room currentRoom;
     public Player player;
     public GameEngine gameEngine;
+    private List<NPC> currentParty;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath) {
@@ -29,6 +32,7 @@ public class GameState {
         this.gameEngine = gameEngine;
         initializePlayer();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath);
+        this.currentParty = new ArrayList<>();
     }
 
     public void initializePlayer() {
@@ -40,10 +44,10 @@ public class GameState {
         do {
             System.out.println("Enter a class (survivalist, technologist, or negotiator): ");
             String classInput = scanner.nextLine();
-            characterClass = CharacterClass.createCharacterClass(classInput);
+            characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
         
-        this.player = new Player(name, characterClass);
+        this.player = new Player(name.trim(), characterClass);
         gameEngine.player = this.player;
     }
 
@@ -161,6 +165,12 @@ public class GameState {
                 }
             }
 
+            for (Room room : currentRegion.getRooms()) {
+                if (room.getItemsInRoom() == null) {
+                    room.setItemsInRoom(new HashMap<String, Item>());
+                }
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -208,6 +218,12 @@ public class GameState {
                 
                 if (currentRoom != null) {
                     currentRoom.setPeopleInRoom(peopleInRoom);
+                }
+            }
+
+            for (Room room : currentRegion.getRooms()) {
+                if (room.getPeopleInRoom() == null) {
+                    room.setPeopleInRoom(new HashMap<String, NPC>());
                 }
             }
         } catch (IOException e) {
@@ -265,6 +281,40 @@ public class GameState {
             // If the input is not a valid direction, print an error message
             return "Invalid direction. Valid directions are: NORTH, EAST, SOUTH, WEST, UP, DOWN, LEFT, RIGHT.";
         }
+    }
+
+    public List<NPC> getCurrentParty() {
+        return currentParty;
+    }
+
+    public boolean addPartyMember(PartyMember newMember) {
+        // Check if party size is already at the maximum
+        if (currentParty.size() >= 2) {
+            System.out.println("Party is already full. Cannot add more members.");
+            return false;
+        }
+        
+        // Check if the class is already represented
+        for (NPC member : currentParty) {
+            if (member instanceof PartyMember && ((PartyMember) member).getClassName().equalsIgnoreCase(newMember.getClassName())) {
+                System.out.println("A member with this character class is already in the party.");
+                return false;
+            }
+        }
+        if (newMember.getClassName().equalsIgnoreCase(player.getClassName())) {
+            System.out.println("Party members cannot have the same class as you.");
+            return false;
+        }
+
+        // Add the new member and update the player's attributes
+        currentParty.add(newMember);
+        player.setMaxCarryWeight(player.getMaxCarryWeight() + newMember.getMaxCarryWeight());
+        player.increaseRemainingCarryWeight(newMember.getMaxCarryWeight());
+        
+        // TODO: Make all movement be done on the PARTY rather than the player itself. 
+
+        System.out.println(newMember.getName() + " has joined the party.");
+        return true;
     }
 
     public void setCurrentRoom(Room room) {

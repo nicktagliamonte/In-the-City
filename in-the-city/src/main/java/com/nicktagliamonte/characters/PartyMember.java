@@ -1,9 +1,10 @@
 package com.nicktagliamonte.characters;
+
 import java.util.List;
 
 import com.nicktagliamonte.items.Item;
 
-public class Player extends Person {
+public class PartyMember extends NPC{
     private CharacterClass characterClass;
     private double strength;
     private double dexterity;
@@ -12,10 +13,9 @@ public class Player extends Person {
     private double wisdom;
     private double charisma;
     private double maxCarryWeight;
-    private double remainingCarryWeight;
 
-    public Player(String name, CharacterClass characterClass) {
-        super(name);
+    public PartyMember(String name, List<Item> inventory, String description, List<String> dialogue, List<String> hints, CharacterClass characterClass) {
+        super(name, characterClass.getHealth(), characterClass.getEnergy(), inventory, description, characterClass.getHealth(), dialogue, hints);
         this.characterClass = characterClass;
         this.strength = characterClass.getStrength();
         this.dexterity = characterClass.getDexterity();
@@ -24,9 +24,6 @@ public class Player extends Person {
         this.wisdom = characterClass.getWisdom();
         this.charisma = characterClass.getCharisma();
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
-        this.remainingCarryWeight = this.maxCarryWeight;
-        super.setEnergy(characterClass.getEnergy());
-        super.setHealth(characterClass.getHealth());
     }
 
     public CharacterClass getCharacterClass() {
@@ -89,24 +86,12 @@ public class Player extends Person {
         this.charisma = charisma;
     }
 
-    public double getMaxCarryWeight() {
-        return maxCarryWeight;
-    }
-
     public void setMaxCarryWeight(double maxCarryWeight) {
         this.maxCarryWeight = maxCarryWeight;
     }
 
-    public double getRemainingCarryWeight() {
-        return remainingCarryWeight;
-    }
-
-    public void reduceRemainingCarryWeight(double input) {
-        this.remainingCarryWeight -= input;
-    }
-
-    public void increaseRemainingCarryWeight(double input) {
-        this.remainingCarryWeight += input;
+    public double getMaxCarryWeight() {
+        return this.maxCarryWeight;
     }
 
     public void listInventory() {
@@ -116,35 +101,5 @@ public class Player extends Person {
         } else {
             inventory.forEach(item -> System.out.println(item.getName()));
         }
-    }
-
-    public void hide() {
-        //TODO: unsure of exact gameplay elements here, i think this will require feedback from gamestate
-        //like the success chance depends on the adversaries in the region
-        System.out.println("working");
-    }
-
-    public void useHint() {
-        //TODO: gonna need to add a field and a setter for hints
-        //in this method, there will be a check on the hints available 
-        //then display hint and alter the counter
-    }
-
-    public Item getItemFromInventory(String itemName) {
-        List<Item> inventory = super.getInventory();
-        if (inventory == null) {
-            System.out.println("No items in inventory");
-        } else {
-            for (Item item : inventory) {
-                if (item.getName().equalsIgnoreCase(itemName)) {
-                    if (item.getIsConsumable()) {
-                        super.inventory.remove(item);
-                        increaseRemainingCarryWeight(item.getWeight());
-                    }
-                    return item;
-                }
-            }
-        }
-        return null;
     }
 }

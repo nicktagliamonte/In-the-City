@@ -1,3 +1,5 @@
 cheats
 a walkthrough
 a counter that tracks percent complete based on current gamestate
+a leave command that exits the current room
+    possibly take args r/e which door to leave out of

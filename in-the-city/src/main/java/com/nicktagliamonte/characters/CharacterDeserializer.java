@@ -91,7 +91,21 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 return new Neutral(neutralName, neutralHealth, neutralEnergy, neutralInventory, neutralDescription, neutralMaxHealth, 
                                    neutralDialogue, neutralShrewdness, neutralHints, neutralBarterSuccessDialogue, neutralBarterFailureDialogue, 
                                    neutralQuestDialogue, neutralCanGiveQuest, neutralAttackSpeed, neutralDamage, moralityFlag);
-            //add new types in future updates
+            case "partymember":
+                String partyMemberName = jsonObject.get("name").getAsString();
+                JsonObject partyMemberInventoryJson = jsonObject.getAsJsonObject("inventory");
+                List<Item> partyMemberInventory = new ArrayList<>();
+                for (Map.Entry<String, JsonElement> entry : partyMemberInventoryJson.entrySet()) {
+                    Item item = context.deserialize(entry.getValue(), Item.class);
+                    partyMemberInventory.add(item);
+                }
+                String partyMemberDescription = jsonObject.get("description").getAsString();
+                List<String> partyMemberDialogue = context.deserialize(jsonObject.getAsJsonArray("dialogue"), List.class);
+                List<String> partyMemberHints = context.deserialize(jsonObject.getAsJsonArray("hints"), List.class);
+                String characterClassName = jsonObject.get("characterClass").getAsString();
+                CharacterClass characterClass = new CharacterClass(characterClassName);
+
+                return new PartyMember(partyMemberName, partyMemberInventory, partyMemberDescription, partyMemberDialogue, partyMemberHints, characterClass);
             default:
                 throw new JsonParseException("unknown npc type " + npcType);
         }
