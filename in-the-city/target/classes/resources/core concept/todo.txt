@@ -4,13 +4,28 @@ THINGS IN THE ROOM:
         create an neutral class which extends npc
         update deserializer as needed
         needs both isFriend and isEnemy
+        basically a mashup of Friend and Enemy -- needs both of their methods, plus a double lowerThreshold (if the pc morality is below that, this will act as enemy) and double upperThreshold (which does the opposite)
+            so that will flag starting behavior, but as a response to ongoing behavior: once you fight, repllicate lowerThreshold behavior (fighting closes the neutral off to future bartering).  so does
+            theivery which they detect (see misc updates, add a note r/e detection and impact on neutral characters).  There is no full friend dynamic flag (fighting them makes them not like you, but being nice won't 
+            make it so YOU can never attack THEM).
     put a party member in the room
         decide on class file
+            NOTE: they will need an exp gain and leveling function
+            NOTE: add the same to the pc here if it doesn't already exist
         update deserializer as needed
         have a means to add them to the party
+            which means have gamestate hold a List<Person> currentParty = {playerCharacter, //up to 2 others}
+                note that the party can have AT MOST 3 members with AT MOST 1 of each character class
         have updates to carry weight for the player, don't worry about having them have an inventory
     put a boundary obstacle in the room 
-        non-square rooms will be enabled with this.  probably so will buildings, so don't make the message too blatantly about being at the room edge
+        this is a non intersectable item, but it probably wont be the ONLY non intersectable item
+            add the class file and update the deserializer
+            make it so that these items don't come up in the look function.  if the player is never explicitly made aware of the boundaryItem being present, they cannot take it.  also make the name some
+            crazy alphanumeric string so that take will never come to pass.
+            so add a flag to item for isIntersectable
+            update movement s/t trying to overlap an item for which isIntersectable = false; will fail with a unique message
+        non-square rooms will be enabled with this
+            try here to figure out the situation with putting adjacencies on boundary obstacle.  make room 1 a circle
 
 GAME STATE MODIFICATIONS
     introduce a new region
@@ -70,6 +85,8 @@ MISC UPDATES
             etc      
     update the talk command
         it'll be relatively straightforward to make the player type "talk to [person]" and just disregard the first arg from GameCommand_TALK
+    Do i want a theivery mechanic?
+        probably
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
             probably it will have to change the region (major quests at least) once complete
@@ -92,7 +109,6 @@ MISC UPDATES
         just introduce the game before proceeding
     reassess demo at this time  
         in the planning stage, currently seems like this is a full demo
-        next will be codebase creation
     (assuming that the demo is in fact done) host the demo
         find out what changes need to be made to host the demo online
             if that isn't reasonable, update readme to provide detailed description of running the game
