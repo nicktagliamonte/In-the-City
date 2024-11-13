@@ -13,16 +13,13 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class GameState {
     private Region currentRegion;
     private Room currentRoom;
-    private Map<String, List<Person>> charactersInRooms;
     public Player player;
     public GameEngine gameEngine;
 
@@ -31,7 +28,6 @@ public class GameState {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
         initializePlayer();
-        charactersInRooms = new HashMap<>();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath);
     }
 
