@@ -206,10 +206,12 @@ public enum GameCommand {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
                     if (character.isFriend()) {
                         System.out.println(character.getRandomDialogue());
+                        return;
                     }
                     //TODO: replace the above with something like gameState.enterDialogue(character);
                 }
             }
+            System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
         }
     },
     MENU {
