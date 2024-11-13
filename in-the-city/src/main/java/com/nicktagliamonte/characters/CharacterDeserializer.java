@@ -65,6 +65,32 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
 
                 return new Adversary(adversaryName, adversaryHealth, adversaryEnergy, adversaryInventory, adversaryDescription, 
                                      adversaryMaxHealth, adversaryDialogue, adversaryAttackSpeed, adversaryDamage);
+            case "neutral":
+                String neutralName = jsonObject.get("name").getAsString();
+                double neutralHealth = jsonObject.get("health").getAsDouble();
+                double neutralEnergy = jsonObject.get("energy").getAsDouble();
+                JsonObject neutralInventoryJson = jsonObject.getAsJsonObject("inventory");
+                List<Item> neutralInventory = new ArrayList<>();
+                for (Map.Entry<String, JsonElement> entry : neutralInventoryJson.entrySet()) {
+                    Item item = context.deserialize(entry.getValue(), Item.class);
+                    neutralInventory.add(item);
+                }
+                String neutralDescription = jsonObject.get("description").getAsString();
+                double neutralMaxHealth = jsonObject.get("maxHealth").getAsDouble();
+                List<String> neutralDialogue = context.deserialize(jsonObject.getAsJsonArray("dialogue"), List.class);
+                double neutralShrewdness = jsonObject.get("shrewdness").getAsDouble();
+                List<String> neutralHints = context.deserialize(jsonObject.getAsJsonArray("hints"), List.class);
+                List<String> neutralBarterSuccessDialogue = context.deserialize(jsonObject.getAsJsonArray("barterSuccessDialogue"), List.class);
+                List<String> neutralBarterFailureDialogue = context.deserialize(jsonObject.getAsJsonArray("barterFailureDialogue"), List.class);
+                List<String> neutralQuestDialogue = context.deserialize(jsonObject.getAsJsonArray("questDialogue"), List.class);
+                boolean neutralCanGiveQuest = jsonObject.get("canGiveQuest").getAsBoolean();
+                double neutralAttackSpeed = jsonObject.get("attackSpeed").getAsDouble();
+                double neutralDamage = jsonObject.get("damage").getAsDouble();
+                double moralityFlag = jsonObject.get("moralityFlag").getAsDouble();
+
+                return new Neutral(neutralName, neutralHealth, neutralEnergy, neutralInventory, neutralDescription, neutralMaxHealth, 
+                                   neutralDialogue, neutralShrewdness, neutralHints, neutralBarterSuccessDialogue, neutralBarterFailureDialogue, 
+                                   neutralQuestDialogue, neutralCanGiveQuest, neutralAttackSpeed, neutralDamage, moralityFlag);
             //add new types in future updates
             default:
                 throw new JsonParseException("unknown npc type " + npcType);

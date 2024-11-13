@@ -69,6 +69,51 @@
                 "dialogue": [],
                 "attackSpeed": 3,
                 "damage": 5
+            },
+            "(4,5)": {
+                "type": "neutral",
+                "name": "gilear",
+                "health": 5.0,
+                "energy": 2.0,
+                "inventory": {
+                    "item1": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    },
+                    "item2": {
+                        "type": "FuelCell",
+                        "name": "fillerDate",
+                        "description": "fillerData",
+                        "weight": 4.0,
+                        "consumable": true
+                    }
+                },
+                "description": "a face",
+                "maxHealth": 5.0,
+                "dialogue": [
+                    "I've been stuck in a wheel well for 3 days.",
+                    "Sorry, who are you?"
+                ],
+                "shrewdness": 3,
+                "hints": [
+                    "I wouldn't go over there."
+                ],
+                "barterSuccessDialogue": [
+                    "for you, fine."
+                ],
+                "barterFailDialogue": [
+                    "I just can't go that low, sorry"
+                ],
+                "questDialogue": [
+                    "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
+                ],
+                "canGiveQuest": false,
+                "attackSpeed": 3,
+                "damage": 5,
+                "moralityFlag": 0
             }
         }
     }

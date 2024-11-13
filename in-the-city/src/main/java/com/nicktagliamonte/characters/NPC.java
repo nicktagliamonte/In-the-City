@@ -7,15 +7,17 @@ import com.nicktagliamonte.items.Item;
 public class NPC extends Person {
     private String description;
     private List<String> dialogue;
+    private List<String> hints;
     private double maxHealth;
     private int deathSavingThrows;
 
-    public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth, List<String> dialogue) {
+    public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth, List<String> dialogue, List<String> hints) {
         super(name, maxHealth, energy, inventory);
         this.description = description;
         this.dialogue = dialogue;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
+        this.hints = hints;
     }
 
     public String getDescription() {
@@ -95,12 +97,23 @@ public class NPC extends Person {
         }
     }
 
+    public String getHint() {
+        if (hints.isEmpty()) {
+            return (this.getName() + " has no hints to offer.");
+        } else {
+            return hints.get((int) (Math.random() * hints.size()));
+        }
+    }
+
     public boolean isFriend() {
         return this instanceof Friend;
-        //TODO: Once i have neutral, switch to: return (this instanceof Friend || this instanceof Neutral);
     }
 
     public boolean isAdversary() {
         return this instanceof Adversary;
+    }
+
+    public boolean isNeutral() {
+        return this instanceof Neutral;
     }
 }

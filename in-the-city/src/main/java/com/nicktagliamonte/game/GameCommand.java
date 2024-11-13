@@ -49,12 +49,12 @@ public enum GameCommand {
                            .append(" at ")
                            .append(entry.getKey());
                     
-                    if (characters.size() > 1 && !entry.equals(characters.entrySet().toArray()[visibleItems.size() - 1])) {
+                    if (characters.size() > 1 && !entry.equals(characters.entrySet().toArray()[characters.size() - 1])) {
                         message.append(", ");
                     }
                 }
             } else {
-                message.append("There are no notable items here.\n");
+                message.append("There are no notable people here.\n");
             }
 
             // Print the message
@@ -258,9 +258,25 @@ public enum GameCommand {
         }
     },
     HINT {
+        //TODO: make sure this method reduces the players hints, and or checks on how many are remaining.  
         @Override
         public void execute(String[] args, GameState gameState) {
-            gameState.getPlayer().useHint();
+            if (args.length == 0) {
+                System.out.println("Specify who to get a hint from");
+                return;
+            }
+
+            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
+            String chosenCharacter = args[0];
+
+            for (NPC character : characters) {
+                if (character.getName().equalsIgnoreCase(chosenCharacter)) {
+                    System.out.println(character.getHint());
+                    return;
+                    //TODO: replace the above with something like gameState.enterDialogue(character);
+                }
+            }
+            System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
         }
     },
     SAVE {

@@ -1,13 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put a neutral in the room
-        create an neutral class which extends npc
-        update deserializer as needed
-        needs both isFriend and isEnemy
-        basically a mashup of Friend and Enemy -- needs both of their methods, plus a double lowerThreshold (if the pc morality is below that, this will act as enemy) and double upperThreshold (which does the opposite)
-            so that will flag starting behavior, but as a response to ongoing behavior: once you fight, repllicate lowerThreshold behavior (fighting closes the neutral off to future bartering).  so does
-            theivery which they detect (see misc updates, add a note r/e detection and impact on neutral characters).  There is no full friend dynamic flag (fighting them makes them not like you, but being nice won't 
-            make it so YOU can never attack THEM).
     put a party member in the room
         decide on class file
             NOTE: they will need an exp gain and leveling function
@@ -49,9 +41,11 @@ GAME STATE MODIFICATIONS
     add combat gamestate
         this will impact enemy and neutral npc's
             enable fighting and hiding
+                which mean setting up how enemies will attack YOU as well as their response to you attacking them
     ***now make sure talking to, fighting, and bartering with neutrals works
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
+        hint command needs to be updated, as does player.java useHint
     put timed events in the game    
         start with hint regeneration
         how about health regeneration as well

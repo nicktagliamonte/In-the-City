@@ -1,5 +1,6 @@
 package com.nicktagliamonte.characters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.nicktagliamonte.items.Item;
@@ -11,7 +12,7 @@ public class Adversary extends NPC{
     public Adversary(String name, double health, double energy, List<Item> inventory, String description, 
                      double maxHealth, List<String> dialogue, double attackSpeed, double damage) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, energy, inventory, description, maxHealth, dialogue);
+        super(name, health, energy, inventory, description, maxHealth, dialogue, new ArrayList<String>());
         this.attackSpeed = attackSpeed;
         this.damage = damage;
     }

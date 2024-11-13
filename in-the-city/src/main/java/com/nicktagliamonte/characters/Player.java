@@ -115,16 +115,15 @@ public class Player extends Person {
     }
 
     public void hide() {
-        //unsure of exact gameplay elements here, i think this will require feedback from gamestate
+        //TODO: unsure of exact gameplay elements here, i think this will require feedback from gamestate
         //like the success chance depends on the adversaries in the region
         System.out.println("working");
     }
 
     public void useHint() {
-        //gonna need to add a field and a setter for hints
+        //TODO: gonna need to add a field and a setter for hints
         //in this method, there will be a check on the hints available 
         //then display hint and alter the counter
-        System.out.println("working");
     }
 
     public Item getItemFromInventory(String itemName) {

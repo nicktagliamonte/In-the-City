@@ -6,7 +6,6 @@ import com.nicktagliamonte.items.Item;
 
 public class Friend extends NPC {
     private double shrewdness;
-    private List<String> hints;
     private List<String> barterSuccessDialogue;
     private List<String> barterFailureDialogue;
     private List<String> questDialogue;
@@ -15,9 +14,8 @@ public class Friend extends NPC {
     public Friend(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,
                   List<String> dialogue, double shrewdness, List<String> hints, List<String> barterSuccessDialogue, 
                   List<String> barterFailureDialogue, List<String> questDialogue, boolean canGiveQuest) {
-        super(name, health, energy, inventory, description, maxHealth, dialogue);
+        super(name, health, energy, inventory, description, maxHealth, dialogue, hints);
         this.shrewdness = shrewdness;
-        this.hints = hints;
         this.barterSuccessDialogue = barterSuccessDialogue;
         this.barterFailureDialogue = barterFailureDialogue;
         this.questDialogue = questDialogue;
@@ -44,10 +42,6 @@ public class Friend extends NPC {
 
     public String talk() {
         return super.getRandomDialogue();
-    }
-
-    public String getHint() {
-        return hints.isEmpty() ? "No hints available." : hints.get((int) (Math.random() * hints.size()));
     }
 
     public void giveQuest() {
