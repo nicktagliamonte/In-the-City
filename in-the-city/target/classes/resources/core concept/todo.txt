@@ -1,13 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put an enemy in the room
-        create an adversary class which extends npc
-        update deserializer as needed
-        the player cannot talk to the enemy class
-        it needs an isEnemy method
-        
-        MAKE SURE DIALOGUE CAN BE AN EMPTY ARRAY
-        MAKE SURE TALK PRINTS SOMETHING ABOUT THIS PERSON NOT WANTING TO TALK IF DIALOGUE IS EMPTY
     put a neutral in the room
         create an neutral class which extends npc
         update deserializer as needed
