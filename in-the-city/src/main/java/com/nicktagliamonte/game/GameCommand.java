@@ -117,9 +117,10 @@ public enum GameCommand {
                         return;
                     }
                 }
-    
                 String message = gameState.changeLocation(direction, distance);
-                System.out.println(message);
+                if (!(message == null)) {
+                    System.out.println(message);
+                }
             }
         }
     },

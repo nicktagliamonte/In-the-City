@@ -265,9 +265,10 @@ public class GameState {
             if (newRoom != null && newRoom != currentRoom) {
                 // Transition to the new room and update the current location
                 currentRoom = newRoom;
+                System.out.println("You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName());
                 setCurrentRoom(newRoom);
                 gameEngine.checkForRandomEvent();
-                return "You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName();
+                return null;
             } else if (newRoom != null) {
                 // If the player is at the edge, check for adjacency
                 String position = currentRoom.getPlayerPosition();
@@ -313,8 +314,16 @@ public class GameState {
         // Check for the waypoint as an exit (adjacent room)
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoom().getName().equalsIgnoreCase(waypointName)) {
-                Point targetPosition = parsePositionString(adj.getCoordinates());
-                return moveToAdjacentPosition(targetPosition, "exit " + waypointName);
+                String newPosition = adj.getCoordinates();
+                String[] coordinates = newPosition.replace("(", "").replace(")", "").split(",");
+                int newX = Integer.parseInt(coordinates[0]);
+                int newY = Integer.parseInt(coordinates[1]);
+                currentRoom.setPlayerPosition(newX, newY);
+                if (adj.getType().equals("stairs")) {
+                    return ("You stand at " + adj.getDescription() + ". Use ASCEND or DESCEND to move to " + waypointName);
+                } else {
+                    return ("You stand at " + adj.getDescription() + ". Use MOVE or ENTER to move to " + waypointName);
+                }                
             }
         }
     
