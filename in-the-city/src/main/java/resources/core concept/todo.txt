@@ -1,14 +1,64 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
-    put a boundary obstacle in the room 
-        this is a non intersectable item, but it probably wont be the ONLY non intersectable item
-            add the class file and update the deserializer
-            make it so that these items don't come up in the look function.  if the player is never explicitly made aware of the boundaryItem being present, 
-            they cannot take it.  also make the name some crazy alphanumeric string so that take will never come to pass.
-            so add a flag to item for isIntersectable
-            update movement s/t trying to overlap an item for which isIntersectable = false; will fail with a unique message
-        non-square rooms will be enabled with this
-            try here to figure out the situation with putting adjacencies on boundary obstacle.  make room 1 a circle
+    update to a room masks approach which uses a 2d boolean array to mark which tiles in the room are walkable or non-walkable
+        remove the isIntersectable flag for now
+        update json to include mask [[//content],[more content in the next row],[etc]] then do something like this:
+private void loadRegion(String regionFilePath) {
+    Gson gson = new Gson();
+    try (FileReader regionReader = new FileReader(regionFilePath)) {
+        Region region = gson.fromJson(regionReader, Region.class);
+        
+        for (Room room : region.getRooms()) {
+            int[][] mask = parseRoomMask(room.getMaskData());
+            room.setMask(mask);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+private int[][] parseRoomMask(int[][] maskData) {
+    // Implement any transformation here, if necessary
+    return maskData;
+}
+        update room to include a private int[][] mask field
+        update move command to include a distance arg, then:
+            update move method to (a. only exist in one class and
+            b. use a structure like
+public class Player {
+    private int x;
+    private int y;
+    private Room currentRoom;
+
+    public Player(Room currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
+    public void move(int dx, int dy) {
+        int newX = x + dx;
+        int newY = y + dy;
+
+        if (currentRoom.isWalkable(newX, newY)) {
+            x = newX;
+            y = newY;
+            System.out.println("Moved to: (" + x + ", " + y + ")");
+        } else {
+            System.out.println("Cannot move to: (" + newX + ", " + newY + ") - blocked by mask");
+        }
+    }
+}
+            c. add an isWalkable method to room such as 
+public boolean isWalkable(int x, int y) {
+        if (x >= 0 && x < width && y >= 0 && y < height) {
+            return mask[x][y] == 1;
+        }
+        return false; // Outside the bounds of the mask is not walkable
+    })
+            treat no arg as though it was d = 1
+        add a moveto command for moving to a point of interest.  have it place the player beside that point of interest
+            this should also apply to exits, which will need names for this to work
+    add a second floor or basement
+        not a ton to change here, but think of a good way to actually take that step -- i think it will have to be adding two commands: ascend and descend
     put trim command on all args in command entry
 
 GAME STATE MODIFICATIONS
