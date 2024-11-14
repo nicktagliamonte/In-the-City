@@ -17,7 +17,9 @@ public class AdjacencyDeserializer implements JsonDeserializer<Adjacency> {
         // The adjoiningRoom is just a string during initial deserialization
         String adjoiningRoomName = jsonObject.get("adjoiningRoom").getAsString();
 
+        boolean isStairsUp = jsonObject.get("isStairsUp").getAsBoolean();
+
         // Create and return an Adjacency object with just the name initially
-        return new Adjacency(type, coordinates, description, adjoiningRoomName);
+        return new Adjacency(type, coordinates, description, adjoiningRoomName, isStairsUp);
     }
 }

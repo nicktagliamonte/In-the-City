@@ -122,7 +122,37 @@ public enum GameCommand {
                 System.out.println(message);
             }
         }
-    },    
+    },
+    ENTER {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length < 1) {
+                System.out.println("Which room do you want to enter?");
+            } else {
+                gameState.enterByCommand(args[0]);
+            }
+        }
+    },
+    ASCEND {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length < 1) {
+                System.out.println("Which room do you want to enter?");
+            } else {
+                gameState.ascend(args[0]);
+            }
+        }
+    },
+    DESCEND {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length < 1) {
+                System.out.println("Which room do you want to enter?");
+            } else {
+                gameState.descend(args[0]);
+            }
+        }
+    },
     EXAMINE {
         @Override
         public void execute(String[] args, GameState gameState) {

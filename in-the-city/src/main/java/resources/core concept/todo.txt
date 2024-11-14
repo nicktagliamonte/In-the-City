@@ -1,10 +1,8 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 THINGS IN THE ROOM:
     update to a room masks approach which uses a 2d boolean array to mark which tiles in the room are walkable or non-walkable
-            implement the enter command - standing at an adjacency doesn't move you to another room, either moving *through* it or using enter does
-            implement the ascend/descend commands
-            make an event when you get to an adjacency square print "you stand at a [description of adjacency]"
             make all coordinates 1-indexed
+            switch the order of the print statements for entering a new room (entering room 1 should print that the move succeeded then print the welcome message)
     add a second floor or basement
         not a ton to change here, but think of a good way to actually take that step -- i think it will have to be adding two commands: ascend and descend
     put trim command on all args in command entry

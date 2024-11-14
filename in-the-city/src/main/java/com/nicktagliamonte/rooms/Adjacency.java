@@ -6,13 +6,15 @@ public class Adjacency {
     private String description;
     private transient String adjoiningRoomName; // Used for initial deserialization only
     private Room adjoiningRoom; // Actual Room object for gameplay use
+    private boolean isStairsUp;
 
     // Constructor, getters, and setters
-    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName) {
+    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName, boolean isStairsUp) {
         this.type = type;
         this.coordinates = coordinates;
         this.description = description;
         this.adjoiningRoomName = adjoiningRoomName;
+        this.isStairsUp = isStairsUp;
     }
 
     public String getType() {
@@ -53,5 +55,9 @@ public class Adjacency {
 
     public void setAdjoiningRoomName(String adjoiningRoomName) {
         this.adjoiningRoomName = adjoiningRoomName;
+    }
+
+    public boolean getIsStairsUp() {
+        return isStairsUp;
     }
 }

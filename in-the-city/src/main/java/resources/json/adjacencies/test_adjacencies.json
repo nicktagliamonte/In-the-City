@@ -5,7 +5,8 @@
         "type": "door",
         "coordinates": "(4,9)",
         "description": "large wooden double doors leading to room 2",
-        "adjoiningRoom": "Room 2"
+        "adjoiningRoom": "Room 2",
+        "isStairsUp": "false"
       }
     ],
     "Room 2": [
@@ -13,7 +14,8 @@
         "type": "door",
         "coordinates": "(2,0)",
         "description": "large wooden double doors leading to room 1",
-        "adjoiningRoom": "Room 1"
+        "adjoiningRoom": "Room 1",
+        "isStairsUp": "false"
       }
     ]
   }

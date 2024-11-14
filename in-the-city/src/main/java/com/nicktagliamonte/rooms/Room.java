@@ -97,7 +97,7 @@ public class Room {
 
     public Room movePlayer(String direction, int distance) {
         int dx = 0, dy = 0;
-        
+    
         switch (direction.toUpperCase()) {
             case "NORTH":
             case "UP":
@@ -123,30 +123,42 @@ public class Room {
             int newX = playerX + dx;
             int newY = playerY + dy;
     
+            // Check if the next move is within the room bounds
             if (newX >= 0 && newX < width && newY >= 0 && newY < height) {
                 if (mask[newY][newX] == 1) {
+                    // Valid movement
                     playerX = newX;
                     playerY = newY;
     
-                    Room transitionRoom = checkTransition();
-                    if (transitionRoom != this) {
-                        return transitionRoom;
+                    // Check if the player has reached a square with an adjacency
+                    for (Adjacency adjacency : adjacentRooms) {
+                        String coords = adjacency.getCoordinates();  // e.g., "(4,9)"
+                        String[] parts = coords.replace("(", "").replace(")", "").split(","); // Split by comma and remove parentheses
+    
+                        int adjX = Integer.parseInt(parts[0].trim());  // Parse the x coordinate
+                        int adjY = Integer.parseInt(parts[1].trim());  // Parse the y coordinate
+    
+                        // If the player is standing on an adjacency, return the description message
+                        if (adjX == playerX && adjY == playerY) {
+                            return this; // Return the description of the adjacency
+                        }
                     }
                 } else {
-                    return null;
+                    return null; // Invalid movement (blocked by wall or other obstacle)
                 }
             } else {
+                // At the edge, check for adjacency transition
                 return checkTransition();
             }
         }
-        return this;
+        return this; // No transition, stayed in the same room
     }
 
     public void setPlayerPosition(int x, int y) {
         this.playerX = x;
         this.playerY = y;
     }
-    
+
     private Room checkTransition() {
         String currentPositionKey = "(" + playerX + "," + playerY + ")";
     

@@ -267,18 +267,31 @@ public class GameState {
                 currentRoom = newRoom;
                 setCurrentRoom(newRoom);
                 gameEngine.checkForRandomEvent();
-                currentRoom.triggerTransitionEvent();
                 return "You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName();
             } else if (newRoom != null) {
+                // If the player is at the edge, check for adjacency
                 String position = currentRoom.getPlayerPosition();
                 String[] posArray = position.replace("(", "").replace(")", "").split(", ");
                 int posX = Integer.parseInt(posArray[0]);
                 int posY = Integer.parseInt(posArray[1]);
-
-                if (posX == 0 || posX == currentRoom.getWidth() - 1 || posY == 0 || posY == currentRoom.getHeight() - 1) {
-                    return "You move to the edge of the room. You are at " + position;
+    
+                // Check if the player is on an edge and there's an adjacency there
+                for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
+                    if (adjacency.getCoordinates().equals("(" + posX + "," + posY + ")")) {
+                        // Inform the player about the adjacency and the option to move past it
+                        if (adjacency.getType().equals("stairs")) {
+                            if (adjacency.getIsStairsUp()) {
+                                return "You stand at a " + adjacency.getDescription() + ". Use ASCEND to take the stairs up.";
+                            } else {
+                                return "You stand at a " + adjacency.getDescription() + ". Use DESCEND to take the stairs down.";
+                            }                            
+                        } else {
+                            return "You stand at a " + adjacency.getDescription() + ". You can move past the edge to enter " + adjacency.getAdjoiningRoomName();
+                        }                        
+                    }
                 }
-                return "You move " + directionInput + " " + distance + " steps. " + position;
+    
+                return "You move " + directionInput + " " + distance + " steps. You are at " + position;
             } else {
                 return "You cannot move further " + directionInput + ". You are at " + currentRoom.getPlayerPosition();
             }
@@ -286,6 +299,7 @@ public class GameState {
             return "Invalid direction. Valid directions are: NORTH, EAST, SOUTH, WEST, UP, DOWN, LEFT, RIGHT.";
         }
     }
+    
 
     public String moveToWaypoint(String waypointName) {    
         // Check for the waypoint as an NPC
@@ -346,6 +360,37 @@ public class GameState {
         return x >= 0 && x < mask[0].length && y >= 0 && y < mask.length;
     }
 
+    public void enterByCommand(String roomName) {
+        for (Adjacency adj : currentRoom.getAdjacentRooms()) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
+                setCurrentRoom(adj.getAdjoiningRoom());
+                System.out.println("You have entered " + currentRoom.getName());
+                return;
+            }
+        }
+        System.out.println("no such room was found.  use LOOK for a list of useable exits, and try moving manually through it");
+    }
+
+    public void ascend(String roomName) {
+        for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
+            if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp() && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+                setCurrentRoom(adjacency.getAdjoiningRoom());
+                System.out.println("You have entered " + currentRoom.getName());
+                return;
+            }
+        }
+    }
+
+    public void descend(String roomName) {
+        for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
+            if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp() && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+                setCurrentRoom(adjacency.getAdjoiningRoom());
+                System.out.println("You have entered " + currentRoom.getName());
+                return;
+            }
+        }
+    }
+
     public List<NPC> getCurrentParty() {
         return currentParty;
     }
@@ -382,6 +427,7 @@ public class GameState {
 
     public void setCurrentRoom(Room room) {
         currentRoom = room;
+        currentRoom.triggerTransitionEvent();
     }
 
     public Player getPlayer() {
