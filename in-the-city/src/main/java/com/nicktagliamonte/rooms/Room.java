@@ -1,7 +1,8 @@
 package com.nicktagliamonte.rooms;
-// Room is basically a skin over linkedlist.  each room contains fields etc, among them are exits and a list of adjascent rooms
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.nicktagliamonte.characters.NPC;
@@ -14,7 +15,7 @@ public class Room {
     private int height;
     private int playerX;
     private int playerY;
-    private Map<String, Room> adjacentRooms;
+    private List<Adjacency> adjacentRooms;
     private Map<String, Item> itemsInRoom;
     private Map<String, NPC> peopleInRoom;
     private TransitionEvent transitionEvent;
@@ -32,7 +33,7 @@ public class Room {
             this.playerY = 0;
         }
         this.transitionEvent = transitionEvent;
-        this.adjacentRooms = new HashMap<String, Room>();
+        this.adjacentRooms = new ArrayList<Adjacency>();
         this.mask = mask;
         if (hasPlayer) {
             this.playerX = playerX;
@@ -44,7 +45,7 @@ public class Room {
         return mask;
     }
 
-    public void setAdjacencies(Map<String, Room> adjacentRooms) {
+    public void setAdjacencies(List<Adjacency> adjacentRooms) {
         this.adjacentRooms = adjacentRooms;
     }
 
@@ -84,6 +85,14 @@ public class Room {
 
     public void triggerTransitionEvent() {
         System.out.println(transitionEvent.getDescription());
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Room movePlayer(String direction, int distance) {
@@ -132,12 +141,19 @@ public class Room {
         }
         return this;
     }
+
+    public void setPlayerPosition(int x, int y) {
+        this.playerX = x;
+        this.playerY = y;
+    }
     
     private Room checkTransition() {
         String currentPositionKey = "(" + playerX + "," + playerY + ")";
     
-        if (adjacentRooms.containsKey(currentPositionKey)) {
-            return adjacentRooms.get(currentPositionKey);
+        for (Adjacency adj : adjacentRooms) {
+            if (adj.getCoordinates().equals(currentPositionKey)) {
+                return adj.getAdjoiningRoom();
+            }
         }
     
         return this;
@@ -156,13 +172,17 @@ public class Room {
     }
 
     public void viewAdjascentRooms() {
-        if (adjacentRooms == null) {
+        if (adjacentRooms == null || adjacentRooms.size() == 0) {
             System.out.println("no adjascent rooms");
             return;
         }
-        for (String key : adjacentRooms.keySet()) {
-            System.out.println("There is an exit at " + key);
+        for (Adjacency adjacency : adjacentRooms) {
+            System.out.println(adjacency.getDescription());
         }
+    }
+
+    public List<Adjacency> getAdjacentRooms() {
+        return adjacentRooms;
     }
 
     public boolean hasPlayer() {

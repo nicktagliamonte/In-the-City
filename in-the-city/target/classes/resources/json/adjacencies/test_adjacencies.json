@@ -1,10 +1,20 @@
 {
   "adjacencies": {
-    "Room 1": {
-      "(0,3)": "Room 2"
-    },
-    "Room 2": {
-      "(3,0)": "Room 1"
-    }
+    "Room 1": [
+      {
+        "type": "door",
+        "coordinates": "(4,9)",
+        "description": "large wooden double doors leading to room 2",
+        "adjoiningRoom": "Room 2"
+      }
+    ],
+    "Room 2": [
+      {
+        "type": "door",
+        "coordinates": "(2,0)",
+        "description": "large wooden double doors leading to room 1",
+        "adjoiningRoom": "Room 1"
+      }
+    ]
   }
 }

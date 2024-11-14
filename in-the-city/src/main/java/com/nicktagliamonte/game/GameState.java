@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import java.awt.Point;
+
 public class GameState {
     private Region currentRegion;
     private Room currentRoom;
@@ -67,50 +69,48 @@ public class GameState {
     }
 
     private void loadAdjacencyList(String adjacenciesFilePath) {
-        Gson gson = new Gson();
         try (FileReader adjacenciesReader = new FileReader(adjacenciesFilePath)) {
-            Type adjacencyMapType = new TypeToken<Map<String, Map<String, String>>>() {
-            }.getType();
+            // Create a Gson instance with custom deserializer
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.registerTypeAdapter(Adjacency.class, new AdjacencyDeserializer());
+            Gson gson = gsonBuilder.create();
+    
+            // Define the type for the adjacencies map (a map of room names to a list of adjacencies)
+            Type adjacencyMapType = new TypeToken<Map<String, List<Adjacency>>>() {}.getType();
+            
+            // Parse the file and deserialize into the map of adjacencies
             JsonObject jsonObject = gson.fromJson(adjacenciesReader, JsonObject.class);
             JsonObject adjacencies = jsonObject.getAsJsonObject("adjacencies");
-            Map<String, Map<String, String>> tempAdjacencyMap = gson.fromJson(adjacencies, adjacencyMapType);
-
+            Map<String, List<Adjacency>> tempAdjacencyMap = gson.fromJson(adjacencies, adjacencyMapType);
+    
             Map<String, Room> roomNameToRoomMap = new HashMap<>();
             for (Room room : currentRegion.getRooms()) {
                 roomNameToRoomMap.put(room.getName(), room);
             }
-
-            Map<Room, Map<String, Room>> adjacencyMap = new HashMap<>();
-
-            for (Map.Entry<String, Map<String, String>> entry : tempAdjacencyMap.entrySet()) {
+    
+            for (Map.Entry<String, List<Adjacency>> entry : tempAdjacencyMap.entrySet()) {
                 String roomName = entry.getKey();
-                Map<String, String> stringAdjacencies = entry.getValue();
-
+                List<Adjacency> adjacencyList = entry.getValue();
+    
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);
                 if (currentRoom != null) {
-                    Map<String, Room> roomAdjacencies = new HashMap<>();
-
-                    // Convert the String adjacencies to Room objects
-                    for (Map.Entry<String, String> adjEntry : stringAdjacencies.entrySet()) {
-                        String coordinates = adjEntry.getKey();
-                        String adjacentRoomName = adjEntry.getValue();
-
-                        Room adjacentRoom = roomNameToRoomMap.get(adjacentRoomName);
-                        if (adjacentRoom != null) {
-                            roomAdjacencies.put(coordinates, adjacentRoom);
+                    for (Adjacency adjacency : adjacencyList) {
+                        // Now map the adjoiningRoomName to the actual Room object
+                        String adjoiningRoomName = adjacency.getAdjoiningRoomName();
+                        Room adjoiningRoom = roomNameToRoomMap.get(adjoiningRoomName);
+                        if (adjoiningRoom != null) {
+                            adjacency.setAdjoiningRoom(adjoiningRoom);
                         }
                     }
-
                     // Set adjacencies for the current room
-                    currentRoom.setAdjacencies(roomAdjacencies);
-                    adjacencyMap.put(currentRoom, roomAdjacencies);
+                    currentRoom.setAdjacencies(adjacencyList);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }    
 
     private void loaditemsInRoom(String itemsFilePath) {
         Gson gson = new GsonBuilder()
@@ -270,15 +270,81 @@ public class GameState {
                 currentRoom.triggerTransitionEvent();
                 return "You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName();
             } else if (newRoom != null) {
-                // Moved within the room but not transitioning
-                return "You move " + directionInput + " " + distance + " steps. " + currentRoom.getPlayerPosition();
+                String position = currentRoom.getPlayerPosition();
+                String[] posArray = position.replace("(", "").replace(")", "").split(", ");
+                int posX = Integer.parseInt(posArray[0]);
+                int posY = Integer.parseInt(posArray[1]);
+
+                if (posX == 0 || posX == currentRoom.getWidth() - 1 || posY == 0 || posY == currentRoom.getHeight() - 1) {
+                    return "You move to the edge of the room. You are at " + position;
+                }
+                return "You move " + directionInput + " " + distance + " steps. " + position;
             } else {
                 return "You cannot move further " + directionInput + ". You are at " + currentRoom.getPlayerPosition();
             }
         } catch (IllegalArgumentException e) {
             return "Invalid direction. Valid directions are: NORTH, EAST, SOUTH, WEST, UP, DOWN, LEFT, RIGHT.";
         }
-    }    
+    }
+
+    public String moveToWaypoint(String waypointName) {    
+        // Check for the waypoint as an NPC
+        for (Map.Entry<String, NPC> entry : currentRoom.getPeopleInRoom().entrySet()) {
+            if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
+                Point targetPosition = parsePositionString(entry.getKey());
+                return moveToAdjacentPosition(targetPosition, "NPC " + waypointName);
+            }
+        }
+    
+        // Check for the waypoint as an exit (adjacent room)
+        for (Adjacency adj : currentRoom.getAdjacentRooms()) {
+            if (adj.getAdjoiningRoom().getName().equalsIgnoreCase(waypointName)) {
+                Point targetPosition = parsePositionString(adj.getCoordinates());
+                return moveToAdjacentPosition(targetPosition, "exit " + waypointName);
+            }
+        }
+    
+        // Check for the waypoint as an item
+        for (Map.Entry<String, Item> entry : currentRoom.getItemsInRoom().entrySet()) {
+            if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
+                Point targetPosition = parsePositionString(entry.getKey());
+                return moveToAdjacentPosition(targetPosition, "item " + waypointName);
+            }
+        }
+    
+        // Waypoint not found
+        return "Waypoint \"" + waypointName + "\" not found in this room.";
+    }
+
+    private Point parsePositionString(String positionString) {
+        positionString = positionString.replaceAll("[()]", ""); // Remove parentheses
+        String[] coordinates = positionString.split(",");
+        int x = Integer.parseInt(coordinates[0].trim());
+        int y = Integer.parseInt(coordinates[1].trim());
+        return new Point(x, y);
+    }
+
+    private String moveToAdjacentPosition(Point targetPosition, String targetDescription) {
+        int[][] walkableMask = currentRoom.getMask();
+        int targetX = targetPosition.x;
+        int targetY = targetPosition.y;
+    
+        // Check adjacent positions (N, E, S, W)
+        for (int[] delta : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+            int newX = targetX + delta[0];
+            int newY = targetY + delta[1];
+            if (isWithinBounds(newX, newY, walkableMask) && walkableMask[newY][newX] == 1) {
+                currentRoom.setPlayerPosition(newX, newY);
+                return "You move next to the " + targetDescription + ". You are at (" + newX + ", " + newY + ").";
+            }
+        }
+    
+        return "No walkable position found near the " + targetDescription + ".";
+    }
+    
+    private boolean isWithinBounds(int x, int y, int[][] mask) {
+        return x >= 0 && x < mask[0].length && y >= 0 && y < mask.length;
+    }
 
     public List<NPC> getCurrentParty() {
         return currentParty;

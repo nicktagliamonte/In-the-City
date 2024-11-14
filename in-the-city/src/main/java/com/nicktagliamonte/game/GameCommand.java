@@ -84,7 +84,28 @@ public enum GameCommand {
             if (args.length < 1) {
                 System.out.println("Which direction do you want to go?");
             } else {
-                String[] arguments = String.valueOf(args[0]).split(" ");
+                String[] arguments = args[0].split(" ");
+                if (arguments.length == 0) {
+                    System.out.println("Invalid command format.");
+                    return;
+                }
+    
+                if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
+                    // Concatenate the rest of the arguments as the waypoint name
+                    StringBuilder waypointNameBuilder = new StringBuilder();
+                    for (int i = 1; i < arguments.length; i++) {
+                        waypointNameBuilder.append(arguments[i]);
+                        if (i < arguments.length - 1) {
+                            waypointNameBuilder.append(" "); // Add space between words
+                        }
+                    }
+                    String waypointName = waypointNameBuilder.toString();
+                    String message = gameState.moveToWaypoint(waypointName);
+                    System.out.println(message);
+                    return;
+                }
+    
+                // Handle regular movement
                 String direction = arguments[0];
                 int distance = 1; // Default distance
     
