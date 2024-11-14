@@ -5,7 +5,7 @@ import com.nicktagliamonte.game.GameState;
 
 public class FuelCell extends Item {
     public FuelCell() {
-        super("Fuel Cell", "A small, powerful energy source.", 4.0, true, true);
+        super("Fuel Cell", "A small, powerful energy source.", 4.0, true);
     }
 
     @Override
