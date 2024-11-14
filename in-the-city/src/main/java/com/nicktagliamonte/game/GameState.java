@@ -257,31 +257,28 @@ public class GameState {
         return currentRoom.getDescription();
     }
 
-    public String changeLocation(String directionInput) {
+    public String changeLocation(String directionInput, int distance) {
         try {
             Direction direction = Direction.valueOf(directionInput.toUpperCase());
-            Room newRoom = currentRoom.movePlayer(direction.toString());
-
+            Room newRoom = currentRoom.movePlayer(direction.toString(), distance);
+    
             if (newRoom != null && newRoom != currentRoom) {
                 // Transition to the new room and update the current location
                 currentRoom = newRoom;
-                setCurrentRoom(newRoom); // Update game state to reflect the new room
+                setCurrentRoom(newRoom);
                 gameEngine.checkForRandomEvent();
                 currentRoom.triggerTransitionEvent();
-                return "You move " + directionInput.trim() + ". You have entered " + newRoom.getName();
-            } else if (newRoom == currentRoom) {
+                return "You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName();
+            } else if (newRoom != null) {
                 // Moved within the room but not transitioning
-                return "You move " + directionInput + ". " + currentRoom.getPlayerPosition();
+                return "You move " + directionInput + " " + distance + " steps. " + currentRoom.getPlayerPosition();
             } else {
-                // Attempted to move out of the room without an adjacency
-                return "You can't move further " + direction.toString().toLowerCase()
-                        + ". There's no exit in that direction.";
+                return "You cannot move further " + directionInput + ". You are at " + currentRoom.getPlayerPosition();
             }
         } catch (IllegalArgumentException e) {
-            // If the input is not a valid direction, print an error message
             return "Invalid direction. Valid directions are: NORTH, EAST, SOUTH, WEST, UP, DOWN, LEFT, RIGHT.";
         }
-    }
+    }    
 
     public List<NPC> getCurrentParty() {
         return currentParty;

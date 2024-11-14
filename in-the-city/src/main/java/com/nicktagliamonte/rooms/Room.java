@@ -12,15 +12,16 @@ public class Room {
     private String description;
     private int width;
     private int height;
-    private int playerX; // Current X position of the player in the room
-    private int playerY; // Current Y position of the player in the room
+    private int playerX;
+    private int playerY;
     private Map<String, Room> adjacentRooms;
     private Map<String, Item> itemsInRoom;
     private Map<String, NPC> peopleInRoom;
     private TransitionEvent transitionEvent;
     private boolean hasPlayer;
+    private int[][] mask;
 
-    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent) {
+    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, int[][] mask, int playerX, int playerY) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -32,6 +33,15 @@ public class Room {
         }
         this.transitionEvent = transitionEvent;
         this.adjacentRooms = new HashMap<String, Room>();
+        this.mask = mask;
+        if (hasPlayer) {
+            this.playerX = playerX;
+            this.playerY = playerY;
+        }
+    }
+
+    public int[][] getMask() {
+        return mask;
     }
 
     public void setAdjacencies(Map<String, Room> adjacentRooms) {
@@ -76,51 +86,62 @@ public class Room {
         System.out.println(transitionEvent.getDescription());
     }
 
-    public Room movePlayer(String direction) {
+    public Room movePlayer(String direction, int distance) {
+        int dx = 0, dy = 0;
+        
         switch (direction.toUpperCase()) {
             case "NORTH":
             case "UP":
-                if (playerY < height - 1) {
-                    playerY++;
-                } else {
-                    return checkTransition(); // Check for adjacency at the boundary
-                }
+                dy = 1;
                 break;
             case "SOUTH":
             case "DOWN":
-                if (playerY > 0) {
-                    playerY--;
-                } else {
-                    return checkTransition(); // Check for adjacency at the boundary
-                }
+                dy = -1;
                 break;
             case "EAST":
             case "RIGHT":
-                if (playerX < width - 1) {
-                    playerX++;
-                } else {
-                    return checkTransition(); // Check for adjacency at the boundary
-                }
+                dx = 1;
                 break;
             case "WEST":
             case "LEFT":
-                if (playerX > 0) {
-                    playerX--;
-                } else {
-                    return checkTransition(); // Check for adjacency at the boundary
-                }
+                dx = -1;
                 break;
             default:
                 throw new IllegalArgumentException("Invalid direction: " + direction);
         }
-        return this; // Return current room if movement is within bounds
+    
+        for (int step = 0; step < distance; step++) {
+            int newX = playerX + dx;
+            int newY = playerY + dy;
+    
+            if (newX >= 0 && newX < width && newY >= 0 && newY < height) {
+                if (mask[newY][newX] == 1) {
+                    playerX = newX;
+                    playerY = newY;
+    
+                    Room transitionRoom = checkTransition();
+                    if (transitionRoom != this) {
+                        return transitionRoom;
+                    }
+                } else {
+                    return null;
+                }
+            } else {
+                return checkTransition();
+            }
+        }
+        return this;
     }
     
-    // Check for adjacency at boundaries
     private Room checkTransition() {
         String currentPositionKey = "(" + playerX + "," + playerY + ")";
-        return adjacentRooms.getOrDefault(currentPositionKey, null);
-    }    
+    
+        if (adjacentRooms.containsKey(currentPositionKey)) {
+            return adjacentRooms.get(currentPositionKey);
+        }
+    
+        return this;
+    }
 
     public String getPlayerPosition() {
         return "(" + playerX + ", " + playerY + ")";

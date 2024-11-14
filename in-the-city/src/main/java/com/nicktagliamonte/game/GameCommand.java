@@ -81,16 +81,27 @@ public enum GameCommand {
     MOVE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            String message = "";
-            
             if (args.length < 1) {
                 System.out.println("Which direction do you want to go?");
             } else {
-                message = gameState.changeLocation(args[0]);
+                String[] arguments = String.valueOf(args[0]).split(" ");
+                String direction = arguments[0];
+                int distance = 1; // Default distance
+    
+                if (arguments.length > 1) {
+                    try {
+                        distance = Integer.parseInt(arguments[1]);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
+                        return;
+                    }
+                }
+    
+                String message = gameState.changeLocation(direction, distance);
+                System.out.println(message);
             }
-            System.out.println(message);
         }
-    },
+    },    
     EXAMINE {
         @Override
         public void execute(String[] args, GameState gameState) {
