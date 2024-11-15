@@ -24,6 +24,7 @@ GAME STATE MODIFICATIONS
             for defense traps...do i just have there be some variable chance among adversaries in the room with the trap that it fully kills them?
     add dialogue gamestate
         dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
+        talk command should be talk TO (see move to command for how)
         which vary based on both player class and npc type.  i'm not sure yet where to store those options
         this will impact friend and neutral npc's
     add bartering gamestate
@@ -66,6 +67,7 @@ GAME STATE MODIFICATIONS
                                                         is some guy gonna try to sell you a fish while you're fighting the fomorian?)
 
 MISC UPDATES   
+    trim the name entered by the user to be all lowercase but first letter upper case
     There is a deathsaving throw mechanic for the Friend class but not for you the player   
         add it
     update the inventory function
@@ -96,6 +98,7 @@ MISC UPDATES
         just introduce the game before proceeding
     reassess demo at this time  
         in the planning stage, currently seems like this is a full demo
+        check ALL todo comments in every file
     (assuming that the demo is in fact done) host the demo
         find out what changes need to be made to host the demo online
             if that isn't reasonable, update readme to provide detailed description of running the game
@@ -112,6 +115,5 @@ Phase 7: codebase creation
 
 Phase 8: persistance
     Create methods for saving and loading game states to test persistence.
-    figure out when to initialize a region's rooms (and everything else)
 
 Phase 9: the actual game itself -- start coding the levels one-by-one, modularly add them to the game

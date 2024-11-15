@@ -384,23 +384,12 @@ public enum GameCommand {
             }
             System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
         }
-    },
-    SAVE {
-        @Override
-        public void execute(String[] args, GameState gameState) {
-            gameState.getGameEngine().saveGame();
-        }
-    },
-    LOAD {
-        @Override
-        public void execute(String[] args, GameState gameState) {
-            gameState.getGameEngine().loadGame();
-        }
     },    
     QUIT {
         @Override
         public void execute(String[] args, GameState gameState) {
             //quit logic handled in game engine
+            //TODO: this should be replaced by exclusively the menu based quit as i near the end of demo game
         }
     };
 
