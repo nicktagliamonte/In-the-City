@@ -7,6 +7,13 @@
         "description": "large wooden double doors leading to room 2",
         "adjoiningRoom": "Room 2",
         "isStairsUp": "false"
+      },
+      {
+        "type": "stairs",
+        "coordinates": "(7,5)",
+        "description": "a narrow, rotting ladder going up to a hole in the ceiling",
+        "adjoiningRoom": "upstairs",
+        "isStairsUp": true
       }
     ],
     "Room 2": [
@@ -16,6 +23,15 @@
         "description": "large wooden double doors leading to room 1",
         "adjoiningRoom": "Room 1",
         "isStairsUp": "false"
+      }
+    ],
+    "upstairs": [
+      {
+        "type": "stairs",
+        "coordinates": "(0,0)",
+        "description": "a narrow, rotting ladder going down into a hole in the floor",
+        "adjoiningRoom": "Room 1",
+        "isStairsUp": false
       }
     ]
   }

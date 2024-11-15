@@ -1,20 +1,23 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
-THINGS IN THE ROOM:
-    add a second floor or basement
-        not a ton to change here, but think of a good way to actually take that step -- i think it will have to be adding two commands: ascend and descend
-    put trim command on all args in command entry
-
 GAME STATE MODIFICATIONS
-    introduce a new region
-        first forray into large-scale game state modifications -- take some action which changes the region.  load a new set of rooms, items, characters, etc
-            make sure that it initializes the player in the room, that the players inventory carries over, that old region objects are not still interactable
-            there will be no going back -- this game is story driven not open world, so don't need to worry about persistance of taken objects for previous regions
     make the menu
-        figure out how to make the current gamestate "displaying menu" which will disable all non-menu commands
-            this will also be important when crafting, and in combat, and probably in dialogue states
-                DONT mess with any crafting
-        make sure to include a way to equip items
-            this will be relevant to the combat system
+        implement methods in Menu.java for all menu options
+            build out the manual option fully
+                it's honestly just a command list
+            try building out the map option (submenu: description, game world, room) 
+                for gameworld, can i get an animation? 
+                for room, can i get updates based on movement? (where the party is, items, characters, etc?)
+            quests placeholder
+            equipment submenu
+            crafting submenu (WITH NO FUNCTIONS YET)
+            save
+                make sure it opens the system file explorer, but otherwise no functions yet
+            load
+                make sure it opens the system file explorer, but otherwise no functions yet 
+            quit
+                print are you sure? (y/n) then quit based on input
+            return to game already works
+        stylize the menu, at least a little
     put crafting in the gamestate
         make the crafting menu, make a trap item, make the trap, make sure it works
             for small and large traps, this is easy.  just make sure something appears in them after sufficient time and transfer that into the inventory
@@ -42,6 +45,7 @@ GAME STATE MODIFICATIONS
         have some kind of clock tick that calls to random events periodically
             or have those events result from player movement.  decide here
                 can technically change it later
+            if the random events are timed, make sure that you pause that counter in a menu state
     add status effects
         this is a natural follow up to having health regen -- some status effects will cause health drain
         having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status"
@@ -82,11 +86,6 @@ MISC UPDATES
         decide whether quests come from java or json
             the json idea might be stupid
         at this point, implement leveling for party members and npc's
-    make a map of the room
-        draw it first
-        then ascii it
-        then figure out where it should be accessed from
-            also should encountering items or whatever update the map?
     player leveling mechanics
         pay attention to the fact that both max and remaining carry weight will need to increase
         pay attention to the fact that party members should also level up here

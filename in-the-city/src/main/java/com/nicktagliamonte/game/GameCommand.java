@@ -322,7 +322,7 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             GameEngine engine = gameState.getGameEngine();
-            engine.launchMenu();
+            engine.isInMenu = true;
         }
     },
     LOCATE {

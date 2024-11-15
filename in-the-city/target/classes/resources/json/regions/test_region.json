@@ -46,6 +46,21 @@
       ],
       "playerX": 2,
       "playerY": 0
+    },
+    {
+      "name": "upstairs",
+      "description": "a tiny upstairs room",
+      "width": 2,
+      "height": 2,
+      "transitionEvent": {
+        "description": "You climb up the ladder, rung by creaky rung"
+      },
+      "mask": [
+        [1,1],
+        [1,1]
+      ],
+      "playerX": 0,
+      "playerY": 0
     }
   ]
 }

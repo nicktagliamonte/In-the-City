@@ -53,7 +53,7 @@ public class GameState {
         gameEngine.player = this.player;
     }
 
-    private void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath) {
+    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath) {
         Gson gson = new Gson();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
@@ -319,9 +319,11 @@ public class GameState {
                 int newX = Integer.parseInt(coordinates[0]);
                 int newY = Integer.parseInt(coordinates[1]);
                 currentRoom.setPlayerPosition(newX, newY);
-                if (adj.getType().equals("stairs")) {
-                    return ("You stand at " + adj.getDescription() + ". Use ASCEND or DESCEND to move to " + waypointName);
-                } else {
+                if (adj.getType().equals("stairs") && adj.getIsStairsUp()) {
+                    return ("You stand at " + adj.getDescription() + ". Use ASCEND to move to " + waypointName);
+                } else if (adj.getType().equals("stairs")) {
+                    return ("You stand at " + adj.getDescription() + ". Use DESCEND to move to " + waypointName);
+                }else {
                     return ("You stand at " + adj.getDescription() + ". Use MOVE or ENTER to move to " + waypointName);
                 }                
             }
@@ -388,6 +390,7 @@ public class GameState {
                 return;
             }
         }
+        System.out.println("Use ASCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public void descend(String roomName) {
@@ -398,6 +401,7 @@ public class GameState {
                 return;
             }
         }
+        System.out.println("Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public List<NPC> getCurrentParty() {
