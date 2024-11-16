@@ -110,8 +110,31 @@ public class Menu {
     }
 
     private void displayMap() {
-        // Map logic here
-        System.out.println("Opening the map...");
+        System.out.println("There is a map of the entire game world and a map of your current room available.");
+        System.out.println("1. Display the map of your current room.");
+        System.out.println("2. Display the World Map");
+        System.out.println("3. Return to the main menu.");
+        WorldMap worldMap = new WorldMap();
+        while (true) {
+            int input = gameEngine.getPlayerInputAsInt();
+            if (input == 1) {
+                gameEngine.getGameState().getcurrentRoom().printMap();
+                System.out.println("1. Display the map of your current room.");
+                System.out.println("2. Display the World Map");
+                System.out.println("3. Return to the main menu.");
+            } else if (input == 2) {
+                worldMap.printMap();
+                System.out.println("1. Display the map of your current room.");
+                System.out.println("2. Display the World Map");
+                System.out.println("3. Return to the main menu.");
+            } else if (input == 3) {
+                displayMenu();
+                break;
+            }
+            else {
+                System.out.println("Invalid choice. Enter 3 to return to the main menu.");
+            }
+        }
     }
 
     private void openQuests() {

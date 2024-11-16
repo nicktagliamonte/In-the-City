@@ -2,21 +2,12 @@ Phase 6: Working demo - keep adding individual game elements in a "test data" fo
 GAME STATE MODIFICATIONS
     make the menu
         implement methods in Menu.java for all menu options
-            build out the manual option fully
-                it's honestly just a command list
-            try building out the map option (submenu: description, game world, room) 
-                for gameworld, can i get an animation? 
-                for room, can i get updates based on movement? (where the party is, items, characters, etc?)
-            quests placeholder
-            equipment submenu
-            crafting submenu (WITH NO FUNCTIONS YET)
+            map
+                room map need to update to add a mpa field to room with character, item, and adjacency points of interest
             save
                 make sure it opens the system file explorer, but otherwise no functions yet
             load
-                make sure it opens the system file explorer, but otherwise no functions yet 
-            quit
-                print are you sure? (y/n) then quit based on input
-            return to game already works
+                make sure it opens the system file explorer, but otherwise no functions yet
         stylize the menu, at least a little
     put crafting in the gamestate
         make the crafting menu, make a trap item, make the trap, make sure it works

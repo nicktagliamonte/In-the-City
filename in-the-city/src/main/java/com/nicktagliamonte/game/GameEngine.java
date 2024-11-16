@@ -72,6 +72,10 @@ public class GameEngine {
         }
     }
 
+    public GameState getGameState() {
+        return this.gameState;
+    }
+
     public void saveGame() {
         //String saveData = gameState.toSerializableFormat();
         //logic to save 'saveData' to a file

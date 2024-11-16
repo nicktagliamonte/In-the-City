@@ -199,4 +199,23 @@ public class Room {
     public boolean hasPlayer() {
         return hasPlayer;
     }
+
+    public void printMap() {
+        for (int[] row : mask) {
+            for (int element : row) {
+                if (element == 0) {
+                    System.out.print("  ");
+                } else {
+                    System.out.print("# ");
+                }
+            }
+            System.out.println();
+
+            try {
+                Thread.sleep(25);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }
