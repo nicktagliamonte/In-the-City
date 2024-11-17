@@ -63,7 +63,7 @@ public class GameEngine {
         while (true) {
             try {
                 System.out.print("Enter your choice: ");
-                input = Integer.parseInt(scanner.nextLine()); // Parse input as an integer
+                input = Integer.parseInt(scanner.nextLine().trim()); // Parse input as an integer
                 return input; // Return the input if it's an integer
             } catch (NumberFormatException e) {
                 // Handle non-integer input

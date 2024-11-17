@@ -1,7 +1,7 @@
 {
   "items": {
     "Room 1": {
-      "(1,1)": {
+      "(1,2)": {
         "type": "FuelCell",
         "name": "Key",
         "description": "A rusty key with an ornate bow.",

@@ -2,8 +2,6 @@ Phase 6: Working demo - keep adding individual game elements in a "test data" fo
 GAME STATE MODIFICATIONS
     make the menu
         implement methods in Menu.java for all menu options
-            map
-                room map need to update to add a mpa field to room with character, item, and adjacency points of interest
             save
                 make sure it opens the system file explorer, but otherwise no functions yet
             load

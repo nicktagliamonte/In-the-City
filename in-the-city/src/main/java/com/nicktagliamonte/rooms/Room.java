@@ -20,8 +20,9 @@ public class Room {
     private TransitionEvent transitionEvent;
     private boolean hasPlayer;
     private int[][] mask;
+    private char[][] map;
 
-    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, int[][] mask, int playerX, int playerY) {
+    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, int[][] mask, int playerX, int playerY, char[][] map) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -38,10 +39,19 @@ public class Room {
             this.playerX = playerX;
             this.playerY = playerY;
         }
+        this.map = map;
     }
 
     public int[][] getMask() {
         return mask;
+    }
+
+    public char[][] getMap() {
+        return map;
+    }
+
+    public void updateMapEntry(char c, int xPos, int yPos) {
+        map[(map.length - yPos - 1)][xPos] = c;
     }
 
     public void setAdjacencies(List<Adjacency> adjacentRooms) {
@@ -188,6 +198,7 @@ public class Room {
             return;
         }
         for (Adjacency adjacency : adjacentRooms) {
+            System.out.println("Exits in this room: ");
             System.out.println(adjacency.getDescription());
         }
     }
@@ -201,13 +212,9 @@ public class Room {
     }
 
     public void printMap() {
-        for (int[] row : mask) {
-            for (int element : row) {
-                if (element == 0) {
-                    System.out.print("  ");
-                } else {
-                    System.out.print("# ");
-                }
+        for (char[] row : map) {
+            for (char element : row) {
+                System.out.print(element);
             }
             System.out.println();
 

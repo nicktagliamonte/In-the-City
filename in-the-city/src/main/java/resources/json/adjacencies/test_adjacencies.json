@@ -4,14 +4,14 @@
       {
         "type": "door",
         "coordinates": "(4,9)",
-        "description": "large wooden double doors leading to room 2",
+        "description": "large wooden double doors leading to \"room 2\"",
         "adjoiningRoom": "Room 2",
         "isStairsUp": "false"
       },
       {
         "type": "stairs",
         "coordinates": "(7,5)",
-        "description": "a narrow, rotting ladder going up to a hole in the ceiling",
+        "description": "a narrow, rotting ladder going \"upstairs\"",
         "adjoiningRoom": "upstairs",
         "isStairsUp": true
       }
@@ -20,7 +20,7 @@
       {
         "type": "door",
         "coordinates": "(2,0)",
-        "description": "large wooden double doors leading to room 1",
+        "description": "large wooden double doors leading to \"room 1\"",
         "adjoiningRoom": "Room 1",
         "isStairsUp": "false"
       }
@@ -29,7 +29,7 @@
       {
         "type": "stairs",
         "coordinates": "(0,0)",
-        "description": "a narrow, rotting ladder going down into a hole in the floor",
+        "description": "a narrow, rotting ladder going down into \"room 1\"",
         "adjoiningRoom": "Room 1",
         "isStairsUp": false
       }

@@ -118,6 +118,8 @@ public class Menu {
         while (true) {
             int input = gameEngine.getPlayerInputAsInt();
             if (input == 1) {
+                System.out.println("KEY:\nI = Item\t\tE = Exit\nF = Friend NPC\t\tP = Party Member\nN = Neutral NPC\t\tA = Adversarial NPC\nY = You\t\t\t. = Walkable Space");
+                System.out.println("If you don't see yourself, you could just be \"behind\" another point of interest.  Try moving over a space.");
                 gameEngine.getGameState().getcurrentRoom().printMap();
                 System.out.println("1. Display the map of your current room.");
                 System.out.println("2. Display the World Map");

@@ -193,6 +193,7 @@ public enum GameCommand {
                 if (item.getValue().getName().equalsIgnoreCase(args[0])) {
                     itemToTake = item.getValue();
                     itemLocation = item.getKey();
+                    gameState.getcurrentRoom().updateMapEntry('.', Character.getNumericValue(itemLocation.charAt(1)), Character.getNumericValue(itemLocation.charAt(3)));
                     break;
                 }
             }
@@ -230,6 +231,10 @@ public enum GameCommand {
             for (Item item : itemsInInventory) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
                     itemToDrop = item;
+                    System.out.println(gameState.getcurrentRoom().getPlayerPosition());
+                    gameState.getcurrentRoom().updateMapEntry('I', 
+                                Character.getNumericValue(gameState.getcurrentRoom().getPlayerPosition().charAt(1)), 
+                                Character.getNumericValue(gameState.getcurrentRoom().getPlayerPosition().charAt(4)));
                     break;
                 }
             }
@@ -311,6 +316,9 @@ public enum GameCommand {
                         boolean success = gameState.addPartyMember((PartyMember) character.getValue());
                         if (success) {
                             gameState.getcurrentRoom().removePersonFromRoom(character.getKey());
+                            gameState.getcurrentRoom().updateMapEntry('.', 
+                                Character.getNumericValue(character.getKey().charAt(1)), 
+                                Character.getNumericValue(character.getKey().charAt(3)));
                             return;
                         }
                     }

@@ -237,6 +237,9 @@ public class GameState {
         for (Room room : currentRegion.getRooms()) {
             if (room.hasPlayer()) {
                 currentRoom = room;
+                currentRoom.updateMapEntry('Y', 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
             }
         }
     }
@@ -291,6 +294,9 @@ public class GameState {
                         }                        
                     }
                 }
+                currentRoom.updateMapEntry('Y', 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
     
                 return "You move " + directionInput + " " + distance + " steps. You are at " + position;
             } else {
@@ -319,6 +325,9 @@ public class GameState {
                 int newX = Integer.parseInt(coordinates[0]);
                 int newY = Integer.parseInt(coordinates[1]);
                 currentRoom.setPlayerPosition(newX, newY);
+                currentRoom.updateMapEntry('Y', 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 if (adj.getType().equals("stairs") && adj.getIsStairsUp()) {
                     return ("You stand at " + adj.getDescription() + ". Use ASCEND to move to " + waypointName);
                 } else if (adj.getType().equals("stairs")) {
@@ -338,7 +347,7 @@ public class GameState {
         }
     
         // Waypoint not found
-        return "Waypoint \"" + waypointName + "\" not found in this room.";
+        return "Waypoint \"" + waypointName + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
     }
 
     private Point parsePositionString(String positionString) {
@@ -360,6 +369,9 @@ public class GameState {
             int newY = targetY + delta[1];
             if (isWithinBounds(newX, newY, walkableMask) && walkableMask[newY][newX] == 1) {
                 currentRoom.setPlayerPosition(newX, newY);
+                currentRoom.updateMapEntry('Y', 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 return "You move next to the " + targetDescription + ". You are at (" + newX + ", " + newY + ").";
             }
         }
@@ -379,7 +391,7 @@ public class GameState {
                 return;
             }
         }
-        System.out.println("no such room was found.  use LOOK for a list of useable exits, and try moving manually through it");
+        System.out.println("no such room was found.  Use LOOK for a list of useable exits, where the connecting room name will be enclosed in quotes.");
     }
 
     public void ascend(String roomName) {
@@ -441,6 +453,9 @@ public class GameState {
     public void setCurrentRoom(Room room) {
         currentRoom = room;
         currentRoom.triggerTransitionEvent();
+        currentRoom.updateMapEntry('Y', 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
     }
 
     public Player getPlayer() {
