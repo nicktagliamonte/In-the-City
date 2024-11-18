@@ -93,6 +93,7 @@ MISC UPDATES
         check ALL todo comments in every file
     (assuming that the demo is in fact done) host the demo
         find out what changes need to be made to host the demo online
+            possibly just host the demo game online, and make the one with levels and save states run local.  that way you can have persistence without a backend
             if that isn't reasonable, update readme to provide detailed description of running the game
         tell friends to test it
 
