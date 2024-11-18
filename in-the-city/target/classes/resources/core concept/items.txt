@@ -49,7 +49,7 @@ Items
     * Use: This amulet is the special item for the Negotiator class, enhancing their ability to communicate and persuade. When equipped, it grants bonuses to charisma and negotiation rolls, allowing the wearer to defuse tense situations or sway opinions in their favor. Additionally, the Whispering Amulet can be used once per day to cast a charm effect, temporarily boosting the goodwill of NPCs towards the wearer, making them more receptive to offers or requests.
     * weight: 2 units
     * First encountered: stage 3
-5. melee weapons (give use an energy cost)
+5. melee weapons (give use an energy cost) (purchaseable, sellable, and findable for this, ranged, and armor)
     1. Rusty Knife
         Description: A crude, rusted blade with a jagged edge. It's seen better days but can still cut through soft materials.
         Cost: 5 generic units

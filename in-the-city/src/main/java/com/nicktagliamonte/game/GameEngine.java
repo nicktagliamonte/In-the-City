@@ -1,6 +1,7 @@
 package com.nicktagliamonte.game;
 import com.nicktagliamonte.characters.*;
 
+import java.io.File;
 import java.util.*;
 
 public class GameEngine {
@@ -76,27 +77,15 @@ public class GameEngine {
         return this.gameState;
     }
 
-    public void saveGame() {
-        //String saveData = gameState.toSerializableFormat();
-        //logic to save 'saveData' to a file
-        System.out.println("Game saved successfully");
-    }
-
-    public void loadGame() {
-        // Logic to read saved data from a file
-        String savedData = readFromFile("savefile.txt");
-
-        if (savedData != null && !savedData.isEmpty()) {
-            gameState.fromSerializableFormat(savedData);
-            System.out.println("Game loaded successfully.");
-        } else {
-            System.out.println("Failed to load game. No save data found.");
+    public static void loadGameFromFile(File file) {
+        // Implement the logic to read and parse the file to restore game state
+        try {
+            // Example placeholder for file reading
+            System.out.println("Loading game data from: " + file.getAbsolutePath());
+            // Actual file reading and game state restoration logic goes here
+        } catch (Exception e) {
+            System.out.println("An error occurred while loading the game: " + e.getMessage());
         }
-    }
-
-    private String readFromFile(String filename) {
-        // Logic to read data from a file (e.g., using FileReader, BufferedReader)
-        return "Read file content here";
     }
 
     public void checkForRandomEvent() {

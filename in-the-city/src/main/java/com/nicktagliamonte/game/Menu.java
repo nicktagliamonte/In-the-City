@@ -1,6 +1,15 @@
 package com.nicktagliamonte.game;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
+import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.characters.PartyMember;
 
 public class Menu {
     GameEngine gameEngine;
@@ -59,6 +68,8 @@ public class Menu {
     }
 
     private void displayManual() {
+        //think about creating a manual class and having some options.
+        //like a description of commands, a description of items/traps, more if you think of more
         System.out.println("Game Manual:");
         System.out.println("No command is case sensitive.  Caps are used below to indicate which words are commands and arguments.");
         System.out.println("LOOK, look, and LoOk are all valid.");
@@ -151,17 +162,109 @@ public class Menu {
 
     private void openCrafting() {
         // Crafting logic here
-        System.out.println("Opening the crafting menu...");
+        if (hasTechnologist()) {
+            System.out.println("There are 3 types of traps you can make.");
+            System.out.println("1. Small Magical Trap\t");
+            System.out.println("2. Large Magical Trap");
+            System.out.println("3. Defensive Magical Trap");
+            System.out.println("4. Return to the main menu");
+
+            while (true) {
+                int input = gameEngine.getPlayerInputAsInt();
+                if (input == 1) {
+                    //TODO: make a small magical trap
+                } else if (input == 2) {
+                    //TODO: make a large magical trap
+                } else if (input == 3) {
+                    //TODO: make a defensive magical trap
+                } else if (input == 4) {
+                    displayMenu();
+                    break;
+                }
+                else {
+                    System.out.println("Invalid choice. Enter 4 to return to the main menu.");
+                }
+            }
+        } else {
+            System.out.println("There are 3 types of traps you can make.");
+            System.out.println("1. Small Trap\t");
+            System.out.println("2. Large Trap");
+            System.out.println("3. Defensive Trap");
+            System.out.println("4. Return to the main menu");
+            while (true) {
+                int input = gameEngine.getPlayerInputAsInt();
+                if (input == 1) {
+                    //TODO: make a small trap
+                } else if (input == 2) {
+                    //TODO: make a large trap
+                } else if (input == 3) {
+                    //TODO: make a defensive trap
+                } else if (input == 4) {
+                    displayMenu();
+                    break;
+                }
+                else {
+                    System.out.println("Invalid choice. Enter 4 to return to the main menu.");
+                }
+            }
+        }
     }
 
     private void saveGame() {
-        // Save logic here
-        System.out.println("Saving the game...");
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(false);
+        frame.setAlwaysOnTop(true);
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose a save location");
+        
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
+        int userSelection = fileChooser.showSaveDialog(frame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+            System.out.println("Save file to: " + fileToSave.getAbsolutePath());
+            
+            //TODO: add logic to save the game state to this file later
+        } else {
+            System.out.println("Save operation was cancelled.");
+        }
+
+        frame.dispose();
     }
 
     private void loadGame() {
-        // Load logic here
-        System.out.println("Loading the game...");
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setAlwaysOnTop(true);
+    
+        // Create a file chooser for loading
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose a save file to load");
+        
+        // Set it to file mode (only selecting files)
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+    
+        // Show the open dialog
+        int userSelection = fileChooser.showOpenDialog(frame);
+    
+        // Check if the user selected a file
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToLoad = fileChooser.getSelectedFile();
+            System.out.println("Load file from: " + fileToLoad.getAbsolutePath());
+            
+            // Pass the selected file to the GameEngine for loading
+            GameEngine.loadGameFromFile(fileToLoad);
+    
+        } else {
+            System.out.println("Load operation was cancelled.");
+        }
+    
+        // Close the frame
+        frame.dispose();
     }
 
     private void quitGame() {
@@ -182,5 +285,16 @@ public class Menu {
         // Logic to return to the game from the menu
         System.out.println("Returning to the game...");
         gameEngine.isInMenu = false;  // Set the game state back to normal mode
+    }
+
+    private boolean hasTechnologist() {
+        List<String> partyClasses = new ArrayList<>();
+        for (NPC member : gameEngine.getGameState().getCurrentParty()) {
+            PartyMember pm = (PartyMember) member;
+            partyClasses.add(pm.getCharacterClass().getClassName());
+        }
+
+        return (gameEngine.getGameState().getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist") || 
+        partyClasses.contains("technologist"));
     }
 }

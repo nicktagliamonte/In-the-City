@@ -1,16 +1,17 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    make the menu
-        implement methods in Menu.java for all menu options
-            save
-                make sure it opens the system file explorer, but otherwise no functions yet
-            load
-                make sure it opens the system file explorer, but otherwise no functions yet
-        stylize the menu, at least a little
     put crafting in the gamestate
-        make the crafting menu, make a trap item, make the trap, make sure it works
-            for small and large traps, this is easy.  just make sure something appears in them after sufficient time and transfer that into the inventory
-            for defense traps...do i just have there be some variable chance among adversaries in the room with the trap that it fully kills them?
+        I MADE A TRAP CLASS WITH SOME TODOS. I'LL NEED TO IMPLEMENT A SPECIFIC TRAP SUBCLASS NEXT TO SEE WHAT EXACTLY IS NEEDED TO FINISH This
+        THEN MAKE SURE THE TRAP IS ACTUALLY CRAFTABLE (PUT THE INGREDIENTS FOR CRAFTING DIRECTLY IN THE PLAYER INVENTORY FOR NOW FOR TESTING)
+        AFTER THAT, MAKE SURE IT WORKS CORRECTLY (JUST HAVE IT WORK 100% OF THE TIME IMMEDIATELY ON DEPLOYMENT FOR TESTING, THEN CHANGE.
+        TRAPPED ITEMS WILL GO TO ROOM INVENTORY, SO JUST MAKE THAT A TODO)
+        DON'T WORRY ABOUT TIMED EVENTS JUST YET THAT'S A LATER TASK
+        CRAFTING DOESN'T REALLY MAKE SENSE YET BECAUSE IT RELIES HEAVILY ON BOTH A TIMING SYSTEM AND A ROOM INVENTORY
+    complete manual TODO in menu.java
+    make the equipment Menu
+        make an armor item, put it in room 1, make sure you can take it and wear it and it has an impact on player stats
+        so throw a temporary print statement to print player stats before and after equipping
+        test putting armor on and taking armor off
     add dialogue gamestate
         dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
         talk command should be talk TO (see move to command for how)
@@ -36,6 +37,8 @@ GAME STATE MODIFICATIONS
             or have those events result from player movement.  decide here
                 can technically change it later
             if the random events are timed, make sure that you pause that counter in a menu state
+        go over all todos to make sure you hit all timed events
+            for example, trap expiration
     add status effects
         this is a natural follow up to having health regen -- some status effects will cause health drain
         having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status"
