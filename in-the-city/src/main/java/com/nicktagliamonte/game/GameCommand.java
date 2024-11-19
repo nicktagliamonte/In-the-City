@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
+import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 
 public enum GameCommand {
@@ -265,13 +266,58 @@ public enum GameCommand {
                 return;
             }
     
-            String itemName = args[0].toLowerCase(); // Get the item name from the args
+            String itemName = args[0].toLowerCase();
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
     
             if (item != null) {
                 item.use(gameState); // Call the item's specific use method
             } else {
                 System.out.println("You don't have that item.");
+            }
+        }
+    },
+    EQUIP {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length == 0) {
+                System.out.println("Specify an item to equip.");
+                return;
+            }
+
+            String itemName = args[0].toLowerCase();
+            Armor item = (Armor) gameState.getPlayer().getItemFromInventory(itemName);
+
+            if (item != null && item instanceof Armor) {
+                item.equip(gameState.getPlayer());
+                List<Item> inventory = gameState.getPlayer().getInventory();
+                inventory.remove(item);
+                gameState.getPlayer().setInventory(inventory);
+            } else {
+                System.out.println("You don't have that item.");
+            }
+        }
+    },
+    DEQUIP {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length == 0) {
+                System.out.println("Specify an item to dequip.");
+                return;
+            }
+
+            String itemName = args[0].toLowerCase();
+            Armor armor = gameState.getPlayer().getArmor();
+
+            if (armor == null) {
+                System.out.println("You are not wearing any armor to remove");
+                return;
+            }
+
+            if (armor.getName().equalsIgnoreCase(itemName)) {
+                gameState.getPlayer().removeArmor();
+                gameState.getPlayer().addItem(armor);
+            } else {
+                System.out.println("You are not wearing that armor currently.");
             }
         }
     },

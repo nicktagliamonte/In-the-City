@@ -278,14 +278,14 @@ Items
             Weight: 1 unit
             Effect: +2 to Wisdom (WIS)
     (f) cha
-    Ring of Charisma
-        Description: A finely crafted ring that sparkles with an otherworldly light, making the wearer more persuasive and charming.
-        Weight: 0.2 units
-        Effect: +1 to Charisma (CHA)
-    Cloak of Presence
-        Description: A richly colored cloak that gives the wearer an imposing aura, enhancing their social interactions.
-        Weight: 1.5 units
-        Effect: +2 to Charisma (CHA)
+        Ring of Charisma
+            Description: A finely crafted ring that sparkles with an otherworldly light, making the wearer more persuasive and charming.
+            Weight: 0.2 units
+            Effect: +1 to Charisma (CHA)
+        Cloak of Presence
+            Description: A richly colored cloak that gives the wearer an imposing aura, enhancing their social interactions.
+            Weight: 1.5 units
+            Effect: +2 to Charisma (CHA)
 11. armor
     Level 2: Light Protection
         Light Leather Armor

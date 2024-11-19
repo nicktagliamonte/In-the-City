@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
 
@@ -16,6 +17,8 @@ public class Player extends Person {
     private double charisma;
     private double maxCarryWeight;
     private double remainingCarryWeight;
+    private double ac;
+    public Armor armor;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -30,6 +33,23 @@ public class Player extends Person {
         this.remainingCarryWeight = this.maxCarryWeight;
         super.setEnergy(characterClass.getEnergy());
         super.setHealth(characterClass.getHealth());
+        this.ac = 10 + dexterity;
+    }
+
+    public void removeArmor() {
+        armor = null;
+    }
+
+    public void setArmor(Armor armor) {
+        this.armor = armor;
+    }
+
+    public Armor getArmor() {
+        return armor;
+    }
+
+    public double getAc() {
+        return ac;
     }
 
     public CharacterClass getCharacterClass() {
@@ -178,5 +198,9 @@ public class Player extends Person {
                 System.out.println("Crafting failed: insufficient items in inventory.");
             }
         }
+    }
+
+    public void increaseAC(int acBonus) {
+        this.ac += acBonus;
     }
 }

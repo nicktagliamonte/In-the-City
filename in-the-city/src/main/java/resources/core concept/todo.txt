@@ -1,15 +1,24 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
     make the equipment Menu
-        make an armor item, put it in room 1, make sure you can take it and wear it and it has an impact on player stats
-        so throw a temporary print statement to print player stats before and after equipping
-        test putting armor on and taking armor off
+        make an equip function
+        make a dequip function
+        test that the item deserializes properly
+        make sure you can take it and it gets added to inventory
+        make sure you can wear it and it impacts AC (print player stats before and after equipping)
+        make sure you can take it off
+        update manual with equip and dequip
+    the look command is printing incorrectly, fix it
     add dialogue gamestate
         dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
         talk command should be talk TO (see move to command for how)
         which vary based on both player class and npc type.  i'm not sure yet where to store those options
         this will impact friend and neutral npc's
     add bartering gamestate
+        items will probably need to have a value double added as a field.  
+        going to need to have the barter state hold a temporary "purchase power" double
+        have barter menu include a 'sell' options which brings up a list of the inventory.  SELL [item] [quantity] will remove [quantity] of [item] from inventory then
+            increase purchase power by "value" field of all the sold items
         barter should be a subset of the dialogue gamestate.  the player's success on a proposed negotiation is determined by some combination of player char
         and npc shrewdness.  the npc should have essentially canned phrases based on whether the barter is a player success or player failure.
         some npc interactions which are entered into as the result of random events should be immediately in barter mode
@@ -52,6 +61,7 @@ GAME STATE MODIFICATIONS
 
 MISC UPDATES   
     trim the name entered by the user to be all lowercase but first letter upper case
+    there should be a way to see remaining carry weight
     There is a deathsaving throw mechanic for the Friend class but not for you the player   
         add it
     update the inventory function

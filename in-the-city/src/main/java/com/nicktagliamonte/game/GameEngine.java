@@ -68,7 +68,7 @@ public class GameEngine {
                 return input; // Return the input if it's an integer
             } catch (NumberFormatException e) {
                 // Handle non-integer input
-                System.out.println("Please select one of the menu options by entering its number. To return to the game, select 9.");
+                System.out.println("Please select one of the menu options by entering its number.");
             }
         }
     }

@@ -26,12 +26,11 @@ public class Menu {
         System.out.println("1. Manual");
         System.out.println("2. Map");
         System.out.println("3. Quests");
-        System.out.println("4. Equipment");
-        System.out.println("5. Crafting");
-        System.out.println("6. Save");
-        System.out.println("7. Load");
-        System.out.println("8. Quit");
-        System.out.println("9. Return to Game");
+        System.out.println("4. Crafting");
+        System.out.println("5. Save");
+        System.out.println("6. Load");
+        System.out.println("7. Quit");
+        System.out.println("8. Return to Game");
         
         int choice = gameEngine.getPlayerInputAsInt();
         
@@ -46,21 +45,18 @@ public class Menu {
                 openQuests();
                 break;
             case 4:
-                openEquipment();
-                break;
-            case 5:
                 openCrafting();
                 break;
-            case 6:
+            case 5:
                 saveGame();
                 break;
-            case 7:
+            case 6:
                 loadGame();
                 break;
-            case 8:
+            case 7:
                 quitGame();
                 break;
-            case 9:
+            case 8:
                 returnToGame();
                 break;
             default:
@@ -95,16 +91,6 @@ public class Menu {
             }
             else {
                 System.out.println("Invalid choice. Enter 3 to return to the main menu.");
-            }
-        }
-    
-        while (true) {
-            int input = gameEngine.getPlayerInputAsInt();
-            if (input == 1) {
-                displayMenu(); // Return to the main menu
-                break; // Exit the loop after returning to the menu
-            } else {
-                System.out.println("Invalid choice. Enter 1 to return to the main menu.");
             }
         }
     }
@@ -142,11 +128,6 @@ public class Menu {
     private void openQuests() {
         // Quests logic here
         System.out.println("Opening the quests menu...");
-    }
-
-    private void openEquipment() {
-        // Equipment logic here
-        System.out.println("Opening the equipment menu...");
     }
 
     private void openCrafting() {
@@ -187,7 +168,7 @@ public class Menu {
                     gameEngine.getGameState().getPlayer().craftItem(trap);
                     
                     List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
-
+                    inventory.add(trap);
                 } else if (input == 2) {
                     //TODO: make a large trap
                 } else if (input == 3) {
