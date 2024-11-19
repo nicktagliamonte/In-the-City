@@ -1,6 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    complete manual TODO in menu.java
     make the equipment Menu
         make an armor item, put it in room 1, make sure you can take it and wear it and it has an impact on player stats
         so throw a temporary print statement to print player stats before and after equipping
