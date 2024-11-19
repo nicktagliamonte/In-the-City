@@ -1,7 +1,10 @@
 package com.nicktagliamonte.characters;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.Trap;
 
 public class Player extends Person {
     private CharacterClass characterClass;
@@ -146,5 +149,34 @@ public class Player extends Person {
             }
         }
         return null;
+    }
+
+    public void craftItem(Trap trap) {
+        Map<Item, Integer> cost = trap.getCost();
+        for (Map.Entry<Item, Integer> entry : cost.entrySet()) {
+            Item item = entry.getKey();
+            int requiredCount = entry.getValue();
+
+            long countInInventory = inventory.stream()
+                .filter(i -> i.getName().equals(item.getName()))
+                .count();
+
+            if (countInInventory >= requiredCount) {
+                for (int i = 0; i < requiredCount; i++) {
+                    int removedCount = 0;
+                    Iterator<Item> iterator = inventory.iterator();
+                    while (iterator.hasNext() && removedCount < requiredCount) {
+                        if (iterator.next().getName().equals(item.getName())) {
+                            iterator.remove();
+                            removedCount++;
+                        }
+                    }
+                inventory.add(trap);
+                System.out.println("Successfully crafted " + trap.getName());
+                } 
+            } else {
+                System.out.println("Crafting failed: insufficient items in inventory.");
+            }
+        }
     }
 }

@@ -1,12 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    put crafting in the gamestate
-        I MADE A TRAP CLASS WITH SOME TODOS. I'LL NEED TO IMPLEMENT A SPECIFIC TRAP SUBCLASS NEXT TO SEE WHAT EXACTLY IS NEEDED TO FINISH This
-        THEN MAKE SURE THE TRAP IS ACTUALLY CRAFTABLE (PUT THE INGREDIENTS FOR CRAFTING DIRECTLY IN THE PLAYER INVENTORY FOR NOW FOR TESTING)
-        AFTER THAT, MAKE SURE IT WORKS CORRECTLY (JUST HAVE IT WORK 100% OF THE TIME IMMEDIATELY ON DEPLOYMENT FOR TESTING, THEN CHANGE.
-        TRAPPED ITEMS WILL GO TO ROOM INVENTORY, SO JUST MAKE THAT A TODO)
-        DON'T WORRY ABOUT TIMED EVENTS JUST YET THAT'S A LATER TASK
-        CRAFTING DOESN'T REALLY MAKE SENSE YET BECAUSE IT RELIES HEAVILY ON BOTH A TIMING SYSTEM AND A ROOM INVENTORY
     complete manual TODO in menu.java
     make the equipment Menu
         make an armor item, put it in room 1, make sure you can take it and wear it and it has an impact on player stats
@@ -38,7 +31,7 @@ GAME STATE MODIFICATIONS
                 can technically change it later
             if the random events are timed, make sure that you pause that counter in a menu state
         go over all todos to make sure you hit all timed events
-            for example, trap expiration
+            traps will need to be basically fully redone here
     add status effects
         this is a natural follow up to having health regen -- some status effects will cause health drain
         having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status"

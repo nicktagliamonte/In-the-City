@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.PartyMember;
+import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.SmallTrap;
+import com.nicktagliamonte.items.Trap;
 
 public class Menu {
     GameEngine gameEngine;
@@ -164,9 +167,9 @@ public class Menu {
         // Crafting logic here
         if (hasTechnologist()) {
             System.out.println("There are 3 types of traps you can make.");
-            System.out.println("1. Small Magical Trap\t");
-            System.out.println("2. Large Magical Trap");
-            System.out.println("3. Defensive Magical Trap");
+            System.out.println("1. Small Magical Trap (1 scrap)\t");
+            System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+            System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
             System.out.println("4. Return to the main menu");
 
             while (true) {
@@ -187,14 +190,18 @@ public class Menu {
             }
         } else {
             System.out.println("There are 3 types of traps you can make.");
-            System.out.println("1. Small Trap\t");
-            System.out.println("2. Large Trap");
-            System.out.println("3. Defensive Trap");
+            System.out.println("1. Small Trap (1 scrap)\t");
+            System.out.println("2. Large Trap (2 scrap, 1 food)");
+            System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
             System.out.println("4. Return to the main menu");
             while (true) {
                 int input = gameEngine.getPlayerInputAsInt();
                 if (input == 1) {
-                    //TODO: make a small trap
+                    Trap trap = new SmallTrap();
+                    gameEngine.getGameState().getPlayer().craftItem(trap);
+                    
+                    List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
+
                 } else if (input == 2) {
                     //TODO: make a large trap
                 } else if (input == 3) {

@@ -3,14 +3,21 @@ package com.nicktagliamonte.items;
 import java.util.Map;
 
 public class Trap extends Item {
-    Map<Integer, Item> cost;
+    Map<Item, Integer> cost;
 
-    public Trap(String name, String description, double weight, boolean isConsumable, Map<Integer, Item> cost) {
+    public Trap(String name, String description, double weight, boolean isConsumable) {
         super(name, description, weight, isConsumable);
+    }
+
+    public void setCost(Map<Item, Integer> cost) {
         this.cost = cost;
     }
 
-    public void springTrap(Map<Integer, Item> items) {
+    public Map<Item, Integer> getCost() {
+        return cost;
+    }
+
+    public void springTrap(Map<Item, Integer> items) {
         //TODO: something to add the list of items to the inventory and then eliminate the item from the gamestate
     }
 
