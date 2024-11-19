@@ -324,30 +324,32 @@ public enum GameCommand {
     TALK {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length == 0) {
-                System.out.println("Specify who to talk to");
-                return;
-            }
-
-            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
-            List<NPC> party = gameState.getCurrentParty();
-            String chosenCharacter = args[0];
-
-            for (NPC character : characters) {
-                if (character.getName().equalsIgnoreCase(chosenCharacter)) {
-                    System.out.println(character.getRandomDialogue());
+            if (args.length < 1) {
+                System.out.println("Specify a character to talk to");
+            } else {
+                String[] arguments = args[0].split(" ");
+                if (arguments.length == 0) {
+                    System.out.println("Invalid command format.");
                     return;
-                    //TODO: replace the above with something like gameState.enterDialogue(character);
+                }
+    
+                if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
+                    StringBuilder characterNameBuilder = new StringBuilder();
+                    for (int i = 1; i < arguments.length; i++) {
+                        characterNameBuilder.append(arguments[i]);
+                        if (i < arguments.length - 1) {
+                            characterNameBuilder.append(" "); // Add space between words
+                        }
+                    }
+                    String characterName = characterNameBuilder.toString();
+                    Collection<NPC> people = gameState.getcurrentRoom().getPeopleInRoom().values();
+                    for (NPC person : people) {
+                        if (person.getName().equalsIgnoreCase(characterName)) {
+                            gameState.enterDialogue(person);
+                        }
+                    }
                 }
             }
-            for (NPC partyMember : party) {
-                if (partyMember.getName().equalsIgnoreCase(chosenCharacter)) {
-                    System.out.println(partyMember.getRandomDialogue());
-                    return;
-                    //TODO: replace the above with something like gameState.enterDialogue(character);
-                }
-            }
-            System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
         }
     },
     JOIN {

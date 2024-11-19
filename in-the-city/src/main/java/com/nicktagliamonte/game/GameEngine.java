@@ -12,7 +12,8 @@ public class GameEngine {
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json", 
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json");
+     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json",
+     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json");
     private Scanner scanner = new Scanner(System.in);
     
 

@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -27,13 +28,15 @@ public class GameState {
     public Player player;
     public GameEngine gameEngine;
     private List<NPC> currentParty;
+    private RegionDialogue currentRegionDialogue;
+    private boolean inDialogue = false;
 
     // Constructor
-    public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath) {
+    public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
         initializePlayer();
-        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath);
+        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
         this.currentParty = new ArrayList<>();
     }
 
@@ -53,7 +56,7 @@ public class GameState {
         gameEngine.player = this.player;
     }
 
-    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath) {
+    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
         Gson gson = new Gson();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
@@ -61,6 +64,7 @@ public class GameState {
             loadAdjacencyList(adjacenciesFilePath);
             loaditemsInRoom(itemsFilePath);
             loadPeopleInRoom(peopleFilePath);
+            loadRegionDialogue(dialogueFilePath);
             System.out.println("loaded adjacent rooms");
             initializeCurrentRoom();
         } catch (IOException e) {
@@ -231,6 +235,26 @@ public class GameState {
         }
     }
 
+    @SuppressWarnings("deprecation")
+    public void loadRegionDialogue(String filepath) {
+        try (FileReader reader = new FileReader(filepath)) {
+            // Create a Gson instance with a custom deserializer
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(RegionDialogue.class, new DialogueDeserializer())
+                    .create();
+
+            // Load and parse the JSON file
+            RegionDialogue regionDialogue = gson.fromJson(new JsonParser().parse(reader), RegionDialogue.class);
+            this.currentRegionDialogue = regionDialogue;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public RegionDialogue getCurrentRegionDialogue() {
+        return currentRegionDialogue;
+    }
+
     //specifically used for initializing the starting room
         //TODO: when i'm loading save games, i'll probably need to find a way to make it so that the last room which contained the player doesn't conflict with this
     private void initializeCurrentRoom() {
@@ -244,8 +268,8 @@ public class GameState {
         }
     }
 
-    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, String newPeopleFilePath) {
-        loadRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath);
+    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, String newPeopleFilePath, String newDialogueFilePath) {
+        loadRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
     }
 
     public Region getCurrentRegion() {
@@ -492,7 +516,25 @@ public class GameState {
     }
 
     public void enterDialogue(Person character) {
-        // I'm not wholly clear on what this will look like
+        inDialogue = true;
+        Dialogue dialogue = currentRegionDialogue.getDialogue(character.getName());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(currentRegionDialogue.getDialogue("chunky"));
+
+        while (inDialogue) {
+            System.out.println(dialogue.getNpcLine());
+            System.out.println(dialogue.getNpcLine());
+            for (int i = 0; i < dialogue.getOptions().size(); i++) {
+                DialogueOption option = dialogue.getOptions().get(i);
+                System.out.println((i + 1) + ": " + option.getText());
+            }
+
+            int choice = Integer.parseInt(scanner.nextLine()) - 1;
+            DialogueOption selectedOption = dialogue.getOptions().get(choice);
+            
+            System.out.println("You chose: " + selectedOption.getText());
+            // Optionally, load the next dialogue based on selectedOption.getNextDialogueId()
+        }
     }
 
     public void enterCombat(Person character) {

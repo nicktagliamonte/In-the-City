@@ -1,0 +1,76 @@
+{
+    "dialogues": {
+        "chunky": {
+            "npcName": "chunky",
+            "npcLine": "Hello there, adventurer! What can I do for you?",
+            "options": [
+                {
+                    "text": "Good: Tell me about your adventures!",
+                    "nextDialogueId": "chunky_good"
+                },
+                {
+                    "text": "Bad: I don't have time for this.",
+                    "nextDialogueId": "chunky_bad"
+                },
+                {
+                    "text": "End: Goodbye.",
+                    "nextDialogueId": "end"
+                }
+            ]
+        },
+        "gilear": {
+            "npcName": "gilear",
+            "npcLine": "Gilear doesn't want to talk to you.",
+            "options": [
+                {
+                    "text": "Good: I see.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "Bad: You're rude.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "End: Goodbye.",
+                    "nextDialogueId": "end"
+                }
+            ]
+        },
+        "testname2": {
+            "npcName": "testname2",
+            "npcLine": "This NPC doesn't want to talk to you.",
+            "options": [
+                {
+                    "text": "Good: I see.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "Bad: Whatever.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "End: Goodbye.",
+                    "nextDialogueId": "end"
+                }
+            ]
+        },
+        "testname": {
+            "npcName": "testname",
+            "npcLine": "This NPC doesn't want to talk to you.",
+            "options": [
+                {
+                    "text": "Good: Alright.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "Bad: Okay.",
+                    "nextDialogueId": "end"
+                },
+                {
+                    "text": "End: Goodbye.",
+                    "nextDialogueId": "end"
+                }
+            ]
+        }
+    }
+}

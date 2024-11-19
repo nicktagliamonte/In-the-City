@@ -1,10 +1,7 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
     add dialogue gamestate
-        dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
-        talk command should be talk TO (see move to command for how)
-        which vary based on both player class and npc type.  i'm not sure yet where to store those options
-        this will impact friend and neutral npc's
+        it's actually coming along.  need to work on the "next" system and the fact that every option prints, but it's at least being deserialized. tomorrow quickly testing the results of talk to chunky will illustrate the error
     add bartering gamestate
         items will probably need to have a value double added as a field.  
         going to need to have the barter state hold a temporary "purchase power" double
