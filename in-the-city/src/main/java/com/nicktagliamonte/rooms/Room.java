@@ -197,8 +197,8 @@ public class Room {
             System.out.println("no adjascent rooms");
             return;
         }
+        System.out.println("Exits in this room: ");
         for (Adjacency adjacency : adjacentRooms) {
-            System.out.println("Exits in this room: ");
             System.out.println(adjacency.getDescription());
         }
     }

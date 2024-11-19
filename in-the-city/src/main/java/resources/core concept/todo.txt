@@ -1,14 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    make the equipment Menu
-        make an equip function
-        make a dequip function
-        test that the item deserializes properly
-        make sure you can take it and it gets added to inventory
-        make sure you can wear it and it impacts AC (print player stats before and after equipping)
-        make sure you can take it off
-        update manual with equip and dequip
-    the look command is printing incorrectly, fix it
     add dialogue gamestate
         dialogue should be a unique game state separate from regular commands.  think the combat menu. the player will have options for what to say
         talk command should be talk TO (see move to command for how)
