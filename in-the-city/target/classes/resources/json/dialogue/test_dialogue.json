@@ -5,15 +5,15 @@
             "npcLine": "Hello there, adventurer! What can I do for you?",
             "options": [
                 {
-                    "text": "Good: Tell me about your adventures!",
+                    "text": "Tell me about your adventures!",
                     "nextDialogueId": "chunky_good"
                 },
                 {
-                    "text": "Bad: I don't have time for this.",
+                    "text": "I don't have time for this.",
                     "nextDialogueId": "chunky_bad"
                 },
                 {
-                    "text": "End: Goodbye.",
+                    "text": "Goodbye.",
                     "nextDialogueId": "end"
                 }
             ]
@@ -23,15 +23,15 @@
             "npcLine": "Gilear doesn't want to talk to you.",
             "options": [
                 {
-                    "text": "Good: I see.",
+                    "text": "I see.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "Bad: You're rude.",
+                    "text": "You're rude.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "End: Goodbye.",
+                    "text": "Goodbye.",
                     "nextDialogueId": "end"
                 }
             ]
@@ -41,15 +41,15 @@
             "npcLine": "This NPC doesn't want to talk to you.",
             "options": [
                 {
-                    "text": "Good: I see.",
+                    "text": "I see.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "Bad: Whatever.",
+                    "text": "Whatever.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "End: Goodbye.",
+                    "text": "Goodbye.",
                     "nextDialogueId": "end"
                 }
             ]
@@ -59,15 +59,15 @@
             "npcLine": "This NPC doesn't want to talk to you.",
             "options": [
                 {
-                    "text": "Good: Alright.",
+                    "text": "Alright.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "Bad: Okay.",
+                    "text": "Okay.",
                     "nextDialogueId": "end"
                 },
                 {
-                    "text": "End: Goodbye.",
+                    "text": "Goodbye.",
                     "nextDialogueId": "end"
                 }
             ]

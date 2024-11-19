@@ -346,8 +346,10 @@ public enum GameCommand {
                     for (NPC person : people) {
                         if (person.getName().equalsIgnoreCase(characterName)) {
                             gameState.enterDialogue(person);
+                            return;
                         }
                     }
+                    System.out.println(characterName + " was not found in this area. Use LOOK for a list of characters to talk to");
                 }
             }
         }

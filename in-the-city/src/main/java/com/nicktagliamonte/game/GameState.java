@@ -518,23 +518,31 @@ public class GameState {
     public void enterDialogue(Person character) {
         inDialogue = true;
         Dialogue dialogue = currentRegionDialogue.getDialogue(character.getName());
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(currentRegionDialogue.getDialogue("chunky"));
-
+        @SuppressWarnings("resource")
+        Scanner dialogueScanner = new Scanner(System.in);
+        
         while (inDialogue) {
-            System.out.println(dialogue.getNpcLine());
             System.out.println(dialogue.getNpcLine());
             for (int i = 0; i < dialogue.getOptions().size(); i++) {
                 DialogueOption option = dialogue.getOptions().get(i);
                 System.out.println((i + 1) + ": " + option.getText());
             }
 
-            int choice = Integer.parseInt(scanner.nextLine()) - 1;
+            int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
             DialogueOption selectedOption = dialogue.getOptions().get(choice);
+            if (selectedOption.getText().equals("Goodbye.")) {
+                exitDialogue();
+                break;
+            }
             
             System.out.println("You chose: " + selectedOption.getText());
             // Optionally, load the next dialogue based on selectedOption.getNextDialogueId()
         }
+    }
+
+    public void exitDialogue() {
+        inDialogue = false;
+        System.out.println("The conversation is over.");
     }
 
     public void enterCombat(Person character) {
