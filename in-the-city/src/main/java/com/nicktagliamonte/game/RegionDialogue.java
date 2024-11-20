@@ -1,19 +1,17 @@
 package com.nicktagliamonte.game;
 
-import java.util.List;
 import java.util.Map;
 
 public class RegionDialogue {
-    private Map<String, Dialogue> dialogues;
+    private Map<String, Map<String, Dialogue>> characterDialogues;
 
-    public RegionDialogue(Map<String, Dialogue> dialogues) {
-        this.dialogues = dialogues;
+    // Constructor
+    public RegionDialogue(Map<String, Map<String, Dialogue>> characterDialogues) {
+        this.characterDialogues = characterDialogues;
     }
 
-    public Dialogue getDialogue(String npcName) {
-        return dialogues.getOrDefault(npcName, new Dialogue(npcName, "This character doesn't want to talk to you.", List.of(
-                new DialogueOption("Good", "end"),
-                new DialogueOption("Bad", "end"),
-                new DialogueOption("End", "end"))));
+    // Get all dialogues for a character
+    public Map<String, Dialogue> getDialogue(String characterName) {
+        return characterDialogues.get(characterName);
     }
 }

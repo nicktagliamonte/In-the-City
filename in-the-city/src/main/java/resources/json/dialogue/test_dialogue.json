@@ -1,76 +1,32 @@
 {
-    "dialogues": {
-        "chunky": {
-            "npcName": "chunky",
-            "npcLine": "Hello there, adventurer! What can I do for you?",
-            "options": [
-                {
-                    "text": "Tell me about your adventures!",
-                    "nextDialogueId": "chunky_good"
-                },
-                {
-                    "text": "I don't have time for this.",
-                    "nextDialogueId": "chunky_bad"
-                },
-                {
-                    "text": "Goodbye.",
-                    "nextDialogueId": "end"
-                }
-            ]
-        },
-        "gilear": {
-            "npcName": "gilear",
-            "npcLine": "Gilear doesn't want to talk to you.",
-            "options": [
-                {
-                    "text": "I see.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "You're rude.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "Goodbye.",
-                    "nextDialogueId": "end"
-                }
-            ]
-        },
-        "testname2": {
-            "npcName": "testname2",
-            "npcLine": "This NPC doesn't want to talk to you.",
-            "options": [
-                {
-                    "text": "I see.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "Whatever.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "Goodbye.",
-                    "nextDialogueId": "end"
-                }
-            ]
-        },
-        "testname": {
-            "npcName": "testname",
-            "npcLine": "This NPC doesn't want to talk to you.",
-            "options": [
-                {
-                    "text": "Alright.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "Okay.",
-                    "nextDialogueId": "end"
-                },
-                {
-                    "text": "Goodbye.",
-                    "nextDialogueId": "end"
-                }
-            ]
-        }
+    "chunky": {
+      "start": {
+        "npcLine": "Hey, how's it going?",
+        "options": [
+          { "text": "Not bad, you?", "nextDialogueId": "chunky_response_1" },
+          { "text": "Leave me alone.", "nextDialogueId": "chunky_response_2" },
+          { "text": "Goodbye.", "nextDialogueId": null }
+        ]
+      },
+      "chunky_response_1": {
+        "npcLine": "I've been better. What do you need?",
+        "options": [
+          { "text": "Just saying hi.", "nextDialogueId": "chunky_response_3" },
+          { "text": "Can you help me with something?", "nextDialogueId": "chunky_response_4" },
+          { "text": "Goodbye.", "nextDialogueId": null }
+        ]
+      },
+      "chunky_response_2": {
+        "npcLine": "Fine, have it your way.",
+        "options": []
+      },
+      "chunky_response_3": {
+        "npcLine": "Oh, that's nice. Take care!",
+        "options": []
+      },
+      "chunky_response_4": {
+        "npcLine": "Depends on what you need.",
+        "options": []
+      }
     }
-}
+}  
