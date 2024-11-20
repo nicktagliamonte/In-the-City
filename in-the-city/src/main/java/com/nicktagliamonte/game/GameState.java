@@ -528,6 +528,7 @@ public class GameState {
     
         Dialogue currentDialogue = dialogues.get("start");
     
+        @SuppressWarnings("resource")
         Scanner dialogueScanner = new Scanner(System.in);
     
         try {
