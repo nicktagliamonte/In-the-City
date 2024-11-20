@@ -14,8 +14,8 @@ public class PartyMember extends NPC{
     private double charisma;
     private double maxCarryWeight;
 
-    public PartyMember(String name, List<Item> inventory, String description, List<String> dialogue, List<String> hints, CharacterClass characterClass) {
-        super(name, characterClass.getHealth(), characterClass.getEnergy(), inventory, description, characterClass.getHealth(), dialogue, hints);
+    public PartyMember(String name, List<Item> inventory, String description, List<String> hints, CharacterClass characterClass) {
+        super(name, characterClass.getHealth(), characterClass.getEnergy(), inventory, description, characterClass.getHealth(), hints);
         this.characterClass = characterClass;
         this.strength = characterClass.getStrength();
         this.dexterity = characterClass.getDexterity();

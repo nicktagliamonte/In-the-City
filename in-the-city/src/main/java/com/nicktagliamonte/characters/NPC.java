@@ -6,15 +6,13 @@ import com.nicktagliamonte.items.Item;
 
 public class NPC extends Person {
     private String description;
-    private List<String> dialogue;
     private List<String> hints;
     private double maxHealth;
     private int deathSavingThrows;
 
-    public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth, List<String> dialogue, List<String> hints) {
+    public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,  List<String> hints) {
         super(name, maxHealth, energy, inventory);
         this.description = description;
-        this.dialogue = dialogue;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
         this.hints = hints;
@@ -66,11 +64,6 @@ public class NPC extends Person {
         }
     }
 
-    public String speak() {
-        int randomInt = (int) (Math.random() * dialogue.size());
-        return dialogue.get(randomInt);
-    }
-
     public void makeDeathSavingThrow() {
         int randomInt = (int) (Math.random() * 19);
         if (randomInt < 10) {
@@ -86,14 +79,6 @@ public class NPC extends Person {
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
             System.out.println(super.getName() + " is fully dead.");
-        }
-    }
-
-    public String getRandomDialogue() {
-        if (dialogue.isEmpty()) {
-            return (this.getName() + " does not want to talk to you.  Perhaps you should not want to talk to them either.");
-        } else {
-            return dialogue.get((int) (Math.random() * dialogue.size()));
         }
     }
 

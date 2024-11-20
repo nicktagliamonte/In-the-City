@@ -10,9 +10,9 @@ public class Adversary extends NPC{
     private double damage;
 
     public Adversary(String name, double health, double energy, List<Item> inventory, String description, 
-                     double maxHealth, List<String> dialogue, double attackSpeed, double damage) {
+                     double maxHealth, double attackSpeed, double damage) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, energy, inventory, description, maxHealth, dialogue, new ArrayList<String>());
+        super(name, health, energy, inventory, description, maxHealth, new ArrayList<String>());
         this.attackSpeed = attackSpeed;
         this.damage = damage;
     }
@@ -46,9 +46,5 @@ public class Adversary extends NPC{
     public boolean isDefeated() {
         return this.getHealth() <= 0;
         //TODO: remove adversary from room -- this will be handled thru the combat ending sequence from gameState
-    }
-
-    public String talk() {
-        return super.getRandomDialogue();
     }
 }

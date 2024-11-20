@@ -5,8 +5,8 @@ import java.util.Map;
 public class Trap extends Item {
     Map<Item, Integer> cost;
 
-    public Trap(String name, String description, double weight, boolean isConsumable) {
-        super(name, description, weight, isConsumable);
+    public Trap(String name, String description, double weight, boolean isConsumable, int value) {
+        super(name, description, weight, isConsumable, value);
     }
 
     public void setCost(Map<Item, Integer> cost) {

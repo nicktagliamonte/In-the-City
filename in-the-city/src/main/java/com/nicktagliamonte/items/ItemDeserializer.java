@@ -30,8 +30,9 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 String description = jsonObject.get("description").getAsString();
                 double weight = jsonObject.get("weight").getAsDouble();
                 boolean isConsumable = jsonObject.get("consumable").getAsBoolean();
+                int value = jsonObject.get("value").getAsInt();
                 int acBonus = jsonObject.get("acbonus").getAsInt();
-                return new Armor(name, description, weight, acBonus);
+                return new Armor(name, description, weight, value, acBonus);
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

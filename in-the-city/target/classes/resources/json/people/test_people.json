@@ -24,19 +24,9 @@
                 },
                 "description": "a friendly face",
                 "maxHealth": 50.0,
-                "dialogue": [
-                    "It's good to see you.",
-                    "How are you doing?"
-                ],
                 "shrewdness": 3,
                 "hints": [
                     "looks like hints are working!"
-                ],
-                "barterSuccessDialogue": [
-                    "for you, fine."
-                ],
-                "barterFailDialogue": [
-                    "I just can't go that low, sorry"
                 ],
                 "questDialogue": [
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
@@ -66,7 +56,6 @@
                 },
                 "description": "a baaaaad guy.  dump him, girl",
                 "maxHealth": 50.0,
-                "dialogue": [],
                 "attackSpeed": 3,
                 "damage": 5
             },
@@ -93,19 +82,9 @@
                 },
                 "description": "a face",
                 "maxHealth": 5.0,
-                "dialogue": [
-                    "I've been stuck in a wheel well for 3 days.",
-                    "Sorry, who are you?"
-                ],
                 "shrewdness": 3,
                 "hints": [
                     "I wouldn't go over there."
-                ],
-                "barterSuccessDialogue": [
-                    "for you, fine."
-                ],
-                "barterFailDialogue": [
-                    "I just can't go that low, sorry"
                 ],
                 "questDialogue": [
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
@@ -135,11 +114,6 @@
                     }
                 },
                 "description": "idk what this even does yet",
-                "dialogue": [
-                    "let me in the party",
-                    "what do i do?",
-                    "i had all summer to decide what i do"
-                ],
                 "hints": [],
                 "characterClass": "technologist"
             }

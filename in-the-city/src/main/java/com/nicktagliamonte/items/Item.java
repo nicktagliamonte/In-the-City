@@ -7,16 +7,26 @@ public class Item {
     private String description;
     private double weight;
     private boolean isConsumable;
+    private int value;
 
-    public Item(String name, String description, double weight, boolean isConsumable) {
+    public Item(String name, String description, double weight, boolean isConsumable, int value) {
         this.name = name;
         this.description = description;
         this.weight = weight;
         this.isConsumable = isConsumable;
+        this.value = value;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public String getDescription() {

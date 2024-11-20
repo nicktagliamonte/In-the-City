@@ -6,8 +6,6 @@ import com.nicktagliamonte.items.Item;
 
 public class Neutral extends NPC{
     private double shrewdness;
-    private List<String> barterSuccessDialogue;
-    private List<String> barterFailureDialogue;
     private List<String> questDialogue;
     private boolean canGiveQuest;
     private double attackSpeed;
@@ -18,12 +16,10 @@ public class Neutral extends NPC{
     private boolean actsAsEnemy;
 
     public Neutral(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,
-                  List<String> dialogue, double shrewdness, List<String> hints, List<String> barterSuccessDialogue, 
-                  List<String> barterFailureDialogue, List<String> questDialogue, boolean canGiveQuest, double attackSpeed, double damage, double moralityFlag) {
-        super(name, health, energy, inventory, description, maxHealth, dialogue, hints);
+                  double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest, double attackSpeed, 
+                  double damage, double moralityFlag) {
+        super(name, health, energy, inventory, description, maxHealth, hints);
         this.shrewdness = shrewdness;
-        this.barterSuccessDialogue = barterSuccessDialogue;
-        this.barterFailureDialogue = barterFailureDialogue;
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
         this.attackSpeed = attackSpeed;
@@ -31,27 +27,13 @@ public class Neutral extends NPC{
         this.moralityFlag = moralityFlag;
     }
 
-    //TODO: update all below bartering interaction methods
     //TODO: since this is a neutral, update bartering AND SPEECH such that a sufficiently low player morality will cause this class to act as adversary
     public String initiateBarter(int playerCharisma) {
-        boolean success = checkBarterSuccess(playerCharisma);
-        return respondToBarter(success);
+        return checkBarterSuccess(playerCharisma) ? "You have a deal." : "I just can't go that low, sorry.";
     }
 
     private boolean checkBarterSuccess(int playerCharisma) {
         return playerCharisma > this.shrewdness * Math.random();
-    }
-
-    private String respondToBarter(boolean success) {
-        return success ? getBarterDialogue(barterSuccessDialogue) : getBarterDialogue(barterFailureDialogue);
-    }
-
-    private String getBarterDialogue(List<String> dialogueList) {
-        return dialogueList.get((int) (Math.random() * dialogueList.size()));
-    }
-
-    public String talk() {
-        return super.getRandomDialogue();
     }
 
     public void giveQuest() {

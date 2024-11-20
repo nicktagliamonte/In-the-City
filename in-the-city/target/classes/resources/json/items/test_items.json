@@ -2,18 +2,10 @@
   "items": {
     "Room 1": {
       "(1,2)": {
-        "type": "FuelCell",
-        "name": "Key",
-        "description": "A rusty key with an ornate bow.",
-        "weight": 0.1,
-        "consumable": true
+        "type": "FuelCell"
       },
       "(2,3)": {
-        "type": "FuelCell",
-        "name": "Lantern",
-        "description": "An old lantern with flickering light.",
-        "weight": 1.5,
-        "consumable": true
+        "type": "FuelCell"
       },
       "(5,6)": {
         "type": "Armor",
@@ -21,16 +13,13 @@
         "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
         "weight": 3,
         "consumable": false,
+        "value": 5,
         "acbonus": 2
       }
     },
     "Room 2": {
       "(0,0)": {
-        "type": "FuelCell",
-        "name": "Map",
-        "description": "A map of the region with various markings.",
-        "weight": 0.2,
-        "consumable": true
+        "type": "FuelCell"
       }
     }
   }

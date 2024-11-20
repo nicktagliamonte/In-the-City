@@ -1,19 +1,23 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
     add bartering gamestate
-        items will probably need to have a value double added as a field.  
-        going to need to have the barter state hold a temporary "purchase power" double
-        have barter menu include a 'sell' options which brings up a list of the inventory.  SELL [item] [quantity] will remove [quantity] of [item] from inventory then
-            increase purchase power by "value" field of all the sold items
-        barter should be a subset of the dialogue gamestate.  the player's success on a proposed negotiation is determined by some combination of player char
-        and npc shrewdness.  the npc should have essentially canned phrases based on whether the barter is a player success or player failure.
-        some npc interactions which are entered into as the result of random events should be immediately in barter mode
+        add inBarter flag to gamestate
+        add "shop" option to text with someone, how about the friend
+        add thing to say that if the option selected is shop, go into the barter loop
+        have a purchase power double stored in the barter state
+        get the items and prices for sale
+        tell the player they need to put up items to barter. remove those items from inventory and update carry weight
+            add the items to the npc inventory! then, if they want to get them back, they have the "purchase power" for exactly that!
+        get npc inventory-to-sell by printing it, 
+            stylize the printing like i want to stylize player inventory
+        if player selects an item which is at or below their purchase power AND it doesn't fuck with their carry weight, add the item to inventory
+        WRT the fact that one of your classes is a "negotiator"...just have a check for if the negotiator is in the party and reduce prices by Math.floor(.9 * price)
+            if that brings it to 0, set it to 1
     add combat gamestate
         this will impact enemy and neutral npc's
             enable fighting and hiding
                 which mean setting up how enemies will attack YOU as well as their response to you attacking them
         make sure equipped items are working for all party members
-    ***now make sure talking to, fighting, and bartering with neutrals works
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
         hint command needs to be updated, as does player.java useHint
@@ -32,15 +36,16 @@ GAME STATE MODIFICATIONS
     put a morality field in the player object
         this really doesn't have to do anything yet and is as easy to update as health
             (when i'm typing this, i haven't begun thinking about coding combat.  maybe health was a nightmare to update, who knows)
-    put a safe zone in the game (at this stage, it'll be room 1 out of the two)
+    put a safe zone in the game (room 1)
         make the random events that are combat based not occur in the safe room
         make the safe room have an inventory
             make trapped items appear in that inventory
+            figure out how to access it
         build out the feature to locate the safe zone
             this one is a job and a half
             could i just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])
-    put an economic zone in the game (at this stage, probably make room 1 safe, room 2 economic, and add an adversarial room 3)
-        make the random events that are combat based not occur in the safe zone
+    put an economic zone in the game (at this stage, probably make attic safe and room 1 economic)
+        make the random events that are combat based not occur in the economic zone
         make random barter events 
             have them only occur in the economic zone (yes, really.  when you're setting up the metalwoods, 
                                                         is some guy gonna try to sell you a fish while you're fighting the fomorian?)
@@ -59,7 +64,7 @@ MISC UPDATES
     update the talk command
         it'll be relatively straightforward to make the player type "talk to [person]" and just disregard the first arg from GameCommand_TALK
     Do i want a theivery mechanic?
-        probably
+        probably for the negotiator, since simplifying the barter system completely nerfed them
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
             probably it will have to change the region (major quests at least) once complete
