@@ -5,6 +5,7 @@ GAME STATE MODIFICATIONS
             enable fighting and hiding
                 which mean setting up how enemies will attack YOU as well as their response to you attacking them
         make sure equipped items are working for all party members
+    how does the technologist learn new spells?
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
         hint command needs to be updated, as does player.java useHint
@@ -47,16 +48,12 @@ MISC UPDATES
             fuel cell   50
             otherItem   1
             etc  
-        also make sure it shows the inventory for the whole party    
-    update the talk command
-        it'll be relatively straightforward to make the player type "talk to [person]" and just disregard the first arg from GameCommand_TALK
+        also make sure it shows the inventory for the whole party
     Do i want a theivery mechanic?
         probably for the negotiator, since simplifying the barter system completely nerfed them
     put a quest in the (room? game? npc friend?)
         decide what quests do to gamestate
             probably it will have to change the region (major quests at least) once complete
-        decide how to check for quest progress/completion
-        decide how to accept quests
         decide whether quests come from java or json
             the json idea might be stupid
         at this point, implement leveling for party members and npc's

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
+import com.nicktagliamonte.items.Weapon;
 
 public class Player extends Person {
     private CharacterClass characterClass;
@@ -19,6 +20,7 @@ public class Player extends Person {
     private double remainingCarryWeight;
     private double ac;
     public Armor armor;
+    public Weapon weapon;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -46,6 +48,18 @@ public class Player extends Person {
 
     public Armor getArmor() {
         return armor;
+    }
+
+    public void removeWeapon() {
+        weapon = null;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
     }
 
     public double getAc() {

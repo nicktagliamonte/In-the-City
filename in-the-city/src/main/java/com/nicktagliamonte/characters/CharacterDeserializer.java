@@ -55,11 +55,12 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 }
                 String adversaryDescription = jsonObject.get("description").getAsString();
                 double adversaryMaxHealth = jsonObject.get("maxHealth").getAsDouble();
-                double adversaryAttackSpeed = jsonObject.get("attackSpeed").getAsDouble();
                 double adversaryDamage = jsonObject.get("damage").getAsDouble();
+                double adversaryDex = jsonObject.get("dex").getAsDouble();
+                double adversaryAc = jsonObject.get("ac").getAsDouble();
 
                 return new Adversary(adversaryName, adversaryHealth, adversaryEnergy, adversaryInventory, adversaryDescription, 
-                                     adversaryMaxHealth, adversaryAttackSpeed, adversaryDamage);
+                                     adversaryMaxHealth, adversaryDamage, adversaryDex, adversaryAc);
             case "neutral":
                 String neutralName = jsonObject.get("name").getAsString();
                 double neutralHealth = jsonObject.get("health").getAsDouble();

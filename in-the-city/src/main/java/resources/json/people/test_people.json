@@ -56,8 +56,9 @@
                 },
                 "description": "a baaaaad guy.  dump him, girl",
                 "maxHealth": 50.0,
-                "attackSpeed": 3,
-                "damage": 5
+                "damage": 5,
+                "dex": 5,
+                "ac": 5
             },
             "(4,5)": {
                 "type": "neutral",

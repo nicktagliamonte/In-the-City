@@ -10,6 +10,7 @@ import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.Weapon;
 
 public enum GameCommand {
     LOOK {
@@ -285,14 +286,22 @@ public enum GameCommand {
             }
 
             String itemName = args[0].toLowerCase();
-            Armor item = (Armor) gameState.getPlayer().getItemFromInventory(itemName);
+            Item item = gameState.getPlayer().getItemFromInventory(itemName);
 
             if (item != null && item instanceof Armor) {
-                item.equip(gameState.getPlayer());
+                Armor armorItem = (Armor) item;
+                armorItem.equip(gameState.getPlayer());
                 List<Item> inventory = gameState.getPlayer().getInventory();
                 inventory.remove(item);
                 gameState.getPlayer().setInventory(inventory);
-            } else {
+            } else if (item != null && item instanceof Weapon) {
+                Weapon weaponItem = (Weapon) item;
+                weaponItem.equip(gameState.getPlayer());
+                List<Item> inventory = gameState.getPlayer().getInventory();
+                inventory.remove(item);
+                gameState.getPlayer().setInventory(inventory);
+            }
+            else {
                 System.out.println("You don't have that item.");
             }
         }
@@ -307,17 +316,21 @@ public enum GameCommand {
 
             String itemName = args[0].toLowerCase();
             Armor armor = gameState.getPlayer().getArmor();
+            Weapon weapon = gameState.getPlayer().getWeapon();
 
-            if (armor == null) {
-                System.out.println("You are not wearing any armor to remove");
+            if (armor == null && weapon == null) {
+                System.out.println("You are not wearing any armor or holding any weapon to remove");
                 return;
             }
 
             if (armor.getName().equalsIgnoreCase(itemName)) {
                 gameState.getPlayer().removeArmor();
                 gameState.getPlayer().addItem(armor);
+            } else if (weapon.getName().equalsIgnoreCase(itemName)) {
+                gameState.getPlayer().removeWeapon();
+                gameState.getPlayer().addItem(weapon);
             } else {
-                System.out.println("You are not wearing that armor currently.");
+                System.out.println("You are not wearing that armor or weilding that weapon currently.");
             }
         }
     },
