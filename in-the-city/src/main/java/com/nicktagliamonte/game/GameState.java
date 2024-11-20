@@ -30,7 +30,6 @@ public class GameState {
     private List<NPC> currentParty;
     private RegionDialogue currentRegionDialogue;
     private boolean inDialogue = false;
-    private boolean inBarter = false;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
