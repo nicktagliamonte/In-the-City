@@ -203,4 +203,13 @@ public class Player extends Person {
     public void increaseAC(int acBonus) {
         this.ac += acBonus;
     }
+
+    public boolean hasItem(String itemName) {
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

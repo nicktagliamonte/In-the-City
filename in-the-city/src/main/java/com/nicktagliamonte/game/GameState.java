@@ -30,6 +30,7 @@ public class GameState {
     private List<NPC> currentParty;
     private RegionDialogue currentRegionDialogue;
     private boolean inDialogue = false;
+    private boolean inBarter = false;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
@@ -548,8 +549,13 @@ public class GameState {
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
                 DialogueOption selectedOption = options.get(choice);
     
-                if (selectedOption.getNextDialogueId() == null) {
+                if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
                     exitDialogue();
+                    break;
+                }
+
+                if (selectedOption.getNextDialogueId().equalsIgnoreCase("barter")) {
+                    enterBarter(character);
                     break;
                 }
     
@@ -570,6 +576,78 @@ public class GameState {
     public void exitDialogue() {
         inDialogue = false;
         System.out.println("The conversation is over.");
+    }
+
+    public void enterBarter(Person npc) {
+        System.out.println("Entering barter mode with " + npc.getName());
+        Boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
+        for (NPC member : currentParty) {
+            PartyMember partyMember = (PartyMember) member;
+            if (partyMember.getCharacterClass().getClassName().equalsIgnoreCase("negotiator")) {
+                hasNegotiator = true;
+            }
+        }
+    
+        Barter barter = new Barter(player, player.getInventory(), npc.getInventory(), 0.0, hasNegotiator);
+    
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean inBarter = true;
+    
+            while (inBarter) {
+                barter.displayInventory();
+                System.out.println("\nYour Purchase Power: " + barter.getPurchasePower());
+                System.out.println("1. Offer items");
+                System.out.println("2. Select an item to purchase");
+                System.out.println("3. Exit barter");
+                System.out.print("Choice: ");
+                int choice = Integer.parseInt(scanner.nextLine());
+    
+                switch (choice) {
+                    case 1:
+                        // Logic to let the player offer items
+                        System.out.println("Enter items to offer (comma-separated names):");
+                        String offerInput = scanner.nextLine();
+                        List<Item> offeredItems = parseItems(offerInput, player.getInventory());
+                        barter.playerOffersItems(offeredItems);
+                        break;
+                    case 2:
+                        System.out.println("Enter item name to purchase:");
+                        String itemName = scanner.nextLine();
+                        Item itemSelected = null;
+                        for (Item item : npc.getInventory()) {
+                            if (item.getName().equalsIgnoreCase(itemName)) {
+                                itemSelected = item;
+                            }
+                        }
+                        if (itemSelected != null) {
+                            barter.playerSelectsItem(itemSelected);
+                        } else {
+                            System.out.println("Item not found.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Exiting barter.");
+                        inBarter = false;
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+            }
+        }
+    }
+    
+    private List<Item> parseItems(String input, List<Item> inventory) {
+        List<Item> items = new ArrayList<>();
+        String[] itemNames = input.split(",");
+        for (String itemName : itemNames) {
+            itemName = itemName.trim();
+            for (Item item : inventory) {
+                if (item.getName().equalsIgnoreCase(itemName)) {
+                    items.add(item);
+                }
+            }
+        }
+        return items;
     }
 
     public void enterCombat(Person character) {

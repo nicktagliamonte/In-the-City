@@ -1,18 +1,5 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    add bartering gamestate
-        add inBarter flag to gamestate
-        add "shop" option to text with someone, how about the friend
-        add thing to say that if the option selected is shop, go into the barter loop
-        have a purchase power double stored in the barter state
-        get the items and prices for sale
-        tell the player they need to put up items to barter. remove those items from inventory and update carry weight
-            add the items to the npc inventory! then, if they want to get them back, they have the "purchase power" for exactly that!
-        get npc inventory-to-sell by printing it, 
-            stylize the printing like i want to stylize player inventory
-        if player selects an item which is at or below their purchase power AND it doesn't fuck with their carry weight, add the item to inventory
-        WRT the fact that one of your classes is a "negotiator"...just have a check for if the negotiator is in the party and reduce prices by Math.floor(.9 * price)
-            if that brings it to 0, set it to 1
     add combat gamestate
         this will impact enemy and neutral npc's
             enable fighting and hiding

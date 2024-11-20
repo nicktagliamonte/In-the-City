@@ -5,7 +5,8 @@
         "options": [
           { "text": "Not bad, you?", "nextDialogueId": "chunky_response_1" },
           { "text": "Leave me alone.", "nextDialogueId": "chunky_response_2" },
-          { "text": "Goodbye.", "nextDialogueId": null }
+          { "text": "Barter", "nextDialogueId": "barter"},
+          { "text": "Goodbye.", "nextDialogueId": "exit" }
         ]
       },
       "chunky_response_1": {
@@ -13,7 +14,7 @@
         "options": [
           { "text": "Just saying hi.", "nextDialogueId": "chunky_response_3" },
           { "text": "Can you help me with something?", "nextDialogueId": "chunky_response_4" },
-          { "text": "Goodbye.", "nextDialogueId": null }
+          { "text": "Goodbye.", "nextDialogueId": "exit" }
         ]
       },
       "chunky_response_2": {
