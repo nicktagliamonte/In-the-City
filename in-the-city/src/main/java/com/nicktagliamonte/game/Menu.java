@@ -69,7 +69,9 @@ public class Menu {
     private void displayManual() {
         System.out.println("1. Display a list of commands available in the game.");
         System.out.println("2. Display a description of the various items available in the game.");
-        System.out.println("3. Return to the main menu.");
+        System.out.println("3. Display a combat manual");
+        System.out.println("4. Display a manual describing trade and economy in the game");
+        System.out.println("5. Return to the main menu.");
         Manual manual = new Manual();
         while (true) {
             int input = gameEngine.getPlayerInputAsInt();
@@ -78,19 +80,39 @@ public class Menu {
                 System.out.println("");
                 System.out.println("1. Display a list of commands available in the game.");
                 System.out.println("2. Display a description of the various items available in the game.");
-                System.out.println("3. Return to the main menu.");
+                System.out.println("3. Display a combat manual");
+                System.out.println("4. Display a manual describing trade and economy in the game");
+                System.out.println("5. Return to the main menu.");
             } else if (input == 2) {
                 manual.printItems();
                 System.out.println("");
                 System.out.println("1. Display a list of commands available in the game.");
                 System.out.println("2. Display a description of the various items available in the game.");
-                System.out.println("3. Return to the main menu.");
+                System.out.println("3. Display a combat manual");
+                System.out.println("4. Display a manual describing trade and economy in the game");
+                System.out.println("5. Return to the main menu.");
             } else if (input == 3) {
+                manual.combatManual();
+                System.out.println("");
+                System.out.println("1. Display a list of commands available in the game.");
+                System.out.println("2. Display a description of the various items available in the game.");
+                System.out.println("3. Display a combat manual");
+                System.out.println("4. Display a manual describing trade and economy in the game");
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 4) {
+                manual.enconomyManual();
+                System.out.println("");
+                System.out.println("1. Display a list of commands available in the game.");
+                System.out.println("2. Display a description of the various items available in the game.");
+                System.out.println("3. Display a combat manual");
+                System.out.println("4. Display a manual describing trade and economy in the game");
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 5) {
                 displayMenu();
                 break;
             }
             else {
-                System.out.println("Invalid choice. Enter 3 to return to the main menu.");
+                System.out.println("Invalid choice. Enter 5 to return to the main menu.");
             }
         }
     }
@@ -106,7 +128,7 @@ public class Menu {
             if (input == 1) {
                 System.out.println("KEY:\nI = Item\t\tE = Exit\nF = Friend NPC\t\tP = Party Member\nN = Neutral NPC\t\tA = Adversarial NPC\nY = You\t\t\t. = Walkable Space");
                 System.out.println("If you don't see yourself, you could just be \"behind\" another point of interest.  Try moving over a space.");
-                gameEngine.getGameState().getcurrentRoom().printMap();
+                gameEngine.getGameState().getCurrentRoom().printMap();
                 System.out.println("1. Display the map of your current room.");
                 System.out.println("2. Display the World Map");
                 System.out.println("3. Return to the main menu.");

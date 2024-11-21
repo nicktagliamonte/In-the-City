@@ -17,10 +17,10 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             // Get the current position from GameState
-            String currentRoom = gameState.getcurrentRoom().getName();
+            String currentRoom = gameState.getCurrentRoom().getName();
             String roomDescription = gameState.getRoomDescription(currentRoom);
-            Map<String, Item> visibleItems = gameState.getcurrentRoom().getItemsInRoom();
-            Map<String, NPC> characters = gameState.getcurrentRoom().getPeopleInRoom();
+            Map<String, Item> visibleItems = gameState.getCurrentRoom().getItemsInRoom();
+            Map<String, NPC> characters = gameState.getCurrentRoom().getPeopleInRoom();
             List<NPC> party = gameState.getCurrentParty();
 
             // Construct the dynamic message based on the game state
@@ -77,7 +77,7 @@ public enum GameCommand {
 
             // Print the message
             System.out.println(message.toString());
-            gameState.getcurrentRoom().viewAdjascentRooms();
+            gameState.getCurrentRoom().viewAdjascentRooms();
         }
     },
     MOVE {
@@ -163,7 +163,7 @@ public enum GameCommand {
                 System.out.println("You need to specify an item to examine");
                 return;
             }
-            Collection<Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom().values();
+            Collection<Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom().values();
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
@@ -188,14 +188,14 @@ public enum GameCommand {
                 return;
             }
 
-            Map<String, Item> itemsInRoom = gameState.getcurrentRoom().getItemsInRoom();
+            Map<String, Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom();
             String itemLocation = null;
             Item itemToTake = null;
             for (Entry<String, Item> item : itemsInRoom.entrySet()) {
                 if (item.getValue().getName().equalsIgnoreCase(args[0])) {
                     itemToTake = item.getValue();
                     itemLocation = item.getKey();
-                    gameState.getcurrentRoom().updateMapEntry('.', Character.getNumericValue(itemLocation.charAt(1)), Character.getNumericValue(itemLocation.charAt(3)));
+                    gameState.getCurrentRoom().updateMapEntry('.', Character.getNumericValue(itemLocation.charAt(1)), Character.getNumericValue(itemLocation.charAt(3)));
                     break;
                 }
             }
@@ -204,7 +204,7 @@ public enum GameCommand {
                 if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
                     gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
-                    gameState.getcurrentRoom().removeItemFromRoom(itemLocation);
+                    gameState.getCurrentRoom().removeItemFromRoom(itemLocation);
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
                 } else {
                     System.out.println("That item is too heavy.");
@@ -233,10 +233,10 @@ public enum GameCommand {
             for (Item item : itemsInInventory) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
                     itemToDrop = item;
-                    System.out.println(gameState.getcurrentRoom().getPlayerPosition());
-                    gameState.getcurrentRoom().updateMapEntry('I', 
-                                Character.getNumericValue(gameState.getcurrentRoom().getPlayerPosition().charAt(1)), 
-                                Character.getNumericValue(gameState.getcurrentRoom().getPlayerPosition().charAt(4)));
+                    System.out.println(gameState.getCurrentRoom().getPlayerPosition());
+                    gameState.getCurrentRoom().updateMapEntry('I', 
+                                Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(1)), 
+                                Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(4)));
                     break;
                 }
             }
@@ -247,7 +247,7 @@ public enum GameCommand {
                 itemsInInventory.remove(itemToDrop);
                 gameState.getPlayer().setInventory(itemsInInventory);
                 gameState.getPlayer().increaseRemainingCarryWeight(itemToDrop.getWeight());
-                gameState.getcurrentRoom().addItemToRoom(gameState.getcurrentRoom().getPlayerPosition(), itemToDrop);
+                gameState.getCurrentRoom().addItemToRoom(gameState.getCurrentRoom().getPlayerPosition(), itemToDrop);
                 System.out.println("Dropped " + itemToDrop.getName());
             }            
         }
@@ -355,7 +355,7 @@ public enum GameCommand {
                         }
                     }
                     String characterName = characterNameBuilder.toString();
-                    Collection<NPC> people = gameState.getcurrentRoom().getPeopleInRoom().values();
+                    Collection<NPC> people = gameState.getCurrentRoom().getPeopleInRoom().values();
                     for (NPC person : people) {
                         if (person.getName().equalsIgnoreCase(characterName)) {
                             gameState.enterDialogue(person);
@@ -370,7 +370,7 @@ public enum GameCommand {
     JOIN {
         @Override
         public void execute(String[] args, GameState gameState) {
-            Map<String, NPC> characters = gameState.getcurrentRoom().getPeopleInRoom();
+            Map<String, NPC> characters = gameState.getCurrentRoom().getPeopleInRoom();
             String memberToJoin = args[0];
 
             for (Entry<String, NPC> character : characters.entrySet()) {
@@ -378,8 +378,8 @@ public enum GameCommand {
                     if (character.getValue() instanceof PartyMember) {
                         boolean success = gameState.addPartyMember((PartyMember) character.getValue());
                         if (success) {
-                            gameState.getcurrentRoom().removePersonFromRoom(character.getKey());
-                            gameState.getcurrentRoom().updateMapEntry('.', 
+                            gameState.getCurrentRoom().removePersonFromRoom(character.getKey());
+                            gameState.getCurrentRoom().updateMapEntry('.', 
                                 Character.getNumericValue(character.getKey().charAt(1)), 
                                 Character.getNumericValue(character.getKey().charAt(3)));
                             return;
@@ -423,7 +423,7 @@ public enum GameCommand {
                 return;
             }
 
-            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
+            Collection<NPC> characters = gameState.getCurrentRoom().getPeopleInRoom().values();
             String chosenCharacter = args[0];
 
             for (Person character : characters) {
@@ -444,7 +444,7 @@ public enum GameCommand {
                 return;
             }
 
-            Collection<NPC> characters = gameState.getcurrentRoom().getPeopleInRoom().values();
+            Collection<NPC> characters = gameState.getCurrentRoom().getPeopleInRoom().values();
             String chosenCharacter = args[0];
 
             for (NPC character : characters) {

@@ -45,10 +45,72 @@ public class Manual {
         System.out.println("   HINT [CHARACTER NAME]: Gets a hint from [CHARACTER NAME], if they have one to offer and you have one to receive.");
         System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and the chance of unwanted interactions.");
         System.out.println("========================================");
-        System.out.println("\nEnter 1 to return to the main menu.");
     }
 
     public void printItems() {
         //TODO: Create list of items
+    }
+
+    public void combatManual() {
+        System.out.println(" ==============================");
+        System.out.println("||        COMBAT GUIDE        ||");
+        System.out.println(" ==============================");
+        System.out.println("");
+        System.out.println("This is NOT a combat-focused game.");
+        System.out.println("Combat is turn-based. You and your party, along with any enemies you fight, will be given an initiative order based on a random dice roll.");
+        System.out.println("The combat system will iterate over the list of combatants in that order.");
+        System.out.println("");
+        System.out.println("On an adversary's turn, they will attempt to hit the player or party member with the lowest health.");
+        System.out.println("If they succeed, damage will be dealt based on a flat value depending on the adversary.");
+        System.out.println("");
+        System.out.println("On a party member's turn, they will attempt to hit the adversary with the lowest health.");
+        System.out.println("If they succeed, damage will be dealt based on a flat value depending on the party member's level.");
+        System.out.println("");
+        System.out.println("On your turn, you will be given the option to:");
+        System.out.println("1. Attack");
+        System.out.println("2. Use an Item");
+        System.out.println("3. Use a Spell");
+        System.out.println("4. Flee");
+        System.out.println("");
+        System.out.println("Attacking will roll to hit the adversary with the lowest health and then roll for damage.");
+        System.out.println("Damage depends on your stats as well as any weapon you are wielding.");
+        System.out.println("This game is NOT forgiving to players who choose not to wield a weapon.");
+        System.out.println("");
+        System.out.println("Using an item will bring up your inventory. If you have no items, this is a wasted turn.");
+        System.out.println("If you do have items, you can use one to benefit your health or other stats.");
+        System.out.println("");
+        System.out.println("Selecting a spell will bring up a list of your spells. If you have no spells, this is a wasted turn.");
+        System.out.println("All spells in this game are meant to deal damage.");
+        System.out.println("Selecting a spell will use it to attack the adversary with the lowest health, just like a weapon attack.");
+        System.out.println("There are no AoE spells in this game, as the focus is NOT on combat.");
+        System.out.println("");
+        System.out.println("Selecting 'Run' will attempt to flee from the enemy. Success is based on a dice roll, weighted by a comparison of your stats and the adversary's.");
+        System.out.println("");
+        System.out.println("As this is NOT a combat-focused game, it is currently not possible to equip party members with armor or weapons.");
+        System.out.println("Their AC (Armor Class) will scale appropriately with level, but that is the extent of their defensive abilities.");
+        System.out.println("");
+        System.out.println("If you or a party member's health drops below 0, you must make death saving throws.");
+        System.out.println("During this time, you are shielded from enemy attacks.");
+        System.out.println("3 rolls below 10 result in death.");
+        System.out.println("3 rolls above 10 result in stabilization to 0 health, but you will become vulnerable to attacks.");
+        System.out.println("");
+        System.out.println("If you or a party member's health falls to the equivalent of your max health below 0, you die.");
+        System.out.println("For party members, this death is permanent: they are removed from the game forever, and you can never get them back.");
+        System.out.println("For you, death is harsh as well: you will be sent back to the start of the level and the region will be reset.");
+        System.out.println("If you have a save game, it would be wise to reload it in either case.");
+        System.out.println("");
+        System.out.println("Some NPCs are neutral to your presence, but if you fight them, they will become adversaries.");
+        System.out.println("There is no way to make them friendly again.");
+        System.out.println("If someone tries to kill you in real life, that would truly represent a permanent end to any potential friendship.");
+        System.out.println("The same logic applies to characters in-game.");
+        System.out.println("");
+        System.out.println("=============================================");
+        System.out.println("||    Combat will be challenging, so stay   ||");
+        System.out.println("||      prepared and plan your actions!     ||");
+        System.out.println("=============================================");
+    }    
+
+    public void enconomyManual() {
+        System.out.println("todo");
     }
 }

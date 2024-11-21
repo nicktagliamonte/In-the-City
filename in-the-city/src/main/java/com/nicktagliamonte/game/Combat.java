@@ -40,7 +40,7 @@ public class Combat {
                     NPC npcCombatant = (NPC) combatant;
                     if (npcCombatant.isDead()) {
                         combatants.remove(combatant);
-                        Map<String, NPC> people = gameState.getcurrentRoom().getPeopleInRoom();
+                        Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
                         while (iterator.hasNext()) {
                             Map.Entry<String, NPC> entry = iterator.next();
@@ -49,7 +49,7 @@ public class Combat {
                                 break;
                             }
                         }
-                        gameState.getcurrentRoom().setPeopleInRoom(people);
+                        gameState.getCurrentRoom().setPeopleInRoom(people);
                         if (npcCombatant instanceof PartyMember) {
                             System.out.println("A member of your party, " + npcCombatant.getName() + ", has fully died. They cannot be revived or re-encountered.\n" + 
                             "If you continue from this point, they will be gone from the game forever.\n" + 
@@ -70,6 +70,7 @@ public class Combat {
                 // Check for victory/defeat
                 if (checkVictory(combatants)) {
                     System.out.println("You win!");
+                    removeDeadCombatants();
                     combatActive = false;
                     break;
                 } else if (checkDefeat(combatants)) {
@@ -343,4 +344,22 @@ public class Combat {
         }
         return true;
     }      
+
+    private void removeDeadCombatants() {
+        Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
+        Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
+        
+        for (Person person : combatants) {
+            if (person instanceof Adversary) {
+                while (iterator.hasNext()) {
+                    Map.Entry<String, NPC> entry = iterator.next();
+                    if (entry.getValue().getName().equals(person.getName())) {
+                        iterator.remove();
+                    }
+                }
+            }
+        }
+
+        gameState.getCurrentRoom().setPeopleInRoom(people);
+    }    
 }

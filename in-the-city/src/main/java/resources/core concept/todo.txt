@@ -1,13 +1,9 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    fix barter
-    combat related
-        make killing the adversary drop all their inventory at the location you currently are.
-        test combat.
-            likely problem spots: fighting a neutral causing duplicate or triplicate copies of new npc'S
-            various other operations doing the same
-            a literal billion other things
-    add a combat manual and an economy manual
+    make sure that the newly created adversary is removed from the room if you fight a neutral
+    make sure that adversaries will not attack people if their health is < 0
+    test all other combat functions and update this line when complete
+    add an economy manual
     reassess shrewdness in friend and neutral.  maybe do away with it
     ask chat to organize all my files (method calls and such, the ordering of methods)
     how does the technologist learn new spells?

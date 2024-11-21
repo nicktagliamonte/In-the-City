@@ -289,7 +289,7 @@ public class GameState {
         return currentRegion;
     }
 
-    public Room getcurrentRoom() {
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
@@ -667,7 +667,7 @@ public class GameState {
         combatants.add(player); // Add player
         if (character instanceof Neutral) {
             Neutral neutralToFight = (Neutral) character;
-            Map<String, NPC> people = getcurrentRoom().getPeopleInRoom();
+            Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
             Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, NPC> entry = iterator.next();
