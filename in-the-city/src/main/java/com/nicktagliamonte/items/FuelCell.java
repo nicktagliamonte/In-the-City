@@ -9,7 +9,7 @@ public class FuelCell extends Item {
     }
 
     @Override
-    public void use(GameState gameState) {
+    public void use() {
         // TODO: Specific logic for using a Fuel Cell
         System.out.println("You use the fuel cell. It powers up the device.");
     }

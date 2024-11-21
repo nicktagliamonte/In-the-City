@@ -271,7 +271,7 @@ public enum GameCommand {
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
     
             if (item != null) {
-                item.use(gameState); // Call the item's specific use method
+                item.use(); // Call the item's specific use method
             } else {
                 System.out.println("You don't have that item.");
             }
@@ -429,6 +429,7 @@ public enum GameCommand {
             for (Person character : characters) {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
                     gameState.enterCombat(character);
+                    return;
                 }
             }
             System.out.println("I don't recognize that name");

@@ -7,8 +7,8 @@ import com.nicktagliamonte.items.Item;
 public class Person {
     private String name;
     private double health;
-    private double energy;
     protected List<Item> inventory; // General inventory for all characters (could be used for NPCs)
+    private int initiative;
 
     //constructor for the player character, custom attributes in Player.java subclass
     public Person(String name) {
@@ -16,10 +16,9 @@ public class Person {
         this.inventory = new ArrayList<>();
     }
 
-    public Person(String name, double health, double energy, List<Item> inventory) {
+    public Person(String name, double health, List<Item> inventory) {
         this.name = name;
         this.health = health;
-        this.energy = energy;
         this.inventory = inventory;
     }
 
@@ -43,19 +42,19 @@ public class Person {
         this.health = health;
     }
 
-    public double getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(double energy) {
-        this.energy = energy;
-    }
-
     public List<Item> getInventory() {
         return inventory;
     }
 
     public void setInventory(List<Item> inventory) {
         this.inventory = inventory;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
     }
 }

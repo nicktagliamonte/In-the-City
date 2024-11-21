@@ -3,13 +3,15 @@ package com.nicktagliamonte.items;
 import com.nicktagliamonte.characters.Player;
 
 public class Weapon extends Item {
-    private int acBonus;
     private boolean isEquipped;
+    private int attackModifier;
+    private int damage;
 
-    public Weapon(String name, String description, double weight, int value, int acBonus) {
+    public Weapon(String name, String description, double weight, int value, int attackModifier, int damage) {
         super(name, description, weight, false, value);
-        this.acBonus = acBonus;
         isEquipped = false;
+        this.attackModifier = attackModifier;
+        this.damage = damage;
     }
 
     public void equip(Player player) {
@@ -33,5 +35,14 @@ public class Weapon extends Item {
         } else {
             System.out.println("That weapon is not currently equipped");
         }
+    }
+
+    public int getAttackModifier() {
+        return attackModifier;
+    }
+
+    public int getDamage() {
+        //TODO: make this be a roll based on the damage range of the weapon, so probably change damage type from int to map <quantity of die, number of faces>
+        return damage;
     }
 }

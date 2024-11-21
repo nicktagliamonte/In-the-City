@@ -9,9 +9,32 @@ public class NPC extends Person {
     private List<String> hints;
     private double maxHealth;
     private int deathSavingThrows;
+    private double strength;
+    private double dexterity;
+    private double constitution;
+    private double intelligence;
+    private double wisdom;
+    private double charisma;
+    private double ac;
 
-    public NPC(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,  List<String> hints) {
-        super(name, maxHealth, energy, inventory);
+    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,  List<String> hints, 
+                double strength, double dexterity, double constitution, double intelligence, double wisdom, double charisma, double ac) {
+        super(name, maxHealth, inventory);
+        this.description = description;
+        this.maxHealth = maxHealth;
+        this.deathSavingThrows = 0;
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.constitution = constitution;
+        this.intelligence = intelligence;
+        this.wisdom = wisdom;
+        this.charisma = charisma;
+        this.ac = ac;
+
+    }
+
+    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,  List<String> hints) {
+        super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
@@ -20,6 +43,62 @@ public class NPC extends Person {
 
     public String getDescription() {
         return description;
+    }
+
+    public double getStrength() {
+        return strength;
+    }
+
+    public double getDexterity() {
+        return dexterity;
+    }
+
+    public double getConstitution() {
+        return constitution;
+    }
+
+    public double getIntelligence() {
+        return intelligence;
+    }
+
+    public double getWisdom() {
+        return wisdom;
+    }
+
+    public double getCharisma() {
+        return charisma;
+    }
+
+    public double getAc() {
+        return ac;
+    }
+
+    public void setStrength(double strength) {
+        this.strength = strength;
+    }
+
+    public void setDexterity(double dexterity) {
+        this.dexterity = dexterity;
+    }
+
+    public void setConstitution(double constitution) {
+        this.constitution = constitution;
+    }
+
+    public void setIntelligence(double intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public void setWisdom(double wisdom) {
+        this.wisdom = wisdom;
+    }
+
+    public void setCharisma(double charisma) {
+        this.charisma = charisma;
+    }
+
+    public void setAc(double ac) {
+        this.ac = ac;
     }
 
     public boolean isDead() {
@@ -31,11 +110,11 @@ public class NPC extends Person {
     }
 
     public boolean isDown() {
-        if (super.getHealth() > -maxHealth && super.getHealth() <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return ((super.getHealth() > -maxHealth) && (super.getHealth() < 0));
+    }
+
+    public boolean isAlive() {
+        return getHealth() > 0;
     }
 
     public void interact() {
@@ -48,6 +127,7 @@ public class NPC extends Person {
             System.out.println(super.getName() + " is fully dead.");
         } else if (isDown()) {
             System.out.println(super.getName() + " is down and making death saving throws.");
+            //TODO: make sure death saves work
         } else {
             System.out.println(super.getName() + " took " + amount + " points of damage, but is still alive");
         }
@@ -88,6 +168,10 @@ public class NPC extends Person {
         } else {
             return hints.get((int) (Math.random() * hints.size()));
         }
+    }
+
+    public int getAttackModifier() {
+        return (int) Math.floor(strength);
     }
 
     public boolean isFriend() {

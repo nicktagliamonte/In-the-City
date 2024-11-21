@@ -1,10 +1,15 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    add combat gamestate
-        this will impact enemy and neutral npc's
-            enable fighting and hiding
-                which mean setting up how enemies will attack YOU as well as their response to you attacking them
-        make sure equipped items are working for all party members
+    fix barter
+    combat related
+        make killing the adversary drop all their inventory at the location you currently are.
+        test combat.
+            likely problem spots: fighting a neutral causing duplicate or triplicate copies of new npc'S
+            various other operations doing the same
+            a literal billion other things
+    add a combat manual and an economy manual
+    reassess shrewdness in friend and neutral.  maybe do away with it
+    ask chat to organize all my files (method calls and such, the ordering of methods)
     how does the technologist learn new spells?
     put a hint in the (room? game state? player inventory?)
         make sure the hint is useable.  regeneration is the next step
@@ -12,6 +17,7 @@ GAME STATE MODIFICATIONS
     put timed events in the game    
         start with hint regeneration
         how about health regeneration as well
+            party member health also needs to regen
         have some kind of clock tick that calls to random events periodically
             or have those events result from player movement.  decide here
                 can technically change it later

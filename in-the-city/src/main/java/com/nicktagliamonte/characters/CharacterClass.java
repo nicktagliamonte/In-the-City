@@ -9,8 +9,9 @@ public class CharacterClass {
     private double charisma;
     private double maxCarryWeight;
     private double health;
-    private double energy;
+    private double ac;
 
+    //TODO: figure out ac
     public CharacterClass(String className) {
         if (className.equalsIgnoreCase("survivalist")) {
             this.className = "survivalist";
@@ -21,8 +22,8 @@ public class CharacterClass {
             this.wisdom = 6;
             this.charisma = 8;
             this.maxCarryWeight = 15;
-            this.energy = 5;
             this.health = 22;
+            this.ac = 5;
         } else if (className.equalsIgnoreCase("technologist")) {
             this.className = "technologist";
             this.strength = 6;
@@ -32,8 +33,8 @@ public class CharacterClass {
             this.wisdom = 10;
             this.charisma = 6;
             this.maxCarryWeight = 13;
-            this.energy = 5;
             this.health = 18;
+            this.ac = 5;
         } else if (className.equalsIgnoreCase("negotiator")) {
             this.className = "negotiator";
             this.strength = 8;
@@ -43,8 +44,8 @@ public class CharacterClass {
             this.wisdom = 12;
             this.charisma = 12;
             this.maxCarryWeight = 14;
-            this.energy = 5;
             this.health = 20;
+            this.ac = 5;
         }
     }
 
@@ -93,9 +94,7 @@ public class CharacterClass {
         return health;
     }
 
-    public double getEnergy() {
-        return energy;
+    public double getAc() {
+        return ac;
     }
-
-    
 }

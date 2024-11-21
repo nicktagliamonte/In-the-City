@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -30,6 +31,12 @@ public class GameState {
     private List<NPC> currentParty;
     private RegionDialogue currentRegionDialogue;
     private boolean inDialogue = false;
+    private String regionFilePath;
+    private String adjacencyFilePath;
+    private String itemsFilePath;
+    private String peopleFilePath;
+    private String dialogueFilePath;
+    private boolean fromSaveFile;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
@@ -38,6 +45,12 @@ public class GameState {
         initializePlayer();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
         this.currentParty = new ArrayList<>();
+        this.regionFilePath = regionFilePath;
+        this.adjacencyFilePath = adjacencyFilePath;
+        this.itemsFilePath = itemsFilePath;
+        this.peopleFilePath = peopleFilePath;
+        this.dialogueFilePath = dialogueFilePath;
+        fromSaveFile = false; //TODO: handle this when i'm doing persistence
     }
 
     public void initializePlayer() {
@@ -555,10 +568,10 @@ public class GameState {
 
                 if (selectedOption.getNextDialogueId().equalsIgnoreCase("barter")) {
                     enterBarter(character);
+                    currentDialogue = dialogues.get("start");
                     break;
                 }
     
-                // Load the next dialogue node
                 currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
     
                 if (currentDialogue == null) {
@@ -589,48 +602,48 @@ public class GameState {
     
         Barter barter = new Barter(player, player.getInventory(), npc.getInventory(), 0.0, hasNegotiator);
     
-        try (Scanner scanner = new Scanner(System.in)) {
-            boolean inBarter = true;
-    
-            while (inBarter) {
-                barter.displayInventory();
-                System.out.println("\nYour Purchase Power: " + barter.getPurchasePower());
-                System.out.println("1. Offer items");
-                System.out.println("2. Select an item to purchase");
-                System.out.println("3. Exit barter");
-                System.out.print("Choice: ");
-                int choice = Integer.parseInt(scanner.nextLine());
-    
-                switch (choice) {
-                    case 1:
-                        // Logic to let the player offer items
-                        System.out.println("Enter items to offer (comma-separated names):");
-                        String offerInput = scanner.nextLine();
-                        List<Item> offeredItems = parseItems(offerInput, player.getInventory());
-                        barter.playerOffersItems(offeredItems);
-                        break;
-                    case 2:
-                        System.out.println("Enter item name to purchase:");
-                        String itemName = scanner.nextLine();
-                        Item itemSelected = null;
-                        for (Item item : npc.getInventory()) {
-                            if (item.getName().equalsIgnoreCase(itemName)) {
-                                itemSelected = item;
-                            }
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+        boolean inBarter = true;
+
+        while (inBarter) {
+            barter.displayInventory();
+            System.out.println("\nYour Purchase Power: " + barter.getPurchasePower());
+            System.out.println("1. Offer items");
+            System.out.println("2. Select an item to purchase");
+            System.out.println("3. Exit barter");
+            System.out.print("Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+
+            switch (choice) {
+                case 1:
+                    // Logic to let the player offer items
+                    System.out.println("Enter items to offer (comma-separated names):");
+                    String offerInput = scanner.nextLine();
+                    List<Item> offeredItems = parseItems(offerInput, player.getInventory());
+                    barter.playerOffersItems(offeredItems);
+                    break;
+                case 2:
+                    System.out.println("Enter item name to purchase:");
+                    String itemName = scanner.nextLine();
+                    Item itemSelected = null;
+                    for (Item item : npc.getInventory()) {
+                        if (item.getName().equalsIgnoreCase(itemName)) {
+                            itemSelected = item;
                         }
-                        if (itemSelected != null) {
-                            barter.playerSelectsItem(itemSelected);
-                        } else {
-                            System.out.println("Item not found.");
-                        }
-                        break;
-                    case 3:
-                        System.out.println("Exiting barter.");
-                        inBarter = false;
-                        break;
-                    default:
-                        System.out.println("Invalid choice.");
-                }
+                    }
+                    if (itemSelected != null) {
+                        barter.playerSelectsItem(itemSelected);
+                    } else {
+                        System.out.println("Item not found.");
+                    }
+                    break;
+                case 3:
+                    inBarter = false;
+                    System.out.println("Exiting Barter.");
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
             }
         }
     }
@@ -650,6 +663,60 @@ public class GameState {
     }
 
     public void enterCombat(Person character) {
-        // not wholly clear on this either
+        List<Person> combatants = new ArrayList<>();
+        combatants.add(player); // Add player
+        if (character instanceof Neutral) {
+            Neutral neutralToFight = (Neutral) character;
+            Map<String, NPC> people = getcurrentRoom().getPeopleInRoom();
+            Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, NPC> entry = iterator.next();
+                if (entry.getValue().getName().equals(neutralToFight.getName())) {
+                    String location = entry.getKey();
+                    iterator.remove();
+                    people.put(location, neutralToFight.actAsAdversary());
+                    combatants.add(neutralToFight.actAsAdversary());
+                    break;
+                }
+            }
+        }
+        combatants.add(character); // Add adversary
+    
+        // Add party members if any
+        if (!currentParty.isEmpty()) {
+            combatants.addAll(currentParty);
+        }
+    
+        // Roll initiative
+        for (Person combatant : combatants) {
+            int initiative = 0;
+            if (combatant instanceof Player) {
+                initiative = rollD20() + (int) player.getDexterity();
+            } else if (combatant instanceof NPC) {
+                NPC npcCombatant = (NPC) combatant;
+                initiative = rollD20() + (int) npcCombatant.getDexterity();
+            }          
+            combatant.setInitiative(initiative);
+        }
+    
+        // Sort by initiative (highest first)
+        combatants.sort((c1, c2) -> Integer.compare(c2.getInitiative(), c1.getInitiative()));
+        
+        @SuppressWarnings("unused")
+        Combat combat = new Combat(combatants, this);
+    }
+    
+    public int rollD20() {
+        return (int) (Math.random() * 20) + 1;
+    }
+
+    public void playerDead() {
+        if (fromSaveFile) {
+            //TODO: handle this when i handle persistence
+        } else {
+            //it's harsh, but reinitialize the gamestate with the data that it had when the game started
+            @SuppressWarnings("unused")
+            GameState newGameState = new GameState(gameEngine, regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
+        }
     }
 }

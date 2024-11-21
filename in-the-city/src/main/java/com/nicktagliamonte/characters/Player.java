@@ -1,8 +1,10 @@
 package com.nicktagliamonte.characters;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
@@ -19,8 +21,12 @@ public class Player extends Person {
     private double maxCarryWeight;
     private double remainingCarryWeight;
     private double ac;
+    private double maxHealth;
     public Armor armor;
     public Weapon weapon;
+    public boolean hasWeapon;
+    private List<Spell> spellbook;
+    private int deathSavingThrows;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -33,9 +39,27 @@ public class Player extends Person {
         this.charisma = characterClass.getCharisma();
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
         this.remainingCarryWeight = this.maxCarryWeight;
-        super.setEnergy(characterClass.getEnergy());
         super.setHealth(characterClass.getHealth());
         this.ac = 10 + dexterity;
+        this.maxHealth = characterClass.getHealth();
+        this.spellbook = new ArrayList<>();
+        this.deathSavingThrows = 0;
+    }
+
+    public void addSpell(Spell spell) {
+        spellbook.add(spell);
+    }
+
+    public List<Spell> getSpellbook() {
+        return spellbook;
+    }
+
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public void removeArmor() {
@@ -52,10 +76,12 @@ public class Player extends Person {
 
     public void removeWeapon() {
         weapon = null;
+        hasWeapon = false;
     }
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+        hasWeapon = true;
     }
 
     public Weapon getWeapon() {
@@ -225,5 +251,62 @@ public class Player extends Person {
             }
         }
         return false;
+    }
+
+    public boolean isAlive() {
+        return getHealth() > 0;
+    }
+
+    public int getAttackModifier() {
+        if (!hasWeapon) {
+            //TODO: have this return the player level
+            return 0;
+        } else {
+            return weapon.getAttackModifier();
+        }
+    }
+
+    public int rollWeaponDamage() {
+        if (!hasWeapon) {
+            //TODO: also have this be impacted by player level
+            return 1;
+        } else {
+            return weapon.getDamage();
+        }
+    }
+
+    public boolean isDown() {
+        return ((super.getHealth() > -maxHealth) && (super.getHealth() < 0));
+    }
+
+    public void takeDamage(double amount) {
+        super.setHealth(super.getHealth() - amount);
+        if (!isAlive()) {
+            System.out.println("You are fully dead.");
+        } else if (isDown()) {
+            System.out.println(super.getName() + "You are down and making death saving throws.");
+            //TODO: player death saving throws
+            //TODO: double check the comparable method in NPC.java
+        } else {
+            System.out.println("You took " + amount + " points of damage, but are still alive");
+        }
+    }
+
+    public void makeDeathSavingThrow() {
+        int randomInt = (int) (Math.random() * 19);
+        if (randomInt < 10) {
+            deathSavingThrows -= 1;
+            System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");
+        } else {
+            deathSavingThrows += 1;
+            System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");
+        }
+        if (deathSavingThrows == 3) {
+            super.setHealth(0);
+            System.out.println("You are stabalized at 0 health.");
+        } else if (deathSavingThrows == -3) {
+            super.setHealth(this.maxHealth * -1);
+            System.out.println("You are fully dead.");
+        }
     }
 }

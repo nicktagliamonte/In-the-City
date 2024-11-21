@@ -5,7 +5,6 @@
                 "type": "friend",
                 "name": "testName",
                 "health": 50.0,
-                "energy": 50.0,
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
@@ -37,7 +36,6 @@
                 "type": "adversary",
                 "name": "testName2",
                 "health": 50.0,
-                "energy": 50.0,
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
@@ -57,14 +55,12 @@
                 "description": "a baaaaad guy.  dump him, girl",
                 "maxHealth": 50.0,
                 "damage": 5,
-                "dex": 5,
                 "ac": 5
             },
             "(4,5)": {
                 "type": "neutral",
                 "name": "gilear",
                 "health": 5.0,
-                "energy": 2.0,
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
@@ -93,7 +89,8 @@
                 "canGiveQuest": false,
                 "attackSpeed": 3,
                 "damage": 5,
-                "moralityFlag": 0
+                "moralityFlag": 0,
+                "ac": 0
             },
             "(1,3)": {
                 "type": "partymember",
@@ -116,6 +113,7 @@
                 },
                 "description": "idk what this even does yet",
                 "hints": [],
+                "damage": 5,
                 "characterClass": "technologist"
             }
         }

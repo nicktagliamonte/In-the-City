@@ -10,21 +10,28 @@ public class Neutral extends NPC{
     private boolean canGiveQuest;
     private double attackSpeed;
     private double damage;
-    @SuppressWarnings("unused")
     private double moralityFlag;
-    @SuppressWarnings("unused")
-    private boolean actsAsEnemy;
+    private double ac;
 
-    public Neutral(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,
+    public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth,
                   double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest, double attackSpeed, 
-                  double damage, double moralityFlag) {
-        super(name, health, energy, inventory, description, maxHealth, hints);
+                  double damage, double moralityFlag, double ac) {
+        super(name, health, inventory, description, maxHealth, hints);
         this.shrewdness = shrewdness;
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
         this.attackSpeed = attackSpeed;
         this.damage = damage;
         this.moralityFlag = moralityFlag;
+        this.ac = ac;
+    }
+
+    public Adversary actAsAdversary() {
+        return new Adversary(this);
+    }
+
+    public double getAc() {
+        return ac;
     }
 
     //TODO: since this is a neutral, update bartering AND SPEECH such that a sufficiently low player morality will cause this class to act as adversary
@@ -75,5 +82,9 @@ public class Neutral extends NPC{
     public boolean isDefeated() {
         return this.getHealth() <= 0;
         //TODO: remove adversary from room -- this will be handled thru the combat ending sequence from gameState
+    }
+
+    public double getMoralityFlag() {
+        return moralityFlag;
     }
 }

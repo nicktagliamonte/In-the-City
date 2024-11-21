@@ -4,26 +4,29 @@ import java.util.List;
 
 import com.nicktagliamonte.items.Item;
 
+//on creation of the combat system, the question "do i make party members have equipable items" came up
+//I decided against it -- this is not a combat based game, and that would require the person playing to put far too much effort into equipping for combat.
+//probably it would be better to have it but that's also so so so much code to write. so this character has flat damage and i'll need to 
 public class PartyMember extends NPC{
     private CharacterClass characterClass;
-    private double strength;
-    private double dexterity;
-    private double constitution;
-    private double intelligence;
-    private double wisdom;
-    private double charisma;
     private double maxCarryWeight;
+    private double damage;
 
-    public PartyMember(String name, List<Item> inventory, String description, List<String> hints, CharacterClass characterClass) {
-        super(name, characterClass.getHealth(), characterClass.getEnergy(), inventory, description, characterClass.getHealth(), hints);
+    public PartyMember(String name, List<Item> inventory, String description, List<String> hints, double damage, CharacterClass characterClass) {
+        super(name, characterClass.getHealth(), inventory, description, characterClass.getHealth(), hints,
+                characterClass.getStrength(), characterClass.getDexterity(), characterClass.getConstitution(), characterClass.getIntelligence(), 
+                characterClass.getWisdom(), characterClass.getCharisma(), characterClass.getAc());
+        this.damage = damage;
         this.characterClass = characterClass;
-        this.strength = characterClass.getStrength();
-        this.dexterity = characterClass.getDexterity();
-        this.constitution = characterClass.getConstitution();
-        this.intelligence = characterClass.getIntelligence();
-        this.wisdom = characterClass.getWisdom();
-        this.charisma = characterClass.getCharisma();
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
+    }
+
+    public double getDamage() {
+        return damage;
+    }
+
+    public void setDamage(double damage) {
+        this.damage = damage;
     }
 
     public CharacterClass getCharacterClass() {
@@ -36,54 +39,6 @@ public class PartyMember extends NPC{
 
     public void setCharacterClass(CharacterClass characterClass) {
         this.characterClass = characterClass;
-    }
-
-    public double getStrength() {
-        return strength;
-    }
-
-    public void setStrength(double strength) {
-        this.strength = strength;
-    }
-
-    public double getDexterity() {
-        return dexterity;
-    }
-
-    public void setDexterity(double dexterity) {
-        this.dexterity = dexterity;
-    }
-
-    public double getConstitution() {
-        return constitution;
-    }
-
-    public void setConstitution(double constitution) {
-        this.constitution = constitution;
-    }
-
-    public double getintelligence() {
-        return intelligence;
-    }
-
-    public void setintelligence(double intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public double getWisdom() {
-        return wisdom;
-    }
-
-    public void setWisdom(double wisdom) {
-        this.wisdom = wisdom;
-    }
-
-    public double getCharisma() {
-        return charisma;
-    }
-
-    public void setCharisma(double charisma) {
-        this.charisma = charisma;
     }
 
     public void setMaxCarryWeight(double maxCarryWeight) {

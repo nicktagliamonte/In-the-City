@@ -2,8 +2,6 @@ package com.nicktagliamonte.items;
 
 import java.util.Objects;
 
-import com.nicktagliamonte.game.GameState;
-
 public class Item {
     private String name;
     private String description;
@@ -43,7 +41,7 @@ public class Item {
         return isConsumable;
     }
     
-    public void use(GameState gameState) {
+    public void use() {
         throw new UnsupportedOperationException("Subclasses must override use(GameState gameState)");
     }
 

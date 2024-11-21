@@ -27,7 +27,6 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
             case "friend":
                 String name = jsonObject.get("name").getAsString();
                 double health = jsonObject.get("health").getAsDouble();
-                double energy = jsonObject.get("energy").getAsDouble();
                 JsonObject inventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> inventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : inventoryJson.entrySet()) {
@@ -41,12 +40,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 List<String> questDialogue = context.deserialize(jsonObject.getAsJsonArray("questDialogue"), List.class);
                 boolean canGiveQuest = jsonObject.get("canGiveQuest").getAsBoolean();
 
-                return new Friend(name, health, energy, inventory, description, 
-                maxHealth, shrewdness, hints, questDialogue, canGiveQuest);
+                return new Friend(name, health, inventory, description, maxHealth, shrewdness, hints, questDialogue, canGiveQuest);
             case "adversary":
                 String adversaryName = jsonObject.get("name").getAsString();
                 double adversaryHealth = jsonObject.get("health").getAsDouble();
-                double adversaryEnergy = jsonObject.get("energy").getAsDouble();
                 JsonObject adversaryInventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> adversaryInventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : adversaryInventoryJson.entrySet()) {
@@ -56,15 +53,13 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 String adversaryDescription = jsonObject.get("description").getAsString();
                 double adversaryMaxHealth = jsonObject.get("maxHealth").getAsDouble();
                 double adversaryDamage = jsonObject.get("damage").getAsDouble();
-                double adversaryDex = jsonObject.get("dex").getAsDouble();
                 double adversaryAc = jsonObject.get("ac").getAsDouble();
 
-                return new Adversary(adversaryName, adversaryHealth, adversaryEnergy, adversaryInventory, adversaryDescription, 
-                                     adversaryMaxHealth, adversaryDamage, adversaryDex, adversaryAc);
+                return new Adversary(adversaryName, adversaryHealth, adversaryInventory, adversaryDescription, 
+                                     adversaryMaxHealth, adversaryDamage, adversaryAc);
             case "neutral":
                 String neutralName = jsonObject.get("name").getAsString();
                 double neutralHealth = jsonObject.get("health").getAsDouble();
-                double neutralEnergy = jsonObject.get("energy").getAsDouble();
                 JsonObject neutralInventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> neutralInventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : neutralInventoryJson.entrySet()) {
@@ -80,9 +75,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double neutralAttackSpeed = jsonObject.get("attackSpeed").getAsDouble();
                 double neutralDamage = jsonObject.get("damage").getAsDouble();
                 double moralityFlag = jsonObject.get("moralityFlag").getAsDouble();
+                double neutralAc = jsonObject.get("ac").getAsDouble();
 
-                return new Neutral(neutralName, neutralHealth, neutralEnergy, neutralInventory, neutralDescription, neutralMaxHealth, 
-                                   neutralShrewdness, neutralHints, neutralQuestDialogue, neutralCanGiveQuest, neutralAttackSpeed, neutralDamage, moralityFlag);
+                return new Neutral(neutralName, neutralHealth, neutralInventory, neutralDescription, neutralMaxHealth, neutralShrewdness, neutralHints, 
+                                   neutralQuestDialogue, neutralCanGiveQuest, neutralAttackSpeed, neutralDamage, moralityFlag, neutralAc);
             case "partymember":
                 String partyMemberName = jsonObject.get("name").getAsString();
                 JsonObject partyMemberInventoryJson = jsonObject.getAsJsonObject("inventory");
@@ -93,10 +89,11 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 }
                 String partyMemberDescription = jsonObject.get("description").getAsString();
                 List<String> partyMemberHints = context.deserialize(jsonObject.getAsJsonArray("hints"), List.class);
+                double partyMemberDamage = jsonObject.get("damage").getAsDouble();
                 String characterClassName = jsonObject.get("characterClass").getAsString();
                 CharacterClass characterClass = new CharacterClass(characterClassName);
 
-                return new PartyMember(partyMemberName, partyMemberInventory, partyMemberDescription, partyMemberHints, characterClass);
+                return new PartyMember(partyMemberName, partyMemberInventory, partyMemberDescription, partyMemberHints, partyMemberDamage, characterClass);
             default:
                 throw new JsonParseException("unknown npc type " + npcType);
         }

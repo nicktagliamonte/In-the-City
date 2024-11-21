@@ -9,9 +9,9 @@ public class Friend extends NPC {
     private List<String> questDialogue;
     private boolean canGiveQuest;
 
-    public Friend(String name, double health, double energy, List<Item> inventory, String description, double maxHealth,
+    public Friend(String name, double health, List<Item> inventory, String description, double maxHealth,
                   double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest) {
-        super(name, health, energy, inventory, description, maxHealth, hints);
+        super(name, health, inventory, description, maxHealth, hints);
         this.shrewdness = shrewdness;
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
