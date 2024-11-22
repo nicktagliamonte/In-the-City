@@ -6,9 +6,9 @@ Some character names are pulled from things I was watching at the time I made th
 - The party member is named chunky [see Tim Robinson sketch.  "What do you do???"]
 - The neutral character is named Gilear [see D20 Fantasy High for the most neutral character I could think of]
 
-============================================================================================  
+## Upcoming Work:  
 
-## Phase 6: Working Demo  
+### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
@@ -89,7 +89,7 @@ Keep adding individual game elements in a "test data" format.
       - If that isn't reasonable, update the README to provide a detailed description of running the game.  
     - Tell friends to test it.  
 
-## NEXT PHASES  
+### NEXT PHASES  
 
 - **Phase 7: Codebase Creation**  
   - Create files for all items.  
@@ -105,7 +105,8 @@ Keep adding individual game elements in a "test data" format.
 - **Phase 9: The Actual Game Itself**  
   - Start coding the levels one-by-one, modularly add them to the game.  
 
-============================================================================================  
+## Information:  
 
 If you somehow stumbled onto this page and are interested in someday playing a text-based adventure game set in a far-future Philadelphia that draws primary influence from "A Dark Room," "Unsleeping City," and "Annihilation" and is overall kind of a bummer,  
 **don't read anything in the resources folder** because it contains significant spoilers.  
+I'll make the test game playable and include instructions for that much later.  Current ETA is probably around 12/25/24
