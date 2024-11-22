@@ -12,7 +12,9 @@ Some character names are pulled from things I was watching at the time I made th
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - Neutral needs all stats, so does adversary (see `PartyMember.java`).  
+  - Neutral needs all stats, so does adversary (see `PartyMember.java`).
+  - Player deathsaves need to be reworked so that they aren't all made in a single turn: on player turn in combat `if (isDown())` inform the player and have them manually select the option to roll.  
+    - Remove the sleep function currently in `Player.java` and possibly rework the `makeDeathSavingThrow()` method to return an int (current deathsave score) and only make a single throw.  Then just call that method from `Combat` and perform the check there.
   - Make adversary inventory drop to floor at adversary location (update remove dead adversary method and the other instance where `map.entry` appears in `Combat.java`).  
   - Reset Gilear health and etc. back to normal (currently elevated to test death saving throw functionality).  
   - Edit the combat manual to hit the "not combat-focused" thing a little less hard.  
@@ -54,7 +56,8 @@ Keep adding individual game elements in a "test data" format.
         - (Yes, really. When you're setting up the Metalwoods, is some guy gonna try to sell you a fish while you're fighting the fomorian?)  
 
 - **MISC UPDATES**  
-  - Trim the name entered by the user to be all lowercase but first letter upper case.  
+  - Trim the name entered by the user to be all lowercase but first letter upper case.
+  - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - There should be a way to see remaining carry weight.  
   - Update the inventory function.  
     - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
