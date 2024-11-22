@@ -60,7 +60,7 @@
             "(4,5)": {
                 "type": "neutral",
                 "name": "gilear",
-                "health": 5.0,
+                "health": 500.0,
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
@@ -78,7 +78,7 @@
                     }
                 },
                 "description": "a face",
-                "maxHealth": 5.0,
+                "maxHealth": 500.0,
                 "shrewdness": 3,
                 "hints": [
                     "I wouldn't go over there."
@@ -87,8 +87,7 @@
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
                 ],
                 "canGiveQuest": false,
-                "attackSpeed": 3,
-                "damage": 5,
+                "damage": 23,
                 "moralityFlag": 0,
                 "ac": 0
             },

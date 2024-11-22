@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.nicktagliamonte.characters.Friend;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
@@ -428,8 +429,13 @@ public enum GameCommand {
 
             for (Person character : characters) {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
-                    gameState.enterCombat(character);
-                    return;
+                    if ((character instanceof Friend) || (character instanceof PartyMember)) {
+                        System.out.println(character.getName() + " does not want to fight");
+                        return;
+                    } else {
+                        gameState.enterCombat(character);
+                        return;
+                    }
                 }
             }
             System.out.println("I don't recognize that name");

@@ -127,9 +127,6 @@ public class NPC extends Person {
             System.out.println(super.getName() + " is fully dead.");
         } else if (isDown()) {
             System.out.println(super.getName() + " is down and making death saving throws.");
-            //TODO: make sure death saves work
-        } else {
-            System.out.println(super.getName() + " took " + amount + " points of damage, but is still alive");
         }
     }
 

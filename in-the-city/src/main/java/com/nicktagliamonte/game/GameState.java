@@ -680,7 +680,6 @@ public class GameState {
                 }
             }
         }
-        combatants.add(character); // Add adversary
     
         // Add party members if any
         if (!currentParty.isEmpty()) {
@@ -704,6 +703,9 @@ public class GameState {
         
         @SuppressWarnings("unused")
         Combat combat = new Combat(combatants, this);
+        if (!player.isAlive()) {
+            playerDead();
+        }
     }
     
     public int rollD20() {
@@ -715,8 +717,8 @@ public class GameState {
             //TODO: handle this when i handle persistence
         } else {
             //it's harsh, but reinitialize the gamestate with the data that it had when the game started
-            @SuppressWarnings("unused")
-            GameState newGameState = new GameState(gameEngine, regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
+            loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
+            this.currentParty = new ArrayList<>();
         }
     }
 }

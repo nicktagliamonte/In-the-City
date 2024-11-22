@@ -8,19 +8,17 @@ public class Neutral extends NPC{
     private double shrewdness;
     private List<String> questDialogue;
     private boolean canGiveQuest;
-    private double attackSpeed;
     private double damage;
     private double moralityFlag;
     private double ac;
 
     public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth,
-                  double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest, double attackSpeed, 
+                  double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest,
                   double damage, double moralityFlag, double ac) {
         super(name, health, inventory, description, maxHealth, hints);
         this.shrewdness = shrewdness;
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
-        this.attackSpeed = attackSpeed;
         this.damage = damage;
         this.moralityFlag = moralityFlag;
         this.ac = ac;
@@ -49,16 +47,6 @@ public class Neutral extends NPC{
             //TODO: decide whether this even belongs in Neutral.java
         }
         System.out.println(questDialogue.get(0));
-    }
-
-    //TODO: have the below methods set the actsAsEnemy flag to true.
-    //TODO: possibly set a future gamestate to flip actsAsEnemy back, depending on context of actual gameplay
-    public double getAttackSpeed() {
-        return attackSpeed;
-    }
-
-    public void setAttackSpeed(double attackSpeed) {
-        this.attackSpeed = attackSpeed;
     }
 
     public double getDamage() {

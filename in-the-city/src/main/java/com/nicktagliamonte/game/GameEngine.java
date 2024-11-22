@@ -78,6 +78,10 @@ public class GameEngine {
         return this.gameState;
     }
 
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
+
     public static void loadGameFromFile(File file) {
         // Implement the logic to read and parse the file to restore game state
         try {

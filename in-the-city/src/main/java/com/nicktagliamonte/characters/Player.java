@@ -254,7 +254,7 @@ public class Player extends Person {
     }
 
     public boolean isAlive() {
-        return getHealth() > 0;
+        return (getHealth() > -(getMaxHealth()));
     }
 
     public int getAttackModifier() {
@@ -284,11 +284,10 @@ public class Player extends Person {
         if (!isAlive()) {
             System.out.println("You are fully dead.");
         } else if (isDown()) {
-            System.out.println(super.getName() + "You are down and making death saving throws.");
-            //TODO: player death saving throws
-            //TODO: double check the comparable method in NPC.java
+            System.out.println("You are down and making death saving throws.");
+            makeDeathSavingThrow();
         } else {
-            System.out.println("You took " + amount + " points of damage, but are still alive");
+            System.out.println("You took " + amount + " points of damage. Remaining health: " + getHealth());
         }
     }
 
@@ -297,6 +296,11 @@ public class Player extends Person {
         if (randomInt < 10) {
             deathSavingThrows -= 1;
             System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         } else {
             deathSavingThrows += 1;
             System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");

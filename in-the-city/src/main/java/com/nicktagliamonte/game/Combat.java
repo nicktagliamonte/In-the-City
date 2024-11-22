@@ -9,6 +9,7 @@ import java.util.Map;
 import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.characters.Neutral;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.characters.Player;
@@ -26,9 +27,12 @@ public class Combat {
 
     private void combatLoop(List<Person> combatants) {
         boolean combatActive = true;
-    
+        
         while (combatActive) {
-            for (Person combatant : combatants) {
+            Iterator<Person> combatantIterator = combatants.iterator(); // Use iterator
+            while (combatantIterator.hasNext()) {
+                Person combatant = combatantIterator.next();
+                
                 //this only needs 2 because it's a player vs everyone else check
                 if (combatant instanceof Player) {
                     Player player = (Player) combatant;
@@ -39,7 +43,8 @@ public class Combat {
                 } else {
                     NPC npcCombatant = (NPC) combatant;
                     if (npcCombatant.isDead()) {
-                        combatants.remove(combatant);
+                        combatantIterator.remove(); // Safely remove the NPC using the iterator
+                        
                         Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
                         while (iterator.hasNext()) {
@@ -51,22 +56,26 @@ public class Combat {
                         }
                         gameState.getCurrentRoom().setPeopleInRoom(people);
                         if (npcCombatant instanceof PartyMember) {
-                            System.out.println("A member of your party, " + npcCombatant.getName() + ", has fully died. They cannot be revived or re-encountered.\n" + 
-                            "If you continue from this point, they will be gone from the game forever.\n" + 
-                            "It may be worth considering reloading your last save and taking a different approach to this battle, or avoiding it altogether.");
+                            System.out.println("A member of your party, " + npcCombatant.getName() + ", has fully died. They cannot be revived or re-encountered.\n" +
+                                    "If you continue from this point, they will be gone from the game forever.\n" +
+                                    "It may be worth considering reloading your last save and taking a different approach to this battle, or avoiding it altogether.");
                         }
+                        continue;
                     }
                 }
-    
+                
                 //this DOES need the 3, because player/partymember/adversary turns are all handled differently
                 if (combatant instanceof Player) {
-                    playerTurn((Player) combatant);
+                    if (!playerTurn((Player) combatant)) {
+                        combatActive = false;  // If the player flees, stop the combat loop
+                        break;
+                    }
                 } else if (combatant instanceof PartyMember) {
                     partyMemberTurn((PartyMember) combatant);
                 } else if (combatant instanceof Adversary) {
                     adversaryTurn((Adversary) combatant);
                 }
-    
+        
                 // Check for victory/defeat
                 if (checkVictory(combatants)) {
                     System.out.println("You win!");
@@ -80,26 +89,31 @@ public class Combat {
                 }
             }
         }
-    }
+    }    
 
-    private void playerTurn(Player player) {
+    private boolean playerTurn(Player player) {
         if (player.isDown()) {
             System.out.println("You are down and need to make death saving throws");
             player.makeDeathSavingThrow();
-            return;
+            return true;  // Continue combat if player needs death saving throws
         }
+
+        if (!player.isAlive()) {
+            gameState.playerDead();
+        }
+    
         List<Adversary> adversaries = new ArrayList<>();
         for (Person combatant : combatants) {
             if (combatant instanceof Adversary) {
                 adversaries.add((Adversary) combatant);
             }
         }
-
+    
         System.out.println("Your turn! Choose an action:");
         System.out.println("1. Attack");
         System.out.println("2. Use Item");
         System.out.println("3. Cast Spell");
-        System.out.println("4. Run");
+        System.out.println("4. Flee");
     
         int choice = gameState.getGameEngine().getPlayerInputAsInt(); // Assume this handles user input
     
@@ -107,9 +121,14 @@ public class Combat {
             case 1 -> attack(player);
             case 2 -> useItem(player);
             case 3 -> castSpell(player);
-            case 4 -> attemptToRun(player, adversaries);
+            case 4 -> {
+                if (attemptToflee(player, adversaries)) {
+                    return false;  // If fleeing is successful, return false to end combat
+                }
+            }
             default -> System.out.println("Invalid choice, turn skipped!");
         }
+        return true;  // Continue combat if no flee attempt or flee failed
     }
 
     private void attack(Player player) {
@@ -128,7 +147,7 @@ public class Combat {
             // Roll for damage
             int damage = player.rollWeaponDamage();
             target.takeDamage(damage);
-            System.out.println("You hit " + target.getName() + " for " + damage + " damage!");
+            System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName() + " has " + target.getHealth() + " health left");
         } else {
             System.out.println("Your attack misses!");
         }
@@ -207,7 +226,7 @@ public class Combat {
         selectedSpell.cast(player, target);
     }
 
-    private boolean attemptToRun(Player player, List<Adversary> adversaries) {
+    private boolean attemptToflee(Player player, List<Adversary> adversaries) {
         int dex = (int) Math.floor(player.getDexterity());
     
         // Calculate a DC (Difficulty Class) for the escape attempt
@@ -222,7 +241,7 @@ public class Combat {
     
         if (total >= escapeDC) {
             System.out.println("You successfully escaped combat!");
-            return true; // Escape succeeds
+            return true;
         } else {
             System.out.println("You failed to escape combat!");
             return false; // Escape fails
@@ -273,7 +292,7 @@ public class Combat {
 
     private Person getLowestHealthPlayerOrParty() {
         PartyMember lowestPartyMember = combatants.stream()
-            .filter(c -> c instanceof PartyMember && ((NPC) c).isAlive())
+            .filter(c -> c instanceof PartyMember && ((NPC) c).isAlive() && c.getHealth() >= 0)
             .map(c -> (PartyMember) c)
             .min(Comparator.comparingDouble(NPC::getHealth))
             .orElse(null);
@@ -303,23 +322,28 @@ public class Combat {
                     damage = (int) Math.floor(adversaryAttacker.getDamage());
                     partyMemberTarget.takeDamage(damage);
                 }
-                System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage!");
-                if (!npcTarget.isAlive()) {
+                System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage! " + target.getName() + " has " + target.getHealth() + " health left");
+                if (!npcTarget.isAlive() && target instanceof Adversary) {
                     System.out.println(target.getName() + " is defeated!");
                 }
             } else {
-                System.out.println(attacker.getName() + " misses!");
+                System.out.println(attacker.getName() + " misses " + target.getName());
             }
         }
     }
 
     private void attackPlayer(Adversary attacker, Player player) {
+        if (player.isDown()) {
+            System.out.println(attacker.getName() + "cannot currently attack you, as you are down and making death saving throws");
+            return;
+        }
         int attackRoll = (int) Math.floor(gameState.rollD20() + attacker.getStrength());
         
         if (attackRoll >= player.getAc()) {
             // Roll for damage
             int damage = (int) Math.floor(attacker.getDamage());
             player.takeDamage(damage);
+            System.out.println(attacker.getName() + " hits you for " + damage + " damage. You have " + player.getHealth() + " health left");
         } else {
             System.out.println(attacker.getName() + " attacks you, but misses");
         }
@@ -334,10 +358,6 @@ public class Combat {
         for (Person c : combatants) {
             if (c instanceof Player) {
                 if (((Player) c).isAlive()) {
-                    return false;
-                }
-            } else if (c instanceof PartyMember) {
-                if (((PartyMember) c).isAlive()) {
                     return false;
                 }
             }

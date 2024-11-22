@@ -1,8 +1,9 @@
 Phase 6: Working demo - keep adding individual game elements in a "test data" format
 GAME STATE MODIFICATIONS
-    make sure that the newly created adversary is removed from the room if you fight a neutral
-    make sure that adversaries will not attack people if their health is < 0
-    test all other combat functions and update this line when complete
+    neutral needs all stats, so does adversary
+    make adversary inventory drop to floor at adversary location (update remove dead adversary method and the other instance where map.entry appears)
+    reset gilear health and etc back to normal
+    edit the combat manual to hit the "not combat focused" thing a little less hard
     add an economy manual
     reassess shrewdness in friend and neutral.  maybe do away with it
     ask chat to organize all my files (method calls and such, the ordering of methods)
