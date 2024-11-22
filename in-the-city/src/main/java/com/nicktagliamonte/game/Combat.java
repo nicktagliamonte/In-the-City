@@ -9,7 +9,6 @@ import java.util.Map;
 import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.NPC;
-import com.nicktagliamonte.characters.Neutral;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.characters.Player;
