@@ -1,92 +1,99 @@
-Phase 6: Working demo - keep adding individual game elements in a "test data" format
-GAME STATE MODIFICATIONS
-    neutral needs all stats, so does adversary
-    make adversary inventory drop to floor at adversary location (update remove dead adversary method and the other instance where map.entry appears)
-    reset gilear health and etc back to normal
-    edit the combat manual to hit the "not combat focused" thing a little less hard
-    add an economy manual
-    reassess shrewdness in friend and neutral.  maybe do away with it
-    ask chat to organize all my files (method calls and such, the ordering of methods)
-    how does the technologist learn new spells?
-    put a hint in the (room? game state? player inventory?)
-        make sure the hint is useable.  regeneration is the next step
-        hint command needs to be updated, as does player.java useHint
-    put timed events in the game    
-        start with hint regeneration
-        how about health regeneration as well
-            party member health also needs to regen
-        have some kind of clock tick that calls to random events periodically
-            or have those events result from player movement.  decide here
-                can technically change it later
-            if the random events are timed, make sure that you pause that counter in a menu state
-        go over all todos to make sure you hit all timed events
-            traps will need to be basically fully redone here
-    add status effects
-        this is a natural follow up to having health regen -- some status effects will cause health drain
-        having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status"
-    put a morality field in the player object
-        this really doesn't have to do anything yet and is as easy to update as health
-            (when i'm typing this, i haven't begun thinking about coding combat.  maybe health was a nightmare to update, who knows)
-    put a safe zone in the game (room 1)
-        make the random events that are combat based not occur in the safe room
-        make the safe room have an inventory
-            make trapped items appear in that inventory
-            figure out how to access it
-        build out the feature to locate the safe zone
-            this one is a job and a half
-            could i just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])
-    put an economic zone in the game (at this stage, probably make attic safe and room 1 economic)
-        make the random events that are combat based not occur in the economic zone
-        make random barter events 
-            have them only occur in the economic zone (yes, really.  when you're setting up the metalwoods, 
-                                                        is some guy gonna try to sell you a fish while you're fighting the fomorian?)
+### Phase 6: Working Demo  
+Keep adding individual game elements in a "test data" format.  
 
-MISC UPDATES   
-    trim the name entered by the user to be all lowercase but first letter upper case
-    there should be a way to see remaining carry weight
-    There is a deathsaving throw mechanic for the Friend class but not for you the player   
-        add it
-    update the inventory function
-        rather than listing a million fuel cells if you hold a million fuel cells, format as
-            fuel cell   50
-            otherItem   1
-            etc  
-        also make sure it shows the inventory for the whole party
-    Do i want a theivery mechanic?
-        probably for the negotiator, since simplifying the barter system completely nerfed them
-    put a quest in the (room? game? npc friend?)
-        decide what quests do to gamestate
-            probably it will have to change the region (major quests at least) once complete
-        decide whether quests come from java or json
-            the json idea might be stupid
-        at this point, implement leveling for party members and npc's
-    player leveling mechanics
-        pay attention to the fact that both max and remaining carry weight will need to increase
-        pay attention to the fact that party members should also level up here
-        pay attention to the fact that this should come from exp -- that will make side quests worthwhile without fully breaking the game
-        you can have exp from (fights, stealth acheivements, bartering acheivements) be static per region and scale with the leveling equation
-    add an "introduction" screen
-        this will be called from a method in game engine (which when i get to persistance, can be put in an if/else depending on what is passed into main)
-        just introduce the game before proceeding
-    reassess demo at this time  
-        in the planning stage, currently seems like this is a full demo
-        check ALL todo comments in every file
-    (assuming that the demo is in fact done) host the demo
-        find out what changes need to be made to host the demo online
-            possibly just host the demo game online, and make the one with levels and save states run local.  that way you can have persistence without a backend
-            if that isn't reasonable, update readme to provide detailed description of running the game
-        tell friends to test it
+- **GAME STATE MODIFICATIONS**  
+  - Neutral needs all stats, so does adversary (see `PartyMember.java`).
+  - Player deathsaves need to be reworked so that they aren't all made in a single turn: on player turn in combat `if (isDown())` inform the player and have them manually select the option to roll.  
+    - Remove the sleep function currently in `Player.java` and possibly rework the `makeDeathSavingThrow()` method to return an int (current deathsave score) and only make a single throw.  Then just call that method from `Combat` and perform the check there.
+  - Make adversary inventory drop to floor at adversary location (update remove dead adversary method and the other instance where `map.entry` appears in `Combat.java`).  
+  - Reset Gilear health and etc. back to normal (currently elevated to test death saving throw functionality).  
+  - Edit the combat manual to hit the "not combat-focused" thing a little less hard.  
+  - Add an economy manual.  
+  - Reassess shrewdness in friend and neutral. Maybe do away with it.  
+  - Ask chat to organize all my files (method calls and such, the ordering of methods).  
+  - How does the technologist learn new spells?  
+  - Put a hint in the (room? game state? player inventory?).  
+    - Make sure the hint is usable. Regeneration is the next step.  
+    - Hint command needs to be updated, as does `player.java` `useHint`.  
+  - Put timed events in the game.  
+    - Start with hint regeneration.  
+    - How about health regeneration as well?  
+      - Party member health also needs to regen.  
+    - Have some kind of clock tick that calls to random events periodically.  
+      - Or have those events result from player movement. Decide here.  
+        - Can technically change it later.  
+      - If the random events are timed, make sure that you pause that counter in a menu state.  
+    - Go over all todos to make sure you hit all timed events.  
+      - Traps will need to be basically fully redone here.  
+  - Add status effects.  
+    - This is a natural follow-up to having health regen -- some status effects will cause health drain.  
+    - Having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status."  
+  - Put a morality field in the player object.  
+    - This really doesn't have to do anything yet and is as easy to update as health.  
+      - (When I'm typing this, I haven't begun thinking about coding combat. Maybe health was a nightmare to update, who knows.)  
+  - Put a safe zone in the game (room 1).  
+    - Make the random events that are combat-based not occur in the safe room.  
+    - Make the safe room have an inventory.  
+      - Make trapped items appear in that inventory.  
+      - Figure out how to access it.  
+    - Build out the feature to locate the safe zone.  
+      - This one is a job and a half.  
+      - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
+  - Put an economic zone in the game (at this stage, probably make attic safe and room 1 economic).  
+    - Make the random events that are combat-based not occur in the economic zone.  
+    - Make random barter events.  
+      - Have them only occur in the economic zone.  
+        - (Yes, really. When you're setting up the Metalwoods, is some guy gonna try to sell you a fish while you're fighting the fomorian?)  
 
-NEXT PHASES
-Phase 7: codebase creation
-    create files for all items
-        if the deserializer gives you issues, put json methods in the switch statements rather then before it (see characterdeserializer)
-    and all spells
-    and all npc's
-    and everything and anything else
-        pay close attention to the conveyance.  it'll be basically an npc i guess.  it will have an inventory with functionally no weight limit
+- **MISC UPDATES**  
+  - Trim the name entered by the user to be all lowercase but first letter upper case.
+  - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
+  - There should be a way to see remaining carry weight.  
+  - Update the inventory function.  
+    - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
+      ```
+      fuel cell   50  
+      otherItem   1  
+      etc  
+      ```  
+    - Also, make sure it shows the inventory for the whole party.  
+  - Do I want a thievery mechanic?  
+    - Probably for the negotiator, since simplifying the barter system completely nerfed them.  
+  - Put a quest in the (room? game? NPC friend?).  
+    - Decide what quests do to `gamestate`.  
+      - Probably it will have to change the region (major quests at least) once complete.  
+    - Decide whether quests come from Java or JSON.  
+      - The JSON idea might be stupid.  
+    - At this point, implement leveling for party members and NPCs.  
+  - **Player Leveling Mechanics**  
+    - Pay attention to the fact that both max and remaining carry weight will need to increase.  
+    - Pay attention to the fact that party members should also level up here.  
+    - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
+      - You can have EXP from (fights, stealth achievements, bartering achievements) be static per region and scale with the leveling equation.  
+  - Add an "introduction" screen.  
+    - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
+    - Just introduce the game before proceeding.  
+  - Reassess demo at this time.  
+    - In the planning stage, currently seems like this is a full demo.  
+    - Check **ALL** TODO comments in every file.  
+  - (Assuming that the demo is in fact done) host the demo.  
+    - Find out what changes need to be made to host the demo online.  
+      - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
+      - If that isn't reasonable, update the README to provide a detailed description of running the game.  
+    - Tell friends to test it.  
 
-Phase 8: persistance
-    Create methods for saving and loading game states to test persistence.
+### NEXT PHASES  
 
-Phase 9: the actual game itself -- start coding the levels one-by-one, modularly add them to the game
+- **Phase 7: Codebase Creation**  
+  - Create files for all items.  
+    - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
+  - And all spells.  
+  - And all NPCs.  
+  - And everything and anything else.  
+    - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit.  
+
+- **Phase 8: Persistence**  
+  - Create methods for saving and loading game states to test persistence.  
+
+- **Phase 9: The Actual Game Itself**  
+  - Start coding the levels one-by-one, modularly add them to the game.  
