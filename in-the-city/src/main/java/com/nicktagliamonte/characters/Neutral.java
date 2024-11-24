@@ -5,40 +5,23 @@ import java.util.List;
 import com.nicktagliamonte.items.Item;
 
 public class Neutral extends NPC{
-    private double shrewdness;
     private List<String> questDialogue;
     private boolean canGiveQuest;
     private double damage;
     private double moralityFlag;
-    private double ac;
 
-    public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth,
-                  double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest,
-                  double damage, double moralityFlag, double ac) {
-        super(name, health, inventory, description, maxHealth, hints);
-        this.shrewdness = shrewdness;
+    public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth, List<String> hints, 
+                  List<String> questDialogue, boolean canGiveQuest, double damage, double moralityFlag, double ac, double str, double dex, double con, 
+                  double intelligence, double wis, double charisma) {
+        super(name, health, inventory, description, maxHealth, hints, str, dex, con, intelligence, wis, charisma, ac);
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
         this.damage = damage;
         this.moralityFlag = moralityFlag;
-        this.ac = ac;
     }
 
     public Adversary actAsAdversary() {
         return new Adversary(this);
-    }
-
-    public double getAc() {
-        return ac;
-    }
-
-    //TODO: since this is a neutral, update bartering AND SPEECH such that a sufficiently low player morality will cause this class to act as adversary
-    public String initiateBarter(int playerCharisma) {
-        return checkBarterSuccess(playerCharisma) ? "You have a deal." : "I just can't go that low, sorry.";
-    }
-
-    private boolean checkBarterSuccess(int playerCharisma) {
-        return playerCharisma > this.shrewdness * Math.random();
     }
 
     public void giveQuest() {

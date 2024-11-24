@@ -3,3 +3,5 @@ a walkthrough
 a counter that tracks percent complete based on current gamestate
 something to slow down text input, sometimes displaying letter by letter like things are being typed
 equipable items for party members
+AoE spells
+healing spells

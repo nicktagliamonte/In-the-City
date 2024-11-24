@@ -74,7 +74,7 @@ public class Manual {
         System.out.println("");
         System.out.println("Attacking will roll to hit the adversary with the lowest health and then roll for damage.");
         System.out.println("Damage depends on your stats as well as any weapon you are wielding.");
-        System.out.println("This game is NOT forgiving to players who choose not to wield a weapon.");
+        System.out.println("This game is not forgiving to players who choose not to wield a weapon.");
         System.out.println("");
         System.out.println("Using an item will bring up your inventory. If you have no items, this is a wasted turn.");
         System.out.println("If you do have items, you can use one to benefit your health or other stats.");
@@ -82,11 +82,11 @@ public class Manual {
         System.out.println("Selecting a spell will bring up a list of your spells. If you have no spells, this is a wasted turn.");
         System.out.println("All spells in this game are meant to deal damage.");
         System.out.println("Selecting a spell will use it to attack the adversary with the lowest health, just like a weapon attack.");
-        System.out.println("There are no AoE spells in this game, as the focus is NOT on combat.");
+        System.out.println("There are no AoE or healing spells in this game (yet)");
         System.out.println("");
         System.out.println("Selecting 'Run' will attempt to flee from the enemy. Success is based on a dice roll, weighted by a comparison of your stats and the adversary's.");
         System.out.println("");
-        System.out.println("As this is NOT a combat-focused game, it is currently not possible to equip party members with armor or weapons.");
+        System.out.println("It is currently not possible to equip party members with armor or weapons.");
         System.out.println("Their AC (Armor Class) will scale appropriately with level, but that is the extent of their defensive abilities.");
         System.out.println("");
         System.out.println("If you or a party member's health drops below 0, you must make death saving throws.");
@@ -111,6 +111,63 @@ public class Manual {
     }    
 
     public void enconomyManual() {
-        System.out.println("todo");
+        System.out.println("┌──────────┐");
+System.out.println("│ ECONOMY  │");
+System.out.println("└──────────┘");
+System.out.println();
+System.out.println("In this game, there is no fiat currency. Instead, all transactions are based");
+System.out.println("on bartering. Every item in the game has an inherent value, which is used to");
+System.out.println("determine trade fairness.");
+System.out.println();
+System.out.println("To buy something, you must trade items of equal or greater value.");
+System.out.println("Be strategic, as overpaying can leave you at a disadvantage!");
+System.out.println();
+
+System.out.println("┌───────────┐");
+System.out.println("│ BARTERING │");
+System.out.println("└───────────┘");
+System.out.println();
+System.out.println("1. To enter a trade, initiate a conversation with a merchant or");
+System.out.println("   a friendly NPC, then select the 'Barter' option.");
+System.out.println();
+System.out.println("2. The NPC will show you their inventory along with the value of");
+System.out.println("   each item they hold.");
+System.out.println();
+System.out.println("3. You can offer items from your inventory to trade. The total");
+System.out.println("   value of the items you offer will create a 'Purchase Power'.");
+System.out.println();
+System.out.println("4. You can purchase anything from the NPC with a value less than");
+System.out.println("   or equal to your Purchase Power. If you overpay, remember to");
+System.out.println("   take back any leftover value you can as 'change'!");
+System.out.println();
+System.out.println("Example:");
+System.out.println("   You want an item worth 10.");
+System.out.println("   You offer 3 items worth 4 each (total value = 12).");
+System.out.println("   You overpay by 2! The extra item is lost to the vendor,");
+System.out.println("   as you don't have the purcase power to get it back.");
+System.out.println();
+System.out.println("Example 2:");
+System.out.println("   You want an item worth 8.");
+System.out.println("   You offer 3 items worth 4 each (total value = 12).");
+System.out.println("   You overpay by 4, which is your remaining purchase power.");
+System.out.println("  'Purchase' your item back from the vendor so you don't lose it!");
+System.out.println();
+
+System.out.println("┌──────────────────┐");
+System.out.println("│ NEGOTIATOR BONUS │");
+System.out.println("└──────────────────┘");
+System.out.println();
+System.out.println("If you or a member of your party belongs to the 'Negotiator' class:");
+System.out.println("   - You receive a flat 10% discount on all items.");
+System.out.println("   - Discounts are rounded down to the nearest whole number.");
+System.out.println("   - Items with a discounted value less than 1 will have their");
+System.out.println("     price set to 1.");
+System.out.println();
+System.out.println("Example:");
+System.out.println("   An item worth 15 gets a 10% discount.");
+System.out.println("   Discounted value: 15 - (15 * 0.10) = 13.5 -> rounds down to 13.");
+System.out.println();
+System.out.println("Barter smartly and use your Negotiator skills to maximize your resources!");
+
     }
 }

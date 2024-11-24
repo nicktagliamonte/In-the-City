@@ -17,10 +17,12 @@ import com.nicktagliamonte.items.Item;
 public class Combat {
     public List<Person> combatants = new ArrayList<>();
     public GameState gameState;
+    public String location;
 
-    public Combat(List<Person> combatants, GameState gameState) {
+    public Combat(List<Person> combatants, GameState gameState, String location) {
         this.combatants = combatants;
         this.gameState = gameState;
+        this.location = location;
         combatLoop(combatants);
     }
 
@@ -42,7 +44,7 @@ public class Combat {
                 } else {
                     NPC npcCombatant = (NPC) combatant;
                     if (npcCombatant.isDead()) {
-                        combatantIterator.remove(); // Safely remove the NPC using the iterator
+                        combatantIterator.remove();
                         
                         Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
@@ -56,7 +58,7 @@ public class Combat {
                         gameState.getCurrentRoom().setPeopleInRoom(people);
                         if (npcCombatant instanceof PartyMember) {
                             System.out.println("A member of your party, " + npcCombatant.getName() + ", has fully died. They cannot be revived or re-encountered.\n" +
-                                    "If you continue from this point, they will be gone from the game forever.\n" +
+                                    "If you continue from this point, they will be gone from this world forever.\n" +
                                     "It may be worth considering reloading your last save and taking a different approach to this battle, or avoiding it altogether.");
                         }
                         continue;
@@ -94,7 +96,7 @@ public class Combat {
         if (player.isDown()) {
             System.out.println("You are down and need to make death saving throws");
             player.makeDeathSavingThrow();
-            return true;  // Continue combat if player needs death saving throws
+            return true;
         }
 
         if (!player.isAlive()) {
@@ -333,7 +335,7 @@ public class Combat {
 
     private void attackPlayer(Adversary attacker, Player player) {
         if (player.isDown()) {
-            System.out.println(attacker.getName() + "cannot currently attack you, as you are down and making death saving throws");
+            System.out.println(attacker.getName() + " cannot currently attack you, as you are down and making death saving throws");
             return;
         }
         int attackRoll = (int) Math.floor(gameState.rollD20() + attacker.getStrength());
@@ -373,6 +375,10 @@ public class Combat {
                 while (iterator.hasNext()) {
                     Map.Entry<String, NPC> entry = iterator.next();
                     if (entry.getValue().getName().equals(person.getName())) {
+                        List<Item> inventory = entry.getValue().getInventory();
+                        for (Item item : inventory) {
+                            gameState.getCurrentRoom().addItemToRoom(location, item);
+                        }
                         iterator.remove();
                     }
                 }

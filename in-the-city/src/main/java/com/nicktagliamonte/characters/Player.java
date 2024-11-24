@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.items.Armor;
@@ -292,22 +293,27 @@ public class Player extends Person {
     }
 
     public void makeDeathSavingThrow() {
-        int randomInt = (int) (Math.random() * 19);
-        if (randomInt < 10) {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Press enter to make a death saving throw.  11 or higher is a success, 10 or lower is a failure.");
+        scanner.nextLine();
+
+        int randomInt = (int) (Math.random() * 20) + 1;
+
+        System.out.println("You rolled a " + randomInt + ".");
+
+        if (randomInt <= 10) {
             deathSavingThrows -= 1;
-            System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+            System.out.println("Failure! You are at " + deathSavingThrows + " on your death saving throws.");
         } else {
             deathSavingThrows += 1;
-            System.out.println("You are at " + deathSavingThrows + " on your death saving throws.");
+            System.out.println("Success! You are at " + deathSavingThrows + " on your death saving throws.");
         }
+
         if (deathSavingThrows == 3) {
             super.setHealth(0);
-            System.out.println("You are stabalized at 0 health.");
+            System.out.println("You are stabilized at 0 health.");
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
             System.out.println("You are fully dead.");

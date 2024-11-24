@@ -665,20 +665,24 @@ public class GameState {
     public void enterCombat(Person character) {
         List<Person> combatants = new ArrayList<>();
         combatants.add(player); // Add player
-        if (character instanceof Neutral) {
-            Neutral neutralToFight = (Neutral) character;
-            Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
+        String location = "";
+
+        Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
             Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, NPC> entry = iterator.next();
-                if (entry.getValue().getName().equals(neutralToFight.getName())) {
-                    String location = entry.getKey();
-                    iterator.remove();
-                    people.put(location, neutralToFight.actAsAdversary());
-                    combatants.add(neutralToFight.actAsAdversary());
+                if (entry.getValue().getName().equals(character.getName())) {
+                    location = entry.getKey();
                     break;
                 }
             }
+
+        if (character instanceof Neutral) {
+            Neutral neutralToFight = (Neutral) character;
+            people.put(location, neutralToFight.actAsAdversary());
+            combatants.add(neutralToFight.actAsAdversary());
+        } else if (character instanceof Adversary) {
+            combatants.add(character);
         }
     
         // Add party members if any
@@ -702,7 +706,7 @@ public class GameState {
         combatants.sort((c1, c2) -> Integer.compare(c2.getInitiative(), c1.getInitiative()));
         
         @SuppressWarnings("unused")
-        Combat combat = new Combat(combatants, this);
+        Combat combat = new Combat(combatants, this, location);
         if (!player.isAlive()) {
             playerDead();
         }

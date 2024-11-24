@@ -6,20 +6,18 @@ import com.nicktagliamonte.items.Item;
 
 public class Adversary extends NPC{
     private double damage;
-    private double ac;  //for future me: yes, adversary gets its own special ac field
 
-    public Adversary(String name, double health, List<Item> inventory, String description, 
-                     double maxHealth, double damage, double ac) {
+    public Adversary(String name, double health, List<Item> inventory, String description, double maxHealth, double damage, double ac, double str, double dex, 
+                     double con, double intelligence, double wis, double charisma) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, inventory, description, maxHealth, null);
+        super(name, health, inventory, description, maxHealth, null, str, dex, con, intelligence, wis, charisma, ac);
         this.damage = damage;
-        this.ac = ac;   //KEEP THIS HERE! if you stumbled across it.  if you're intentionally looking for this to modify it, go ahead
     }
 
     public Adversary(Neutral neutral) {
-        super(neutral.getName(), neutral.getHealth(), neutral.getInventory(), neutral.getDescription(), neutral.getHealth(), null);
+        super(neutral.getName(), neutral.getHealth(), neutral.getInventory(), neutral.getDescription(), neutral.getHealth(), null, neutral.getStrength(),
+        neutral.getDexterity(), neutral.getConstitution(), neutral.getIntelligence(), neutral.getWisdom(), neutral.getCharisma(), neutral.getAc());
         this.damage = neutral.getDamage();
-        this.ac = neutral.getAc();
     }
 
     public double getDamage() {
@@ -28,14 +26,6 @@ public class Adversary extends NPC{
 
     public void setDamage(double damage) {
         this.damage = damage;
-    }
-
-    public void setAc(double ac) {
-        this.ac = ac;
-    }
-
-    public double getAc() {
-        return ac;
     }
 
     public void takeDamage(double amount) {

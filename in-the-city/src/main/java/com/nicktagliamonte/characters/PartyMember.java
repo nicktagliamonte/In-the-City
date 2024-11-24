@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.nicktagliamonte.items.Item;
 
-//on creation of the combat system, the question "do i make party members have equipable items" came up
+//TODO: on creation of the combat system, the question "do i make party members have equipable items" came up
 //I decided against it -- this is not a combat based game, and that would require the person playing to put far too much effort into equipping for combat.
-//probably it would be better to have it but that's also so so so much code to write. so this character has flat damage and i'll need to 
+//probably it would be better to have it but that's also so so so much code to write. so this character has flat damage and i'll need to think about this later
 public class PartyMember extends NPC{
     private CharacterClass characterClass;
     private double maxCarryWeight;

@@ -5,24 +5,14 @@ import java.util.List;
 import com.nicktagliamonte.items.Item;
 
 public class Friend extends NPC {
-    private double shrewdness;
     private List<String> questDialogue;
     private boolean canGiveQuest;
 
     public Friend(String name, double health, List<Item> inventory, String description, double maxHealth,
-                  double shrewdness, List<String> hints, List<String> questDialogue, boolean canGiveQuest) {
+                  List<String> hints, List<String> questDialogue, boolean canGiveQuest) {
         super(name, health, inventory, description, maxHealth, hints);
-        this.shrewdness = shrewdness;
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
-    }
-
-    public String initiateBarter(int playerCharisma) {
-        return checkBarterSuccess(playerCharisma) ? "You have a deal." : "I just can't go that low, sorry.";
-    }
-
-    private boolean checkBarterSuccess(int playerCharisma) {
-        return playerCharisma > this.shrewdness * Math.random();
     }
 
     public void giveQuest() {
