@@ -2,7 +2,6 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS** 
-  - adversarys need a way to attack you
   - get rid of hints, every mention of them  
   - Put timed events in the game.   
     - health regeneration

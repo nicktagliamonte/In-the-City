@@ -28,7 +28,6 @@ the conveyance itself
 3. Gameplay Elements
     Conversation Options: purely narrated.  region specific dialogue at time of code
     Bartering Options: benebolent will offer a good trade, neutral will offer a neutral trade, adversarial may offer a primary negotiator a neutral trade
-    Hints Provided: "Wish I could help", "I wouldn't know about that", "Ask someone else"
     Combat Stats: 1d2 -> 1d10 (region to region increase)
 4. Behavior and AI
     Movement/Behavior: wholly random encounter based
@@ -68,7 +67,6 @@ the conveyance itself
     Background: Little is known about the true origins of the Acolytes. They appear to have emerged after the world began to collapse, creating an eerie subculture of zealots who worship unknown forces. Some believe they were once scholars or priests, while others suspect they are former survivors who fell to madness. Whatever their origin, their devotion has become an inescapable driving force, and they roam the wastelands spreading fear and death.
 3. Gameplay Elements
 Conversation Options: "The stars are aligned." / "The end is nigh, you cannot escape." / "Do you question the unseen?"
-Hints Provided: Occasionally mutters cryptic warnings like, “The path you walk will lead you to ruin,” or “The void is already watching.”
 Combat Stats:
     Cobbs Creek: 1d6 damage (basic strikes or magic-based attacks).
     art museum: 1d8 damage (ranged attacks, magic-enhanced strikes).
@@ -122,7 +120,6 @@ Background: The Shopkeeper likely found their calling as a merchant after the fa
 3. Gameplay Elements
 Conversation Options: “What can I get for you today?” / “Got some good stuff here, take a look.” / “Looking for something specific?”
 Bartering Options: The Shopkeeper offers basic supplies such as food, water, tools, bandages, and low-level equipment. Higher-tier shops in later regions might offer more advanced resources, like magical components, weapons, or rare items.
-Hints Provided: “You might want to restock on supplies before heading into the Metalwoods; dangerous out there.”
 Combat Stats: None. They are non-combatants.
 
 4. Behavior and AI
@@ -147,7 +144,6 @@ Background: The Medic was likely once a trained healthcare professional, now ser
 3. Gameplay Elements
 Conversation Options: “You look like you could use a patch-up.” / “Got some first aid supplies here.” / “It’s always good to have someone on your side.”
 Bartering Options: Sells medical supplies, including healing potions, bandages, antidotes, and health boosters. Some Medics may also offer healing services, restoring a portion of health for a fee.
-Hints Provided: “Watch out for poison in the Metalwoods—got some antivenom if you need it.”
 Combat Stats: None. They are non-combatants.
 
 4. Behavior and AI
@@ -171,7 +167,6 @@ Background: Once an engineer or mechanic before the world’s collapse, this cha
 3. Gameplay Elements
 Conversation Options: “I can fix that for you, just need the right parts.” / “Need help with anything mechanical?”
 Bartering Options: Trades in mechanical parts, tools, and equipment upgrades. Can also repair broken or damaged weapons, armor, or devices. Higher-level engineers may offer advanced upgrades to items.
-Hints Provided: “That old engine’s going to need a lot of work if you’re going to make it run.”
 Combat Stats: None. They are non-combatants.
 
 4. Behavior and AI
@@ -196,7 +191,6 @@ Background: The Drifter is someone who has seen the world and its tragedies, and
 3. Gameplay Elements
 Conversation Options: “Seen a lot in my travels, but never this place.” / “I can tell you some tales if you’ve got the time.” (they'll discuss specific items if pressed)
 Bartering Options: none, they just talk
-Hints Provided: generic banter, region specific
 =================================================================================================================================================================================================================================================================================================================================
 
  /$$$$$$$                      /$$                               /$$        /$$$$$$                                          /$$          
@@ -305,9 +299,6 @@ Dialogue Options:
 “You are not meant to wander those halls. Turn back.”
 “Some doors should never be opened. Some memories should remain buried.”
 “There is more to this place than you know. And more that you cannot understand.”
-Hints/Warnings:
-"The darkness here is old, older than the children who once sat at these desks."
-"This place has no mercy for the curious... or the foolish."
 Personality:
 
 Cold, Detached: Skogsrå is not a figure of warmth. She is stern and unsettling, offering no comfort, only the chilling sense that there are things better left undiscovered.
@@ -519,14 +510,13 @@ Background: Known as a guardian of lost secrets and technological wonders, Yua i
 Interactions:
 
 Telepathic Speech
-Hints and Quips: Offers indirect advice
 Ally Abilities: uses “Mirage Blink” to evade or create decoys, can teleport the team
 Combat Stats: High dexterity and intelligence; abilities include evasion, magical foxfire attacks, and limited healing through ethereal charms.
 4. Behavior and AI
 Movement/Behavior: Yua prowls gracefully, staying just out of reach until needed. She’s quick to dart into unseen corners, occasionally appearing atop crumbling structures as a watchful presence.
 Reactions to Player Choices: Will remain loyal to thoughtful and observant players but may withdraw (though not turn hostile) if recklessness becomes a pattern.
 =================================================================================================================================================================================================================================================================================================================================
-Asterius - The Minotaur (edge of the world)
+Asterius - The Minotaur (edge of the world) TODO: replace
 Basic Information
 
 Name: Asterius
@@ -541,7 +531,6 @@ Gameplay Elements
 
 Interactions:
 Minimal Interactivity: The player cannot engage Asterius in combat, nor can they initiate a conversation with him. He exists as a silent presence, observing the player without intervening. His role is to add depth to the atmosphere of the edge of the world, a symbol of the ancient world lost to time.
-Hints Provided: None. Asterius does not offer guidance, nor does he interact with the player in a meaningful way. He is a passive element of the environment, serving to underscore the desolation and mystery of the cliffs.
 Behavior and AI
 
 Movement/Behavior: Asterius moves slowly through the region, particularly near the edges of the cliffs or among the ruins of the old estates. He appears to be wandering aimlessly, with no clear destination. His path is erratic, as though he is lost in his own thoughts or memories, though he never ventures into the more dangerous or inaccessible areas of the cliffs.
@@ -852,7 +841,6 @@ Interactions:
 Nora’s Task: She requires the player to locate an old, sentimental object (e.g., a silver locket) that belonged to someone important. Once presented with this, she hands over an item needed for the next exchange.
 Pearl’s Task: Pearl, with her quick, darting movements, insists the player trade something rare or cleverly hidden—something that involves solving a riddle or finding a hidden compartment within the ruins.
 Joyce’s Task: Holds the final, critical item the player needs but will only part with it once she sees the item obtained from Pearl. Her skittish nature means she may hesitate before finally handing it over, muttering nervously.
-Hints Provided: Each character gives subtle hints in their speech, often through cryptic or poetic statements.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
 Name: Nico
@@ -873,7 +861,6 @@ convinced that the chaos around him was the natural consequence of overlooked pa
 Interactions:
 
 Conversation Options: Nico speaks with an authoritative air, expecting players to keep up with his logic. He dismisses questions he deems trivial and shows irritation at interruptions or deviations from the topic at hand.
-Hints Provided: "If you cannot see the symmetry in their movement, you’re as blind as the rest. Observe or fail."
 Quests/Tasks Given: Main Quest – The Forgotten Refuge. Nico is honestly just bothered by the noise they make.  aware of his faults but unwilling to do much about them, he'll say that he hopes the adventurers destroy them for the sake of his peace and quiet.  He advises tear gas, an item not found in the game.
 4. Behavior and AI
 Movement/Behavior: Nico stays entrenched in his hut, surrounded by scribbled notes and mechanical contraptions. He paces occasionally, muttering under his breath while adjusting the strings on an old, self-made abacus or sketching cryptic symbols onto yellowed maps.
@@ -899,7 +886,6 @@ Background: Rusty is a homunculus—an artificial life form—created long ago f
 Interactions:
 
 Conversation Options: "Rusty lost heart. I need heart to work. You help find?" "My heart gone. Who took heart? Where is it?"
-Hints Provided: "The big warehouse. I go there. Maybe heart there. I need heart back."
 Quests/Tasks Given: "Homunculus’s Heart" – Rusty needs help finding his magical core, which has been taken from him. The player must search the warehouses and docks to retrieve it.
 4. Behavior and AI
 Movement/Behavior: Rusty moves mechanically, with a stiff, rigid gait. He remains in one location unless prompted to follow or approach specific objects or areas, usually tied to his obsession with finding his core. He does not explore beyond familiar boundaries and will often stand near the docks or warehouses where he believes his core was taken.

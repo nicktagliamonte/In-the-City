@@ -188,12 +188,6 @@ public class Player extends Person {
         System.out.println("working");
     }
 
-    public void useHint() {
-        //TODO: gonna need to add a field and a setter for hints
-        //in this method, there will be a check on the hints available 
-        //then display hint and alter the counter
-    }
-
     public Item getItemFromInventory(String itemName) {
         List<Item> inventory = super.getInventory();
         if (inventory == null) {

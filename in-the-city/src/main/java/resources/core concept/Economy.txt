@@ -52,4 +52,4 @@ economic system
     * item combinations
         * players can suggest bartering items in combination to get higher tier resources
     * high value bartering
-        * high value npcs only accept ancient relics in exchange for unique items, hints, or rare/story progressing supplies
+        * high value npcs only accept ancient relics in exchange for unique items, or rare/story progressing supplies

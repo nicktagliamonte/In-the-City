@@ -6,7 +6,6 @@ import com.nicktagliamonte.items.Item;
 
 public class NPC extends Person {
     private String description;
-    private List<String> hints;
     private double maxHealth;
     private int deathSavingThrows;
     private double strength;
@@ -17,7 +16,7 @@ public class NPC extends Person {
     private double charisma;
     private double ac;
 
-    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,  List<String> hints, 
+    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,
                 double strength, double dexterity, double constitution, double intelligence, double wisdom, double charisma, double ac) {
         super(name, maxHealth, inventory);
         this.description = description;
@@ -33,12 +32,11 @@ public class NPC extends Person {
 
     }
 
-    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,  List<String> hints) {
+    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth) {
         super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
-        this.hints = hints;
     }
 
     public String getDescription() {
@@ -156,14 +154,6 @@ public class NPC extends Person {
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
             System.out.println(super.getName() + " is fully dead.");
-        }
-    }
-
-    public String getHint() {
-        if (hints.isEmpty()) {
-            return (this.getName() + " has no hints to offer.");
-        } else {
-            return hints.get((int) (Math.random() * hints.size()));
         }
     }
 

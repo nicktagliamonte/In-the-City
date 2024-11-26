@@ -6,9 +6,6 @@
 		* decisions and connections made with npc's in game will be relevant to the ending
 		* probably something that seems like a necessary part of the game will actually be bad and wrong
 			* see a dark room's "huts and a village is actually slavery and gives you a slightly worse ending" schtick
-	* hints
-		* should there be a "hint" command that brings out some vague-ish tip? maybe
-		* earn hints, these are also a resource
 * characters
 	* main
 		* unnamed

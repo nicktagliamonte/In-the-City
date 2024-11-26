@@ -23,9 +23,6 @@
                 },
                 "description": "a friendly face",
                 "maxHealth": 50.0,
-                "hints": [
-                    "looks like hints are working!"
-                ],
                 "questDialogue": [
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
                 ],
@@ -84,9 +81,6 @@
                 },
                 "description": "a face",
                 "maxHealth": 5.0,
-                "hints": [
-                    "I wouldn't go over there."
-                ],
                 "questDialogue": [
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
                 ],
@@ -121,7 +115,6 @@
                     }
                 },
                 "description": "idk what this even does yet",
-                "hints": [],
                 "damage": 5,
                 "characterClass": "technologist"
             }

@@ -440,29 +440,7 @@ public enum GameCommand {
             }
             System.out.println("I don't recognize that name");
         }
-    },
-    HINT {
-        //TODO: make sure this method reduces the players hints, and or checks on how many are remaining.  
-        @Override
-        public void execute(String[] args, GameState gameState) {
-            if (args.length == 0) {
-                System.out.println("Specify who to get a hint from");
-                return;
-            }
-
-            Collection<NPC> characters = gameState.getCurrentRoom().getPeopleInRoom().values();
-            String chosenCharacter = args[0];
-
-            for (NPC character : characters) {
-                if (character.getName().equalsIgnoreCase(chosenCharacter)) {
-                    System.out.println(character.getHint());
-                    return;
-                    //TODO: replace the above with something like gameState.enterDialogue(character);
-                }
-            }
-            System.out.println("I don't recognize that name.  use LOOK to get a list of NPCs in the current room by name");
-        }
-    },    
+    },   
     QUIT {
         @Override
         public void execute(String[] args, GameState gameState) {

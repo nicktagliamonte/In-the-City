@@ -10,12 +10,12 @@ public class Adversary extends NPC{
     public Adversary(String name, double health, List<Item> inventory, String description, double maxHealth, double damage, double ac, double str, double dex, 
                      double con, double intelligence, double wis, double charisma) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, inventory, description, maxHealth, null, str, dex, con, intelligence, wis, charisma, ac);
+        super(name, health, inventory, description, maxHealth, str, dex, con, intelligence, wis, charisma, ac);
         this.damage = damage;
     }
 
     public Adversary(Neutral neutral) {
-        super(neutral.getName(), neutral.getHealth(), neutral.getInventory(), neutral.getDescription(), neutral.getHealth(), null, neutral.getStrength(),
+        super(neutral.getName(), neutral.getHealth(), neutral.getInventory(), neutral.getDescription(), neutral.getHealth(), neutral.getStrength(),
         neutral.getDexterity(), neutral.getConstitution(), neutral.getIntelligence(), neutral.getWisdom(), neutral.getCharisma(), neutral.getAc());
         this.damage = neutral.getDamage();
     }

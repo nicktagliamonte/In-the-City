@@ -45,7 +45,7 @@
         * bard type
         * primary wis, cha
         * resolve conflict
-        * leverage npc for resources or hints
+        * leverage npc for resources
         * persuasion and insight allows access to hidden resources, unique interaction outcomes
         * floor price for negotiations is 5% less than other classes
 * starting stats

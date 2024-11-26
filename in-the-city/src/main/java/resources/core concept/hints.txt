@@ -1,7 +1,0 @@
-The hints are just another resource, but only earned through npc's or quest completion
-at some point, you run out.  
-Hints will be set programmatically based on the current active quest or puzzle
-    5 hints per puzzle, with the final one being juuuuust shy of a full solution (if it's complex enough of a puzzle to subdivide into 5 hints without just saying the answer)
-if there are none, advise the player to leave the area and gather more if they need helpful
-after attempting to use 10 hints when none are available (per region, lets say that counter will reset regionally), display 
-a hint that there are probably full answers available on the games github page

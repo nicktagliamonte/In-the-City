@@ -10,10 +10,10 @@ public class Neutral extends NPC{
     private double damage;
     private double moralityFlag;
 
-    public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth, List<String> hints, 
+    public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth,
                   List<String> questDialogue, boolean canGiveQuest, double damage, double moralityFlag, double ac, double str, double dex, double con, 
                   double intelligence, double wis, double charisma) {
-        super(name, health, inventory, description, maxHealth, hints, str, dex, con, intelligence, wis, charisma, ac);
+        super(name, health, inventory, description, maxHealth, str, dex, con, intelligence, wis, charisma, ac);
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
         this.damage = damage;

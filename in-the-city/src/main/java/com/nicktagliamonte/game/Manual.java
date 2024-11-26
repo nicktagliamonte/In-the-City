@@ -42,7 +42,6 @@ public class Manual {
         System.out.println("   TALK TO [CHARACTER NAME]: Enters Dialogue with [CHARACTER NAME].");
         System.out.println("   JOIN [CHARACTER NAME]: Adds [CHARACTER NAME] to the party, if there is not currently a party member of the same class as [CHARACTER NAME].\n\tThis can only be undone if [CHARACTER NAME] dies.");
         System.out.println("   FIGHT [CHARACTER NAME]: Enters Combat with [CHARACTER NAME].");
-        System.out.println("   HINT [CHARACTER NAME]: Gets a hint from [CHARACTER NAME], if they have one to offer and you have one to receive.");
         System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and the chance of unwanted interactions.");
         System.out.println("========================================");
     }

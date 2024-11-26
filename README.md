@@ -11,15 +11,10 @@ Some character names are pulled from things I was watching at the time I made th
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- **GAME STATE MODIFICATIONS**  
-  - Organize all my files (method calls and such, the ordering of methods).  
+- **GAME STATE MODIFICATIONS**   
   - How does the technologist learn new spells?  
-  - Put a hint in the (room? game state? player inventory?).  
-    - Make sure the hint is usable. Regeneration is the next step.  
-    - Hint command needs to be updated, as does `player.java` `useHint`.  
-  - Put timed events in the game.  
-    - Start with hint regeneration.  
-    - How about health regeneration as well?  
+  - Put timed events in the game.   
+    - How about health regeneration  
       - Party member health also needs to regen.  
     - Have some kind of clock tick that calls to random events periodically.  
       - Or have those events result from player movement. Decide here.  
