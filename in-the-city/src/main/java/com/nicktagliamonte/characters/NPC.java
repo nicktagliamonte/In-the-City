@@ -39,6 +39,10 @@ public class NPC extends Person {
         this.deathSavingThrows = 0;
     }
 
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
     public String getDescription() {
         return description;
     }

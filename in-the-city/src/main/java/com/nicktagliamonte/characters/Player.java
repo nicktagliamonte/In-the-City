@@ -313,4 +313,14 @@ public class Player extends Person {
             System.out.println("You are fully dead.");
         }
     }
+
+    public boolean inHunger() {
+        //TODO: when status effects are added, logic will go here
+        return false;
+    }
+
+    public boolean inFear() {
+        //TODO: when status effects are added, logic will go here
+        return false;
+    }
 }

@@ -1,15 +1,7 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- **GAME STATE MODIFICATIONS** 
-  - get rid of hints, every mention of them  
-  - Put timed events in the game.   
-    - health regeneration
-      - Party member health also needs to regen.  
-    - Have some kind of clock tick that calls to random events periodically.  
-      - Or have those events result from player movement. Decide here.  
-        - Can technically change it later.  
-      - If the random events are timed, make sure that you pause that counter in a menu state.  
+- **GAME STATE MODIFICATIONS**  
     - Go over all todos to make sure you hit all timed events.  
       - Traps will need to be basically fully redone here.  
   - Add status effects.  
@@ -18,7 +10,7 @@ Keep adding individual game elements in a "test data" format.
   - Put a morality field in the player object.  
     - This really doesn't have to do anything yet and is as easy to update as health.  
   - Put a safe zone in the game (room 1).  
-    - Make the random events that are combat-based not occur in the safe room.  
+    - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
     - Make the safe room have an inventory.  
       - Make trapped items appear in that inventory.  
       - Figure out how to access it.  
@@ -27,8 +19,7 @@ Keep adding individual game elements in a "test data" format.
       - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
   - Put an economic zone in the game (at this stage, probably make attic safe and room 1 economic).  
     - Make the random events that are combat-based not occur in the economic zone.  
-    - Make random barter events.  
-      - Have them only occur in the economic zone.  
+      - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  
         - (Yes, really. When you're setting up the Metalwoods, is some guy gonna try to sell you a fish while you're fighting the fomorian?)  
 
 - **MISC UPDATES**  

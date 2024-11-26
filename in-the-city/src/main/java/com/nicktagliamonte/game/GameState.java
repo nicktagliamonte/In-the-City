@@ -37,10 +37,11 @@ public class GameState {
     private String peopleFilePath;
     private String dialogueFilePath;
     private boolean fromSaveFile;
+    private GameTimer gameTimer;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
-            String peopleFilePath, String dialogueFilePath) {
+            String peopleFilePath, String dialogueFilePath, GameTimer gameTimer) {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
         initializePlayer();
@@ -52,6 +53,9 @@ public class GameState {
         this.peopleFilePath = peopleFilePath;
         this.dialogueFilePath = dialogueFilePath;
         fromSaveFile = false; // TODO: handle this when i'm doing persistence
+        this.gameTimer = gameTimer;
+        this.gameTimer.setGameState(this);
+        this.gameTimer.setRandomEventManager(new RandomEventManager(this));
     }
 
     public void initializePlayer() {
