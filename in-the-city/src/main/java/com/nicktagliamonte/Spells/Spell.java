@@ -3,6 +3,7 @@ package com.nicktagliamonte.Spells;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Player;
 
+// Spells are learned the same way weapons are gained: purchase, acheivement, or discovery
 public abstract class Spell {
     private String name;
     private String description;

@@ -28,13 +28,13 @@ public class Combat {
 
     private void combatLoop(List<Person> combatants) {
         boolean combatActive = true;
-        
+
         while (combatActive) {
             Iterator<Person> combatantIterator = combatants.iterator(); // Use iterator
             while (combatantIterator.hasNext()) {
                 Person combatant = combatantIterator.next();
-                
-                //this only needs 2 because it's a player vs everyone else check
+
+                // this only needs 2 because it's a player vs everyone else check
                 if (combatant instanceof Player) {
                     Player player = (Player) combatant;
                     if (player.getHealth() <= -(player.getMaxHealth())) {
@@ -45,7 +45,7 @@ public class Combat {
                     NPC npcCombatant = (NPC) combatant;
                     if (npcCombatant.isDead()) {
                         combatantIterator.remove();
-                        
+
                         Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
                         while (iterator.hasNext()) {
@@ -57,18 +57,20 @@ public class Combat {
                         }
                         gameState.getCurrentRoom().setPeopleInRoom(people);
                         if (npcCombatant instanceof PartyMember) {
-                            System.out.println("A member of your party, " + npcCombatant.getName() + ", has fully died. They cannot be revived or re-encountered.\n" +
+                            System.out.println("A member of your party, " + npcCombatant.getName()
+                                    + ", has fully died. They cannot be revived or re-encountered.\n" +
                                     "If you continue from this point, they will be gone from this world forever.\n" +
                                     "It may be worth considering reloading your last save and taking a different approach to this battle, or avoiding it altogether.");
                         }
                         continue;
                     }
                 }
-                
-                //this DOES need the 3, because player/partymember/adversary turns are all handled differently
+
+                // this DOES need the 3, because player/partymember/adversary turns are all
+                // handled differently
                 if (combatant instanceof Player) {
                     if (!playerTurn((Player) combatant)) {
-                        combatActive = false;  // If the player flees, stop the combat loop
+                        combatActive = false; // If the player flees, stop the combat loop
                         break;
                     }
                 } else if (combatant instanceof PartyMember) {
@@ -76,7 +78,7 @@ public class Combat {
                 } else if (combatant instanceof Adversary) {
                     adversaryTurn((Adversary) combatant);
                 }
-        
+
                 // Check for victory/defeat
                 if (checkVictory(combatants)) {
                     System.out.println("You win!");
@@ -90,7 +92,7 @@ public class Combat {
                 }
             }
         }
-    }    
+    }
 
     private boolean playerTurn(Player player) {
         if (player.isDown()) {
@@ -102,34 +104,34 @@ public class Combat {
         if (!player.isAlive()) {
             gameState.playerDead();
         }
-    
+
         List<Adversary> adversaries = new ArrayList<>();
         for (Person combatant : combatants) {
             if (combatant instanceof Adversary) {
                 adversaries.add((Adversary) combatant);
             }
         }
-    
+
         System.out.println("Your turn! Choose an action:");
         System.out.println("1. Attack");
         System.out.println("2. Use Item");
         System.out.println("3. Cast Spell");
         System.out.println("4. Flee");
-    
+
         int choice = gameState.getGameEngine().getPlayerInputAsInt(); // Assume this handles user input
-    
+
         switch (choice) {
             case 1 -> attack(player);
             case 2 -> useItem(player);
             case 3 -> castSpell(player);
             case 4 -> {
                 if (attemptToflee(player, adversaries)) {
-                    return false;  // If fleeing is successful, return false to end combat
+                    return false; // If fleeing is successful, return false to end combat
                 }
             }
             default -> System.out.println("Invalid choice, turn skipped!");
         }
-        return true;  // Continue combat if no flee attempt or flee failed
+        return true; // Continue combat if no flee attempt or flee failed
     }
 
     private void attack(Player player) {
@@ -139,16 +141,17 @@ public class Combat {
             System.out.println("No valid target to attack!");
             return;
         }
-    
+
         // Roll to hit
         int attackRoll = gameState.rollD20() + player.getAttackModifier();
         System.out.println("You roll to hit: " + attackRoll + " (vs AC " + target.getAc() + ")");
-    
+
         if (attackRoll >= target.getAc()) {
             // Roll for damage
             int damage = player.rollWeaponDamage();
             target.takeDamage(damage);
-            System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName() + " has " + target.getHealth() + " health left");
+            System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName()
+                    + " has " + target.getHealth() + " health left");
         } else {
             System.out.println("Your attack misses!");
         }
@@ -156,34 +159,35 @@ public class Combat {
 
     private Adversary getLowestHealthAdversary() {
         return combatants.stream()
-            .filter(c -> c instanceof Adversary && ((NPC) c).isAlive())
-            .map(c -> (Adversary) c)
-            .min(Comparator.comparingDouble(NPC::getHealth))
-            .orElse(null);
+                .filter(c -> c instanceof Adversary && ((NPC) c).isAlive())
+                .map(c -> (Adversary) c)
+                .min(Comparator.comparingDouble(NPC::getHealth))
+                .orElse(null);
     }
 
     public void useItem(Player player) {
         List<Item> inventory = player.getInventory();
-    
+
         if (inventory.isEmpty()) {
             System.out.println("Your inventory is empty! Turn wasted.");
             return;
         }
-    
+
         System.out.println("Choose an item to use (0 to cancel):");
         for (int i = 0; i < inventory.size(); i++) {
             System.out.println((i + 1) + ". " + inventory.get(i).getName() + " - " + inventory.get(i).getDescription());
         }
-    
+
         int choice = gameState.getGameEngine().getPlayerInputAsInt();
         if (choice == 0) {
             System.out.println("You chose not to use any item.");
             return;
         }
-    
+
         Item selectedItem = inventory.get(choice - 1);
         System.out.println("You used: " + selectedItem.getName());
-        selectedItem.use();     //this should work based on runtime polymorphism (the use method from the item subclass will be called)
+        selectedItem.use(); // this should work based on runtime polymorphism (the use method from the item
+                            // subclass will be called)
         if (selectedItem.getIsConsumable()) {
             inventory.remove(selectedItem);
         }
@@ -229,17 +233,17 @@ public class Combat {
 
     private boolean attemptToflee(Player player, List<Adversary> adversaries) {
         int dex = (int) Math.floor(player.getDexterity());
-    
+
         // Calculate a DC (Difficulty Class) for the escape attempt
         int escapeDC = calculateEscapeDC(adversaries);
-    
+
         // Roll a d20 and add the player's relevant attribute modifier
         int roll = gameState.rollD20();
         int total = roll + getModifier(dex);
-    
+
         System.out.println("You rolled: " + roll + " + Dexterity Modifier (" + getModifier(dex) + ") = " + total);
         System.out.println("Escape DC: " + escapeDC);
-    
+
         if (total >= escapeDC) {
             System.out.println("You successfully escaped combat!");
             return true;
@@ -253,18 +257,18 @@ public class Combat {
         if (adversaries.isEmpty()) {
             return 0; // Default DC if no adversaries
         }
-    
-        return adversaries.stream()
-            .map(a -> (Adversary) a)
-            .mapToInt(adversary -> {
-                int dexterityMod = getModifier((int) Math.floor(adversary.getDexterity()));
-                int strengthMod = getModifier((int) Math.floor(adversary.getStrength()));
-                int healthFactor = (int) (adversary.getHealth() / 10.0);
 
-                return 10 + dexterityMod + strengthMod + healthFactor;
-            })
-            .max()
-            .orElse(0);
+        return adversaries.stream()
+                .map(a -> (Adversary) a)
+                .mapToInt(adversary -> {
+                    int dexterityMod = getModifier((int) Math.floor(adversary.getDexterity()));
+                    int strengthMod = getModifier((int) Math.floor(adversary.getStrength()));
+                    int healthFactor = (int) (adversary.getHealth() / 10.0);
+
+                    return 10 + dexterityMod + strengthMod + healthFactor;
+                })
+                .max()
+                .orElse(0);
     }
 
     private int getModifier(int attribute) {
@@ -293,16 +297,17 @@ public class Combat {
 
     private Person getLowestHealthPlayerOrParty() {
         PartyMember lowestPartyMember = combatants.stream()
-            .filter(c -> c instanceof PartyMember && ((NPC) c).isAlive() && c.getHealth() >= 0)
-            .map(c -> (PartyMember) c)
-            .min(Comparator.comparingDouble(NPC::getHealth))
-            .orElse(null);
+                .filter(c -> c instanceof PartyMember && ((NPC) c).isAlive() && c.getHealth() >= 0)
+                .map(c -> (PartyMember) c)
+                .min(Comparator.comparingDouble(NPC::getHealth))
+                .orElse(null);
         if (lowestPartyMember == null) {
             return gameState.getPlayer();
         } else {
-            return (lowestPartyMember.getHealth() < gameState.getPlayer().getHealth()) ? lowestPartyMember : gameState.getPlayer();
+            return (lowestPartyMember.getHealth() < gameState.getPlayer().getHealth()) ? lowestPartyMember
+                    : gameState.getPlayer();
         }
-    }    
+    }
 
     private void attack(NPC attacker, Person target) {
         if (target instanceof Player) {
@@ -323,7 +328,8 @@ public class Combat {
                     damage = (int) Math.floor(adversaryAttacker.getDamage());
                     partyMemberTarget.takeDamage(damage);
                 }
-                System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage! " + target.getName() + " has " + target.getHealth() + " health left");
+                System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage! "
+                        + target.getName() + " has " + target.getHealth() + " health left");
                 if (!npcTarget.isAlive() && target instanceof Adversary) {
                     System.out.println(target.getName() + " is defeated!");
                 }
@@ -335,26 +341,28 @@ public class Combat {
 
     private void attackPlayer(Adversary attacker, Player player) {
         if (player.isDown()) {
-            System.out.println(attacker.getName() + " cannot currently attack you, as you are down and making death saving throws");
+            System.out.println(attacker.getName()
+                    + " cannot currently attack you, as you are down and making death saving throws");
             return;
         }
         int attackRoll = (int) Math.floor(gameState.rollD20() + attacker.getStrength());
-        
+
         if (attackRoll >= player.getAc()) {
             // Roll for damage
             int damage = (int) Math.floor(attacker.getDamage());
             player.takeDamage(damage);
-            System.out.println(attacker.getName() + " hits you for " + damage + " damage. You have " + player.getHealth() + " health left");
+            System.out.println(attacker.getName() + " hits you for " + damage + " damage. You have "
+                    + player.getHealth() + " health left");
         } else {
             System.out.println(attacker.getName() + " attacks you, but misses");
         }
     }
-    
+
     private boolean checkVictory(List<Person> combatants) {
         return combatants.stream()
-            .noneMatch(c -> c instanceof Adversary && ((NPC) c).isAlive());
+                .noneMatch(c -> c instanceof Adversary && ((NPC) c).isAlive());
     }
-    
+
     private boolean checkDefeat(List<Person> combatants) {
         for (Person c : combatants) {
             if (c instanceof Player) {
@@ -364,12 +372,12 @@ public class Combat {
             }
         }
         return true;
-    }      
+    }
 
     private void removeDeadCombatants() {
         Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
-        
+
         for (Person person : combatants) {
             if (person instanceof Adversary) {
                 while (iterator.hasNext()) {
@@ -386,5 +394,5 @@ public class Combat {
         }
 
         gameState.getCurrentRoom().setPeopleInRoom(people);
-    }    
+    }
 }

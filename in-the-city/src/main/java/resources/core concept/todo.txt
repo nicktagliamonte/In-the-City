@@ -1,15 +1,11 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- **GAME STATE MODIFICATIONS**  
-  - Ask chat to organize all my files (method calls and such, the ordering of methods).  
-  - How does the technologist learn new spells?  
-  - Put a hint in the (room? game state? player inventory?).  
-    - Make sure the hint is usable. Regeneration is the next step.  
-    - Hint command needs to be updated, as does `player.java` `useHint`.  
-  - Put timed events in the game.  
-    - Start with hint regeneration.  
-    - How about health regeneration as well?  
+- **GAME STATE MODIFICATIONS** 
+  - adversarys need a way to attack you
+  - get rid of hints, every mention of them  
+  - Put timed events in the game.   
+    - health regeneration
       - Party member health also needs to regen.  
     - Have some kind of clock tick that calls to random events periodically.  
       - Or have those events result from player movement. Decide here.  
@@ -22,7 +18,6 @@ Keep adding individual game elements in a "test data" format.
     - Having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status."  
   - Put a morality field in the player object.  
     - This really doesn't have to do anything yet and is as easy to update as health.  
-      - (When I'm typing this, I haven't begun thinking about coding combat. Maybe health was a nightmare to update, who knows.)  
   - Put a safe zone in the game (room 1).  
     - Make the random events that are combat-based not occur in the safe room.  
     - Make the safe room have an inventory.  

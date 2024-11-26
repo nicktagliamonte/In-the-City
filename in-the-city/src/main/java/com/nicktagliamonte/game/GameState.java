@@ -39,7 +39,8 @@ public class GameState {
     private boolean fromSaveFile;
 
     // Constructor
-    public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
+    public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
+            String peopleFilePath, String dialogueFilePath) {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
         initializePlayer();
@@ -50,7 +51,7 @@ public class GameState {
         this.itemsFilePath = itemsFilePath;
         this.peopleFilePath = peopleFilePath;
         this.dialogueFilePath = dialogueFilePath;
-        fromSaveFile = false; //TODO: handle this when i'm doing persistence
+        fromSaveFile = false; // TODO: handle this when i'm doing persistence
     }
 
     public void initializePlayer() {
@@ -64,12 +65,13 @@ public class GameState {
             String classInput = scanner.nextLine();
             characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
-        
+
         this.player = new Player(name.trim(), characterClass);
         gameEngine.player = this.player;
     }
 
-    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
+    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath,
+            String peopleFilePath, String dialogueFilePath) {
         Gson gson = new Gson();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
@@ -91,24 +93,26 @@ public class GameState {
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.registerTypeAdapter(Adjacency.class, new AdjacencyDeserializer());
             Gson gson = gsonBuilder.create();
-    
-            // Define the type for the adjacencies map (a map of room names to a list of adjacencies)
-            Type adjacencyMapType = new TypeToken<Map<String, List<Adjacency>>>() {}.getType();
-            
+
+            // Define the type for the adjacencies map (a map of room names to a list of
+            // adjacencies)
+            Type adjacencyMapType = new TypeToken<Map<String, List<Adjacency>>>() {
+            }.getType();
+
             // Parse the file and deserialize into the map of adjacencies
             JsonObject jsonObject = gson.fromJson(adjacenciesReader, JsonObject.class);
             JsonObject adjacencies = jsonObject.getAsJsonObject("adjacencies");
             Map<String, List<Adjacency>> tempAdjacencyMap = gson.fromJson(adjacencies, adjacencyMapType);
-    
+
             Map<String, Room> roomNameToRoomMap = new HashMap<>();
             for (Room room : currentRegion.getRooms()) {
                 roomNameToRoomMap.put(room.getName(), room);
             }
-    
+
             for (Map.Entry<String, List<Adjacency>> entry : tempAdjacencyMap.entrySet()) {
                 String roomName = entry.getKey();
                 List<Adjacency> adjacencyList = entry.getValue();
-    
+
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);
                 if (currentRoom != null) {
@@ -127,12 +131,12 @@ public class GameState {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
 
     private void loaditemsInRoom(String itemsFilePath) {
         Gson gson = new GsonBuilder()
-            .registerTypeAdapter(Item.class, new ItemDeserializer())
-            .create();
+                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .create();
 
         try (FileReader itemsReader = new FileReader(itemsFilePath)) {
             // Parse the JSON structure for rooms and their coordinates with item details
@@ -176,7 +180,7 @@ public class GameState {
 
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);
-                
+
                 if (currentRoom != null) {
                     currentRoom.setItemsInRoom(itemsInRoom); // Set items for this room
                 }
@@ -195,9 +199,9 @@ public class GameState {
 
     private void loadPeopleInRoom(String peopleFilePath) {
         Gson gson = new GsonBuilder()
-            .registerTypeAdapter(Item.class, new ItemDeserializer())
-            .registerTypeAdapter(NPC.class, new CharacterDeserializer())
-            .create();
+                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .registerTypeAdapter(NPC.class, new CharacterDeserializer())
+                .create();
 
         try (FileReader peopleReader = new FileReader(peopleFilePath)) {
             JsonObject jsonObject = gson.fromJson(peopleReader, JsonObject.class);
@@ -232,7 +236,7 @@ public class GameState {
                 Map<String, NPC> peopleInRoom = roomEntry.getValue();
 
                 Room currentRoom = roomNameToRoomMap.get(roomName);
-                
+
                 if (currentRoom != null) {
                     currentRoom.setPeopleInRoom(peopleInRoom);
                 }
@@ -268,20 +272,23 @@ public class GameState {
         return currentRegionDialogue;
     }
 
-    //specifically used for initializing the starting room
-        //TODO: when i'm loading save games, i'll probably need to find a way to make it so that the last room which contained the player doesn't conflict with this
+    // specifically used for initializing the starting room
+    // TODO: when i'm loading save games, i'll probably need to find a way to make
+    // it so that the last room which contained the player doesn't conflict with
+    // this
     private void initializeCurrentRoom() {
         for (Room room : currentRegion.getRooms()) {
             if (room.hasPlayer()) {
                 currentRoom = room;
-                currentRoom.updateMapEntry('Y', 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                currentRoom.updateMapEntry('Y',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
             }
         }
     }
 
-    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, String newPeopleFilePath, String newDialogueFilePath) {
+    public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
+            String newPeopleFilePath, String newDialogueFilePath) {
         loadRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
     }
 
@@ -301,11 +308,12 @@ public class GameState {
         try {
             Direction direction = Direction.valueOf(directionInput.toUpperCase());
             Room newRoom = currentRoom.movePlayer(direction.toString(), distance);
-    
+
             if (newRoom != null && newRoom != currentRoom) {
                 // Transition to the new room and update the current location
                 currentRoom = newRoom;
-                System.out.println("You move " + directionInput.trim() + " " + distance + " steps. You have entered " + newRoom.getName());
+                System.out.println("You move " + directionInput.trim() + " " + distance + " steps. You have entered "
+                        + newRoom.getName());
                 setCurrentRoom(newRoom);
                 gameEngine.checkForRandomEvent();
                 return null;
@@ -315,26 +323,29 @@ public class GameState {
                 String[] posArray = position.replace("(", "").replace(")", "").split(", ");
                 int posX = Integer.parseInt(posArray[0]);
                 int posY = Integer.parseInt(posArray[1]);
-    
+
                 // Check if the player is on an edge and there's an adjacency there
                 for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
                     if (adjacency.getCoordinates().equals("(" + posX + "," + posY + ")")) {
                         // Inform the player about the adjacency and the option to move past it
                         if (adjacency.getType().equals("stairs")) {
                             if (adjacency.getIsStairsUp()) {
-                                return "You stand at a " + adjacency.getDescription() + ". Use ASCEND to take the stairs up.";
+                                return "You stand at a " + adjacency.getDescription()
+                                        + ". Use ASCEND to take the stairs up.";
                             } else {
-                                return "You stand at a " + adjacency.getDescription() + ". Use DESCEND to take the stairs down.";
-                            }                            
+                                return "You stand at a " + adjacency.getDescription()
+                                        + ". Use DESCEND to take the stairs down.";
+                            }
                         } else {
-                            return "You stand at a " + adjacency.getDescription() + ". You can move past the edge to enter " + adjacency.getAdjoiningRoomName();
-                        }                        
+                            return "You stand at a " + adjacency.getDescription()
+                                    + ". You can move past the edge to enter " + adjacency.getAdjoiningRoomName();
+                        }
                     }
                 }
-                currentRoom.updateMapEntry('Y', 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                currentRoom.updateMapEntry('Y',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
-    
+
                 return "You move " + directionInput + " " + distance + " steps. You are at " + position;
             } else {
                 return "You cannot move further " + directionInput + ". You are at " + currentRoom.getPlayerPosition();
@@ -343,9 +354,8 @@ public class GameState {
             return "Invalid direction. Valid directions are: NORTH, EAST, SOUTH, WEST, UP, DOWN, LEFT, RIGHT.";
         }
     }
-    
 
-    public String moveToWaypoint(String waypointName) {    
+    public String moveToWaypoint(String waypointName) {
         // Check for the waypoint as an NPC
         for (Map.Entry<String, NPC> entry : currentRoom.getPeopleInRoom().entrySet()) {
             if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
@@ -353,7 +363,7 @@ public class GameState {
                 return moveToAdjacentPosition(targetPosition, "NPC " + waypointName);
             }
         }
-    
+
         // Check for the waypoint as an exit (adjacent room)
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoom().getName().equalsIgnoreCase(waypointName)) {
@@ -362,19 +372,19 @@ public class GameState {
                 int newX = Integer.parseInt(coordinates[0]);
                 int newY = Integer.parseInt(coordinates[1]);
                 currentRoom.setPlayerPosition(newX, newY);
-                currentRoom.updateMapEntry('Y', 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                currentRoom.updateMapEntry('Y',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 if (adj.getType().equals("stairs") && adj.getIsStairsUp()) {
                     return ("You stand at " + adj.getDescription() + ". Use ASCEND to move to " + waypointName);
                 } else if (adj.getType().equals("stairs")) {
                     return ("You stand at " + adj.getDescription() + ". Use DESCEND to move to " + waypointName);
-                }else {
+                } else {
                     return ("You stand at " + adj.getDescription() + ". Use MOVE or ENTER to move to " + waypointName);
-                }                
+                }
             }
         }
-    
+
         // Check for the waypoint as an item
         for (Map.Entry<String, Item> entry : currentRoom.getItemsInRoom().entrySet()) {
             if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
@@ -382,9 +392,10 @@ public class GameState {
                 return moveToAdjacentPosition(targetPosition, "item " + waypointName);
             }
         }
-    
+
         // Waypoint not found
-        return "Waypoint \"" + waypointName + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
+        return "Waypoint \"" + waypointName
+                + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
     }
 
     private Point parsePositionString(String positionString) {
@@ -399,23 +410,23 @@ public class GameState {
         int[][] walkableMask = currentRoom.getMask();
         int targetX = targetPosition.x;
         int targetY = targetPosition.y;
-    
+
         // Check adjacent positions (N, E, S, W)
-        for (int[] delta : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+        for (int[] delta : new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } }) {
             int newX = targetX + delta[0];
             int newY = targetY + delta[1];
             if (isWithinBounds(newX, newY, walkableMask) && walkableMask[newY][newX] == 1) {
                 currentRoom.setPlayerPosition(newX, newY);
-                currentRoom.updateMapEntry('Y', 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
+                currentRoom.updateMapEntry('Y',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 return "You move next to the " + targetDescription + ". You are at (" + newX + ", " + newY + ").";
             }
         }
-    
+
         return "No walkable position found near the " + targetDescription + ".";
     }
-    
+
     private boolean isWithinBounds(int x, int y, int[][] mask) {
         return x >= 0 && x < mask[0].length && y >= 0 && y < mask.length;
     }
@@ -428,29 +439,34 @@ public class GameState {
                 return;
             }
         }
-        System.out.println("no such room was found.  Use LOOK for a list of useable exits, where the connecting room name will be enclosed in quotes.");
+        System.out.println(
+                "no such room was found.  Use LOOK for a list of useable exits, where the connecting room name will be enclosed in quotes.");
     }
 
     public void ascend(String roomName) {
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
-            if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp() && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+            if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp()
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             }
         }
-        System.out.println("Use ASCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
+        System.out.println(
+                "Use ASCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public void descend(String roomName) {
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
-            if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp() && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+            if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp()
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             }
         }
-        System.out.println("Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
+        System.out.println(
+                "Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public List<NPC> getCurrentParty() {
@@ -463,10 +479,11 @@ public class GameState {
             System.out.println("Party is already full. Cannot add more members.");
             return false;
         }
-        
+
         // Check if the class is already represented
         for (NPC member : currentParty) {
-            if (member instanceof PartyMember && ((PartyMember) member).getClassName().equalsIgnoreCase(newMember.getClassName())) {
+            if (member instanceof PartyMember
+                    && ((PartyMember) member).getClassName().equalsIgnoreCase(newMember.getClassName())) {
                 System.out.println("A member with this character class is already in the party.");
                 return false;
             }
@@ -480,8 +497,8 @@ public class GameState {
         currentParty.add(newMember);
         player.setMaxCarryWeight(player.getMaxCarryWeight() + newMember.getMaxCarryWeight());
         player.increaseRemainingCarryWeight(newMember.getMaxCarryWeight());
-        
-        // TODO: Make all movement be done on the PARTY rather than the player itself. 
+
+        // TODO: Make all movement be done on the PARTY rather than the player itself.
 
         System.out.println(newMember.getName() + " has joined the party.");
         return true;
@@ -490,9 +507,9 @@ public class GameState {
     public void setCurrentRoom(Room room) {
         currentRoom = room;
         currentRoom.triggerTransitionEvent();
-        currentRoom.updateMapEntry('Y', 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)), 
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
+        currentRoom.updateMapEntry('Y',
+                Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
     }
 
     public Player getPlayer() {
@@ -530,37 +547,37 @@ public class GameState {
 
     public void enterDialogue(Person character) {
         inDialogue = true;
-    
+
         // Get all dialogues for this character
         Map<String, Dialogue> dialogues = currentRegionDialogue.getDialogue(character.getName());
-    
+
         if (dialogues == null || !dialogues.containsKey("start")) {
             System.out.println(character.getName() + " doesn't want to talk to you.");
             return;
         }
-    
+
         Dialogue currentDialogue = dialogues.get("start");
-    
+
         @SuppressWarnings("resource")
         Scanner dialogueScanner = new Scanner(System.in);
-    
+
         try {
             while (inDialogue) {
                 System.out.println(currentDialogue.getNpcLine());
                 List<DialogueOption> options = currentDialogue.getOptions();
-    
+
                 if (options.isEmpty()) {
                     exitDialogue();
                     break;
                 }
-    
+
                 for (int i = 0; i < options.size(); i++) {
                     System.out.println((i + 1) + ": " + options.get(i).getText());
                 }
-    
+
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
                 DialogueOption selectedOption = options.get(choice);
-    
+
                 if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
                     exitDialogue();
                     break;
@@ -571,9 +588,9 @@ public class GameState {
                     currentDialogue = dialogues.get("start");
                     break;
                 }
-    
+
                 currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
-    
+
                 if (currentDialogue == null) {
                     System.out.println("Dialogue node missing for ID: " + selectedOption.getNextDialogueId());
                     exitDialogue();
@@ -583,7 +600,7 @@ public class GameState {
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
             System.out.println("Invalid choice. Please try again.");
         }
-    }    
+    }
 
     public void exitDialogue() {
         inDialogue = false;
@@ -599,9 +616,9 @@ public class GameState {
                 hasNegotiator = true;
             }
         }
-    
+
         Barter barter = new Barter(player, player.getInventory(), npc.getInventory(), 0.0, hasNegotiator);
-    
+
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         boolean inBarter = true;
@@ -647,7 +664,7 @@ public class GameState {
             }
         }
     }
-    
+
     private List<Item> parseItems(String input, List<Item> inventory) {
         List<Item> items = new ArrayList<>();
         String[] itemNames = input.split(",");
@@ -668,14 +685,14 @@ public class GameState {
         String location = "";
 
         Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
-            Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<String, NPC> entry = iterator.next();
-                if (entry.getValue().getName().equals(character.getName())) {
-                    location = entry.getKey();
-                    break;
-                }
+        Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, NPC> entry = iterator.next();
+            if (entry.getValue().getName().equals(character.getName())) {
+                location = entry.getKey();
+                break;
             }
+        }
 
         if (character instanceof Neutral) {
             Neutral neutralToFight = (Neutral) character;
@@ -684,12 +701,12 @@ public class GameState {
         } else if (character instanceof Adversary) {
             combatants.add(character);
         }
-    
+
         // Add party members if any
         if (!currentParty.isEmpty()) {
             combatants.addAll(currentParty);
         }
-    
+
         // Roll initiative
         for (Person combatant : combatants) {
             int initiative = 0;
@@ -698,29 +715,30 @@ public class GameState {
             } else if (combatant instanceof NPC) {
                 NPC npcCombatant = (NPC) combatant;
                 initiative = rollD20() + (int) npcCombatant.getDexterity();
-            }          
+            }
             combatant.setInitiative(initiative);
         }
-    
+
         // Sort by initiative (highest first)
         combatants.sort((c1, c2) -> Integer.compare(c2.getInitiative(), c1.getInitiative()));
-        
+
         @SuppressWarnings("unused")
         Combat combat = new Combat(combatants, this, location);
         if (!player.isAlive()) {
             playerDead();
         }
     }
-    
+
     public int rollD20() {
         return (int) (Math.random() * 20) + 1;
     }
 
     public void playerDead() {
         if (fromSaveFile) {
-            //TODO: handle this when i handle persistence
+            // TODO: handle this when i handle persistence
         } else {
-            //it's harsh, but reinitialize the gamestate with the data that it had when the game started
+            // it's harsh, but reinitialize the gamestate with the data that it had when the
+            // game started
             loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
             this.currentParty = new ArrayList<>();
         }
