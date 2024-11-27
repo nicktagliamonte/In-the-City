@@ -11,7 +11,7 @@ Currently:
   - Maps  
   - Basic proof-of-concept style crafting with a limited item set  
   - Basic proof-of-concept style save/load (it will launch the system file explorer, but i don't yet have methods to read or write save files)  
-- There is a character who can join the party, and combat works with adverdarial and neutral NPCs.  
+- There is a character who can join the party, and combat works with adversarial and neutral NPCs.  
 - A dialogue system exists with the 'friend' character as proof-of-concept
 - A timing system exists to  
   - Determine status effects (health regen, health drain, fear, hunger)  
@@ -105,6 +105,5 @@ Keep adding individual game elements in a "test data" format.
 
 ## Information:  
 
-If you somehow stumbled onto this page and are interested in someday playing a text-based adventure game set in a far-future Philadelphia that draws primary influence from "A Dark Room," "Unsleeping City," and "Annihilation" and is overall kind of a bummer,  
-**don't read anything in the resources folder** because it contains significant spoilers.  
+If you somehow stumbled onto this page and are interested in someday playing a text-based adventure game set in a far-future Philadelphia that draws primary influence from "A Dark Room," "Unsleeping City," and "Annihilation" and is overall kind of a bummer, **don't read anything in the resources folder** because it contains significant spoilers.  
 I'll make the test game playable and include instructions for that much later.  Current ETA is probably around 12/25/24

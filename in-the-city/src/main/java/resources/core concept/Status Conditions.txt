@@ -1,9 +1,0 @@
-* hunger
-    * lower ability in a fight (to hit, and lowered damage)
-* thirst
-    * slow health drain
-    * lowered perception (distracted by thirst)
-* fear
-    * lowers effectiveness in perception, negotiation, avoidance of certain locations (some locations become unavailable in a fear state)
-* terror
-    * everything from fear but the only non-closed off options for movement are those that take you out of the current situation

@@ -27,9 +27,6 @@ public class Combat {
     }
 
     private void combatLoop(List<Person> combatants) {
-        for (Person person : combatants) {
-            System.out.println(person.getName());
-        }
         boolean combatActive = true;
 
         while (combatActive) {
@@ -147,11 +144,18 @@ public class Combat {
 
         // Roll to hit
         int attackRoll = gameState.rollD20() + player.getAttackModifier();
+        if (player.inHunger()) {
+            attackRoll -= 2;
+        }
         System.out.println("You roll to hit: " + attackRoll + " (vs AC " + target.getAc() + ")");
 
         if (attackRoll >= target.getAc()) {
             // Roll for damage
             int damage = player.rollWeaponDamage();
+            if (player.inHunger()) {
+                //TODO: have it subtract your level, and set it to 1 if it is less than 1
+                damage -= 2;
+            }
             target.takeDamage(damage);
             System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName()
                     + " has " + target.getHealth() + " health left");
@@ -236,6 +240,9 @@ public class Combat {
 
     private boolean attemptToflee(Player player, List<Adversary> adversaries) {
         int dex = (int) Math.floor(player.getDexterity());
+        if (player.inHunger()) {
+            dex -= 1;
+        }
 
         // Calculate a DC (Difficulty Class) for the escape attempt
         int escapeDC = calculateEscapeDC(adversaries);
@@ -349,8 +356,11 @@ public class Combat {
             return;
         }
         int attackRoll = (int) Math.floor(gameState.rollD20() + attacker.getStrength());
-
-        if (attackRoll >= player.getAc()) {
+        double ac = player.getAc();
+        if (player.inHunger()) {
+            ac -= 2;
+        }
+        if (attackRoll >= ac) {
             // Roll for damage
             int damage = (int) Math.floor(attacker.getDamage());
             player.takeDamage(damage);

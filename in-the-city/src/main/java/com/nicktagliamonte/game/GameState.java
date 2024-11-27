@@ -718,6 +718,9 @@ public class GameState {
             int initiative = 0;
             if (combatant instanceof Player) {
                 initiative = rollD20() + (int) player.getDexterity();
+                if (player.inHunger()) {
+                    initiative -= 2;
+                }
             } else if (combatant instanceof NPC) {
                 NPC npcCombatant = (NPC) combatant;
                 initiative = rollD20() + (int) npcCombatant.getDexterity();

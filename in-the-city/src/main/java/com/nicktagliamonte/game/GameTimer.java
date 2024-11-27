@@ -31,9 +31,12 @@ public class GameTimer {
             public void run() {
                 if (!paused) {
                     elapsedTime++;
-                    checkForHunger();
                     if (elapsedTime % 100 == 0) {
-                        regenerateHealth();
+                        if (!gameState.getPlayer().inThirst()) {
+                            regenerateHealth();
+                        } else {
+                            decrementHealth();
+                        }
                     }
                 }
             }
@@ -80,7 +83,7 @@ public class GameTimer {
     private boolean canRegenerateHealth(Object character) {
         if (character instanceof Player) {
             Player p = (Player) character;
-            return !p.inHunger() && !p.inFear() && (p.getHealth() < p.getMaxHealth());
+            return p.inThirst() && (p.getHealth() < p.getMaxHealth());
         } else if (character instanceof PartyMember) {
             PartyMember pm = (PartyMember) character;
             return pm.getHealth() < pm.getMaxHealth();
@@ -88,11 +91,27 @@ public class GameTimer {
         return false;
     }
 
+    public void decrementHealth() {
+        gameState.getPlayer().setHealth(gameState.getPlayer().getHealth() - 1);
+    }
+
     public void checkForEvent() {
         randomEventManager.checkForEvent();
     }
 
     public void checkForHunger() {
-        
+        int time = gameState.getPlayer().timeSinceFood++;
+        if (time == 200) {
+            gameState.getPlayer().setStatus("Hunger");
+            System.out.println("You have entered a hunger state. Combat ability will be impacted until you eat something.");
+        }
+    }
+
+    public void checkForThirst() {
+        int time = gameState.getPlayer().timeSinceWater++;
+        if (time == 100) {
+            gameState.getPlayer().setStatus("Thirst");
+            System.out.println("You have entered a thirst state. You'll experience slow health drain until you drink something, or die.");
+        }
     }
 }

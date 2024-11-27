@@ -14,7 +14,13 @@ public class DamageSpell extends Spell {
 
     @Override
     public void cast(Player caster, Adversary adversary) {
-        adversary.takeDamage(damage);
-        System.out.println(caster.getName() + " casts " + getName() + " and deals " + damage + " damage to " + adversary.getName() + "!");
+        if (caster.inHunger()) {
+            //TODO: on real spells, have this modulate by player level
+            adversary.takeDamage(damage - 2);
+            System.out.println(caster.getName() + " casts " + getName() + " and deals " + (damage - 2) + " damage to " + adversary.getName() + "!");
+        } else {
+            adversary.takeDamage(damage);
+            System.out.println(caster.getName() + " casts " + getName() + " and deals " + damage + " damage to " + adversary.getName() + "!");
+        }
     }
 }

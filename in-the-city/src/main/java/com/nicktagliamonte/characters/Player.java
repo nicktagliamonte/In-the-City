@@ -29,6 +29,8 @@ public class Player extends Person {
     private List<Spell> spellbook;
     private int deathSavingThrows;
     private String status;
+    public int timeSinceFood = 0; //TODO: once there is a food item, have this reset to 0 when food is eaten and remove substring hunger from player status
+    public int timeSinceWater = 0; //TODO: see above, but for water
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -316,19 +318,23 @@ public class Player extends Person {
         }
     }
 
+    public void setStatus(String status) {
+        this.status.concat(status);
+    }
+
     public boolean inHunger() {
-        return status.equalsIgnoreCase("Hunger");
+        return status.contains("Hunger");
     }
 
     public boolean inFear() {
-        return status.equalsIgnoreCase("fear");
+        return status.contains("Fear");
     }
 
     public boolean inThirst() {
-        return status.equalsIgnoreCase("thirst");
+        return status.contains("Thirst");
     }
 
     public boolean inTerror() {
-        return status.equalsIgnoreCase("terror");
+        return status.contains("Terror");
     }
 }

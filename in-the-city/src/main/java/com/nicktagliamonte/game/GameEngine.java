@@ -32,6 +32,8 @@ public class GameEngine {
                 if (timer.getElapsedTime() >= 120) {
                     timer.checkForEvent();
                 }
+                timer.checkForHunger();
+                timer.checkForThirst();
                 System.out.print("Enter command: ");
                 String input = scanner.nextLine().trim();
                 String[] splitInput = input.split(" ", 2);

@@ -7,6 +7,8 @@ import java.util.Map;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.items.Item;
 
+//TODO: for story progression, there should be some kind of access control for certain rooms that equates to being too scared to go in
+
 public class Room {
     private String name;
     private String description;
