@@ -4,7 +4,7 @@ Currently:
 - the game engine works  
   - the main loop works  
   - I can read and initialize a set of rooms for the player to explore from JSON.  
-- There are objects in the room which are interactable  
+- There are objects in the room which are interactable (take/use/drop)  
 - All the command words work  
 - There is a menu with  
   - Manuals  
@@ -14,9 +14,16 @@ Currently:
 - There is a character who can join the party, and combat works with adversarial and neutral NPCs.  
 - A dialogue system exists with the 'friend' character as proof-of-concept
 - A timing system exists to  
-  - Determine status effects (health regen, health drain, fear, hunger)  
+  - Determine status effects (health regen, health drain, hunger)  
   - Provide occasional "flavor text" output to console  
   - Generate random npc encounters (barter or combat interactions)  
+- A status effect system exists  
+  - Currently, hunger and thirst are the only status effects.  
+  - Hunger reduces combat effectiveness, thirst causes slow health drain
+- A player alignment system exists which
+  - Increments alignment slightly in dialogue (being mean lowers the number, etc)
+  - Increments alignment significantly in combat (fighting a bad guy increases the number, fighting a good guy decreases it)
+  - Causes neutral characters to act as adversaries if player alignment is too low (or high) for their liking
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -29,10 +36,6 @@ Some character names or attributes are pulled from things I was watching at the 
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - Add status effects.  
-    - Having just set up some sort of timing system, it makes sense to say "x amount of time without food causes hunger status."  
-  - Put a morality field in the player object.  
-    - Realistically, it will need to do something.  Impact on conversarion, barter, something. otherwise, why have it.
   - Put a safe zone in the game (room 1).  
     - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
     - Make the safe room have an inventory.  

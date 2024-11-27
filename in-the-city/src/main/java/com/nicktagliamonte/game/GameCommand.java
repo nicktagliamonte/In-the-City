@@ -432,6 +432,8 @@ public enum GameCommand {
                         System.out.println(character.getName() + " does not want to fight");
                         return;
                     } else {
+                        double alignmentDelta = (gameState.getPlayer().getAlignment() * (((NPC) character).getAlignmentImpact()));
+                        gameState.getPlayer().adjustAlignment(alignmentDelta);
                         gameState.enterCombat(character);
                         return;
                     }

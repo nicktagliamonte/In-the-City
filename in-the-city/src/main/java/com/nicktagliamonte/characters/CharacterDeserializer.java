@@ -58,9 +58,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double adversaryIntelligence = jsonObject.get("intelligence").getAsDouble();
                 double adversaryWis = jsonObject.get("wis").getAsDouble();
                 double adversaryCharisma = jsonObject.get("charisma").getAsDouble();
+                double adversaryAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();
 
                 return new Adversary(adversaryName, adversaryHealth, adversaryInventory, adversaryDescription, adversaryMaxHealth, adversaryDamage, adversaryAc,
-                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma);
+                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma, adversaryAlignmentImpact);
             case "neutral":
                 String neutralName = jsonObject.get("name").getAsString();
                 double neutralHealth = jsonObject.get("health").getAsDouble();
@@ -83,10 +84,13 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double neutralIntelligence = jsonObject.get("intelligence").getAsDouble();
                 double neutralWis = jsonObject.get("wis").getAsDouble();
                 double neutralCharisma = jsonObject.get("charisma").getAsDouble();
+                //NOTE!!! this is the impact that fighting this character will have on alignment, and calculating alignment delta works by treating this as a percent.
+                //i.e. fighting gilear decreases alignment by 150% of the current value
+                double neutralAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();    
 
                 return new Neutral(neutralName, neutralHealth, neutralInventory, neutralDescription, neutralMaxHealth, 
                                    neutralQuestDialogue, neutralCanGiveQuest, neutralDamage, moralityFlag, neutralAc, neutralStr, neutralDex, neutralCon,
-                                   neutralIntelligence, neutralWis, neutralCharisma);
+                                   neutralIntelligence, neutralWis, neutralCharisma, neutralAlignmentImpact);
             case "partymember":
                 String partyMemberName = jsonObject.get("name").getAsString();
                 JsonObject partyMemberInventoryJson = jsonObject.getAsJsonObject("inventory");

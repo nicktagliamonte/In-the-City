@@ -2,8 +2,6 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - Put a morality field in the player object.  
-    - Realistically, it will need to do something.  Impact on conversarion or barter, plus impact on ending sequence
   - Put a safe zone in the game (room 1).  
     - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
     - Make the safe room have an inventory.  

@@ -511,6 +511,18 @@ public class GameState {
         currentRoom.updateMapEntry('Y',
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
+
+        //update people in new room to act as adversary if player alignment is sufficiently low
+        Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
+        Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, NPC> entry = iterator.next();
+            String currentLocation = entry.getKey();
+            NPC currentPerson = entry.getValue();
+            if (currentPerson instanceof Neutral && ((Neutral) currentPerson).getMoralityFlag() > player.getAlignment()) {
+                people.replace(currentLocation, ((Neutral) currentPerson).actAsAdversary());
+            }
+        }
     }
 
     public Player getPlayer() {
@@ -579,6 +591,9 @@ public class GameState {
 
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
                 DialogueOption selectedOption = options.get(choice);
+
+                double alignmentDelta = (player.getAlignment() * (selectedOption.getImpact() / 100));
+                player.adjustAlignment(alignmentDelta);
 
                 if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
                     exitDialogue();

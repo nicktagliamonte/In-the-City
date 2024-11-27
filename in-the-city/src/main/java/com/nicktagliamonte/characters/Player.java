@@ -31,6 +31,7 @@ public class Player extends Person {
     private String status;
     public int timeSinceFood = 0; //TODO: once there is a food item, have this reset to 0 when food is eaten and remove substring hunger from player status
     public int timeSinceWater = 0; //TODO: see above, but for water
+    private double alignment;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -49,6 +50,7 @@ public class Player extends Person {
         this.spellbook = new ArrayList<>();
         this.deathSavingThrows = 0;
         this.status = " ";
+        this.alignment = 0;
     }
 
     public void addSpell(Spell spell) {
@@ -155,6 +157,30 @@ public class Player extends Person {
 
     public void setCharisma(double charisma) {
         this.charisma = charisma;
+    }
+
+    public double getAlignment() {
+        return alignment;
+    }
+
+    public void adjustAlignment(double delta) {
+        alignment += delta;
+
+        if (alignment > 1.0) {
+            alignment = 1.0;
+        } else if (alignment < -1.0) {
+            alignment = -1.0;
+        }
+    }
+
+    public void setAlignment(double value) {
+        if (value > 1.0) {
+            alignment = 1.0;
+        } else if (value < -1.0) {
+            alignment = -1.0;
+        } else {
+            alignment = value;
+        }
     }
 
     public double getMaxCarryWeight() {

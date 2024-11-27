@@ -15,9 +15,10 @@ public class NPC extends Person {
     private double wisdom;
     private double charisma;
     private double ac;
+    private double alignmentImpact;
 
     public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,
-                double strength, double dexterity, double constitution, double intelligence, double wisdom, double charisma, double ac) {
+                double strength, double dexterity, double constitution, double intelligence, double wisdom, double charisma, double ac, double alignmentImpact) {
         super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
@@ -29,6 +30,7 @@ public class NPC extends Person {
         this.wisdom = wisdom;
         this.charisma = charisma;
         this.ac = ac;
+        this.alignmentImpact = alignmentImpact;
 
     }
 
@@ -37,6 +39,10 @@ public class NPC extends Person {
         this.description = description;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
+    }
+
+    public double getAlignmentImpact() {
+        return alignmentImpact;
     }
 
     public double getMaxHealth() {
@@ -101,6 +107,10 @@ public class NPC extends Person {
 
     public void setAc(double ac) {
         this.ac = ac;
+    }
+
+    public void setAlignmentImpact(double alignmentImpact) {
+        this.alignmentImpact = alignmentImpact;
     }
 
     public boolean isDead() {

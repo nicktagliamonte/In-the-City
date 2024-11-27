@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Friend;
+import com.nicktagliamonte.characters.TestRegionAdversary;
 import com.nicktagliamonte.items.FuelCell;
 import com.nicktagliamonte.items.Item;
 
@@ -52,7 +53,7 @@ public class RandomEventManager {
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
             //i.e. dead zone health 1-10, liacouras health 50-70
             //or whatever numbers make sense at the time
-            Adversary adversary = new Adversary("\"literally any other name\"", 50, null, "a desperate", 50, 1, 1, 1, 1, 1, 1, 1, 1);
+            Adversary adversary = new TestRegionAdversary();
             gameState.enterCombat(adversary);
         }
     }
