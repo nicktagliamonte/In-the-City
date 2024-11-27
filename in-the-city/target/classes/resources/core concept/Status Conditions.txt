@@ -1,15 +1,8 @@
 * hunger
-    * lower move speed
-    * lower ability for stealth
     * lower ability in a fight (to hit, and lowered damage)
 * thirst
-    * diminished stamina
-    * eventually, slow health drain
+    * slow health drain
     * lowered perception (distracted by thirst)
-* exhaustion
-    * penalties to all actions 
-    * amplify fear
-    * reduced recovery
 * fear
     * lowers effectiveness in perception, negotiation, avoidance of certain locations (some locations become unavailable in a fear state)
 * terror

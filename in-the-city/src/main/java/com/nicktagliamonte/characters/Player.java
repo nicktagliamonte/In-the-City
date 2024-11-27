@@ -28,6 +28,7 @@ public class Player extends Person {
     public boolean hasWeapon;
     private List<Spell> spellbook;
     private int deathSavingThrows;
+    private String status;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -45,6 +46,7 @@ public class Player extends Person {
         this.maxHealth = characterClass.getHealth();
         this.spellbook = new ArrayList<>();
         this.deathSavingThrows = 0;
+        this.status = " ";
     }
 
     public void addSpell(Spell spell) {
@@ -315,12 +317,18 @@ public class Player extends Person {
     }
 
     public boolean inHunger() {
-        //TODO: when status effects are added, logic will go here
-        return false;
+        return status.equalsIgnoreCase("Hunger");
     }
 
     public boolean inFear() {
-        //TODO: when status effects are added, logic will go here
-        return false;
+        return status.equalsIgnoreCase("fear");
+    }
+
+    public boolean inThirst() {
+        return status.equalsIgnoreCase("thirst");
+    }
+
+    public boolean inTerror() {
+        return status.equalsIgnoreCase("terror");
     }
 }

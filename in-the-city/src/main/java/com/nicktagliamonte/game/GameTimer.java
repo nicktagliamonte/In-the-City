@@ -31,6 +31,7 @@ public class GameTimer {
             public void run() {
                 if (!paused) {
                     elapsedTime++;
+                    checkForHunger();
                     if (elapsedTime % 100 == 0) {
                         regenerateHealth();
                     }
@@ -89,5 +90,9 @@ public class GameTimer {
 
     public void checkForEvent() {
         randomEventManager.checkForEvent();
+    }
+
+    public void checkForHunger() {
+        
     }
 }

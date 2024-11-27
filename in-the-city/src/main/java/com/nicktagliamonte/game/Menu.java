@@ -293,9 +293,10 @@ public class Menu {
 
     private void quitGame() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        String inputString = " ";
+        while (!inputString.equalsIgnoreCase("n")) {
             System.out.println("Quit the game? (y/n)");
-            String inputString = scanner.nextLine();
+            inputString = scanner.nextLine();
             if (inputString.equalsIgnoreCase("y")) {
                 scanner.close();
                 System.exit(0);

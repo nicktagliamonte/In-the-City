@@ -2,12 +2,10 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - BUG: menu -> quit -> n -> 8 results in the quit game prompt being stuck in a loop
   - Add status effects.  
-    - This is a natural follow-up to having health regen -- some status effects will cause health drain.  
-    - Having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status."  
+    - Having just set up some sort of timing system, it makes sense to say "x amount of time without food causes hunger status."  
   - Put a morality field in the player object.  
-    - This really doesn't have to do anything yet and is as easy to update as health.  
+    - Realistically, it will need to do something.  Impact on conversarion, barter, something. otherwise, why have it.
   - Put a safe zone in the game (room 1).  
     - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
     - Make the safe room have an inventory.  
@@ -25,6 +23,7 @@ Keep adding individual game elements in a "test data" format.
   - Trim the name entered by the user to be all lowercase but first letter upper case.
   - update the manuals to use the nicer formatting for section headers seen in the economy manual
   - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
+    - format output for readability in general.
   - There should be a way to see remaining carry weight.  
   - Update the inventory function.  
     - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
