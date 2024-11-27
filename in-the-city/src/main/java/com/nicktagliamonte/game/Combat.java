@@ -27,6 +27,9 @@ public class Combat {
     }
 
     private void combatLoop(List<Person> combatants) {
+        for (Person person : combatants) {
+            System.out.println(person.getName());
+        }
         boolean combatActive = true;
 
         while (combatActive) {

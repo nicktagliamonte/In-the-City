@@ -2,8 +2,10 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-    - Go over all todos to make sure you hit all timed events.  
-      - Traps will need to be basically fully redone here.  
+  - timed events
+    - Traps will need to be basically fully redone here.  
+    - reset the time to wait to start doing random events back up to something higher, give the person maybe 2 minutes before that shit picks up
+  - BUG: menu -> quit -> n -> 8 results in the quit game prompt being stuck in a loop
   - Add status effects.  
     - This is a natural follow-up to having health regen -- some status effects will cause health drain.  
     - Having just set up some sort of timing system, it makes sense to say "x amount of time or x moves without food causes hunger status."  
@@ -24,6 +26,7 @@ Keep adding individual game elements in a "test data" format.
 
 - **MISC UPDATES**  
   - Trim the name entered by the user to be all lowercase but first letter upper case.
+  - update the manuals to use the nicer formatting for section headers seen in the economy manual
   - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - There should be a way to see remaining carry weight.  
   - Update the inventory function.  
@@ -64,10 +67,12 @@ Keep adding individual game elements in a "test data" format.
 - **Phase 7: Codebase Creation**  
   - Create files for all items.  
     - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
+    - Update item manual
+    - add item creation to the crafting menu (see Menu.java todos)
   - And all spells.  
   - And all NPCs.  
   - And everything and anything else.  
-    - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit.  
+    - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit. 
 
 - **Phase 8: Persistence**  
   - Create methods for saving and loading game states to test persistence.  

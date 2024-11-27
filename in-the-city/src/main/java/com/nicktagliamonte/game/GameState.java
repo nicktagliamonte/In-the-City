@@ -37,11 +37,11 @@ public class GameState {
     private String peopleFilePath;
     private String dialogueFilePath;
     private boolean fromSaveFile;
-    private GameTimer gameTimer;
+    public GameTimer gameTimer;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
-            String peopleFilePath, String dialogueFilePath, GameTimer gameTimer) {
+            String peopleFilePath, String dialogueFilePath) {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
         initializePlayer();
@@ -53,9 +53,7 @@ public class GameState {
         this.peopleFilePath = peopleFilePath;
         this.dialogueFilePath = dialogueFilePath;
         fromSaveFile = false; // TODO: handle this when i'm doing persistence
-        this.gameTimer = gameTimer;
-        this.gameTimer.setGameState(this);
-        this.gameTimer.setRandomEventManager(new RandomEventManager(this));
+        this.gameTimer = new GameTimer(this);
     }
 
     public void initializePlayer() {
@@ -69,6 +67,7 @@ public class GameState {
             String classInput = scanner.nextLine();
             characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
+        System.out.println("Welcome to the game! Use command menu for assistance");
 
         this.player = new Player(name.trim(), characterClass);
         gameEngine.player = this.player;
@@ -502,8 +501,6 @@ public class GameState {
         player.setMaxCarryWeight(player.getMaxCarryWeight() + newMember.getMaxCarryWeight());
         player.increaseRemainingCarryWeight(newMember.getMaxCarryWeight());
 
-        // TODO: Make all movement be done on the PARTY rather than the player itself.
-
         System.out.println(newMember.getName() + " has joined the party.");
         return true;
     }
@@ -550,6 +547,7 @@ public class GameState {
     }
 
     public void enterDialogue(Person character) {
+        gameTimer.pause();
         inDialogue = true;
 
         // Get all dialogues for this character
@@ -607,11 +605,13 @@ public class GameState {
     }
 
     public void exitDialogue() {
+        gameTimer.resume();
         inDialogue = false;
         System.out.println("The conversation is over.");
     }
 
     public void enterBarter(Person npc) {
+        gameTimer.pause();
         System.out.println("Entering barter mode with " + npc.getName());
         Boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
         for (NPC member : currentParty) {
@@ -660,6 +660,7 @@ public class GameState {
                     }
                     break;
                 case 3:
+                    gameTimer.resume();
                     inBarter = false;
                     System.out.println("Exiting Barter.");
                     break;
@@ -684,6 +685,7 @@ public class GameState {
     }
 
     public void enterCombat(Person character) {
+        gameTimer.pause();
         List<Person> combatants = new ArrayList<>();
         combatants.add(player); // Add player
         String location = "";
@@ -731,6 +733,7 @@ public class GameState {
         if (!player.isAlive()) {
             playerDead();
         }
+        gameTimer.resume();
     }
 
     public int rollD20() {

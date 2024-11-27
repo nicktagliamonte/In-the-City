@@ -16,6 +16,7 @@ public class Manual {
         System.out.println("|    ORIENTATION    |");
         System.out.println("|___________________|");
         System.out.println("   -LOOK: Prints a description of your surroundings, as well as the items, characters, and pathways accessible to you.");
+        System.out.println("          Room names will be displayed in quotes.");
         System.out.println("   -LOCATE: Describes your current location and gives directions to the nearest safe zone and economic zone.");
         System.out.println("   -MENU: You used this command to get to this menu.");
         System.out.println(" ___________________");
@@ -48,6 +49,7 @@ public class Manual {
 
     public void printItems() {
         //TODO: Create list of items
+        System.out.println("A very lazy dev left this section marked \"To Do\"");
     }
 
     public void combatManual() {

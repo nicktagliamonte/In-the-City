@@ -27,7 +27,6 @@ public class Neutral extends NPC{
     public void giveQuest() {
         if (canGiveQuest) {
             //TODO: figure this out much later, when i'm adding quests.
-            //TODO: decide whether this even belongs in Neutral.java
         }
         System.out.println(questDialogue.get(0));
     }
@@ -40,19 +39,8 @@ public class Neutral extends NPC{
         this.damage = damage;
     }
 
-    public void attack(NPC target) {
-        //TODO: this will be part of the combat system
-        //because of the nature of checking to see whether an attack lands or what that situation will be like, it is unclear whether this method will live here
-    }
-
-    public void takeDamage(double amount) {
-        //TODO: see above
-        this.setHealth(this.getHealth() - amount);
-    }
-
     public boolean isDefeated() {
         return this.getHealth() <= 0;
-        //TODO: remove adversary from room -- this will be handled thru the combat ending sequence from gameState
     }
 
     public double getMoralityFlag() {

@@ -18,8 +18,10 @@ public class GameTimer {
 
     private Timer timer;
 
-    public GameTimer() {
+    public GameTimer(GameState gameState) {
         timer = new Timer(true); // Daemon thread, ends when program ends
+        this.gameState = gameState;
+        randomEventManager = new RandomEventManager(gameState);
         startTimer();
     }
 
@@ -29,8 +31,9 @@ public class GameTimer {
             public void run() {
                 if (!paused) {
                     elapsedTime++;
-                    regenerateHealth();
-                    // Call additional event handlers here, e.g., health regen
+                    if (elapsedTime % 100 == 0) {
+                        regenerateHealth();
+                    }
                 }
             }
         }, 0, interval);
@@ -55,16 +58,11 @@ public class GameTimer {
         System.out.println("Timer stopped.");
     }
 
-    public void setGameState(GameState gameState) {
-        this.gameState = gameState;
-    }
-
-    public void setRandomEventManager(RandomEventManager randomEventManager) {
-        this.randomEventManager = randomEventManager;
-    }
-
     public void regenerateHealth() {
-        Player player = gameState.getPlayer();
+        Player player = null;
+        if (gameState.getPlayer() != null) {
+            player = gameState.getPlayer();   
+        }
         List<NPC> partyMembers = gameState.getCurrentParty();
 
         if (canRegenerateHealth(player)) {
@@ -87,5 +85,9 @@ public class GameTimer {
             return pm.getHealth() < pm.getMaxHealth();
         }
         return false;
+    }
+
+    public void checkForEvent() {
+        randomEventManager.checkForEvent();
     }
 }

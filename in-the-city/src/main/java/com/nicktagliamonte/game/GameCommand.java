@@ -401,7 +401,6 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             // TODO: this will need to be a different format to indicate the overall game region and give more workable information, 
-            // once i'm out of this two room test environment
             Region region = gameState.getCurrentRegion();
             String safeZone = gameState.getDirectionsToRegion();
             String economicZone = gameState.getDirectionsToEconomicZone();

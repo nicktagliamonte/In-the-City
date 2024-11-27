@@ -22,11 +22,11 @@ public class RandomEventManager {
         // Event frequency (adjust based on zones or other factors)
         int eventChance = random.nextInt(100); // Random number between 0-99
 
-        if (eventChance < 20) { // 20% chance for a combat event
+        if (eventChance < 2) {
             triggerCombatEvent();
-        } else if (eventChance < 50) { // 30% chance for a barter event
+        } else if (eventChance < 4) {
             triggerBarterEvent();
-        } else if (eventChance < 70) { // 20% chance for a flavor text event
+        } else if (eventChance < 8) {
             triggerFlavorTextEvent();
         }
     }
@@ -52,7 +52,7 @@ public class RandomEventManager {
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
             //i.e. dead zone health 1-10, liacouras health 50-70
             //or whatever numbers make sense at the time
-            Adversary adversary = new Adversary("null", random.nextInt(50), null, "a desperate", 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            Adversary adversary = new Adversary("\"literally any other name\"", 50, null, "a desperate", 50, 1, 1, 1, 1, 1, 1, 1, 1);
             gameState.enterCombat(adversary);
         }
     }

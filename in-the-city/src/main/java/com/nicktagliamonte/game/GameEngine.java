@@ -13,9 +13,9 @@ public class GameEngine {
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json",
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json",
-     new GameTimer());
+     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json");
     private Scanner scanner = new Scanner(System.in);
+    private GameTimer timer;
     
 
     public void startGame() {
@@ -23,11 +23,13 @@ public class GameEngine {
         int invalidCommands = 0;
         isInMenu = false;
         menu = new Menu(this);
+        timer = new GameTimer(gameState);
 
         while (isRunning) {
             if (isInMenu) {
                 menu.displayMenu();
             } else {
+                timer.checkForEvent();
                 System.out.print("Enter command: ");
                 String input = scanner.nextLine().trim();
                 String[] splitInput = input.split(" ", 2);

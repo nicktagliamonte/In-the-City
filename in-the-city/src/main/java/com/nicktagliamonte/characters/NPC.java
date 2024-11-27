@@ -119,10 +119,6 @@ public class NPC extends Person {
         return getHealth() > 0;
     }
 
-    public void interact() {
-        //TODO: placeholder
-    }
-
     public void takeDamage(double amount) {
         super.setHealth(super.getHealth() - amount);
         if (isDead()) {
