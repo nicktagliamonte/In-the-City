@@ -29,7 +29,9 @@ public class GameEngine {
             if (isInMenu) {
                 menu.displayMenu();
             } else {
-                timer.checkForEvent();
+                if (timer.getElapsedTime() >= 120) {
+                    timer.checkForEvent();
+                }
                 System.out.print("Enter command: ");
                 String input = scanner.nextLine().trim();
                 String[] splitInput = input.split(" ", 2);

@@ -156,7 +156,7 @@ public class Menu {
         // Crafting logic here
         if (hasTechnologist()) {
             System.out.println("There are 3 types of traps you can make.");
-            System.out.println("1. Small Magical Trap (1 scrap)\t");
+            System.out.println("1. Small Magical Trap (1 scrap)");
             System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
             System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
             System.out.println("4. Return to the main menu");
@@ -165,10 +165,25 @@ public class Menu {
                 int input = gameEngine.getPlayerInputAsInt();
                 if (input == 1) {
                     //TODO: make a small magical trap
+                    System.out.println("There are 3 types of traps you can make.");
+                    System.out.println("1. Small Magical Trap (1 scrap)");
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     //TODO: make a large magical trap
+                    System.out.println("There are 3 types of traps you can make.");
+                    System.out.println("1. Small Magical Trap (1 scrap)");
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     //TODO: make a defensive magical trap
+                    System.out.println("There are 3 types of traps you can make.");
+                    System.out.println("1. Small Magical Trap (1 scrap)");
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();
                     break;
@@ -179,22 +194,35 @@ public class Menu {
             }
         } else {
             System.out.println("There are 3 types of traps you can make.");
-            System.out.println("1. Small Trap (1 scrap)\t");
+            System.out.println("1. Small Trap (1 scrap)");
             System.out.println("2. Large Trap (2 scrap, 1 food)");
             System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
             System.out.println("4. Return to the main menu");
             while (true) {
                 int input = gameEngine.getPlayerInputAsInt();
                 if (input == 1) {
-                    Trap trap = new SmallTrap();
+                    Trap trap = new SmallTrap(gameEngine.getGameState());
                     gameEngine.getGameState().getPlayer().craftItem(trap);
                     
                     List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
                     inventory.add(trap);
+                    System.out.println("There are 3 types of traps you can make.");
+                    System.out.println("1. Small Trap (1 scrap)");
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     //TODO: make a large trap
+                    System.out.println("1. Small Trap (1 scrap)");
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     //TODO: make a defensive trap
+                    System.out.println("1. Small Trap (1 scrap)");
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();
                     break;

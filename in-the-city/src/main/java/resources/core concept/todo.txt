@@ -2,9 +2,6 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - timed events
-    - Traps will need to be basically fully redone here.  
-    - reset the time to wait to start doing random events back up to something higher, give the person maybe 2 minutes before that shit picks up
   - BUG: menu -> quit -> n -> 8 results in the quit game prompt being stuck in a loop
   - Add status effects.  
     - This is a natural follow-up to having health regen -- some status effects will cause health drain.  

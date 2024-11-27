@@ -1,12 +1,17 @@
 package com.nicktagliamonte.items;
 
+import java.util.List;
 import java.util.Map;
+
+import com.nicktagliamonte.game.GameState;
 
 public class Trap extends Item {
     Map<Item, Integer> cost;
+    GameState gameState;
 
-    public Trap(String name, String description, double weight, boolean isConsumable, int value) {
+    public Trap(String name, String description, double weight, boolean isConsumable, int value, GameState gameState) {
         super(name, description, weight, isConsumable, value);
+        this.gameState = gameState;
     }
 
     public void setCost(Map<Item, Integer> cost) {
@@ -17,11 +22,21 @@ public class Trap extends Item {
         return cost;
     }
 
-    public void springTrap(Map<Item, Integer> items) {
-        //TODO: something to add the list of items to the inventory and then eliminate the item from the gamestate
+    public void setTrap(String coordinates) {
+        List<Item> currentInventory = gameState.getPlayer().getInventory();
+        currentInventory.remove(this);
+        gameState.getPlayer().setInventory(currentInventory);
+        gameState.getCurrentRoom().addItemToRoom(coordinates, this);
+    }
+
+    public void springTrap(List<Item> items) {
+        //TODO: replace the below with something that adds the items to the SAFE ZONE or CONVEYANCE inventory and prints a message
+        List<Item> currentInventory = gameState.getPlayer().getInventory();
+        currentInventory.addAll(items);
+        gameState.getPlayer().setInventory(currentInventory);
     }
 
     public void expire() {
-        //TODO: just destroy the trap. individual traps will call this super method after set amounts of time
+        gameState.getCurrentRoom().removeItemFromRoom(this.getName());
     }
 }
