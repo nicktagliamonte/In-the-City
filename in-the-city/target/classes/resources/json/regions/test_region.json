@@ -36,7 +36,8 @@
         [" ", " ", ".", ".", ".", ".", ".", ".", " ", " "],
         [" ", " ", " ", " ", ".", ".", " ", " ", " ", " "]
       ],
-      "isSafe": false
+      "isSafe": false, 
+      "nextRoomToSafeZone": "upstairs"
     },
     {
       "name": "Room 2",
@@ -69,7 +70,8 @@
         [".", ".", ".", ".", ".", "."],
         ["I", ".", "E", ".", ".", "."]
       ],
-      "isSafe": false
+      "isSafe": false, 
+      "nextRoomToSafeZone": "room 1"
     },
     {
       "name": "upstairs",
@@ -89,7 +91,8 @@
         [".", "."],
         ["E", "."]
       ],
-      "isSafe": true
+      "isSafe": true, 
+      "nextRoomToSafeZone": ""
     }
   ]
 }

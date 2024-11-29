@@ -77,11 +77,15 @@ public class GameState {
         gameEngine.player = this.player;
     }
 
-    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath,
-            String peopleFilePath, String dialogueFilePath) {
+    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
         Gson gson = new Gson();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
+            for (Room room : currentRegion.getRooms()) {
+                if (room.getIsSafe()) {
+                    currentRegion.setHasSafeZone(true);
+                }
+            }
             System.out.println("Region loaded: " + currentRegion.getRegionName());
             loadAdjacencyList(adjacenciesFilePath);
             loaditemsInRoom(itemsFilePath);
@@ -569,22 +573,8 @@ public class GameState {
         return gameEngine;
     }
 
-    public String getDirectionsToRegion() {
-        // this is i think going to be a pathfinding operation. this is going to be
-        // massively difficult to implement
-        String ret = "working";
-        return ret;
-    }
-
-    public String getDirectionsToEconomicZone() {
-        // this is i think going to be a pathfinding operation. this is going to be
-        // massively difficult to implement
-        String ret = "working";
-        return ret;
-    }
-
     public String toSerializableFormat() {
-        // this one is going to also be somewhat of an undertaking
+        // this one is going to be somewhat of an undertaking
         return "working";
     }
 

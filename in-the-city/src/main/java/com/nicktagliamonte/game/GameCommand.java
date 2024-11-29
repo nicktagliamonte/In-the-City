@@ -13,6 +13,7 @@ import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Weapon;
+import com.nicktagliamonte.rooms.Room;
 
 public enum GameCommand {
     LOOK {
@@ -531,14 +532,48 @@ public enum GameCommand {
     LOCATE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            // TODO: this will need to be a different format to indicate the overall game
-            // region and give more workable information,
-            Region region = gameState.getCurrentRegion();
-            String safeZone = gameState.getDirectionsToRegion();
-            String economicZone = gameState.getDirectionsToEconomicZone();
-            System.out.println("You are in " + region);
-            System.out.println("The Safe Zone is " + safeZone);
-            System.out.println("The Economic Zone is " + economicZone);
+            System.out.println("You are in region " + gameState.getCurrentRegion().getRegionName());
+    
+            if (!gameState.getCurrentRegion().getHasSafeZone()) {
+                System.out.println("There is not (yet) a safe zone in this region.");
+                return;
+            }
+    
+            Room currentRoom = gameState.getCurrentRoom();
+            Region currentRegion = gameState.getCurrentRegion();
+    
+            if (currentRoom.getIsSafe()) {
+                System.out.println("You are already in the safe zone.");
+                return;
+            }
+    
+            StringBuilder pathToSafeZone = new StringBuilder("To get to the safe zone from your current position, go through: ");
+            Room nextRoom = currentRoom;
+    
+            while (!nextRoom.getIsSafe()) {
+                String nextRoomName = nextRoom.getNextRoomToSafeZone();
+                if (nextRoomName == null) {
+                    System.out.println("Cannot find a path to the safe zone from your current position.");
+                    return;
+                }
+                pathToSafeZone.append("\"").append(nextRoomName).append("\"");
+    
+                nextRoom = currentRegion.getRooms().stream()
+                    .filter(room -> room.getName().equalsIgnoreCase(nextRoomName))
+                    .findFirst()
+                    .orElse(null);
+    
+                if (nextRoom == null) {
+                    System.out.println("Error: Path is incomplete or invalid.");
+                    return;
+                }
+    
+                if (!nextRoom.getIsSafe()) {
+                    pathToSafeZone.append(" -> ");
+                }
+            }
+    
+            System.out.println(pathToSafeZone);
         }
     },
     HIDE {

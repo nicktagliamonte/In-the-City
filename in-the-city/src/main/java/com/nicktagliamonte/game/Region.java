@@ -7,8 +7,8 @@ import com.nicktagliamonte.rooms.Room;
 public class Region {
     private List<Room> rooms;
     private String regionName;
+    private boolean hasSafeZone = false;
 
-    // Getters and setters
     public List<Room> getRooms() {
         return rooms;
     }
@@ -23,5 +23,13 @@ public class Region {
 
     public void setRegionName(String regionName) {
         this.regionName = regionName;
+    }
+
+    public boolean getHasSafeZone() {
+        return hasSafeZone;
+    }
+
+    public void setHasSafeZone(boolean hasSafeZone) {
+        this.hasSafeZone = hasSafeZone;
     }
 }

@@ -2,10 +2,6 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - Put a safe zone in the game (attic).   
-    - Build out the feature to locate the safe zone.  
-      - This one is a job and a half.  
-      - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
   - Put an economic zone in the game (room 1).  
     - Make the random events that are combat-based not occur in the economic zone.  
       - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  

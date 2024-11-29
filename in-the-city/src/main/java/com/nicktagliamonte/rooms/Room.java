@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Item;
 
 //TODO: for story progression, there should be some kind of access control for certain rooms that equates to being too scared to go in
@@ -24,9 +25,10 @@ public class Room {
     private int[][] mask;
     private char[][] map;
     private boolean isSafe;
+    private String nextRoomToSafeZone;
 
     public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, 
-                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe) {
+                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, String nextRoomToSafeZone) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -45,10 +47,20 @@ public class Room {
         }
         this.map = map;
         this.isSafe = isSafe;
+        this.nextRoomToSafeZone = nextRoomToSafeZone;
     }
 
-    public void setIsSafe(boolean isSafe) {
+    public String getNextRoomToSafeZone() {
+        return nextRoomToSafeZone;
+    }
+
+    public void setNextRoomToSafeZone(String nextRoomToSafeZone) {
+        this.nextRoomToSafeZone = nextRoomToSafeZone;
+    }
+
+    public void setIsSafe(boolean isSafe, GameState gameState) {
         this.isSafe = isSafe;
+        gameState.getCurrentRegion().setHasSafeZone(true);
     }
 
     public boolean getIsSafe() {
