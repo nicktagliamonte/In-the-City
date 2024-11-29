@@ -33,10 +33,7 @@ Some character names or attributes are pulled from things I was watching at the 
 ## Upcoming Work:  
 
 ### Phase 6: Working Demo  
-Keep adding individual game elements in a "test data" format.  
-
-**BUG FIX AND QA - FIRST EXTERNAL TEST RESULTS**  
-- Clarify that the command is 'MENU' on game launch   
+Keep adding individual game elements in a "test data" format.   
 
 **GAME STATE MODIFICATIONS**  
 - Put a safe zone in the game (attic).  
