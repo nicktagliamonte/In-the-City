@@ -25,7 +25,7 @@ public class RandomEventManager {
 
         if (eventChance < 2) {
             triggerCombatEvent();
-        } else if (eventChance < 4) {
+        } else if (eventChance < 4 && !(gameState.getPlayer().getInventory().isEmpty())) {
             triggerBarterEvent();
         } else if (eventChance < 8) {
             triggerFlavorTextEvent();

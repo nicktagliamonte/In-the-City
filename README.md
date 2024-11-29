@@ -36,24 +36,6 @@ Some character names or attributes are pulled from things I was watching at the 
 Keep adding individual game elements in a "test data" format.  
 
 **BUG FIX AND QA - FIRST EXTERNAL TEST RESULTS**  
-- Ascend/descend/change room is clunky
-  - If the game spits out 'what room do you want to ascend/descend/enter' and the player types 'upstairs' that should work
-  - Descend is buggy in general
-- Room map issues:
-  - Update map when neutral casts to adversary
-  - Update map when anyone dies
-  - Update map to replace your old tile with a '.' when you move
-- Examine command should either take a specified name or examine all adjascent items
-  - Or hold an itemcontext.  if you use go to [waypoint] or take [itemname] or something, then examine with no additional arg should examine that most recent interacted item  
-    - These should be volatile and disappear after one more command
-- Add a 'MOVE TO [coordinates] option to the move command 
-- Add a manual command to immediately launch the manuals  
-- Light leather armor needs a use function, which should do the same as equip
-- If your inventory is empty, you shouldn't get random barter events
-- For pausing the clock, have a check if (!timer.isPaused())
-- If trying to join someone not of partymember class, have it print an error messages
-- Reword the 'join' command description in command manual
-  - maybe add something about what i mean by party  
 - Clarify that the command is 'MENU' on game launch   
 
 **GAME STATE MODIFICATIONS**  

@@ -25,7 +25,7 @@ public class Manual {
         System.out.println("   -MOVE [DIRECTION]: Moves 1 step in the direction specified by [DIRECTION].\n\tValid DIRECTIONS are UP, NORTH, DOWN, SOUTH, LEFT, WEST, RIGHT, EAST.");
         System.out.println("   -MOVE [DIRECTION] [NUMBER OF STEPS]: Moves [NUMBER OF STEPS] steps in the direction specified by [DIRECTION].\n\tValid DIRECTIONS are UP, NORTH, DOWN, SOUTH, LEFT, WEST, RIGHT, EAST.\n\tValid NUMBERS OF STEPS are integers greater than or equal to 1.");
         System.out.println("   -MOVE TO [WAYPOINT]: Moves to the WAYPOINT specified by [WAYPOINT].\n\tValid WAYPOINTS are the names of characters, items, or pathways you currently have access to.\n\tUse LOOK for a list of such waypoints.");
-        System.out.println("   -ENTER [ROOM NAME]: Moves immediately to the room specified by [ROOM NAME], if it adjoins your current location.\n\tCurrently available ROOM NAMES can be found using the LOOK command.");
+        System.out.println("   -ENTER [ROOM NAME]: Moves immediately to the room specified by [ROOM NAME], if it adjoins your current location.\n\tCurrently available ROOM NAMES can be found using the LOOK command.\n\tThis command will word for rooms separated by a staircase or ladder or otherwise above or below your current position, as well as rooms seperated by a doorway or otherwise on your same level.");
         System.out.println("   -ASCEND [ROOM NAME]: Moves immediately to the room specified by [ROOM NAME], if it adjoins your current location and is accessed via staircase going up.\n\tCurrently available ROOM NAMES can be found using the LOOK command.");
         System.out.println("   -DESCEND [ROOM NAME]: Moves immediately to the room specified by [ROOM NAME], if it adjoins your current location and is accessed via staircase going down.\n\tCurrently available ROOM NAMES can be found using the LOOK command.");
         System.out.println(" _____________________");
@@ -36,12 +36,14 @@ public class Manual {
         System.out.println("   USE [ITEM NAME]: Uses [ITEM NAME], if it has a use.");
         System.out.println("   DROP [ITEM NAME]: Removes [ITEM NAME] from inventory, if there is an item of such name in inventory");
         System.out.println("   EQUIP [ITEM NAME]: Equips [ITEM NAME] if it is a weapon, armor, or enhancement item, if there is an item of such name in inventory");
-        System.out.println("   DEQUIP [ITEM NAME]: Removes [ITEM NAME] from armor slot and adds it back to inventory, if there is an item of such name currently equipped. I know dequip is technically not an English word but the game is already written with that being the word for \"stop having this item equipped\", so");
+        System.out.println("   DEQUIP [ITEM NAME]: Removes [ITEM NAME] from armor slot and adds it back to inventory, if there is an item of such name currently equipped.\n\tI know dequip is technically not an English word but the game is already written with that being the word for \"stop having this item equipped\", so");
         System.out.println(" ________________________");
         System.out.println("| CHARACTER INTERACTIONS |");
         System.out.println("|________________________|");
         System.out.println("   TALK TO [CHARACTER NAME]: Enters Dialogue with [CHARACTER NAME].");
-        System.out.println("   JOIN [CHARACTER NAME]: Adds [CHARACTER NAME] to the party, if there is not currently a party member of the same class as [CHARACTER NAME].\n\tThis can only be undone if [CHARACTER NAME] dies.");
+        System.out.println("   JOIN [CHARACTER NAME]: You have the option to play this game with a set of NPC characters, your \"party.\"");
+        System.out.println("          This command adds [CHARACTER NAME] to the party. RESTRICTIONS: Max party size is 3, including you the player. One party member per game class (Survivalist, Technologist, Negotiator).");
+        System.out.println("          This can only be undone if [CHARACTER NAME] dies. There are very few ingame characters who you can join up with, and gameplay will make it clear who is a valid party member vs who is just another NPC.");
         System.out.println("   FIGHT [CHARACTER NAME]: Enters Combat with [CHARACTER NAME].");
         System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and the chance of unwanted interactions.");
         System.out.println("========================================");

@@ -40,6 +40,11 @@ public class GameEngine {
                 String commandName = splitInput[0].toLowerCase();
                 String[] args = (splitInput.length > 1) ? new String[] { splitInput[1] } : new String[0];
 
+                if (!gameState.itemContext.equals("") && 
+                        !(commandName.equalsIgnoreCase("Examine") || commandName.equalsIgnoreCase("Use") || commandName.equalsIgnoreCase("Equip"))) {
+                    gameState.itemContext = "";
+                }
+
                 GameCommand command = GameCommand.fromString(commandName);
 
                 if (command != null) {

@@ -44,13 +44,15 @@ public class GameTimer {
     }
 
     public void pause() {
-        paused = true;
-        System.out.println("Timer paused.");
+        if (!paused) {
+            paused = true;
+        }
     }
 
     public void resume() {
-        paused = false;
-        System.out.println("Timer resumed.");
+        if (paused) {
+            paused = false;
+        }
     }
 
     public int getElapsedTime() {

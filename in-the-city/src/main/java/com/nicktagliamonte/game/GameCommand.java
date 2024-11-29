@@ -3,6 +3,7 @@ package com.nicktagliamonte.game;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Map.Entry;
 
 import com.nicktagliamonte.characters.Friend;
@@ -94,12 +95,11 @@ public enum GameCommand {
                 }
     
                 if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
-                    // Concatenate the rest of the arguments as the waypoint name
                     StringBuilder waypointNameBuilder = new StringBuilder();
                     for (int i = 1; i < arguments.length; i++) {
                         waypointNameBuilder.append(arguments[i]);
                         if (i < arguments.length - 1) {
-                            waypointNameBuilder.append(" "); // Add space between words
+                            waypointNameBuilder.append(" ");
                         }
                     }
                     String waypointName = waypointNameBuilder.toString();
@@ -132,6 +132,10 @@ public enum GameCommand {
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
                 System.out.println("Which room do you want to enter?");
+                @SuppressWarnings("resource")
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
+                gameState.enterByCommand(input);
             } else {
                 gameState.enterByCommand(args[0]);
             }
@@ -140,45 +144,61 @@ public enum GameCommand {
     ASCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 1) {
-                System.out.println("Which room do you want to enter?");
+            if (args.length < 2) {
+                System.out.println("Which room do you want to ascend to?");
+                @SuppressWarnings("resource")
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
+                gameState.ascend(input);
             } else {
-                gameState.ascend(args[0]);
+                gameState.ascend(args[1]);
             }
         }
     },
     DESCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 1) {
-                System.out.println("Which room do you want to enter?");
+            if (args.length < 2) {
+                System.out.println("Which room do you want to descend to?");
+                @SuppressWarnings("resource")
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
+                gameState.descend(input);
             } else {
-                gameState.descend(args[0]);
+                gameState.descend(args[1]);
             }
         }
     },
     EXAMINE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 1) {
-                System.out.println("You need to specify an item to examine");
+            String itemName = "";
+
+            if (args.length < 1 && gameState.itemContext.equals("")) {
+                System.out.println("You need to use this command in the form Examine [Item Name]");
                 return;
+            } else if (args.length < 1) {
+                itemName = gameState.itemContext;
+            } else {
+                itemName = args[0];
             }
+
             Collection<Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom().values();
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
-                if (item.getName().equalsIgnoreCase(args[0])) {
+                if (item.getName().equalsIgnoreCase(itemName)) {
                     itemToExamine = item;
                     break;
                 }
             }
+
             if (itemToExamine != null) {
-                // Print the description of the item.
                 System.out.println(itemToExamine.getDescription());
             } else {
-                // Handle the case where the item was not found in the room.
                 System.out.println("There is no such item here: " + args[0]);
             }
+
+            gameState.itemContext = "";
         }
     },
     TAKE {
@@ -196,6 +216,7 @@ public enum GameCommand {
                 if (item.getValue().getName().equalsIgnoreCase(args[0])) {
                     itemToTake = item.getValue();
                     itemLocation = item.getKey();
+                    gameState.itemContext = item.getValue().getName();
                     gameState.getCurrentRoom().updateMapEntry('.', Character.getNumericValue(itemLocation.charAt(1)), Character.getNumericValue(itemLocation.charAt(3)));
                     break;
                 }
@@ -263,16 +284,21 @@ public enum GameCommand {
     USE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length == 0) {
-                System.out.println("Specify an item to use.");
+            String itemName = "";
+
+            if (args.length < 1 && gameState.itemContext.equals("")) {
+                System.out.println("Enter this command in the format USE [item name]");
                 return;
+            } else if (args.length < 1) {
+                itemName = gameState.itemContext;
+            } else {
+                itemName = args[0].toLowerCase();
             }
-    
-            String itemName = args[0].toLowerCase();
+
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
     
             if (item != null) {
-                item.use(); // Call the item's specific use method
+                item.use(gameState); // Call the item's specific use method
             } else {
                 System.out.println("You don't have that item.");
             }
@@ -281,12 +307,17 @@ public enum GameCommand {
     EQUIP {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length == 0) {
-                System.out.println("Specify an item to equip.");
+            String itemName = "";
+
+            if (args.length < 1 && gameState.itemContext.equals("")) {
+                System.out.println("You need to use this command in the form Equip [Item Name]");
                 return;
+            } else if (args.length < 1) {
+                itemName = gameState.itemContext;
+            } else {
+                itemName = args[0];
             }
 
-            String itemName = args[0].toLowerCase();
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
 
             if (item != null && item instanceof Armor) {
@@ -303,8 +334,10 @@ public enum GameCommand {
                 gameState.getPlayer().setInventory(inventory);
             }
             else {
-                System.out.println("You don't have that item.");
+                System.out.println("You don't have \"" + itemName +",\" or it is not a weapon or armor.");
             }
+
+            gameState.itemContext = "";
         }
     },
     DEQUIP {
@@ -385,6 +418,9 @@ public enum GameCommand {
                                 Character.getNumericValue(character.getKey().charAt(3)));
                             return;
                         }
+                    } else {
+                        System.out.println("You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t" + 
+                                        "presence will be made clear (in the actual game, outside this demo.)");
                     }
                 }
             }

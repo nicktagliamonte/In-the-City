@@ -86,9 +86,7 @@ public class Room {
 
     public void removePersonFromRoom(String location) {
         this.peopleInRoom.remove(location);
-        //TODO: when implementing combat, have the attack which leads to an NPC death call this method with their location (similar to removeItemFromRoom method above)
     }
-    //make dying remove the person from room, then work on the below
 
     public void addPersonToRoom(String location, NPC person) {
         this.peopleInRoom.put(location, person);

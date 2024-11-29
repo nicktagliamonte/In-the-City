@@ -50,8 +50,11 @@ public class Combat {
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
                         while (iterator.hasNext()) {
                             Map.Entry<String, NPC> entry = iterator.next();
+                            String location = entry.getKey();
+                            System.out.println(location);
                             if (entry.getValue().getName().equals(npcCombatant.getName())) {
                                 iterator.remove();
+                                gameState.getCurrentRoom().updateMapEntry('.', Character.getNumericValue(location.charAt(1)), Character.getNumericValue(location.charAt(3)));
                                 break;
                             }
                         }
@@ -193,7 +196,7 @@ public class Combat {
 
         Item selectedItem = inventory.get(choice - 1);
         System.out.println("You used: " + selectedItem.getName());
-        selectedItem.use(); // this should work based on runtime polymorphism (the use method from the item
+        selectedItem.use(gameState); // this should work based on runtime polymorphism (the use method from the item
                             // subclass will be called)
         if (selectedItem.getIsConsumable()) {
             inventory.remove(selectedItem);
@@ -395,11 +398,13 @@ public class Combat {
             if (person instanceof Adversary) {
                 while (iterator.hasNext()) {
                     Map.Entry<String, NPC> entry = iterator.next();
+                    String location = entry.getKey();
                     if (entry.getValue().getName().equals(person.getName())) {
                         List<Item> inventory = entry.getValue().getInventory();
                         for (Item item : inventory) {
                             gameState.getCurrentRoom().addItemToRoom(location, item);
                         }
+                        gameState.getCurrentRoom().updateMapEntry('I', Character.getNumericValue(location.charAt(1)), Character.getNumericValue(location.charAt(3)));
                         iterator.remove();
                     }
                 }

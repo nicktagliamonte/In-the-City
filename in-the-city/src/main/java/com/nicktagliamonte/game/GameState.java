@@ -38,6 +38,7 @@ public class GameState {
     private String dialogueFilePath;
     private boolean fromSaveFile;
     public GameTimer gameTimer;
+    public String itemContext;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
@@ -54,6 +55,7 @@ public class GameState {
         this.dialogueFilePath = dialogueFilePath;
         fromSaveFile = false; // TODO: handle this when i'm doing persistence
         this.gameTimer = new GameTimer(this);
+        this.itemContext = "";
     }
 
     public void initializePlayer() {
@@ -67,7 +69,7 @@ public class GameState {
             String classInput = scanner.nextLine();
             characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
-        System.out.println("Welcome to the game! Use command menu for assistance");
+        System.out.println("Welcome to the game! Type \"menu\" for assistance");
 
         this.player = new Player(name.trim(), characterClass);
         gameEngine.player = this.player;
@@ -310,6 +312,8 @@ public class GameState {
     public String changeLocation(String directionInput, int distance) {
         try {
             Direction direction = Direction.valueOf(directionInput.toUpperCase());
+            String oldLocation = currentRoom.getPlayerPosition();
+            currentRoom.updateMapEntry('.', Character.getNumericValue(oldLocation.charAt(1)), Character.getNumericValue(oldLocation.charAt(4)));
             Room newRoom = currentRoom.movePlayer(direction.toString(), distance);
 
             if (newRoom != null && newRoom != currentRoom) {
@@ -323,6 +327,7 @@ public class GameState {
             } else if (newRoom != null) {
                 // If the player is at the edge, check for adjacency
                 String position = currentRoom.getPlayerPosition();
+                System.out.println(position);
                 String[] posArray = position.replace("(", "").replace(")", "").split(", ");
                 int posX = Integer.parseInt(posArray[0]);
                 int posY = Integer.parseInt(posArray[1]);
@@ -359,6 +364,25 @@ public class GameState {
     }
 
     public String moveToWaypoint(String waypointName) {
+        // Check for the waypoint as a series of coordinates
+        if (waypointName.charAt(0) == '(') {
+            if (waypointName.charAt(3) == ' ') {
+                return "If you're entering an ordered pair of coordinates to move to, do not include a space. (x,y) is valid, (x, y) is not.";
+            }
+            int newX = Character.getNumericValue(waypointName.charAt(1));
+            int newY = Character.getNumericValue(waypointName.charAt(3));
+            if (isWithinBounds(newX, newY, currentRoom.getMask()) && currentRoom.getMask()[newX][newY] == 1) {
+                currentRoom.updateMapEntry('.',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
+                currentRoom.setPlayerPosition(newX, newY);
+                currentRoom.updateMapEntry('Y',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
+                return "You move to (" + newX + ", " + newY + ").";
+            }
+        }
+
         // Check for the waypoint as an NPC
         for (Map.Entry<String, NPC> entry : currentRoom.getPeopleInRoom().entrySet()) {
             if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
@@ -374,6 +398,9 @@ public class GameState {
                 String[] coordinates = newPosition.replace("(", "").replace(")", "").split(",");
                 int newX = Integer.parseInt(coordinates[0]);
                 int newY = Integer.parseInt(coordinates[1]);
+                currentRoom.updateMapEntry('.',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 currentRoom.setPlayerPosition(newX, newY);
                 currentRoom.updateMapEntry('Y',
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
@@ -391,6 +418,7 @@ public class GameState {
         // Check for the waypoint as an item
         for (Map.Entry<String, Item> entry : currentRoom.getItemsInRoom().entrySet()) {
             if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
+                itemContext = waypointName;
                 Point targetPosition = parsePositionString(entry.getKey());
                 return moveToAdjacentPosition(targetPosition, "item " + waypointName);
             }
@@ -400,6 +428,8 @@ public class GameState {
         return "Waypoint \"" + waypointName
                 + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
     }
+
+
 
     private Point parsePositionString(String positionString) {
         positionString = positionString.replaceAll("[()]", ""); // Remove parentheses
@@ -419,6 +449,9 @@ public class GameState {
             int newX = targetX + delta[0];
             int newY = targetY + delta[1];
             if (isWithinBounds(newX, newY, walkableMask) && walkableMask[newY][newX] == 1) {
+                currentRoom.updateMapEntry('.',
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
                 currentRoom.setPlayerPosition(newX, newY);
                 currentRoom.updateMapEntry('Y',
                         Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
@@ -521,6 +554,8 @@ public class GameState {
             NPC currentPerson = entry.getValue();
             if (currentPerson instanceof Neutral && ((Neutral) currentPerson).getMoralityFlag() > player.getAlignment()) {
                 people.replace(currentLocation, ((Neutral) currentPerson).actAsAdversary());
+                currentRoom.updateMapEntry('A', Character.getNumericValue(currentLocation.charAt(1)), Character.getNumericValue(currentLocation.charAt(3)));
+
             }
         }
     }
@@ -718,6 +753,7 @@ public class GameState {
         if (character instanceof Neutral) {
             Neutral neutralToFight = (Neutral) character;
             people.put(location, neutralToFight.actAsAdversary());
+            currentRoom.updateMapEntry('A', Character.getNumericValue(location.charAt(1)), Character.getNumericValue(location.charAt(3)));
             combatants.add(neutralToFight.actAsAdversary());
         } else if (character instanceof Adversary) {
             combatants.add(character);
