@@ -24,6 +24,9 @@ Currently:
   - Increments alignment slightly in dialogue (being mean lowers the number, etc)
   - Increments alignment significantly in combat (fighting a bad guy increases the number, fighting a good guy decreases it)
   - Causes neutral characters to act as adversaries if player alignment is too low (or high) for their liking
+- A safe zone which
+  - Has an inventory of items the player can store, working around limited carry weight and giving them a place to stockpile resources
+  - Blocks randomly generated combat events from occurring, and significantly decreases the frequency of randomly generated barter/begging events.
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -36,11 +39,7 @@ Some character names or attributes are pulled from things I was watching at the 
 Keep adding individual game elements in a "test data" format.   
 
 **GAME STATE MODIFICATIONS**  
-- Put a safe zone in the game (attic).  
-  - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
-  - Make the safe room have an inventory.  
-    - Make trapped items appear in that inventory.  
-    - Figure out how to access it.  
+- Put a safe zone in the game (attic).   
   - Build out the feature to locate the safe zone.  
     - This one is a job and a half.  
     - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
