@@ -41,7 +41,7 @@ public class GameEngine {
                 String[] args = (splitInput.length > 1) ? new String[] { splitInput[1] } : new String[0];
 
                 if (!gameState.itemContext.equals("") && 
-                        !(commandName.equalsIgnoreCase("Examine") || commandName.equalsIgnoreCase("Use") || commandName.equalsIgnoreCase("Equip"))) {
+                        !(commandName.equalsIgnoreCase("Examine") || commandName.equalsIgnoreCase("Use") || commandName.equalsIgnoreCase("Equip") || commandName.equalsIgnoreCase("Take"))) {
                     gameState.itemContext = "";
                 }
 

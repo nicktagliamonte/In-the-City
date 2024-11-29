@@ -28,6 +28,9 @@ public enum GameCommand {
             // Construct the dynamic message based on the game state
             StringBuilder message = new StringBuilder();
             message.append("You look around and see: \n").append(roomDescription).append("\n");
+            if (gameState.getCurrentRoom().getIsSafe()) {
+                message.append("This is the region's safe zone. There will be no combat events here unless you initiate them.\n");
+            }
 
             if (!visibleItems.isEmpty()) {
                 message.append("Items here: ");
@@ -35,11 +38,12 @@ public enum GameCommand {
                 for (Map.Entry<String, Item> entry : visibleItems.entrySet()) {
                     // For each item, append its name and key (coordinates)
                     message.append(entry.getValue().getName())
-                           .append(" at ")
-                           .append(entry.getKey());
-                    
+                            .append(" at ")
+                            .append(entry.getKey());
+
                     // Add a comma between items, but not after the last item
-                    if (visibleItems.size() > 1 && !entry.equals(visibleItems.entrySet().toArray()[visibleItems.size() - 1])) {
+                    if (visibleItems.size() > 1
+                            && !entry.equals(visibleItems.entrySet().toArray()[visibleItems.size() - 1])) {
                         message.append(", ");
                     }
                 }
@@ -52,10 +56,11 @@ public enum GameCommand {
                 message.append("People here: ");
                 for (Map.Entry<String, NPC> entry : characters.entrySet()) {
                     message.append(entry.getValue().getName())
-                           .append(" at ")
-                           .append(entry.getKey());
-                    
-                    if (characters.size() > 1 && !entry.equals(characters.entrySet().toArray()[characters.size() - 1])) {
+                            .append(" at ")
+                            .append(entry.getKey());
+
+                    if (characters.size() > 1
+                            && !entry.equals(characters.entrySet().toArray()[characters.size() - 1])) {
                         message.append(", ");
                     }
                 }
@@ -93,7 +98,7 @@ public enum GameCommand {
                     System.out.println("Invalid command format.");
                     return;
                 }
-    
+
                 if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
                     StringBuilder waypointNameBuilder = new StringBuilder();
                     for (int i = 1; i < arguments.length; i++) {
@@ -107,16 +112,17 @@ public enum GameCommand {
                     System.out.println(message);
                     return;
                 }
-    
+
                 // Handle regular movement
                 String direction = arguments[0];
                 int distance = 1; // Default distance
-    
+
                 if (arguments.length > 1) {
                     try {
                         distance = Integer.parseInt(arguments[1]);
                     } catch (NumberFormatException e) {
-                        System.out.println("Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
+                        System.out.println(
+                                "Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
                         return;
                     }
                 }
@@ -184,6 +190,9 @@ public enum GameCommand {
             }
 
             Collection<Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom().values();
+            if (gameState.getCurrentRoom().getIsSafe()) {
+                itemsInRoom.addAll(gameState.safeZoneInventory.getInventory());
+            }
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(itemName)) {
@@ -198,41 +207,69 @@ public enum GameCommand {
                 System.out.println("There is no such item here: " + args[0]);
             }
 
+            itemsInRoom.clear();
             gameState.itemContext = "";
         }
     },
     TAKE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 1) {
-                System.out.println("You need to specify an item to take");
+            String itemName = "";
+    
+            if (args.length < 1 && gameState.itemContext.equals("")) {
+                System.out.println("You need to use this command in the form TAKE [Item Name]");
                 return;
+            } else if (args.length < 1) {
+                itemName = gameState.itemContext;
+            } else {
+                itemName = args[0];
             }
-
+    
+            Item itemToTake = null;
+    
+            if (gameState.getCurrentRoom().getIsSafe()) {
+                itemToTake = gameState.safeZoneInventory.getItemFromInventory(itemName);
+    
+                if (itemToTake != null) {
+                    if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
+                        gameState.getPlayer().addItem(itemToTake);
+                        gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
+                        System.out.printf("added %s to inventory from the safe zone inventory\n", itemToTake.getName());
+                        gameState.itemContext = itemToTake.getName();
+                    } else {
+                        System.out.println("That item is too heavy.");
+                    }
+                    return;
+                } else {
+                    System.out.println("No such item found in the safe zone inventory: " + itemName);
+                }
+            }
+    
             Map<String, Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom();
             String itemLocation = null;
-            Item itemToTake = null;
             for (Entry<String, Item> item : itemsInRoom.entrySet()) {
-                if (item.getValue().getName().equalsIgnoreCase(args[0])) {
+                if (item.getValue().getName().equalsIgnoreCase(itemName)) {
                     itemToTake = item.getValue();
                     itemLocation = item.getKey();
-                    gameState.itemContext = item.getValue().getName();
-                    gameState.getCurrentRoom().updateMapEntry('.', Character.getNumericValue(itemLocation.charAt(1)), Character.getNumericValue(itemLocation.charAt(3)));
+                    gameState.getCurrentRoom().updateMapEntry('.', 
+                            Character.getNumericValue(itemLocation.charAt(1)), 
+                            Character.getNumericValue(itemLocation.charAt(3)));
                     break;
                 }
             }
-
+    
             if (itemToTake != null) {
                 if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
                     gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
                     gameState.getCurrentRoom().removeItemFromRoom(itemLocation);
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
+                    gameState.itemContext = itemToTake.getName();
                 } else {
                     System.out.println("That item is too heavy.");
-                }                
+                }
             } else {
-                System.out.println("There is no such item here: " + args[0]);
+                System.out.println("There is no such item here: " + itemName);
             }
         }
     },
@@ -244,41 +281,94 @@ public enum GameCommand {
                 return;
             }
 
+            Item itemToDrop = null;
             List<Item> itemsInInventory = gameState.getPlayer().getInventory();
 
-            if (itemsInInventory == null) {
+            if (itemsInInventory == null && !gameState.getCurrentRoom().getIsSafe()) {
                 System.out.println("Inventory is empty, cannot drop item");
                 return;
             }
 
-            Item itemToDrop = null;
             for (Item item : itemsInInventory) {
                 if (item.getName().equalsIgnoreCase(args[0])) {
                     itemToDrop = item;
-                    System.out.println(gameState.getCurrentRoom().getPlayerPosition());
-                    gameState.getCurrentRoom().updateMapEntry('I', 
-                                Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(1)), 
-                                Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(4)));
+                    gameState.getCurrentRoom().updateMapEntry('I',
+                            Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(1)),
+                            Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(4)));
                     break;
                 }
             }
 
-            if (itemToDrop == null) {
+            if (itemToDrop == null && !gameState.getCurrentRoom().getIsSafe()) {
                 System.out.printf("There is no %s in inventory", args[0]);
             } else {
                 itemsInInventory.remove(itemToDrop);
                 gameState.getPlayer().setInventory(itemsInInventory);
                 gameState.getPlayer().increaseRemainingCarryWeight(itemToDrop.getWeight());
-                gameState.getCurrentRoom().addItemToRoom(gameState.getCurrentRoom().getPlayerPosition(), itemToDrop);
+                gameState.getCurrentRoom().addItemToRoom(gameState.getCurrentRoom().getPlayerPosition(),
+                        itemToDrop);
                 System.out.println("Dropped " + itemToDrop.getName());
-            }            
+                return;
+            }
+
+            if (gameState.getCurrentRoom().getIsSafe() && !gameState.safeZoneInventory.inventory.isEmpty()) {
+                for (Item item : gameState.safeZoneInventory.inventory) {
+                    if (item.getName().equalsIgnoreCase(args[0])) {
+                        itemToDrop = item;
+                        gameState.safeZoneInventory.removeItemFromInventory(itemToDrop);
+                        System.out.println("Dropped " + itemToDrop.getName() + " from safe zone inventory");
+                        return;
+                    }
+                }
+                System.out.printf("There is no %s in your inventory or in the safe zone.", args[0]);
+            }
         }
     },
     INVENTORY {
         @Override
         public void execute(String[] args, GameState gameState) {
-            gameState.getPlayer().listInventory();
-            
+            if (!gameState.getCurrentRoom().getIsSafe()) {
+                gameState.getPlayer().listInventory();
+            } else {
+                System.out.println("Your inventory: ");
+                gameState.getPlayer().listInventory();
+                System.out.println("");
+                System.out.println("Safe Zone inventory: ");
+                gameState.safeZoneInventory.listInventory();
+            }
+        }
+    },
+    TRANSFER {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (!gameState.getCurrentRoom().getIsSafe()) {
+                System.out.println("Return to the safe zone to transfer your items and safely free up some carry weight, or just drop items on the ground here.");
+            } else {
+                if (args[0].equalsIgnoreCase("all")) {
+                    List<Item> playerInventory = gameState.getPlayer().getInventory();
+                    double carryWeightDelta = 0;
+                    for (Item item : playerInventory) {
+                        carryWeightDelta += item.getWeight();
+                    }
+                    gameState.safeZoneInventory.addListOfItemsToInventory(playerInventory);
+                    playerInventory.clear();
+                    gameState.getPlayer().setInventory(playerInventory);
+                    gameState.getPlayer().reduceRemainingCarryWeight(carryWeightDelta);
+                    System.out.println("Transferred your full inventory to the safe zone.");
+                } else {
+                    List<Item> playerInventory = gameState.getPlayer().getInventory();
+                    for (Item item : playerInventory) {
+                        if (item.getName().equalsIgnoreCase(args[0])) {
+                            gameState.safeZoneInventory.addItemToInventory(item);
+                            playerInventory.remove(item);
+                            gameState.getPlayer().reduceRemainingCarryWeight(item.getWeight());
+                            gameState.getPlayer().setInventory(playerInventory);
+                            return;
+                        }
+                    }
+                    System.out.printf("Item of name %s not found in your inventory to transfer.  Use INVENTORY for a list of your items, or TRANSFER ALL to move your entire inventory into the safe zone.", args[0]);
+                }
+            }
         }
     },
     USE {
@@ -296,9 +386,12 @@ public enum GameCommand {
             }
 
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
-    
+            if (item == null && gameState.getCurrentRoom().getIsSafe()) {
+                item = gameState.safeZoneInventory.getItemFromInventory(itemName);
+            }
+
             if (item != null) {
-                item.use(gameState); // Call the item's specific use method
+                item.use(gameState);
             } else {
                 System.out.println("You don't have that item.");
             }
@@ -332,9 +425,8 @@ public enum GameCommand {
                 List<Item> inventory = gameState.getPlayer().getInventory();
                 inventory.remove(item);
                 gameState.getPlayer().setInventory(inventory);
-            }
-            else {
-                System.out.println("You don't have \"" + itemName +",\" or it is not a weapon or armor.");
+            } else {
+                System.out.println("You don't have \"" + itemName + ",\" or it is not a weapon or armor.");
             }
 
             gameState.itemContext = "";
@@ -379,7 +471,7 @@ public enum GameCommand {
                     System.out.println("Invalid command format.");
                     return;
                 }
-    
+
                 if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
                     StringBuilder characterNameBuilder = new StringBuilder();
                     for (int i = 1; i < arguments.length; i++) {
@@ -396,7 +488,8 @@ public enum GameCommand {
                             return;
                         }
                     }
-                    System.out.println(characterName + " was not found in this area. Use LOOK for a list of characters to talk to");
+                    System.out.println(characterName
+                            + " was not found in this area. Use LOOK for a list of characters to talk to");
                 }
             }
         }
@@ -413,13 +506,15 @@ public enum GameCommand {
                         boolean success = gameState.addPartyMember((PartyMember) character.getValue());
                         if (success) {
                             gameState.getCurrentRoom().removePersonFromRoom(character.getKey());
-                            gameState.getCurrentRoom().updateMapEntry('.', 
-                                Character.getNumericValue(character.getKey().charAt(1)), 
-                                Character.getNumericValue(character.getKey().charAt(3)));
+                            gameState.getCurrentRoom().updateMapEntry('.',
+                                    Character.getNumericValue(character.getKey().charAt(1)),
+                                    Character.getNumericValue(character.getKey().charAt(3)));
                             return;
                         }
                     } else {
-                        System.out.println("You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t" + 
+                        System.out.println(
+                                "You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t"
+                                        +
                                         "presence will be made clear (in the actual game, outside this demo.)");
                     }
                 }
@@ -436,7 +531,8 @@ public enum GameCommand {
     LOCATE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            // TODO: this will need to be a different format to indicate the overall game region and give more workable information, 
+            // TODO: this will need to be a different format to indicate the overall game
+            // region and give more workable information,
             Region region = gameState.getCurrentRegion();
             String safeZone = gameState.getDirectionsToRegion();
             String economicZone = gameState.getDirectionsToEconomicZone();
@@ -468,7 +564,8 @@ public enum GameCommand {
                         System.out.println(character.getName() + " does not want to fight");
                         return;
                     } else {
-                        double alignmentDelta = (gameState.getPlayer().getAlignment() * (((NPC) character).getAlignmentImpact()));
+                        double alignmentDelta = (gameState.getPlayer().getAlignment()
+                                * (((NPC) character).getAlignmentImpact()));
                         gameState.getPlayer().adjustAlignment(alignmentDelta);
                         gameState.enterCombat(character);
                         return;
@@ -477,12 +574,13 @@ public enum GameCommand {
             }
             System.out.println("I don't recognize that name");
         }
-    },   
+    },
     QUIT {
         @Override
         public void execute(String[] args, GameState gameState) {
-            //quit logic handled in game engine
-            //TODO: this should be replaced by exclusively the menu based quit as i near the end of demo game
+            // quit logic handled in game engine
+            // TODO: this should be replaced by exclusively the menu based quit as i near
+            // the end of demo game
         }
     };
 

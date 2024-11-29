@@ -11,14 +11,14 @@ public class NPC extends Person {
     private double strength;
     private double dexterity;
     private double constitution;
-    private double intelligence;
+    private double Intelligence;
     private double wisdom;
     private double charisma;
     private double ac;
     private double alignmentImpact;
 
     public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,
-                double strength, double dexterity, double constitution, double intelligence, double wisdom, double charisma, double ac, double alignmentImpact) {
+                double strength, double dexterity, double constitution, double Intelligence, double wisdom, double charisma, double ac, double alignmentImpact) {
         super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
@@ -26,7 +26,7 @@ public class NPC extends Person {
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;
-        this.intelligence = intelligence;
+        this.Intelligence = Intelligence;
         this.wisdom = wisdom;
         this.charisma = charisma;
         this.ac = ac;
@@ -66,7 +66,7 @@ public class NPC extends Person {
     }
 
     public double getIntelligence() {
-        return intelligence;
+        return Intelligence;
     }
 
     public double getWisdom() {
@@ -93,8 +93,8 @@ public class NPC extends Person {
         this.constitution = constitution;
     }
 
-    public void setIntelligence(double intelligence) {
-        this.intelligence = intelligence;
+    public void setIntelligence(double Intelligence) {
+        this.Intelligence = Intelligence;
     }
 
     public void setWisdom(double wisdom) {

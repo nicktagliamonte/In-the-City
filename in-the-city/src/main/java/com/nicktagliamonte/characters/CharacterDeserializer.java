@@ -55,7 +55,7 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double adversaryStr = jsonObject.get("str").getAsDouble();
                 double adversaryDex = jsonObject.get("dex").getAsDouble();
                 double adversaryCon = jsonObject.get("con").getAsDouble();
-                double adversaryIntelligence = jsonObject.get("intelligence").getAsDouble();
+                double adversaryIntelligence = jsonObject.get("Intelligence").getAsDouble();
                 double adversaryWis = jsonObject.get("wis").getAsDouble();
                 double adversaryCharisma = jsonObject.get("charisma").getAsDouble();
                 double adversaryAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();
@@ -81,7 +81,7 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double neutralStr = jsonObject.get("str").getAsDouble();
                 double neutralDex = jsonObject.get("dex").getAsDouble();
                 double neutralCon = jsonObject.get("con").getAsDouble();
-                double neutralIntelligence = jsonObject.get("intelligence").getAsDouble();
+                double neutralIntelligence = jsonObject.get("Intelligence").getAsDouble();
                 double neutralWis = jsonObject.get("wis").getAsDouble();
                 double neutralCharisma = jsonObject.get("charisma").getAsDouble();
                 //NOTE!!! this is the impact that fighting this character will have on alignment, and calculating alignment delta works by treating this as a percent.

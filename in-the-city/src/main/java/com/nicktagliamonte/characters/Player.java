@@ -16,7 +16,7 @@ public class Player extends Person {
     private double strength;
     private double dexterity;
     private double constitution;
-    private double intelligence;
+    private double Intelligence;
     private double wisdom;
     private double charisma;
     private double maxCarryWeight;
@@ -39,7 +39,7 @@ public class Player extends Person {
         this.strength = characterClass.getStrength();
         this.dexterity = characterClass.getDexterity();
         this.constitution = characterClass.getConstitution();
-        this.intelligence = characterClass.getIntelligence();
+        this.Intelligence = characterClass.getIntelligence();
         this.wisdom = characterClass.getWisdom();
         this.charisma = characterClass.getCharisma();
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
@@ -135,12 +135,12 @@ public class Player extends Person {
         this.constitution = constitution;
     }
 
-    public double getintelligence() {
-        return intelligence;
+    public double getIntelligence() {
+        return Intelligence;
     }
 
-    public void setintelligence(double intelligence) {
-        this.intelligence = intelligence;
+    public void setIntelligence(double Intelligence) {
+        this.Intelligence = Intelligence;
     }
 
     public double getWisdom() {
@@ -206,7 +206,7 @@ public class Player extends Person {
     public void listInventory() {
         List<Item> inventory = super.getInventory();
         if (inventory.isEmpty()) {
-            System.out.println("No items in inventory");
+            System.out.println("No items in inventory.");
         } else {
             inventory.forEach(item -> System.out.println(item.getName()));
         }

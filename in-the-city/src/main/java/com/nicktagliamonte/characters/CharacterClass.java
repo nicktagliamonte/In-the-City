@@ -4,7 +4,7 @@ public class CharacterClass {
     private double strength;
     private double dexterity;
     private double constitution;
-    private double intelligence;
+    private double Intelligence;
     private double wisdom;
     private double charisma;
     private double maxCarryWeight;
@@ -18,7 +18,7 @@ public class CharacterClass {
             this.strength = 10;
             this.dexterity = 8;
             this.constitution = 10;
-            this.intelligence = 6;
+            this.Intelligence = 6;
             this.wisdom = 6;
             this.charisma = 8;
             this.maxCarryWeight = 15;
@@ -29,7 +29,7 @@ public class CharacterClass {
             this.strength = 6;
             this.dexterity = 8;
             this.constitution = 8;
-            this.intelligence = 12;
+            this.Intelligence = 12;
             this.wisdom = 10;
             this.charisma = 6;
             this.maxCarryWeight = 13;
@@ -40,7 +40,7 @@ public class CharacterClass {
             this.strength = 8;
             this.dexterity = 8;
             this.constitution = 10;
-            this.intelligence = 8;
+            this.Intelligence = 8;
             this.wisdom = 12;
             this.charisma = 12;
             this.maxCarryWeight = 14;
@@ -75,7 +75,7 @@ public class CharacterClass {
     }
 
     public double getIntelligence() {
-        return intelligence;
+        return Intelligence;
     }
 
     public double getWisdom() {

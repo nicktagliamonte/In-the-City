@@ -5,12 +5,12 @@ import java.util.*;
 import com.nicktagliamonte.game.GameState;
 
 public class SmallTrap extends Trap {
-    private static final int DURATION = 600; // Total duration in seconds
-    private static final int INTERVAL = 1000; // Interval in milliseconds (1 second)
-    private static final double SUCCESS_RATE = 0.75; // 75% success rate
-    private int elapsedTime = 0; // Tracks elapsed seconds
-    private boolean success; // Determines if the entire use() is a success
-    private Random random = new Random(); // Random generator
+    private static final int DURATION = 600;
+    private static final int INTERVAL = 1000;
+    private static final double SUCCESS_RATE = 0.75;
+    private int elapsedTime = 0;
+    private boolean success;
+    private Random random = new Random();
     GameState gameState;
 
     public SmallTrap(GameState gameState) {
@@ -43,8 +43,8 @@ public class SmallTrap extends Trap {
                     //TODO: water
                 }
 
-                //TODO: result.add(item);
-                //TODO: super.springTrap(result);
+                //TODO: result.add(item); (these are todos because i don't have class files for medical/food/scrap/water yet)
+                //TODO: super.springTrap(result); <- this is where the method to add the items to the room inventory live
             }
         } else {
             expire();
@@ -64,7 +64,8 @@ public class SmallTrap extends Trap {
         return 7;
     }
 
-    public void use() {
+    @Override
+    public void use(GameState gameState) {
         System.out.println("You set a small trap.  Hopefully it catches something.");
         super.setTrap(gameState.getCurrentRoom().getPlayerPosition());
         success = random.nextDouble() < SUCCESS_RATE;

@@ -30,10 +30,7 @@ public class Trap extends Item {
     }
 
     public void springTrap(List<Item> items) {
-        //TODO: replace the below with something that adds the items to the SAFE ZONE or CONVEYANCE inventory and prints a message
-        List<Item> currentInventory = gameState.getPlayer().getInventory();
-        currentInventory.addAll(items);
-        gameState.getPlayer().setInventory(currentInventory);
+        gameState.safeZoneInventory.addListOfItemsToInventory(items);
     }
 
     public void expire() {

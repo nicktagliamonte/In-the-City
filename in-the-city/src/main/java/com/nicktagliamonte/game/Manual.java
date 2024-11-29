@@ -32,11 +32,13 @@ public class Manual {
         System.out.println("| OBJECT INTERACTIONS |");
         System.out.println("|_____________________|");
         System.out.println("   EXAMINE [ITEM NAME]: Gives a more detailed description of the item specified by [ITEM NAME]\n\tUse LOOK and/or INVENTORY to get a list of available items.");
-        System.out.println("   TAKE [ITEM NAME]: Adds [ITEM NAME] to the player/party inventory, if there is room.");
+        System.out.println("   TAKE [ITEM NAME]: Adds [ITEM NAME] to the player/party inventory, if there is room.\n\tIf you are in the safe zone, the game will first try to take the item from the safe zone before moving onto general items in the room.\n\tOtherwise, the game will just take an item of the name you specify off the floor, as long as it is available.");
         System.out.println("   USE [ITEM NAME]: Uses [ITEM NAME], if it has a use.");
         System.out.println("   DROP [ITEM NAME]: Removes [ITEM NAME] from inventory, if there is an item of such name in inventory");
         System.out.println("   EQUIP [ITEM NAME]: Equips [ITEM NAME] if it is a weapon, armor, or enhancement item, if there is an item of such name in inventory");
         System.out.println("   DEQUIP [ITEM NAME]: Removes [ITEM NAME] from armor slot and adds it back to inventory, if there is an item of such name currently equipped.\n\tI know dequip is technically not an English word but the game is already written with that being the word for \"stop having this item equipped\", so");
+        System.out.println("   TRANSFER [ITEM NAME]: Transfers [ITEM NAME] from your inventory to the safe zone inventory, if you are currently in the safe zone.");
+        System.out.println("   TRANSFER ALL: Transfers every item in your inventory from your inventory to the safe zone inventory, if you are currently in the safe zone. This will not impact equipped items.");
         System.out.println(" ________________________");
         System.out.println("| CHARACTER INTERACTIONS |");
         System.out.println("|________________________|");

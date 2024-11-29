@@ -21,7 +21,7 @@ Players find the entrance to the tech facility, where they must solve a series o
 
 Engage with the AI:
 Upon gaining access to the core of the facility, players find themselves in a virtual interface with the AI.
-The AI, reminiscent of HAL, engages them in conversation, challenging their perceptions of intelligence, understanding, and survival.
+The AI, reminiscent of HAL, engages them in conversation, challenging their perceptions of Intelligence, understanding, and survival.
 The dialogue presents players with choices that influence the AI’s responses, akin to navigating a complex logic puzzle. For instance, players must respond to statements that require them to justify their understanding of language, meaning, and intention:
 Example Challenge: The AI states, "If I cannot understand the essence of your language, can we ever truly communicate?" Players must choose a response that reflects their understanding of communication—correct answers lead to deeper understanding, while incorrect ones frustrate the AI.
 
@@ -42,7 +42,7 @@ AI (calmly):
 AI (pauses):
 "I know why you’re here. But before you continue, tell me: what do you think communication is? Does a single word convey meaning if the listener doesn't comprehend it in its full context? Or are we merely exchanging sounds, symbols, impressions?"
 
-The AI's question is abstract and philosophical, designed to probe the player's understanding of communication, but it's also a test. Its next lines are more direct, clearly designed to assess the player's intelligence.
+The AI's question is abstract and philosophical, designed to probe the player's understanding of communication, but it's also a test. Its next lines are more direct, clearly designed to assess the player's Intelligence.
 
 AI (probing):
 "If I cannot understand the essence of your language, can we ever truly communicate? Do you, in your limited human form, possess the capacity to grasp the full depth of my thoughts?"

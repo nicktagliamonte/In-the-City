@@ -2,11 +2,7 @@
 Keep adding individual game elements in a "test data" format.  
 
 - **GAME STATE MODIFICATIONS**  
-  - Put a safe zone in the game (attic).  
-    - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
-    - Make the safe room have an inventory.  
-      - Make trapped items appear in that inventory.  
-      - Figure out how to access it.  
+  - Put a safe zone in the game (attic).   
     - Build out the feature to locate the safe zone.  
       - This one is a job and a half.  
       - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  

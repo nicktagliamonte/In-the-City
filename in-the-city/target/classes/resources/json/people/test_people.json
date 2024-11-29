@@ -55,7 +55,7 @@
                 "str": 5,
                 "dex": 5,
                 "con": 5,
-                "intelligence": 5,
+                "Intelligence": 5,
                 "wis": 5,
                 "charisma": 5,
                 "alignmentImpact": 150
@@ -92,7 +92,7 @@
                 "str": 5,
                 "dex": 5,
                 "con": 5,
-                "intelligence": 5,
+                "Intelligence": 5,
                 "wis": 5,
                 "charisma": 5,
                 "alignmentImpact": -150

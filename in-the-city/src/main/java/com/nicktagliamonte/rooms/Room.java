@@ -23,8 +23,10 @@ public class Room {
     private boolean hasPlayer;
     private int[][] mask;
     private char[][] map;
+    private boolean isSafe;
 
-    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, int[][] mask, int playerX, int playerY, char[][] map) {
+    public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, 
+                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -42,6 +44,15 @@ public class Room {
             this.playerY = playerY;
         }
         this.map = map;
+        this.isSafe = isSafe;
+    }
+
+    public void setIsSafe(boolean isSafe) {
+        this.isSafe = isSafe;
+    }
+
+    public boolean getIsSafe() {
+        return isSafe;
     }
 
     public int[][] getMask() {

@@ -39,6 +39,7 @@ public class GameState {
     private boolean fromSaveFile;
     public GameTimer gameTimer;
     public String itemContext;
+    public safeZoneInventory safeZoneInventory;
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
@@ -56,6 +57,7 @@ public class GameState {
         fromSaveFile = false; // TODO: handle this when i'm doing persistence
         this.gameTimer = new GameTimer(this);
         this.itemContext = "";
+        this.safeZoneInventory = new safeZoneInventory();
     }
 
     public void initializePlayer() {
@@ -279,8 +281,7 @@ public class GameState {
 
     // specifically used for initializing the starting room
     // TODO: when i'm loading save games, i'll probably need to find a way to make
-    // it so that the last room which contained the player doesn't conflict with
-    // this
+    // it so that the last room which contained the player doesn't conflict with this
     private void initializeCurrentRoom() {
         for (Room room : currentRegion.getRooms()) {
             if (room.hasPlayer()) {

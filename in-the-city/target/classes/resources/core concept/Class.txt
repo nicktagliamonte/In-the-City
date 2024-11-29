@@ -1,5 +1,5 @@
 * attributes
-    * strength, dex, constitution, intelligence, wisdom, charasma
+    * strength, dex, constitution, Intelligence, wisdom, charasma
     * need starting values per class, level up values per class
     * need to know how these values impact health, energy, focus
     * str

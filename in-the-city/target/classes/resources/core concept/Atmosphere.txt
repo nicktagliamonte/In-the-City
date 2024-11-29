@@ -24,6 +24,6 @@ atmosphere
 		* Whimsical Artifacts: Some relics or pieces of “magic” (advanced tech) have unintended functions or bizarre effects, providing rare, lighthearted moments in the otherwise grim journey.
 		* NPCs with Quirks: The few allies or informants the player encounters may have distinct, quirky personalities that contrast with the desolate world, offering refreshing, albeit brief, companionship.
 	* Moments of Surrealism:
-		* Nature as a Force Beyond Understanding: The flora and fauna of this far-future Philadelphia exhibit strange, otherworldly characteristics—plants may hum at night, stones emit faint glows, and animals behave with eerie intelligence.
+		* Nature as a Force Beyond Understanding: The flora and fauna of this far-future Philadelphia exhibit strange, otherworldly characteristics—plants may hum at night, stones emit faint glows, and animals behave with eerie Intelligence.
 		* Techno-Magic Anomalies: Some of the “magic” (technology) the player interacts with may behave unpredictably, creating strange experiences that defy logic. An artifact may temporarily distort perception or transport the player to a vision of the past.
 		* Reality Slippage: Occasionally, as players dig deeper, they experience moments that feel disjointed, where past and present collide, or where environments subtly shift, hinting at a fractured or layered reality.

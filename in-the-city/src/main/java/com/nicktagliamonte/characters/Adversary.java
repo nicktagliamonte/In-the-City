@@ -8,9 +8,9 @@ public class Adversary extends NPC{
     private double damage;
 
     public Adversary(String name, double health, List<Item> inventory, String description, double maxHealth, double damage, double ac, double str, double dex, 
-                     double con, double intelligence, double wis, double charisma, double alignmentImpact) {
+                     double con, double Intelligence, double wis, double charisma, double alignmentImpact) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, inventory, description, maxHealth, str, dex, con, intelligence, wis, charisma, ac, alignmentImpact);
+        super(name, health, inventory, description, maxHealth, str, dex, con, Intelligence, wis, charisma, ac, alignmentImpact);
         this.damage = damage;
     }
 
