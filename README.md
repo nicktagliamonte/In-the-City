@@ -35,96 +35,96 @@ Some character names or attributes are pulled from things I was watching at the 
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- **BUG FIX AND QA - FIRST EXTERNAL TEST RESULTS**  
-  - Ascend/descend/change room is clunky
-    - If the game spits out 'what room do you want to ascend/descend/enter' and the player types 'upstairs' that should work
-    - Descend is buggy in general
-  - Room map issues:
-    - Update map when neutral casts to adversary
-    - Update map when anyone dies
-    - Update map to replace your old tile with a '.' when you move
-  - Examine command should either take a specified name or examine all adjascent items
-    - Or hold an itemcontext.  if you use go to [waypoint] or take [itemname] or something, then examine with no additional arg should examine that most recent interacted item  
-      - These should be volatile and disappear after one more command
-  - Add a 'MOVE TO [coordinates] option to the move command 
-  - Add a manual command to immediately launch the manuals  
-  - Light leather armor needs a use function, which should do the same as equip
-  - If your inventory is empty, you shouldn't get random barter events
-  - For pausing the clock, have a check if (!timer.isPaused())
-  - If trying to join someone not of partymember class, have it print an error messages
-  - Reword the 'join' command description in command manual
-    - maybe add something about what i mean by party  
-  - Clarify that the command is 'MENU' on game launch   
+**BUG FIX AND QA - FIRST EXTERNAL TEST RESULTS**  
+- Ascend/descend/change room is clunky
+  - If the game spits out 'what room do you want to ascend/descend/enter' and the player types 'upstairs' that should work
+  - Descend is buggy in general
+- Room map issues:
+  - Update map when neutral casts to adversary
+  - Update map when anyone dies
+  - Update map to replace your old tile with a '.' when you move
+- Examine command should either take a specified name or examine all adjascent items
+  - Or hold an itemcontext.  if you use go to [waypoint] or take [itemname] or something, then examine with no additional arg should examine that most recent interacted item  
+    - These should be volatile and disappear after one more command
+- Add a 'MOVE TO [coordinates] option to the move command 
+- Add a manual command to immediately launch the manuals  
+- Light leather armor needs a use function, which should do the same as equip
+- If your inventory is empty, you shouldn't get random barter events
+- For pausing the clock, have a check if (!timer.isPaused())
+- If trying to join someone not of partymember class, have it print an error messages
+- Reword the 'join' command description in command manual
+  - maybe add something about what i mean by party  
+- Clarify that the command is 'MENU' on game launch   
 
-- **GAME STATE MODIFICATIONS**  
-  - Put a safe zone in the game (attic).  
-    - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
-    - Make the safe room have an inventory.  
-      - Make trapped items appear in that inventory.  
-      - Figure out how to access it.  
-    - Build out the feature to locate the safe zone.  
-      - This one is a job and a half.  
-      - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
-  - Put an economic zone in the game (room 1).  
-    - Make the random events that are combat-based not occur in the economic zone.  
-      - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  
+**GAME STATE MODIFICATIONS**  
+- Put a safe zone in the game (attic).  
+  - Make the random events that are combat-based not occur in the safe room.  (randomeventmanager.java)
+  - Make the safe room have an inventory.  
+    - Make trapped items appear in that inventory.  
+    - Figure out how to access it.  
+  - Build out the feature to locate the safe zone.  
+    - This one is a job and a half.  
+    - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
+- Put an economic zone in the game (room 1).  
+  - Make the random events that are combat-based not occur in the economic zone.  
+    - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  
 
-- **MISC UPDATES**  
-  - Do I want a thievery mechanic?  
-      - Probably for the negotiator, since simplifying the barter system completely nerfed them.  
-  - **Player Leveling Mechanics**  
-      - Pay attention to the fact that both max and remaining carry weight will need to increase.  
-      - Pay attention to the fact that party members should also level up here.  
-      - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
-        - You can have EXP from (fights, stealth achievements, bartering achievements) be static per region and scale with the leveling equation.  
-    - Put a quest in the (room? game? NPC friend?).  
-      - Decide what quests do to `gamestate`.  
-        - Probably it will have to change the region (major quests at least) once complete.  
-      - Decide whether quests come from Java or JSON. 
-      - Include a puzzle 
-    - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
-      - format output for readability in general.  
-    - Update the inventory function.  
-      - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
-        ```
-        fuel cell   50  
-        otherItem   1  
-        etc  
-        ```  
-      - Also, make sure it shows the inventory for the whole party.  
-    - There should be a way to see remaining carry weight.  
-    - update the manuals to use the nicer formatting for section headers seen in the economy manual
-    - Trim the name entered by the user to be all lowercase but first letter upper case.
-    - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-    - Add an "introduction" screen.  
-      - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
-      - Just introduce the game before proceeding.  
-    - Reassess demo at this time.  
-      - In the planning stage, currently seems like this is a full demo.  
-      - Check **ALL** TODO comments in every file.  
-    - (Assuming that the demo is in fact done) host the demo.  
-      - Find out what changes need to be made to host the demo online.  
-        - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
-        - If that isn't reasonable, update the README to provide a detailed description of running the game.  
-      - Tell friends to test it.  
+**MISC UPDATES**  
+- Do I want a thievery mechanic?  
+    - Probably for the negotiator, since simplifying the barter system completely nerfed them.  
+- **Player Leveling Mechanics**  
+    - Pay attention to the fact that both max and remaining carry weight will need to increase.  
+    - Pay attention to the fact that party members should also level up here.  
+    - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
+      - You can have EXP from (fights, stealth achievements, bartering achievements) be static per region and scale with the leveling equation.  
+  - Put a quest in the (room? game? NPC friend?).  
+    - Decide what quests do to `gamestate`.  
+      - Probably it will have to change the region (major quests at least) once complete.  
+    - Decide whether quests come from Java or JSON. 
+    - Include a puzzle 
+  - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
+    - format output for readability in general.  
+  - Update the inventory function.  
+    - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
+      ```
+      fuel cell   50  
+      otherItem   1  
+      etc  
+      ```  
+    - Also, make sure it shows the inventory for the whole party.  
+  - There should be a way to see remaining carry weight.  
+  - update the manuals to use the nicer formatting for section headers seen in the economy manual
+  - Trim the name entered by the user to be all lowercase but first letter upper case.
+  - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
+  - Add an "introduction" screen.  
+    - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
+    - Just introduce the game before proceeding.  
+  - Reassess demo at this time.  
+    - In the planning stage, currently seems like this is a full demo.  
+    - Check **ALL** TODO comments in every file.  
+  - (Assuming that the demo is in fact done) host the demo.  
+    - Find out what changes need to be made to host the demo online.  
+      - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
+      - If that isn't reasonable, update the README to provide a detailed description of running the game.  
+    - Tell friends to test it.  
 
 ### NEXT PHASES  
 
-- **Phase 7: Codebase Creation**  
-  - Create files for all items.  
-    - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
-    - Update item manual
-    - add item creation to the crafting menu (see Menu.java todos)
-  - And all spells.  
-  - And all NPCs.  
-  - And everything and anything else.  
-    - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit. 
+**Phase 7: Codebase Creation**  
+- Create files for all items.  
+  - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
+  - Update item manual
+  - add item creation to the crafting menu (see Menu.java todos)
+- And all spells.  
+- And all NPCs.  
+- And everything and anything else.  
+  - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit. 
 
-- **Phase 8: Persistence**  
-  - Create methods for saving and loading game states to test persistence.  
+**Phase 8: Persistence**  
+- Create methods for saving and loading game states to test persistence.  
 
-- **Phase 9: The Actual Game Itself**  
-  - Start coding the levels one-by-one, modularly add them to the game.  
+**Phase 9: The Actual Game Itself**  
+- Start coding the levels one-by-one, modularly add them to the game.  
 
 ## Information:  
 
