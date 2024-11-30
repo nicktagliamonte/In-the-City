@@ -87,10 +87,12 @@ public class Combat {
                     System.out.println("You win!");
                     removeDeadCombatants();
                     combatActive = false;
+                    gameState.getPlayer().gainXP(40, gameState);
                     break;
                 } else if (checkDefeat(combatants)) {
                     System.out.println("You lose!");
                     combatActive = false;
+                    gameState.getPlayer().gainXP(10, gameState);
                     break;
                 }
             }
@@ -156,8 +158,10 @@ public class Combat {
             // Roll for damage
             int damage = player.rollWeaponDamage();
             if (player.inHunger()) {
-                //TODO: have it subtract your level, and set it to 1 if it is less than 1
-                damage -= 2;
+                damage -= player.getLevel();
+                if (damage < 1) {
+                    damage = 1;
+                }
             }
             target.takeDamage(damage);
             System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName()

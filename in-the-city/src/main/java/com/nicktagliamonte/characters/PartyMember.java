@@ -11,6 +11,7 @@ public class PartyMember extends NPC{
     private CharacterClass characterClass;
     private double maxCarryWeight;
     private double damage;
+    private double maxHealth;
 
     public PartyMember(String name, List<Item> inventory, String description, double damage, CharacterClass characterClass) {
         super(name, characterClass.getHealth(), inventory, description, characterClass.getHealth(),
@@ -19,6 +20,15 @@ public class PartyMember extends NPC{
         this.damage = damage;
         this.characterClass = characterClass;
         this.maxCarryWeight = characterClass.getMaxCarryWeight();
+        this.maxHealth = characterClass.getHealth();
+    }
+
+    public double getMaxHealth() {
+        return this.maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public double getDamage() {

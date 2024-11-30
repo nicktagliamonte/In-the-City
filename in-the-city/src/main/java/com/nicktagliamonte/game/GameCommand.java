@@ -612,6 +612,7 @@ public enum GameCommand {
                         if (playerScore < npcScore) {
                             System.out.println("Your attempt to rob " + characterToRob.getName() + " failed.");
                             if (characterToRob instanceof Adversary || characterToRob instanceof Neutral) {
+                                gameState.getPlayer().gainXP(5, gameState);
                                 gameState.enterCombat(characterToRob);
                             } else if (characterToRob instanceof Friend) {
                                 System.out.println("You feel that " + characterToRob.getName() + " will detect your presence if you continue, and you do not want to betray their trust");
@@ -650,6 +651,7 @@ public enum GameCommand {
                     System.out.println("You successfully took " + itemToTake.getName() + " from " + characterToRob.getName());
                     System.out.println(itemToTake.getName() + " was added to the safe zone inventory, because you do not have enough remaining carry weight.");
                 }
+                gameState.getPlayer().gainXP(20, gameState);
             }
         }
     },

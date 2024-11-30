@@ -37,6 +37,7 @@ Currently:
   - Failure against a neutral or adversarial npc initiates combat with that npc
   - Attempts at theivery modify the player alignment.  Stealing from a bad guy increases alignment, stealing from a good guy decreases it.
 - A lockpicking mechanic which enters a 'guess the number' minigame to attempt to pick a lock.  The number of guesses is based on a skill check from the players intelligence score, and the upper bound for a number to guess is based on a field in the adjacency object.
+- Player leveling mechanics which increment the player and party attributes, calculate the xp needed to get to the next level, and scales the xp received based on player level.
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -46,12 +47,7 @@ Some character names or attributes are pulled from things I was watching at the 
 ## Upcoming Work:  
 
 ### Phase 6: Working Demo  
-Keep adding individual game elements in a "test data" format.     
-- Player Leveling Mechanics  
-    - Pay attention to the fact that both max and remaining carry weight will need to increase.  
-    - Pay attention to the fact that party members should also level up here.  
-    - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
-      - You can have EXP from (fights, stealth achievements, bartering achievements) be static per region and scale with the leveling equation.  
+Keep adding individual game elements in a "test data" format.      
 - Put a quest in the (room? game? NPC friend?).  
   - Decide what quests do to `gamestate`.  
     - Probably it will have to change the region (major quests at least) once complete.  

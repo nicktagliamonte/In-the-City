@@ -819,6 +819,7 @@ public class GameState {
     
             if (playerInput == lockValue) {
                 System.out.println("You hear a satisfying click! The lock opens.");
+                player.gainXP(20, this);
                 success = true;
                 break;
             } else {

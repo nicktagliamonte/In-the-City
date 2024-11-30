@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import com.nicktagliamonte.Spells.Spell;
+import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
@@ -34,6 +35,10 @@ public class Player extends Person {
     public int timeSinceWater = 0; //TODO: see above, but for water
     private double alignment;
     private boolean isHiding;
+    public int level;
+    public double currentXP;
+    public double nextLevelXP;
+    public double nextLevelXPReward;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -54,6 +59,14 @@ public class Player extends Person {
         this.status = " ";
         this.alignment = 0;
         this.isHiding = false;
+        level = 1;
+        currentXP = 0;
+        nextLevelXP = 100;
+        nextLevelXPReward = 1;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void setIsHiding(boolean isHiding) {
@@ -314,8 +327,7 @@ public class Player extends Person {
 
     public int getAttackModifier() {
         if (!hasWeapon) {
-            //TODO: have this return the player level
-            return 0;
+            return level;
         } else {
             return weapon.getAttackModifier();
         }
@@ -323,8 +335,7 @@ public class Player extends Person {
 
     public int rollWeaponDamage() {
         if (!hasWeapon) {
-            //TODO: also have this be impacted by player level
-            return 1;
+            return (int) (Math.random() * level) + 1;
         } else {
             return weapon.getDamage();
         }
@@ -382,15 +393,114 @@ public class Player extends Person {
         return status.contains("Hunger");
     }
 
-    public boolean inFear() {
-        return status.contains("Fear");
-    }
-
     public boolean inThirst() {
         return status.contains("Thirst");
     }
 
-    public boolean inTerror() {
-        return status.contains("Terror");
+    public void calculateNextLevelXP() {
+        nextLevelXP *= 1.1;
+    }
+
+    public void calculateNextLevelXPReward() {
+        nextLevelXPReward *= 1.07;
+    }
+
+    public void gainXP(double xpGained, GameState gameState) {
+        currentXP += (xpGained * nextLevelXPReward);
+    
+        while (currentXP >= nextLevelXP) {
+            levelUp(gameState);
+        }
+    }
+
+    private void levelUp(GameState gameState) {
+        currentXP -= nextLevelXP;
+        level++;
+        if (characterClass.getClassName().equalsIgnoreCase("technologist")) {
+            incrementTechnologist();
+        } else if (characterClass.getClassName().equalsIgnoreCase("survivalist")) {
+            incrementSurvivalist();
+        } else {
+            incrementNegotiator();
+        }
+        this.setHealth(this.maxHealth);
+        this.setStatus("");
+        calculateNextLevelXP();
+        
+        if (!(gameState.getCurrentParty() == null || gameState.getCurrentParty().isEmpty())) {
+            for (NPC partyMember : gameState.getCurrentParty()) {
+                if (((PartyMember) partyMember).getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
+                    partyMember.setStrength(partyMember.getStrength() + (partyMember.getStrength() * 0.0833));
+                    partyMember.setDexterity(partyMember.getDexterity() + (partyMember.getDexterity() * 0.075));
+                    partyMember.setConstitution(partyMember.getConstitution() + (partyMember.getConstitution() * 0.0875));
+                    partyMember.setIntelligence(partyMember.getIntelligence() + (partyMember.getIntelligence() * 0.1));
+                    partyMember.setWisdom(partyMember.getWisdom() + (partyMember.getWisdom() * 0.1));
+                    partyMember.setCharisma(partyMember.getCharisma() + (partyMember.getCharisma() * 0.0833));
+                    ((PartyMember) partyMember).setMaxHealth(partyMember.getMaxHealth() + (partyMember.getMaxHealth() * 0.1111));
+                    ((PartyMember) partyMember).setDamage(((PartyMember) partyMember).getDamage() + (((PartyMember) partyMember).getDamage() * 0.1111));
+                    partyMember.setAc(partyMember.getAc() + (partyMember.getAc() * .075));
+                } else if (((PartyMember) partyMember).getCharacterClass().getClassName().equalsIgnoreCase("survivalist")) {
+                    partyMember.setStrength(partyMember.getStrength() + (partyMember.getStrength() * 0.12));
+                    partyMember.setDexterity(partyMember.getDexterity() + (partyMember.getDexterity() * 0.1167));
+                    partyMember.setConstitution(partyMember.getConstitution() + (partyMember.getConstitution() * 0.09));
+                    partyMember.setIntelligence(partyMember.getIntelligence() + (partyMember.getIntelligence() * 0.0667));
+                    partyMember.setWisdom(partyMember.getWisdom() + (partyMember.getWisdom() * 0.0667));
+                    partyMember.setCharisma(partyMember.getCharisma() + (partyMember.getCharisma() * 0.075));
+                    ((PartyMember) partyMember).setMaxHealth(partyMember.getMaxHealth() + (partyMember.getMaxHealth() * 0.1364));
+                    ((PartyMember) partyMember).setDamage(((PartyMember) partyMember).getDamage() + (((PartyMember) partyMember).getDamage() * 0.1364));
+                    partyMember.setAc(partyMember.getAc() + (partyMember.getAc() * .1));
+                } else {
+                    partyMember.setStrength(partyMember.getStrength() + (partyMember.getStrength() * 0.1));
+                    partyMember.setDexterity(partyMember.getDexterity() + (partyMember.getDexterity() * 0.075));
+                    partyMember.setConstitution(partyMember.getConstitution() + (partyMember.getConstitution() * 0.08));
+                    partyMember.setIntelligence(partyMember.getIntelligence() + (partyMember.getIntelligence() * 0.0625));
+                    partyMember.setWisdom(partyMember.getWisdom() + (partyMember.getWisdom() * 0.1));
+                    partyMember.setCharisma(partyMember.getCharisma() + (partyMember.getCharisma() * 0.125));
+                    ((PartyMember) partyMember).setDamage(((PartyMember) partyMember).getDamage() + (((PartyMember) partyMember).getDamage() * 0.125));
+                    partyMember.setAc(partyMember.getAc() + (partyMember.getAc() * .05));
+                }
+                partyMember.setHealth(partyMember.getMaxHealth());
+            }
+        }
+        System.out.println("Congratulations! You've reached level " + level);
+    }
+
+    private void incrementTechnologist() {
+        strength += strength * 0.0833;
+        dexterity += dexterity * 0.075;
+        constitution += constitution * 0.0875;
+        Intelligence += Intelligence * 0.1;
+        wisdom += wisdom * 0.1;
+        charisma += charisma * 0.0833;
+        maxHealth += maxHealth * 0.1111;
+        maxCarryWeight += maxCarryWeight * 0.1154;
+        remainingCarryWeight += maxCarryWeight * 0.1154; 
+        ac += ac * .075;
+    }
+
+    private void incrementSurvivalist() {
+        strength += strength * 0.12;
+        dexterity += dexterity * 0.1167;
+        constitution += constitution * 0.09;
+        Intelligence += Intelligence * 0.0667;
+        wisdom += wisdom * 0.0667;
+        charisma += charisma * 0.075;
+        maxHealth += maxHealth * 0.1364;
+        maxCarryWeight += maxCarryWeight * 0.1667;
+        remainingCarryWeight += maxCarryWeight * 0.1667;
+        ac += ac * .1;
+    }
+
+    private void incrementNegotiator() {
+        strength += strength * 0.1;
+        dexterity += dexterity * 0.075;
+        constitution += constitution * 0.08;
+        Intelligence += Intelligence * 0.0625;
+        wisdom += wisdom * 0.1;
+        charisma += charisma * 0.1167;
+        maxHealth += maxHealth * 0.125;
+        maxCarryWeight += maxCarryWeight * 0.1429;
+        remainingCarryWeight += maxCarryWeight * 0.1429;
+        ac += ac * .05;
     }
 }

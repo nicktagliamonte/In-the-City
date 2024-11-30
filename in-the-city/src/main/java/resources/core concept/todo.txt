@@ -1,16 +1,12 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- Player Leveling Mechanics  
-    - Pay attention to the fact that both max and remaining carry weight will need to increase.  
-    - Pay attention to the fact that party members should also level up here.  
-    - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
-      - You can have EXP from (fights, stealth achievements, bartering achievements, lockpicking) be static per region and scale with the leveling equation.  
 - Put a quest in the (room? game? NPC friend?).  
   - Decide what quests do to `gamestate`.  
     - Probably it will have to change the region (major quests at least) once complete.  
   - Decide whether quests come from Java or JSON. 
   - Include a puzzle 
+  -annotate SOMEWHERE that main quests will give the player their current level xp requirement (if they need 100 and have 99, it gives them 100), and side quests will be 1/3 the current leveling requirement
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - format output for readability in general.  
 - Update the inventory function.  
