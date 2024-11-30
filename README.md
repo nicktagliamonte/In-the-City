@@ -29,8 +29,14 @@ Currently:
   - Blocks randomly generated combat events from occurring, and significantly decreases the frequency of randomly generated barter/begging events.
   - Can be located from anywhere in the game through the `Locate` command, which will print a string of adjacencies required to get from the player's current position to the safe zone  
     - "To get to the safe zone from your current position, go through: "room 2" -> "room 1" -> "room 0"" where room 0 is the safe zone
-- An economic zone which
-  - Increases the incidence of random barter events and decreases, but does not eliminate, the incidence of random combat events.
+- An economic zone which increases the incidence of random barter events and decreases, but does not eliminate, the incidence of random combat events.
+- A hide feature which attempts to conceal the players presence, and modifies attribute scores based on this concealed presence (lowered strength, increased wisdom, etc)
+- A theivery mechanic which 
+  - Attempts to take the single highest value item from an NPC and puts it either in player inventory or the safe zone inventory, depending on player carrying capacity
+  - Failure is based on opposed skill checks plus a dice roll, where the skills are wis and char
+  - Failure against a neutral or adversarial npc initiates combat with that npc
+  - Attempts at theivery modify the player alignment.  Stealing from a bad guy increases alignment, stealing from a good guy decreases it.
+- A lockpicking mechanic which enters a 'guess the number' minigame to attempt to pick a lock.  The number of guesses is based on a skill check from the players intelligence score, and the upper bound for a number to guess is based on a field in the adjacency object.
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -40,8 +46,7 @@ Some character names or attributes are pulled from things I was watching at the 
 ## Upcoming Work:  
 
 ### Phase 6: Working Demo  
-Keep adding individual game elements in a "test data" format.    
-- Introduce a theivery mechanic (negotiator specialty, but available to all)  
+Keep adding individual game elements in a "test data" format.     
 - Player Leveling Mechanics  
     - Pay attention to the fact that both max and remaining carry weight will need to increase.  
     - Pay attention to the fact that party members should also level up here.  

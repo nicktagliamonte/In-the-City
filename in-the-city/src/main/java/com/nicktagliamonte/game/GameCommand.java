@@ -16,6 +16,7 @@ import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Weapon;
+import com.nicktagliamonte.rooms.Adjacency;
 import com.nicktagliamonte.rooms.Room;
 
 public enum GameCommand {
@@ -162,28 +163,65 @@ public enum GameCommand {
     ASCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 2) {
+            String[] argsTokens = args[0].split(" ");
+            if (argsTokens.length < 2) {
                 System.out.println("Which room do you want to ascend to?");
                 @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
                 String input = scanner.nextLine();
                 gameState.ascend(input);
             } else {
-                gameState.ascend(args[1]);
+                gameState.ascend(argsTokens[1]);
             }
         }
     },
     DESCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            if (args.length < 2) {
+            String[] argsTokens = args[0].split(" ");
+            if (argsTokens.length < 2) {
                 System.out.println("Which room do you want to descend to?");
                 @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
                 String input = scanner.nextLine();
                 gameState.descend(input);
             } else {
-                gameState.descend(args[1]);
+                gameState.descend(argsTokens[1]);
+            }
+        }
+    },
+    UNLOCK {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            gameState.getPlayer().hasKey(gameState.getCurrentRoom().getAdjacentRooms());
+        }
+    },
+    LOCKPICK {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length < 1) {
+                System.out.println("Specify a room to lockpick");
+                return;
+            }
+
+            String targetRoomName = args[0];
+            List<Adjacency> adjacentRooms = gameState.getCurrentRoom().getAdjacentRooms();
+
+            boolean roomFound = false;
+
+            for (Adjacency adjacency : adjacentRooms) {
+                if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName) && adjacency.getIsLocked()) {
+                    roomFound = true;
+                    gameState.startLockpickingSequence(targetRoomName, adjacency);
+                    return;
+                } else if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName)) {
+                    System.out.println(targetRoomName + " is already unlocked. You can enter it by typing \"ENTER " + targetRoomName + "\"");
+                    return;
+                }
+            }
+
+            if (!roomFound) {
+                System.out.println("There is no adjoining room named " + targetRoomName);
             }
         }
     },

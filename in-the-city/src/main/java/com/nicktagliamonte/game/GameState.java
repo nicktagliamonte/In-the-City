@@ -315,6 +315,8 @@ public class GameState {
     }
 
     public String changeLocation(String directionInput, int distance) {
+        player.hasKey(currentRoom.getAdjacentRooms());
+
         try {
             Direction direction = Direction.valueOf(directionInput.toUpperCase());
             String oldLocation = currentRoom.getPlayerPosition();
@@ -474,9 +476,12 @@ public class GameState {
 
     public void enterByCommand(String roomName) {
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
-            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()) {
                 setCurrentRoom(adj.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
+                return;
+            } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
+                System.out.println(roomName + " is locked.");
                 return;
             }
         }
@@ -794,6 +799,46 @@ public class GameState {
             // game started
             loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
             this.currentParty = new ArrayList<>();
+        }
+    }
+
+    @SuppressWarnings("resource")
+    public void startLockpickingSequence(String roomName, Adjacency adjacency) {
+        System.out.println("You are attempting to pick the lock of " + roomName);
+    
+        double intelligenceBonus = player.getIntelligence() / 2;
+        int baseChances = adjacency.getBaseChances() + (int) Math.floor(intelligenceBonus);
+        boolean success = false;
+    
+        System.out.println("The lock feels intricate. You have " + baseChances + " attempts.");
+        for (int attempt = 1; attempt <= baseChances; attempt++) {
+            System.out.println("Attempt " + attempt + ": What will you do?");
+            System.out.println("Enter a number between 1 and " + adjacency.getDifficulty() + ":");
+            int playerInput = new Scanner(System.in).nextInt();
+            int lockValue = (int) (Math.random() * adjacency.getDifficulty()) + 1;
+    
+            if (playerInput == lockValue) {
+                System.out.println("You hear a satisfying click! The lock opens.");
+                success = true;
+                break;
+            } else {
+                System.out.println("The lock resists. Keep trying...");
+            }
+        }
+    
+        if (!success) {
+            System.out.println("You failed to pick the lock. Maybe try again later.");
+        } else {
+            unlockRoom(roomName);
+        }
+    }
+    
+    private void unlockRoom(String roomName) {
+        System.out.println(roomName + " is now unlocked!");
+        for (Adjacency adj : currentRoom.getAdjacentRooms()) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
+                adj.setIsLocked(false);
+            }
         }
     }
 }

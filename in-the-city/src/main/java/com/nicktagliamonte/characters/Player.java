@@ -10,6 +10,7 @@ import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
 import com.nicktagliamonte.items.Weapon;
+import com.nicktagliamonte.rooms.Adjacency;
 
 public class Player extends Person {
     private CharacterClass characterClass;
@@ -295,6 +296,16 @@ public class Player extends Person {
             }
         }
         return false;
+    }
+
+    public void hasKey(List<Adjacency> adjacencies) {
+        for (Adjacency adj : adjacencies) {
+            for (Item item : inventory) {
+                if (item.getName().equalsIgnoreCase(adj.getAdjoiningRoomName())) {
+                    adj.setIsLocked(false);
+                }
+            }
+        }
     }
 
     public boolean isAlive() {

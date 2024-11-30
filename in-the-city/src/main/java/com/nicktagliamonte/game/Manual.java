@@ -39,6 +39,8 @@ public class Manual {
         System.out.println("   DEQUIP [ITEM NAME]: Removes [ITEM NAME] from armor slot and adds it back to inventory, if there is an item of such name currently equipped.\n\tI know dequip is technically not an English word but the game is already written with that being the word for \"stop having this item equipped\", so");
         System.out.println("   TRANSFER [ITEM NAME]: Transfers [ITEM NAME] from your inventory to the safe zone inventory, if you are currently in the safe zone.");
         System.out.println("   TRANSFER ALL: Transfers every item in your inventory from your inventory to the safe zone inventory, if you are currently in the safe zone. This will not impact equipped items.");
+        System.out.println("   UNLOCK: Please note that this command does NOT take any additional arguments. If you have a key to a room you are currently adjacent to, this command will unlock the door.");
+        System.out.println("   LOCKPICK [ROOM NAME]: Unlike the UNLOCK command, this command does require you to specify a ROOM NAME.\n\tInitiates lockpicking sequence to enter ROOM NAME.\n\tIf you get the door unlocked, you still have to use ENTER to get into the room.");
         System.out.println(" ________________________");
         System.out.println("| CHARACTER INTERACTIONS |");
         System.out.println("|________________________|");
@@ -48,7 +50,7 @@ public class Manual {
         System.out.println("          This can only be undone if [CHARACTER NAME] dies. There are very few ingame characters who you can join up with, and gameplay will make it clear who is a valid party member vs who is just another NPC.");
         System.out.println("   FIGHT [CHARACTER NAME]: Enters Combat with [CHARACTER NAME].");
         System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and boosting theivery success. When hidden, you cannot move more than one space at a time.");
-        System.out.println("   UNHIDE: Undoes the above, returns to normal.");
+        System.out.println("   UNHIDE: Undoes the above, returns to normal.\n\tIt's not a word, but it's the word I'm using.");
         System.out.println("========================================");
     }
 

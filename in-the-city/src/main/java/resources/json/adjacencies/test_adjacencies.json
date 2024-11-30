@@ -6,14 +6,20 @@
         "coordinates": "(4,9)",
         "description": "large wooden double doors leading to \"room 2\"",
         "adjoiningRoom": "Room 2",
-        "isStairsUp": "false"
+        "isStairsUp": false,
+        "isLocked": true,
+        "baseChances": 5,
+        "difficulty": 10
       },
       {
         "type": "stairs",
         "coordinates": "(7,5)",
         "description": "a narrow, rotting ladder going \"upstairs\"",
         "adjoiningRoom": "upstairs",
-        "isStairsUp": true
+        "isStairsUp": true,
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100
       }
     ],
     "Room 2": [
@@ -22,7 +28,10 @@
         "coordinates": "(2,0)",
         "description": "large wooden double doors leading to \"room 1\"",
         "adjoiningRoom": "Room 1",
-        "isStairsUp": "false"
+        "isStairsUp": false,
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100
       }
     ],
     "upstairs": [
@@ -31,7 +40,10 @@
         "coordinates": "(0,0)",
         "description": "a narrow, rotting ladder going down into \"room 1\"",
         "adjoiningRoom": "Room 1",
-        "isStairsUp": false
+        "isStairsUp": false,
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100
       }
     ]
   }

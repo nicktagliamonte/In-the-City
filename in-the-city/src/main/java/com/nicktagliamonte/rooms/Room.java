@@ -206,6 +206,10 @@ public class Room {
     
         for (Adjacency adj : adjacentRooms) {
             if (adj.getCoordinates().equals(currentPositionKey)) {
+                if (adj.getIsLocked()) {
+                    System.out.println("The door is locked, and you do not have a key.");
+                    return this;
+                }
                 return adj.getAdjoiningRoom();
             }
         }
