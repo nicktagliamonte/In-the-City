@@ -25,10 +25,11 @@ public class Room {
     private int[][] mask;
     private char[][] map;
     private boolean isSafe;
+    private boolean isEconomic;
     private String nextRoomToSafeZone;
 
     public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, 
-                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, String nextRoomToSafeZone) {
+                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, boolean isEconomic, String nextRoomToSafeZone) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -47,7 +48,16 @@ public class Room {
         }
         this.map = map;
         this.isSafe = isSafe;
+        this.isEconomic = isEconomic;
         this.nextRoomToSafeZone = nextRoomToSafeZone;
+    }
+
+    public boolean getIsEconomic() {
+        return isEconomic;
+    }
+
+    public void setIsEconomic(boolean isEconomic) {
+        this.isEconomic = isEconomic;
     }
 
     public String getNextRoomToSafeZone() {

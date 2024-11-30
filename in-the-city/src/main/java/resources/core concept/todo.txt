@@ -1,15 +1,8 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- **GAME STATE MODIFICATIONS**  
-  - Put an economic zone in the game (room 1).  
-    - Make the random events that are combat-based not occur in the economic zone.  
-      - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  
-
-- **MISC UPDATES**  
-- Do I want a thievery mechanic?  
-    - Probably for the negotiator, since simplifying the barter system completely nerfed them.  
-- **Player Leveling Mechanics**  
+- Introduce theivery mechanic for the negotiator
+- Player Leveling Mechanics  
     - Pay attention to the fact that both max and remaining carry weight will need to increase.  
     - Pay attention to the fact that party members should also level up here.  
     - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  

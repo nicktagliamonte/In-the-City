@@ -33,20 +33,13 @@ public class RandomEventManager {
     }
 
     private void triggerCombatEvent() {
-        // Check if the player is in a region where combat could happen
-        /**
-         * TODO: add something to only show half or a third of combat events in economic zone 
-         * if (ineconomiczone) {
-         *      rand chance = random.nextint(3);
-         *      if (chance == 0) {
-         *          //whatever to initiate combat
-         *      } else {
-         *          //do nothing
-         *      }
-         * }
-         */
-        //
-        if (!gameState.getCurrentRoom().getIsSafe()) {
+        boolean success = false;
+        int chance = random.nextInt(2);
+        if (!(gameState.getCurrentRoom().getIsSafe() || gameState.getCurrentRoom().getIsEconomic()) || (gameState.getCurrentRoom().getIsEconomic() && chance == 0)) {
+            success = true;
+        }
+
+        if (success) {
             System.out.println("A wild adversary approaches! Get ready to fight!");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate adversary for that region.
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
@@ -59,8 +52,8 @@ public class RandomEventManager {
 
     private void triggerBarterEvent() {
         int chance = random.nextInt(4);
-        //TODO: update condition to ineconomiczone || (insafezone && chance == 0)
-        if (gameState.getCurrentRoom().getIsSafe() && chance == 0) {
+        
+        if (gameState.getCurrentRoom().getIsEconomic() || (gameState.getCurrentRoom().getIsSafe() && chance == 0)) {
             System.out.println("An NPC offers to trade with you.");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate friend for that region.
             //TODO: the regionFriend constructors should also have some kind of randomization function to set the inventory to some random set within a range

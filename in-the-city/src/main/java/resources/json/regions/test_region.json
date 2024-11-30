@@ -37,6 +37,7 @@
         [" ", " ", " ", " ", ".", ".", " ", " ", " ", " "]
       ],
       "isSafe": false, 
+      "isEconomic": true,
       "nextRoomToSafeZone": "upstairs"
     },
     {
@@ -70,7 +71,8 @@
         [".", ".", ".", ".", ".", "."],
         ["I", ".", "E", ".", ".", "."]
       ],
-      "isSafe": false, 
+      "isSafe": false,
+      "isEconomic": false,
       "nextRoomToSafeZone": "room 1"
     },
     {
@@ -92,6 +94,7 @@
         ["E", "."]
       ],
       "isSafe": true, 
+      "isEconomic": false,
       "nextRoomToSafeZone": ""
     }
   ]

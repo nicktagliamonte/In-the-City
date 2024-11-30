@@ -654,7 +654,7 @@ public class GameState {
     public void enterBarter(Person npc) {
         gameTimer.pause();
         System.out.println("Entering barter mode with " + npc.getName());
-        Boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
+        boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
         for (NPC member : currentParty) {
             PartyMember partyMember = (PartyMember) member;
             if (partyMember.getCharacterClass().getClassName().equalsIgnoreCase("negotiator")) {

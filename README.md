@@ -27,6 +27,10 @@ Currently:
 - A safe zone which
   - Has an inventory of items the player can store, working around limited carry weight and giving them a place to stockpile resources
   - Blocks randomly generated combat events from occurring, and significantly decreases the frequency of randomly generated barter/begging events.
+  - Can be located from anywhere in the game through the `Locate` command, which will print a string of adjacencies required to get from the player's current position to the safe zone  
+    - "To get to the safe zone from your current position, go through: "room 2" -> "room 1" -> "room 0"" where room 0 is the safe zone
+- An economic zone which
+  - Increases the incidence of random barter events and decreases, but does not eliminate, the incidence of random combat events.
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -36,21 +40,9 @@ Some character names or attributes are pulled from things I was watching at the 
 ## Upcoming Work:  
 
 ### Phase 6: Working Demo  
-Keep adding individual game elements in a "test data" format.   
-
-**GAME STATE MODIFICATIONS**  
-- Put a safe zone in the game (attic).   
-  - Build out the feature to locate the safe zone.  
-    - This one is a job and a half.  
-    - Could I just say (safe zone is at [coordinates of all adjacencies needed to get to safety?])  
-- Put an economic zone in the game (room 1).  
-  - Make the random events that are combat-based not occur in the economic zone.  
-    - Have barter events only occur in the economic zone and soem in safe zone (see todo in randomeventmanager).  
-
-**MISC UPDATES**  
-- Do I want a thievery mechanic?  
-    - Probably for the negotiator, since simplifying the barter system completely nerfed them.  
-- **Player Leveling Mechanics**  
+Keep adding individual game elements in a "test data" format.    
+- Introduce a theivery mechanic (negotiator specialty, but available to all)  
+- Player Leveling Mechanics  
     - Pay attention to the fact that both max and remaining carry weight will need to increase.  
     - Pay attention to the fact that party members should also level up here.  
     - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
