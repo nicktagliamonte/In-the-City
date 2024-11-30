@@ -727,6 +727,7 @@ public class GameState {
 
     public void enterCombat(Person character) {
         gameTimer.pause();
+        player.setIsHiding(false);
         List<Person> combatants = new ArrayList<>();
         combatants.add(player); // Add player
         String location = "";

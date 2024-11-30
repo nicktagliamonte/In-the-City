@@ -32,6 +32,7 @@ public class Player extends Person {
     public int timeSinceFood = 0; //TODO: once there is a food item, have this reset to 0 when food is eaten and remove substring hunger from player status
     public int timeSinceWater = 0; //TODO: see above, but for water
     private double alignment;
+    private boolean isHiding;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -51,6 +52,15 @@ public class Player extends Person {
         this.deathSavingThrows = 0;
         this.status = " ";
         this.alignment = 0;
+        this.isHiding = false;
+    }
+
+    public void setIsHiding(boolean isHiding) {
+        this.isHiding = isHiding;
+    }
+
+    public boolean getIsHiding() {
+        return isHiding;
     }
 
     public void addSpell(Spell spell) {
@@ -112,6 +122,9 @@ public class Player extends Person {
     }
 
     public double getStrength() {
+        if (isHiding) {
+            return strength - (strength * .2);
+        }
         return strength;
     }
 
@@ -120,6 +133,9 @@ public class Player extends Person {
     }
 
     public double getDexterity() {
+        if (isHiding) {
+            return dexterity - (dexterity * .05);
+        }
         return dexterity;
     }
 
@@ -128,6 +144,9 @@ public class Player extends Person {
     }
 
     public double getConstitution() {
+        if (isHiding) {
+            return constitution - (constitution * .1);
+        }
         return constitution;
     }
 
@@ -144,6 +163,9 @@ public class Player extends Person {
     }
 
     public double getWisdom() {
+        if (isHiding) {
+            return wisdom + (wisdom * .15);
+        }
         return wisdom;
     }
 
@@ -152,6 +174,9 @@ public class Player extends Person {
     }
 
     public double getCharisma() {
+        if (isHiding) {
+            return charisma + (charisma * .1);
+        }
         return charisma;
     }
 
@@ -210,12 +235,6 @@ public class Player extends Person {
         } else {
             inventory.forEach(item -> System.out.println(item.getName()));
         }
-    }
-
-    public void hide() {
-        //TODO: unsure of exact gameplay elements here, i think this will require feedback from gamestate
-        //like the success chance depends on the adversaries in the region
-        System.out.println("working");
     }
 
     public Item getItemFromInventory(String itemName) {

@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Map.Entry;
+import java.util.Random;
 
+import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Friend;
 import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.characters.Neutral;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Armor;
@@ -101,6 +104,11 @@ public enum GameCommand {
                 }
 
                 if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
+                    if (gameState.getPlayer().getIsHiding()) {
+                        System.out.println("Your move speed is reduced while you are hiding. Use UNHIDE, or move just one space at a time.");
+                        return;
+                    }
+
                     StringBuilder waypointNameBuilder = new StringBuilder();
                     for (int i = 1; i < arguments.length; i++) {
                         waypointNameBuilder.append(arguments[i]);
@@ -114,17 +122,20 @@ public enum GameCommand {
                     return;
                 }
 
-                // Handle regular movement
                 String direction = arguments[0];
-                int distance = 1; // Default distance
+                int distance = 1;
 
                 if (arguments.length > 1) {
-                    try {
-                        distance = Integer.parseInt(arguments[1]);
-                    } catch (NumberFormatException e) {
-                        System.out.println(
-                                "Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
-                        return;
+                    if (!gameState.getPlayer().getIsHiding()) {
+                        try {
+                            distance = Integer.parseInt(arguments[1]);
+                        } catch (NumberFormatException e) {
+                            System.out.println(
+                                    "Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
+                            return;
+                        }
+                    } else {
+                        System.out.println("While you are hiding, you can only move one step at a time.  Use UNHIDE to increase your movement speed");
                     }
                 }
                 String message = gameState.changeLocation(direction, distance);
@@ -491,6 +502,8 @@ public enum GameCommand {
                     }
                     System.out.println(characterName
                             + " was not found in this area. Use LOOK for a list of characters to talk to");
+                } else {
+                    System.out.println("This command has to be formatted as talk TO [character name]");
                 }
             }
         }
@@ -516,8 +529,88 @@ public enum GameCommand {
                         System.out.println(
                                 "You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t"
                                         +
-                                        "presence will be made clear (in the actual game, outside this demo.)");
+                                        "presence will be made clear (in the actual game, outside this demo. In the demo, the only valid character to join is chunky.)");
                     }
+                }
+            }
+        }
+    },
+    ROB {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            if (args.length < 1) {
+                System.out.println("Specify a character to rob");
+            } else {
+                List<Item> characterInventory = null;
+                NPC characterToRob = null;
+
+                //get the character to rob
+                Collection<NPC> people = gameState.getCurrentRoom().getPeopleInRoom().values();
+                for (NPC person : people) {
+                    if (person.getName().equalsIgnoreCase(args[0])) {
+                        characterToRob = person;
+
+                        //can't rob party members
+                        if (characterToRob instanceof PartyMember) {
+                            System.out.println("You cannot rob " + characterToRob.getName());
+                            return;
+                        } else {
+                            //increase alignment for robbing bad guys, decrease for robbing good guys. reduce the size of change relative to combat interaction
+                            double alignmentDelta = (gameState.getPlayer().getAlignment() * characterToRob.getAlignmentImpact());
+                            alignmentDelta *= 0.8;
+                            gameState.getPlayer().adjustAlignment(alignmentDelta);
+                        }
+
+                        //determine theivery success with opposed wis/char checks (benefitting the negotiator class)
+                        double playerScore = gameState.getPlayer().getWisdom() * 1.5
+                                        + gameState.getPlayer().getCharisma()
+                                        + (Math.random() * 10);
+                                    
+                        double npcScore = characterToRob.getWisdom() * 1.5
+                                        + characterToRob.getCharisma()
+                                        + Math.random() * 10;
+                        
+                        //respond to failure depending on the type of character you're attempting to rob
+                        if (playerScore < npcScore) {
+                            System.out.println("Your attempt to rob " + characterToRob.getName() + " failed.");
+                            if (characterToRob instanceof Adversary || characterToRob instanceof Neutral) {
+                                gameState.enterCombat(characterToRob);
+                            } else if (characterToRob instanceof Friend) {
+                                System.out.println("You feel that " + characterToRob.getName() + " will detect your presence if you continue, and you do not want to betray their trust");
+                            }
+                            return;
+                        }
+
+                        //determine character's inventory contents
+                        if (characterToRob.getInventory().isEmpty() || characterToRob.getInventory() == null) {
+                            System.out.println(person.getName() + " does not have anything you can steal");
+                            return;
+                        }
+                        characterInventory = person.getInventory();
+                    }
+                }
+
+                //get highest value item to take and remove it from the character
+                Item itemToTake = null;
+                int highestValue = 0;
+                for (Item item : characterInventory) {
+                    if (item.getValue() > highestValue) {
+                        itemToTake = item;
+                    }
+                }
+                characterInventory.remove(itemToTake);
+                characterToRob.setInventory(characterInventory);
+
+                //add the item to your inventory if you can hold it, otherwise put it in the safe zone
+                if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
+                    gameState.getPlayer().addItem(itemToTake);
+                    gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
+                    System.out.println("You successfully took " + itemToTake.getName() + " from " + characterToRob.getName());
+                    System.out.println(itemToTake.getName() + " was added to your inventory.");
+                } else {
+                    gameState.safeZoneInventory.addItemToInventory(itemToTake);
+                    System.out.println("You successfully took " + itemToTake.getName() + " from " + characterToRob.getName());
+                    System.out.println(itemToTake.getName() + " was added to the safe zone inventory, because you do not have enough remaining carry weight.");
                 }
             }
         }
@@ -532,7 +625,7 @@ public enum GameCommand {
     LOCATE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            System.out.println("You are in region " + gameState.getCurrentRegion().getRegionName());
+            System.out.println("You are in the region \"" + gameState.getCurrentRegion().getRegionName() + "\"");
     
             if (!gameState.getCurrentRegion().getHasSafeZone()) {
                 System.out.println("There is not (yet) a safe zone in this region.");
@@ -579,7 +672,21 @@ public enum GameCommand {
     HIDE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            gameState.getPlayer().hide();
+            Random random = new Random();
+            int chance = random.nextInt(10);
+            if (chance == 0) {
+                System.out.println("Hide attempt failed.");
+            } else {
+                System.out.println("Successfully hid.");
+                gameState.getPlayer().setIsHiding(true);
+            }
+        }
+    },
+    UNHIDE {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            System.out.println("You are no longer hiding.");
+            gameState.getPlayer().setIsHiding(false);
         }
     },
     FIGHT {

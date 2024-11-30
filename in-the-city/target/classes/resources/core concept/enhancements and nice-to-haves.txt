@@ -5,3 +5,4 @@ something to slow down text input, sometimes displaying letter by letter like th
 equipable items for party members
 AoE spells
 healing spells
+movespeed in the form of max integers that a given class can use in the 'MOVE [direction][number of steps]' command

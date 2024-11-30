@@ -47,7 +47,8 @@ public class Manual {
         System.out.println("          This command adds [CHARACTER NAME] to the party. RESTRICTIONS: Max party size is 3, including you the player. One party member per game class (Survivalist, Technologist, Negotiator).");
         System.out.println("          This can only be undone if [CHARACTER NAME] dies. There are very few ingame characters who you can join up with, and gameplay will make it clear who is a valid party member vs who is just another NPC.");
         System.out.println("   FIGHT [CHARACTER NAME]: Enters Combat with [CHARACTER NAME].");
-        System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and the chance of unwanted interactions.");
+        System.out.println("   HIDE: Attempts to hide or conceal the presence of the party, reducing detectability and boosting theivery success. When hidden, you cannot move more than one space at a time.");
+        System.out.println("   UNHIDE: Undoes the above, returns to normal.");
         System.out.println("========================================");
     }
 

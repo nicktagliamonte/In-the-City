@@ -57,7 +57,7 @@ Keep adding individual game elements in a "test data" format.
 - Update the inventory function.  
   - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
     ```
-    fuel cell   50  
+    fuel cell   1,000,000  
     otherItem   1  
     etc  
     ```  

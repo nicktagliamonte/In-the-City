@@ -1,42 +1,47 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- Introduce theivery mechanic for the negotiator
+- add lockpicking
+  - probably need a 'locked' thing for adjacencies
+  - there are keys then which if the player has the key for a door in inventory, it becomes unlocked
+  - otherwise need a 'lockpick [room name]' command to enter the lockpicking sequence
+  - lockpicking will be some skill mechanic, tempered by a flat stat check with favor given to the technologist
 - Player Leveling Mechanics  
     - Pay attention to the fact that both max and remaining carry weight will need to increase.  
     - Pay attention to the fact that party members should also level up here.  
     - Pay attention to the fact that this should come from EXP -- that will make side quests worthwhile without fully breaking the game.  
       - You can have EXP from (fights, stealth achievements, bartering achievements) be static per region and scale with the leveling equation.  
-  - Put a quest in the (room? game? NPC friend?).  
-    - Decide what quests do to `gamestate`.  
-      - Probably it will have to change the region (major quests at least) once complete.  
-    - Decide whether quests come from Java or JSON. 
-    - Include a puzzle 
-  - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
-    - format output for readability in general.  
-  - Update the inventory function.  
-    - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
-      ```
-      fuel cell   50  
-      otherItem   1  
-      etc  
-      ```  
-    - Also, make sure it shows the inventory for the whole party.  
-  - There should be a way to see remaining carry weight.  
-  - update the manuals to use the nicer formatting for section headers seen in the economy manual
-  - Trim the name entered by the user to be all lowercase but first letter upper case.
-  - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-  - Add an "introduction" screen.  
-    - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
-    - Just introduce the game before proceeding.  
-  - Reassess demo at this time.  
-    - In the planning stage, currently seems like this is a full demo.  
-    - Check **ALL** TODO comments in every file.  
-  - (Assuming that the demo is in fact done) host the demo.  
-    - Find out what changes need to be made to host the demo online.  
-      - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
-      - If that isn't reasonable, update the README to provide a detailed description of running the game.  
-    - Tell friends to test it.  
+- Put a quest in the (room? game? NPC friend?).  
+  - Decide what quests do to `gamestate`.  
+    - Probably it will have to change the region (major quests at least) once complete.  
+  - Decide whether quests come from Java or JSON. 
+  - Include a puzzle 
+- Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
+  - format output for readability in general.  
+- Update the inventory function.  
+  - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
+    ```
+    fuel cell   50  
+    otherItem   1  
+    etc  
+    ```  
+  - Also, make sure it shows the inventory for the whole party.  
+- There should be a way to see remaining carry weight.  
+- update the manuals to use the nicer formatting for section headers seen in the economy manual
+- Trim the name entered by the user to be all lowercase but first letter upper case.
+- Double check all manuals.  for example, a character class guide would be good
+- Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
+- Add an "introduction" screen.  
+  - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
+  - Just introduce the game before proceeding.  
+- Reassess demo at this time.  
+  - In the planning stage, currently seems like this is a full demo.  
+  - Check **ALL** TODO comments in every file.  
+- (Assuming that the demo is in fact done) host the demo.  
+  - Find out what changes need to be made to host the demo online.  
+    - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
+    - If that isn't reasonable, update the README to provide a detailed description of running the game.  
+  - Tell friends to test it.  
 
 ### NEXT PHASES  
 
