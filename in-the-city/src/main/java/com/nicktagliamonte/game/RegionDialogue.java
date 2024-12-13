@@ -2,8 +2,10 @@ package com.nicktagliamonte.game;
 
 import java.util.Map;
 
+import com.google.gson.annotations.Expose;
+
 public class RegionDialogue {
-    private Map<String, Map<String, Dialogue>> characterDialogues;
+    @Expose private Map<String, Map<String, Dialogue>> characterDialogues;
 
     // Constructor
     public RegionDialogue(Map<String, Map<String, Dialogue>> characterDialogues) {

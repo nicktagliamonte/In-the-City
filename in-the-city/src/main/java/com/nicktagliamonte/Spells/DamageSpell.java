@@ -1,11 +1,12 @@
 //TODO: replace this with an actual spell
 package com.nicktagliamonte.Spells;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Player;
 
 public class DamageSpell extends Spell {
-    private int damage;
+    @Expose private int damage;
 
     public DamageSpell(String name, String description, int damage) {
         super(name, description);

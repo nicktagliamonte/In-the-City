@@ -1,15 +1,17 @@
 package com.nicktagliamonte.rooms;
 
+import com.google.gson.annotations.Expose;
+
 public class Adjacency {
-    private String type;    // e.g., "door" or "stairs"
-    private String coordinates;
-    private String description;
-    private transient String adjoiningRoomName; // Used for initial deserialization only
-    private Room adjoiningRoom; // Actual Room object for gameplay use
-    private boolean isStairsUp;
-    private boolean isLocked;
-    private int baseChances;
-    private int difficulty;
+    @Expose private String type;    // e.g., "door" or "stairs"
+    @Expose private String coordinates;
+    @Expose private String description;
+    @Expose private transient String adjoiningRoomName; // Used for initial deserialization only
+    @Expose private Room adjoiningRoom; // Actual Room object for gameplay use
+    @Expose private boolean isStairsUp;
+    @Expose private boolean isLocked;
+    @Expose private int baseChances;
+    @Expose private int difficulty;
 
     // Constructor, getters, and setters
     public Adjacency(String type, String coordinates, String description, String adjoiningRoomName, boolean isStairsUp, boolean isLocked, int baseChances, int difficulty) {

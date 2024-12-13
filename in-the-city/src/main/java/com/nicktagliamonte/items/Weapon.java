@@ -1,11 +1,12 @@
 package com.nicktagliamonte.items;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Player;
 
 public class Weapon extends Item {
-    private boolean isEquipped;
-    private int attackModifier;
-    private int damage;
+    @Expose private boolean isEquipped;
+    @Expose private int attackModifier;
+    @Expose private int damage;
 
     public Weapon(String name, String description, double weight, int value, int attackModifier, int damage) {
         super(name, description, weight, false, value);

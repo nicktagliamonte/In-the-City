@@ -2,15 +2,16 @@ package com.nicktagliamonte.game;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Player;
 import com.nicktagliamonte.items.Item;
 
 public class Barter {
-    private Player player;
-    private List<Item> playerInventory;
-    private List<Item> npcInventory;
-    private double purchasePower;
-    private boolean isNegotiator;
+    @Expose private Player player;
+    @Expose private List<Item> playerInventory;
+    @Expose private List<Item> npcInventory;
+    @Expose private double purchasePower;
+    @Expose private boolean isNegotiator;
 
     public Barter(Player player, List<Item> playerInventory, List<Item> npcInventory, double purchasePower, boolean isNegotiator) {
         this.player = player;

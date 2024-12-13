@@ -1,15 +1,18 @@
 package com.nicktagliamonte.characters;
+
+import com.google.gson.annotations.Expose;
+
 public class CharacterClass {
-    private String className;
-    private double strength;
-    private double dexterity;
-    private double constitution;
-    private double Intelligence;
-    private double wisdom;
-    private double charisma;
-    private double maxCarryWeight;
-    private double health;
-    private double ac;
+    @Expose private String className;
+    @Expose private double strength;
+    @Expose private double dexterity;
+    @Expose private double constitution;
+    @Expose private double Intelligence;
+    @Expose private double wisdom;
+    @Expose private double charisma;
+    @Expose private double maxCarryWeight;
+    @Expose private double health;
+    @Expose private double ac;
 
     //TODO: figure out ac
     public CharacterClass(String className) {

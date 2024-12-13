@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Item;
@@ -11,22 +12,22 @@ import com.nicktagliamonte.items.Item;
 //TODO: for story progression, there should be some kind of access control for certain rooms that equates to being too scared to go in
 
 public class Room {
-    private String name;
-    private String description;
-    private int width;
-    private int height;
-    private int playerX;
-    private int playerY;
-    private List<Adjacency> adjacentRooms;
-    private Map<String, Item> itemsInRoom;
-    private Map<String, NPC> peopleInRoom;
-    private TransitionEvent transitionEvent;
-    private boolean hasPlayer;
-    private int[][] mask;
-    private char[][] map;
-    private boolean isSafe;
-    private boolean isEconomic;
-    private String nextRoomToSafeZone;
+    @Expose private String name;
+    @Expose private String description;
+    @Expose private int width;
+    @Expose private int height;
+    @Expose private int playerX;
+    @Expose private int playerY;
+    @Expose private List<Adjacency> adjacentRooms;
+    @Expose private Map<String, Item> itemsInRoom;
+    @Expose private Map<String, NPC> peopleInRoom;
+    @Expose private TransitionEvent transitionEvent;
+    @Expose private boolean hasPlayer;
+    @Expose private int[][] mask;
+    @Expose private char[][] map;
+    @Expose private boolean isSafe;
+    @Expose private boolean isEconomic;
+    @Expose private String nextRoomToSafeZone;
 
     public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, 
                 int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, boolean isEconomic, String nextRoomToSafeZone) {

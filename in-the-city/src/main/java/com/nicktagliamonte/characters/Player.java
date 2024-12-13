@@ -5,40 +5,43 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
 import com.nicktagliamonte.items.Weapon;
+import com.nicktagliamonte.quests.Quest;
 import com.nicktagliamonte.rooms.Adjacency;
 
 public class Player extends Person {
-    private CharacterClass characterClass;
-    private double strength;
-    private double dexterity;
-    private double constitution;
-    private double Intelligence;
-    private double wisdom;
-    private double charisma;
-    private double maxCarryWeight;
-    private double remainingCarryWeight;
-    private double ac;
-    private double maxHealth;
+    @Expose private CharacterClass characterClass;
+    @Expose private double strength;
+    @Expose private double dexterity;
+    @Expose private double constitution;
+    @Expose private double Intelligence;
+    @Expose private double wisdom;
+    @Expose private double charisma;
+    @Expose private double maxCarryWeight;
+    @Expose private double remainingCarryWeight;
+    @Expose private double ac;
+    @Expose private double maxHealth;
     public Armor armor;
     public Weapon weapon;
     public boolean hasWeapon;
-    private List<Spell> spellbook;
-    private int deathSavingThrows;
-    private String status;
+    @Expose private List<Spell> spellbook;
+    @Expose private int deathSavingThrows;
+    @Expose private String status;
     public int timeSinceFood = 0; //TODO: once there is a food item, have this reset to 0 when food is eaten and remove substring hunger from player status
     public int timeSinceWater = 0; //TODO: see above, but for water
-    private double alignment;
-    private boolean isHiding;
+    @Expose private double alignment;
+    @Expose private boolean isHiding;
     public int level;
     public double currentXP;
     public double nextLevelXP;
     public double nextLevelXPReward;
+    @Expose private List<Quest> questLog;
 
     public Player(String name, CharacterClass characterClass) {
         super(name);
@@ -63,6 +66,25 @@ public class Player extends Person {
         currentXP = 0;
         nextLevelXP = 100;
         nextLevelXPReward = 1;
+        questLog = new ArrayList<>();
+    }
+
+    public void addQuest(Quest quest) {
+        questLog.add(quest);
+    }
+
+    public List<Quest> getActiveQuests() {
+        List<Quest> activeQuests = new ArrayList<>();
+        for (Quest quest : questLog) {
+            if ("active".equals(quest.getStatus())) {
+                activeQuests.add(quest);
+            }
+        }
+        return activeQuests;
+    }
+
+    public List<Quest> getAllQuests() {
+        return questLog;
     }
 
     public int getLevel() {

@@ -3,12 +3,13 @@ package com.nicktagliamonte.game;
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
 import com.nicktagliamonte.rooms.*;
-
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.annotations.Expose;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
@@ -24,19 +25,19 @@ import java.util.Scanner;
 import java.awt.Point;
 
 public class GameState {
-    private Region currentRegion;
-    private Room currentRoom;
+    @Expose private Region currentRegion;
+    @Expose private Room currentRoom;
     public Player player;
     public GameEngine gameEngine;
-    private List<NPC> currentParty;
-    private RegionDialogue currentRegionDialogue;
-    private boolean inDialogue = false;
-    private String regionFilePath;
-    private String adjacencyFilePath;
-    private String itemsFilePath;
-    private String peopleFilePath;
-    private String dialogueFilePath;
-    private boolean fromSaveFile;
+    @Expose private List<NPC> currentParty;
+    @Expose private RegionDialogue currentRegionDialogue;
+    @Expose private boolean inDialogue = false;
+    @Expose private String regionFilePath;
+    @Expose private String adjacencyFilePath;
+    @Expose private String itemsFilePath;
+    @Expose private String peopleFilePath;
+    @Expose private String dialogueFilePath;
+    @Expose private boolean fromSaveFile;
     public GameTimer gameTimer;
     public String itemContext;
     public safeZoneInventory safeZoneInventory;
@@ -78,7 +79,11 @@ public class GameState {
     }
 
     public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+            .disableHtmlEscaping()
+            .excludeFieldsWithoutExposeAnnotation()
+            .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
+            .create();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
             for (Room room : currentRegion.getRooms()) {

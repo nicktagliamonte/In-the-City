@@ -2,12 +2,13 @@ package com.nicktagliamonte.game;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.rooms.Room;
 
 public class Region {
-    private List<Room> rooms;
-    private String regionName;
-    private boolean hasSafeZone = false;
+    @Expose private List<Room> rooms;
+    @Expose private String regionName;
+    @Expose private boolean hasSafeZone = false;
 
     public List<Room> getRooms() {
         return rooms;

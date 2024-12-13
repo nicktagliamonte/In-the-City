@@ -1,6 +1,9 @@
 package com.nicktagliamonte.rooms;
+
+import com.google.gson.annotations.Expose;
+
 public class TransitionEvent {
-    private String description;
+    @Expose private String description;
 
     // Constructor, getters, and setters
     public TransitionEvent(String description) {

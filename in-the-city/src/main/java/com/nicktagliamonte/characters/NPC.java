@@ -1,21 +1,25 @@
 package com.nicktagliamonte.characters;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.quests.Quest;
 
 public class NPC extends Person {
-    private String description;
-    private double maxHealth;
-    private int deathSavingThrows;
-    private double strength;
-    private double dexterity;
-    private double constitution;
-    private double Intelligence;
-    private double wisdom;
-    private double charisma;
-    private double ac;
-    private double alignmentImpact;
+    @Expose private String description;
+    @Expose private double maxHealth;
+    @Expose private int deathSavingThrows;
+    @Expose private double strength;
+    @Expose private double dexterity;
+    @Expose private double constitution;
+    @Expose private double Intelligence;
+    @Expose private double wisdom;
+    @Expose private double charisma;
+    @Expose private double ac;
+    @Expose private double alignmentImpact;
+    @Expose private List<Quest> quests;
 
     public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,
                 double strength, double dexterity, double constitution, double Intelligence, double wisdom, double charisma, double ac, double alignmentImpact) {
@@ -31,7 +35,7 @@ public class NPC extends Person {
         this.charisma = charisma;
         this.ac = ac;
         this.alignmentImpact = alignmentImpact;
-
+        this.quests = new ArrayList<>();
     }
 
     public NPC(String name, double health, List<Item> inventory, String description, double maxHealth) {
@@ -39,6 +43,36 @@ public class NPC extends Person {
         this.description = description;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
+    }
+
+    public void setQuests(List<Quest> quests) {
+        this.quests = quests;
+    }
+
+    public void addQuests(Quest quest) {
+        quests.add(quest);
+    }
+
+    public List<Quest> getQuests() {
+        if (quests.isEmpty()) {
+            System.out.println("There are no quests this character can give.");
+            return null;
+        }
+        return quests;
+    }
+
+    public void giveQuest(Player player) {
+        if (quests.isEmpty()) {
+            System.out.println("There are no quests this character can give.");
+            return;
+        }
+        for (Quest quest : quests) {
+            if ("inactive".equals(quest.getStatus())) {
+                player.addQuest(quest);
+                System.out.println(getName() + " gives you the quest: " + quest.getTitle());
+                break;
+            }
+        }
     }
 
     public double getAlignmentImpact() {

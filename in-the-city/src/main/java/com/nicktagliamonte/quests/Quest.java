@@ -1,0 +1,127 @@
+package com.nicktagliamonte.quests;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.annotations.Expose;
+import com.nicktagliamonte.game.GameState;
+import com.nicktagliamonte.items.Item;
+
+public class Quest {
+    @Expose private String questId;
+    @Expose private String title;
+    @Expose private String description;
+    @Expose private Map<String, Objective> objectives;
+    @Expose private String status;  // "inactive", "active", "complete"
+    @Expose private List<Item> rewards;
+    @Expose private GameState gameState;
+    @Expose private boolean isPrimary;
+
+    public Quest(String questId, String title, String description, Boolean isPrimary, List<Objective> objectives, List<Item> rewards, GameState gameState) {
+        this.questId = questId;
+        this.title = title;
+        this.description = description;
+        this.isPrimary = isPrimary;
+        this.status = "inactive"; // Default status
+        this.objectives = new HashMap<>();
+        for (Objective objective : objectives) {
+            this.objectives.put(objective.getId(), objective);
+        }
+        this.rewards = new ArrayList<>();
+        for (Item item : rewards) {
+            this.rewards.add(item);
+        }        
+        this.gameState = gameState;
+    }
+
+    public Quest() {
+        //method stub for easier gson deserialization
+    }
+
+    public List<Item> getRewards() {
+        return rewards;
+    }
+
+    public void setRewards(List<Item> rewards) {
+        this.rewards = rewards;
+    }
+
+    public String getQuestId() {
+        return questId;
+    }
+
+    public void setQuestId(String questId) {
+        this.questId = questId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Map<String, Objective> getObjectives() {
+        return objectives;
+    }
+
+    public void setObjectives(Map<String, Objective> objectives) {
+        this.objectives = objectives;
+    }
+
+    public void checkAndCompleteQuest() {
+        if (checkProgress()) {
+            setStatus("complete");
+            giveRewards();
+        }
+    }
+
+    public boolean checkProgress() {
+        for (Objective objective : objectives.values()) {
+            if (!objective.getStatus().equals("complete")) {
+                return false;
+            }
+        }
+        this.status = "complete";
+        return true;
+    }
+
+    public void completeObjective(String objectiveId) {
+        if (objectives.containsKey(objectiveId)) {
+            Objective objective = objectives.get(objectiveId);
+            objective.setStatus("complete");
+            if (checkProgress()) {
+                giveRewards();
+            }
+        }
+    }    
+
+    public void giveRewards() {
+        if ("complete".equals(status)) {
+            // TODO: Reward logic here including xp gain
+            for (Item reward : rewards) {
+                System.out.println("You received: " + reward.getName());
+                gameState.safeZoneInventory.addItemToInventory(reward);
+            }
+        }
+    }
+}

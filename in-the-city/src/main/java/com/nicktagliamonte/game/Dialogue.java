@@ -2,9 +2,11 @@ package com.nicktagliamonte.game;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
+
 public class Dialogue {
-    private String npcLine;
-    private List<DialogueOption> options;
+    @Expose private String npcLine;
+    @Expose private List<DialogueOption> options;
 
     // Getters
     public String getNpcLine() {

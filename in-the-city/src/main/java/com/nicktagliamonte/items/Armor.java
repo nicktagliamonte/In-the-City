@@ -1,11 +1,12 @@
 package com.nicktagliamonte.items;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Player;
 import com.nicktagliamonte.game.GameState;
 
 public class Armor extends Item {
-    private int acBonus;
-    private boolean isEquipped;
+    @Expose private int acBonus;
+    @Expose private boolean isEquipped;
 
     public Armor(String name, String description, double weight, int value, int acBonus) {
         super(name, description, weight, false, value);

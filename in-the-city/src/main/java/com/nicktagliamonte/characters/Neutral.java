@@ -2,13 +2,14 @@ package com.nicktagliamonte.characters;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.items.Item;
 
 public class Neutral extends NPC{
-    private List<String> questDialogue;
-    private boolean canGiveQuest;
-    private double damage;
-    private double moralityFlag;
+    @Expose private List<String> questDialogue;
+    @Expose private boolean canGiveQuest;
+    @Expose private double damage;
+    @Expose private double moralityFlag;
 
     public Neutral(String name, double health, List<Item> inventory, String description, double maxHealth,
                   List<String> questDialogue, boolean canGiveQuest, double damage, double moralityFlag, double ac, double str, double dex, double con, 

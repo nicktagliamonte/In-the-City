@@ -2,15 +2,16 @@ package com.nicktagliamonte.items;
 
 import java.util.*;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.game.GameState;
 
 public class SmallTrap extends Trap {
-    private static final int DURATION = 600;
-    private static final int INTERVAL = 1000;
-    private static final double SUCCESS_RATE = 0.75;
-    private int elapsedTime = 0;
-    private boolean success;
-    private Random random = new Random();
+    @Expose private static final int DURATION = 600;
+    @Expose private static final int INTERVAL = 1000;
+    @Expose private static final double SUCCESS_RATE = 0.75;
+    @Expose private int elapsedTime = 0;
+    @Expose private boolean success;
+    @Expose private Random random = new Random();
     GameState gameState;
 
     public SmallTrap(GameState gameState) {

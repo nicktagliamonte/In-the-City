@@ -2,14 +2,15 @@ package com.nicktagliamonte.items;
 
 import java.util.Objects;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.game.GameState;
 
 public class Item {
-    private String name;
-    private String description;
-    private double weight;
-    private boolean isConsumable;
-    private double value;
+    @Expose private String name;
+    @Expose private String description;
+    @Expose private double weight;
+    @Expose private boolean isConsumable;
+    @Expose private double value;
 
     public Item(String name, String description, double weight, boolean isConsumable, int value) {
         this.name = name;

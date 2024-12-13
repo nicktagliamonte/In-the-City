@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Friend;
 import com.nicktagliamonte.characters.TestRegionAdversary;
@@ -11,8 +12,8 @@ import com.nicktagliamonte.items.FuelCell;
 import com.nicktagliamonte.items.Item;
 
 public class RandomEventManager {
-    private GameState gameState;
-    private Random random;
+    @Expose private GameState gameState;
+    @Expose private Random random;
 
     public RandomEventManager(GameState gameState) {
         this.gameState = gameState;

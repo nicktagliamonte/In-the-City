@@ -1,4 +1,5 @@
 package com.nicktagliamonte.game;
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.*;
 
 import java.io.File;
@@ -7,15 +8,15 @@ import java.util.*;
 public class GameEngine {
     public Player player;
     public boolean isInMenu;
-    private Menu menu;
-    private GameState gameState = new GameState(this,
+    @Expose private Menu menu;
+    @Expose private GameState gameState = new GameState(this,
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json", 
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json",
      "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json");
-    private Scanner scanner = new Scanner(System.in);
-    private GameTimer timer;
+    @Expose private Scanner scanner = new Scanner(System.in);
+    @Expose private GameTimer timer;
     
 
     public void startGame() {

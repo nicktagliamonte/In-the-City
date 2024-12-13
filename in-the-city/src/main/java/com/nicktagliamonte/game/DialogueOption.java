@@ -1,9 +1,11 @@
 package com.nicktagliamonte.game;
 
+import com.google.gson.annotations.Expose;
+
 public class DialogueOption {
-    private String text;
-    private String nextDialogueId;
-    private double impact;
+    @Expose private String text;
+    @Expose private String nextDialogueId;
+    @Expose private double impact;
 
     public DialogueOption(String text, String nextDialogueId, double impact) {
         this.text = text;

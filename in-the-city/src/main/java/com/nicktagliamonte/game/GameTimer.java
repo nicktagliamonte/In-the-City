@@ -4,19 +4,20 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Player;
 
 public class GameTimer {
 
-    private boolean paused = false;
-    private int elapsedTime = 0;
-    private final int interval = 1000;
-    private GameState gameState;
-    private RandomEventManager randomEventManager;
+    @Expose private boolean paused = false;
+    @Expose private int elapsedTime = 0;
+    @Expose private final int interval = 1000;
+    @Expose private GameState gameState;
+    @Expose private RandomEventManager randomEventManager;
 
-    private Timer timer;
+    @Expose private Timer timer;
 
     public GameTimer(GameState gameState) {
         timer = new Timer(true); // Daemon thread, ends when program ends

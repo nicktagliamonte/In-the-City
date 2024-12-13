@@ -2,10 +2,11 @@ package com.nicktagliamonte.characters;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.items.Item;
 
 public class Adversary extends NPC{
-    private double damage;
+    @Expose private double damage;
 
     public Adversary(String name, double health, List<Item> inventory, String description, double maxHealth, double damage, double ac, double str, double dex, 
                      double con, double Intelligence, double wis, double charisma, double alignmentImpact) {

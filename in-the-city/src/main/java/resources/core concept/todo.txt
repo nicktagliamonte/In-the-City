@@ -1,12 +1,17 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- Put a quest in the (room? game? NPC friend?).  
-  - Decide what quests do to `gamestate`.  
-    - Probably it will have to change the region (major quests at least) once complete.  
-  - Decide whether quests come from Java or JSON. 
-  - Include a puzzle 
-  -annotate SOMEWHERE that main quests will give the player their current level xp requirement (if they need 100 and have 99, it gives them 100), and side quests will be 1/3 the current leveling requirement
+- Put a quest in the game.  
+  - assign the quest to the player from that particular npc's dialogue options (it's going to come from conversation with testName, so add dialogue options to the dialogue json.  have one of them be something quest related and, on selection, deserialize and assign the quest (which means that the path to the quest has to somehow be stored in the dialogue option).)
+    - DialogueOption will need a method to handle quest initialization -- see final gameplay mechanics chat
+  - add a check in gameEngine to see if the last turn caused a quest objective to be completed (if you don't do it in game engine you'll need to put individual checks in every item, character, combat, stealth, or movement interaction)
+  - for non-standard (not combat, dialogue, or item related) quest requirements (puzzles) add some kind of special puzzle state.  figure out how to launch it.
+  - make sure the quest reward system works, build out the level situation (main quests give xp equal to the players current next level requirement (if the next level is 100 xp, they get 100 even if they're currently at 99), side quests give 1/3 that amount)
+  - for major quest completion, add a method stub to change the region.
+  - update the menu 'quest' option to output completed quests (list their names) and active quests with all of the steps known to that point
+- put a second region in the game and include methods to deserialize that region and initialize it, make sure that works
+- add some kind of dex check system to room transition
+  - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - format output for readability in general.  
 - Update the inventory function.  

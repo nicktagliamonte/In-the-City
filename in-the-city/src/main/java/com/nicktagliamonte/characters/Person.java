@@ -2,13 +2,14 @@ package com.nicktagliamonte.characters;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.items.Item;
 
 public class Person {
-    private String name;
-    private double health;
+    @Expose private String name;
+    @Expose private double health;
     protected List<Item> inventory; // General inventory for all characters (could be used for NPCs)
-    private int initiative;
+    @Expose private int initiative;
 
     //constructor for the player character, custom attributes in Player.java subclass
     public Person(String name) {
