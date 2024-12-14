@@ -48,11 +48,13 @@ Some character names or attributes are pulled from things I was watching at the 
 
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.      
-- Put a quest in the (room? game? NPC friend?).  
-  - Decide what quests do to `gamestate`.  
-    - Probably it will have to change the region (major quests at least) once complete.  
-  - Decide whether quests come from Java or JSON. 
-  - Include a puzzle 
+- Put a quest in the game.  
+  - Add a check in gameEngine to see if the last turn caused a quest objective to be completed.
+  - Add a puzzle state to gamestate, launch on interaction with a puzzle.
+  - Make sure the reward system works
+    - For major quests, add method stub to change game region
+- Put a second region in the game and include methods to deserialize that region and initialize it.
+- Add a dex check system to room transition, to create a barrier to entry for some rooms only accessable to high dex classes.
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - format output for readability in general.  
 - Update the inventory function.  
