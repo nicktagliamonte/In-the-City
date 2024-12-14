@@ -97,7 +97,7 @@ public class Quest {
 
     public boolean checkProgress() {
         for (Objective objective : objectives.values()) {
-            if (!objective.getStatus().equals("complete")) {
+            if (!objective.getIsCompleted()) {
                 return false;
             }
         }
@@ -108,7 +108,7 @@ public class Quest {
     public void completeObjective(String objectiveId) {
         if (objectives.containsKey(objectiveId)) {
             Objective objective = objectives.get(objectiveId);
-            objective.setStatus("complete");
+            objective.setIsCompleted(true);;
             if (checkProgress()) {
                 giveRewards();
             }
@@ -117,7 +117,11 @@ public class Quest {
 
     public void giveRewards() {
         if ("complete".equals(status)) {
-            // TODO: Reward logic here including xp gain
+            if (isPrimary) {
+                gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
+            } else {
+                gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
+            }
             for (Item reward : rewards) {
                 System.out.println("You received: " + reward.getName());
                 gameState.safeZoneInventory.addItemToInventory(reward);

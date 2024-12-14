@@ -2,6 +2,7 @@ package com.nicktagliamonte.game;
 
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
+import com.nicktagliamonte.quests.Quest;
 import com.nicktagliamonte.rooms.*;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -12,6 +13,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.annotations.Expose;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -594,7 +596,7 @@ public class GameState {
         // this is a minor nightmare when it comes time.
     }
 
-    public void enterDialogue(Person character) {
+    public void enterDialogue(Person character) throws FileNotFoundException {
         gameTimer.pause();
         inDialogue = true;
 
@@ -631,14 +633,40 @@ public class GameState {
                 double alignmentDelta = (player.getAlignment() * (selectedOption.getImpact() / 100));
                 player.adjustAlignment(alignmentDelta);
 
-                if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
+                // Check if the selected option corresponds to a quest
+                if (selectedOption.getNextDialogueId().contains("Quest")) {
+                    currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
+
+                    String questFilePath = currentDialogue.getNpcLine();
+
+                    // Step 2: Deserialize the quest JSON
+                    Quest quest = deserializeQuest(questFilePath);
+
+                    if (quest != null) {
+                        // Step 3: Prompt the player to accept the quest
+                        System.out.println("Do you want to accept quest: " + quest.getTitle() + "? (yes/no)");
+
+                        String playerResponse = dialogueScanner.nextLine().trim().toLowerCase();
+
+                        // Step 4: Handle player response to accept the quest
+                        if (playerResponse.equals("yes")) {
+                            // Add the quest to the player's quest log
+                            player.addQuest(quest);
+                            System.out.println("You have accepted the quest: " + quest.getTitle() + ". For more information, access menu>quests.");
+                        } else {
+                            System.out.println("You did not accept this quest. Hopefully, it will still be available later if you want it.");
+                        }
+                    } else {
+                        System.out.println("Sorry, there was an error loading the quest.");
+                    }
+
+                    // End dialogue after quest decision
                     exitDialogue();
                     break;
                 }
 
-                if (selectedOption.getNextDialogueId().equalsIgnoreCase("barter")) {
-                    enterBarter(character);
-                    currentDialogue = dialogues.get("start");
+                if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
+                    exitDialogue();
                     break;
                 }
 
@@ -653,6 +681,16 @@ public class GameState {
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
             System.out.println("Invalid choice. Please try again.");
         }
+    }
+
+    private Quest deserializeQuest(String questFilePath) throws FileNotFoundException {
+        Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Item.class, new ItemDeserializer())
+            .excludeFieldsWithoutExposeAnnotation()
+            .create();
+        FileReader reader = new FileReader(questFilePath);
+        JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+        return gson.fromJson(jsonObject, Quest.class);
     }
 
     public void exitDialogue() {

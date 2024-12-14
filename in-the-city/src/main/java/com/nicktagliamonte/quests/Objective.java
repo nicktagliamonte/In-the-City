@@ -2,19 +2,19 @@ package com.nicktagliamonte.quests;
 
 import com.google.gson.annotations.Expose;
 
-class Objective {
+public class Objective {
     @Expose private String id;
-    @Expose private String type;  // e.g., "defeat", "collect"
+    @Expose private String type;  // ONLY "dialogue", "combat", "item", "puzzle".  adding more means changing at LEAST the commands in menu.java
     @Expose private String target;
     @Expose private int amount;  // For collect-type objectives
-    @Expose private String status;  // "incomplete", "complete"
+    @Expose private boolean isCompleted;
 
-    public Objective(String id, String type, String target, int amount) {
+    public Objective(String id, String type, String target, int amount, boolean isCompleted) {
         this.id = id;
         this.type = type;
         this.target = target;
         this.amount = amount;
-        this.status = "incomplete";  // Default status
+        this.isCompleted = isCompleted;  // Default status
     }
 
     public Objective() {
@@ -22,7 +22,7 @@ class Objective {
         this.type = "";
         this.target = "";
         this.amount = 0;
-        this.status = "incomplete";
+        this.isCompleted = false;
     }
 
     public void setAmount(int amount) {
@@ -45,12 +45,12 @@ class Objective {
         this.type = type;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean getIsCompleted() {
+        return isCompleted;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setIsCompleted(boolean isCompleted) {
+        this.isCompleted = isCompleted;
     }
 
     public String getTarget() {

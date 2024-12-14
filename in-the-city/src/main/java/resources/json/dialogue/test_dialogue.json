@@ -1,33 +1,46 @@
 {
-    "chunky": {
-      "start": {
-        "npcLine": "Hey, how's it going?",
-        "options": [
-          { "text": "Not bad, you?", "nextDialogueId": "chunky_response_1", "impact": 5 },
-          { "text": "Leave me alone.", "nextDialogueId": "chunky_response_2", "impact": -20 },
-          { "text": "Barter", "nextDialogueId": "barter", "impact": 0 },
-          { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
-        ]
-      },
-      "chunky_response_1": {
-        "npcLine": "I've been better. What do you need?",
-        "options": [
-          { "text": "Just saying hi.", "nextDialogueId": "chunky_response_3", "impact": 10 },
-          { "text": "Can you help me with something?", "nextDialogueId": "chunky_response_4", "impact": 0 },
-          { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
-        ]
-      },
-      "chunky_response_2": {
-        "npcLine": "Fine, have it your way.",
-        "options": []
-      },
-      "chunky_response_3": {
-        "npcLine": "Oh, that's nice. Take care!",
-        "options": []
-      },
-      "chunky_response_4": {
-        "npcLine": "Depends on what you need.",
-        "options": []
-      }
+  "chunky": {
+    "start": {
+      "npcLine": "Hey, how's it going?",
+      "options": [
+        { "text": "Not bad, you?", "nextDialogueId": "chunky_response_1", "impact": 5 },
+        { "text": "Leave me alone.", "nextDialogueId": "chunky_response_2", "impact": -20 },
+        { "text": "Barter", "nextDialogueId": "barter", "impact": 0 },
+        { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "chunky_response_1": {
+      "npcLine": "I've been better. What do you need?",
+      "options": [
+        { "text": "Just saying hi.", "nextDialogueId": "chunky_response_3", "impact": 10 },
+        { "text": "Can you help me with something?", "nextDialogueId": "chunky_response_4", "impact": 0 },
+        { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "chunky_response_2": {
+      "npcLine": "Fine, have it your way.",
+      "options": []
+    },
+    "chunky_response_3": {
+      "npcLine": "Oh, that's nice. Take care!",
+      "options": []
+    },
+    "chunky_response_4": {
+      "npcLine": "Depends on what you need.",
+      "options": []
     }
+  },
+  "testName": {
+    "start": {
+      "npcLine": "So far this is working",
+      "options": [
+        { "text": "do you have a quest for me?", "nextDialogueId": "testNameQuest", "impact": 0 },
+        { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "testNameQuest": {
+      "npcLine": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\quests\\test_quest.json",
+      "options": []
+    }
+  }
 }  

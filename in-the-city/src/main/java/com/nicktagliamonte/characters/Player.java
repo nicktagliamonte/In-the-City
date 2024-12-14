@@ -73,16 +73,6 @@ public class Player extends Person {
         questLog.add(quest);
     }
 
-    public List<Quest> getActiveQuests() {
-        List<Quest> activeQuests = new ArrayList<>();
-        for (Quest quest : questLog) {
-            if ("active".equals(quest.getStatus())) {
-                activeQuests.add(quest);
-            }
-        }
-        return activeQuests;
-    }
-
     public List<Quest> getAllQuests() {
         return questLog;
     }
@@ -524,5 +514,9 @@ public class Player extends Person {
         maxCarryWeight += maxCarryWeight * 0.1429;
         remainingCarryWeight += maxCarryWeight * 0.1429;
         ac += ac * .05;
+    }
+
+    public double getNextLevelXp() {
+        return nextLevelXP;
     }
 }

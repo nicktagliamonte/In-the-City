@@ -1,5 +1,6 @@
 package com.nicktagliamonte.game;
 
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -534,7 +535,11 @@ public enum GameCommand {
                     Collection<NPC> people = gameState.getCurrentRoom().getPeopleInRoom().values();
                     for (NPC person : people) {
                         if (person.getName().equalsIgnoreCase(characterName)) {
-                            gameState.enterDialogue(person);
+                            try {
+                                gameState.enterDialogue(person);
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
                             return;
                         }
                     }

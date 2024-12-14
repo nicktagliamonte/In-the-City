@@ -1,48 +1,40 @@
 {
-    "questId": "quest_001",
-    "title": "Test Quest",
-    "description": "A quest which includes all objective types, to test their functionality.",
-    "isPrimary": true,
-    "objectives": [
-      {
-        "id": "objective_001",
-        "type": "dialogue",
-        "description": "Speak with Gilear to learn more.",
-        "npcId": "gilear",
-        "isCompleted": false
-      },
-      {
-        "id": "objective_002",
-        "type": "combat",
-        "description": "Defeat testName2 and collect the puzzle item.",
-        "npcId": "testName2",
-        "dropItem": {
-          "itemId": "puzzle_piece_001",
-          "name": "Mysterious Puzzle Piece"
-        },
-        "isCompleted": false
-      },
-      {
-        "id": "objective_003",
-        "type": "puzzle",
-        "description": "Solve the puzzle using the mysterious item.",
-        "puzzleId": "puzzle_001",
-        "isCompleted": false
-      }
-    ],
-    "rewards": [
-      {
-        "type": "FuelCell"
-      },
-      {
-        "type": "Armor",
-        "name": "Light Leather Armor",
-        "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
-        "weight": 3,
-        "consumable": false,
-        "value": 5,
-        "acbonus": 2
-      }
-    ]
-  }
-  
+  "questId": "quest_001",
+  "title": "Test Quest",
+  "description": "A quest which includes all objective types, to test their functionality.",
+  "isPrimary": true,
+  "objectives": {
+    "objective_001": {
+      "id": "objective_001",
+      "type": "dialogue",
+      "target": "gilear",
+      "isCompleted": false
+    },
+    "objective_002": {
+      "id": "objective_002",
+      "type": "combat",
+      "target": "testName2",
+      "isCompleted": false
+    },
+    "objective_003": {
+      "id": "objective_003",
+      "type": "puzzle",
+      "target": "test_puzzle",
+      "isCompleted": false
+    }
+  },
+  "rewards": [
+    {
+      "type": "FuelCell"
+    },
+    {
+      "type": "Armor",
+      "name": "Light Leather Armor",
+      "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
+      "weight": 3,
+      "consumable": false,
+      "value": 5,
+      "acbonus": 2
+    }
+  ]
+}

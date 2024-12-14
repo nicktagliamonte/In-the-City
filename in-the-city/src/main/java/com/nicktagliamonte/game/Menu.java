@@ -13,6 +13,8 @@ import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.SmallTrap;
 import com.nicktagliamonte.items.Trap;
+import com.nicktagliamonte.quests.Quest;
+import com.nicktagliamonte.quests.Objective;
 
 public class Menu {
     GameEngine gameEngine;
@@ -148,8 +150,54 @@ public class Menu {
     }
 
     private void openQuests() {
-        // Quests logic here
-        System.out.println("Opening the quests menu...");
+        List<Quest> questLog = gameEngine.getGameState().getPlayer().getAllQuests();
+        List<Quest> completedQuests = new ArrayList<>();
+        List<Quest> activeQuests = new ArrayList<>();
+        
+        for (Quest quest : questLog) {
+            boolean allObjectivesCompleted = true;
+            for (Objective objective : quest.getObjectives().values()) {
+                if (!objective.getIsCompleted()) {
+                    allObjectivesCompleted = false;
+                    break;
+                }
+            }
+
+            if (allObjectivesCompleted) {
+                completedQuests.add(quest);
+            } else {
+                activeQuests.add(quest);
+            }
+        }
+
+        System.out.println("Completed quests:");
+        for (Quest quest : completedQuests) {
+            System.out.println(quest.getTitle());
+        }
+
+        System.out.println("\nActive quests:");
+        for (Quest quest : activeQuests) {
+            System.out.println(quest.getTitle());
+
+            for (Objective objective : quest.getObjectives().values()) {
+                if (!objective.getIsCompleted()) {
+                    String objectiveType = objective.getType();
+                    if (objectiveType.equalsIgnoreCase("dialogue")) {
+                        System.out.println("  Next objective: Talk to " + objective.getTarget());
+                    } else if (objectiveType.equalsIgnoreCase("combat")) {
+                        System.out.println("  Next objective: Fight " + objective.getTarget());
+                    } else if (objectiveType.equalsIgnoreCase("item")) {
+                        System.out.println("  Next objective: Collect " + objective.getAmount() + " " + objective.getTarget() + "(s)");
+                    } else if (objectiveType.equalsIgnoreCase("puzzle")) {
+                        System.out.println("  Next objective: Solve Puzzle " + objective.getTarget());
+                    } else {
+                        System.out.println("Please report back to the dev that " + quest.getTitle() + " contains an objective with an invalid type.");
+                    }
+                    break;
+                }
+            }
+        }
+        
     }
 
     private void openCrafting() {

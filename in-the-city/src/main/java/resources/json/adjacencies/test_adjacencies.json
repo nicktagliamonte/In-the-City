@@ -7,9 +7,9 @@
         "description": "large wooden double doors leading to \"room 2\"",
         "adjoiningRoom": "Room 2",
         "isStairsUp": false,
-        "isLocked": true,
+        "isLocked": false,
         "baseChances": 5,
-        "difficulty": 10
+        "difficulty": 1
       },
       {
         "type": "stairs",
