@@ -2,9 +2,9 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Put a quest in the game.  
-  - add gameEngine check to see if movement, item, or stealth objective is complete (stealth means staying hidden for "target" number of turns, so add a variable for that.)
   - add a chack in combat to see if the player defeated a person who is next on the objective list
   - build out gilears dialogue options as they relate to the quest.  see whether there is a clear way to have an objective marked completed from within a dialogueNode
+    - this will be the first opportunity to test objective completion and the menu function.  start the quest, complete the dialogue objective, then do menu>quests
   - decide what the puzzle is going to be exactly (puzzle box)
   - create an item for the puzzle
   - create a puzzle gamestate and command
@@ -27,7 +27,7 @@ Keep adding individual game elements in a "test data" format.
   - Also, make sure it shows the inventory for the whole party.  
 - There should be a way to see remaining carry weight.  
 - Annotate that lockpicking a given room will NOT have you enter that room.  this will allow you to strategically unlock rooms for future quick entry rather than forcing you in immediately
-  - But the converse to this is that certain rooms should relock after a given ammount of time
+  - But the converse to this is that certain rooms should relock after a given ammount of time, which is more labor intensive than something this low on the list should be. i added this wile i was creating the quest system which was very difficult
 - update the manuals to use the nicer formatting for section headers seen in the economy manual
 - Trim the name entered by the user to be all lowercase but first letter upper case.
 - Double check all manuals.  for example, a character class guide would be good.  see CS notebook page opposite map for class skill proficiencies (negotiator is good at theivery for example)

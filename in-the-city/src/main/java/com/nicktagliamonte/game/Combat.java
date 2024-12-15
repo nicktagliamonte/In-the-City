@@ -13,16 +13,33 @@ import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.characters.Player;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.quests.Objective;
+import com.nicktagliamonte.quests.Quest;
 
 public class Combat {
     public List<Person> combatants = new ArrayList<>();
     public GameState gameState;
     public String location;
+    public List<Quest> questLog = gameState.getPlayer().getAllQuests();
+    public List<Quest> activeQuests = new ArrayList<>();
 
     public Combat(List<Person> combatants, GameState gameState, String location) {
         this.combatants = combatants;
         this.gameState = gameState;
         this.location = location;
+        for (Quest quest : questLog) {
+            boolean allObjectivesCompleted = true;
+            for (Objective objective : quest.getObjectives().values()) {
+                if (!objective.getIsCompleted()) {
+                    allObjectivesCompleted = false;
+                    break;
+                }
+            }
+
+            if (!allObjectivesCompleted) {
+                activeQuests.add(quest);
+            }
+        }
         combatLoop(combatants);
     }
 
@@ -44,8 +61,23 @@ public class Combat {
                 } else {
                     NPC npcCombatant = (NPC) combatant;
                     if (npcCombatant.isDead()) {
+                        //check for quest objective completion:
+                        for (Quest quest : activeQuests) {
+                            for (Objective objective : quest.getObjectives().values()) {
+                                if (!objective.getIsCompleted() && objective.getType().equalsIgnoreCase("combat")){
+                                    if (npcCombatant.getName().equalsIgnoreCase(objective.getTarget())) {
+                                        quest.completeObjective(objective.getId());
+                                        break;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+
+                        //remove the combatant from the list of combatants
                         combatantIterator.remove();
 
+                        //remove the npc from the current room
                         Map<String, NPC> people = gameState.getCurrentRoom().getPeopleInRoom();
                         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
                         while (iterator.hasNext()) {
@@ -59,6 +91,7 @@ public class Combat {
                             }
                         }
                         gameState.getCurrentRoom().setPeopleInRoom(people);
+                        
                         if (npcCombatant instanceof PartyMember) {
                             System.out.println("A member of your party, " + npcCombatant.getName()
                                     + ", has fully died. They cannot be revived or re-encountered.\n" +
