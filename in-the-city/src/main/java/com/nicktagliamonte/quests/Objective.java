@@ -6,15 +6,13 @@ public class Objective {
     @Expose private String id;
     @Expose private String type;  // ONLY "dialogue", "combat", "item", "puzzle", "stealth", "movement".  adding more means changing at LEAST the commands in menu.java
     @Expose private String target;
-    @Expose private int amount;  // For collect-type objectives
     @Expose private boolean isCompleted;
     @Expose private String completionMessage;
 
-    public Objective(String id, String type, String target, int amount, boolean isCompleted, String completionMessage) {
+    public Objective(String id, String type, String target, boolean isCompleted, String completionMessage) {
         this.id = id;
         this.type = type;
         this.target = target;
-        this.amount = amount;
         this.isCompleted = isCompleted;
         this.completionMessage = completionMessage;
     }
@@ -23,7 +21,6 @@ public class Objective {
         this.id = "";
         this.type = "";
         this.target = "";
-        this.amount = 0;
         this.isCompleted = false;
         this.completionMessage = null;
     }
@@ -34,10 +31,6 @@ public class Objective {
 
     public String getCompletionMessage() {
         return completionMessage;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public String getId() {
@@ -70,9 +63,5 @@ public class Objective {
 
     public void setTarget(String target) {
         this.target = target;
-    }
-
-    public int getAmount() {
-        return amount;
     }
 }

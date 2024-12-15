@@ -170,10 +170,12 @@ public class Menu {
             }
         }
 
-        System.out.println("Completed quests:");
-        for (Quest quest : completedQuests) {
-            System.out.println(quest.getTitle());
-        }
+        if (!completedQuests.isEmpty()) {
+            System.out.println("Completed quests:");
+            for (Quest quest : completedQuests) {
+                System.out.println(quest.getTitle());
+            }
+        }        
 
         System.out.println("\nActive quests:");
         for (Quest quest : activeQuests) {
@@ -187,7 +189,7 @@ public class Menu {
                     } else if (objectiveType.equalsIgnoreCase("combat")) {
                         System.out.println("  Next objective: Fight " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("item")) {
-                        System.out.println("  Next objective: Collect " + objective.getAmount() + " " + objective.getTarget() + "(s)");
+                        System.out.println("  Next objective: Collect " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("puzzle")) {
                         System.out.println("  Next objective: Solve Puzzle " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("stealth")) {

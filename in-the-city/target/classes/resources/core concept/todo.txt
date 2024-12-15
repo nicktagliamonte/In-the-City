@@ -2,9 +2,13 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Put a quest in the game.  
-  - add a check in gameEngine to see if the last turn caused a quest objective to be completed (if you don't do it in game engine you'll need to put individual checks in every item, character, combat, stealth, or movement interaction)
-  - create an item for the puzzle piece, and decide what that puzzle will be (this is written in reverse order)
-  - for non-standard (not combat, dialogue, or item related) quest requirements (puzzles) add some kind of special puzzle state.  figure out how to launch it.
+  - add gameEngine check to see if movement, item, or stealth objective is complete (stealth means staying hidden for "target" number of turns, so add a variable for that.)
+  - add a chack in combat to see if the player defeated a person who is next on the objective list
+  - build out gilears dialogue options as they relate to the quest.  see whether there is a clear way to have an objective marked completed from within a dialogueNode
+  - decide what the puzzle is going to be exactly (puzzle box)
+  - create an item for the puzzle
+  - create a puzzle gamestate and command
+    - include a check to see whether this completes a quest objective
   - make sure that item rewards appear on quest completion
   - for major quest completion, add a method stub to change the region.
 - put a second region in the game and include methods to deserialize that region and initialize it, make sure that works

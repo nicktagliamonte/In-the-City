@@ -1,6 +1,9 @@
 package com.nicktagliamonte.game;
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.*;
+import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.quests.Objective;
+import com.nicktagliamonte.quests.Quest;
 
 import java.io.File;
 import java.util.*;
@@ -25,6 +28,7 @@ public class GameEngine {
         isInMenu = false;
         menu = new Menu(this);
         timer = new GameTimer(gameState);
+        int turnsInStealth = 0;
 
         while (isRunning) {
             if (isInMenu) {
@@ -58,6 +62,62 @@ public class GameEngine {
                     if (invalidCommands >= 3) {
                         System.out.println("Type 'menu' to navigate to a list of valid commands.");
                         invalidCommands = 0;
+                    }
+                }
+
+                //Quest objective completion check
+                List<Quest> questLog = gameState.getPlayer().getAllQuests();
+                List<Quest> activeQuests = new ArrayList<>();
+
+                int turnsNeeded;
+
+                for (Quest quest : questLog) {
+                    boolean allObjectivesCompleted = true;
+                    for (Objective objective : quest.getObjectives().values()) {
+                        if (!objective.getIsCompleted()) {
+                            allObjectivesCompleted = false;
+                            break;
+                        }
+                    }
+
+                    if (!allObjectivesCompleted) {
+                        activeQuests.add(quest);
+                    }
+                }
+
+                for (Quest quest : activeQuests) {
+                    for (Objective objective : quest.getObjectives().values()) {
+                        if (!objective.getIsCompleted()) {
+                            String objectiveType = objective.getType();
+                            if (objectiveType.equalsIgnoreCase("item")) {
+                                List<Item> currentInventory = gameState.getPlayer().getInventory();
+                                for (Item item : currentInventory) {
+                                    if (item.getName().equalsIgnoreCase(objective.getTarget())) {
+                                        quest.completeObjective(objective.getId());
+                                        break;
+                                    }
+                                }
+                                break;
+                            } else if (objectiveType.equalsIgnoreCase("movement")) {
+                                if (gameState.getCurrentRoom().getName().equalsIgnoreCase(objective.getTarget())) {
+                                    quest.completeObjective(objective.getId());
+                                    break;
+                                }
+                                break;
+                            } else if (objectiveType.equalsIgnoreCase("stealth")) {
+                                turnsNeeded = Integer.valueOf(objective.getTarget());
+                                if (gameState.getPlayer().getIsHiding()) {
+                                    turnsInStealth++;
+                                    if (turnsInStealth == turnsNeeded) {
+                                        quest.completeObjective(objective.getId());
+                                        break;
+                                    }
+                                } else {
+                                    turnsInStealth = 0;
+                                    break;
+                                }                                
+                            }
+                        }
                     }
                 }
 

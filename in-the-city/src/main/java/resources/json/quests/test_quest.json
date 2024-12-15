@@ -35,7 +35,7 @@
     "objective_005": {
       "id": "objective_005",
       "type": "stealth",
-      "target": "gilear",
+      "target": "5",
       "isCompleted": false,
       "completionMessage": "Good job hiding from Gilear.  To complete the quest, move to room 1"
     },
