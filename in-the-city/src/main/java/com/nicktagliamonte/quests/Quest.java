@@ -18,8 +18,10 @@ public class Quest {
     @Expose private List<Item> rewards;
     @Expose private GameState gameState;
     @Expose private boolean isPrimary;
+    @Expose private String completionMessage;
 
-    public Quest(String questId, String title, String description, Boolean isPrimary, List<Objective> objectives, List<Item> rewards, GameState gameState) {
+    public Quest(String questId, String title, String description, Boolean isPrimary, 
+                List<Objective> objectives, List<Item> rewards, String completionMessage, GameState gameState) {
         this.questId = questId;
         this.title = title;
         this.description = description;
@@ -34,10 +36,19 @@ public class Quest {
             this.rewards.add(item);
         }        
         this.gameState = gameState;
+        this.completionMessage = completionMessage;
     }
 
     public Quest() {
         //method stub for easier gson deserialization
+    }
+
+    public void setCompletionMessage(String completionMessage) {
+        this.completionMessage = completionMessage;
+    }
+
+    public String getCompletionMessage() {
+        return completionMessage;
     }
 
     public List<Item> getRewards() {
@@ -110,6 +121,7 @@ public class Quest {
             Objective objective = objectives.get(objectiveId);
             objective.setIsCompleted(true);;
             if (checkProgress()) {
+                System.out.println(completionMessage);
                 giveRewards();
             }
         }
@@ -118,8 +130,10 @@ public class Quest {
     public void giveRewards() {
         if ("complete".equals(status)) {
             if (isPrimary) {
+                System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
             } else {
+                System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() / 3 + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
             }
             for (Item reward : rewards) {

@@ -8,19 +8,43 @@
       "id": "objective_001",
       "type": "dialogue",
       "target": "gilear",
-      "isCompleted": false
+      "isCompleted": false,
+      "completionMessage": null
     },
     "objective_002": {
       "id": "objective_002",
       "type": "combat",
       "target": "testName2",
-      "isCompleted": false
+      "isCompleted": false,
+      "completionMessage": "testName2 should have been carying an item which may show the way forward. Look around to find it, and take that item."
     },
     "objective_003": {
       "id": "objective_003",
+      "type": "item",
+      "target": "puzzle box",
+      "isCompleted": false,
+      "completionMessage": "Now that you have the puzzle box, solve it to progress."
+    },
+    "objective_004": {
+      "id": "objective_004",
       "type": "puzzle",
       "target": "test_puzzle",
-      "isCompleted": false
+      "isCompleted": false,
+      "completionMessage": "You've solved the puzzle box, and Gilear will be expecting it. Hide from him."
+    },
+    "objective_005": {
+      "id": "objective_005",
+      "type": "stealth",
+      "target": "gilear",
+      "isCompleted": false,
+      "completionMessage": "Good job hiding from Gilear.  To complete the quest, move to room 1"
+    },
+    "objective_006": {
+      "id": "objective_006",
+      "type": "movement",
+      "target": "room 1",
+      "isCompleted": false,
+      "completionMessage": "Good job hiding from Gilear.  To complete the quest, move to room 1"
     }
   },
   "rewards": [
@@ -36,5 +60,6 @@
       "value": 5,
       "acbonus": 2
     }
-  ]
+  ],
+  "completionMessage": "You have completed the test quest.  Good job."
 }

@@ -190,6 +190,10 @@ public class Menu {
                         System.out.println("  Next objective: Collect " + objective.getAmount() + " " + objective.getTarget() + "(s)");
                     } else if (objectiveType.equalsIgnoreCase("puzzle")) {
                         System.out.println("  Next objective: Solve Puzzle " + objective.getTarget());
+                    } else if (objectiveType.equalsIgnoreCase("stealth")) {
+                        System.out.println("  Next objective: Avoid detection by " + objective.getTarget());
+                    } else if (objectiveType.equalsIgnoreCase("movement")) {
+                        System.out.println("  Next objective: Go to " + objective.getTarget());
                     } else {
                         System.out.println("Please report back to the dev that " + quest.getTitle() + " contains an objective with an invalid type.");
                     }

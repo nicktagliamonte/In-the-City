@@ -4,17 +4,19 @@ import com.google.gson.annotations.Expose;
 
 public class Objective {
     @Expose private String id;
-    @Expose private String type;  // ONLY "dialogue", "combat", "item", "puzzle".  adding more means changing at LEAST the commands in menu.java
+    @Expose private String type;  // ONLY "dialogue", "combat", "item", "puzzle", "stealth", "movement".  adding more means changing at LEAST the commands in menu.java
     @Expose private String target;
     @Expose private int amount;  // For collect-type objectives
     @Expose private boolean isCompleted;
+    @Expose private String completionMessage;
 
-    public Objective(String id, String type, String target, int amount, boolean isCompleted) {
+    public Objective(String id, String type, String target, int amount, boolean isCompleted, String completionMessage) {
         this.id = id;
         this.type = type;
         this.target = target;
         this.amount = amount;
-        this.isCompleted = isCompleted;  // Default status
+        this.isCompleted = isCompleted;
+        this.completionMessage = completionMessage;
     }
 
     public Objective() {
@@ -23,6 +25,15 @@ public class Objective {
         this.target = "";
         this.amount = 0;
         this.isCompleted = false;
+        this.completionMessage = null;
+    }
+
+    public void setCompletionMessage(String completionMessage) {
+        this.completionMessage = completionMessage;
+    }
+
+    public String getCompletionMessage() {
+        return completionMessage;
     }
 
     public void setAmount(int amount) {
