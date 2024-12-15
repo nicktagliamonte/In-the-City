@@ -42,6 +42,10 @@ public class Quest {
     public Quest() {
         //method stub for easier gson deserialization
     }
+    
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
+    }
 
     public void setCompletionMessage(String completionMessage) {
         this.completionMessage = completionMessage;

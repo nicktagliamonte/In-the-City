@@ -31,7 +31,7 @@
             "(2,4)": {
                 "type": "adversary",
                 "name": "testName2",
-                "health": 50.0,
+                "health": 5.0,
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
@@ -46,10 +46,17 @@
                         "description": "fillerData",
                         "weight": 4.0,
                         "consumable": true
+                    },
+                    "item3": {
+                        "type": "PuzzleBox",
+                        "name": "puzzle box",
+                        "description": "fillerdata",
+                        "weight": 1,
+                        "consumable": false
                     }
                 },
                 "description": "a baaaaad guy.  dump him, girl",
-                "maxHealth": 50.0,
+                "maxHealth": 5.0,
                 "damage": 5,
                 "ac": 5,
                 "str": 5,

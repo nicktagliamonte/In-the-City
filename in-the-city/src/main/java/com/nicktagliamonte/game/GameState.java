@@ -724,7 +724,9 @@ public class GameState {
             .create();
         FileReader reader = new FileReader(questFilePath);
         JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
-        return gson.fromJson(jsonObject, Quest.class);
+        Quest quest = gson.fromJson(jsonObject, Quest.class);
+        quest.setGameState(this);
+        return quest;
     }
 
     public void exitDialogue() {

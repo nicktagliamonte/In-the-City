@@ -33,6 +33,8 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 int value = jsonObject.get("value").getAsInt();
                 int acBonus = jsonObject.get("acbonus").getAsInt();
                 return new Armor(name, description, weight, value, acBonus);
+            case "PuzzleBox":
+            return new PuzzleBox();
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

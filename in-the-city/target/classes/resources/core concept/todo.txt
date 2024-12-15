@@ -2,10 +2,10 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Put a quest in the game.  
-  - make sure that item rewards appear on quest completion
   - for major quest completion, add a method stub to change the region.
 - put a second region in the game and include methods to deserialize that region and initialize it, make sure that works
   - gonna need major quest completion to change the region, so build out that method stub and make sure it works.
+- think about that puzzle box again.  seems like there should be...something...
 - add some kind of dex check system to room transition
   - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
 - make room 3 an escape room (god this line is annoying.  i'm setting up the puzzle system though, and it makes sense to have a macro counterpart to the micro interaction that is puzzles.)

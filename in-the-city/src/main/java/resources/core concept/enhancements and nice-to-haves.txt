@@ -8,3 +8,5 @@ healing spells
 movespeed in the form of max integers that a given class can use in the 'MOVE [direction][number of steps]' command
 add item to inventory method in player.java
     replace all the instances where i have List<Item> _name_ = gameState.getPlayer().getInventory(); followed by _name_.add(_item_); followed by gameState.getPlayer().setInventory(_name_); with just gameState.getPlayer.addItemToInventory(_item_);
+get active quests method in player
+    replace all instances where list<quest> shows up followed by a bunch of logic to extract quests which are active with just a call to player.getactivequests()
