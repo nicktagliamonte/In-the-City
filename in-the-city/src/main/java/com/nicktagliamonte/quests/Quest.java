@@ -123,7 +123,8 @@ public class Quest {
     public void completeObjective(String objectiveId) {
         if (objectives.containsKey(objectiveId)) {
             Objective objective = objectives.get(objectiveId);
-            objective.setIsCompleted(true);;
+            objective.setIsCompleted(true);
+            System.out.println(objective.getCompletionMessage());
             if (checkProgress()) {
                 System.out.println(completionMessage);
                 giveRewards();
