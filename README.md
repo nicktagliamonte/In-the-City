@@ -38,6 +38,7 @@ Currently:
   - Attempts at theivery modify the player alignment.  Stealing from a bad guy increases alignment, stealing from a good guy decreases it.
 - A lockpicking mechanic which enters a 'guess the number' minigame to attempt to pick a lock.  The number of guesses is based on a skill check from the players intelligence score, and the upper bound for a number to guess is based on a field in the adjacency object.
 - Player leveling mechanics which increment the player and party attributes, calculate the xp needed to get to the next level, and scales the xp received based on player level.
+- A quest system which inlcudes a variety of potential objectives
   
 Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
 - The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
@@ -48,11 +49,6 @@ Some character names or attributes are pulled from things I was watching at the 
 
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.      
-- Put a quest in the game.  
-  - Add a check in gameEngine to see if the last turn caused a quest objective to be completed.
-  - Add a puzzle state to gamestate, launch on interaction with a puzzle.
-  - Make sure the reward system works
-    - For major quests, add method stub to change game region
 - Put a second region in the game and include methods to deserialize that region and initialize it.
 - Add a dex check system to room transition, to create a barrier to entry for some rooms only accessable to high dex classes.
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
