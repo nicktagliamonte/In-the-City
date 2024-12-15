@@ -2,6 +2,7 @@ package com.nicktagliamonte.game;
 
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
+import com.nicktagliamonte.quests.Objective;
 import com.nicktagliamonte.quests.Quest;
 import com.nicktagliamonte.rooms.*;
 import com.google.gson.FieldNamingPolicy;
@@ -663,6 +664,39 @@ public class GameState {
                     // End dialogue after quest decision
                     exitDialogue();
                     break;
+                }
+
+                //Check if the selected option fulfills a quest objective
+                if (selectedOption.getNextDialogueId().contains("objective")) {
+                    currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
+                    List<Quest> questLog = player.getAllQuests();
+                    List<Quest> activeQuests = new ArrayList<>();
+
+                    for (Quest quest : questLog) {
+                        boolean allObjectivesCompleted = true;
+                        for (Objective objective : quest.getObjectives().values()) {
+                            if (!objective.getIsCompleted()) {
+                                allObjectivesCompleted = false;
+                                break;
+                            }
+                        }
+
+                        if (!allObjectivesCompleted) {
+                            activeQuests.add(quest);
+                        }
+                    }
+
+                    for (Quest quest : activeQuests) {
+                        for (Objective objective : quest.getObjectives().values()) {
+                            if ((!objective.getIsCompleted()) && objective.getType().equalsIgnoreCase("dialogue")) {
+                                if (objective.getTarget().equalsIgnoreCase(character.getName())) {
+                                    quest.completeObjective(objective.getId());
+                                    break;
+                                }
+                                break;
+                            }
+                        }
+                    }
                 }
 
                 if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {

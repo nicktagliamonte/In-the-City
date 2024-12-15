@@ -12,7 +12,7 @@ public class Item {
     @Expose private boolean isConsumable;
     @Expose private double value;
 
-    public Item(String name, String description, double weight, boolean isConsumable, int value) {
+    public Item(String name, String description, double weight, boolean isConsumable, double value) {
         this.name = name;
         this.description = description;
         this.weight = weight;

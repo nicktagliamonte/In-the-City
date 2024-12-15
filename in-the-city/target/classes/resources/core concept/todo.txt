@@ -2,19 +2,13 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Put a quest in the game.  
-  - add a chack in combat to see if the player defeated a person who is next on the objective list
-  - build out gilears dialogue options as they relate to the quest.  see whether there is a clear way to have an objective marked completed from within a dialogueNode
-    - this will be the first opportunity to test objective completion and the menu function.  start the quest, complete the dialogue objective, then do menu>quests
-  - decide what the puzzle is going to be exactly (puzzle box)
-  - create an item for the puzzle
-  - create a puzzle gamestate and command
-    - include a check to see whether this completes a quest objective
   - make sure that item rewards appear on quest completion
   - for major quest completion, add a method stub to change the region.
 - put a second region in the game and include methods to deserialize that region and initialize it, make sure that works
   - gonna need major quest completion to change the region, so build out that method stub and make sure it works.
 - add some kind of dex check system to room transition
   - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
+- make room 3 an escape room (god this line is annoying.  i'm setting up the puzzle system though, and it makes sense to have a macro counterpart to the micro interaction that is puzzles.)
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - format output for readability in general.  
 - Update the inventory function.  
