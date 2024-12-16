@@ -14,10 +14,11 @@ public class Adjacency {
     @Expose private int baseChances;
     @Expose private int difficulty;
     @Expose private int combination;
+    @Expose private int dexScore;
 
     //pickable lock
     public Adjacency(String type, String coordinates, String description, String adjoiningRoomName, boolean isStairsUp, 
-                        String lockType, boolean isLocked, int baseChances, int difficulty) {
+                        String lockType, boolean isLocked, int baseChances, int difficulty, int dexScore) {
         this.type = type;
         this.coordinates = coordinates;
         this.description = description;
@@ -27,11 +28,12 @@ public class Adjacency {
         this.isLocked = isLocked;
         this.baseChances = baseChances;
         this.difficulty = difficulty;
+        this.dexScore = dexScore;
     }
 
     //combination lock
     public Adjacency(String type, String coordinates, String description, String adjoiningRoomName,
-            boolean isStairsUp, String lockType, boolean isLocked, int combination) {
+            boolean isStairsUp, String lockType, boolean isLocked, int combination, int dexScore) {
         this.type = type;
         this.coordinates = coordinates;
         this.description = description;
@@ -40,11 +42,12 @@ public class Adjacency {
         this.lockType = lockType;
         this.isLocked = isLocked;
         this.combination = combination;
+        this.dexScore = dexScore;
     }
 
     //no lock, or inactive lock
     public Adjacency(String type, String coordinates, String description, String adjoiningRoomName,
-            boolean isStairsUp, String lockType, boolean isLocked) {
+            boolean isStairsUp, String lockType, boolean isLocked, int dexScore) {
         this.type = type;
         this.coordinates = coordinates;
         this.description = description;
@@ -52,6 +55,11 @@ public class Adjacency {
         this.isStairsUp = isStairsUp;
         this.lockType = lockType;
         this.isLocked = isLocked;
+        this.dexScore = dexScore;
+    }
+
+    public int getDexScore() {
+        return dexScore;
     }
 
     public void setCombination(int combination) {

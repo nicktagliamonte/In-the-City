@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class SequencePuzzleData {
     private String id;
+    private String itemName;
     private int numberOfPieces;
     private String description;
     private List<PuzzlePiece> sequence;
@@ -13,9 +14,10 @@ public class SequencePuzzleData {
     private int reward;
 
     // Constructor
-    public SequencePuzzleData(String id, int numberOfPieces, String description, List<PuzzlePiece> sequence, 
+    public SequencePuzzleData(String id, String itemName, int numberOfPieces, String description, List<PuzzlePiece> sequence, 
                                 List<Integer> solution, Map<String, String> hints, int reward) {
         this.id = id;
+        this.itemName = itemName;
         this.numberOfPieces = numberOfPieces;
         this.description = description;
         this.sequence = sequence;
@@ -27,6 +29,10 @@ public class SequencePuzzleData {
     // Getters
     public String getId() {
         return id;
+    }
+
+    public String getItemName() {
+        return itemName;
     }
 
     public int getNumberOfPieces() {

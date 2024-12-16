@@ -21,19 +21,26 @@
     "objective_003": {
       "id": "objective_003",
       "type": "item",
-      "target": "puzzle box",
+      "target": "codex",
       "isCompleted": false,
-      "completionMessage": "Now that you have the puzzle box, hide from Gilear."
+      "completionMessage": "Now that you have the puzzle box, solve it."
     },
     "objective_004": {
       "id": "objective_004",
+      "type": "puzzle",
+      "target": "codex",
+      "isCompleted": false,
+      "completionMessage": "Good job solving the puzzle box. Hide from Gilear, he'll want the solved box"
+    },
+    "objective_005": {
+      "id": "objective_005",
       "type": "stealth",
       "target": "5",
       "isCompleted": false,
       "completionMessage": "Good job hiding from Gilear.  To complete the quest, move to room 1"
     },
-    "objective_005": {
-      "id": "objective_005",
+    "objective_006": {
+      "id": "objective_006",
       "type": "movement",
       "target": "room 1",
       "isCompleted": false,

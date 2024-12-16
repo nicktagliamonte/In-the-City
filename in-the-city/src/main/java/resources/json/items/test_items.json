@@ -24,15 +24,6 @@
         "consumable": false,
         "value": 0,
         "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_001.json"
-      },
-      "(8,8)": {
-        "type": "Mastermind Puzzle",
-        "name": "Codex",
-        "description": "A small silo-shaped object with a series of dials.",
-        "weight": 1,
-        "consumable": true,
-        "value": 0,
-        "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\mastermind puzzles\\mastermind_puzzle_001.json"
       }
     },
     "Room 2": {

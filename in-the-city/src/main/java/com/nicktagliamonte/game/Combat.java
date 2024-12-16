@@ -414,7 +414,6 @@ public class Combat {
                                 quest.completeObjective(objective.getId());
                                 break;
                             }
-                            break;
                         }
                     }
                 }

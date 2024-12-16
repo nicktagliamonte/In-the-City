@@ -48,11 +48,13 @@
                         "consumable": true
                     },
                     "item3": {
-                        "type": "PuzzleBox",
-                        "name": "puzzle box",
-                        "description": "fillerdata",
+                        "type": "Mastermind Puzzle",
+                        "name": "Codex",
+                        "description": "A small silo-shaped object with a series of dials.",
                         "weight": 1,
-                        "consumable": false
+                        "consumable": true,
+                        "value": 0,
+                        "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\mastermind puzzles\\mastermind_puzzle_001.json"
                     }
                 },
                 "description": "a baaaaad guy.  dump him, girl",

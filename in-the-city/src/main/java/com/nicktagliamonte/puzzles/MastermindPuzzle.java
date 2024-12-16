@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.nicktagliamonte.game.GameState;
+import com.nicktagliamonte.quests.Objective;
+import com.nicktagliamonte.quests.Quest;
 
 public class MastermindPuzzle {
     private MastermindPuzzleData puzzleData;
@@ -51,6 +53,14 @@ public class MastermindPuzzle {
             if (isPuzzleSolved(guess)) {
                 System.out.println("Congratulations! You've solved the puzzle.");
                 gameState.getPlayer().gainXP(puzzleData.getReward(), gameState);
+                for (Quest quest : gameState.getPlayer().getActiveQuests()) {
+                    for (Objective objective : quest.getObjectives().values()) {
+                        if (objective.getType().equalsIgnoreCase("puzzle") && objective.getTarget().equalsIgnoreCase(puzzleData.getItemName())) {
+                            quest.completeObjective(objective.getId());
+                            break;
+                        }
+                    }
+                }
                 isSolved = true; // Exit the loop
             }
 

@@ -82,13 +82,11 @@ public class GameEngine {
                                         break;
                                     }
                                 }
-                                break;
                             } else if (objectiveType.equalsIgnoreCase("movement")) {
                                 if (gameState.getCurrentRoom().getName().equalsIgnoreCase(objective.getTarget())) {
                                     quest.completeObjective(objective.getId());
                                     break;
                                 }
-                                break;
                             } else if (objectiveType.equalsIgnoreCase("stealth")) {
                                 turnsNeeded = Integer.valueOf(objective.getTarget());
                                 if (gameState.getPlayer().getIsHiding()) {

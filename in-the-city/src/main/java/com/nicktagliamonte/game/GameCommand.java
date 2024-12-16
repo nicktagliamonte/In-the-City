@@ -194,10 +194,16 @@ public enum GameCommand {
     UNLOCK {
         @Override
         public void execute(String[] args, GameState gameState) {
+            Random rand = new Random();
+            int roll = rand.nextInt(20) + 1;
+            double totalDex = roll + gameState.getPlayer().getDexterity();
+
             if (args.length >= 1) {
                 for (Adjacency adj : gameState.getCurrentRoom().getAdjacentRooms()) {
-                    if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0])) {
+                    if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0]) && totalDex >= adj.getDexScore()) {
                         gameState.enterCombinationLockSequence(adj.getAdjoiningRoomName(), adj);
+                    } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0])) {
+                        System.out.println("You cannot reach that lock.");
                     }
                 }
             } else {
@@ -213,13 +219,17 @@ public enum GameCommand {
                 return;
             }
 
+            Random rand = new Random();
+            int roll = rand.nextInt(20) + 1;
+            double totalDex = roll + gameState.getPlayer().getDexterity();
+
             String targetRoomName = args[0];
             List<Adjacency> adjacentRooms = gameState.getCurrentRoom().getAdjacentRooms();
 
             boolean roomFound = false;
 
             for (Adjacency adjacency : adjacentRooms) {
-                if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName) && adjacency.getIsLocked() && adjacency.getLockType().equalsIgnoreCase("pickable")) {
+                if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName) && adjacency.getIsLocked() && adjacency.getLockType().equalsIgnoreCase("pickable") && totalDex >= adjacency.getDexScore()) {
                     roomFound = true;
                     gameState.startLockpickingSequence(targetRoomName, adjacency);
                     return;
@@ -229,6 +239,8 @@ public enum GameCommand {
                 } else if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName)) {
                     System.out.println(targetRoomName + " is already unlocked. You can enter it by typing \"ENTER " + targetRoomName + "\"");
                     return;
+                } else if (totalDex < adjacency.getDexScore()) {
+                    System.out.println("You cannot access that lock to pick it.");
                 }
             }
 

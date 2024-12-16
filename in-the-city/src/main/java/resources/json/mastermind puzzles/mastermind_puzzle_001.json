@@ -1,5 +1,6 @@
 {
     "id": "mastermind_puzzle_001",
+    "itemName": "codex",
     "numberOfDigits": 4,
     "description": "A series of 4 dials makes up the central part of this sile-shaped object. Try rotating them to view the output.",
     "solution": [1, 4, 3, 7],

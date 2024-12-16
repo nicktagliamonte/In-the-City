@@ -47,11 +47,11 @@
     "start": {
       "npcLine": "What's up?",
       "options": [
-        { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "quest_001", "impact": 0 },
+        { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "quest_001_objective_001", "impact": 0 },
         { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
       ]
     },
-    "quest_001": {
+    "quest_001_objective_001": {
       "npcLine": "Yes. You'll need to kill testName2 and take his puzzle box. Then, come to me and i'll solve it.",
       "options": [
         { "text": "And if I keep the box for myself?", "nextDialogueId": "bad", "impact": -1 },

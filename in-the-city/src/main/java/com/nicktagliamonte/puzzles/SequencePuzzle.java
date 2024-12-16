@@ -3,6 +3,8 @@ package com.nicktagliamonte.puzzles;
 import java.util.*;
 
 import com.nicktagliamonte.game.GameState;
+import com.nicktagliamonte.quests.Objective;
+import com.nicktagliamonte.quests.Quest;
 
 public class SequencePuzzle {
     private SequencePuzzleData puzzleData;
@@ -46,6 +48,14 @@ public class SequencePuzzle {
         if (puzzleData.checkPlayerSequence(playerAttempt)) {
             System.out.println("Correct! Puzzle solved.");
             gameState.getPlayer().gainXP(puzzleData.getReward(), gameState);
+            for (Quest quest : gameState.getPlayer().getActiveQuests()) {
+                for (Objective objective : quest.getObjectives().values()) {
+                    if (objective.getType().equalsIgnoreCase("puzzle") && objective.getTarget().equalsIgnoreCase(puzzleData.getItemName())) {
+                        quest.completeObjective(objective.getId());
+                        break;
+                    }
+                }
+            }
             return true;
         } else {
             System.out.println("Incorrect sequence. Try again.");

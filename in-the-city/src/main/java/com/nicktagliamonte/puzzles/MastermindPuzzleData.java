@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class MastermindPuzzleData {
     private String id;
+    private String itemName;
     private int numberOfDigits;
     private String description;
     private List<Integer> solution;
@@ -13,9 +14,10 @@ public class MastermindPuzzleData {
     private Map<Integer, String> hints;
     private int reward;
 
-    public MastermindPuzzleData(String id, int numberOfDigits, String description, List<Integer> solution, int maxAttempts,
+    public MastermindPuzzleData(String id, String itemName, int numberOfDigits, String description, List<Integer> solution, int maxAttempts,
             Map<Integer, String> hints, int reward) {
         this.id = id;
+        this.itemName = itemName;
         this.numberOfDigits = numberOfDigits;
         this.description = description;
         this.solution = solution;
@@ -26,6 +28,10 @@ public class MastermindPuzzleData {
 
     public String getId() {
         return id;
+    }
+
+    public String getItemName() {
+        return itemName;
     }
 
     public int getNumberOfDigits() {

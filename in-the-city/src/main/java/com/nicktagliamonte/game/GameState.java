@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 import java.awt.Point;
@@ -511,13 +512,20 @@ public class GameState {
     }
 
     public void enterByCommand(String roomName) {
+        Random rand = new Random();
+        int roll = rand.nextInt(20) + 1;
+        double totalDex = roll + player.getDexterity();
+
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
-            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked() && totalDex <= adj.getDexScore()) {
                 setCurrentRoom(adj.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
                 System.out.println(roomName + " is locked.");
+                return;
+            } else if (adj.getDexScore() > totalDex) {
+                System.out.println("You fail to reach " + roomName);
                 return;
             }
         }
@@ -526,11 +534,18 @@ public class GameState {
     }
 
     public void ascend(String roomName) {
+        Random rand = new Random();
+        int roll = rand.nextInt(20) + 1;
+        double totalDex = roll + player.getDexterity();
+
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getDexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
+                return;
+            } else if (adjacency.getDexScore() > totalDex) {
+                System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
@@ -539,11 +554,18 @@ public class GameState {
     }
 
     public void descend(String roomName) {
+        Random rand = new Random();
+        int roll = rand.nextInt(20) + 1;
+        double totalDex = roll + player.getDexterity();
+
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getDexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
+                return;
+            } else if (adjacency.getDexScore() > totalDex) {
+                System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
@@ -663,7 +685,7 @@ public class GameState {
                     String nextId = option.getNextDialogueId();
                     if (nextId.startsWith("quest") || nextId.startsWith("objective")) {
                         boolean hasRequiredQuest = activeQuests.stream()
-                                .anyMatch(quest -> quest.getQuestId().equals(nextId));
+                                .anyMatch(quest -> nextId.contains(quest.getQuestId()));
                         if (hasRequiredQuest) {
                             availableOptions.add(option);
                         }
@@ -717,7 +739,7 @@ public class GameState {
                     break;
                 }
 
-                if (nextId.startsWith("objective")) {
+                if (nextId.contains("objective")) {
                     List<Quest> questLog = player.getActiveQuests();
                     for (Quest quest : questLog) {
                         for (Objective objective : quest.getObjectives().values()) {
@@ -963,9 +985,18 @@ public class GameState {
         if (playerInput == adj.getCombination()) {
             adj.setIsLocked(false);
             System.out.println("You hear a satisfying click.  The lock opens.");
+
+            for (Quest quest : player.getActiveQuests()) {
+                for (Objective objective : quest.getObjectives().values()) {
+                    if (objective.getType().equalsIgnoreCase("puzzle") && objective.getTarget().equalsIgnoreCase(roomName)) {
+                        quest.completeObjective(objective.getId());
+                        break;
+                    }
+                }
+            }
         } else {
             System.out.println("That combination was incorrect.");
-        }
+        }        
 	}
 
     public void launchSequencePuzzle(String puzzleFilePath) {

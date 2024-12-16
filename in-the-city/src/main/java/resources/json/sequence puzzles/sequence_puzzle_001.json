@@ -1,5 +1,6 @@
 {
     "id": "sequence_puzzle_001",
+    "itemName": "computer terminal",
     "numberOfPieces": 3,
     "description": "A series of 3 dials sits belows a large computer monitor. Turn them in the correct sequence to power on the device. Use 'verify' to check your answer.",
     "sequence": [
