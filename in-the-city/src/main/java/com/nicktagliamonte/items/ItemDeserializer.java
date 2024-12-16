@@ -34,7 +34,15 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 int acBonus = jsonObject.get("acbonus").getAsInt();
                 return new Armor(name, description, weight, value, acBonus);
             case "PuzzleBox":
-            return new PuzzleBox();
+                return new PuzzleBox();
+            case "Sequence Puzzle":
+                String sequenceName = jsonObject.get("name").getAsString();
+                String sequenceDescription = jsonObject.get("description").getAsString();
+                double sequenceWeight = jsonObject.get("weight").getAsDouble();
+                boolean sequenceIsConsumable = jsonObject.get("consumable").getAsBoolean();
+                int sequenceValue = jsonObject.get("value").getAsInt(); 
+                String sequenceDataPath = jsonObject.get("dataPath").getAsString();
+                return new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath);
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

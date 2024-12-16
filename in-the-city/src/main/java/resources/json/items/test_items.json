@@ -15,6 +15,15 @@
         "consumable": false,
         "value": 5,
         "acbonus": 2
+      },
+      "(7,7)": {
+        "type": "Sequence Puzzle",
+        "name": "Computer Terminal",
+        "description": "A computer terminal with a series of dials below a large monitor",
+        "weight": 500,
+        "consumable": false,
+        "value": 0,
+        "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_001.json"
       }
     },
     "Room 2": {

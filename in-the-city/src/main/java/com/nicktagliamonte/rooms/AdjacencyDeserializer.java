@@ -18,11 +18,18 @@ public class AdjacencyDeserializer implements JsonDeserializer<Adjacency> {
         String adjoiningRoomName = jsonObject.get("adjoiningRoom").getAsString();
 
         boolean isStairsUp = jsonObject.get("isStairsUp").getAsBoolean();
+        String lockType = jsonObject.get("lockType").getAsString();
         boolean isLocked = jsonObject.get("isLocked").getAsBoolean();
-        int baseChances = jsonObject.get("baseChances").getAsInt();
-        int difficulty = jsonObject.get("difficulty").getAsInt();
 
-        // Create and return an Adjacency object with just the name initially
-        return new Adjacency(type, coordinates, description, adjoiningRoomName, isStairsUp, isLocked, baseChances, difficulty);
+        if (lockType.equalsIgnoreCase("combination")) {
+            int combination = jsonObject.get("combination").getAsInt();
+            return new Adjacency(type, coordinates, description, adjoiningRoomName, isStairsUp, lockType, isLocked, combination);
+        } else if (lockType.equalsIgnoreCase("pickable")) {
+            int baseChances = jsonObject.get("baseChances").getAsInt();
+            int difficulty = jsonObject.get("difficulty").getAsInt();
+            return new Adjacency(type, coordinates, description, adjoiningRoomName, isStairsUp, lockType, isLocked, baseChances, difficulty);
+        } else {
+            return new Adjacency(type, coordinates, description, adjoiningRoomName, isStairsUp, lockType, isLocked);
+        }
     }
 }

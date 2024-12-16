@@ -20,27 +20,13 @@ public class Combat {
     public List<Person> combatants = new ArrayList<>();
     public GameState gameState;
     public String location;
-    public List<Quest> questLog = new ArrayList<>();
     public List<Quest> activeQuests = new ArrayList<>();
 
     public Combat(List<Person> combatants, GameState gameState, String location) {
         this.combatants = combatants;
         this.gameState = gameState;
         this.location = location;
-        this.questLog = gameState.getPlayer().getAllQuests();
-        for (Quest quest : questLog) {
-            boolean allObjectivesCompleted = true;
-            for (Objective objective : quest.getObjectives().values()) {
-                if (!objective.getIsCompleted()) {
-                    allObjectivesCompleted = false;
-                    break;
-                }
-            }
-
-            if (!allObjectivesCompleted) {
-                activeQuests.add(quest);
-            }
-        }
+        this.activeQuests = gameState.getPlayer().getActiveQuests();
         combatLoop(combatants);
     }
 

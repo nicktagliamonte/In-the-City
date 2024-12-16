@@ -9,7 +9,7 @@ public class Weapon extends Item {
     @Expose private int damage;
 
     public Weapon(String name, String description, double weight, int value, int attackModifier, int damage) {
-        super(name, description, weight, false, value);
+        super(name, description, weight, false, value, "");
         isEquipped = false;
         this.attackModifier = attackModifier;
         this.damage = damage;

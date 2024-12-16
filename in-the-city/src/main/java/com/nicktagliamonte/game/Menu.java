@@ -150,25 +150,8 @@ public class Menu {
     }
 
     private void openQuests() {
-        List<Quest> questLog = gameEngine.getGameState().getPlayer().getAllQuests();
-        List<Quest> completedQuests = new ArrayList<>();
-        List<Quest> activeQuests = new ArrayList<>();
-        
-        for (Quest quest : questLog) {
-            boolean allObjectivesCompleted = true;
-            for (Objective objective : quest.getObjectives().values()) {
-                if (!objective.getIsCompleted()) {
-                    allObjectivesCompleted = false;
-                    break;
-                }
-            }
-
-            if (allObjectivesCompleted) {
-                completedQuests.add(quest);
-            } else {
-                activeQuests.add(quest);
-            }
-        }
+        List<Quest> completedQuests = gameEngine.getGameState().getPlayer().getCompletedQuests();
+        List<Quest> activeQuests = gameEngine.getGameState().getPlayer().getActiveQuests();
 
         if (!completedQuests.isEmpty()) {
             System.out.println("Completed quests:");

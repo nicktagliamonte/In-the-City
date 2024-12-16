@@ -12,6 +12,7 @@ import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Trap;
 import com.nicktagliamonte.items.Weapon;
+import com.nicktagliamonte.quests.Objective;
 import com.nicktagliamonte.quests.Quest;
 import com.nicktagliamonte.rooms.Adjacency;
 
@@ -518,5 +519,43 @@ public class Player extends Person {
 
     public double getNextLevelXp() {
         return nextLevelXP;
+    }
+
+    public List<Quest> getActiveQuests() {
+        List<Quest> activeQuests = new ArrayList<>();
+        for (Quest quest : questLog) {
+            boolean allObjectivesCompleted = true;
+            for (Objective objective : quest.getObjectives().values()) {
+                if (!objective.getIsCompleted()) {
+                    allObjectivesCompleted = false;
+                    break;
+                }
+            }
+
+            if (!allObjectivesCompleted) {
+                activeQuests.add(quest);
+            }
+        }
+
+        return activeQuests;
+    }
+
+    public List<Quest> getCompletedQuests() {
+        List<Quest> completedQuests = new ArrayList<>();
+        for (Quest quest : questLog) {
+            boolean allObjectivesCompleted = true;
+            for (Objective objective : quest.getObjectives().values()) {
+                if (!objective.getIsCompleted()) {
+                    allObjectivesCompleted = false;
+                    break;
+                }
+            }
+
+            if (allObjectivesCompleted) {
+                completedQuests.add(quest);
+            }
+        }
+
+        return completedQuests;
     }
 }

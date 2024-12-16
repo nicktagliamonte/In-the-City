@@ -66,24 +66,9 @@ public class GameEngine {
                 }
 
                 //Quest objective completion check
-                List<Quest> questLog = gameState.getPlayer().getAllQuests();
-                List<Quest> activeQuests = new ArrayList<>();
+                List<Quest> activeQuests = gameState.getPlayer().getActiveQuests();
 
                 int turnsNeeded;
-
-                for (Quest quest : questLog) {
-                    boolean allObjectivesCompleted = true;
-                    for (Objective objective : quest.getObjectives().values()) {
-                        if (!objective.getIsCompleted()) {
-                            allObjectivesCompleted = false;
-                            break;
-                        }
-                    }
-
-                    if (!allObjectivesCompleted) {
-                        activeQuests.add(quest);
-                    }
-                }
 
                 for (Quest quest : activeQuests) {
                     for (Objective objective : quest.getObjectives().values()) {

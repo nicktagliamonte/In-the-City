@@ -34,11 +34,11 @@
     "start": {
       "npcLine": "So far this is working",
       "options": [
-        { "text": "do you have a quest for me?", "nextDialogueId": "testNameQuest", "impact": 0 },
+        { "text": "do you have a quest for me?", "nextDialogueId": "assign_quest_001", "impact": 0 },
         { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
       ]
     },
-    "testNameQuest": {
+    "assign_quest_001": {
       "npcLine": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\quests\\test_quest.json",
       "options": []
     }
@@ -47,11 +47,11 @@
     "start": {
       "npcLine": "What's up?",
       "options": [
-        { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "objective", "impact": 0 },
+        { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "quest_001", "impact": 0 },
         { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
       ]
     },
-    "objective": {
+    "quest_001": {
       "npcLine": "Yes. You'll need to kill testName2 and take his puzzle box. Then, come to me and i'll solve it.",
       "options": [
         { "text": "And if I keep the box for myself?", "nextDialogueId": "bad", "impact": -1 },

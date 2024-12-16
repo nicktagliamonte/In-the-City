@@ -9,7 +9,7 @@ public class Armor extends Item {
     @Expose private boolean isEquipped;
 
     public Armor(String name, String description, double weight, int value, int acBonus) {
-        super(name, description, weight, false, value);
+        super(name, description, weight, false, value, "");
         this.acBonus = acBonus;
         isEquipped = false;
     }

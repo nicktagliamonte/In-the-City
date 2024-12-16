@@ -2,6 +2,8 @@ package com.nicktagliamonte.game;
 
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
+import com.nicktagliamonte.puzzles.SequencePuzzle;
+import com.nicktagliamonte.puzzles.SequencePuzzleData;
 import com.nicktagliamonte.quests.Objective;
 import com.nicktagliamonte.quests.Quest;
 import com.nicktagliamonte.rooms.*;
@@ -28,19 +30,30 @@ import java.util.Scanner;
 import java.awt.Point;
 
 public class GameState {
-    @Expose private Region currentRegion;
-    @Expose private Room currentRoom;
+    @Expose
+    private Region currentRegion;
+    @Expose
+    private Room currentRoom;
     public Player player;
     public GameEngine gameEngine;
-    @Expose private List<NPC> currentParty;
-    @Expose private RegionDialogue currentRegionDialogue;
-    @Expose private boolean inDialogue = false;
-    @Expose private String regionFilePath;
-    @Expose private String adjacencyFilePath;
-    @Expose private String itemsFilePath;
-    @Expose private String peopleFilePath;
-    @Expose private String dialogueFilePath;
-    @Expose private boolean fromSaveFile;
+    @Expose
+    private List<NPC> currentParty;
+    @Expose
+    private RegionDialogue currentRegionDialogue;
+    @Expose
+    private boolean inDialogue = false;
+    @Expose
+    private String regionFilePath;
+    @Expose
+    private String adjacencyFilePath;
+    @Expose
+    private String itemsFilePath;
+    @Expose
+    private String peopleFilePath;
+    @Expose
+    private String dialogueFilePath;
+    @Expose
+    private boolean fromSaveFile;
     public GameTimer gameTimer;
     public String itemContext;
     public safeZoneInventory safeZoneInventory;
@@ -81,12 +94,13 @@ public class GameState {
         gameEngine.player = this.player;
     }
 
-    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath, String peopleFilePath, String dialogueFilePath) {
+    public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath,
+            String peopleFilePath, String dialogueFilePath) {
         Gson gson = new GsonBuilder()
-            .disableHtmlEscaping()
-            .excludeFieldsWithoutExposeAnnotation()
-            .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
-            .create();
+                .disableHtmlEscaping()
+                .excludeFieldsWithoutExposeAnnotation()
+                .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
+                .create();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
             for (Room room : currentRegion.getRooms()) {
@@ -293,7 +307,8 @@ public class GameState {
 
     // specifically used for initializing the starting room
     // TODO: when i'm loading save games, i'll probably need to find a way to make
-    // it so that the last room which contained the player doesn't conflict with this
+    // it so that the last room which contained the player doesn't conflict with
+    // this
     private void initializeCurrentRoom() {
         for (Room room : currentRegion.getRooms()) {
             if (room.hasPlayer()) {
@@ -319,7 +334,7 @@ public class GameState {
         this.peopleFilePath = newPeopleFilePath;
         this.dialogueFilePath = newDialogueFilePath;
 
-        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);        
+        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
     }
 
     public Region getCurrentRegion() {
@@ -340,7 +355,8 @@ public class GameState {
         try {
             Direction direction = Direction.valueOf(directionInput.toUpperCase());
             String oldLocation = currentRoom.getPlayerPosition();
-            currentRoom.updateMapEntry('.', Character.getNumericValue(oldLocation.charAt(1)), Character.getNumericValue(oldLocation.charAt(4)));
+            currentRoom.updateMapEntry('.', Character.getNumericValue(oldLocation.charAt(1)),
+                    Character.getNumericValue(oldLocation.charAt(4)));
             Room newRoom = currentRoom.movePlayer(direction.toString(), distance);
 
             if (newRoom != null && newRoom != currentRoom) {
@@ -455,8 +471,6 @@ public class GameState {
         return "Waypoint \"" + waypointName
                 + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
     }
-
-
 
     private Point parsePositionString(String positionString) {
         positionString = positionString.replaceAll("[()]", ""); // Remove parentheses
@@ -575,16 +589,19 @@ public class GameState {
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
 
-        //update people in new room to act as adversary if player alignment is sufficiently low
+        // update people in new room to act as adversary if player alignment is
+        // sufficiently low
         Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<String, NPC> entry = iterator.next();
             String currentLocation = entry.getKey();
             NPC currentPerson = entry.getValue();
-            if (currentPerson instanceof Neutral && ((Neutral) currentPerson).getMoralityFlag() > player.getAlignment()) {
+            if (currentPerson instanceof Neutral
+                    && ((Neutral) currentPerson).getMoralityFlag() > player.getAlignment()) {
                 people.replace(currentLocation, ((Neutral) currentPerson).actAsAdversary());
-                currentRoom.updateMapEntry('A', Character.getNumericValue(currentLocation.charAt(1)), Character.getNumericValue(currentLocation.charAt(3)));
+                currentRoom.updateMapEntry('A', Character.getNumericValue(currentLocation.charAt(1)),
+                        Character.getNumericValue(currentLocation.charAt(3)));
 
             }
         }
@@ -636,90 +653,89 @@ public class GameState {
                     break;
                 }
 
-                for (int i = 0; i < options.size(); i++) {
-                    System.out.println((i + 1) + ": " + options.get(i).getText());
+                // Filter options based on active quests
+                List<DialogueOption> availableOptions = new ArrayList<>();
+                List<Quest> activeQuests = player.getActiveQuests(); // Assumes a method returning active quests
+
+                for (DialogueOption option : options) {
+                    String nextId = option.getNextDialogueId();
+                    if (nextId.startsWith("quest") || nextId.startsWith("objective")) {
+                        boolean hasRequiredQuest = activeQuests.stream()
+                                .anyMatch(quest -> quest.getQuestId().equals(nextId));
+                        if (hasRequiredQuest) {
+                            availableOptions.add(option);
+                        }
+                    } else {
+                        availableOptions.add(option);
+                    }
+                }
+
+                // Display available options
+                if (availableOptions.isEmpty()) {
+                    System.out.println("No dialogue options available.");
+                    exitDialogue();
+                    break;
+                }
+
+                for (int i = 0; i < availableOptions.size(); i++) {
+                    System.out.println((i + 1) + ": " + availableOptions.get(i).getText());
                 }
 
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
-                DialogueOption selectedOption = options.get(choice);
+                DialogueOption selectedOption = availableOptions.get(choice);
 
                 double alignmentDelta = (player.getAlignment() * (selectedOption.getImpact() / 100));
                 player.adjustAlignment(alignmentDelta);
 
-                // Check if the selected option corresponds to a quest
-                if (selectedOption.getNextDialogueId().contains("Quest")) {
-                    currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
+                String nextId = selectedOption.getNextDialogueId();
 
+                // Handle quest assignment or completion
+                if (nextId.startsWith("assign")) {
+                    currentDialogue = dialogues.get(nextId);
                     String questFilePath = currentDialogue.getNpcLine();
 
-                    // Step 2: Deserialize the quest JSON
                     Quest quest = deserializeQuest(questFilePath);
-
                     if (quest != null) {
-                        // Step 3: Prompt the player to accept the quest
                         System.out.println("Do you want to accept quest: " + quest.getTitle() + "? (yes/no)");
 
                         String playerResponse = dialogueScanner.nextLine().trim().toLowerCase();
-
-                        // Step 4: Handle player response to accept the quest
                         if (playerResponse.equals("yes")) {
-                            // Add the quest to the player's quest log
                             player.addQuest(quest);
-                            System.out.println("You have accepted the quest: " + quest.getTitle() + ". For more information, access menu>quests.");
+                            System.out.println("You have accepted the quest: " + quest.getTitle()
+                                    + ". For more information, access menu > quests.");
                         } else {
-                            System.out.println("You did not accept this quest. Hopefully, it will still be available later if you want it.");
+                            System.out.println(
+                                    "You did not accept this quest. Hopefully, it will still be available later if you want it.");
                         }
                     } else {
                         System.out.println("Sorry, there was an error loading the quest.");
                     }
 
-                    // End dialogue after quest decision
                     exitDialogue();
                     break;
                 }
 
-                //Check if the selected option fulfills a quest objective
-                if (selectedOption.getNextDialogueId().contains("objective")) {
-                    currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
-                    List<Quest> questLog = player.getAllQuests();
-                    List<Quest> activeQuests = new ArrayList<>();
-
+                if (nextId.startsWith("objective")) {
+                    List<Quest> questLog = player.getActiveQuests();
                     for (Quest quest : questLog) {
-                        boolean allObjectivesCompleted = true;
                         for (Objective objective : quest.getObjectives().values()) {
-                            if (!objective.getIsCompleted()) {
-                                allObjectivesCompleted = false;
-                                break;
-                            }
-                        }
-
-                        if (!allObjectivesCompleted) {
-                            activeQuests.add(quest);
-                        }
-                    }
-
-                    for (Quest quest : activeQuests) {
-                        for (Objective objective : quest.getObjectives().values()) {
-                            if ((!objective.getIsCompleted()) && objective.getType().equalsIgnoreCase("dialogue")) {
-                                if (objective.getTarget().equalsIgnoreCase(character.getName())) {
-                                    quest.completeObjective(objective.getId());
-                                    break;
-                                }
+                            if (!objective.getIsCompleted() && objective.getType().equalsIgnoreCase("dialogue")
+                                    && objective.getTarget().equalsIgnoreCase(character.getName())) {
+                                quest.completeObjective(objective.getId());
                                 break;
                             }
                         }
                     }
                 }
 
-                if (selectedOption.getNextDialogueId().equalsIgnoreCase("exit")) {
+                if (nextId.equalsIgnoreCase("exit")) {
                     exitDialogue();
                     break;
                 }
 
-                currentDialogue = dialogues.get(selectedOption.getNextDialogueId());
-
+                currentDialogue = dialogues.get(nextId);
                 if (currentDialogue == null) {
-                    System.out.println("Dialogue node missing for ID: " + selectedOption.getNextDialogueId());
+                    System.out.println("Dialogue node missing for ID: " + nextId);
                     exitDialogue();
                     break;
                 }
@@ -731,9 +747,9 @@ public class GameState {
 
     private Quest deserializeQuest(String questFilePath) throws FileNotFoundException {
         Gson gson = new GsonBuilder()
-            .registerTypeAdapter(Item.class, new ItemDeserializer())
-            .excludeFieldsWithoutExposeAnnotation()
-            .create();
+                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .excludeFieldsWithoutExposeAnnotation()
+                .create();
         FileReader reader = new FileReader(questFilePath);
         JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
         Quest quest = gson.fromJson(jsonObject, Quest.class);
@@ -841,7 +857,8 @@ public class GameState {
         if (character instanceof Neutral) {
             Neutral neutralToFight = (Neutral) character;
             people.put(location, neutralToFight.actAsAdversary());
-            currentRoom.updateMapEntry('A', Character.getNumericValue(location.charAt(1)), Character.getNumericValue(location.charAt(3)));
+            currentRoom.updateMapEntry('A', Character.getNumericValue(location.charAt(1)),
+                    Character.getNumericValue(location.charAt(3)));
             combatants.add(neutralToFight.actAsAdversary());
         } else if (character instanceof Adversary) {
             combatants.add(character);
@@ -896,18 +913,18 @@ public class GameState {
     @SuppressWarnings("resource")
     public void startLockpickingSequence(String roomName, Adjacency adjacency) {
         System.out.println("You are attempting to pick the lock of " + roomName);
-    
+
         double intelligenceBonus = player.getIntelligence() / 2;
         int baseChances = adjacency.getBaseChances() + (int) Math.floor(intelligenceBonus);
         boolean success = false;
-    
+
         System.out.println("The lock feels intricate. You have " + baseChances + " attempts.");
         for (int attempt = 1; attempt <= baseChances; attempt++) {
             System.out.println("Attempt " + attempt + ": What will you do?");
             System.out.println("Enter a number between 1 and " + adjacency.getDifficulty() + ":");
             int playerInput = new Scanner(System.in).nextInt();
             int lockValue = (int) (Math.random() * adjacency.getDifficulty()) + 1;
-    
+
             if (playerInput == lockValue) {
                 System.out.println("You hear a satisfying click! The lock opens.");
                 player.gainXP(20, this);
@@ -917,20 +934,47 @@ public class GameState {
                 System.out.println("The lock resists. Keep trying...");
             }
         }
-    
+
         if (!success) {
             System.out.println("You failed to pick the lock. Maybe try again later.");
         } else {
             unlockRoom(roomName);
         }
     }
-    
+
     private void unlockRoom(String roomName) {
         System.out.println(roomName + " is now unlocked!");
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
                 adj.setIsLocked(false);
             }
+        }
+    }
+
+	@SuppressWarnings("resource")
+    public void enterCombinationLockSequence(String roomName, Adjacency adj) {
+        System.out.println("You are attempting to unlock " + roomName);
+        System.out.println("Enter the combination for the room:");
+
+        int playerInput = new Scanner(System.in).nextInt();
+
+        if (playerInput == adj.getCombination()) {
+            adj.setIsLocked(false);
+            System.out.println("You hear a satisfying click.  The lock opens.");
+        } else {
+            System.out.println("That combination was incorrect.");
+        }
+	}
+
+    public void launchSequencePuzzle(String puzzleFilePath) {
+        Gson gson = new Gson();
+        try {
+            FileReader reader = new FileReader(puzzleFilePath);
+            SequencePuzzleData data = gson.fromJson(reader, SequencePuzzleData.class);
+            SequencePuzzle currentPuzzle = new SequencePuzzle(data, this);
+            currentPuzzle.startPuzzleLoop();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -32,6 +32,7 @@ public class Manual {
         System.out.println("| OBJECT INTERACTIONS |");
         System.out.println("|_____________________|");
         System.out.println("   EXAMINE [ITEM NAME]: Gives a more detailed description of the item specified by [ITEM NAME]\n\tUse LOOK and/or INVENTORY to get a list of available items.");
+        System.out.println("   INTERACT WITH [ITEM NAME]: Attempts to interact with an item not in your inventory. This may just give a more detailed description of the item, but it may do more.\n\tUse LOOK and/or INVENTORY to get a list of available items.");
         System.out.println("   TAKE [ITEM NAME]: Adds [ITEM NAME] to the player/party inventory, if there is room.\n\tIf you are in the safe zone, the game will first try to take the item from the safe zone before moving onto general items in the room.\n\tOtherwise, the game will just take an item of the name you specify off the floor, as long as it is available.");
         System.out.println("   USE [ITEM NAME]: Uses [ITEM NAME], if it has a use.");
         System.out.println("   DROP [ITEM NAME]: Removes [ITEM NAME] from inventory, if there is an item of such name in inventory");

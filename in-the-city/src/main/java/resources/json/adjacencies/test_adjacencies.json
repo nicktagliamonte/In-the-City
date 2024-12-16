@@ -7,6 +7,7 @@
         "description": "large wooden double doors leading to \"room 2\"",
         "adjoiningRoom": "Room 2",
         "isStairsUp": false,
+        "lockType": "none",
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 1
@@ -17,6 +18,7 @@
         "description": "a narrow, rotting ladder going \"upstairs\"",
         "adjoiningRoom": "upstairs",
         "isStairsUp": true,
+        "lockType": "none",
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100
@@ -29,6 +31,7 @@
         "description": "large wooden double doors leading to \"room 1\"",
         "adjoiningRoom": "Room 1",
         "isStairsUp": false,
+        "lockType": "none",
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100
@@ -41,6 +44,7 @@
         "description": "a narrow, rotting ladder going down into \"room 1\"",
         "adjoiningRoom": "Room 1",
         "isStairsUp": false,
+        "lockType": "none",
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100

@@ -1,7 +1,6 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- i need to make sure that quest related dialogue won't show up if you don't have an active quest pertaining to that character
 - think about that puzzle box again.  seems like there should be...something...
 - add some kind of dex check system to room transition
   - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
@@ -23,9 +22,14 @@ Keep adding individual game elements in a "test data" format.
 - Trim the name entered by the user to be all lowercase but first letter upper case.
 - Double check all manuals.  for example, a character class guide would be good.  see CS notebook page opposite map for class skill proficiencies (negotiator is good at theivery for example)
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
+  - add a combination lock
+  - add a pickable lock
+  - make one of the locks re-lock after some unit of time
+  - add an object which contains a sequence puzzle (macro -- there is a large computer terminal in one room, that sort of thing.  responds to the interact command)
+  - add an object which contains a mastermind style puzzle (micro -- the object must be in the player inventory, must use the use command)
+  - add an object which contains a codebreaking puzzle (micro, the object must be in the player inventory and respond to the use command)
 - Add an "introduction" screen.  
-  - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
-  - Just introduce the game before proceeding.  
+  - in general, add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro.
 - Reassess demo at this time.  
   - In the planning stage, currently seems like this is a full demo.  
   - Check **ALL** TODO comments in every file.  

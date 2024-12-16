@@ -9,20 +9,65 @@ public class Adjacency {
     @Expose private transient String adjoiningRoomName; // Used for initial deserialization only
     @Expose private Room adjoiningRoom; // Actual Room object for gameplay use
     @Expose private boolean isStairsUp;
+    @Expose private String lockType;
     @Expose private boolean isLocked;
     @Expose private int baseChances;
     @Expose private int difficulty;
+    @Expose private int combination;
 
-    // Constructor, getters, and setters
-    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName, boolean isStairsUp, boolean isLocked, int baseChances, int difficulty) {
+    //pickable lock
+    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName, boolean isStairsUp, 
+                        String lockType, boolean isLocked, int baseChances, int difficulty) {
         this.type = type;
         this.coordinates = coordinates;
         this.description = description;
         this.adjoiningRoomName = adjoiningRoomName;
         this.isStairsUp = isStairsUp;
+        this.lockType = lockType;
         this.isLocked = isLocked;
         this.baseChances = baseChances;
         this.difficulty = difficulty;
+    }
+
+    //combination lock
+    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName,
+            boolean isStairsUp, String lockType, boolean isLocked, int combination) {
+        this.type = type;
+        this.coordinates = coordinates;
+        this.description = description;
+        this.adjoiningRoomName = adjoiningRoomName;
+        this.isStairsUp = isStairsUp;
+        this.lockType = lockType;
+        this.isLocked = isLocked;
+        this.combination = combination;
+    }
+
+    //no lock, or inactive lock
+    public Adjacency(String type, String coordinates, String description, String adjoiningRoomName,
+            boolean isStairsUp, String lockType, boolean isLocked) {
+        this.type = type;
+        this.coordinates = coordinates;
+        this.description = description;
+        this.adjoiningRoomName = adjoiningRoomName;
+        this.isStairsUp = isStairsUp;
+        this.lockType = lockType;
+        this.isLocked = isLocked;
+    }
+
+    public void setCombination(int combination) {
+        this.combination = combination;
+    }
+
+    public int getCombination() {
+        return combination;
+    }
+
+    public void setIsLocked(boolean isLocked) {
+        this.isLocked = isLocked;
+    }
+
+    public boolean getIsLocked() {
+        return isLocked;
     }
 
     public int getDifficulty() {
@@ -41,12 +86,12 @@ public class Adjacency {
         this.baseChances = baseChances;
     }
 
-    public boolean getIsLocked() {
-        return isLocked;
+    public String getLockType() {
+        return lockType;
     }
 
-    public void setIsLocked(boolean isLocked) {
-        this.isLocked = isLocked;
+    public void setLockType(String lockType) {
+        this.lockType = lockType;
     }
 
     public String getType() {

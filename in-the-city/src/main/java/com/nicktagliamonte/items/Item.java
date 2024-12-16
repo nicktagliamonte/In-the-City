@@ -11,13 +11,42 @@ public class Item {
     @Expose private double weight;
     @Expose private boolean isConsumable;
     @Expose private double value;
+    @Expose private String puzzleType;
+    @Expose private String dataPath;
 
-    public Item(String name, String description, double weight, boolean isConsumable, double value) {
+    public Item(String name, String description, double weight, boolean isConsumable, double value, String puzzleType) {
         this.name = name;
         this.description = description;
         this.weight = weight;
         this.isConsumable = isConsumable;
         this.value = value;
+        this.puzzleType = puzzleType;
+    }
+
+    public Item(String name, String description, double weight, boolean isConsumable, double value, String puzzleType, String dataPath) {
+        this.name = name;
+        this.description = description;
+        this.weight = weight;
+        this.isConsumable = isConsumable;
+        this.value = value;
+        this.puzzleType = puzzleType;
+        this.dataPath = dataPath;
+    }
+
+    public String getDataPath() {
+        return this.dataPath;
+    }
+
+    public void setDataPath(String dataPath) {
+        this.dataPath = dataPath;
+    }
+
+    public String getPuzzleType() {
+        return this.puzzleType;
+    }
+
+    public void setPuzzleType(String puzzleType) {
+        this.puzzleType = puzzleType;
     }
 
     public String getName() {
