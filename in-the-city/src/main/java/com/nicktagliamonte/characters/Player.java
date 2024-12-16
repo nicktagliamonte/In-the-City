@@ -258,6 +258,11 @@ public class Player extends Person {
     public void listInventory() {
         List<Item> inventory = super.getInventory();
         if (inventory.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("No items in inventory.");
         } else {
             inventory.forEach(item -> System.out.println(item.getName()));
@@ -267,6 +272,11 @@ public class Player extends Person {
     public Item getItemFromInventory(String itemName) {
         List<Item> inventory = super.getInventory();
         if (inventory == null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("No items in inventory");
         } else {
             for (Item item : inventory) {
@@ -303,9 +313,19 @@ public class Player extends Person {
                         }
                     }
                 inventory.add(trap);
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Successfully crafted " + trap.getName());
                 } 
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Crafting failed: insufficient items in inventory.");
             }
         }
@@ -361,11 +381,26 @@ public class Player extends Person {
     public void takeDamage(double amount) {
         super.setHealth(super.getHealth() - amount);
         if (!isAlive()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are fully dead.");
         } else if (isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are down and making death saving throws.");
             makeDeathSavingThrow();
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You took " + amount + " points of damage. Remaining health: " + getHealth());
         }
     }
@@ -374,26 +409,56 @@ public class Player extends Person {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Press enter to make a death saving throw.  11 or higher is a success, 10 or lower is a failure.");
         scanner.nextLine();
 
         int randomInt = (int) (Math.random() * 20) + 1;
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You rolled a " + randomInt + ".");
 
         if (randomInt <= 10) {
             deathSavingThrows -= 1;
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Failure! You are at " + deathSavingThrows + " on your death saving throws.");
         } else {
             deathSavingThrows += 1;
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Success! You are at " + deathSavingThrows + " on your death saving throws.");
         }
 
         if (deathSavingThrows == 3) {
             super.setHealth(0);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are stabilized at 0 health.");
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are fully dead.");
         }
     }
@@ -474,6 +539,11 @@ public class Player extends Person {
                 }
                 partyMember.setHealth(partyMember.getMaxHealth());
             }
+        }
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
         System.out.println("Congratulations! You've reached level " + level);
     }

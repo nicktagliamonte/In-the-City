@@ -57,6 +57,11 @@ public class Combat {
                         while (iterator.hasNext()) {
                             Map.Entry<String, NPC> entry = iterator.next();
                             String location = entry.getKey();
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println(location);
                             if (entry.getValue().getName().equals(npcCombatant.getName())) {
                                 iterator.remove();
@@ -67,6 +72,11 @@ public class Combat {
                         gameState.getCurrentRoom().setPeopleInRoom(people);
 
                         if (npcCombatant instanceof PartyMember) {
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println("A member of your party, " + npcCombatant.getName()
                                     + ", has fully died. They cannot be revived or re-encountered.\n" +
                                     "If you continue from this point, they will be gone from this world forever.\n" +
@@ -91,12 +101,22 @@ public class Combat {
 
                 // Check for victory/defeat
                 if (checkVictory(combatants)) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You win!");
                     removeDeadCombatants();
                     combatActive = false;
                     gameState.getPlayer().gainXP(40, gameState);
                     break;
                 } else if (checkDefeat(combatants)) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You lose!");
                     combatActive = false;
                     gameState.getPlayer().gainXP(10, gameState);
@@ -108,6 +128,11 @@ public class Combat {
 
     private boolean playerTurn(Player player) {
         if (player.isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are down and need to make death saving throws");
             player.makeDeathSavingThrow();
             return true;
@@ -124,10 +149,35 @@ public class Combat {
             }
         }
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Your turn! Choose an action:");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("1. Attack");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("2. Use Item");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("3. Cast Spell");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("4. Flee");
 
         int choice = gameState.getGameEngine().getPlayerInputAsInt(); // Assume this handles user input
@@ -150,6 +200,11 @@ public class Combat {
         // Get the target adversary with the lowest health
         Adversary target = getLowestHealthAdversary();
         if (target == null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("No valid target to attack!");
             return;
         }
@@ -158,6 +213,11 @@ public class Combat {
         int attackRoll = gameState.rollD20() + player.getAttackModifier();
         if (player.inHunger()) {
             attackRoll -= 2;
+        }
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
         System.out.println("You roll to hit: " + attackRoll + " (vs AC " + target.getAc() + ")");
 
@@ -171,9 +231,19 @@ public class Combat {
                 }
             }
             target.takeDamage(damage);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName()
                     + " has " + target.getHealth() + " health left");
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Your attack misses!");
         }
     }
@@ -190,22 +260,47 @@ public class Combat {
         List<Item> inventory = player.getInventory();
 
         if (inventory.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Your inventory is empty! Turn wasted.");
             return;
         }
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Choose an item to use (0 to cancel):");
         for (int i = 0; i < inventory.size(); i++) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println((i + 1) + ". " + inventory.get(i).getName() + " - " + inventory.get(i).getDescription());
         }
 
         int choice = gameState.getGameEngine().getPlayerInputAsInt();
         if (choice == 0) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You chose not to use any item.");
             return;
         }
 
         Item selectedItem = inventory.get(choice - 1);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You used: " + selectedItem.getName());
         selectedItem.use(gameState); // this should work based on runtime polymorphism (the use method from the item
                             // subclass will be called)
@@ -217,6 +312,11 @@ public class Combat {
     private void castSpell(Player player) {
         Adversary target = getLowestHealthAdversary();
         if (target == null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("No valid target to attack!");
             return;
         }
@@ -224,25 +324,55 @@ public class Combat {
         List<Spell> spells = player.getSpellbook();
 
         if (spells.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You don't know any spells!");
             return;
         }
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Choose a spell to cast:");
         for (int i = 0; i < spells.size(); i++) {
             Spell spell = spells.get(i);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println((i + 1) + ". " + spell.getName() + " - " + spell.getDescription());
+        }
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
         System.out.println("0. Cancel");
 
         int choice = gameState.getGameEngine().getPlayerInputAsInt();
 
         if (choice == 0) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You canceled casting a spell.");
             return;
         }
 
         if (choice < 1 || choice > spells.size()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Invalid choice!");
             return;
         }
@@ -265,13 +395,33 @@ public class Combat {
         int roll = gameState.rollD20();
         int total = roll + getModifier(dex);
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You rolled: " + roll + " + Dexterity Modifier (" + getModifier(dex) + ") = " + total);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Escape DC: " + escapeDC);
 
         if (total >= escapeDC) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You successfully escaped combat!");
             return true;
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You failed to escape combat!");
             return false; // Escape fails
         }
@@ -301,6 +451,11 @@ public class Combat {
 
     private void partyMemberTurn(PartyMember partyMember) {
         if (partyMember.isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(partyMember.getName() + " is down and needs to make death saving throws");
             partyMember.makeDeathSavingThrow();
             return;
@@ -352,12 +507,27 @@ public class Combat {
                     damage = (int) Math.floor(adversaryAttacker.getDamage());
                     partyMemberTarget.takeDamage(damage);
                 }
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage! "
                         + target.getName() + " has " + target.getHealth() + " health left");
                 if (!npcTarget.isAlive() && target instanceof Adversary) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(target.getName() + " is defeated!");
                 }
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(attacker.getName() + " misses " + target.getName());
             }
         }
@@ -365,6 +535,11 @@ public class Combat {
 
     private void attackPlayer(Adversary attacker, Player player) {
         if (player.isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(attacker.getName()
                     + " cannot currently attack you, as you are down and making death saving throws");
             return;
@@ -378,9 +553,19 @@ public class Combat {
             // Roll for damage
             int damage = (int) Math.floor(attacker.getDamage());
             player.takeDamage(damage);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(attacker.getName() + " hits you for " + damage + " damage. You have "
                     + player.getHealth() + " health left");
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(attacker.getName() + " attacks you, but misses");
         }
     }

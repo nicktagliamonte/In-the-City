@@ -17,11 +17,21 @@ public class Weapon extends Item {
 
     public void equip(Player player) {
         if (player.weapon != null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You can only weild 1 weapon item at a time. Dequip the current weapon before equipping this one.");
         }
         if (!isEquipped) {
             isEquipped = true;
             player.setWeapon(this);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Successfully equipped " + super.getName());
         }
         
@@ -32,8 +42,18 @@ public class Weapon extends Item {
             isEquipped = false;
             player.addItem(this);
             player.removeWeapon();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Successfully dequipped " + super.getName());
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("That weapon is not currently equipped");
         }
     }

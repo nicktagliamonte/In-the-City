@@ -32,12 +32,27 @@ public class Barter {
     }
 
     public void displayInventory() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("NPC Inventory:");
         for (int i = 0; i < npcInventory.size(); i++) {
             System.out.printf("%-15s %-5.2f", npcInventory.get(i).getName(), npcInventory.get(i).getValue());
             if (i % 2 != 0 || i == npcInventory.size() - 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println();
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.print("  |  ");
             }
         }
@@ -49,6 +64,11 @@ public class Barter {
         // Ensure all offered items are in the player's inventory
         for (Item item : offeredItems) {
             if (!playerInventory.contains(item)) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You don't have " + item.getName());
                 return false;
             }
@@ -69,9 +89,19 @@ public class Barter {
                 purchasePower -= item.getValue();
                 return true;
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You cannot carry " + item.getName() + ".");
             }
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You cannot afford " + item.getName() + ".");
         }
         return false;

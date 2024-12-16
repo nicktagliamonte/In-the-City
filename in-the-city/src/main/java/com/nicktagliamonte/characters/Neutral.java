@@ -29,6 +29,11 @@ public class Neutral extends NPC{
         if (canGiveQuest) {
             //TODO: figure this out much later, when i'm adding quests.
         }
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(questDialogue.get(0));
     }
 

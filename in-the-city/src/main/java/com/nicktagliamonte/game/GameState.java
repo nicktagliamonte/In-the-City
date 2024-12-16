@@ -83,14 +83,29 @@ public class GameState {
     public void initializePlayer() {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Enter a name: ");
         String name = scanner.nextLine();
         CharacterClass characterClass;
         do {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Enter a class (survivalist, technologist, or negotiator): ");
             String classInput = scanner.nextLine();
             characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Welcome to the game! Type \"menu\" for assistance");
 
         this.player = new Player(name.trim(), characterClass);
@@ -111,11 +126,21 @@ public class GameState {
                     currentRegion.setHasSafeZone(true);
                 }
             }
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Region loaded: " + currentRegion.getRegionName());
             loadAdjacencyList(adjacenciesFilePath);
             loaditemsInRoom(itemsFilePath);
             loadPeopleInRoom(peopleFilePath);
             loadRegionDialogue(dialogueFilePath);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("loaded adjacent rooms");
             initializeCurrentRoom();
         } catch (IOException e) {
@@ -325,10 +350,35 @@ public class GameState {
 
     public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
             String newPeopleFilePath, String newDialogueFilePath) {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newRegionFilePath);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newAdjacencyFilePath);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newItemsFilePath);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newPeopleFilePath);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newDialogueFilePath);
 
         this.regionFilePath = newRegionFilePath;
@@ -369,6 +419,11 @@ public class GameState {
             if (newRoom != null && newRoom != currentRoom) {
                 // Transition to the new room and update the current location
                 currentRoom = newRoom;
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You move " + directionInput.trim() + " " + distance + " steps. You have entered "
                         + newRoom.getName());
                 setCurrentRoom(newRoom);
@@ -377,7 +432,6 @@ public class GameState {
             } else if (newRoom != null) {
                 // If the player is at the edge, check for adjacency
                 String position = currentRoom.getPlayerPosition();
-                System.out.println(position);
                 String[] posArray = position.replace("(", "").replace(")", "").split(", ");
                 int posX = Integer.parseInt(posArray[0]);
                 int posY = Integer.parseInt(posArray[1]);
@@ -524,18 +578,37 @@ public class GameState {
             if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()
                     && totalDex >= adj.getdexScore()) {
                 setCurrentRoom(adj.getAdjoiningRoom());
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(roomName + " is locked.");
                 return;
             } else if (adj.getdexScore() > totalDex) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You fail to reach " + roomName);
                 return;
             }
         }
-        System.out.println(
-                "no such room was found.  Use LOOK for a list of useable exits, where the connecting room name will be enclosed in quotes.");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("no such room was found.  Use LOOK for a list of useable exits, where the connecting room name will be enclosed in quotes.");
     }
 
     public void ascend(String roomName) {
@@ -548,16 +621,30 @@ public class GameState {
                     && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)
                     && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adjacency.getdexScore() > totalDex) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You fail to access " + roomName
                         + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
-        System.out.println(
-                "Use ASCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("Use ASCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public void descend(String roomName) {
@@ -570,16 +657,30 @@ public class GameState {
                     && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)
                     && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adjacency.getdexScore() > totalDex) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You fail to access " + roomName
                         + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
-        System.out.println(
-                "Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public List<NPC> getCurrentParty() {
@@ -589,6 +690,11 @@ public class GameState {
     public boolean addPartyMember(PartyMember newMember) {
         // Check if party size is already at the maximum
         if (currentParty.size() >= 2) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Party is already full. Cannot add more members.");
             return false;
         }
@@ -597,11 +703,21 @@ public class GameState {
         for (NPC member : currentParty) {
             if (member instanceof PartyMember
                     && ((PartyMember) member).getClassName().equalsIgnoreCase(newMember.getClassName())) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("A member with this character class is already in the party.");
                 return false;
             }
         }
         if (newMember.getClassName().equalsIgnoreCase(player.getClassName())) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Party members cannot have the same class as you.");
             return false;
         }
@@ -611,6 +727,11 @@ public class GameState {
         player.setMaxCarryWeight(player.getMaxCarryWeight() + newMember.getMaxCarryWeight());
         player.increaseRemainingCarryWeight(newMember.getMaxCarryWeight());
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(newMember.getName() + " has joined the party.");
         return true;
     }
@@ -667,6 +788,11 @@ public class GameState {
         Map<String, Dialogue> dialogues = currentRegionDialogue.getDialogue(character.getName());
 
         if (dialogues == null || !dialogues.containsKey("start")) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(character.getName() + " doesn't want to talk to you.");
             return;
         }
@@ -678,6 +804,11 @@ public class GameState {
 
         try {
             while (inDialogue) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(currentDialogue.getNpcLine());
                 List<DialogueOption> options = currentDialogue.getOptions();
 
@@ -705,12 +836,22 @@ public class GameState {
 
                 // Display available options
                 if (availableOptions.isEmpty()) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("No dialogue options available.");
                     exitDialogue();
                     break;
                 }
 
                 for (int i = 0; i < availableOptions.size(); i++) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println((i + 1) + ": " + availableOptions.get(i).getText());
                 }
 
@@ -729,18 +870,37 @@ public class GameState {
 
                     Quest quest = deserializeQuest(questFilePath);
                     if (quest != null) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Do you want to accept quest: " + quest.getTitle() + "? (yes/no)");
 
                         String playerResponse = dialogueScanner.nextLine().trim().toLowerCase();
                         if (playerResponse.equals("yes")) {
                             player.addQuest(quest);
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println("You have accepted the quest: " + quest.getTitle()
                                     + ". For more information, access menu > quests.");
                         } else {
-                            System.out.println(
-                                    "You did not accept this quest. Hopefully, it will still be available later if you want it.");
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                            System.out.println("You did not accept this quest. Hopefully, it will still be available later if you want it.");
                         }
                     } else {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Sorry, there was an error loading the quest.");
                     }
 
@@ -768,12 +928,22 @@ public class GameState {
 
                 currentDialogue = dialogues.get(nextId);
                 if (currentDialogue == null) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Dialogue node missing for ID: " + nextId);
                     exitDialogue();
                     break;
                 }
             }
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException f) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Invalid choice. Please try again.");
         }
     }
@@ -793,11 +963,21 @@ public class GameState {
     public void exitDialogue() {
         gameTimer.resume();
         inDialogue = false;
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("The conversation is over.");
     }
 
     public void enterBarter(Person npc) {
         gameTimer.pause();
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Entering barter mode with " + npc.getName());
         boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
         for (NPC member : currentParty) {
@@ -815,22 +995,57 @@ public class GameState {
 
         while (inBarter) {
             barter.displayInventory();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("\nYour Purchase Power: " + barter.getPurchasePower());
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("1. Offer items");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("2. Select an item to purchase");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("3. Exit barter");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.print("Choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
                 case 1:
                     // Logic to let the player offer items
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Enter items to offer (comma-separated names):");
                     String offerInput = scanner.nextLine();
                     List<Item> offeredItems = parseItems(offerInput, player.getInventory());
                     barter.playerOffersItems(offeredItems);
                     break;
                 case 2:
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Enter item name to purchase:");
                     String itemName = scanner.nextLine();
                     Item itemSelected = null;
@@ -842,15 +1057,30 @@ public class GameState {
                     if (itemSelected != null) {
                         barter.playerSelectsItem(itemSelected);
                     } else {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Item not found.");
                     }
                     break;
                 case 3:
                     gameTimer.resume();
                     inBarter = false;
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Exiting Barter.");
                     break;
                 default:
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Invalid choice.");
             }
         }
@@ -945,30 +1175,65 @@ public class GameState {
 
     @SuppressWarnings("resource")
     public void startLockpickingSequence(String roomName, Adjacency adjacency) {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You are attempting to pick the lock of " + roomName);
 
         double intelligenceBonus = player.getIntelligence() / 2;
         int baseChances = adjacency.getBaseChances() + (int) Math.floor(intelligenceBonus);
         boolean success = false;
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("The lock feels intricate. You have " + baseChances + " attempts.");
         for (int attempt = 1; attempt <= baseChances; attempt++) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Attempt " + attempt + ": What will you do?");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Enter a number between 1 and " + adjacency.getDifficulty() + ":");
             int playerInput = new Scanner(System.in).nextInt();
             int lockValue = (int) (Math.random() * adjacency.getDifficulty()) + 1;
 
             if (playerInput == lockValue) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You hear a satisfying click! The lock opens.");
                 player.gainXP(20, this);
                 success = true;
                 break;
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("The lock resists. Keep trying...");
             }
         }
 
         if (!success) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You failed to pick the lock. Maybe try again later.");
         } else {
             unlockRoom(roomName);
@@ -976,6 +1241,11 @@ public class GameState {
     }
 
     private void unlockRoom(String roomName) {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(roomName + " is now unlocked!");
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
@@ -986,13 +1256,28 @@ public class GameState {
 
     @SuppressWarnings("resource")
     public void enterCombinationLockSequence(String roomName, Adjacency adj) {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You are attempting to unlock " + roomName);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Enter the combination for the room:");
 
         int playerInput = new Scanner(System.in).nextInt();
 
         if (playerInput == adj.getCombination()) {
             adj.setIsLocked(false);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You hear a satisfying click.  The lock opens.");
 
             for (Quest quest : player.getActiveQuests()) {
@@ -1005,6 +1290,11 @@ public class GameState {
                 }
             }
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("That combination was incorrect.");
         }
     }

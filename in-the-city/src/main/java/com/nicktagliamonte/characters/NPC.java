@@ -55,6 +55,11 @@ public class NPC extends Person {
 
     public List<Quest> getQuests() {
         if (quests.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("There are no quests this character can give.");
             return null;
         }
@@ -63,12 +68,22 @@ public class NPC extends Person {
 
     public void giveQuest(Player player) {
         if (quests.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("There are no quests this character can give.");
             return;
         }
         for (Quest quest : quests) {
             if ("inactive".equals(quest.getStatus())) {
                 player.addQuest(quest);
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(getName() + " gives you the quest: " + quest.getTitle());
                 break;
             }
@@ -166,8 +181,18 @@ public class NPC extends Person {
     public void takeDamage(double amount) {
         super.setHealth(super.getHealth() - amount);
         if (isDead()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is fully dead.");
         } else if (isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is down and making death saving throws.");
         }
     }
@@ -175,10 +200,25 @@ public class NPC extends Person {
     public void heal(double amount) {
         super.setHealth(super.getHealth() + amount);
         if (isDead()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is still fully dead.");
         } else if (isDown()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is down and making death saving throws.");
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " healed for  " + amount + ".");
         }
     }
@@ -187,16 +227,36 @@ public class NPC extends Person {
         int randomInt = (int) (Math.random() * 19);
         if (randomInt < 10) {
             deathSavingThrows -= 1;
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is at " + deathSavingThrows + " on their death saving throws.");
         } else {
             deathSavingThrows += 1;
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is at " + deathSavingThrows + " on their death saving throws.");
         }
         if (deathSavingThrows == 3) {
             super.setHealth(0);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is stabalized at 0 health.");
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(super.getName() + " is fully dead.");
         }
     }

@@ -62,6 +62,11 @@ public class GameTimer {
 
     public void stopTimer() {
         timer.cancel();
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Timer stopped.");
     }
 
@@ -106,6 +111,11 @@ public class GameTimer {
         int time = gameState.getPlayer().timeSinceFood++;
         if (time == 200) {
             gameState.getPlayer().setStatus("Hunger");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You have entered a hunger state. Combat ability will be impacted until you eat something.");
         }
     }
@@ -114,6 +124,11 @@ public class GameTimer {
         int time = gameState.getPlayer().timeSinceWater++;
         if (time == 100) {
             gameState.getPlayer().setStatus("Thirst");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You have entered a thirst state. You'll experience slow health drain until you drink something, or die.");
         }
     }

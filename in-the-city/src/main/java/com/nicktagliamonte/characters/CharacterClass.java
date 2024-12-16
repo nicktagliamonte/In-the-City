@@ -56,6 +56,11 @@ public class CharacterClass {
         if ("survivalist".equalsIgnoreCase(input) || "technologist".equalsIgnoreCase(input) || "negotiator".equalsIgnoreCase(input)) {
             return new CharacterClass(input);
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Invalid character class. Please try again.");
             return null;
         }

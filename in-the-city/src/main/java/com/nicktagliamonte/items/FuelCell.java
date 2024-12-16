@@ -10,6 +10,11 @@ public class FuelCell extends Item {
     @Override
     public void use(GameState gameState) {
         // TODO: Specific logic for using a Fuel Cell
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You use the fuel cell. It powers up the device.");
     }
 }

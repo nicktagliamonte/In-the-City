@@ -41,6 +41,11 @@ public class RandomEventManager {
         }
 
         if (success) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("A wild adversary approaches! Get ready to fight!");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate adversary for that region.
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
@@ -55,6 +60,11 @@ public class RandomEventManager {
         int chance = random.nextInt(4);
         
         if (gameState.getCurrentRoom().getIsEconomic() || (gameState.getCurrentRoom().getIsSafe() && chance == 0)) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("An NPC offers to trade with you.");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate friend for that region.
             //TODO: the regionFriend constructors should also have some kind of randomization function to set the inventory to some random set within a range
@@ -76,6 +86,11 @@ public class RandomEventManager {
             "You hear a distant rumble, as if the ground itself is warning you.",
             "The shadows grow longer, and you can't shake the feeling of being watched."
         };
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(flavorText[random.nextInt(flavorText.length)]);
     }
 }

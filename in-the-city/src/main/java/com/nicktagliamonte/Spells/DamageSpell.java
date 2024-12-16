@@ -21,9 +21,19 @@ public class DamageSpell extends Spell {
                 damageModified = 1;
             }
             adversary.takeDamage(damageModified);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(caster.getName() + " casts " + getName() + " and deals " + (damageModified) + " damage to " + adversary.getName() + "!");
         } else {
             adversary.takeDamage(damage);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(caster.getName() + " casts " + getName() + " and deals " + damage + " damage to " + adversary.getName() + "!");
         }
     }

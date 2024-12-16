@@ -73,6 +73,11 @@ public class WorldMap {
         String[] lines = map.split("\n");
         
         for (String line : lines) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(line);
             try {
                 Thread.sleep(15);

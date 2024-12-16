@@ -67,6 +67,11 @@ public class SmallTrap extends Trap {
 
     @Override
     public void use(GameState gameState) {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("You set a small trap.  Hopefully it catches something.");
         super.setTrap(gameState.getCurrentRoom().getPlayerPosition());
         success = random.nextDouble() < SUCCESS_RATE;

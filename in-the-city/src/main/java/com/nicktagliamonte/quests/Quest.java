@@ -131,8 +131,18 @@ public class Quest {
         if (objectives.containsKey(objectiveId)) {
             Objective objective = objectives.get(objectiveId);
             objective.setIsCompleted(true);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(objective.getCompletionMessage());
             if (checkProgress()) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(completionMessage);
                 giveRewards();
                 if (isPrimary) {
@@ -145,13 +155,28 @@ public class Quest {
     public void giveRewards() {
         if ("complete".equals(status)) {
             if (isPrimary) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() / 3 + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
             }
             for (Item reward : rewards) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You received: " + reward.getName());
                 gameState.safeZoneInventory.addItemToInventory(reward);
             }

@@ -89,6 +89,11 @@ public enum GameCommand {
             }
 
             // Print the message
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(message.toString());
             gameState.getCurrentRoom().viewAdjascentRooms();
         }
@@ -97,16 +102,31 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Which direction do you want to go?");
             } else {
                 String[] arguments = args[0].split(" ");
                 if (arguments.length == 0) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Invalid command format.");
                     return;
                 }
 
                 if (arguments[0].equalsIgnoreCase("to") && arguments.length > 1) {
                     if (gameState.getPlayer().getIsHiding()) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Your move speed is reduced while you are hiding. Use UNHIDE, or move just one space at a time.");
                         return;
                     }
@@ -120,6 +140,11 @@ public enum GameCommand {
                     }
                     String waypointName = waypointNameBuilder.toString();
                     String message = gameState.moveToWaypoint(waypointName);
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(message);
                     return;
                 }
@@ -132,16 +157,30 @@ public enum GameCommand {
                         try {
                             distance = Integer.parseInt(arguments[1]);
                         } catch (NumberFormatException e) {
-                            System.out.println(
-                                    "Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException f) {
+                                Thread.currentThread().interrupt();
+                            }
+                            System.out.println("Invalid number of steps. Please enter a valid integer, or just a direction to move 1 step in that direction.");
                             return;
                         }
                     } else {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("While you are hiding, you can only move one step at a time.  Use UNHIDE to increase your movement speed");
                     }
                 }
                 String message = gameState.changeLocation(direction, distance);
                 if (!(message == null)) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(message);
                 }
             }
@@ -151,6 +190,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Which room do you want to enter?");
                 @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
@@ -166,6 +210,11 @@ public enum GameCommand {
         public void execute(String[] args, GameState gameState) {
             String[] argsTokens = args[0].split(" ");
             if (argsTokens.length < 2) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Which room do you want to ascend to?");
                 @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
@@ -181,6 +230,11 @@ public enum GameCommand {
         public void execute(String[] args, GameState gameState) {
             String[] argsTokens = args[0].split(" ");
             if (argsTokens.length < 2) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Which room do you want to descend to?");
                 @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
@@ -203,6 +257,11 @@ public enum GameCommand {
                     if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0]) && totalDex >= adj.getdexScore()) {
                         gameState.enterCombinationLockSequence(adj.getAdjoiningRoomName(), adj);
                     } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0])) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("You cannot reach that lock.");
                     }
                 }
@@ -215,6 +274,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Specify a room to lockpick");
                 return;
             }
@@ -234,17 +298,37 @@ public enum GameCommand {
                     gameState.startLockpickingSequence(targetRoomName, adjacency);
                     return;
                 } else if (adjacency.getLockType().equalsIgnoreCase("combination")) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(targetRoomName + " requires a combination to unlock, you cannot pick it.");
                     return;
                 } else if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName)) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(targetRoomName + " is already unlocked. You can enter it by typing \"ENTER " + targetRoomName + "\"");
                     return;
                 } else if (totalDex < adjacency.getdexScore()) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You cannot access that lock to pick it.");
                 }
             }
 
             if (!roomFound) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("There is no adjoining room named " + targetRoomName);
             }
         }
@@ -255,6 +339,11 @@ public enum GameCommand {
             String itemName = "";
 
             if (args.length < 1 && gameState.itemContext.equals("")) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You need to use this command in the form Examine [Item Name]");
                 return;
             } else if (args.length < 1) {
@@ -276,6 +365,11 @@ public enum GameCommand {
             }
 
             if (itemToExamine != null && (itemToExamine.getPuzzleType().equals(""))) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(itemToExamine.getDescription());
             } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence")) {
                 gameState.launchSequencePuzzle(itemToExamine.getDataPath());
@@ -283,6 +377,11 @@ public enum GameCommand {
                 gameState.launchMastermindPuzzle(itemToExamine.getDataPath());
             }
             else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("There is no such item here: " + args[0]);
             }
 
@@ -296,6 +395,11 @@ public enum GameCommand {
             String itemName = "";
     
             if (args.length < 1 && gameState.itemContext.equals("")) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You need to use this command in the form TAKE [Item Name]");
                 return;
             } else if (args.length < 1) {
@@ -316,10 +420,20 @@ public enum GameCommand {
                         System.out.printf("added %s to inventory from the safe zone inventory\n", itemToTake.getName());
                         gameState.itemContext = itemToTake.getName();
                     } else {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("That item is too heavy.");
                     }
                     return;
                 } else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("No such item found in the safe zone inventory: " + itemName);
                 }
             }
@@ -345,9 +459,19 @@ public enum GameCommand {
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
                     gameState.itemContext = itemToTake.getName();
                 } else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("That item is too heavy.");
                 }
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("There is no such item here: " + itemName);
             }
         }
@@ -356,6 +480,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You need to specify an item to drop");
                 return;
             }
@@ -364,6 +493,11 @@ public enum GameCommand {
             List<Item> itemsInInventory = gameState.getPlayer().getInventory();
 
             if (itemsInInventory == null && !gameState.getCurrentRoom().getIsSafe()) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Inventory is empty, cannot drop item");
                 return;
             }
@@ -386,6 +520,11 @@ public enum GameCommand {
                 gameState.getPlayer().increaseRemainingCarryWeight(itemToDrop.getWeight());
                 gameState.getCurrentRoom().addItemToRoom(gameState.getCurrentRoom().getPlayerPosition(),
                         itemToDrop);
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Dropped " + itemToDrop.getName());
                 return;
             }
@@ -395,6 +534,11 @@ public enum GameCommand {
                     if (item.getName().equalsIgnoreCase(args[0])) {
                         itemToDrop = item;
                         gameState.safeZoneInventory.removeItemFromInventory(itemToDrop);
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Dropped " + itemToDrop.getName() + " from safe zone inventory");
                         return;
                     }
@@ -409,9 +553,24 @@ public enum GameCommand {
             if (!gameState.getCurrentRoom().getIsSafe()) {
                 gameState.getPlayer().listInventory();
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Your inventory: ");
                 gameState.getPlayer().listInventory();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Safe Zone inventory: ");
                 gameState.safeZoneInventory.listInventory();
             }
@@ -421,6 +580,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (!gameState.getCurrentRoom().getIsSafe()) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Return to the safe zone to transfer your items and safely free up some carry weight, or just drop items on the ground here.");
             } else {
                 if (args[0].equalsIgnoreCase("all")) {
@@ -433,6 +597,11 @@ public enum GameCommand {
                     playerInventory.clear();
                     gameState.getPlayer().setInventory(playerInventory);
                     gameState.getPlayer().reduceRemainingCarryWeight(carryWeightDelta);
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Transferred your full inventory to the safe zone.");
                 } else {
                     List<Item> playerInventory = gameState.getPlayer().getInventory();
@@ -456,6 +625,11 @@ public enum GameCommand {
             String itemName = "";
 
             if (args.length < 1 && gameState.itemContext.equals("")) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Enter this command in the format USE [item name]");
                 return;
             } else if (args.length < 1) {
@@ -472,6 +646,11 @@ public enum GameCommand {
             if (item != null) {
                 item.use(gameState);
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You don't have that item.");
             }
         }
@@ -482,6 +661,11 @@ public enum GameCommand {
             String itemName = "";
 
             if (args.length < 1 && gameState.itemContext.equals("")) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You need to use this command in the form Equip [Item Name]");
                 return;
             } else if (args.length < 1) {
@@ -505,6 +689,11 @@ public enum GameCommand {
                 inventory.remove(item);
                 gameState.getPlayer().setInventory(inventory);
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You don't have \"" + itemName + ",\" or it is not a weapon or armor.");
             }
 
@@ -515,6 +704,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length == 0) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Specify an item to dequip.");
                 return;
             }
@@ -524,6 +718,11 @@ public enum GameCommand {
             Weapon weapon = gameState.getPlayer().getWeapon();
 
             if (armor == null && weapon == null) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You are not wearing any armor or holding any weapon to remove");
                 return;
             }
@@ -535,6 +734,11 @@ public enum GameCommand {
                 gameState.getPlayer().removeWeapon();
                 gameState.getPlayer().addItem(weapon);
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You are not wearing that armor or weilding that weapon currently.");
             }
         }
@@ -543,10 +747,20 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Specify a character to talk to");
             } else {
                 String[] arguments = args[0].split(" ");
                 if (arguments.length == 0) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Invalid command format.");
                     return;
                 }
@@ -571,9 +785,19 @@ public enum GameCommand {
                             return;
                         }
                     }
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(characterName
                             + " was not found in this area. Use LOOK for a list of characters to talk to");
                 } else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("This command has to be formatted as talk TO [character name]");
                 }
             }
@@ -597,9 +821,12 @@ public enum GameCommand {
                             return;
                         }
                     } else {
-                        System.out.println(
-                                "You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t"
-                                        +
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
+                        System.out.println("You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t" +
                                         "presence will be made clear (in the actual game, outside this demo. In the demo, the only valid character to join is chunky.)");
                     }
                 }
@@ -610,6 +837,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Specify a character to rob");
             } else {
                 List<Item> characterInventory = null;
@@ -623,6 +855,11 @@ public enum GameCommand {
 
                         //can't rob party members
                         if (characterToRob instanceof PartyMember) {
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println("You cannot rob " + characterToRob.getName());
                             return;
                         } else {
@@ -643,11 +880,21 @@ public enum GameCommand {
                         
                         //respond to failure depending on the type of character you're attempting to rob
                         if (playerScore < npcScore) {
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println("Your attempt to rob " + characterToRob.getName() + " failed.");
                             if (characterToRob instanceof Adversary || characterToRob instanceof Neutral) {
                                 gameState.getPlayer().gainXP(5, gameState);
                                 gameState.enterCombat(characterToRob);
                             } else if (characterToRob instanceof Friend) {
+                                try {
+                                    Thread.sleep(15);
+                                } catch (InterruptedException e) {
+                                    Thread.currentThread().interrupt();
+                                }
                                 System.out.println("You feel that " + characterToRob.getName() + " will detect your presence if you continue, and you do not want to betray their trust");
                             }
                             return;
@@ -655,6 +902,11 @@ public enum GameCommand {
 
                         //determine character's inventory contents
                         if (characterToRob.getInventory().isEmpty() || characterToRob.getInventory() == null) {
+                            try {
+                                Thread.sleep(15);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
                             System.out.println(person.getName() + " does not have anything you can steal");
                             return;
                         }
@@ -677,11 +929,31 @@ public enum GameCommand {
                 if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
                     gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You successfully took " + itemToTake.getName() + " from " + characterToRob.getName());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(itemToTake.getName() + " was added to your inventory.");
                 } else {
                     gameState.safeZoneInventory.addItemToInventory(itemToTake);
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You successfully took " + itemToTake.getName() + " from " + characterToRob.getName());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println(itemToTake.getName() + " was added to the safe zone inventory, because you do not have enough remaining carry weight.");
                 }
                 gameState.getPlayer().gainXP(20, gameState);
@@ -698,9 +970,19 @@ public enum GameCommand {
     LOCATE {
         @Override
         public void execute(String[] args, GameState gameState) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are in the region \"" + gameState.getCurrentRegion().getRegionName() + "\"");
     
             if (!gameState.getCurrentRegion().getHasSafeZone()) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("There is not (yet) a safe zone in this region.");
                 return;
             }
@@ -709,6 +991,11 @@ public enum GameCommand {
             Region currentRegion = gameState.getCurrentRegion();
     
             if (currentRoom.getIsSafe()) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("You are already in the safe zone.");
                 return;
             }
@@ -719,6 +1006,11 @@ public enum GameCommand {
             while (!nextRoom.getIsSafe()) {
                 String nextRoomName = nextRoom.getNextRoomToSafeZone();
                 if (nextRoomName == null) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Cannot find a path to the safe zone from your current position.");
                     return;
                 }
@@ -730,6 +1022,11 @@ public enum GameCommand {
                     .orElse(null);
     
                 if (nextRoom == null) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Error: Path is incomplete or invalid.");
                     return;
                 }
@@ -739,6 +1036,11 @@ public enum GameCommand {
                 }
             }
     
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(pathToSafeZone);
         }
     },
@@ -748,8 +1050,18 @@ public enum GameCommand {
             Random random = new Random();
             int chance = random.nextInt(10);
             if (chance == 0) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Hide attempt failed.");
             } else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Successfully hid.");
                 gameState.getPlayer().setIsHiding(true);
             }
@@ -758,6 +1070,11 @@ public enum GameCommand {
     UNHIDE {
         @Override
         public void execute(String[] args, GameState gameState) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You are no longer hiding.");
             gameState.getPlayer().setIsHiding(false);
         }
@@ -766,6 +1083,11 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length == 0) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Specify who to fight");
                 return;
             }
@@ -776,6 +1098,11 @@ public enum GameCommand {
             for (Person character : characters) {
                 if (character.getName().equalsIgnoreCase(chosenCharacter)) {
                     if ((character instanceof Friend) || (character instanceof PartyMember)) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println(character.getName() + " does not want to fight");
                         return;
                     } else {
@@ -786,6 +1113,11 @@ public enum GameCommand {
                         return;
                     }
                 }
+            }
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
             System.out.println("I don't recognize that name");
         }

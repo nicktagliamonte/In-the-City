@@ -127,6 +127,11 @@ public class Room {
     }
 
     public void triggerTransitionEvent() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println(transitionEvent.getDescription());
     }
 
@@ -208,9 +213,19 @@ public class Room {
         for (Adjacency adj : adjacentRooms) {
             if (adj.getCoordinates().equals(currentPositionKey)) {
                 if (adj.getIsLocked()) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("The door is locked, and you do not have a key.");
                     return this;
                 } else if (adj.getdexScore() > playerDex) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You fail to access " + adj.getAdjoiningRoomName() + " because of a failed dex check. You cannot access the room right now.");
                     return this;
                 }
@@ -235,11 +250,26 @@ public class Room {
 
     public void viewAdjascentRooms() {
         if (adjacentRooms == null || adjacentRooms.size() == 0) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("no adjascent rooms");
             return;
         }
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Exits in this room: ");
         for (Adjacency adjacency : adjacentRooms) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(adjacency.getDescription());
         }
     }
@@ -255,7 +285,17 @@ public class Room {
     public void printMap() {
         for (char[] row : map) {
             for (char element : row) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.print(element);
+            }
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
             System.out.println();
 

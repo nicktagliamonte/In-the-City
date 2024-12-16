@@ -24,14 +24,59 @@ public class Menu {
     }
 
     public void displayMenu() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Main Menu:");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("1. Manual");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("2. Map");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("3. Quests");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("4. Crafting");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("5. Save");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("6. Load");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("7. Quit");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("8. Return to Game");
         
         int choice = gameEngine.getPlayerInputAsInt();
@@ -62,6 +107,11 @@ public class Menu {
                 returnToGame();
                 break;
             default:
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Invalid choice. Please try again.");
                 displayMenu(); // Re-display the menu on invalid input
                 break;
@@ -69,81 +119,296 @@ public class Menu {
     }
 
     private void displayManual() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("1. Display a list of commands available in the game.");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("2. Display a description of the various items available in the game.");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("3. Display a combat manual");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("4. Display a manual describing trade and economy in the game");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("5. Return to the main menu.");
         Manual manual = new Manual();
         while (true) {
             int input = gameEngine.getPlayerInputAsInt();
             if (input == 1) {
                 manual.printCommands();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display a list of commands available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display a description of the various items available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Display a combat manual");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("4. Display a manual describing trade and economy in the game");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("5. Return to the main menu.");
             } else if (input == 2) {
                 manual.printItems();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display a list of commands available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display a description of the various items available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Display a combat manual");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("4. Display a manual describing trade and economy in the game");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("5. Return to the main menu.");
             } else if (input == 3) {
                 manual.combatManual();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display a list of commands available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display a description of the various items available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Display a combat manual");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("4. Display a manual describing trade and economy in the game");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("5. Return to the main menu.");
             } else if (input == 4) {
                 manual.enconomyManual();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display a list of commands available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display a description of the various items available in the game.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Display a combat manual");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("4. Display a manual describing trade and economy in the game");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("5. Return to the main menu.");
             } else if (input == 5) {
                 displayMenu();
                 break;
             }
             else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Invalid choice. Enter 5 to return to the main menu.");
             }
         }
     }
 
     private void displayMap() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("There is a map of the entire game world and a map of your current room available.");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("1. Display the map of your current room.");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("2. Display the World Map");
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("3. Return to the main menu.");
         WorldMap worldMap = new WorldMap();
         while (true) {
             int input = gameEngine.getPlayerInputAsInt();
             if (input == 1) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("KEY:\nI = Item\t\tE = Exit\nF = Friend NPC\t\tP = Party Member\nN = Neutral NPC\t\tA = Adversarial NPC\nY = You\t\t\t. = Walkable Space");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("If you don't see yourself, you could just be \"behind\" another point of interest.  Try moving over a space.");
                 gameEngine.getGameState().getCurrentRoom().printMap();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display the map of your current room.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display the World Map");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Return to the main menu.");
             } else if (input == 2) {
                 worldMap.printMap();
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("1. Display the map of your current room.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("2. Display the World Map");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("3. Return to the main menu.");
             } else if (input == 3) {
                 displayMenu();
                 break;
             }
             else {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Invalid choice. Enter 3 to return to the main menu.");
             }
         }
@@ -154,32 +419,87 @@ public class Menu {
         List<Quest> activeQuests = gameEngine.getGameState().getPlayer().getActiveQuests();
 
         if (!completedQuests.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Completed quests:");
             for (Quest quest : completedQuests) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(quest.getTitle());
             }
         }        
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("\nActive quests:");
         for (Quest quest : activeQuests) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(quest.getTitle());
 
             for (Objective objective : quest.getObjectives().values()) {
                 if (!objective.getIsCompleted()) {
                     String objectiveType = objective.getType();
                     if (objectiveType.equalsIgnoreCase("dialogue")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Talk to " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("combat")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Fight " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("item")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Collect " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("puzzle")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Solve Puzzle " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("stealth")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Avoid detection by " + objective.getTarget());
                     } else if (objectiveType.equalsIgnoreCase("movement")) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("  Next objective: Go to " + objective.getTarget());
                     } else {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Please report back to the dev that " + quest.getTitle() + " contains an objective with an invalid type.");
                     }
                     break;
@@ -192,10 +512,35 @@ public class Menu {
     private void openCrafting() {
         // Crafting logic here
         if (hasTechnologist()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("There are 3 types of traps you can make.");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("1. Small Magical Trap (1 scrap)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("4. Return to the main menu");
 
             while (true) {
@@ -204,40 +549,145 @@ public class Menu {
                 if (input == 1) {
                     //TODO: make a small magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("There are 3 types of traps you can make.");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Magical Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     //TODO: make a large magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("There are 3 types of traps you can make.");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Magical Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     //TODO: make a defensive magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("There are 3 types of traps you can make.");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Magical Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();
                     break;
                 }
                 else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Invalid choice. Enter 4 to return to the main menu.");
                 }
             }
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("There are 3 types of traps you can make.");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("1. Small Trap (1 scrap)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("2. Large Trap (2 scrap, 1 food)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("4. Return to the main menu");
 
             while (true) {
@@ -250,30 +700,100 @@ public class Menu {
                     
                     List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
                     inventory.add(trap);
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("There are 3 types of traps you can make.");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
                     //TODO: make a large trap
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
                     //TODO: make a defensive trap
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("1. Small Trap (1 scrap)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("2. Large Trap (2 scrap, 1 food)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();
                     break;
                 }
                 else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Invalid choice. Enter 4 to return to the main menu.");
                 }
             }
@@ -295,10 +815,20 @@ public class Menu {
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToSave = fileChooser.getSelectedFile();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Save file to: " + fileToSave.getAbsolutePath());
             
             //TODO: add logic to save the game state to this file later
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Save operation was cancelled.");
         }
 
@@ -324,12 +854,22 @@ public class Menu {
         // Check if the user selected a file
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToLoad = fileChooser.getSelectedFile();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Load file from: " + fileToLoad.getAbsolutePath());
             
             // Pass the selected file to the GameEngine for loading
             GameEngine.loadGameFromFile(fileToLoad);
     
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Load operation was cancelled.");
         }
     
@@ -341,6 +881,11 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         String inputString = " ";
         while (!inputString.equalsIgnoreCase("n")) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Quit the game? (y/n)");
             inputString = scanner.nextLine();
             if (inputString.equalsIgnoreCase("y")) {
@@ -354,6 +899,11 @@ public class Menu {
 
     private void returnToGame() {
         // Logic to return to the game from the menu
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Returning to the game...");
         gameEngine.isInMenu = false;  // Set the game state back to normal mode
     }

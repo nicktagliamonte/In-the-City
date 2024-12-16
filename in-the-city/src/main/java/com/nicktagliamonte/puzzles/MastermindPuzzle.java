@@ -27,15 +27,35 @@ public class MastermindPuzzle {
     public void startPuzzleLoop() {
         Scanner scanner = new Scanner(System.in);
 
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Welcome to the Mastermind puzzle!");
 
         while (attemptsLeft > 0 && !isSolved) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("\nAttempts left: " + attemptsLeft);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Enter your guess (format: space-separated numbers, e.g. '1 2 3 4'):");
             
             // Get player input (e.g., "1 2 3 4")
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("exit")) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Exiting the puzzle.");
                 break; // Exit the puzzle loop if the player types "exit"
             }
@@ -43,17 +63,37 @@ public class MastermindPuzzle {
             // Convert input string to a List<Integer> (player's guess)
             List<Integer> guess = parseGuess(input);
             if (guess == null) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Invalid input. Please enter valid numbers.");
                 continue; // Skip this iteration and ask for input again
             }
 
             // Process the guess and provide feedback
             String feedback = processGuess(guess);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println(feedback);
 
             // Check if the puzzle is solved
             if (isPuzzleSolved(guess)) {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Congratulations! You've solved the puzzle.");
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println(puzzleData.getCompletionMessage());
                 gameState.getPlayer().gainXP(puzzleData.getReward(), gameState);
                 for (Quest quest : gameState.getPlayer().getActiveQuests()) {
@@ -66,6 +106,11 @@ public class MastermindPuzzle {
                 }
 
                 for (Item reward : puzzleData.getCompletionItems()) {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("You received: " + reward.getName() + " in safe zone inventory");
                     gameState.safeZoneInventory.addItemToInventory(reward);
                 }
@@ -85,6 +130,11 @@ public class MastermindPuzzle {
 
         // If the loop ends without solving the puzzle
         if (!isSolved) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You've run out of attempts. Better luck next time!");
         }
     }

@@ -49,6 +49,11 @@ public class safeZoneInventory {
 
     public void listInventory() {
         if (inventory.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("No items in safe zone inventory.");
         } else {
             inventory.forEach(item -> System.out.println(item.getName()));

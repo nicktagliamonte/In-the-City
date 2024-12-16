@@ -16,12 +16,22 @@ public class Armor extends Item {
 
     public void equip(Player player) {
         if (player.armor != null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You can only wear 1 armor item at a time. Dequip the current armor before equipping this one.");
         }
         if (!isEquipped) {
             player.increaseAC(acBonus);
             isEquipped = true;
             player.setArmor(this);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Successfully equipped " + super.getName());
         }        
     }
@@ -32,8 +42,18 @@ public class Armor extends Item {
             isEquipped = false;
             player.addItem(this);
             player.removeArmor();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Successfully dequipped " + super.getName());
         } else {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("That armor item is not currently equipped");
         }
     }
@@ -41,12 +61,22 @@ public class Armor extends Item {
     @Override
     public void use(GameState gameState) {
         if (gameState.getPlayer().armor != null) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("You can only wear 1 armor item at a time. Dequip the current armor before equipping this one.");
         }
         if (!isEquipped) {
             gameState.getPlayer().increaseAC(acBonus);
             isEquipped = true;
             gameState.getPlayer().setArmor(this);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Successfully equipped " + super.getName());
         }  
     }

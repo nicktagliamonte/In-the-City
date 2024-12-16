@@ -39,7 +39,12 @@ public class GameEngine {
                 }
                 timer.checkForHunger();
                 timer.checkForThirst();
-                System.out.print("Enter command: ");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                System.out.print("\nEnter command: ");
                 String input = scanner.nextLine().trim();
                 String[] splitInput = input.split(" ", 2);
                 String commandName = splitInput[0].toLowerCase();
@@ -56,10 +61,20 @@ public class GameEngine {
                     command.execute(args, gameState);
                     invalidCommands = 0;
                 } else {
+                    try {
+                        Thread.sleep(15);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                     System.out.println("Unknown command.");
                     invalidCommands++;
 
                     if (invalidCommands >= 3) {
+                        try {
+                            Thread.sleep(15);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                        }
                         System.out.println("Type 'menu' to navigate to a list of valid commands.");
                         invalidCommands = 0;
                     }
@@ -110,6 +125,11 @@ public class GameEngine {
             }
         }
         scanner.close();
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         System.out.println("Thanks for playing!");
     }
 
@@ -120,11 +140,21 @@ public class GameEngine {
     
         while (true) {
             try {
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.print("Enter your choice: ");
                 input = Integer.parseInt(scanner.nextLine().trim()); // Parse input as an integer
                 return input; // Return the input if it's an integer
             } catch (NumberFormatException e) {
                 // Handle non-integer input
+                try {
+                    Thread.sleep(15);
+                } catch (InterruptedException f) {
+                    Thread.currentThread().interrupt();
+                }
                 System.out.println("Please select one of the menu options by entering its number.");
             }
         }
@@ -142,9 +172,19 @@ public class GameEngine {
         // Implement the logic to read and parse the file to restore game state
         try {
             // Example placeholder for file reading
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Loading game data from: " + file.getAbsolutePath());
             // Actual file reading and game state restoration logic goes here
         } catch (Exception e) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException f) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("An error occurred while loading the game: " + e.getMessage());
         }
     }
@@ -154,6 +194,11 @@ public class GameEngine {
         int chance = random.nextInt(10);
     
         if (chance == 0) { 
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             System.out.println("Success!");
         }
     }
