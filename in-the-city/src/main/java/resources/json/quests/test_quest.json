@@ -54,5 +54,10 @@
       "acbonus": 2
     }
   ],
-  "completionMessage": "You have completed the test quest.  Good job."
+  "completionMessage": "You have completed the test quest.  Good job.",
+  "newRegionFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region_2.json",
+  "newAdjacencyFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies_2.json",
+  "newItemsFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items_2.json",
+  "newPeopleFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people_2.json",
+  "newDialogueFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue_2.json"
 }

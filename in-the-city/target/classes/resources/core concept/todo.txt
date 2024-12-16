@@ -1,8 +1,7 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- put a second region in the game and include methods to deserialize that region and initialize it, make sure that works
-  - gonna need major quest completion to change the region, so build out a method in the quest reward system
+- i need to make sure that quest related dialogue won't show up if you don't have an active quest pertaining to that character
 - think about that puzzle box again.  seems like there should be...something...
 - add some kind of dex check system to room transition
   - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check

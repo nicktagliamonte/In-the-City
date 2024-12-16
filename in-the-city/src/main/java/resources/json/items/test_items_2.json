@@ -1,0 +1,36 @@
+{
+    "items": {
+      "The Parlor": {
+        "(3,7)": {
+          "type": "FuelCell"
+        },
+        "(2,9)": {
+          "type": "FuelCell"
+        },
+        "(8,1)": {
+          "type": "Armor",
+          "name": "Light Leather Armor",
+          "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
+          "weight": 3,
+          "consumable": false,
+          "value": 5,
+          "acbonus": 2
+        }
+      },
+      "The Hallway": {
+        "(0,1)": {
+          "type": "FuelCell"
+        },
+        "(4,5)": {
+          "type": "Armor",
+          "name": "Heavy Plate Armor",
+          "description": "A heavy suit of plate armor offering superior protection at the cost of mobility.",
+          "weight": 15,
+          "consumable": false,
+          "value": 20,
+          "acbonus": 5
+        }
+      }
+    }
+  }
+  

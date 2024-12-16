@@ -307,7 +307,19 @@ public class GameState {
 
     public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
             String newPeopleFilePath, String newDialogueFilePath) {
-        loadRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
+        System.out.println(newRegionFilePath);
+        System.out.println(newAdjacencyFilePath);
+        System.out.println(newItemsFilePath);
+        System.out.println(newPeopleFilePath);
+        System.out.println(newDialogueFilePath);
+
+        this.regionFilePath = newRegionFilePath;
+        this.adjacencyFilePath = newAdjacencyFilePath;
+        this.itemsFilePath = newItemsFilePath;
+        this.peopleFilePath = newPeopleFilePath;
+        this.dialogueFilePath = newDialogueFilePath;
+
+        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);        
     }
 
     public Region getCurrentRegion() {

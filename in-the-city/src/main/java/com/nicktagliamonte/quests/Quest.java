@@ -19,9 +19,16 @@ public class Quest {
     @Expose private GameState gameState;
     @Expose private boolean isPrimary;
     @Expose private String completionMessage;
+    @Expose private String newRegionFilePath;
+    @Expose private String newAdjacencyFilePath;
+    @Expose private String newItemsFilePath;
+    @Expose private String newPeopleFilePath;
+    @Expose private String newDialogueFilePath;
 
     public Quest(String questId, String title, String description, Boolean isPrimary, 
-                List<Objective> objectives, List<Item> rewards, String completionMessage, GameState gameState) {
+                List<Objective> objectives, List<Item> rewards, String completionMessage, 
+                String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
+                String newPeopleFilePath, String newDialogueFilePath, GameState gameState) {
         this.questId = questId;
         this.title = title;
         this.description = description;
@@ -128,6 +135,9 @@ public class Quest {
             if (checkProgress()) {
                 System.out.println(completionMessage);
                 giveRewards();
+                if (isPrimary) {
+                    gameState.updateRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
+                }
             }
         }
     }    

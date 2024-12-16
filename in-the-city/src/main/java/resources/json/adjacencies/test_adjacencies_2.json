@@ -1,0 +1,50 @@
+{
+    "adjacencies": {
+      "The Parlor": [
+        {
+          "type": "door",
+          "coordinates": "(0,9)",
+          "description": "A sturdy wooden door leading to 'The Hallway'.",
+          "adjoiningRoom": "The Hallway",
+          "isStairsUp": false,
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1
+        },
+        {
+          "type": "stairs",
+          "coordinates": "(7,6)",
+          "description": "A creaky set of stairs leading up to 'The Chamber'.",
+          "adjoiningRoom": "The Chamber",
+          "isStairsUp": true,
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1
+        }
+      ],
+      "The Hallway": [
+        {
+          "type": "door",
+          "coordinates": "(5,0)",
+          "description": "A sturdy wooden door leading to 'The Parlor'.",
+          "adjoiningRoom": "The Parlor",
+          "isStairsUp": false,
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1
+        }
+      ],
+      "The Chamber": [
+        {
+          "type": "stairs",
+          "coordinates": "(5,7)",
+          "description": "A creaky set of stairs leading down to 'The Parlor'.",
+          "adjoiningRoom": "The Parlor",
+          "isStairsUp": false,
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1
+        }
+      ]
+    }
+  }  
