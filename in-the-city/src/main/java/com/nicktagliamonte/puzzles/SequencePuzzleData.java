@@ -1,6 +1,5 @@
 package com.nicktagliamonte.puzzles;
 
-import com.google.gson.Gson;
 import java.util.List;
 import java.util.Map;
 
@@ -14,16 +13,15 @@ public class SequencePuzzleData {
     private int reward;
 
     // Constructor
-    public SequencePuzzleData(String json) {
-        Gson gson = new Gson();
-        SequencePuzzleData data = gson.fromJson(json, SequencePuzzleData.class);
-        this.id = data.id;
-        this.numberOfPieces = data.numberOfPieces;
-        this.description = data.description;
-        this.sequence = data.sequence;
-        this.solution = data.solution;
-        this.hints = data.hints;
-        this.reward = data.reward;
+    public SequencePuzzleData(String id, int numberOfPieces, String description, List<PuzzlePiece> sequence, 
+                                List<Integer> solution, Map<String, String> hints, int reward) {
+        this.id = id;
+        this.numberOfPieces = numberOfPieces;
+        this.description = description;
+        this.sequence = sequence;
+        this.solution = solution;
+        this.hints = hints;
+        this.reward = reward;
     }
 
     // Getters

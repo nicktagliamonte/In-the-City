@@ -263,61 +263,19 @@ public enum GameCommand {
                 }
             }
 
-            if (itemToExamine != null) {
+            if (itemToExamine != null && (itemToExamine.getPuzzleType().equals(""))) {
                 System.out.println(itemToExamine.getDescription());
-            } else {
+            } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence")) {
+                gameState.launchSequencePuzzle(itemToExamine.getDataPath());
+            } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("mastermind")) {
+                gameState.launchMastermindPuzzle(itemToExamine.getDataPath());
+            }
+            else {
                 System.out.println("There is no such item here: " + args[0]);
             }
 
             itemsInRoom.clear();
             gameState.itemContext = "";
-        }
-    },
-    INTERACT {
-        @Override
-        public void execute(String[] args, GameState gameState) {
-            String itemType = "";
-            Item item = null;
-            if (args.length < 1) {
-                System.out.println("Specify a character to talk to");
-            } else {
-                String[] arguments = args[0].split(" ");
-                if (arguments.length == 0) {
-                    System.out.println("Invalid command format.");
-                    return;
-                }
-
-                if (arguments[0].equalsIgnoreCase("with") && arguments.length > 1) {
-                    StringBuilder itemNameBuilder = new StringBuilder();
-                    for (int i = 1; i < arguments.length; i++) {
-                        itemNameBuilder.append(arguments[i]);
-                        if (i < arguments.length - 1) {
-                            itemNameBuilder.append(" ");
-                        }
-                    }
-                    String itemName = itemNameBuilder.toString();
-                    Collection<Item> items = gameState.getCurrentRoom().getItemsInRoom().values();
-                    for (Item itemInRoom : items) {
-                        if (itemInRoom.getName().equalsIgnoreCase(itemName)) {
-                            item = itemInRoom;
-                            itemType = item.getPuzzleType();
-                        }
-                    }
-
-                    if (item == null) {
-                        System.out.println("There was no such item found in this room");
-                        return;
-                    }
-                } else {
-                    System.out.println("This command has to be formatted as interact WITH [item name]");
-                }
-            }
-
-            if (itemType.equals("")) {
-                System.out.println("You look at " + item.getName() + " and see " + item.getDescription());
-            } else if (itemType.equalsIgnoreCase("sequence")) {
-                gameState.launchSequencePuzzle(item.getDataPath());
-            } //TODO: launch gamestate methods for other puzzle types.
         }
     },
     TAKE {

@@ -43,6 +43,14 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 int sequenceValue = jsonObject.get("value").getAsInt(); 
                 String sequenceDataPath = jsonObject.get("dataPath").getAsString();
                 return new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath);
+            case "Mastermind Puzzle":
+                String mastermindName = jsonObject.get("name").getAsString();
+                String mastermindDescription = jsonObject.get("description").getAsString();
+                double mastermindWeight = jsonObject.get("weight").getAsDouble();
+                boolean mastermindIsConsumable = jsonObject.get("consumable").getAsBoolean();
+                int mastermindValue = jsonObject.get("value").getAsInt(); 
+                String mastermindDataPath = jsonObject.get("dataPath").getAsString();
+                return new MastermindPuzzleItem(mastermindName, mastermindDescription, mastermindWeight, mastermindIsConsumable, mastermindValue, "mastermind", mastermindDataPath);
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

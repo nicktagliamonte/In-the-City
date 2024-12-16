@@ -2,6 +2,8 @@ package com.nicktagliamonte.game;
 
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
+import com.nicktagliamonte.puzzles.MastermindPuzzle;
+import com.nicktagliamonte.puzzles.MastermindPuzzleData;
 import com.nicktagliamonte.puzzles.SequencePuzzle;
 import com.nicktagliamonte.puzzles.SequencePuzzleData;
 import com.nicktagliamonte.quests.Objective;
@@ -972,6 +974,18 @@ public class GameState {
             FileReader reader = new FileReader(puzzleFilePath);
             SequencePuzzleData data = gson.fromJson(reader, SequencePuzzleData.class);
             SequencePuzzle currentPuzzle = new SequencePuzzle(data, this);
+            currentPuzzle.startPuzzleLoop();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void launchMastermindPuzzle(String puzzleFilePath) {
+        Gson gson = new Gson();
+        try {
+            FileReader reader = new FileReader(puzzleFilePath);
+            MastermindPuzzleData data = gson.fromJson(reader, MastermindPuzzleData.class);
+            MastermindPuzzle currentPuzzle = new MastermindPuzzle(data, this);
             currentPuzzle.startPuzzleLoop();
         } catch (IOException e) {
             e.printStackTrace();

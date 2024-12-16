@@ -2,6 +2,8 @@
 Keep adding individual game elements in a "test data" format.  
 
 - think about that puzzle box again.  seems like there should be...something...
+  - add a check on all puzzle completion (3!!! including combination!!!) to see if a quest objective was completed
+  - also add a check on lock picking
 - add some kind of dex check system to room transition
   - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
 - make room 3 an escape room (god this line is annoying.  i'm setting up the puzzle system though, and it makes sense to have a macro counterpart to the micro interaction that is puzzles.)
@@ -24,10 +26,6 @@ Keep adding individual game elements in a "test data" format.
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
   - add a combination lock
   - add a pickable lock
-  - make one of the locks re-lock after some unit of time
-  - add an object which contains a sequence puzzle (macro -- there is a large computer terminal in one room, that sort of thing.  responds to the interact command)
-  - add an object which contains a mastermind style puzzle (micro -- the object must be in the player inventory, must use the use command)
-  - add an object which contains a codebreaking puzzle (micro, the object must be in the player inventory and respond to the use command)
 - Add an "introduction" screen.  
   - in general, add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro.
 - Reassess demo at this time.  
