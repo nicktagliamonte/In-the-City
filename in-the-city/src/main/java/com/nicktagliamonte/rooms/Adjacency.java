@@ -58,7 +58,7 @@ public class Adjacency {
         this.dexScore = dexScore;
     }
 
-    public int getDexScore() {
+    public int getdexScore() {
         return dexScore;
     }
 

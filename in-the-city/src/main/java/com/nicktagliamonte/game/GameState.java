@@ -517,14 +517,14 @@ public class GameState {
         double totalDex = roll + player.getDexterity();
 
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
-            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked() && totalDex <= adj.getDexScore()) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked() && totalDex >= adj.getdexScore()) {
                 setCurrentRoom(adj.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
                 System.out.println(roomName + " is locked.");
                 return;
-            } else if (adj.getDexScore() > totalDex) {
+            } else if (adj.getdexScore() > totalDex) {
                 System.out.println("You fail to reach " + roomName);
                 return;
             }
@@ -540,11 +540,11 @@ public class GameState {
 
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getDexScore() <= totalDex) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
-            } else if (adjacency.getDexScore() > totalDex) {
+            } else if (adjacency.getdexScore() > totalDex) {
                 System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
@@ -560,11 +560,11 @@ public class GameState {
 
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getDexScore() <= totalDex) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
-            } else if (adjacency.getDexScore() > totalDex) {
+            } else if (adjacency.getdexScore() > totalDex) {
                 System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }

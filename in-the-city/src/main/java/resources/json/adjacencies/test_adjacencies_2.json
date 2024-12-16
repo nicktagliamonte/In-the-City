@@ -11,7 +11,7 @@
           "isLocked": false,
           "baseChances": 5,
           "difficulty": 1,
-          "dexscore": 0
+          "dexScore": 0
         },
         {
           "type": "stairs",
@@ -23,7 +23,7 @@
           "isLocked": false,
           "baseChances": 5,
           "difficulty": 1,
-          "dexscore": 0
+          "dexScore": 0
         }
       ],
       "The Hallway": [
@@ -37,7 +37,7 @@
           "isLocked": false,
           "baseChances": 5,
           "difficulty": 1,
-          "dexscore": 0
+          "dexScore": 0
         }
       ],
       "The Chamber": [
@@ -51,7 +51,7 @@
           "isLocked": false,
           "baseChances": 5,
           "difficulty": 1,
-          "dexscore": 0
+          "dexScore": 0
         }
       ]
     }

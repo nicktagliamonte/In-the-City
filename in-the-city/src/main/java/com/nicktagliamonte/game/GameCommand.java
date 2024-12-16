@@ -200,7 +200,7 @@ public enum GameCommand {
 
             if (args.length >= 1) {
                 for (Adjacency adj : gameState.getCurrentRoom().getAdjacentRooms()) {
-                    if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0]) && totalDex >= adj.getDexScore()) {
+                    if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0]) && totalDex >= adj.getdexScore()) {
                         gameState.enterCombinationLockSequence(adj.getAdjoiningRoomName(), adj);
                     } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(args[0])) {
                         System.out.println("You cannot reach that lock.");
@@ -229,7 +229,7 @@ public enum GameCommand {
             boolean roomFound = false;
 
             for (Adjacency adjacency : adjacentRooms) {
-                if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName) && adjacency.getIsLocked() && adjacency.getLockType().equalsIgnoreCase("pickable") && totalDex >= adjacency.getDexScore()) {
+                if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName) && adjacency.getIsLocked() && adjacency.getLockType().equalsIgnoreCase("pickable") && totalDex >= adjacency.getdexScore()) {
                     roomFound = true;
                     gameState.startLockpickingSequence(targetRoomName, adjacency);
                     return;
@@ -239,7 +239,7 @@ public enum GameCommand {
                 } else if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName)) {
                     System.out.println(targetRoomName + " is already unlocked. You can enter it by typing \"ENTER " + targetRoomName + "\"");
                     return;
-                } else if (totalDex < adjacency.getDexScore()) {
+                } else if (totalDex < adjacency.getdexScore()) {
                     System.out.println("You cannot access that lock to pick it.");
                 }
             }
