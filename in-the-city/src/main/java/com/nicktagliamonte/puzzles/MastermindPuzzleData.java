@@ -4,18 +4,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import com.google.gson.annotations.Expose;
+import com.nicktagliamonte.items.Item;
+
 public class MastermindPuzzleData {
-    private String id;
-    private String itemName;
-    private int numberOfDigits;
-    private String description;
-    private List<Integer> solution;
-    private int maxAttempts;
-    private Map<Integer, String> hints;
-    private int reward;
+    @Expose private String id;
+    @Expose private String itemName;
+    @Expose private int numberOfDigits;
+    @Expose private String description;
+    @Expose private List<Integer> solution;
+    @Expose private int maxAttempts;
+    @Expose private Map<Integer, String> hints;
+    @Expose private int reward;
+    @Expose private String completionMessage;
+    @Expose private String completionLock;
+    @Expose private List<Item> completionItems;
 
     public MastermindPuzzleData(String id, String itemName, int numberOfDigits, String description, List<Integer> solution, int maxAttempts,
-            Map<Integer, String> hints, int reward) {
+            Map<Integer, String> hints, int reward, String completionMessage, String completionLock, List<Item> completionItems) {
         this.id = id;
         this.itemName = itemName;
         this.numberOfDigits = numberOfDigits;
@@ -24,6 +30,21 @@ public class MastermindPuzzleData {
         this.maxAttempts = maxAttempts;
         this.hints = hints;
         this.reward = reward;
+        this.completionMessage = completionMessage;
+        this.completionLock = completionLock;
+        this.completionItems = completionItems;
+    }
+
+    public String getCompletionLock() {
+        return completionLock;
+    }
+
+    public List<Item> getCompletionItems() {
+        return completionItems;
+    }
+
+    public String getCompletionMessage() {
+        return completionMessage;
     }
 
     public String getId() {

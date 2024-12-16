@@ -138,7 +138,7 @@ public class Room {
         return height;
     }
 
-    public Room movePlayer(String direction, int distance) {
+    public Room movePlayer(String direction, int distance, double playerDex) {
         int dx = 0, dy = 0;
     
         switch (direction.toUpperCase()) {
@@ -191,7 +191,7 @@ public class Room {
                 }
             } else {
                 // At the edge, check for adjacency transition
-                return checkTransition();
+                return checkTransition(playerDex);
             }
         }
         return this; // No transition, stayed in the same room
@@ -202,13 +202,16 @@ public class Room {
         this.playerY = y;
     }
 
-    private Room checkTransition() {
+    private Room checkTransition(double playerDex) {
         String currentPositionKey = "(" + playerX + "," + playerY + ")";
     
         for (Adjacency adj : adjacentRooms) {
             if (adj.getCoordinates().equals(currentPositionKey)) {
                 if (adj.getIsLocked()) {
                     System.out.println("The door is locked, and you do not have a key.");
+                    return this;
+                } else if (adj.getdexScore() > playerDex) {
+                    System.out.println("You fail to access " + adj.getAdjoiningRoomName() + " because of a failed dex check. You cannot access the room right now.");
                     return this;
                 }
                 return adj.getAdjoiningRoom();

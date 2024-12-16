@@ -14,5 +14,8 @@
       "3": "The third dial comes second.",
       "2": "The second dial is last."
     },
-    "reward": 10
+    "reward": 10,
+    "completionMessage": "As the last dial is turned into place, the machine illuminates. Text can be seen on the monitor reading \"don't you wish the dev put something decent here?\"",
+    "completionLock": "",
+    "completionItems": []
   }  

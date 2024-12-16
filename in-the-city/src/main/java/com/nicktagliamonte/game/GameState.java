@@ -353,6 +353,10 @@ public class GameState {
     }
 
     public String changeLocation(String directionInput, int distance) {
+        Random rand = new Random();
+        int roll = rand.nextInt(20) + 1;
+        double totalDex = roll + player.getDexterity();
+
         player.hasKey(currentRoom.getAdjacentRooms());
 
         try {
@@ -360,7 +364,7 @@ public class GameState {
             String oldLocation = currentRoom.getPlayerPosition();
             currentRoom.updateMapEntry('.', Character.getNumericValue(oldLocation.charAt(1)),
                     Character.getNumericValue(oldLocation.charAt(4)));
-            Room newRoom = currentRoom.movePlayer(direction.toString(), distance);
+            Room newRoom = currentRoom.movePlayer(direction.toString(), distance, totalDex);
 
             if (newRoom != null && newRoom != currentRoom) {
                 // Transition to the new room and update the current location
@@ -517,7 +521,8 @@ public class GameState {
         double totalDex = roll + player.getDexterity();
 
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
-            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked() && totalDex >= adj.getdexScore()) {
+            if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()
+                    && totalDex >= adj.getdexScore()) {
                 setCurrentRoom(adj.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
@@ -540,12 +545,14 @@ public class GameState {
 
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getdexScore() <= totalDex) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)
+                    && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adjacency.getdexScore() > totalDex) {
-                System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
+                System.out.println("You fail to access " + roomName
+                        + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
@@ -560,12 +567,14 @@ public class GameState {
 
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && !adjacency.getIsStairsUp()
-                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName) && adjacency.getdexScore() <= totalDex) {
+                    && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)
+                    && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adjacency.getdexScore() > totalDex) {
-                System.out.println("You fail to access " + roomName + " because of a failed dexterity check. The room is too difficult for you to access.");
+                System.out.println("You fail to access " + roomName
+                        + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
@@ -975,7 +984,7 @@ public class GameState {
         }
     }
 
-	@SuppressWarnings("resource")
+    @SuppressWarnings("resource")
     public void enterCombinationLockSequence(String roomName, Adjacency adj) {
         System.out.println("You are attempting to unlock " + roomName);
         System.out.println("Enter the combination for the room:");
@@ -988,7 +997,8 @@ public class GameState {
 
             for (Quest quest : player.getActiveQuests()) {
                 for (Objective objective : quest.getObjectives().values()) {
-                    if (objective.getType().equalsIgnoreCase("puzzle") && objective.getTarget().equalsIgnoreCase(roomName)) {
+                    if (objective.getType().equalsIgnoreCase("puzzle")
+                            && objective.getTarget().equalsIgnoreCase(roomName)) {
                         quest.completeObjective(objective.getId());
                         break;
                     }
@@ -996,11 +1006,13 @@ public class GameState {
             }
         } else {
             System.out.println("That combination was incorrect.");
-        }        
-	}
+        }
+    }
 
     public void launchSequencePuzzle(String puzzleFilePath) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .create();
         try {
             FileReader reader = new FileReader(puzzleFilePath);
             SequencePuzzleData data = gson.fromJson(reader, SequencePuzzleData.class);
@@ -1012,7 +1024,9 @@ public class GameState {
     }
 
     public void launchMastermindPuzzle(String puzzleFilePath) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .create();
         try {
             FileReader reader = new FileReader(puzzleFilePath);
             MastermindPuzzleData data = gson.fromJson(reader, MastermindPuzzleData.class);

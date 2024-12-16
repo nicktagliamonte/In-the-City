@@ -1,9 +1,6 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- add some kind of dex check system to room transition
-  - put in a room where the doorway is on a ledge.  the player can try to access it but move to [room 3] or enter [room 3] will require them to pass a dex check
-- make room 3 an escape room (god this line is annoying.  i'm setting up the puzzle system though, and it makes sense to have a macro counterpart to the micro interaction that is puzzles.)
 - Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
   - format output for readability in general.  
 - Update the inventory function.  

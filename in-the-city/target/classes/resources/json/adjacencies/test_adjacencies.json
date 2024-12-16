@@ -24,6 +24,18 @@
         "baseChances": 5,
         "difficulty": 100,
         "dexScore": 0
+      },
+      {
+        "type": "door",
+        "coordinates": "(0,4)",
+        "description": "A doorway high on a ledge leading to \"Room 3\"",
+        "adjoiningRoom": "Room 3",
+        "isStairsUp": true,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 5
       }
     ],
     "Room 2": [
@@ -52,6 +64,20 @@
         "baseChances": 5,
         "difficulty": 100,
         "dexScore": 0
+      }
+    ],
+    "Room 3": [
+      {
+        "type": "door",
+        "coordinates": "(0,0)",
+        "description": "A doorway high on a ledge leading to \"Room 1\"",
+        "adjoiningRoom": "Room 1",
+        "isStairsUp": true,
+        "lockType": "pickable",
+        "isLocked": true,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 5
       }
     ]
   }

@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.nicktagliamonte.game.GameState;
+import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.quests.Objective;
 import com.nicktagliamonte.quests.Quest;
+import com.nicktagliamonte.rooms.Adjacency;
 
 public class MastermindPuzzle {
     private MastermindPuzzleData puzzleData;
@@ -52,12 +54,26 @@ public class MastermindPuzzle {
             // Check if the puzzle is solved
             if (isPuzzleSolved(guess)) {
                 System.out.println("Congratulations! You've solved the puzzle.");
+                System.out.println(puzzleData.getCompletionMessage());
                 gameState.getPlayer().gainXP(puzzleData.getReward(), gameState);
                 for (Quest quest : gameState.getPlayer().getActiveQuests()) {
                     for (Objective objective : quest.getObjectives().values()) {
                         if (objective.getType().equalsIgnoreCase("puzzle") && objective.getTarget().equalsIgnoreCase(puzzleData.getItemName())) {
                             quest.completeObjective(objective.getId());
                             break;
+                        }
+                    }
+                }
+
+                for (Item reward : puzzleData.getCompletionItems()) {
+                    System.out.println("You received: " + reward.getName() + " in safe zone inventory");
+                    gameState.safeZoneInventory.addItemToInventory(reward);
+                }
+
+                if (!puzzleData.getCompletionLock().equals("")) {
+                    for (Adjacency adj : gameState.getCurrentRoom().getAdjacentRooms()) {
+                        if (adj.getAdjoiningRoomName().equalsIgnoreCase(puzzleData.getCompletionLock())) {
+                            adj.setIsLocked(false);
                         }
                     }
                 }

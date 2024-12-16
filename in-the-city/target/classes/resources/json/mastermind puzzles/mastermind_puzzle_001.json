@@ -9,6 +9,9 @@
       "1": "The first number is 1.",
       "2": "The second number is 4."
     },
-    "reward": 10
+    "reward": 10,
+    "completionMessage": "You finish the puzzle. Opening it reveals nothing.",
+    "completionLock": "",
+    "completionItems": []
   }
   

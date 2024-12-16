@@ -3,19 +3,25 @@ package com.nicktagliamonte.puzzles;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.annotations.Expose;
+import com.nicktagliamonte.items.Item;
+
 public class SequencePuzzleData {
-    private String id;
-    private String itemName;
-    private int numberOfPieces;
-    private String description;
-    private List<PuzzlePiece> sequence;
-    private List<Integer> solution;
-    private Map<String, String> hints;
-    private int reward;
+    @Expose private String id;
+    @Expose private String itemName;
+    @Expose private int numberOfPieces;
+    @Expose private String description;
+    @Expose private List<PuzzlePiece> sequence;
+    @Expose private List<Integer> solution;
+    @Expose private Map<String, String> hints;
+    @Expose private int reward;
+    @Expose private String completionMessage;
+    @Expose private String completionLock;
+    @Expose private List<Item> completionItems;
 
     // Constructor
     public SequencePuzzleData(String id, String itemName, int numberOfPieces, String description, List<PuzzlePiece> sequence, 
-                                List<Integer> solution, Map<String, String> hints, int reward) {
+                                List<Integer> solution, Map<String, String> hints, int reward, String completionMessage, String completionLock, List<Item> completionItems) {
         this.id = id;
         this.itemName = itemName;
         this.numberOfPieces = numberOfPieces;
@@ -24,9 +30,20 @@ public class SequencePuzzleData {
         this.solution = solution;
         this.hints = hints;
         this.reward = reward;
+        this.completionMessage = completionMessage;
+        this.completionLock = completionLock;
+        this.completionItems = completionItems;
     }
 
     // Getters
+    public List<Item> getCompletionItems() {
+        return completionItems;
+    }
+
+    public String getCompletionMessage() {
+        return completionMessage;
+    }
+
     public String getId() {
         return id;
     }
@@ -95,5 +112,9 @@ public class SequencePuzzleData {
 
     public String getHint(int piece) {
         return hints.get(String.valueOf(piece));
+    }
+
+    public String getCompletionLock() {
+        return completionLock;
     }
 }
