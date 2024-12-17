@@ -35,7 +35,7 @@
 			* optional quest - The Mismatched Merchants
 			* meet Milo, a negotiator
 				* potential group member 3
-				* Whatever Milo's sisters name is and he teach the player how to haggle and scavenge, while offering hints about the city’s power structure and the strange artifacts that some survivors wield.
+				* Whatever Milo's sisters name is and he teach the player how to haggle and scavenge, while offering hints about the city's power structure and the strange artifacts that some survivors wield.
 			* no matter how the player secured the safe zone, the Watchers want it back.  the player must leave the region quickly
 				* if the player helped harv or is otherwise of good reputation, they are guided to cobbs creek and told to see a bookstore owner
 					* in this case, the journey takes 2 hours and little food
@@ -51,7 +51,7 @@
 			* tom bombadil in a bookstore
 				* walnut and 52
 			* the player is exhausted by constant fear
-			* “Fear will only keep you trapped. But you’ll learn.” The player witnesses the old survivor hiding rather than engaging
+			* “Fear will only keep you trapped. But you'll learn.” The player witnesses the old survivor hiding rather than engaging
 			* Survival here means hardening oneself, not by overcoming fear, but by embracing the indifference of those who have lived in the ruins longest
 			* main quest - forgotten refuge
 			* side quest - old neighborhood ties
@@ -62,11 +62,11 @@
 			* main - into the shattered depths
 			* optional - a shattered memory
 			* logan square - find the conveyance
-			* Within the museum, the player encounters an NPC who claims to be a historian of sorts, hoarding relics of the past. Through dialogue, the player learns fragmented tales of the city’s downfall, how the “magic” is just the city’s decaying power grid reanimating itself.
+			* Within the museum, the player encounters an NPC who claims to be a historian of sorts, hoarding relics of the past. Through dialogue, the player learns fragmented tales of the city's downfall, how the “magic” is just the city's decaying power grid reanimating itself.
 				* they talk like that 1 nosleep story, regularly breaking the fourth wall and making comments on spelling/the text format
 				* Transition to Region 5: The historian points toward FDR Park, hinting that the park hides dangerous secrets.
 				* given the fomorian, this is an act of malice
-			* Character Development: This experience deepens the player’s shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
+			* Character Development: This experience deepens the player's shift from fear to detachment. They see the city not as a monster, but as a hollow shell. The world begins to feel more like a decaying machine, something to endure rather than something to fear.
 			* Akkorokamui 
 		* Metalwoods
 			* this is another weird one -- it's a strategy level

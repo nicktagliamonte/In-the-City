@@ -8,10 +8,10 @@ Navigate through the maze by observing and timing the patterns of the electricit
 Details:
 
 Scattered throughout the maze are pools of water that conduct electrical surges from exposed wires in the twisted trees. The surges pulse at regular intervals, but certain pools pulse out of sync with the others.
-Near the entrance to the maze, there’s a note scrawled on a piece of metal scrap that says, “Watch the rhythm, and the way will unfold. Misstep, and you’ll become part of the woods.”
+Near the entrance to the maze, there's a note scrawled on a piece of metal scrap that says, “Watch the rhythm, and the way will unfold. Misstep, and you'll become part of the woods.”
 By paying close attention to the timing of the surges, the player can identify safe moments to cross between sections of the maze.
 Midway through the puzzle, they find a rusted metal lever half-buried in the ground. Pulling it allows them to control a few specific pools, diverting the current in them long enough to safely navigate the more challenging areas of the maze.
 Solution:
-The player has to carefully time their movements based on the patterns of the electrical surges, using the lever strategically to control some of the most dangerous pools as they progress. Once they navigate past the final pool and step onto safe ground, they’ll see the path ahead open up.
+The player has to carefully time their movements based on the patterns of the electrical surges, using the lever strategically to control some of the most dangerous pools as they progress. Once they navigate past the final pool and step onto safe ground, they'll see the path ahead open up.
 
 The player encounters the leather wallet in this section.

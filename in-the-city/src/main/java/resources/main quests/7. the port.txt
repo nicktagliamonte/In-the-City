@@ -1,7 +1,7 @@
 Main Quest: The Enchanted Alleys
-Objective: Explore Richmond’s maze-like alleyways to reach the Illusionist’s Den, where a powerful artifact is said to be hidden.
+Objective: Explore Richmond's maze-like alleyways to reach the Illusionist's Den, where a powerful artifact is said to be hidden.
 
-Quest Overview: The player hears rumors of a hidden “den” where an artifact lies, left behind by an eccentric illusionist. Reaching it requires navigating Richmond’s labyrinthine alleys, which are filled with playful illusions, shifting pathways, and magical graffiti that sometimes comes to life. The den itself is thought to hold a relic that grants a temporary boost in perception, invaluable for seeing through traps or illusions later in the game.
+Quest Overview: The player hears rumors of a hidden “den” where an artifact lies, left behind by an eccentric illusionist. Reaching it requires navigating Richmond's labyrinthine alleys, which are filled with playful illusions, shifting pathways, and magical graffiti that sometimes comes to life. The den itself is thought to hold a relic that grants a temporary boost in perception, invaluable for seeing through traps or illusions later in the game.
 
 IF YOU HAVE THE WALLET kitsune gives you a free hint
 
@@ -9,14 +9,14 @@ Quest Steps:
 
 Enter the Alleys:
 
-The player begins in Richmond’s market square and soon finds themselves in the alleys leading off from the main streets. The alleys seem ordinary at first but quickly take on a surreal quality, with graffiti that changes as the player moves, doors that appear and disappear, and shadows that seem to follow the player’s progress.
+The player begins in Richmond's market square and soon finds themselves in the alleys leading off from the main streets. The alleys seem ordinary at first but quickly take on a surreal quality, with graffiti that changes as the player moves, doors that appear and disappear, and shadows that seem to follow the player's progress.
 Solve the Graffiti Puzzles:
 
-The path to the Illusionist’s Den is marked by a series of graffiti murals that come to life, each holding a clue to the next step. Some murals are riddles, while others may require the player to trace certain symbols or perform gestures in response.
+The path to the Illusionist's Den is marked by a series of graffiti murals that come to life, each holding a clue to the next step. Some murals are riddles, while others may require the player to trace certain symbols or perform gestures in response.
 Example Puzzle: A mural depicts a hand holding a key, but only when the player raises their own hand to “match” the mural does a hidden doorway appear.
-Reach the Illusionist’s Den:
+Reach the Illusionist's Den:
 
-After solving several graffiti puzzles and navigating through increasingly surreal alleyways, the player reaches the Illusionist’s Den—a small, darkened space in the basement of an old gallery. Inside, they find the artifact: a small, enchanted lens that reveals hidden details, offering a temporary boost in perception.
-Outcome: Acquiring the lens gives the player an edge in navigating future regions, allowing them to better detect hidden paths, illusions, and other magical traps. This quest is a playful introduction to Richmond’s whimsical character and reinforces the region’s lighthearted approach to exploration.
+After solving several graffiti puzzles and navigating through increasingly surreal alleyways, the player reaches the Illusionist's Den—a small, darkened space in the basement of an old gallery. Inside, they find the artifact: a small, enchanted lens that reveals hidden details, offering a temporary boost in perception.
+Outcome: Acquiring the lens gives the player an edge in navigating future regions, allowing them to better detect hidden paths, illusions, and other magical traps. This quest is a playful introduction to Richmond's whimsical character and reinforces the region's lighthearted approach to exploration.
 
 it's light and easy.  no impact to the compass.

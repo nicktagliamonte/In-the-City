@@ -1,7 +1,7 @@
 Main Quest: The Quiet Refuge
 Objective: Establish an alliance or secure the area by driving out a rival faction to claim a safe haven.
 
-Quest Overview: The player hears rumors of an old underground bunker hidden beneath a former public library that served as a shelter during a prior crisis. The bunker, known as the Forgotten Refuge, is fortified and well-hidden, making it an ideal safe zone. However, it is currently controlled by a small group, who don’t welcome outsiders.
+Quest Overview: The player hears rumors of an old underground bunker hidden beneath a former public library that served as a shelter during a prior crisis. The bunker, known as the Forgotten Refuge, is fortified and well-hidden, making it an ideal safe zone. However, it is currently controlled by a small group, who don't welcome outsiders.
 
 The player has to decide between forming an alliance with the group or forcibly claiming the bunker as their own.
 
@@ -9,7 +9,7 @@ Quest Steps:
 
 Investigate the Refuge:
 
-The player learns from Nico about the Refuge and its potential as a safe zone. It’s located under the Cobbs Creek Library (a real present-day library), which has been converted into a makeshift headquarters by the group.
+The player learns from Nico about the Refuge and its potential as a safe zone. It's located under the Cobbs Creek Library (a real present-day library), which has been converted into a makeshift headquarters by the group.
 Engage with the group:
 
 Upon reaching the library, the player encounters the Nico, who details the quest (see npc.txt). 

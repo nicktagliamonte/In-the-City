@@ -147,8 +147,10 @@ public class Quest {
                 }
                 System.out.println(completionMessage);
                 giveRewards();
-                if (isPrimary) {
+                if (isPrimary && !isFinal) {
                     gameState.updateRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
+                } else if (isFinal) {
+                    gameState.credits();
                 }
             }
         }
@@ -157,13 +159,10 @@ public class Quest {
     public void giveRewards() {
         if ("complete".equals(status)) {
             if (isPrimary) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
-                gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
+                if (!isFinal) {
+                    System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
+                    gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
+                }                
             } else {
                 try {
                     Thread.sleep(15);

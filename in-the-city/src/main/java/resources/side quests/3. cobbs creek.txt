@@ -3,13 +3,13 @@ Location: cobbs creek
 Objective: Help an eccentric scavenger retrieve an item locked inside an old storage facility.
 
 Quest Overview
-While exploring the arch street, the player encounters an eccentric scavenger named Harv. Harv is known among survivors as a slightly unhinged collector of oddities and discarded treasures. He’s nervously guarding the door to an old, locked storage facility, muttering about "the golden can" hidden inside. Harv insists it’s a relic that could make him “rich beyond reason” and begs the player for help retrieving it, offering a share of whatever’s inside.
+While exploring the arch street, the player encounters an eccentric scavenger named Harv. Harv is known among survivors as a slightly unhinged collector of oddities and discarded treasures. He's nervously guarding the door to an old, locked storage facility, muttering about "the golden can" hidden inside. Harv insists it's a relic that could make him “rich beyond reason” and begs the player for help retrieving it, offering a share of whatever's inside.
 
 Quest Steps
 Speak with Harv
 
-The player talks to Harv, who goes on a rambling spiel about the “golden can.” He’s convinced it holds something of great value but admits he’s afraid to go in alone due to rumors of traps and aggressive scavengers who may be lying in wait.
-Option to Negotiate: Harv offers the player a 50/50 split of the loot but can be persuaded to increase their share through skillful dialogue, especially if the player’s Charisma or Wisdom is high.
+The player talks to Harv, who goes on a rambling spiel about the “golden can.” He's convinced it holds something of great value but admits he's afraid to go in alone due to rumors of traps and aggressive scavengers who may be lying in wait.
+Option to Negotiate: Harv offers the player a 50/50 split of the loot but can be persuaded to increase their share through skillful dialogue, especially if the player's Charisma or Wisdom is high.
 Enter the Storage Facility
 
 Once inside, the player finds the storage facility is dark and maze-like, with rows of crates and shelves blocking their line of sight. Signs of previous attempts to scavenge are evident: overturned boxes, broken glass, and a few scattered belongings hint at prior scuffles.
@@ -20,20 +20,20 @@ Environmental Hazards: The player encounters scattered hazards, such as broken g
 Other Scavengers: As the player moves deeper, they encounter a small group of scavengers. They can sneak past them, engage in combat, or attempt to bluff their way by claiming to be part of a scavenger faction.
 Locate the Golden Can
 
-After navigating the facility, the player finds the golden can on a dusty shelf, hidden among a pile of cans that have no apparent value. Upon inspection, the "golden can" is just a shiny, empty metal can—Harv’s prized “relic” is essentially worthless, though it appears to have sentimental value.
+After navigating the facility, the player finds the golden can on a dusty shelf, hidden among a pile of cans that have no apparent value. Upon inspection, the "golden can" is just a shiny, empty metal can—Harv's prized “relic” is essentially worthless, though it appears to have sentimental value.
 Decision Point
 
 Option A: Lie to Harv
 The player can return to Harv, embellish the story, and claim the can has mystical properties. Harv enthusiastically thanks the player and rewards them with some of his gathered supplies.
 Option B: Tell Harv the Truth
-The player tells Harv it’s just a plain can. Disappointed but grateful, he still gives them a small reward for their help, but he now mutters in disbelief about the "relic."
+The player tells Harv it's just a plain can. Disappointed but grateful, he still gives them a small reward for their help, but he now mutters in disbelief about the "relic."
 Option C: Keep the Can
 The player can decide to keep the can for themselves. If they do, Harv is disappointed and reluctantly gives them a portion of his supplies, all the while muttering about the “curse of the golden can.”
 Quest Rewards
-Option A (Lie): Harv rewards the player with some rare barter items, such as a ration pack and a medical kit, in exchange for making him believe in the can’s value. This also gives the player a sneak bonus used in the metalwoods
+Option A (Lie): Harv rewards the player with some rare barter items, such as a ration pack and a medical kit, in exchange for making him believe in the can's value. This also gives the player a sneak bonus used in the metalwoods
 Option B (Tell the Truth): Harv gives a lesser reward, such as scrap metal and a basic medkit.
 Option C (Keep the Can): If the player keeps the can, they receive extra resources from Harv, though they also carry an apparently worthless, shiny can in their inventory. (Later in the game, it could come in handy if the player encounters a superstitious NPC or a unique barter scenario.)
 Atmospheric Elements
-Harv’s Demeanor: Harv has an odd mix of hope and desperation, showing how the city’s harsh conditions have warped even basic values. His fixation on the can hints at a world where small things are blown out of proportion, reflecting the scarcity mindset.
-Storage Facility Details: The facility is dark, eerie, and claustrophobic, with barely any natural light filtering in. Each room feels like a trap waiting to be sprung, enhancing the game’s tense and adversarial atmosphere.
-NPC Reactions: After completing the quest, other scavengers occasionally comment about the “golden can,” treating Harv’s obsession with mild pity, as if they know he’s clinging to illusions in a broken world.
+Harv's Demeanor: Harv has an odd mix of hope and desperation, showing how the city's harsh conditions have warped even basic values. His fixation on the can hints at a world where small things are blown out of proportion, reflecting the scarcity mindset.
+Storage Facility Details: The facility is dark, eerie, and claustrophobic, with barely any natural light filtering in. Each room feels like a trap waiting to be sprung, enhancing the game's tense and adversarial atmosphere.
+NPC Reactions: After completing the quest, other scavengers occasionally comment about the “golden can,” treating Harv's obsession with mild pity, as if they know he's clinging to illusions in a broken world.

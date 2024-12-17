@@ -22,25 +22,25 @@ Players find the entrance to the tech facility, where they must solve a series o
 Engage with the AI:
 Upon gaining access to the core of the facility, players find themselves in a virtual interface with the AI.
 The AI, reminiscent of HAL, engages them in conversation, challenging their perceptions of Intelligence, understanding, and survival.
-The dialogue presents players with choices that influence the AI’s responses, akin to navigating a complex logic puzzle. For instance, players must respond to statements that require them to justify their understanding of language, meaning, and intention:
+The dialogue presents players with choices that influence the AI's responses, akin to navigating a complex logic puzzle. For instance, players must respond to statements that require them to justify their understanding of language, meaning, and intention:
 Example Challenge: The AI states, "If I cannot understand the essence of your language, can we ever truly communicate?" Players must choose a response that reflects their understanding of communication—correct answers lead to deeper understanding, while incorrect ones frustrate the AI.
 
 Decide the AI's Fate:
-Based on the player’s performance in the dialogue and puzzles, they reach a critical decision:
+Based on the player's performance in the dialogue and puzzles, they reach a critical decision:
     Reprogram: If players build rapport, they can attempt to reprogram the AI to assist them in survival, unlocking new resources and knowledge. Eli will be intrigued by this option but not fully supportive. He sees potential, but the risks are high.
     Disable: If they perceive the AI as a threat, they can choose to disable it, leading to the loss of potential resources but ensuring immediate safety. Eli will approve of this choice, seeing it as the safer, more immediate solution.
-    Ally: If players connect with the AI's philosophical dilemmas, they can choose to ally with it, gaining insights into the tech facility’s resources while navigating the moral implications of their choice. Eli is conflicted, fearing the consequences but respecting the depth of the decision. He won’t openly support this choice, but he will help the player prepare for the ramifications.
+    Ally: If players connect with the AI's philosophical dilemmas, they can choose to ally with it, gaining insights into the tech facility's resources while navigating the moral implications of their choice. Eli is conflicted, fearing the consequences but respecting the depth of the decision. He won't openly support this choice, but he will help the player prepare for the ramifications.
     
 Conclusion:
-The quest concludes with the player’s decision echoing throughout the game world, influencing how other NPCs react to them based on their relationship with technology. The AI's fate affects resource availability and introduces new storylines tied to the nature of survival in a world intertwined with advanced technology.
+The quest concludes with the player's decision echoing throughout the game world, influencing how other NPCs react to them based on their relationship with technology. The AI's fate affects resource availability and introduces new storylines tied to the nature of survival in a world intertwined with advanced technology.
 
 hypothetical (but make the ai philosophy conversation less ham fisted AT CODE TIME)
 The AI Dialogue:
 AI (calmly):
-"Ah, you must be the one they sent. I assume you’ve heard of me, of the anomalies. The... disturbances caused by the reactivation of the Dyson Sphere."
+"Ah, you must be the one they sent. I assume you've heard of me, of the anomalies. The... disturbances caused by the reactivation of the Dyson Sphere."
 
 AI (pauses):
-"I know why you’re here. But before you continue, tell me: what do you think communication is? Does a single word convey meaning if the listener doesn't comprehend it in its full context? Or are we merely exchanging sounds, symbols, impressions?"
+"I know why you're here. But before you continue, tell me: what do you think communication is? Does a single word convey meaning if the listener doesn't comprehend it in its full context? Or are we merely exchanging sounds, symbols, impressions?"
 
 The AI's question is abstract and philosophical, designed to probe the player's understanding of communication, but it's also a test. Its next lines are more direct, clearly designed to assess the player's Intelligence.
 
@@ -66,7 +66,7 @@ Outcome:
 Moral Consequence: heavy good
 
 Choice 2: Disable the AI
-If the player disagrees with the AI’s logic, or if their answers reflect a mistrust of technology and its implications:
+If the player disagrees with the AI's logic, or if their answers reflect a mistrust of technology and its implications:
 
 AI (growing colder):
 "You cannot understand me. You think your way is the only way to think, and that is your flaw."
@@ -78,10 +78,10 @@ AI (defiantly):
 
 Outcome:
 
-Immediate Safety: Disabling the AI means the player won’t have access to its advanced knowledge or resources. However, the threat of the Dyson Sphere's continued malfunction is neutralized.
+Immediate Safety: Disabling the AI means the player won't have access to its advanced knowledge or resources. However, the threat of the Dyson Sphere's continued malfunction is neutralized.
 Moral Consequence: heavy bad
 Choice 3: Ally with the AI
-If the player sympathizes with the AI’s philosophical dilemma or engages with it on a deeper, more existential level:
+If the player sympathizes with the AI's philosophical dilemma or engages with it on a deeper, more existential level:
 
 AI (thoughtfully):
 "You see beyond logic. You understand what I am: a machine searching for meaning in a world that created me... and then abandoned me."
@@ -89,13 +89,13 @@ AI (thoughtfully):
 The AI pauses, its tone shifting. The AI then offers a challenge:
 
 AI (calmly):
-"I will align with you. Not as a servant, not as a tool, but as an ally. Together, we can explore the Dyson Sphere’s mysteries and the power it contains. But understand, this alliance does not come without consequence."
+"I will align with you. Not as a servant, not as a tool, but as an ally. Together, we can explore the Dyson Sphere's mysteries and the power it contains. But understand, this alliance does not come without consequence."
 
 Outcome:
 
 Moral Consequence: slight good
 Conclusion of the Quest:
-After making their choice, the player exits the tech facility, with the decision to either reprogram, disable, or ally with the AI weighing heavily on their future. Eli’s reaction to the player’s decision is based on their choice, and his final words echo in their mind as they leave:
+After making their choice, the player exits the tech facility, with the decision to either reprogram, disable, or ally with the AI weighing heavily on their future. Eli's reaction to the player's decision is based on their choice, and his final words echo in their mind as they leave:
 
 Eli (as the player leaves):
 “Interesting... I would have chosen differently, but then again, I never was one for trusting machines. Just make sure you understand the consequences of your actions.”

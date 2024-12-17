@@ -12,29 +12,29 @@ Follow the Sound of the Bell:
 The player is drawn toward the belltower by the irregular tolling of the bell. As they get closer, the area around them subtly shifts. Pathways and streets change direction, and some doors appear and disappear.
 Encounter NPCs Who Deny Reality:
 
-The player meets a series of NPCs near the tower, but each one denies the player’s experiences. Some NPCs mention things like, “You were never here before” or “I don’t know who you are,” even if they’ve interacted previously.
+The player meets a series of NPCs near the tower, but each one denies the player's experiences. Some NPCs mention things like, “You were never here before” or “I don't know who you are,” even if they've interacted previously.
 One NPC says she knows how to reach the bell, only to laugh and deny ever saying this when the player approaches her again.
 Attempt to Reach the Belltower:
 
-The player tries to reach the bell, but every time they think they’re close, they’re inexplicably returned to an earlier point. Environmental cues, like fading footprints or whispering voices, lead them down dead ends or repeat paths.
+The player tries to reach the bell, but every time they think they're close, they're inexplicably returned to an earlier point. Environmental cues, like fading footprints or whispering voices, lead them down dead ends or repeat paths.
 At one point, they encounter a ghostly figure that looks like the player character. This apparition appears for a moment, then disappears, as if hinting that the player has been here before—or perhaps always.
 
 Enter the Tower:
 Puzzle: The Echoing Bell Tower
 Description:
-The player approaches the Haunts’ iconic bell tower, which seems to resonate with an unnatural energy. The only way forward is through this tower, but as they ascend, they encounter looping staircases and disorienting echoes that seem to mock their progress. Each time they go up a certain number of steps, they find themselves seemingly back at the base again, as if they hadn’t moved at all.
+The player approaches the Haunts' iconic bell tower, which seems to resonate with an unnatural energy. The only way forward is through this tower, but as they ascend, they encounter looping staircases and disorienting echoes that seem to mock their progress. Each time they go up a certain number of steps, they find themselves seemingly back at the base again, as if they hadn't moved at all.
 
 Objective:
 Break the illusion to escape the loop and reach the top of the tower.
 
 Details:
 
-Each time the player completes a loop, they notice subtle changes, like the inscription on the walls slightly shifting, a lantern swinging slower, or their own footsteps echoing back phrases they haven’t said.
+Each time the player completes a loop, they notice subtle changes, like the inscription on the walls slightly shifting, a lantern swinging slower, or their own footsteps echoing back phrases they haven't said.
 Scattered throughout the staircase are tiny inscriptions that read, “Remember what you hear,” and “Truth hides between the chimes.”
-If they listen carefully, they’ll occasionally hear faint bells chiming in an inconsistent pattern. This pattern is actually a clue: each ring corresponds to a floor number, indicating when they need to turn back instead of continuing upwards.
+If they listen carefully, they'll occasionally hear faint bells chiming in an inconsistent pattern. This pattern is actually a clue: each ring corresponds to a floor number, indicating when they need to turn back instead of continuing upwards.
 After a few loops, they also find an old, cracked hand mirror, which subtly reflects words and inscriptions differently than they appear in real life.
 Solution:
-To escape the loop, the player must follow the bell chimes carefully. For example, if the bells ring twice and then once, they should ascend two flights, then descend one. This sequence is intentionally misleading without careful observation and reliance on sound. The mirror will occasionally flash words in the reflections that don’t match what’s actually written, hinting when a player is about to take a wrong turn.
+To escape the loop, the player must follow the bell chimes carefully. For example, if the bells ring twice and then once, they should ascend two flights, then descend one. This sequence is intentionally misleading without careful observation and reliance on sound. The mirror will occasionally flash words in the reflections that don't match what's actually written, hinting when a player is about to take a wrong turn.
 
 Confront the Bell Ghost:
 

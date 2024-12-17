@@ -1,7 +1,7 @@
 Puzzle 1: The Mismatched Merchants
 In the ruins, the player encounters three merchants—each with a unique but overlapping set of resources that they are willing to barter. Each merchant has one essential item the player needs but will only trade under specific conditions.
 
-Setup: Each merchant has a description, one major item the player needs, and two or three additional items they’re willing to exchange, but each will only agree to a trade if the player has something specific or can meet a condition. For instance:
+Setup: Each merchant has a description, one major item the player needs, and two or three additional items they're willing to exchange, but each will only agree to a trade if the player has something specific or can meet a condition. For instance:
 
 Nora, Joyce, and Pearl are the quest givers.
 moirai? (research)
@@ -22,7 +22,7 @@ Trade Sequence:
 
 Step 1: Start with Merchant B.
 
-The player can trade their piece of technology for Merchant B’s fuel canister.
+The player can trade their piece of technology for Merchant B's fuel canister.
 Step 2: Next, go to Merchant A.
 
 Now, the player has food rations and the fuel canister. They can give these two items to Merchant A in exchange for the water purification tablet.

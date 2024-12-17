@@ -10,7 +10,7 @@
       "2": "The second number is 4."
     },
     "reward": 10,
-    "completionMessage": "You finish the puzzle. Opening it reveals nothing.",
+    "completionMessage": "You finish the puzzle. Inside is an invoice, detailing the exchange of people to someone named Robert.",
     "completionLock": "",
     "completionItems": []
   }

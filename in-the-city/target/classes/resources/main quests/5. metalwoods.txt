@@ -1,21 +1,21 @@
 Main Quest: Confronting the Fomorian
 Objective: Get out of FDR park without interacting with the fomorian.  or, kill him
 
-Quest Overview: The player’s goal is survival
+Quest Overview: The player's goal is survival
 
 Quest Steps:
 
 Enter the Metalwoods:
 
-As the player arrives, they feel the heightened danger almost immediately. Trails end suddenly in flooded ditches, trees twist around rusted machinery, and the air is thick with tension. Strange ripples in the lake suggest the monster’s presence.  see puzzle.txt, they go in and get stuck in the maze.  this is where they meet harlan.  harlan helps them out, but pulls towards the water
+As the player arrives, they feel the heightened danger almost immediately. Trails end suddenly in flooded ditches, trees twist around rusted machinery, and the air is thick with tension. Strange ripples in the lake suggest the monster's presence.  see puzzle.txt, they go in and get stuck in the maze.  this is where they meet harlan.  harlan helps them out, but pulls towards the water
 Scout for Safe Zones and Strategic Points:
 
-Scattered around the Metalwoods are small “safe” zones—campsites, overturned boats, or half-sunken shelters where the player can catch their breath. These aren’t truly safe, though, as the fomorian can detect movement if the player lingers too long.
+Scattered around the Metalwoods are small “safe” zones—campsites, overturned boats, or half-sunken shelters where the player can catch their breath. These aren't truly safe, though, as the fomorian can detect movement if the player lingers too long.
 Strategic Points: The player can set up traps or diversion items in certain areas to create escape routes, making their path easier if they have to flee from the monster.
 Avoid or Distract the fomorian:
 
 As the player approaches the Lake, the fomorian becomes more aggressive. It reacts to ripples in the water, sounds, and light. The player can use thrown objects, traps, or noise-makers to distract it temporarily, but each time they do, the creature grows more unpredictable.
-Decision Point: The player must choose to move slowly and stealthily or risk drawing the monster’s attention with quick dashes to cover.
+Decision Point: The player must choose to move slowly and stealthily or risk drawing the monster's attention with quick dashes to cover.
 
 stealth: slight good
 trickery: slight bad

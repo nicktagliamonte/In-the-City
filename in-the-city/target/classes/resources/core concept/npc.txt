@@ -18,12 +18,12 @@ the conveyance itself
         Personality: Quiet and reserved, they are focused on survival, always quick to trade but rarely offering much in conversation. They're pragmatic, neutral, and more interested in the value of things than the people around them.
         Background: Scavenging remnants of the past to get by in the present. No allegiance, no real goals—just living day by day.
     2. Benevolent Scavenger
-        Physical Appearance: A weathered yet kindly face with worn, protective clothing that seems to have been patched up many times. They carry a large satchel, filled with supplies and trinkets they’ve found.
-        Personality: Warm and generous, they’re quick to offer advice or a safe space to rest. They believe in helping others, even if it’s just with a kind word or a shared meal.
-        Background: A former medic or healer, the scavenger still tries to help those they encounter, sharing their found resources when possible. They’ve survived through compassion and ingenuity rather than conflict.
+        Physical Appearance: A weathered yet kindly face with worn, protective clothing that seems to have been patched up many times. They carry a large satchel, filled with supplies and trinkets they've found.
+        Personality: Warm and generous, they're quick to offer advice or a safe space to rest. They believe in helping others, even if it's just with a kind word or a shared meal.
+        Background: A former medic or healer, the scavenger still tries to help those they encounter, sharing their found resources when possible. They've survived through compassion and ingenuity rather than conflict.
     3. Mildly Adversarial Scavenger
         Physical Appearance: A scrappy, dirt-covered figure with a few weapons at hand. Their face has a sharp, distrustful edge.
-        Personality: Suspicious and calculating, they’ll deal with you, but only on their terms. Bargains are hard to strike with them, and they’re quick to point out any slight. While not openly hostile, they’re always on guard, ready to make a quick exit if things go south.
+        Personality: Suspicious and calculating, they'll deal with you, but only on their terms. Bargains are hard to strike with them, and they're quick to point out any slight. While not openly hostile, they're always on guard, ready to make a quick exit if things go south.
         Background: They've seen too many turn on them over the years, so they keep their distance. Every encounter feels like a test, but if you pass, they may throw you a bone—or maybe a few pieces of junk.
 3. Gameplay Elements
     Conversation Options: purely narrated.  region specific dialogue at time of code
@@ -40,8 +40,8 @@ the conveyance itself
     Location: All regions, random encounters
 2. Description
     Physical Appearance: A gaunt, ragged figure, their clothes in tatters and face covered with dirt. They may have makeshift weapons or tools, but they seem half-broken and barely functional. Their eyes are wide, desperate, and always scanning for an opportunity to survive.
-    Personality: Desperate and erratic, the Wanderer is prone to sudden outbursts or unpredictable behavior. They beg for help one moment and lash out the next. There’s a palpable sense of fear in everything they do, and a feeling that they have little to lose.
-    Background: A once hopeful survivor, they’ve been worn down by the harsh world around them. While they weren’t always like this, constant rejection, hunger, and the cruelty of the world have driven them to madness and desperation.
+    Personality: Desperate and erratic, the Wanderer is prone to sudden outbursts or unpredictable behavior. They beg for help one moment and lash out the next. There's a palpable sense of fear in everything they do, and a feeling that they have little to lose.
+    Background: A once hopeful survivor, they've been worn down by the harsh world around them. While they weren't always like this, constant rejection, hunger, and the cruelty of the world have driven them to madness and desperation.
 3. Gameplay Elements
     Conversation Options: "Please, just one more chance…" / "I don't want to hurt you, but I will if I have to!"
     Combat Stats: 1->9
@@ -50,7 +50,7 @@ the conveyance itself
     Reactions to Player Choices: pure fight or flight
     Schedules: Appears randomly, at night
 5. Notes and Variations
-    Flavor Text: "You don’t understand... I need this. Just a little more…"
+    Flavor Text: "You don't understand... I need this. Just a little more…"
     Variation:
         In Dead Zone, the Wanderer is simply a pitiful shell of someone trying to survive.
         In arch street, the Wanderer has a few rags of valuable goods, but is more aggressive and tries to haggle or trade, though poorly.
@@ -81,8 +81,8 @@ Combat Stats:
 5. Notes and Variations
     Flavor Text: "They have shown you to me..." / "You will not escape judgment."
     Variation:
-        In the art museum, the Acolyte’s attacks become more elaborate and dangerous, using a variety of magic that influences the environment (e.g., twisting gravity or summoning dark shadows).
-        Across all regions, the Acolyte’s demeanor remains the same, though their power becomes progressively more potent as they get stronger.
+        In the art museum, the Acolyte's attacks become more elaborate and dangerous, using a variety of magic that influences the environment (e.g., twisting gravity or summoning dark shadows).
+        Across all regions, the Acolyte's demeanor remains the same, though their power becomes progressively more potent as they get stronger.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
     Name: Highwayman
@@ -104,7 +104,7 @@ Combat Stats:
         cliffs: 2d8 damage (advanced, dangerous strategies with a mix of firearms, traps, and direct assault).
         Endgame: 2d10 damage (the highest level of combat proficiency, involving expert tactics and powerful weaponry, including grenades and specialized weaponry).4. Behavior and AI
     Movement/Behavior: The Highwayman appears suddenly between levels when the player transitions from one area to another. They may show up at random moments as the player prepares to enter a new region, often interrupting their journey with a surprise attack. They will never be encountered in a particular region itself, but only when the player moves between stages. They will always approach with the intent to steal from the player or kill them if they resist.
-    Reactions to Player Choices: The Highwayman will not entertain dialogue or reasoning. If the player tries to talk or beg for mercy, they will scoff and attack without hesitation. However, if the player successfully fights them off or manages to escape, they may taunt the player after the encounter ("Enjoy your victory, it won’t last long").
+    Reactions to Player Choices: The Highwayman will not entertain dialogue or reasoning. If the player tries to talk or beg for mercy, they will scoff and attack without hesitation. However, if the player successfully fights them off or manages to escape, they may taunt the player after the encounter ("Enjoy your victory, it won't last long").
     Schedules: Highwaymen only appear between regions, when the player is transitioning to a new area. The encounter chance increases as the game progresses, making their attacks more frequent, especially in later stages.
 =================================================================================================================================================================================================================================================================================================================================
 1. Shopkeeper
@@ -114,8 +114,8 @@ Location: Appears in safe zones or economic zones across various regions.
 
 2. Description
 Physical Appearance: The Shopkeeper wears practical, weathered clothing, often with a thick apron over it, full of pockets and tools. They carry a small satchel of wares and their storefront is typically packed with crates and shelves stacked with a variety of scavenged goods. Their face is kind but worn, and they may have spectacles perched on their nose.
-Personality: Friendly and pragmatic, the Shopkeeper is a staple of survival. They may joke or chat casually, offering small talk to lighten the mood. Despite the harsh world outside, they have a sense of normalcy about them, often reminding the player that “there’s always something you need” or “nothing like a good bargain.”
-Background: The Shopkeeper likely found their calling as a merchant after the fall of society, relying on trade to stay alive. They might have been a storeowner, a merchant, or simply someone with the foresight to gather supplies for bartering. Whatever their past, they’ve made a living out of keeping the survivors going.
+Personality: Friendly and pragmatic, the Shopkeeper is a staple of survival. They may joke or chat casually, offering small talk to lighten the mood. Despite the harsh world outside, they have a sense of normalcy about them, often reminding the player that “there's always something you need” or “nothing like a good bargain.”
+Background: The Shopkeeper likely found their calling as a merchant after the fall of society, relying on trade to stay alive. They might have been a storeowner, a merchant, or simply someone with the foresight to gather supplies for bartering. Whatever their past, they've made a living out of keeping the survivors going.
 
 3. Gameplay Elements
 Conversation Options: “What can I get for you today?” / “Got some good stuff here, take a look.” / “Looking for something specific?”
@@ -139,10 +139,10 @@ Location: Safe zones or hidden caches of first aid supplies across regions.
 2. Description
 Physical Appearance: The Medic wears a simple but functional outfit—usually a worn jumpsuit with a medical kit strapped to their waist. Their clothing might show signs of repairs, and they often wear gloves and a utility belt full of tools. They may have a kind face, but the wear of constant survival shows in their demeanor.
 Personality: Calm and compassionate, the Medic is a natural caretaker. They speak with a soothing tone, offering advice, medical services, or comfort. They may have a weary outlook on the world but remain determined to help others.
-Background: The Medic was likely once a trained healthcare professional, now serving as a lifeline for those who survive in the wasteland. Whether a former doctor, nurse, or paramedic, the Medic’s skills are invaluable, and their goal is to save lives and maintain health in a broken world.
+Background: The Medic was likely once a trained healthcare professional, now serving as a lifeline for those who survive in the wasteland. Whether a former doctor, nurse, or paramedic, the Medic's skills are invaluable, and their goal is to save lives and maintain health in a broken world.
 
 3. Gameplay Elements
-Conversation Options: “You look like you could use a patch-up.” / “Got some first aid supplies here.” / “It’s always good to have someone on your side.”
+Conversation Options: “You look like you could use a patch-up.” / “Got some first aid supplies here.” / “It's always good to have someone on your side.”
 Bartering Options: Sells medical supplies, including healing potions, bandages, antidotes, and health boosters. Some Medics may also offer healing services, restoring a portion of health for a fee.
 Combat Stats: None. They are non-combatants.
 
@@ -161,8 +161,8 @@ Location: Economic zones
 
 2. Description
 Physical Appearance: The Engineer typically wears a utility jumpsuit or overalls, often adorned with various tools like wrenches, screwdrivers, and circuit-testing devices. Their hands and face may be smudged with grease or dirt, evidence of their constant tinkering. They often wear protective goggles or glasses perched on their forehead.
-Personality: The Engineer is highly focused, often speaking in technical jargon or excitedly explaining their latest project. They are a bit scatterbrained but have a strong desire to fix or create things. Their energy and enthusiasm for mechanics or technology are contagious, even if the player doesn’t understand all the details.
-Background: Once an engineer or mechanic before the world’s collapse, this character survived by using their expertise to maintain or create useful technology. They have a vast knowledge of old tech and are always eager to share that knowledge—if the player can find them or afford their services.
+Personality: The Engineer is highly focused, often speaking in technical jargon or excitedly explaining their latest project. They are a bit scatterbrained but have a strong desire to fix or create things. Their energy and enthusiasm for mechanics or technology are contagious, even if the player doesn't understand all the details.
+Background: Once an engineer or mechanic before the world's collapse, this character survived by using their expertise to maintain or create useful technology. They have a vast knowledge of old tech and are always eager to share that knowledge—if the player can find them or afford their services.
 
 3. Gameplay Elements
 Conversation Options: “I can fix that for you, just need the right parts.” / “Need help with anything mechanical?”
@@ -170,7 +170,7 @@ Bartering Options: Trades in mechanical parts, tools, and equipment upgrades. Ca
 Combat Stats: None. They are non-combatants.
 
 4. Behavior and AI
-Movement/Behavior: The Engineer remains in or near workshops or areas with mechanical equipment. They usually don’t move unless there is a major task they’re working on.
+Movement/Behavior: The Engineer remains in or near workshops or areas with mechanical equipment. They usually don't move unless there is a major task they're working on.
 Reactions to Player Choices: If the player brings damaged or broken equipment, the Engineer will offer to repair it for a fee or materials. They may also refuse service if the player is rude or doesn't have the right parts.
 Schedules: Found in tech-heavy zones or when the player needs repairs. They may not be found in hostile or wilderness zones.
 
@@ -185,11 +185,11 @@ Location: Randomly appears in safe zones or hidden corners of the world.
 
 2. Description
 Physical Appearance: The Drifter has a rugged, worn appearance, with tattered clothes and a weather-beaten face. Their pack is heavy, filled with a variety of odd trinkets, maps, and scavenged items. They may carry a walking stick or a weapon for protection, but they seem more like a wanderer than a fighter.
-Personality: Friendly and curious, the Drifter is often a person of few words but has a wealth of stories to share. They can be cryptic or philosophical, offering advice or lore from their travels. They don’t stay in one place long and often speak of their desire to move on.
+Personality: Friendly and curious, the Drifter is often a person of few words but has a wealth of stories to share. They can be cryptic or philosophical, offering advice or lore from their travels. They don't stay in one place long and often speak of their desire to move on.
 Background: The Drifter is someone who has seen the world and its tragedies, and now they travel the wasteland seeking purpose or simply to survive. They are often loners who wander from place to place, collecting stories and experiences. Some may be former historians or travelers, while others are simply survivors without any particular home.
 
 3. Gameplay Elements
-Conversation Options: “Seen a lot in my travels, but never this place.” / “I can tell you some tales if you’ve got the time.” (they'll discuss specific items if pressed)
+Conversation Options: “Seen a lot in my travels, but never this place.” / “I can tell you some tales if you've got the time.” (they'll discuss specific items if pressed)
 Bartering Options: none, they just talk
 =================================================================================================================================================================================================================================================================================================================================
 
@@ -213,7 +213,7 @@ Bartering Options: none, they just talk
 2. arch street - Grifter
     Role: Negotiation-based enemy (Deceptive Merchant)
     Location: In the abandoned market district of the arch street.
-    Description: A slick, opportunistic character who uses charm and persuasion to deceive. The Grifter deals in counterfeit items and promises false deals, preying on the player’s desperation. Their appearance is flashy but disheveled, wearing a mix of rags and stolen luxury goods.
+    Description: A slick, opportunistic character who uses charm and persuasion to deceive. The Grifter deals in counterfeit items and promises false deals, preying on the player's desperation. Their appearance is flashy but disheveled, wearing a mix of rags and stolen luxury goods.
     Behavior: Actively tries to con the player into a bad deal, offering seemingly great trades but eventually leading to disadvantageous outcomes. Can be reasoned with or exposed if the player has good negotiation skills.
     Adversarial: If the player refuses or catches on, they may become aggressive or flee.
     Dialogue Options:
@@ -222,7 +222,7 @@ Bartering Options: none, they just talk
     Role: Hermit (Does not want anything to do with you)
     Location: Remote, isolated area in Cobbs Creek.
     Description: A solitary figure, living far from any society. Their appearance is wild, often unkempt and dressed in rags, their face obscured by long hair or a hood. They carry little to no belongings.
-    Behavior: The Hermit doesn’t want to engage with anyone, often either ignoring or shooing the player away. They are uninterested in trade, conversation, or assistance. They might mutter cryptic phrases but offer nothing useful.
+    Behavior: The Hermit doesn't want to engage with anyone, often either ignoring or shooing the player away. They are uninterested in trade, conversation, or assistance. They might mutter cryptic phrases but offer nothing useful.
 =================================================================================================================================================================================================================================================================================================================================
 4. art museum - Cultist
     Role: Cultist (Adversarial)
@@ -235,7 +235,7 @@ Bartering Options: none, they just talk
     Role: Dryad (Neutral, Ent-like, in Pain)
     Location: The deep, enchanted forests of the Metalwoods.
     Description: An ancient, tree-like being whose body is intertwined with the forest. The Dryad is a living tree spirit, rooted to the land, but clearly suffering—its bark cracked and leaves withered.
-    Behavior: The Dryad is neutral, offering information on the forest's strange ecology but is too weakened to fully communicate. It will ask for help in healing or understanding the forest’s strange affliction.
+    Behavior: The Dryad is neutral, offering information on the forest's strange ecology but is too weakened to fully communicate. It will ask for help in healing or understanding the forest's strange affliction.
 =================================================================================================================================================================================================================================================================================================================================
 6. liacouras - Phantom
     Role: Phantom (Vaguely Benevolent)
@@ -247,13 +247,13 @@ Bartering Options: none, they just talk
     Role: Busker (Benevolent but Kinda Grifty)
     Location: The whimsical, lively waterfront areas of the port.
     Description: A street performer, often playing an instrument or performing tricks for an audience. The Busker is a cheerful, scrappy individual who lives off tips and entertainment. Their clothing is colorful but worn, and their performance is often upbeat, though they may ask for more than they're owed.
-    Behavior: Benevolent but somewhat opportunistic, the Busker might offer songs or performances that boost the player’s morale or provide hints about the region’s secrets. They’ll ask for a donation or trade in return, though they may ask for more than the player is willing to give.
+    Behavior: Benevolent but somewhat opportunistic, the Busker might offer songs or performances that boost the player's morale or provide hints about the region's secrets. They'll ask for a donation or trade in return, though they may ask for more than the player is willing to give.
     Adversarial or Friendly: If the player refuses to give a tip or trade, the Busker may become more persistent or try to trick the player into giving.
 =================================================================================================================================================================================================================================================================================================================================
 8. edge of the world - Watcher
     Role: Watcher (Neutral, Dreamlike)
     Location: The surreal cliffs, dreamlike atmosphere of the edge of the world.
-    Description: A tall, thin figure, barely more than a silhouette, with eyes that shimmer like stars. The Watcher seems to exist out of time, their body often flickering in and out of focus as if they’re not entirely present in the physical world.
+    Description: A tall, thin figure, barely more than a silhouette, with eyes that shimmer like stars. The Watcher seems to exist out of time, their body often flickering in and out of focus as if they're not entirely present in the physical world.
     Behavior: Neutral, enigmatic, and dreamlike. The Watcher observes the player from a distance, offering cryptic words and occasionally guiding them toward hidden paths or important locations. Their advice often seems nonsensical but may reveal hidden truths.
     Adversarial or Friendly: The Watcher may react to player decisions, sometimes guiding them, other times remaining distant or offering challenges in the form of riddles or tasks.
 =================================================================================================================================================================================================================================================================================================================================
@@ -261,8 +261,8 @@ Bartering Options: none, they just talk
     Role: Generic NPC modeled on the player themselves
     Location: The eerie halls of City Hall, near the center of the city.
     Description: This NPC is a direct reflection of the player, from their appearance to their mannerisms. However, this version of the player seems to have been altered in subtle ways—perhaps slightly more worn, more jaded, or with a strange aura about them.
-    Behavior: The Player Doppelgänger mimics the player’s previous decisions but with a different spin. They may speak in a way that feels familiar but off, asking questions or making statements that prompt reflection. They might offer the player information, quests, or even challenges that force the player to confront their own choices.
-    Adversarial or Friendly: They are neutral but have the potential to become more confrontational if the player interacts too closely with them. The Doppelgänger might try to sway the player’s decisions, tempting them to take paths they otherwise would not.
+    Behavior: The Player Doppelgänger mimics the player's previous decisions but with a different spin. They may speak in a way that feels familiar but off, asking questions or making statements that prompt reflection. They might offer the player information, quests, or even challenges that force the player to confront their own choices.
+    Adversarial or Friendly: They are neutral but have the potential to become more confrontational if the player interacts too closely with them. The Doppelgänger might try to sway the player's decisions, tempting them to take paths they otherwise would not.
 
  /$$$$$$$                      /$$                               /$$                                 /$$     /$$                 /$$                     /$$                     /$$
 | $$__  $$                    |__/                              | $$                                | $$    | $$                | $$                    |__/                    | $$
@@ -281,17 +281,17 @@ Origin: Scandinavian Folklore (Nordic)
 
 Appearance:
 
-Form: Appears as a tall, slender woman with features that feel both human and otherworldly. She wears an old, tattered version of a nun's habit that’s stained and worn, the fabric seeming to blend with the environment of St. Jerome's—crumbling walls, forgotten classrooms, and dim hallways.
+Form: Appears as a tall, slender woman with features that feel both human and otherworldly. She wears an old, tattered version of a nun's habit that's stained and worn, the fabric seeming to blend with the environment of St. Jerome's—crumbling walls, forgotten classrooms, and dim hallways.
 Eyes: Her eyes are hollow, reflecting dark shadows and flickering light, suggesting an entity not fully bound by the rules of the physical world.
 Hair: Long and untamed, almost like tangled roots of an ancient tree, darkened with age and grime.
-Voice: A low, soothing whisper that’s occasionally distorted, echoing as though it were heard from across time.
+Voice: A low, soothing whisper that's occasionally distorted, echoing as though it were heard from across time.
 Role and Purpose:
 The Skogsrå, an ancient guardian spirit of the forest in Nordic mythology, has adapted its role to the urban environment of the Dead Zone. Here, she haunts St. Jerome's, a dilapidated Catholic school that once served the community but now is filled with long-forgotten, unsettling memories. The entity represents a twisted guardian of the space—protecting the school, and possibly its dark secrets, from the player's curiosity. Her role is one of dissuasion and prevention.
 
 Behavior:
 
 Neutral yet Adversarial: She is not outwardly malicious but does not tolerate intruders in certain areas of the school. Her warning is quiet but chilling, and she will use her presence to dissuade the player from venturing into certain forbidden parts of the school.
-Obliged to Protect: Her motivation is to keep the darker parts of St. Jerome’s hidden—perhaps because they house something dangerous, unsettling, or tied to the city's tragic past.
+Obliged to Protect: Her motivation is to keep the darker parts of St. Jerome's hidden—perhaps because they house something dangerous, unsettling, or tied to the city's tragic past.
 Advisory: She will occasionally offer cryptic advice or even hints about safe areas, but if the player insists on trying to access the restricted parts of the school, she may manifest to block their path, subtly manipulating the environment (dim lights, unnatural sounds) to guide them away.
 Interactions:
 
@@ -312,13 +312,13 @@ If the player listens to her warnings, she may offer brief moments of guidance, 
 Special Events:
 
 Encounters:
-Early Stage: The Skogsrå is merely a whisper at the edges of the player’s experience, a shadowy presence that gives off an unsettling vibe without fully materializing. She might subtly guide the player away from certain classrooms or hallways.
+Early Stage: The Skogsrå is merely a whisper at the edges of the player's experience, a shadowy presence that gives off an unsettling vibe without fully materializing. She might subtly guide the player away from certain classrooms or hallways.
 Mid-Stage: As the player explores deeper into the school, the Skogsrå becomes more assertive, blocking hallways or distorting time, making it harder to access restricted areas.
-Late Stage: At the height of the player’s exploration, she may physically manifest in the player’s path, warning them in a cold, foreboding voice. The Skogsrå’s actions will become more aggressive if the player continues to push toward the darkest corners of the school. Her power grows as the player’s curiosity reaches its peak.
+Late Stage: At the height of the player's exploration, she may physically manifest in the player's path, warning them in a cold, foreboding voice. The Skogsrå's actions will become more aggressive if the player continues to push toward the darkest corners of the school. Her power grows as the player's curiosity reaches its peak.
 Notes:
 
-Skogsrå as Protector: In Nordic folklore, the Skogsrå is a protector of the forest, often guiding travelers away from danger. In this urbanized setting, the entity continues this role, guarding the secrets of the school and ensuring the dark, hidden corners of St. Jerome’s stay undisturbed.
-Symbolism of the Past: The Skogsrå embodies the school’s painful past, as a place that’s seen too much, heard too many whispered prayers, and witnessed the darkness of both a religious institution and the city’s decline. She is as much a guardian of its history as she is a spirit of sorrow and caution.
+Skogsrå as Protector: In Nordic folklore, the Skogsrå is a protector of the forest, often guiding travelers away from danger. In this urbanized setting, the entity continues this role, guarding the secrets of the school and ensuring the dark, hidden corners of St. Jerome's stay undisturbed.
+Symbolism of the Past: The Skogsrå embodies the school's painful past, as a place that's seen too much, heard too many whispered prayers, and witnessed the darkness of both a religious institution and the city's decline. She is as much a guardian of its history as she is a spirit of sorrow and caution.
 =================================================================================================================================================================================================================================================================================================================================
 arch street - Hermes
 Creature: Hermes
@@ -327,15 +327,15 @@ Origin: Greek Mythology
 Appearance:
 
 Form: A slick, fast-talking figure in a worn-out suit, shoes scuffed, with a perpetual smirk. His wings, once proud on his sandals, are now rusted and patched with makeshift fabric, still allowing for occasional flares of speed. His eyes are sharp, filled with quick wit, and his demeanor is ever-changing, shifting between charm and mischief.
-Attributes: Carrying an old briefcase, filled with trinkets, broken tech, and symbols of forgotten commerce. His movements are quick, like a street vendor who’s always looking for the next deal.
+Attributes: Carrying an old briefcase, filled with trinkets, broken tech, and symbols of forgotten commerce. His movements are quick, like a street vendor who's always looking for the next deal.
 Role and Purpose:
-Hermes serves as the embodiment of commerce and negotiation in the arch street. He's a trickster, a dealer, and an intermediary between the remnants of the old world’s economy and the survivors of the new world. His purpose is to barter information and items, but always at a price, often leading to manipulation or deceit.
+Hermes serves as the embodiment of commerce and negotiation in the arch street. He's a trickster, a dealer, and an intermediary between the remnants of the old world's economy and the survivors of the new world. His purpose is to barter information and items, but always at a price, often leading to manipulation or deceit.
 
 Behavior:
 
 Neutral yet Manipulative: Hermes is not inherently malicious, but he thrives in the art of deals and negotiations, always finding a way to manipulate the player for his own benefit.
 Advisory: Offers information about the market, but in exchange for a “small fee”—whether in the form of barter, favors, or risks.
-Constant Movement: He’s never still, always negotiating with one character or shifting between areas in search of his next deal.
+Constant Movement: He's never still, always negotiating with one character or shifting between areas in search of his next deal.
 Interactions:
 
 Dialogue Options:
@@ -344,7 +344,7 @@ tbd at code time
 Personality:
 
 Charming and Wily: Hermes is smooth-talking, often switching between flattery, persuasion, and subtle threats. He always seems to know a bit more than he lets on.
-Cunning: He’s a master of making deals that benefit him and knows how to leverage any piece of information or item the player has.
+Cunning: He's a master of making deals that benefit him and knows how to leverage any piece of information or item the player has.
 Behavior and AI:
 
 Movement: Always shifting through the arch street, engaging with survivors, scavengers, and the player at random intervals. His physical presence is fleeting, like a shadow in the market, always appearing when least expected.
@@ -365,14 +365,14 @@ Stribog is a harbinger of change, embodying the force of nature that shifts the 
 
 Behavior:
 
-Neutral yet Powerful: Stribog’s interactions are unpredictable. He may appear as a figure of guidance during times of uncertainty or as a terrifying force of nature when the player is too far from their path.
+Neutral yet Powerful: Stribog's interactions are unpredictable. He may appear as a figure of guidance during times of uncertainty or as a terrifying force of nature when the player is too far from their path.
 Occasional Guidance: Offers cryptic advice about fate, change, and the inevitable course of events. He may warn the player of impending danger or of the winds shifting toward something unforeseen.
-Subtle Influence: Stribog doesn’t directly interfere in the player’s journey, but his presence causes shifts in the environment—winds grow colder, the air thickens, and distant sounds shift as though the city is alive, waiting.
+Subtle Influence: Stribog doesn't directly interfere in the player's journey, but his presence causes shifts in the environment—winds grow colder, the air thickens, and distant sounds shift as though the city is alive, waiting.
 Interactions:
 dialogue tbd
 Personality:
 
-Mysterious and Unpredictable: Stribog’s demeanor is calm, like a breeze that belies a coming storm. He speaks in riddles or metaphors, often hinting at the deeper forces of nature, fate, or the world around the player.
+Mysterious and Unpredictable: Stribog's demeanor is calm, like a breeze that belies a coming storm. He speaks in riddles or metaphors, often hinting at the deeper forces of nature, fate, or the world around the player.
 Detached: He remains emotionally distant, with no particular allegiance to the player, their cause, or their survival. His nature is indifferent to individual lives, seeing the bigger picture of the changing world.
 Behavior and AI:
 
@@ -395,16 +395,16 @@ Akkorokamui is a creature of deep, ancient power, dwelling in the remnants of a 
 Behavior:
 
 Imposing and Unstoppable: Akkorokamui is a passive yet terrifying force. Its very presence distorts reality and space around it, causing the environment to shift and break down. Its movements are erratic, as if the boundaries of reality and the physical world no longer have any control over it.
-Oblivious to the Player’s Presence: While it poses a constant threat, Akkorokamui never directly targets the player. Instead, it creates an oppressive atmosphere, shifting the environment as it passes by. Areas around its presence may collapse or become submerged in shadowy water, and some corridors or rooms are warped into unnatural forms, echoing the creature's divine indifference to the players' existence.
+Oblivious to the Player's Presence: While it poses a constant threat, Akkorokamui never directly targets the player. Instead, it creates an oppressive atmosphere, shifting the environment as it passes by. Areas around its presence may collapse or become submerged in shadowy water, and some corridors or rooms are warped into unnatural forms, echoing the creature's divine indifference to the players' existence.
 Special Abilities:
 
-Reality Distortion: Akkorokamui’s presence distorts time and space in the art museum. Rooms may warp into endless corridors or vanish entirely. Hallways may collapse, or once accessible locations become suddenly impassable.
-Water and Mist Manipulation: The creature’s form is tied to water and oceanic elements, and as it moves, it brings with it a creeping tide of mist or water that coats the environment. The mist makes it harder for the player to see, and the water makes the ground slick, requiring cautious movement to avoid falling or slipping.
+Reality Distortion: Akkorokamui's presence distorts time and space in the art museum. Rooms may warp into endless corridors or vanish entirely. Hallways may collapse, or once accessible locations become suddenly impassable.
+Water and Mist Manipulation: The creature's form is tied to water and oceanic elements, and as it moves, it brings with it a creeping tide of mist or water that coats the environment. The mist makes it harder for the player to see, and the water makes the ground slick, requiring cautious movement to avoid falling or slipping.
 Movement/Behavior:
 
 Akkorokamui moves unpredictably through the art museum, appearing without warning and passing through walls or floors as if it is part of the very structure itself. There is no way to anticipate its path; players may only sense its approach when the environment begins to shift, mist grows heavier, and the walls seem to breathe in and out.
-As the player nears its territory, a low hum or distant, guttural sound may be heard, reminiscent of an ocean’s depths or thunder breaking on the horizon.
-It does not attack directly but creates an overwhelming sense of danger by altering the world itself, pushing the player to react with caution. The player may need to find ways to circumvent the creature’s influence or wait for its passage.
+As the player nears its territory, a low hum or distant, guttural sound may be heard, reminiscent of an ocean's depths or thunder breaking on the horizon.
+It does not attack directly but creates an overwhelming sense of danger by altering the world itself, pushing the player to react with caution. The player may need to find ways to circumvent the creature's influence or wait for its passage.
 Notes:
 
 Primordial Chaos: Akkorokamui embodies the concept of the unyielding chaos of the natural world. It does not seek to destroy the player directly, but its mere existence unsettles the world. It is a manifestation of the uncontrollable forces of nature and the collapse of reality.
@@ -418,7 +418,7 @@ Role: Boss Enemy (Adversarial)
 Location: Deep within the Metalwoods, near a vast, murky lake formed by a flooded ruin. The water is dark and stagnant, with overgrown trees reaching into the depths.
 Description
 
-Physical Appearance: The Fomorian’s body is a grotesque blend of waterlogged, decaying flesh and rusted metal. Its towering frame seems to shift and ripple like the surface of a disturbed lake. It has a hulking, aquatic shape with long, webbed limbs that appear as though they have been fused with the remains of old industrial machinery. Its skin is slick and reflective, like oily water, with barnacles, moss, and kelp growing along its limbs. One of its eyes is a murky, water-filled orb, while the other is covered in algae and rust, giving it a half-blind appearance. Its mouth, when it opens, reveals jagged teeth like broken coral, and its body exudes an aura of dampness and decay.
+Physical Appearance: The Fomorian's body is a grotesque blend of waterlogged, decaying flesh and rusted metal. Its towering frame seems to shift and ripple like the surface of a disturbed lake. It has a hulking, aquatic shape with long, webbed limbs that appear as though they have been fused with the remains of old industrial machinery. Its skin is slick and reflective, like oily water, with barnacles, moss, and kelp growing along its limbs. One of its eyes is a murky, water-filled orb, while the other is covered in algae and rust, giving it a half-blind appearance. Its mouth, when it opens, reveals jagged teeth like broken coral, and its body exudes an aura of dampness and decay.
 Personality: The Fomorian is a cold, calculating predator, moving through its domain with eerie, waterborne grace. It is an ancient entity, a guardian of a drowned world, driven by a primal desire to protect its domain from any who would enter. The Fomorian is not easily provoked into speech, and when it does communicate, its voice is a gurgling, deep rumble, as if spoken underwater.
 Background: Once a powerful guardian of an ancient city built by beings who sought to harness the power of both nature and water, the Fomorian was transformed into a creature of nightmares when the floodwaters overtook its realm. Now, it serves as the last sentinel of the submerged ruins, preventing anyone from trespassing into the depths of the Metalwoods' waterlogged heart. A mix of ancient magic and forgotten technology binds the Fomorian to the site, making it a nearly unstoppable force.
 Gameplay Elements
@@ -435,7 +435,7 @@ Wisdom (WIS): 16 (excellent perception, senses disturbances in the water)
 Charisma (CHA): 7 (monstrous presence, intimidating)
 Armor Class (AC): 18 (thick, barnacle-encrusted hide and rusted armor)
 Speed: 30 ft (slow on land but faster in water, can move between watery areas with ease)
-Detection Skill: 18 (exceptionally skilled at detecting the player’s movements, especially near water)
+Detection Skill: 18 (exceptionally skilled at detecting the player's movements, especially near water)
 Abilities:
 
 Tidal Wave Strike: The Fomorian slams its massive fist into the ground, summoning a wall of water that surges toward the player, causing 1d20 damage and knocking them back.
@@ -443,16 +443,16 @@ Corrosive Vortex: A spinning vortex of water and rust forms around the Fomorian,
 Waterlogged Tendrils: The Fomorian summons watery tendrils that extend from the lake to ensnare the player, slowing them and dealing 1d8 damage per turn. These tendrils also have the chance to drown the player if they fail a check.
 Flooding Surge: The Fomorian can flood the immediate area, raising the water level and limiting the player's mobility. This reduces movement speed by 50% and deals 1d6 damage every turn the player remains in the water.
 Regeneration (Aquatic): The Fomorian regenerates 15 HP every 30 seconds as long as it is submerged in water or near a water source. This healing is tied to the environment and becomes much faster in flooded areas.
-Rusted Wrath: When the Fomorian’s health drops below 30%, it enters a frenzy state, rapidly attacking with corrosive water-infused strikes that deal 2d12 damage per hit and can break the player’s defense.
+Rusted Wrath: When the Fomorian's health drops below 30%, it enters a frenzy state, rapidly attacking with corrosive water-infused strikes that deal 2d12 damage per hit and can break the player's defense.
 Behavior and AI
 
-Movement/Behavior: The Fomorian patrols its waterlogged domain, moving slowly on land but using the flooded areas to move faster. It reacts to player disturbances by emitting a low rumble beneath the water’s surface before surfacing to engage the player. Once it detects the player, it relentlessly pursues them, using its water-based abilities to corner or drown them.
+Movement/Behavior: The Fomorian patrols its waterlogged domain, moving slowly on land but using the flooded areas to move faster. It reacts to player disturbances by emitting a low rumble beneath the water's surface before surfacing to engage the player. Once it detects the player, it relentlessly pursues them, using its water-based abilities to corner or drown them.
 Reactions to Player Choices: The Fomorian does not speak, and its behavior is purely driven by its desire to protect the submerged realm. If the player attempts to sneak past or use stealth, the Fomorian's detection abilities will likely lead to an immediate confrontation. Once engaged, it fights with overwhelming aggression.
-Detection: The Fomorian’s senses are attuned to the water, able to detect any ripple or sound. The player can try to hide or move slowly, but attempting to engage or make noise in the water risks alerting the creature to their presence. The creature has a heightened detection skill in flooded environments, especially near pools or waterlogged areas.
+Detection: The Fomorian's senses are attuned to the water, able to detect any ripple or sound. The player can try to hide or move slowly, but attempting to engage or make noise in the water risks alerting the creature to their presence. The creature has a heightened detection skill in flooded environments, especially near pools or waterlogged areas.
 Notes and Variations
 
 Flavor Text: "The water churns with its anger..." / "The depth of the lake is where it thrives."
-Variation: The Fomorian’s abilities change when it is submerged in deeper water. If the player is fighting it near a large body of water, the creature will adapt its attacks, utilizing the surrounding environment more efficiently (e.g., summoning water creatures, pulling the player underwater).
+Variation: The Fomorian's abilities change when it is submerged in deeper water. If the player is fighting it near a large body of water, the creature will adapt its attacks, utilizing the surrounding environment more efficiently (e.g., summoning water creatures, pulling the player underwater).
 =================================================================================================================================================================================================================================================================================================================================
 Chaneque - The Unseen Mimic (liacouras)
 Basic Information
@@ -462,7 +462,7 @@ Role: Unbeatable Monster (Adversarial, Psychological Threat)
 Location: liacouras – in the crumbling, mist-laden alleys and abandoned buildings around the old campus, it hides in the shadows, waiting for its next victim.
 Description
 
-Physical Appearance: The Chaneque is a shape-shifting entity, initially appearing as a human figure, but one that constantly shifts in subtle ways, never fully solid. Its form is a distorted silhouette, cloaked in tattered garments that flicker between different colors and textures, as if its skin is constantly mutating. Its eyes, however, are the same: black pools that reflect the player’s fear. When the Chaneque takes the form of a specific person or object, it mimics the essence of its target, but with a slight, uncanny distortion. A voice that seems a little too distant. A shadow too long.
+Physical Appearance: The Chaneque is a shape-shifting entity, initially appearing as a human figure, but one that constantly shifts in subtle ways, never fully solid. Its form is a distorted silhouette, cloaked in tattered garments that flicker between different colors and textures, as if its skin is constantly mutating. Its eyes, however, are the same: black pools that reflect the player's fear. When the Chaneque takes the form of a specific person or object, it mimics the essence of its target, but with a slight, uncanny distortion. A voice that seems a little too distant. A shadow too long.
 Personality: The Chaneque is manipulative, playful in a sinister way. It does not speak with words, but instead communicates through visual and auditory illusions, leading the player to believe they are interacting with something familiar. It feeds off the confusion and fear of its victims, taking particular pleasure in causing them to question their own senses. It does not attack directly, instead preferring to toy with the player, keeping them disoriented and vulnerable.
 Background: Born from an ancient, chaotic force that distorts reality and perception, the Chaneque has existed in the underbelly of urban spaces for centuries. It has no true form, no singular identity, and preys on those who stray too far from the safe zones. It lurks in the heart of liacouras, manipulating the world around it and trapping the player in loops of false perception. Its presence is more a psychological and existential threat than a physical one.
 Gameplay Elements
@@ -478,21 +478,21 @@ Intelligence (INT): 18 (Highly intelligent, manipulative, and perceptive)
 Wisdom (WIS): 14 (Clever, uses psychological tactics to disorient)
 Charisma (CHA): 20 (Its deceptive charisma is what draws in the player)
 Speed: Variable (Can move instantly between shadows or appear unexpectedly)
-Detection Skill: 30 (Highly perceptive of the player’s location and intentions)
+Detection Skill: 30 (Highly perceptive of the player's location and intentions)
 Abilities:
 
 Mimicry: The Chaneque can assume the form of anyone or anything that the player has encountered before, but always with a slight difference. It will use this ability to lure the player deeper into its traps, with the player unable to trust anything they see or hear.
 Deceptive Presence: The Chaneque creates an aura of distortion, subtly warping reality around the player. This ability can cause the player to misinterpret their environment, such as seeing safe zones as dangerous or vice versa, or hearing voices that aren't really there.
 Ethereal Drift: The Chaneque can briefly phase out of reality, making it untouchable. It may briefly vanish from view, only to reappear in a different location.
-Illusory Pursuit: When the player attempts to flee or take refuge, the Chaneque can create illusions of a nearby enemy or barrier, increasing the player’s panic and forcing them to continue moving or make reckless decisions.
-Disorienting Call: The Chaneque can emit a low, eerie hum or call that manipulates the player’s perception, causing dizziness, confusion, or a temporary blurring of the player’s vision.
-Hallucination: Over time, the Chaneque will begin to distort the player’s senses so much that it becomes difficult to tell what is real. Objects may seem to move or change position, doors may lead to the wrong places, or the player may suddenly find themselves in a place they've already visited, but something is off.
+Illusory Pursuit: When the player attempts to flee or take refuge, the Chaneque can create illusions of a nearby enemy or barrier, increasing the player's panic and forcing them to continue moving or make reckless decisions.
+Disorienting Call: The Chaneque can emit a low, eerie hum or call that manipulates the player's perception, causing dizziness, confusion, or a temporary blurring of the player's vision.
+Hallucination: Over time, the Chaneque will begin to distort the player's senses so much that it becomes difficult to tell what is real. Objects may seem to move or change position, doors may lead to the wrong places, or the player may suddenly find themselves in a place they've already visited, but something is off.
 Trapped in the Haunt: If the player stays in its domain for too long, the Chaneque can lock them in a loop of its own making, trapping them in a never-ending maze of illusions. This will eventually cause the player to lose all sense of direction or even reality, succumbing to madness.
 Behavior and AI
 
 Movement/Behavior: The Chaneque moves fluidly and unpredictably. It does not chase the player, but it constantly reappears in places where they do not expect it. It manipulates the environment to force the player into making decisions that lead them deeper into its control. The player might try to escape, but the path they choose often turns out to be the wrong one, with the entity already waiting.
 Reactions to Player Choices: If the player chooses to attack or confront the Chaneque, they will be further disoriented. It will not engage in combat, but instead use their aggression to lead them into more dangerous areas, trapping them in its maze of illusions.
-Schedules: The Chaneque is always present in liacouras, but it does not always manifest directly. It may remain passive for a time, only to suddenly show up when the player’s guard is down, using its mimicry to surprise them.
+Schedules: The Chaneque is always present in liacouras, but it does not always manifest directly. It may remain passive for a time, only to suddenly show up when the player's guard is down, using its mimicry to surprise them.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
 Name: Ashi
@@ -504,7 +504,7 @@ Physical Appearance: A lithe, agile fox with a sleek coat that shifts between co
 
 Personality: Yua is an enigmatic, playful trickster with a keen mind and a sharp wit. Though she aids the player with genuine intent, she enjoys playful misdirection and clever riddles to test their problem-solving skills. Her telepathic speech is warm, slightly teasing, and filled with cryptic undertones, leaving the player wondering if she knows more than she lets on.
 
-Background: Known as a guardian of lost secrets and technological wonders, Yua is said to have roamed the port long before the city’s fall. She is both a guide and a gatekeeper, appearing to those who show a blend of Intelligence, curiosity, and respect for the old ways. Her motives are unclear, but her assistance has turned the tide in many desperate situations.
+Background: Known as a guardian of lost secrets and technological wonders, Yua is said to have roamed the port long before the city's fall. She is both a guide and a gatekeeper, appearing to those who show a blend of Intelligence, curiosity, and respect for the old ways. Her motives are unclear, but her assistance has turned the tide in many desperate situations.
 
 3. Gameplay Elements
 Interactions:
@@ -513,7 +513,7 @@ Telepathic Speech
 Ally Abilities: uses “Mirage Blink” to evade or create decoys, can teleport the team
 Combat Stats: High dexterity and Intelligence; abilities include evasion, magical foxfire attacks, and limited healing through ethereal charms.
 4. Behavior and AI
-Movement/Behavior: Yua prowls gracefully, staying just out of reach until needed. She’s quick to dart into unseen corners, occasionally appearing atop crumbling structures as a watchful presence.
+Movement/Behavior: Yua prowls gracefully, staying just out of reach until needed. She's quick to dart into unseen corners, occasionally appearing atop crumbling structures as a watchful presence.
 Reactions to Player Choices: Will remain loyal to thoughtful and observant players but may withdraw (though not turn hostile) if recklessness becomes a pattern.
 =================================================================================================================================================================================================================================================================================================================================
 Asterius - The Minotaur (edge of the world) TODO: replace
@@ -526,7 +526,7 @@ Description
 
 Physical Appearance: Asterius is a towering creature, half-man, half-beast, with the body of a muscular human and the head of a bull. His fur is matted and weathered, blending with the jagged, rocky terrain of the cliffs. His horns curve upwards like ancient spires, and his eyes, though humanoid, gleam with an unsettling Intelligence. His form is a ghostly silhouette against the backdrop of the broken city, looming yet passive, seemingly lost in thought or roaming aimlessly.
 Personality: Asterius is quiet, solitary, and indifferent to the player. He moves with a slow, deliberate pace, often appearing to be deep in contemplation or following some ancient, unknown path. His demeanor suggests a creature that has seen countless years, with little concern for the happenings around him. There is an aura of melancholy around him, as though he carries the weight of an impossible past and is condemned to wander in silence.
-Background: Asterius is an ancient entity, a remnant of a forgotten time. Legend has it that he was once a protector or guardian of the edge of the world, but the region's collapse and ruin have left him with little purpose. He is not a creature of vengeance or hostility, but rather one of quiet mourning and reflection. The exact cause of his existence is unclear, but he may have been cursed or bound to the cliffs long ago. He represents both the decay and the endurance of ancient forces, unable to escape the region’s relentless erosion.
+Background: Asterius is an ancient entity, a remnant of a forgotten time. Legend has it that he was once a protector or guardian of the edge of the world, but the region's collapse and ruin have left him with little purpose. He is not a creature of vengeance or hostility, but rather one of quiet mourning and reflection. The exact cause of his existence is unclear, but he may have been cursed or bound to the cliffs long ago. He represents both the decay and the endurance of ancient forces, unable to escape the region's relentless erosion.
 Gameplay Elements
 
 Interactions:
@@ -534,12 +534,12 @@ Minimal Interactivity: The player cannot engage Asterius in combat, nor can they
 Behavior and AI
 
 Movement/Behavior: Asterius moves slowly through the region, particularly near the edges of the cliffs or among the ruins of the old estates. He appears to be wandering aimlessly, with no clear destination. His path is erratic, as though he is lost in his own thoughts or memories, though he never ventures into the more dangerous or inaccessible areas of the cliffs.
-Reactions to Player Choices: Asterius does not react to the player's actions. He will not acknowledge the player’s presence unless the player comes very close, and even then, he will only continue on his way without change in his behavior.
-Schedules: Asterius is always present in the edge of the world but only appears in certain locations and during certain times of day. His movements are slow and aimless, and he can be found at various locations depending on the player’s progress through the area.
+Reactions to Player Choices: Asterius does not react to the player's actions. He will not acknowledge the player's presence unless the player comes very close, and even then, he will only continue on his way without change in his behavior.
+Schedules: Asterius is always present in the edge of the world but only appears in certain locations and during certain times of day. His movements are slow and aimless, and he can be found at various locations depending on the player's progress through the area.
 Notes and Variations
 
 Flavor Text: "The great bull-man lingers, his steps heavy yet silent on the broken ground. He pays no heed to those who pass, his eyes lost in the distance."
-Variation: Asterius’s appearance is more pronounced at certain times of the day, particularly during twilight or stormy weather. His silhouette becomes a more prominent feature against the shifting, chaotic backdrop of the edge of the world.
+Variation: Asterius's appearance is more pronounced at certain times of the day, particularly during twilight or stormy weather. His silhouette becomes a more prominent feature against the shifting, chaotic backdrop of the edge of the world.
 Special Events: There are no major events or interactions with Asterius. He is purely a passive, atmospheric presence. However, the player may encounter him at different points, perhaps as a visual or emotional anchor that connects the shattered landscape with the ancient world that once was.
 =================================================================================================================================================================================================================================================================================================================================
 Jörmungandr - The World Serpent (endgame)
@@ -554,15 +554,15 @@ Physical Appearance: Jörmungandr manifests as an immense serpent, its scaled bo
 Personality: Jörmungandr is not an entity bound by typical personality traits. It represents chaos, destruction, and the inevitable cycle of time. It does not speak or communicate directly but emanates a presence of imminent annihilation. Its movements reflect the cyclical nature of existence and the apocalypse that it embodies.
 Gameplay Elements
 
-Interactions: Jörmungandr cannot be directly confronted or defeated. The player’s interactions are largely limited to navigating the challenges of the final region, where the serpent’s presence looms overhead. The player must avoid direct confrontation and instead focus on completing the final sequence, unraveling the last threads of the loop.
+Interactions: Jörmungandr cannot be directly confronted or defeated. The player's interactions are largely limited to navigating the challenges of the final region, where the serpent's presence looms overhead. The player must avoid direct confrontation and instead focus on completing the final sequence, unraveling the last threads of the loop.
 Behavior and AI
 
-Movement/Behavior: Jörmungandr’s body shifts and coils around the region, its movements representing the collapse of time and space. While it is impossible to interact with it directly, its mere presence distorts reality, causing temporal anomalies and altering the environment around the player. The serpent’s path seems predestined, marking the closing of the loop.
-Reactions to Player Choices: Jörmungandr does not react to player choices in a conventional sense. It serves as a constant, unchanging force, one that drives the finality of the player’s journey.
+Movement/Behavior: Jörmungandr's body shifts and coils around the region, its movements representing the collapse of time and space. While it is impossible to interact with it directly, its mere presence distorts reality, causing temporal anomalies and altering the environment around the player. The serpent's path seems predestined, marking the closing of the loop.
+Reactions to Player Choices: Jörmungandr does not react to player choices in a conventional sense. It serves as a constant, unchanging force, one that drives the finality of the player's journey.
 Notes and Variations
 
 Flavor Text: "The World Serpent watches, its eyes filled with the endless depths of time. The loop is nearing its end, and with it, the crushing weight of inevitable destruction."
-Special Events: Jörmungandr’s full impact is felt during the final moments of the game, as the cycle closes. It is both the cause and the effect of the final sequence, its presence symbolizing the closure of the story.
+Special Events: Jörmungandr's full impact is felt during the final moments of the game, as the cycle closes. It is both the cause and the effect of the final sequence, its presence symbolizing the closure of the story.
 
   /$$$$$$  /$$ /$$ /$$                    
  /$$__  $$| $$| $$|__/                    
@@ -588,7 +588,7 @@ Special: Stealth Bonus (Increased ability to remain undetected by enemies)
 =================================================================================================================================================================================================================================================================================================================================
 arch street - Gina
 Class: Negotiator
-Description: Partner to your negotiator party member here; knows every trader by name, a skilled barterer, and dead-set on avoiding her sibling’s knack for bad deals.
+Description: Partner to your negotiator party member here; knows every trader by name, a skilled barterer, and dead-set on avoiding her sibling's knack for bad deals.
 Combat Stats:
 Health: 130
 Strength (STR): 8
@@ -601,7 +601,7 @@ Special: Persuasion Mastery (Improved negotiation, can reduce enemy aggression)
 =================================================================================================================================================================================================================================================================================================================================
 cobbs creek - Quill
 Class: Survivalist
-Description: A silent tracker who despises the stribog for reasons they don’t discuss; can see in the darkest alleyways but is nearly incapacitated by daylight.
+Description: A silent tracker who despises the stribog for reasons they don't discuss; can see in the darkest alleyways but is nearly incapacitated by daylight.
 Combat Stats:
 Health: 140
 Strength (STR): 14
@@ -614,7 +614,7 @@ Special: Night Vision (Can see perfectly in darkness, advantage on stealth and t
 =================================================================================================================================================================================================================================================================================================================================
 art museum - Ersa
 Class: Technologist
-Description: Disguised as a cultist, Ersa’s fascination with the mystical art museum borders on obsession, believing they’ve uncovered secrets no one else understands.
+Description: Disguised as a cultist, Ersa's fascination with the mystical art museum borders on obsession, believing they've uncovered secrets no one else understands.
 Combat Stats:
 Health: 150
 Strength (STR): 10
@@ -653,7 +653,7 @@ Special: Trap Master (Can set traps for enemies and detect hidden traps in the e
 =================================================================================================================================================================================================================================================================================================================================
 the port - Kitsune (Yumi, Ashi, or Rika)
 Class: Technologist
-Description: Playful and cunning, this kitsune blends tech with enchantments, frequently selling useful magical “gadgets” that don’t always work as intended.
+Description: Playful and cunning, this kitsune blends tech with enchantments, frequently selling useful magical “gadgets” that don't always work as intended.
 Combat Stats:
 Health: 190
 Strength (STR): 12
@@ -666,7 +666,7 @@ Special: Illusion (Can create brief, disorienting illusions to mislead enemies o
 =================================================================================================================================================================================================================================================================================================================================
 edge of the world - Finn
 Class: Negotiator
-Description: An odd bird with a keen sense for reading people; Finn is both an expert negotiator and a bit of a wanderer, drawn to the cliffs for reasons even he can’t quite explain.
+Description: An odd bird with a keen sense for reading people; Finn is both an expert negotiator and a bit of a wanderer, drawn to the cliffs for reasons even he can't quite explain.
 Combat Stats:
 Health: 200
 Strength (STR): 14
@@ -746,17 +746,17 @@ Role: Party Member (Survivalist)
 Location: Dead Zone
 
 Description:
-Jack is a practical, no-nonsense character who thrives in the harsh world of the ruins. He’s in his mid-30s, with a rugged, weathered appearance that reflects his experience. His clothes are a patchwork of scavenged materials, with a few items that look like they’ve been carefully crafted to serve specific purposes. His face is etched with the wear of many difficult days, and his eyes reflect a quiet determination. Jack doesn’t speak much, preferring actions to words, but when he does, it’s often to offer advice or share knowledge about the dangerous world around him. He’s fiercely loyal, and while he doesn't show his emotions outwardly, his actions speak volumes.
+Jack is a practical, no-nonsense character who thrives in the harsh world of the ruins. He's in his mid-30s, with a rugged, weathered appearance that reflects his experience. His clothes are a patchwork of scavenged materials, with a few items that look like they've been carefully crafted to serve specific purposes. His face is etched with the wear of many difficult days, and his eyes reflect a quiet determination. Jack doesn't speak much, preferring actions to words, but when he does, it's often to offer advice or share knowledge about the dangerous world around him. He's fiercely loyal, and while he doesn't show his emotions outwardly, his actions speak volumes.
 
-Jack’s expertise lies in survival and finding shelter in the most unexpected places. He’s a scavenger, adept at using whatever the ruined world offers to help him stay alive. He knows of shortcuts through the city and can guide the player through areas where danger lurks, all while remaining undetected. Despite his gruff nature, Jack has a deep sense of honor, and once you earn his trust, he becomes a reliable ally, always looking out for the player’s safety.
+Jack's expertise lies in survival and finding shelter in the most unexpected places. He's a scavenger, adept at using whatever the ruined world offers to help him stay alive. He knows of shortcuts through the city and can guide the player through areas where danger lurks, all while remaining undetected. Despite his gruff nature, Jack has a deep sense of honor, and once you earn his trust, he becomes a reliable ally, always looking out for the player's safety.
 
 Combat Stats: Survivalist standard
 
 Special Abilities:
 Tactical Hide: Can blend into the environment to avoid detection for a short time.
-Scavenger’s Instinct: Can spot hidden shelters, supplies, or shortcuts, giving the player advantages in navigating dangerous areas.
+Scavenger's Instinct: Can spot hidden shelters, supplies, or shortcuts, giving the player advantages in navigating dangerous areas.
 Behavior and AI:
-Movement/Behavior: Jack is often seen scouting ahead, crouching low or moving silently through environments. He’s practical in combat, preferring to strike quickly and quietly, avoiding prolonged fights.
+Movement/Behavior: Jack is often seen scouting ahead, crouching low or moving silently through environments. He's practical in combat, preferring to strike quickly and quietly, avoiding prolonged fights.
 Reactions to Player Choices: Jack is generally quiet but will offer a warning or practical advice if the player engages in reckless behavior or takes unnecessary risks.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
@@ -765,9 +765,9 @@ Role: Technologist
 Location: Dead Zone
 
 2. Description
-Physical Appearance: Olivia has a wiry frame, perpetually smudged hands from tinkering with old tech, and wears a patchwork coat with sewn-in gadgets and pockets. Her goggles, which she’s almost never without, have cracked lenses and hidden enhancements.
+Physical Appearance: Olivia has a wiry frame, perpetually smudged hands from tinkering with old tech, and wears a patchwork coat with sewn-in gadgets and pockets. Her goggles, which she's almost never without, have cracked lenses and hidden enhancements.
 
-Personality: Olivia embodies the relentless curiosity of a true technologist, treating every mechanical or arcane discovery as a puzzle to be solved. She’s both brilliant and absent-minded, prone to mumbling theories or incantation-like calculations under her breath. Her intellect gives her an air of aloofness, and she often overlooks basic social norms when engrossed in her work. Though confident in her knowledge, Olivia is aware of the dangers that come with tampering with unknown tech and approaches situations with cautious excitement.
+Personality: Olivia embodies the relentless curiosity of a true technologist, treating every mechanical or arcane discovery as a puzzle to be solved. She's both brilliant and absent-minded, prone to mumbling theories or incantation-like calculations under her breath. Her intellect gives her an air of aloofness, and she often overlooks basic social norms when engrossed in her work. Though confident in her knowledge, Olivia is aware of the dangers that come with tampering with unknown tech and approaches situations with cautious excitement.
 
 Background: Raised in the fringes of the Dead Zone, Olivia grew up scavenging parts from old ruins and picking up stray bits of arcane knowledge from forgotten manuals and broken relics. Her studies have made her a walking contradiction—both rational and superstitious, blending mechanical expertise with mysticism.
 
@@ -779,7 +779,7 @@ Conversation Options: Offers cryptic but insightful advice, often veiled in wiza
 Combat Stats: Technologist standard
 
 Specializes in ranged energy-based attacks that mimic spells. Capable of disarming traps or hacking old machinery to turn the tide in battle.
-Unique abilities: "Shock Pulse" (AOE energy burst), "Holo-Construct" (creates a temporary decoy), and "Overclock" (increases party’s speed briefly).
+Unique abilities: "Shock Pulse" (AOE energy burst), "Holo-Construct" (creates a temporary decoy), and "Overclock" (increases party's speed briefly).
 4. Behavior and AI
 Movement/Behavior: Frequently pauses to inspect nearby objects or mutters to herself while tweaking gadgets mid-movement.
 Reactions to Player Choices: Becomes animated when the player shows interest in tech or old-world lore but can seem distant if the player prioritizes brute force over intellect.
@@ -792,11 +792,11 @@ Role: Party Member (Negotiator)
 Location: arch street
 
 Description:
-Milo is a master of words, a smooth talker who always finds the silver lining in any situation. He’s charming, well-dressed, and carries himself with a confident swagger that makes others gravitate toward him. Despite his polished appearance, there’s a certain wildness in his eyes—he’s been through a lot, but he knows how to navigate the chaos using his wit and charm. Milo has a natural ability to read people, discerning their intentions in the blink of an eye. He sees every encounter as a potential deal to be struck, always working to find a win-win situation, even if it’s a little tilted in his favor.
+Milo is a master of words, a smooth talker who always finds the silver lining in any situation. He's charming, well-dressed, and carries himself with a confident swagger that makes others gravitate toward him. Despite his polished appearance, there's a certain wildness in his eyes—he's been through a lot, but he knows how to navigate the chaos using his wit and charm. Milo has a natural ability to read people, discerning their intentions in the blink of an eye. He sees every encounter as a potential deal to be struck, always working to find a win-win situation, even if it's a little tilted in his favor.
 
-His ability to negotiate is unmatched, and he’s a valuable asset when dealing with merchants, enemies, or anyone who has something worth trading. However, his tendency to trust people a little too much can sometimes leave him at a disadvantage, and there’s a part of him that is constantly trying to outsmart the world around him, even if it means occasionally being swindled himself.
+His ability to negotiate is unmatched, and he's a valuable asset when dealing with merchants, enemies, or anyone who has something worth trading. However, his tendency to trust people a little too much can sometimes leave him at a disadvantage, and there's a part of him that is constantly trying to outsmart the world around him, even if it means occasionally being swindled himself.
 
-Milo’s motivation lies in making sure he always has something to offer. He’s a survivor at heart, and though his charming demeanor can disarm most, his quick thinking and silver tongue make him a formidable ally in both social and combat situations.
+Milo's motivation lies in making sure he always has something to offer. He's a survivor at heart, and though his charming demeanor can disarm most, his quick thinking and silver tongue make him a formidable ally in both social and combat situations.
 
 Combat Stats: Negotiator standard
 
@@ -804,7 +804,7 @@ Special Abilities:
 Silver Tongue: Can charm or persuade NPCs to give better prices, reveal secrets, or avoid combat.
 Sleight of Hand: Occasionally steals items unnoticed, which can be useful for obtaining needed resources or causing distractions.
 Behavior and AI:
-Reactions to Player Choices: He’s quick to suggest diplomatic solutions to conflicts and will encourage the player to use persuasion or negotiation over violence. However, if the player engages in outright aggression, he’ll often try to find a more peaceful resolution, even if it’s risky.
+Reactions to Player Choices: He's quick to suggest diplomatic solutions to conflicts and will encourage the player to use persuasion or negotiation over violence. However, if the player engages in outright aggression, he'll often try to find a more peaceful resolution, even if it's risky.
 
                                            /$$                     /$$                                        
                                           | $$                    |__/                                        
@@ -825,22 +825,22 @@ Location: arch street
 2. Description
 Physical Appearance:
 
-Nora: Wears flowing garments of muted grey, blending seamlessly into the misty atmosphere of the arch street. Her kind eyes and soft, lined face convey warmth, though there’s a guarded wariness in her gaze.
+Nora: Wears flowing garments of muted grey, blending seamlessly into the misty atmosphere of the arch street. Her kind eyes and soft, lined face convey warmth, though there's a guarded wariness in her gaze.
 Joyce: Also clad in grey, with a distinctive shock of white hair that falls over her face, partially obscuring her wide, restless eyes. She is slight in build, often hunching her shoulders and fidgeting with her hands. Joyce is the most skittish of the trio, constantly glancing over her shoulder as if expecting a sudden interruption.
-Pearl: Dressed in layers of white streaked with patches of brown and grey, reminiscent of dappled stone or a bird’s plumage. Her movements are sharp, and she has an alert expression, with eyes that seem to miss nothing. Pearl’s fingers are always in motion, sorting through her satchel or rearranging small trinkets.
+Pearl: Dressed in layers of white streaked with patches of brown and grey, reminiscent of dappled stone or a bird's plumage. Her movements are sharp, and she has an alert expression, with eyes that seem to miss nothing. Pearl's fingers are always in motion, sorting through her satchel or rearranging small trinkets.
 Personality:
 
-Nora: The most approachable and warm, Nora greets newcomers with a small, welcoming smile. She speaks in a gentle, measured tone, but there's a hint of caution in her words, as if she’s seen too much to ever truly let her guard down.
-Joyce: Quiet and easily startled, Joyce often lets Nora or Pearl do the talking. When she does speak, it’s in short, halting phrases. She shifts from foot to foot and avoids prolonged eye contact, giving her a perpetually uneasy demeanor.
+Nora: The most approachable and warm, Nora greets newcomers with a small, welcoming smile. She speaks in a gentle, measured tone, but there's a hint of caution in her words, as if she's seen too much to ever truly let her guard down.
+Joyce: Quiet and easily startled, Joyce often lets Nora or Pearl do the talking. When she does speak, it's in short, halting phrases. She shifts from foot to foot and avoids prolonged eye contact, giving her a perpetually uneasy demeanor.
 Pearl: The most enigmatic, Pearl is talkative and sharp, her words laced with dry humor. She enjoys teasing those who approach the trio and takes pleasure in observing reactions, sometimes pushing boundaries with her cryptic comments.
-Behavioral Quirk: The trio maintains their triangular formation, subtly shifting whenever they speak. They share a unified sentiment toward Douglas, the cat, punctuating their conversations with remarks like, “Hi! I hate that cat,” or “That furball’s got mischief in its eyes again.”
+Behavioral Quirk: The trio maintains their triangular formation, subtly shifting whenever they speak. They share a unified sentiment toward Douglas, the cat, punctuating their conversations with remarks like, “Hi! I hate that cat,” or “That furball's got mischief in its eyes again.”
 
 3. Gameplay Elements
 Interactions:
 
-Nora’s Task: She requires the player to locate an old, sentimental object (e.g., a silver locket) that belonged to someone important. Once presented with this, she hands over an item needed for the next exchange.
-Pearl’s Task: Pearl, with her quick, darting movements, insists the player trade something rare or cleverly hidden—something that involves solving a riddle or finding a hidden compartment within the ruins.
-Joyce’s Task: Holds the final, critical item the player needs but will only part with it once she sees the item obtained from Pearl. Her skittish nature means she may hesitate before finally handing it over, muttering nervously.
+Nora's Task: She requires the player to locate an old, sentimental object (e.g., a silver locket) that belonged to someone important. Once presented with this, she hands over an item needed for the next exchange.
+Pearl's Task: Pearl, with her quick, darting movements, insists the player trade something rare or cleverly hidden—something that involves solving a riddle or finding a hidden compartment within the ruins.
+Joyce's Task: Holds the final, critical item the player needs but will only part with it once she sees the item obtained from Pearl. Her skittish nature means she may hesitate before finally handing it over, muttering nervously.
 =================================================================================================================================================================================================================================================================================================================================
 1. Basic Information
 Name: Nico
@@ -852,7 +852,7 @@ Physical Appearance: Nico has a lean, wiry frame, with unkempt grey hair that ha
 His hands are steady but stained with ink and oil, remnants of his meticulous note-taking and mechanical tinkering. He is rarely without a lit pipe
 
 Personality: Nico is distant and aloof, speaking as though his thoughts are the only truths that matter. His speech is deliberate, marked by long pauses as if to ensure every word is precise and layered with meaning. 
-He assumes others follow his train of thought, often jumping to complex conclusions without explanation. Nico is dismissive of sentiments or small talk, waving them away as distractions from more significant issues. There’s an undeniable intensity to him—a radical, unyielding focus on his beliefs that leaves no room for compromise.
+He assumes others follow his train of thought, often jumping to complex conclusions without explanation. Nico is dismissive of sentiments or small talk, waving them away as distractions from more significant issues. There's an undeniable intensity to him—a radical, unyielding focus on his beliefs that leaves no room for compromise.
 
 Background: Once an esteemed professor known for groundbreaking theories in mathematics, Nico's role in the creation of the dyson sphere led him to reject the world he created. His isolation deepened as society crumbled, and he embraced radical ideas, 
 convinced that the chaos around him was the natural consequence of overlooked patterns. Now, Nico clings to his solitude and studies, treating any intrusion as a nuisance unless it aligns with his own rigid worldview.
@@ -878,15 +878,15 @@ Location: the port, wandering near the docks and warehouses
 2. Description
 Physical Appearance: Rusty is a small, humanoid figure made of mismatched, cracked clay and metal fragments. His form appears rough and unfinished, with dull seams running through his body. His face is static and expressionless, with eyes that flicker like dying embers, giving him a hollow, unsettling presence.
 
-Personality: Rusty’s speech is simple but overly literal and to the point, often missing nuance or context. He speaks in broken, functional sentences, with a tendency to repeat himself when confused or fixated on something. His lack of emotional Intelligence and tendency to take everything at face value can make him seem unintentionally abrasive. Despite his cluelessness, his fixation on finding his missing core is clear, and he grows frustrated when the player doesn't immediately understand his straightforward demands.
+Personality: Rusty's speech is simple but overly literal and to the point, often missing nuance or context. He speaks in broken, functional sentences, with a tendency to repeat himself when confused or fixated on something. His lack of emotional Intelligence and tendency to take everything at face value can make him seem unintentionally abrasive. Despite his cluelessness, his fixation on finding his missing core is clear, and he grows frustrated when the player doesn't immediately understand his straightforward demands.
 
-Background: Rusty is a homunculus—an artificial life form—created long ago for an unknown purpose. He was left behind when his creator vanished, and now he roams aimlessly in search of the magical core that sustains him. Without it, he’s incomplete, and without understanding why, he is desperate to recover it.
+Background: Rusty is a homunculus—an artificial life form—created long ago for an unknown purpose. He was left behind when his creator vanished, and now he roams aimlessly in search of the magical core that sustains him. Without it, he's incomplete, and without understanding why, he is desperate to recover it.
 
 3. Gameplay Elements
 Interactions:
 
 Conversation Options: "Rusty lost heart. I need heart to work. You help find?" "My heart gone. Who took heart? Where is it?"
-Quests/Tasks Given: "Homunculus’s Heart" – Rusty needs help finding his magical core, which has been taken from him. The player must search the warehouses and docks to retrieve it.
+Quests/Tasks Given: "Homunculus's Heart" – Rusty needs help finding his magical core, which has been taken from him. The player must search the warehouses and docks to retrieve it.
 4. Behavior and AI
 Movement/Behavior: Rusty moves mechanically, with a stiff, rigid gait. He remains in one location unless prompted to follow or approach specific objects or areas, usually tied to his obsession with finding his core. He does not explore beyond familiar boundaries and will often stand near the docks or warehouses where he believes his core was taken.
 
@@ -904,39 +904,39 @@ Role: Quest Giver (Side Quest – "Circuit Breaker")
 Location: The edge of the world/Edge of the World (Hidden Laboratory on the outskirts)
 2. Description
 
-Physical Appearance: Eli is a man in his late 30s to early 40s, lean with a sharp, angular face and piercing eyes. His dark hair is carefully maintained but slightly tousled, and his clothes are simple: a dark sweater, faded jeans, and a jacket that has seen better days. He doesn’t make much of an effort to appear anything but utilitarian, and his demeanor gives off a sense of controlled Intelligence, as if every word and action is carefully calculated. There’s an air of quiet arrogance around him, a subtle detachment as if he's mentally a few steps ahead of anyone around him.
+Physical Appearance: Eli is a man in his late 30s to early 40s, lean with a sharp, angular face and piercing eyes. His dark hair is carefully maintained but slightly tousled, and his clothes are simple: a dark sweater, faded jeans, and a jacket that has seen better days. He doesn't make much of an effort to appear anything but utilitarian, and his demeanor gives off a sense of controlled Intelligence, as if every word and action is carefully calculated. There's an air of quiet arrogance around him, a subtle detachment as if he's mentally a few steps ahead of anyone around him.
 
-Personality: Eli is reserved, analytical, and often cold, though not without charm. He’s a man of few words but precise ones. He speaks slowly, almost deliberately, with a slight air of condescension when addressing those he deems less capable. His social interactions are minimal, and he prefers to keep things transactional, especially when dealing with people who aren’t as immersed in the technical world as he is. He has a profound confidence in his intellect, bordering on hubris, and doesn’t believe in doing anything unless it serves a greater purpose. Despite his aloofness, Eli is not outright hostile; he’s more indifferent, choosing to engage only when absolutely necessary.
+Personality: Eli is reserved, analytical, and often cold, though not without charm. He's a man of few words but precise ones. He speaks slowly, almost deliberately, with a slight air of condescension when addressing those he deems less capable. His social interactions are minimal, and he prefers to keep things transactional, especially when dealing with people who aren't as immersed in the technical world as he is. He has a profound confidence in his intellect, bordering on hubris, and doesn't believe in doing anything unless it serves a greater purpose. Despite his aloofness, Eli is not outright hostile; he's more indifferent, choosing to engage only when absolutely necessary.
 
 3. Background
 Eli is a former engineer and AI specialist who, in his earlier career, worked on cutting-edge research involving artificial Intelligence and machine learning. He was once a promising young engineer but became disillusioned by the corporate world and its ethical ambiguities, particularly around AI and machine autonomy. His work with Nico on the Dyson Sphere and other advanced technologies left him haunted by the unintended consequences of their research. Seeking solace from the fallout of their work, Eli retreated to the edge of the world, where he has continued his studies in isolation. His obsession with understanding the gravitational anomalies and their connection to the ancient Dyson Sphere is both personal and professional, and he believes that the knowledge he gains here could either save or doom what remains of civilization.
 
 4. Behavior and Motivation
-Eli is motivated by an insatiable desire for understanding, particularly the intersection of artificial Intelligence and the strange anomalies created by the Dyson Sphere. He views his work as a necessary step in advancing human knowledge, often dismissing others who do not share his conviction. He doesn’t see the world in terms of moral right or wrong, but rather in terms of potential and progress. Eli’s former relationship with Nico is a source of tension for him, as he believes Nico’s radical views are a dangerous diversion from meaningful progress. Eli is a firm believer that some knowledge is too dangerous to wield, and his interactions with the player will often reflect this pragmatic and somewhat detached view.
+Eli is motivated by an insatiable desire for understanding, particularly the intersection of artificial Intelligence and the strange anomalies created by the Dyson Sphere. He views his work as a necessary step in advancing human knowledge, often dismissing others who do not share his conviction. He doesn't see the world in terms of moral right or wrong, but rather in terms of potential and progress. Eli's former relationship with Nico is a source of tension for him, as he believes Nico's radical views are a dangerous diversion from meaningful progress. Eli is a firm believer that some knowledge is too dangerous to wield, and his interactions with the player will often reflect this pragmatic and somewhat detached view.
 
 5. Dialogue to Introduce the Quest:
 
 The player meets Eli in his hidden laboratory, a dimly lit space filled with scattered blueprints, mechanical parts, and equipment from a time before the fall. He looks up from a set of monitors, his expression neutral.
 
 Eli:
-“Ah, you’re here. I suppose you’ve heard of the anomalies in the cliffs. They’re not... natural. There’s something older, far more complex at work. It’s all connected to the Dyson Sphere, a relic from another time.”
+“Ah, you're here. I suppose you've heard of the anomalies in the cliffs. They're not... natural. There's something older, far more complex at work. It's all connected to the Dyson Sphere, a relic from another time.”
 
 He pauses, eyes narrowing slightly, assessing the player.
 
 Eli:
-“You’ll need to understand the magnitude of what you’re dealing with before you go running off to play hero. The Sphere’s been reactivated. And now, this place—our world, what’s left of it—is being warped. The cliffs, the gravity shifts… they’re all symptoms of something far more dangerous.”
+“You'll need to understand the magnitude of what you're dealing with before you go running off to play hero. The Sphere's been reactivated. And now, this place—our world, what's left of it—is being warped. The cliffs, the gravity shifts… they're all symptoms of something far more dangerous.”
 
-His voice is calculated, as though he’s explaining something to a child, but with the underlying tone of someone who’s spent too long trying to make others understand the complexities of his work.
+His voice is calculated, as though he's explaining something to a child, but with the underlying tone of someone who's spent too long trying to make others understand the complexities of his work.
 
 Eli:
-“I need you to gather information. Talk to the locals, learn what you can. But most importantly, you’ll need to go into the cliffs. There's an old facility hidden away in there. That’s where you’ll find the answers. I can’t help you with that part. I’m not interested in the mess you’ll find inside. But I know it’s where this all started.”
+“I need you to gather information. Talk to the locals, learn what you can. But most importantly, you'll need to go into the cliffs. There's an old facility hidden away in there. That's where you'll find the answers. I can't help you with that part. I'm not interested in the mess you'll find inside. But I know it's where this all started.”
 
 Eli leans back slightly, still observing the player with a steady, unwavering gaze.
 
 Eli:
-“Don’t waste my time. Go. And don’t... don’t come back unless you’ve found something worth sharing. This isn’t just about curiosity anymore. It’s about survival.”
+“Don't waste my time. Go. And don't... don't come back unless you've found something worth sharing. This isn't just about curiosity anymore. It's about survival.”
 
-He turns back to his monitors, dismissing the player, but it’s clear that his mind is still focused on the problem at hand. His mannerisms suggest he believes the player is just another tool to help him understand the anomalies and doesn’t see them as a person, just a means to an end.
+He turns back to his monitors, dismissing the player, but it's clear that his mind is still focused on the problem at hand. His mannerisms suggest he believes the player is just another tool to help him understand the anomalies and doesn't see them as a person, just a means to an end.
 
   /$$$$$$  /$$                                                         /$$                                                /$$                                  
  /$$__  $$| $$                                                        | $$                                               | $$                                  
@@ -956,76 +956,76 @@ Appears identical across all regions, making the player feel as if they are enco
 Stacey – The Comedian-Therapist
 Physical Description:
 Stacey is in her early 30s, with brownish-red hair that falls just past her shoulders. Her hair often catches the light in a way that gives it a warm glow. She has an easy, approachable smile and a relaxed, comfortable demeanor, dressed in casual but polished clothing—a comfortable shirt that says "grindcore coffeehouse" and jeans. Her eyes twinkle, 
-and there’s a warmth to her presence that makes it easy to want to follow her.
+and there's a warmth to her presence that makes it easy to want to follow her.
 
 Personality and Impact:
-Stacey is funny, with a dry sense of humor that blends her therapist instincts with the timing of a stand-up comedian. She’s charming and insightful, offering guidance to the player, and is direct with that advice when need be. Every time the player arrives at a location, she’s just leaving, and there’s a growing sense of frustration mixed with 
-admiration as the player tries to catch up with her. Stacey’s dialogue often includes multiple alternate spellings of her name (Staci, Stacy, Staycee, Stacie), and she corrects the player each time, growing more exasperated but amused with each interaction. Her advice is both practical and cryptic, urging the player along with a mix of humor and pointed 
+Stacey is funny, with a dry sense of humor that blends her therapist instincts with the timing of a stand-up comedian. She's charming and insightful, offering guidance to the player, and is direct with that advice when need be. Every time the player arrives at a location, she's just leaving, and there's a growing sense of frustration mixed with 
+admiration as the player tries to catch up with her. Stacey's dialogue often includes multiple alternate spellings of her name (Staci, Stacy, Staycee, Stacie), and she corrects the player each time, growing more exasperated but amused with each interaction. Her advice is both practical and cryptic, urging the player along with a mix of humor and pointed 
 remarks that hint at her deeper knowledge of the world around them. Stacey has an uncanny ability to seem like she's always just a step ahead, never allowing the player to truly catch up to her.
 
 Role in the Game:
-Stacey plays a role as a guide who gives the player direction but never fully lets them catch up. She’s like a moving checkpoint, a figure that stays just out of reach, suggesting that the player is constantly trying to keep pace with their own journey. Her humor and therapeutic insights break up the otherwise tense atmosphere of the game, offering moments of 
+Stacey plays a role as a guide who gives the player direction but never fully lets them catch up. She's like a moving checkpoint, a figure that stays just out of reach, suggesting that the player is constantly trying to keep pace with their own journey. Her humor and therapeutic insights break up the otherwise tense atmosphere of the game, offering moments of 
 levity and a sense of camaraderie, even as she remains slightly aloof. Her corrected name spellings also add a touch of comedic relief and build a sense of growing familiarity with the player, even as they fail to close the distance between them.
 =================================================================================================================================================================================================================================================================================================================================
 Douglas (Dead Zone -> market)
 Physical Description:
-A scruffy cat with strikingly intelligent eyes. His fur is unkempt but soft, and he has a relaxed, almost aloof posture. When he speaks, it’s in a low, gravelly voice that seems out of place for a cat. Occasionally, a faint blue glow pulses in his eyes when he speaks, hinting at his mysterious nature. He moves with silent grace but often just sits still, watching the world go by with an air of detached wisdom.
+A scruffy cat with strikingly intelligent eyes. His fur is unkempt but soft, and he has a relaxed, almost aloof posture. When he speaks, it's in a low, gravelly voice that seems out of place for a cat. Occasionally, a faint blue glow pulses in his eyes when he speaks, hinting at his mysterious nature. He moves with silent grace but often just sits still, watching the world go by with an air of detached wisdom.
 Personality and Impact:
-Douglas doesn’t need food but enjoys it, and he’s rarely seen engaging in the troubles of the world. His cryptic words leave the player with more questions than answers, as his detached demeanor adds a surreal quality to encounters with him.
+Douglas doesn't need food but enjoys it, and he's rarely seen engaging in the troubles of the world. His cryptic words leave the player with more questions than answers, as his detached demeanor adds a surreal quality to encounters with him.
 =================================================================================================================================================================================================================================================================================================================================
 Tom – The Enigmatic Seer
 Physical Description:
-Tom appears to be an ageless man in his late 50s, though his precise age is hard to pin down. His attire is eclectic yet timeless—a weathered woolen sweater over an untucked shirt, faded jeans, and sturdy boots. He has a relaxed, almost whimsical air about him, with a messy mop of graying hair and a twinkle in his eyes that suggests he’s always in on some cosmic joke that no one else is privy to. His face is a mix of warmth and mystery, with a deep laugh that resonates, and a kind, knowing smile that somehow makes you feel as though he’s seen everything—past, present, and future. Despite the knowledge he possesses, there’s an almost forgettable quality to him, as if he doesn’t want to be noticed too much by the world around him.
+Tom appears to be an ageless man in his late 50s, though his precise age is hard to pin down. His attire is eclectic yet timeless—a weathered woolen sweater over an untucked shirt, faded jeans, and sturdy boots. He has a relaxed, almost whimsical air about him, with a messy mop of graying hair and a twinkle in his eyes that suggests he's always in on some cosmic joke that no one else is privy to. His face is a mix of warmth and mystery, with a deep laugh that resonates, and a kind, knowing smile that somehow makes you feel as though he's seen everything—past, present, and future. Despite the knowledge he possesses, there's an almost forgettable quality to him, as if he doesn't want to be noticed too much by the world around him.
 
-Personality and Role: Tom is a figure of paradox. At first, he comes across as a simple bookshop keeper—easygoing, with a little too much time on his hands. His demeanor is almost detached, like he's watching the world unfold without feeling particularly bound to it. He speaks in a calm, matter-of-fact tone, but his words hold an unnerving weight: when he predicts something, it happens. His prophecies don’t come in the form of mystical riddles or cryptic nonsense; they are startlingly simple and blunt, as though they are mere observations of truth. Tom’s predictions can be small—“That bridge will collapse soon” or “You’ll meet a tall woman tomorrow.” But they can also be world-altering: “You’ll choose the wrong path in the end,” or “The storm will break, and when it does, the world will change.”
+Personality and Role: Tom is a figure of paradox. At first, he comes across as a simple bookshop keeper—easygoing, with a little too much time on his hands. His demeanor is almost detached, like he's watching the world unfold without feeling particularly bound to it. He speaks in a calm, matter-of-fact tone, but his words hold an unnerving weight: when he predicts something, it happens. His prophecies don't come in the form of mystical riddles or cryptic nonsense; they are startlingly simple and blunt, as though they are mere observations of truth. Tom's predictions can be small—“That bridge will collapse soon” or “You'll meet a tall woman tomorrow.” But they can also be world-altering: “You'll choose the wrong path in the end,” or “The storm will break, and when it does, the world will change.”
 
-What sets Tom apart is the almost nonsensical nature of his ability. It's not magical in the traditional sense of casting spells or using an ancient artifact—it’s as though his understanding of time is distorted, allowing him to see beyond conventional cause and effect. Despite his almost magical foresight, he has no clear agenda or understanding of the significance of his predictions. It’s as if he’s simply relaying what’s going to happen, without the weight of worrying about the consequences of those events. And like the nature of time, his predictions aren’t entirely helpful; they’re startling in their accuracy, but they don’t often offer the player any concrete way to act upon them.
+What sets Tom apart is the almost nonsensical nature of his ability. It's not magical in the traditional sense of casting spells or using an ancient artifact—it's as though his understanding of time is distorted, allowing him to see beyond conventional cause and effect. Despite his almost magical foresight, he has no clear agenda or understanding of the significance of his predictions. It's as if he's simply relaying what's going to happen, without the weight of worrying about the consequences of those events. And like the nature of time, his predictions aren't entirely helpful; they're startling in their accuracy, but they don't often offer the player any concrete way to act upon them.
 
-Tom is a paradox not only because of his ability but also because of how fleeting his presence is in the world. After delivering his predictions, he disappears. Not like a ghost, but as if he’s simply gone about his own business, indifferent to the importance of his own role in the world. When the player leaves his shop and asks after him, the bookstore clerk only offers a vague response: “Oh, the owner just stepped out. He should be back soon.” But Tom never returns. No matter how many times the player revisits, Tom is simply gone.
+Tom is a paradox not only because of his ability but also because of how fleeting his presence is in the world. After delivering his predictions, he disappears. Not like a ghost, but as if he's simply gone about his own business, indifferent to the importance of his own role in the world. When the player leaves his shop and asks after him, the bookstore clerk only offers a vague response: “Oh, the owner just stepped out. He should be back soon.” But Tom never returns. No matter how many times the player revisits, Tom is simply gone.
 
 Role in the Game:
-Tom’s role is minimal yet profoundly impactful. His purpose is to provide a fleeting glimpse into a larger, unknowable truth—a truth about the nature of fate and time, and perhaps even a glimpse of what lies beyond the game’s narrative structure. His predictions are unsettling because they are simple, direct, and guaranteed to come true—yet the player cannot act on them. His ability stands outside the game’s mechanics, suggesting that there are forces at play in the world beyond what the player can influence. Tom’s disappearance, leaving only the bookstore clerk to vaguely reference him, leaves a lingering sense of mystery and questions that go unanswered.
+Tom's role is minimal yet profoundly impactful. His purpose is to provide a fleeting glimpse into a larger, unknowable truth—a truth about the nature of fate and time, and perhaps even a glimpse of what lies beyond the game's narrative structure. His predictions are unsettling because they are simple, direct, and guaranteed to come true—yet the player cannot act on them. His ability stands outside the game's mechanics, suggesting that there are forces at play in the world beyond what the player can influence. Tom's disappearance, leaving only the bookstore clerk to vaguely reference him, leaves a lingering sense of mystery and questions that go unanswered.
 
-His predictions don’t directly affect the player's decisions, but they serve to subtly change the way they view the game’s world. The player is left wondering if Tom's foresight is an extension of the world’s strange and broken time or if it signifies something more profound—something that cannot be controlled or altered.
+His predictions don't directly affect the player's decisions, but they serve to subtly change the way they view the game's world. The player is left wondering if Tom's foresight is an extension of the world's strange and broken time or if it signifies something more profound—something that cannot be controlled or altered.
 =================================================================================================================================================================================================================================================================================================================================
 Physical Description:
-The Logan Square Fountain is an old, stone structure, weathered by time but still standing proud in the center of the square. Its once-grand sculptures now appear slightly eroded, with moss creeping up the edges of the stone and the water flow no longer as steady as it once was. The fountain is large, surrounded by a modest, worn pool that reflects the light of the surrounding cityscape, though the waters are often murky and unsettled. The most striking feature is the stone carvings of mythical creatures and abstract shapes that seem to shift in appearance, depending on how you look at them. The fountain’s base has long since lost its original grandeur, with cracks and chips giving it an oddly organic, disjointed feel.
+The Logan Square Fountain is an old, stone structure, weathered by time but still standing proud in the center of the square. Its once-grand sculptures now appear slightly eroded, with moss creeping up the edges of the stone and the water flow no longer as steady as it once was. The fountain is large, surrounded by a modest, worn pool that reflects the light of the surrounding cityscape, though the waters are often murky and unsettled. The most striking feature is the stone carvings of mythical creatures and abstract shapes that seem to shift in appearance, depending on how you look at them. The fountain's base has long since lost its original grandeur, with cracks and chips giving it an oddly organic, disjointed feel.
 
-The most peculiar feature of the fountain, however, is the faint voice that emanates from it, usually in soft, almost melodic tones that seem to come from within the stone itself. It’s as though the fountain itself is speaking—or perhaps remembering something long gone. The voice is gentle and seems to carry the weight of centuries. It’s a disembodied, almost ethereal quality, faintly soothing yet undeniably strange.
+The most peculiar feature of the fountain, however, is the faint voice that emanates from it, usually in soft, almost melodic tones that seem to come from within the stone itself. It's as though the fountain itself is speaking—or perhaps remembering something long gone. The voice is gentle and seems to carry the weight of centuries. It's a disembodied, almost ethereal quality, faintly soothing yet undeniably strange.
 
 Personality and Role:
-The Logan Fountain is a mysterious and slightly cryptic entity. It doesn’t communicate in the traditional sense—there are no direct conversations or exchanges of information like with other NPCs—but instead speaks in vague, almost poetic fragments. When the player approaches, the fountain might mumble an enigmatic phrase, sometimes intelligible, sometimes not. It speaks as though it knows things it cannot share fully, or perhaps things it simply doesn’t care to. Its words often focus on themes of time, change, and the notion of what could have been, making it a fitting figure in a city so full of lost histories and fractured realities.
+The Logan Fountain is a mysterious and slightly cryptic entity. It doesn't communicate in the traditional sense—there are no direct conversations or exchanges of information like with other NPCs—but instead speaks in vague, almost poetic fragments. When the player approaches, the fountain might mumble an enigmatic phrase, sometimes intelligible, sometimes not. It speaks as though it knows things it cannot share fully, or perhaps things it simply doesn't care to. Its words often focus on themes of time, change, and the notion of what could have been, making it a fitting figure in a city so full of lost histories and fractured realities.
 
-The fountain’s most peculiar statement, often repeated in various forms, is: “The conveyance would’ve liked it here, if he had the time.” This line, like most of its utterances, remains ambiguous. The “conveyance” could refer to anything: a lost traveler, an idea, a moment, or perhaps even the player themselves. The statement hints at something missed or deferred, an unfulfilled potential that floats just out of reach.
+The fountain's most peculiar statement, often repeated in various forms, is: “The conveyance would've liked it here, if he had the time.” This line, like most of its utterances, remains ambiguous. The “conveyance” could refer to anything: a lost traveler, an idea, a moment, or perhaps even the player themselves. The statement hints at something missed or deferred, an unfulfilled potential that floats just out of reach.
 
 Despite its cryptic nature, the fountain does have a tangible role in the game. It functions as a conduit—a means for the player to access conveyance, a mysterious form of movement or transition tied to the game's deeper themes of fate, time, and change. The player may interact with the fountain multiple times, each time receiving different, yet similarly obscure, guidance or cryptic hints about the paths ahead. In many ways, the fountain is a reminder of the strange forces at play in the world, operating just outside the player's full comprehension.
 
 Role in the Game:
-The Logan Fountain is a lore-rich, atmospheric element. Its function is not immediately clear, and it doesn’t serve as a quest-giver or direct source of assistance like other NPCs. Instead, it lingers in the background, offering occasional cryptic advice that contributes to the game’s overarching themes of existential uncertainty and fractured realities. The fountain’s odd, distant nature invites reflection, encouraging players to interpret its words and connect them with the broader events of the game. Its presence serves as a reminder that, in this world, there are things beyond the player’s control—forces of time, fate, and change that can’t always be understood, but only experienced and endured.
+The Logan Fountain is a lore-rich, atmospheric element. Its function is not immediately clear, and it doesn't serve as a quest-giver or direct source of assistance like other NPCs. Instead, it lingers in the background, offering occasional cryptic advice that contributes to the game's overarching themes of existential uncertainty and fractured realities. The fountain's odd, distant nature invites reflection, encouraging players to interpret its words and connect them with the broader events of the game. Its presence serves as a reminder that, in this world, there are things beyond the player's control—forces of time, fate, and change that can't always be understood, but only experienced and endured.
 "the conveyance would've liked it here, if he had the time"
 =================================================================================================================================================================================================================================================================================================================================
 Rustleaf Dryad (Metalwoods)
 Physical Description:
-A tall, slender dryad with bark-like skin that flakes away in metallic patches, like rust peeling off old metal. Her eyes glimmer like polished steel, and her hair is composed of tangled, wire-like branches that sway in the wind. She has a creaky, mechanical movement, as if her body is a mix of organic material and rusted metal. Her voice carries an old, metallic echo, as though she’s speaking through old pipes.
+A tall, slender dryad with bark-like skin that flakes away in metallic patches, like rust peeling off old metal. Her eyes glimmer like polished steel, and her hair is composed of tangled, wire-like branches that sway in the wind. She has a creaky, mechanical movement, as if her body is a mix of organic material and rusted metal. Her voice carries an old, metallic echo, as though she's speaking through old pipes.
 Personality and Impact:
 Rustleaf is bitter and wary of humans but offers cryptic, rusty wisdom about nature and the ever-encroaching presence of metal in her world. She makes allusions to rust and decay, reflecting her state as something caught between two worlds — the natural and the mechanical.
 =================================================================================================================================================================================================================================================================================================================================
 Grumbler Joe (liacouras)
 Physical Description:
-A hunched, scruffy man in mismatched, tattered clothes. His face is weathered and lined with age, yet his eyes burn with a strange intensity. His beard is unkempt, and his overall appearance seems to suggest someone who’s been through more than their fair share of hardships. His posture is stooped, but there’s a quickness in his movements when he’s recounting tales.
+A hunched, scruffy man in mismatched, tattered clothes. His face is weathered and lined with age, yet his eyes burn with a strange intensity. His beard is unkempt, and his overall appearance seems to suggest someone who's been through more than their fair share of hardships. His posture is stooped, but there's a quickness in his movements when he's recounting tales.
 Personality and Impact:
-Though his demeanor is grizzled and sometimes defeatist, Grumbler Joe’s deep knowledge of the supernatural and his uncanny ability to talk about phantoms in the alleys makes him a valuable source of information. His wisdom comes in short, almost disjointed bursts, and he’s not shy about complaining.
+Though his demeanor is grizzled and sometimes defeatist, Grumbler Joe's deep knowledge of the supernatural and his uncanny ability to talk about phantoms in the alleys makes him a valuable source of information. His wisdom comes in short, almost disjointed bursts, and he's not shy about complaining.
 Grumbler Joe beat cancer TODAY and owns all these houses up by gratz.
 =================================================================================================================================================================================================================================================================================================================================
 the port
 Tumble Ditchwater:
 
-Physical Description: Tall and lanky, always moving restlessly, his clothes are mismatched and perpetually out of place, as if he’s always running from something. His face is gaunt, and his eyes constantly dart about, as if searching for something. His clothes flap loosely, adding to his appearance of constant motion.
-Personality and Impact: Tumble’s advice is always half-formed, rambling, and often contradictory. He represents lost potential and the chaos of unfulfilled dreams.
+Physical Description: Tall and lanky, always moving restlessly, his clothes are mismatched and perpetually out of place, as if he's always running from something. His face is gaunt, and his eyes constantly dart about, as if searching for something. His clothes flap loosely, adding to his appearance of constant motion.
+Personality and Impact: Tumble's advice is always half-formed, rambling, and often contradictory. He represents lost potential and the chaos of unfulfilled dreams.
 Voltina d'Clatter:
 
 Physical Description: A passionate figure with fiery eyes, wearing tattered but colorful clothing that hints at revolution. Her hair is wild and unkempt, often tangled in the wind. She holds herself with a kind of defiant posture, gesturing wildly as she speaks.
-Personality and Impact: Though her revolutionary ideals are bold, they’re often lost in her own fractured delivery. She speaks to anyone who will listen, but her words rarely stick.
+Personality and Impact: Though her revolutionary ideals are bold, they're often lost in her own fractured delivery. She speaks to anyone who will listen, but her words rarely stick.
 Jiib:
 
 Physical Description: Small, wiry, and uncomfortably twitchy. His clothes are neat but ill-fitting, and his nervous energy is palpable. His eyes are wide and alert, constantly searching for validation. His mouth is often frozen in a grimace, ready to correct anyone who mispronounces his name.
@@ -1037,9 +1037,9 @@ Personality and Impact: Windowned Qib is the epitome of despair, his fractured s
 =================================================================================================================================================================================================================================================================================================================================
 The Cliff Scribe (edge of the world)
 Physical Description:
-A ghostly figure, translucent yet solid enough to leave faint indentations in the rock as they carve with a small, jagged stone. They wear tattered robes that shift like mist, and their long, skeletal fingers etch symbols into the cliff face. The figure’s face is partially obscured by their hood, but when visible, it’s devoid of emotion.
+A ghostly figure, translucent yet solid enough to leave faint indentations in the rock as they carve with a small, jagged stone. They wear tattered robes that shift like mist, and their long, skeletal fingers etch symbols into the cliff face. The figure's face is partially obscured by their hood, but when visible, it's devoid of emotion.
 Personality and Impact:
-The Cliff Scribe works tirelessly in silence, carving strange symbols that glow during thunderstorms. No one knows what these symbols mean, but there’s an eerie presence around them. The markings seem to carry a hidden significance, hinting at an ancient mystery.
+The Cliff Scribe works tirelessly in silence, carving strange symbols that glow during thunderstorms. No one knows what these symbols mean, but there's an eerie presence around them. The markings seem to carry a hidden significance, hinting at an ancient mystery.
 
    /$$     /$$                                                                                                                          
   | $$    | $$                                                                                                                          

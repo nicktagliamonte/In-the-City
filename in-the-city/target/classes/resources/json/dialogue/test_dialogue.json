@@ -10,23 +10,23 @@
       ]
     },
     "sam_warmup_1": {
-      "npcLine": "Heh. Yeah. Safety’s hard to come by these days. But it’s easier when you’re not alone.",
+      "npcLine": "Heh. Yeah. Safety's hard to come by these days. But it's easier when you're not alone.",
       "options": [
         { "text": "You saying we should team up?", "nextDialogueId": "sam_join_hint", "impact": 10 },
         { "text": "How long have you been out here?", "nextDialogueId": "sam_story_1", "impact": 5 },
-        { "text": "I’ll be fine on my own.", "nextDialogueId": "sam_cautious_2", "impact": 0 }
+        { "text": "I'll be fine on my own.", "nextDialogueId": "sam_cautious_2", "impact": 0 }
       ]
     },
     "sam_join_hint": {
-      "npcLine": "Yeah, something like that. If you want me watching your back, just say 'join Sam' when we’re done talking. Could be we both make it out of here alive.",
+      "npcLine": "Yeah, something like that. If you want me watching your back, just say 'join Sam' when we're done talking. Could be we both make it out of here alive.",
       "options": [
         { "text": "Sounds like a plan.", "nextDialogueId": "sam_agree", "impact": 10 },
-        { "text": "I’ll think about it.", "nextDialogueId": "sam_story_1", "impact": 0 },
+        { "text": "I'll think about it.", "nextDialogueId": "sam_story_1", "impact": 0 },
         { "text": "I work alone.", "nextDialogueId": "sam_rude_2", "impact": -5 }
       ]
     },
     "sam_agree": {
-      "npcLine": "Good. Strength in numbers, right? Let me know when you’re ready to move.",
+      "npcLine": "Good. Strength in numbers, right? Let me know when you're ready to move.",
       "options": []
     },
     "sam_story_1": {
@@ -37,31 +37,31 @@
       ]
     },
     "sam_advice": {
-      "npcLine": "Plenty. Noise gets attention. Don’t trust open doors. And if you see someone desperate, don’t hesitate. They won’t.",
+      "npcLine": "Plenty. Noise gets attention. Don't trust open doors. And if you see someone desperate, don't hesitate. They won't.",
       "options": [
         { "text": "Got it. Thanks.", "nextDialogueId": "exit", "impact": 5 }
       ]
     },
     "sam_cautious_1": {
-      "npcLine": "Suit yourself. Just remember, no one’s invincible out here.",
+      "npcLine": "Suit yourself. Just remember, no one's invincible out here.",
       "options": [
-        { "text": "I’ll be fine.", "nextDialogueId": "exit", "impact": 0 },
-        { "text": "What’s your story?", "nextDialogueId": "sam_story_1", "impact": 5 }
+        { "text": "I'll be fine.", "nextDialogueId": "exit", "impact": 0 },
+        { "text": "What's your story?", "nextDialogueId": "sam_story_1", "impact": 5 }
       ]
     },
     "sam_cautious_2": {
-      "npcLine": "If you say so. Just don’t end up like the others.",
+      "npcLine": "If you say so. Just don't end up like the others.",
       "options": []
     },
     "sam_rude_1": {
-      "npcLine": "Easy there. You’re not the only one having a bad day.",
+      "npcLine": "Easy there. You're not the only one having a bad day.",
       "options": [
-        { "text": "Fair enough. Let’s start over.", "nextDialogueId": "sam_warmup_1", "impact": 5 },
+        { "text": "Fair enough. Let's start over.", "nextDialogueId": "sam_warmup_1", "impact": 5 },
         { "text": "Leave me alone.", "nextDialogueId": "exit", "impact": -10 }
       ]
     },
     "sam_rude_2": {
-      "npcLine": "Then don’t expect me to stick my neck out for you. Good luck, hero.",
+      "npcLine": "Then don't expect me to stick my neck out for you. Good luck, hero.",
       "options": []
     }
   },
@@ -109,7 +109,7 @@
       ]
     },
     "quest_001_objective_001": {
-      "npcLine": "People have been vanishing without a trace, one by one. we're growing desperate, and we're no closer to understanding what's behind it all. But there’s one lead. Victor, the last known person to have been seen near the disappearances, has something that might help. His puzzle box. Find him, kill him, and bring it back to me. I’ll be able to solve it, but only if you can retrieve it first.",
+      "npcLine": "People have been vanishing without a trace, one by one. we're growing desperate, and we're no closer to understanding what's behind it all. But there's one lead. Victor, the last known person to have been seen near the disappearances, has something that might help. His puzzle box. Find him, kill him, and bring it back to me. I'll be able to solve it, but only if you can retrieve it first.",
       "options": [
         { "text": "And if I keep the box for myself?", "nextDialogueId": "bad", "impact": -1 },
         { "text": "I'll bring it to you once I have it.", "nextDialogueId": "exit", "impact": 0 }

@@ -1317,4 +1317,10 @@ public class GameState {
             e.printStackTrace();
         }
     }
+
+    public void credits() {
+        @SuppressWarnings("unused")
+        Credits credits = new Credits();
+        System.exit(0);
+    }
 }

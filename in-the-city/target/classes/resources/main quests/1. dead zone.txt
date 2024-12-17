@@ -3,7 +3,7 @@ Objective: Survive your initial hours in the Dead Zone by exploring your surroun
 
 Step 1: Awakening and Initial Exploration
 Narrative: The player awakens in a desolate area surrounded by overgrown, decaying buildings and scattered remnants of the past. The morning light barely penetrates the thick canopy of vines and broken metal structures.
-Gameplay: The player’s first task is to explore their immediate surroundings. They come across an old, rusted storage locker and must decide whether to pry it open. This introduces the concept of resource gathering when they find basic supplies: a scrap metal shard (potential weapon) and a few units of water.
+Gameplay: The player's first task is to explore their immediate surroundings. They come across an old, rusted storage locker and must decide whether to pry it open. This introduces the concept of resource gathering when they find basic supplies: a scrap metal shard (potential weapon) and a few units of water.
 Hint: A prompt subtly introduces the idea that exploring hidden areas can yield helpful resources.
 Step 2: The Sound of Footsteps – Sneaking Tutorial
 Narrative: As the player explores further, distant footsteps and shuffling sounds echo through the empty streets. The player must avoid detection by using the environment—hiding behind debris and moving carefully through shadows.
@@ -25,7 +25,7 @@ Puzzle: To open the door, the player needs to figure out the correct code by exa
 
 Hints & Clues:
 
-Nearby, there’s a graffiti-covered wall with a series of numbers partially scratched out, such as "12-??-45-78."
+Nearby, there's a graffiti-covered wall with a series of numbers partially scratched out, such as "12-??-45-78."
 Observing the area, the player finds a scrap of paper that says 3.141_
 Solution: The player must rotate the dials to match the numbers in the correct order, based on context clues.
 

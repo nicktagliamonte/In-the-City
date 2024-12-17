@@ -243,7 +243,7 @@ Items
             Effect: +2 to Strength (STR)
     (b) dex
         Cloak of Agility
-            Description: A lightweight, shimmering cloak that enhances the wearer’s speed and reflexes.
+            Description: A lightweight, shimmering cloak that enhances the wearer's speed and reflexes.
             Weight: 1.5 units
             Effect: +1 to Dexterity (DEX)
         Boots of Precision
@@ -252,11 +252,11 @@ Items
             Effect: +2 to Dexterity (DEX)
     (c) con
         Belt of Fortitude
-            Description: A heavy belt made of thick leather, infused with ancient runes that bolster the wearer’s resilience.
+            Description: A heavy belt made of thick leather, infused with ancient runes that bolster the wearer's resilience.
             Weight: 3 units
             Effect: +1 to Constitution (CON)
         Amulet of Resilience
-            Description: A protective amulet that enhances the wearer’s vitality and fortitude against harsh conditions.
+            Description: A protective amulet that enhances the wearer's vitality and fortitude against harsh conditions.
             Weight: 0.5 units
             Effect: +2 to Constitution (CON)
     (d) int
@@ -265,12 +265,12 @@ Items
             Weight: 0.5 units
             Effect: +1 to Intelligence (INT)
         Scholar's Robe
-            Description: A flowing robe adorned with symbols of knowledge, enhancing the wearer’s mental capabilities.
+            Description: A flowing robe adorned with symbols of knowledge, enhancing the wearer's mental capabilities.
             Weight: 2 units
             Effect: +2 to Intelligence (INT)
     (e) wis
         Amulet of Wisdom
-            Description: A mystical amulet that resonates with the wearer’s inner strength and understanding of the world.
+            Description: A mystical amulet that resonates with the wearer's inner strength and understanding of the world.
             Weight: 0.5 units
             Effect: +1 to Wisdom (WIS)
         Tome of Understanding
@@ -347,7 +347,7 @@ Items
             Effect: +15 AC
             cost: 250
         Bioengineered Exosuit
-            Description: An exosuit with biological enhancements that adapt to the wearer’s movements and needs.
+            Description: An exosuit with biological enhancements that adapt to the wearer's movements and needs.
             Weight: 15 units
             Effect: +16 AC
             cost: 300

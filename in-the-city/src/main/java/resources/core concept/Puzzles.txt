@@ -1,11 +1,11 @@
 WHERE APPROPRIATE, HAVE THESE PUZZLES "BE" THE HIDDEN AREA FOR THE REGION
 
 Puzzle 2: "The Rations Stash" - Resource Management & Exploration
-Setting: In a dim basement room, the player finds an old storage cabinet chained shut. They’ll need a tool to open it but have to work with limited resources to make it usable.
+Setting: In a dim basement room, the player finds an old storage cabinet chained shut. They'll need a tool to open it but have to work with limited resources to make it usable.
 
 Puzzle:
 
-The player finds a pair of rusted bolt cutters nearby, but they’re missing a handle.
+The player finds a pair of rusted bolt cutters nearby, but they're missing a handle.
 There are various items in the basement (e.g., broken wood, duct tape, a crowbar), but only one combination will work.
 Hints & Clues:
 
@@ -46,9 +46,9 @@ Navigate the alleys to reach an exit by keeping track of subtle changes in the a
 Details:
 
 The player notices that each time the lights flicker, some alleys appear shorter, others longer, and new dead-ends emerge.
-Hints of graffiti or marks on walls subtly indicate stable paths, but they’re only visible in specific lighting conditions.
+Hints of graffiti or marks on walls subtly indicate stable paths, but they're only visible in specific lighting conditions.
 Solution:
-The player must move cautiously, testing each path during different lighting intervals to find a consistent route. By following the graffiti or markings visible in a specific lighting pattern, they eventually reach an alley that doesn’t change and leads to the exit.
+The player must move cautiously, testing each path during different lighting intervals to find a consistent route. By following the graffiti or markings visible in a specific lighting pattern, they eventually reach an alley that doesn't change and leads to the exit.
 
 Hint:
 A message scrawled on a wall says, “The path may shift in shadow, but true signs remain.” This encourages the player to focus on finding symbols or markings that persist despite the shifting light.
@@ -84,7 +84,7 @@ When the player climbs the stairs, they sometimes find themselves facing a wall 
 Small cues, such as slightly tilted frames, shadows pointing in different directions, or mirrors that show the staircase going down instead of up, hint at which direction to take.
 At certain intervals, the player may encounter a statue pointing or looking toward an archway that disappears when approached directly, revealing a hidden staircase if viewed at an angle.
 Solution:
-The player needs to carefully observe the small details that change between loops to figure out the correct path. By aligning their movements with visual cues and subtle hints, they finally reach a landing that doesn’t loop back but instead leads them deeper into the Art Museum.
+The player needs to carefully observe the small details that change between loops to figure out the correct path. By aligning their movements with visual cues and subtle hints, they finally reach a landing that doesn't loop back but instead leads them deeper into the Art Museum.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Puzzle 1: The Bargaining Seagull - encountered IF the player has the golden can
 Description:
@@ -95,18 +95,18 @@ Figure out what the seagull wants in exchange for the supplies.
 
 Details:
 
-The player can examine the seagull’s collection, noticing that everything the bird has hoarded is either shiny or reflective.
-If the player tries to simply take the supplies, the seagull flaps around and squawks angrily, making it clear it’s not letting them off easily.
+The player can examine the seagull's collection, noticing that everything the bird has hoarded is either shiny or reflective.
+If the player tries to simply take the supplies, the seagull flaps around and squawks angrily, making it clear it's not letting them off easily.
 The player has the golden can
 Solution:
 The player needs to offer it to the seagull, which will happily accept it and fly off with its new treasure, leaving the supplies behind. If the player offers the wrong item (like something not shiny), the seagull will simply give them a disappointed look and ruffle its feathers, as if judging their lack of understanding.
 
 Hint:
-In graffiti nearby, a phrase reads, “One bird’s trash is another’s treasure.” This playful clue hints at the seagull’s fondness for shiny junk.
+In graffiti nearby, a phrase reads, “One bird's trash is another's treasure.” This playful clue hints at the seagull's fondness for shiny junk.
 
-Puzzle 2: "The Developer’s Debugging"
+Puzzle 2: "The Developer's Debugging"
 Description:
-As you wander through the vibrant streets of Port Richmond, you stumble across a dusty, forgotten arcade machine in [a hidden zone]. The screen flickers to life as you approach, the words “Welcome to Debugging Simulator” flashing on the screen. There’s a single red button beneath the screen that seems to beckon you.
+As you wander through the vibrant streets of Port Richmond, you stumble across a dusty, forgotten arcade machine in [a hidden zone]. The screen flickers to life as you approach, the words “Welcome to Debugging Simulator” flashing on the screen. There's a single red button beneath the screen that seems to beckon you.
 
 You press it.
 
@@ -124,7 +124,7 @@ Solution:
 The player is prompted to type a solution.
 If the player types something like “solve puzzle” or “debug” or “fix it,” the machine will give a sarcastic message like, “You think it's that easy? Try thinking.”
 Intermittently, the puzzle will spit out "weird...it works on my machine."
-The solution is a play on the concept of "reset." If the player types "reset" "turn off" "off/on" anything like that into the game’s prompt, the screen flashes and the arcade machine suddenly pops out a small token—your reward. The game then resets the message to something less cryptic:
+The solution is a play on the concept of "reset." If the player types "reset" "turn off" "off/on" anything like that into the game's prompt, the screen flashes and the arcade machine suddenly pops out a small token—your reward. The game then resets the message to something less cryptic:
 “Great job, you've debugged the system. Next time, maybe try reading the instructions, huh?”
 Hint:
 
@@ -133,9 +133,9 @@ If the player has been exploring, they might notice a small sign hanging near th
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 Puzzle 1: "The Disorienting Overlook"
 Description:
-You come upon a grand overlook, its edge suspended impossibly over the chasm below. The wind is eerily still, and a strange hum vibrates the air. The view is like something from a dream—mountains, valleys, and oceans, all stretched and contorted in unnatural angles. The path forward is blocked by a large stone archway, with three jagged rocks floating within it. There’s no sign of how to proceed, but you feel an uncanny pull toward the floating rocks.
+You come upon a grand overlook, its edge suspended impossibly over the chasm below. The wind is eerily still, and a strange hum vibrates the air. The view is like something from a dream—mountains, valleys, and oceans, all stretched and contorted in unnatural angles. The path forward is blocked by a large stone archway, with three jagged rocks floating within it. There's no sign of how to proceed, but you feel an uncanny pull toward the floating rocks.
 
-As you step closer, the gravitational anomalies begin to distort your perception: the arch seems to spin slowly, and the floating rocks rotate in ways they shouldn’t. When you look directly at them, they appear to move, but when you look away, they stay suspended in place.
+As you step closer, the gravitational anomalies begin to distort your perception: the arch seems to spin slowly, and the floating rocks rotate in ways they shouldn't. When you look directly at them, they appear to move, but when you look away, they stay suspended in place.
 
 Objective:
 The player must move through the archway by manipulating the floating rocks to create a path forward.
@@ -152,7 +152,7 @@ A whisper echoes from the chasm:
 
 Puzzle 2: "The Inverted Bridge"
 Description:
-The cliffs have an eerie quality—gravity seems to pull in different directions here. You’ve come to what looks like a bridge, or at least the skeletal remains of one, crossing a large gap. The strange thing is, the bridge isn’t where it seems. One side leads directly into the chasm, but the other side leads into the sky. The platform beneath your feet doesn’t seem solid, either, as though it’s floating in mid-air. Every step you take feels precarious, as if the ground itself could flip at any moment.
+The cliffs have an eerie quality—gravity seems to pull in different directions here. You've come to what looks like a bridge, or at least the skeletal remains of one, crossing a large gap. The strange thing is, the bridge isn't where it seems. One side leads directly into the chasm, but the other side leads into the sky. The platform beneath your feet doesn't seem solid, either, as though it's floating in mid-air. Every step you take feels precarious, as if the ground itself could flip at any moment.
 
 At the far side, you see what appears to be a locked gate, but the mechanism is completely inaccessible. The bridge does not function like a normal bridge, and any attempt to cross in a straight line results in disorientation, with the world shifting unnaturally.
 
@@ -166,6 +166,6 @@ Once they move far enough to the side, the bridge seems to “flip,” and the p
 
 Hint:
 
-As you step closer to the edge of the bridge, a voice murmurs, "Sometimes, the way forward isn’t up, and it isn’t down. It’s… sideways."
+As you step closer to the edge of the bridge, a voice murmurs, "Sometimes, the way forward isn't up, and it isn't down. It's… sideways."
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 for city hall, see endgame.txt
