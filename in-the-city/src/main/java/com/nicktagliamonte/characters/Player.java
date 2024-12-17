@@ -453,6 +453,7 @@ public class Player extends Person {
 
         if (deathSavingThrows == 3) {
             super.setHealth(0);
+            deathSavingThrows = 0;
             try {
                 Thread.sleep(15);
             } catch (InterruptedException e) {
@@ -461,6 +462,7 @@ public class Player extends Person {
             System.out.println("You are stabilized at 0 health.");
         } else if (deathSavingThrows == -3) {
             super.setHealth(this.maxHealth * -1);
+            deathSavingThrows = 0;
             try {
                 Thread.sleep(15);
             } catch (InterruptedException e) {

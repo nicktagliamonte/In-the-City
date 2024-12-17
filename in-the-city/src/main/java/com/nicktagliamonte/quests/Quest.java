@@ -169,17 +169,14 @@ public class Quest {
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() / 3 + " xp");
+                System.out.println("You receive " + String.format("%.2f", gameState.getPlayer().getNextLevelXp() / 3) + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
             }
             for (Item reward : rewards) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+                if (reward.getWeight() <= gameState.getPlayer().getRemainingCarryWeight()) {
+                    System.out.println("You received: " + reward.getName() + " in safe zone inventory.");
+                    gameState.safeZoneInventory.addItemToInventory(reward);
                 }
-                System.out.println("You received: " + reward.getName());
-                gameState.safeZoneInventory.addItemToInventory(reward);
             }
         }
     }

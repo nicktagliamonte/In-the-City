@@ -333,37 +333,6 @@ public class GameState {
 
     public void updateRegion(String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
             String newPeopleFilePath, String newDialogueFilePath) {
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println(newRegionFilePath);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println(newAdjacencyFilePath);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println(newItemsFilePath);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println(newPeopleFilePath);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println(newDialogueFilePath);
-
         this.regionFilePath = newRegionFilePath;
         this.adjacencyFilePath = newAdjacencyFilePath;
         this.itemsFilePath = newItemsFilePath;

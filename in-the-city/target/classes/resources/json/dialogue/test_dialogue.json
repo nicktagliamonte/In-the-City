@@ -26,7 +26,21 @@
       ]
     },
     "sam_agree": {
-      "npcLine": "Good. Strength in numbers, right? Let me know when you're ready to move.",
+      "npcLine": "Good. Strength in numbers, right? But first, there's something you could do for me.",
+      "options": [
+        { "text": "What is it?", "nextDialogueId": "sam_assignment", "impact": 10 },
+        { "text": "Do it yourself.", "nextDialogueId": "exit", "impact": -10 }
+      ]
+    },
+    "sam_assignment": {
+      "npcLine": "In the other room, the chamber, there's a computer terminal. Try to get it powered on, if you can.",
+      "options": [
+        { "text": "Sure, I'll give it a try.", "nextDialogueId": "assign_quest_003", "impact": 10 },
+        { "text": "I'll see if I can get to it", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "assign_quest_003": {
+      "npcLine": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\quests\\test_quest_3.json",
       "options": []
     },
     "sam_story_1": {

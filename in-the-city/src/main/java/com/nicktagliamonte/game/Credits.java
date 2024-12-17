@@ -5,6 +5,13 @@ public class Credits {
         showCredits();
     }
     public void showCredits() {
+
+        try {
+            Thread.sleep(3500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         System.out.println("Congratulations! You've beaten the game!");
 
         try {

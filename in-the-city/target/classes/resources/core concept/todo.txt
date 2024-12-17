@@ -2,14 +2,6 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-  - quests
-    - troubleshoot death saving throws -- in region 2, they seem to be able to get arbitrarily high
-    - make sure that winning a quest doesn't print all the file paths of the new region
-    - dialogue node missing for ID maud react doubt
-    - make sure the credits don't start to print the second you beat the game, put like a 3000 sleep there
-    - trim your health output in combat to 2 decimal places (find in files 'health left')
-    - add a side quest to region 1
-      - and build out region 1 dialogue further based on this
   - region 2
     - update regionadversary so that region 2 represents an increase in difficulty
     - update all characters for the same purpose
@@ -21,7 +13,7 @@ Keep adding individual game elements in a "test data" format.
 - get rid of all the 'can assign quest' stuff, across MANY files both java and json
 - replace welcome to the mastermind puzzle (find in files)
 - hunt down any remaining apostrophes with the yellow box around them
-- dialogue is getting kinda tricky.  you can't really have npc's always start at the same spot necessarily.  that's fine for generic npc's, but quest givers? they need to update their starting state based on what you have done...
+- dialogue is getting kinda tricky.  you can't really have npc's always start at the same spot necessarily.  that's fine for generic npc's, but quest givers? they need to update their starting state based on what you have done... (probably add a map of string, string to gamestate which will hold an npc name and the last used dialogueid.  starting conversation will mean checking that and if the person is not on there, starting at the start.  else, start at the last dialogue id and print some text to indicate like "where did we leave off?" or somethign. also do a check so that if you have completed the quest indicated in the dialogue id, it won't show up)
 - make sure the same quest can't be assigned twice (this only actually matters for side quests, but still)
 - add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro, which will mean pulling some of the corrent introduction.json out into a separate file for region intro
 - Reassess demo at this time, have stoobics test the game.  

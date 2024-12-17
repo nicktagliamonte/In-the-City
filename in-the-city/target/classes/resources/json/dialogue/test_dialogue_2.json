@@ -94,6 +94,10 @@
         { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
       ]
     },
+    "maud_react_doubt": {
+      "npcLine": "You might be right.",
+      "options": []
+    },
     "maud_dislike_arthur": {
       "npcLine": "You could say that. I just think he should be more proactive. Always waiting for someone else to do the hard work. It's frustrating.",
       "options": [

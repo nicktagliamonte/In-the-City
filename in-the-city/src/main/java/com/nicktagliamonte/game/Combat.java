@@ -237,7 +237,7 @@ public class Combat {
                 Thread.currentThread().interrupt();
             }
             System.out.println("You hit " + target.getName() + " for " + damage + " damage! " + target.getName()
-                    + " has " + target.getHealth() + " health left");
+                    + " has " + String.format("%.2f", target.getHealth()) + " health left");
         } else {
             try {
                 Thread.sleep(15);
@@ -513,7 +513,7 @@ public class Combat {
                     Thread.currentThread().interrupt();
                 }
                 System.out.println(attacker.getName() + " hits " + target.getName() + " for " + damage + " damage! "
-                        + target.getName() + " has " + target.getHealth() + " health left");
+                    + target.getName() + " has " + String.format("%.2f", target.getHealth()) + " health left");
                 if (!npcTarget.isAlive() && target instanceof Adversary) {
                     try {
                         Thread.sleep(15);
@@ -559,7 +559,7 @@ public class Combat {
                 Thread.currentThread().interrupt();
             }
             System.out.println(attacker.getName() + " hits you for " + damage + " damage. You have "
-                    + player.getHealth() + " health left");
+                    + String.format("%.2f", player.getHealth()) + " health left");
         } else {
             try {
                 Thread.sleep(15);
