@@ -15,7 +15,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.annotations.Expose;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileNotFoundException;
@@ -33,29 +32,18 @@ import java.util.Scanner;
 import java.awt.Point;
 
 public class GameState {
-    @Expose
     private Region currentRegion;
-    @Expose
     private Room currentRoom;
     public Player player;
     public GameEngine gameEngine;
-    @Expose
     private List<NPC> currentParty;
-    @Expose
     private RegionDialogue currentRegionDialogue;
-    @Expose
     private boolean inDialogue = false;
-    @Expose
     private String regionFilePath;
-    @Expose
     private String adjacencyFilePath;
-    @Expose
     private String itemsFilePath;
-    @Expose
     private String peopleFilePath;
-    @Expose
     private String dialogueFilePath;
-    @Expose
     private boolean fromSaveFile;
     public GameTimer gameTimer;
     public String itemContext;
@@ -63,21 +51,31 @@ public class GameState {
 
     // Constructor
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
-            String peopleFilePath, String dialogueFilePath) {
+            String peopleFilePath, String dialogueFilePath, String introFilePath, boolean fromSaveFile) {
         // Initialize the game state, including descriptions and room contents
         this.gameEngine = gameEngine;
-        initializePlayer();
-        loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
         this.currentParty = new ArrayList<>();
         this.regionFilePath = regionFilePath;
         this.adjacencyFilePath = adjacencyFilePath;
         this.itemsFilePath = itemsFilePath;
         this.peopleFilePath = peopleFilePath;
         this.dialogueFilePath = dialogueFilePath;
-        fromSaveFile = false; // TODO: handle this when i'm doing persistence
+        this.fromSaveFile = fromSaveFile;
         this.gameTimer = new GameTimer(this);
         this.itemContext = "";
         this.safeZoneInventory = new safeZoneInventory();
+        if (!fromSaveFile) {
+            introSequence(introFilePath);
+            initializePlayer();
+            loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
+        } else {
+            //TODO: load from save file
+        }
+    }
+
+    public void introSequence(String introFilePath) {
+        Introduction introduction = new Introduction(introFilePath);
+        introduction.display();
     }
 
     public void initializePlayer() {
@@ -105,12 +103,6 @@ public class GameState {
             String classInput = scanner.nextLine();
             characterClass = CharacterClass.createCharacterClass(classInput.trim());
         } while (characterClass == null);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println("Welcome to the game! Type \"menu\" for assistance");
 
         this.player = new Player(name.trim(), characterClass);
         gameEngine.player = this.player;
@@ -130,22 +122,10 @@ public class GameState {
                     currentRegion.setHasSafeZone(true);
                 }
             }
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            System.out.println("Region loaded: " + currentRegion.getRegionName());
             loadAdjacencyList(adjacenciesFilePath);
             loaditemsInRoom(itemsFilePath);
             loadPeopleInRoom(peopleFilePath);
             loadRegionDialogue(dialogueFilePath);
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            System.out.println("loaded adjacent rooms");
             initializeCurrentRoom();
         } catch (IOException e) {
             e.printStackTrace();

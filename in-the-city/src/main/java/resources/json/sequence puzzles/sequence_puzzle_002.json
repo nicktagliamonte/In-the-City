@@ -15,8 +15,8 @@
       "3": "The third mirror is last."
     },
     "reward": 10,
-    "completionMessage": "The light illuminating the room makes an item come into view on a platform in the center. You hear the lock to room 1 click unlocked.",
-    "completionLock": "room 1",
+    "completionMessage": "The light illuminating the room makes an item come into view on a platform in the center. You hear the lock to The Chamber click unlocked.",
+    "completionLock": "The Chamber",
     "completionItems": [
         {
           "type": "FuelCell"

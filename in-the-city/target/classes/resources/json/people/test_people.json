@@ -1,9 +1,9 @@
 {
     "people": {
-        "Room 2": {
+        "The Hall": {
             "(1,2)": {
                 "type": "friend",
-                "name": "testName",
+                "name": "Nora",
                 "health": 50.0,
                 "inventory": {
                     "item1": {
@@ -30,7 +30,7 @@
             },
             "(2,4)": {
                 "type": "adversary",
-                "name": "testName2",
+                "name": "Victor",
                 "health": 5.0,
                 "inventory": {
                     "item1": {
@@ -71,7 +71,7 @@
             },
             "(4,5)": {
                 "type": "neutral",
-                "name": "gilear",
+                "name": "Miles",
                 "health": 5.0,
                 "inventory": {
                     "item1": {
@@ -108,7 +108,7 @@
             },
             "(1,3)": {
                 "type": "partymember",
-                "name": "chunky",
+                "name": "Sam",
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",

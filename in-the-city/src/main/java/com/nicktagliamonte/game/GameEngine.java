@@ -12,17 +12,24 @@ public class GameEngine {
     public Player player;
     public boolean isInMenu;
     @Expose private Menu menu;
-    @Expose private GameState gameState = new GameState(this,
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region.json", 
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json", 
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json",
-     "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json");
+    @Expose private GameState gameState;
     @Expose private Scanner scanner = new Scanner(System.in);
     @Expose private GameTimer timer;
     
 
-    public void startGame() {
+    public void startGame(boolean fromSaveFile, String saveFilePath) {
+        if (fromSaveFile) {
+            //TODO: load save file
+        } else {
+            this.gameState = new GameState(this,
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region.json", 
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies.json", 
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items.json", 
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\people\\test_people.json",
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\dialogue\\test_dialogue.json",
+            "P:\\coding\\In-the-City\\in-the-city\\src\\main\\\\java\\resources\\json\\introduction\\introduction.json",
+            false);
+        }
         boolean isRunning = true;
         int invalidCommands = 0;
         isInMenu = false;
@@ -34,7 +41,7 @@ public class GameEngine {
             if (isInMenu) {
                 menu.displayMenu();
             } else {
-                if (timer.getElapsedTime() >= 120) {
+                if (timer.getElapsedTime() >= 2000) {
                     timer.checkForEvent();
                 }
                 timer.checkForHunger();

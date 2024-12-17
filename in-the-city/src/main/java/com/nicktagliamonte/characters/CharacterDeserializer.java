@@ -85,7 +85,7 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double neutralWis = jsonObject.get("wis").getAsDouble();
                 double neutralCharisma = jsonObject.get("charisma").getAsDouble();
                 //NOTE!!! this is the impact that fighting this character will have on alignment, and calculating alignment delta works by treating this as a percent.
-                //i.e. fighting gilear decreases alignment by 150% of the current value
+                //i.e. fighting Miles decreases alignment by 150% of the current value
                 double neutralAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();    
 
                 return new Neutral(neutralName, neutralHealth, neutralInventory, neutralDescription, neutralMaxHealth, 

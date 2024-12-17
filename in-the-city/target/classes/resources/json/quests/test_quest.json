@@ -7,16 +7,16 @@
     "objective_001": {
       "id": "objective_001",
       "type": "dialogue",
-      "target": "gilear",
+      "target": "Miles",
       "isCompleted": false,
       "completionMessage": null
     },
     "objective_002": {
       "id": "objective_002",
       "type": "combat",
-      "target": "testName2",
+      "target": "Victor",
       "isCompleted": false,
-      "completionMessage": "testName2 should have been carying an item which may show the way forward. Look around to find it, and take that item."
+      "completionMessage": "Victor should have been carying an item which may show the way forward. Look around to find it, and take that item."
     },
     "objective_003": {
       "id": "objective_003",
@@ -30,19 +30,19 @@
       "type": "puzzle",
       "target": "codex",
       "isCompleted": false,
-      "completionMessage": "Good job solving the puzzle box. Hide from Gilear, he'll want the solved box"
+      "completionMessage": "Good job solving the puzzle box. Hide from Miles, he'll want the solved box"
     },
     "objective_005": {
       "id": "objective_005",
       "type": "stealth",
       "target": "5",
       "isCompleted": false,
-      "completionMessage": "Good job hiding from Gilear.  To complete the quest, move to room 1"
+      "completionMessage": "Good job hiding from Miles.  To complete the quest, move to The Chamber"
     },
     "objective_006": {
       "id": "objective_006",
       "type": "movement",
-      "target": "room 1",
+      "target": "The Chamber",
       "isCompleted": false,
       "completionMessage": null
     }

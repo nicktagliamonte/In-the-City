@@ -828,7 +828,7 @@ public enum GameCommand {
                             Thread.currentThread().interrupt();
                         }
                         System.out.println("You aren't able to join this person. There are only a few valid party members available in the game, and their \n\t" +
-                                        "presence will be made clear (in the actual game, outside this demo. In the demo, the only valid character to join is chunky.)");
+                                        "presence will be made clear (in the actual game, outside this demo. In the demo, the only valid character to join is Sam.)");
                     }
                 }
             }

@@ -1,5 +1,5 @@
 {
-    "Mike TRuk": {
+    "Henry": {
       "start": {
         "npcLine": "Hey, how's it going?",
         "options": [
@@ -29,7 +29,7 @@
         "options": []
       }
     },
-    "Sleve McDichael": {
+    "Maud": {
       "start": {
         "npcLine": "What's up?",
         "options": [

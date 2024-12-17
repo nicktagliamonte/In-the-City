@@ -1,6 +1,6 @@
 {
   "items": {
-    "Room 1": {
+    "The Chamber": {
       "(1,2)": {
         "type": "FuelCell"
       },
@@ -26,12 +26,12 @@
         "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_001.json"
       }
     },
-    "Room 2": {
+    "The Hall": {
       "(0,0)": {
         "type": "FuelCell"
       }
     },
-    "Room 3": {
+    "The Observation Deck": {
       "(0,4)": {
         "type": "Sequence Puzzle",
         "name": "Mirror",

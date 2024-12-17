@@ -1,8 +1,8 @@
 {
-    "regionName": "Region 2",
+    "regionName": "The City Street",
     "rooms": [
       {
-        "name": "The Parlor",
+        "name": "The Street",
         "description": "A dim room filled with old furniture and strange symbols carved into the floor.",
         "width": 14,
         "height": 14,
@@ -46,10 +46,10 @@
         ],
         "isSafe": false,
         "isEconomic": true,
-        "nextRoomToSafeZone": "The Chamber"
+        "nextRoomToSafeZone": "The Attic"
       },
       {
-        "name": "The Hallway",
+        "name": "The Abandoned Shop",
         "description": "A long corridor, dimly lit by candles along the walls. The air is musty, and the floor creaks underfoot.",
         "width": 10,
         "height": 6,
@@ -77,10 +77,10 @@
         ],
         "isSafe": false,
         "isEconomic": false,
-        "nextRoomToSafeZone": "The Parlor"
+        "nextRoomToSafeZone": "The Street"
       },
       {
-        "name": "The Chamber",
+        "name": "The Attic",
         "description": "A large, open room with high ceilings. The faint echo of dripping water can be heard. Ancient tapestries hang from the walls, some torn and others still intact.",
         "width": 15,
         "height": 10,

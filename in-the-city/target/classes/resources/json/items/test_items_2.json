@@ -1,6 +1,6 @@
 {
     "items": {
-      "The Parlor": {
+      "The Street": {
         "(3,7)": {
           "type": "FuelCell"
         },
@@ -17,7 +17,7 @@
           "acbonus": 2
         }
       },
-      "The Hallway": {
+      "The Abandoned Shop": {
         "(0,1)": {
           "type": "FuelCell"
         },

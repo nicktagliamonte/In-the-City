@@ -1,5 +1,5 @@
 {
-  "chunky": {
+  "Sam": {
     "start": {
       "npcLine": "Hey, how's it going?",
       "options": [
@@ -30,7 +30,7 @@
       "options": []
     }
   },
-  "testName": {
+  "Nora": {
     "start": {
       "npcLine": "So far this is working",
       "options": [
@@ -43,7 +43,7 @@
       "options": []
     }
   },
-  "gilear": {
+  "Miles": {
     "start": {
       "npcLine": "What's up?",
       "options": [
@@ -52,7 +52,7 @@
       ]
     },
     "quest_001_objective_001": {
-      "npcLine": "Yes. You'll need to kill testName2 and take his puzzle box. Then, come to me and i'll solve it.",
+      "npcLine": "Yes. You'll need to kill Victor and take his puzzle box. Then, come to me and i'll solve it.",
       "options": [
         { "text": "And if I keep the box for myself?", "nextDialogueId": "bad", "impact": -1 },
         { "text": "I'll bring it to you once I have it.", "nextDialogueId": "exit", "impact": 0 }

@@ -6,6 +6,10 @@ public class Main {
         GameEngine gameEngine = new GameEngine();
         
         // Start the game
-        gameEngine.startGame();
+        if (args.length == 0) {
+            gameEngine.startGame(false, "");
+        } else {
+            gameEngine.startGame(true, "");
+        }
     }
 }

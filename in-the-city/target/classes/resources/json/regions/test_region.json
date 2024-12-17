@@ -1,8 +1,8 @@
 {
-  "regionName": "Sample Region",
+  "regionName": "The Dilapidated Building",
   "rooms": [
     {
-      "name": "Room 1",
+      "name": "The Chamber",
       "description": "The starting room with an old wooden table.",
       "width": 10,
       "height": 10,
@@ -38,10 +38,10 @@
       ],
       "isSafe": false, 
       "isEconomic": true,
-      "nextRoomToSafeZone": "upstairs"
+      "nextRoomToSafeZone": "The Safe Zone"
     },
     {
-      "name": "Room 2",
+      "name": "The Hall",
       "description": "A dimly lit hallway with flickering lights.",
       "width": 6,
       "height": 8,
@@ -73,11 +73,11 @@
       ],
       "isSafe": false,
       "isEconomic": false,
-      "nextRoomToSafeZone": "room 1"
+      "nextRoomToSafeZone": "The Chamber"
     },
     {
-      "name": "upstairs",
-      "description": "a tiny upstairs room",
+      "name": "The Safe Zone",
+      "description": "a tiny The Safe Zone room",
       "width": 2,
       "height": 2,
       "transitionEvent": {
@@ -98,12 +98,12 @@
       "nextRoomToSafeZone": ""
     },
     {
-      "name": "Room 3",
+      "name": "The Observation Deck",
       "description": "a small, difficult to access room containing a series of mirrors",
       "width": 5,
       "height": 5,
       "transitionEvent": {
-        "description": "You struggle to the top of the ledge, open the door, and enter room 3.  You hear the door lock behind you."
+        "description": "You struggle to the top of the ledge, open the door, and enter The Observation Deck.  You hear the door lock behind you."
       },
       "mask": [
         [1,1,1,1,1],
@@ -123,7 +123,7 @@
       ],
       "isSafe": false, 
       "isEconomic": false,
-      "nextRoomToSafeZone": "Room 1"
+      "nextRoomToSafeZone": "The Chamber"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
     "people": {
-        "The Parlor": {
+        "The Street": {
             "(1,0)": {
                 "type": "friend",
-                "name": "Sleve McDichael",
+                "name": "Maud",
                 "health": 45.0,
                 "inventory": {
                     "item1": {
@@ -23,7 +23,7 @@
             },
             "(2,5)": {
                 "type": "adversary",
-                "name": "Willie Dustice",
+                "name": "Robert",
                 "health": 10.0,
                 "inventory": {
                     "item1": {
@@ -48,7 +48,7 @@
             },
             "(3,2)": {
                 "type": "neutral",
-                "name": "Shown Furcotte",
+                "name": "Arthur",
                 "health": 25.0,
                 "inventory": {
                     "item1": {
@@ -78,7 +78,7 @@
             },
             "(8,8)": {
                 "type": "partymember",
-                "name": "Mike TRuk",
+                "name": "Henry",
                 "inventory": {
                     "item1": {
                         "type": "FuelCell",
