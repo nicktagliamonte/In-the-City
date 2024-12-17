@@ -55,19 +55,6 @@ Some character names or attributes are pulled from things I was watching at the 
 
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.      
-- Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
-  - format output for readability in general.  
-- Update the inventory function.  
-  - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
-    ```
-    fuel cell   1,000,000  
-    otherItem   1  
-    etc  
-    ```  
-  - Also, make sure it shows the inventory for the whole party.  
-- There should be a way to see remaining carry weight.  
-- update the manuals to use the nicer formatting for section headers seen in the economy manual
-- Trim the name entered by the user to be all lowercase but first letter upper case.
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
 - Add an "introduction" screen.  
   - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
