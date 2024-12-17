@@ -1127,8 +1127,6 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             // quit logic handled in game engine
-            // TODO: this should be replaced by exclusively the menu based quit as i near
-            // the end of demo game
         }
     };
 

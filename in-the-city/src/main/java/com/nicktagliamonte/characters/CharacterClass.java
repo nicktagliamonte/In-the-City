@@ -14,7 +14,6 @@ public class CharacterClass {
     @Expose private double health;
     @Expose private double ac;
 
-    //TODO: figure out ac
     public CharacterClass(String className) {
         if (className.equalsIgnoreCase("survivalist")) {
             this.className = "survivalist";

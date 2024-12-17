@@ -259,7 +259,6 @@ public class Menu {
                 int input = gameEngine.getPlayerInputAsInt();
                 
                 if (input == 1) {
-                    //TODO: make a small magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
                     
                     System.out.println("There are 3 types of traps you can make.");
@@ -272,7 +271,6 @@ public class Menu {
                     
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
-                    //TODO: make a large magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
                     
                     System.out.println("There are 3 types of traps you can make.");
@@ -285,7 +283,6 @@ public class Menu {
                     
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
-                    //TODO: make a defensive magical trap
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
                     
                     System.out.println("There are 3 types of traps you can make.");
@@ -340,7 +337,6 @@ public class Menu {
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
-                    //TODO: make a large trap
                     
                     System.out.println("1. Small Trap (1 scrap)");
                     
@@ -351,7 +347,6 @@ public class Menu {
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
-                    //TODO: make a defensive trap
                     
                     System.out.println("1. Small Trap (1 scrap)");
                     
