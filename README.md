@@ -45,11 +45,6 @@ Currently:
   - A mastermind style "arrange the items correctly" puzzle.
 - Each of the puzzles have a hint mechanic and player rewards for completion.
 - An escape room style section where the door locks behind the player on entry, and the player has to solve a puzzle to unlock it.
-  
-Some character names or attributes are pulled from things I was watching at the time I made them, which will not be a feature of the final game:  
-- The party member is named chunky [see Tim Robinson sketch: "What do you do???"]
-- The neutral character is named Gilear [see D20's Fantasy High for the most neutral character I could think of]  
-- Various other references are scattered into my test data but are not elements of the actual game story and will be removed/replaced by my story  
 
 ## Upcoming Work:  
 
