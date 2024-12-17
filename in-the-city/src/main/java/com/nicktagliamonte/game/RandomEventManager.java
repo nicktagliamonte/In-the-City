@@ -21,14 +21,13 @@ public class RandomEventManager {
     }
 
     public void checkForEvent() {
-        // Event frequency (adjust based on zones or other factors)
-        int eventChance = random.nextInt(100); // Random number between 0-99
+        int eventChance = random.nextInt(100);
 
         if (eventChance < 2) {
             triggerCombatEvent();
         } else if (eventChance < 4 && !(gameState.getPlayer().getInventory().isEmpty())) {
             triggerBarterEvent();
-        } else if (eventChance < 8) {
+        } else if (eventChance < 15) {
             triggerFlavorTextEvent();
         }
     }
@@ -46,7 +45,7 @@ public class RandomEventManager {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            System.out.println("A wild adversary approaches! Get ready to fight!");
+            System.out.println("A desparate scavenger approaches with a knife, wild eyed.");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate adversary for that region.
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
             //i.e. dead zone health 1-10, liacouras health 50-70
@@ -65,7 +64,7 @@ public class RandomEventManager {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            System.out.println("An NPC offers to trade with you.");
+            System.out.println("An wandering traveler offers to trade with you.");
             //TODO: eventually, this will require a 9-part if/else to get the name of the current region and initialize the appropriate friend for that region.
             //TODO: the regionFriend constructors should also have some kind of randomization function to set the inventory to some random set within a range
             //i.e. dead zone 1 fuelcell, liacouras 10 swords
@@ -83,8 +82,40 @@ public class RandomEventManager {
         //TODO: then we'll get a 9-item if/else to set the String[] here
         String[] flavorText = {
             "The wind picks up, carrying a faint scent of smoke.",
-            "You hear a distant rumble, as if the ground itself is warning you.",
-            "The shadows grow longer, and you can't shake the feeling of being watched."
+            "You hear a distant rumble.",
+            "The shadows grow longer, and you can't shake the feeling of being watched.",
+            "The faint scent of burning wood lingers in the air.", 
+            "A soft rustling sound comes from behind the cracked door.", 
+            "Dust particles swirl in the light, almost like tiny ghosts.", 
+            "The air smells stale, as though this place hasn’t been used in years.", 
+            "A distant bell tolls, its sound muffled by the walls.", 
+            "The floor creaks with every step, echoing through the quiet space.", 
+            "Something moves in the corner of your vision, but when you look, there’s nothing there.", 
+            "The cold metal of the railing feels oddly comforting against your palm.", 
+            "A chill runs down your spine as you hear a faint, unintelligible whisper.", 
+            "The faint taste of salt lingers in the air, as if the sea is close by.", 
+            "The walls seem to close in as the light dims.", 
+            "The air tastes faintly of iron, leaving a metallic aftertaste.", 
+            "A faint glow from an unknown source illuminates the far corner.", 
+            "Your footsteps echo unnervingly in the empty hallway.", 
+            "A gentle breeze stirs the curtains, though no windows are open.", 
+            "The sound of dripping water echoes from somewhere distant.", 
+            "Old paintings line the walls, their eyes following you as you move.", 
+            "The hum of electricity fills the air, creating a sense of unease.", 
+            "Faint laughter echoes, but no one is in sight.", 
+            "A cold draft cuts through the room, sending a shiver down your spine.", 
+            "The ground beneath you seems to vibrate softly, as if something large is moving below.", 
+            "You catch a glimpse of a shadow passing just out of sight.", 
+            "The musty smell of old books fills the air, mixed with the scent of mildew.", 
+            "The air is thick with tension, as if something is about to happen.", 
+            "A faint, melodic tune plays from somewhere unseen, barely audible.", 
+            "The walls are lined with cracked tiles, some of which are missing entirely.", 
+            "Your breath comes out in a visible cloud, the room cold and uninviting.", 
+            "A thick fog seems to settle, obscuring everything beyond arm’s reach.", 
+            "The floor beneath you groans with each step, protesting your weight.", 
+            "Flickering lights cast long, eerie shadows across the room.", 
+            "The distant sound of running water grows louder as you move deeper.", 
+            "The smell of burnt food lingers in the air, despite no sign of a fire."
         };
         try {
             Thread.sleep(15);

@@ -57,7 +57,7 @@
                         "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\mastermind puzzles\\mastermind_puzzle_001.json"
                     }
                 },
-                "description": "a baaaaad guy.  dump him, girl",
+                "description": "",
                 "maxHealth": 5.0,
                 "damage": 5,
                 "ac": 5,
@@ -67,7 +67,8 @@
                 "Intelligence": 5,
                 "wis": 5,
                 "charisma": 5,
-                "alignmentImpact": 150
+                "alignmentImpact": 150,
+                "allies": []
             },
             "(4,5)": {
                 "type": "neutral",

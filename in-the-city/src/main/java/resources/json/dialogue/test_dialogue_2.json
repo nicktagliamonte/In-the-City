@@ -3,28 +3,28 @@
       "start": {
         "npcLine": "Hey, how's it going?",
         "options": [
-          { "text": "Not bad, you?", "nextDialogueId": "Mike TRuk_response_1", "impact": 5 },
-          { "text": "Leave me alone.", "nextDialogueId": "Mike TRuk_response_2", "impact": -20 },
+          { "text": "Not bad, you?", "nextDialogueId": "Henry_response_1", "impact": 5 },
+          { "text": "Leave me alone.", "nextDialogueId": "Henry_response_2", "impact": -20 },
           { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
         ]
       },
-      "Mike TRuk_response_1": {
+      "Henry_response_1": {
         "npcLine": "I've been better. What do you need?",
         "options": [
-          { "text": "Just saying hi.", "nextDialogueId": "Mike TRuk_response_3", "impact": 10 },
-          { "text": "Can you help me with something?", "nextDialogueId": "Mike TRuk_response_4", "impact": 0 },
+          { "text": "Just saying hi.", "nextDialogueId": "Henry_response_3", "impact": 10 },
+          { "text": "Can you help me with something?", "nextDialogueId": "Henry_response_4", "impact": 0 },
           { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
         ]
       },
-      "Mike TRuk_response_2": {
+      "Henry_response_2": {
         "npcLine": "Fine, have it your way.",
         "options": []
       },
-      "Mike TRuk_response_3": {
+      "Henry_response_3": {
         "npcLine": "Oh, that's nice. Take care!",
         "options": []
       },
-      "Mike TRuk_response_4": {
+      "Henry_response_4": {
         "npcLine": "Depends on what you need.",
         "options": []
       }
@@ -33,11 +33,11 @@
       "start": {
         "npcLine": "What's up?",
         "options": [
-          { "text": "Just passing by.", "nextDialogueId": "Sleve McDichael_response_1", "impact": 0 },
+          { "text": "Just passing by.", "nextDialogueId": "Maud_response_1", "impact": 0 },
           { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
         ]
       },
-      "Sleve McDichael_response_1": {
+      "Maud_response_1": {
         "npcLine": "Alright, take care.",
         "options": []
       }

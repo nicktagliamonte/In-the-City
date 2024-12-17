@@ -55,11 +55,6 @@ public class Manual {
         System.out.println("_________________________________________________________");
     }
 
-    public void printItems() {
-        //TODO: Create list of items
-        System.out.println("A very lazy dev left this section marked \"To Do\"");
-    }
-
     public void combatManual() {
         System.out.println("┌─────────────────────────────┐");
         System.out.println("|        COMBAT GUIDE         |");

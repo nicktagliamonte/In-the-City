@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -59,9 +60,14 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double adversaryWis = jsonObject.get("wis").getAsDouble();
                 double adversaryCharisma = jsonObject.get("charisma").getAsDouble();
                 double adversaryAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();
+                JsonArray adversaryAlliesJson = jsonObject.getAsJsonArray("allies");
+                List<String> adversaryAllies = new ArrayList<>();
+                for (JsonElement allyElement : adversaryAlliesJson) {
+                    adversaryAllies.add(allyElement.getAsString());
+                }
 
                 return new Adversary(adversaryName, adversaryHealth, adversaryInventory, adversaryDescription, adversaryMaxHealth, adversaryDamage, adversaryAc,
-                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma, adversaryAlignmentImpact);
+                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma, adversaryAlignmentImpact, adversaryAllies);
             case "neutral":
                 String neutralName = jsonObject.get("name").getAsString();
                 double neutralHealth = jsonObject.get("health").getAsDouble();

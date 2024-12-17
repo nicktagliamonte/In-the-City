@@ -79,64 +79,51 @@ public class Menu {
     }
 
     private void displayManual() {        
-        System.out.println("1. Display a list of commands available in the game.");        
-        System.out.println("2. Display a description of the various items available in the game.");        
-        System.out.println("3. Display a combat manual");        
-        System.out.println("4. Display a manual describing trade and economy in the game");
-        System.out.println("5. Display a description of character classes.");        
-        System.out.println("6. Return to the main menu.");
+        System.out.println("1. Display a list of commands available in the game.");               
+        System.out.println("2. Display a combat manual");        
+        System.out.println("3. Display a manual describing trade and economy in the game");
+        System.out.println("4. Display a description of character classes.");        
+        System.out.println("5. Return to the main menu.");
         Manual manual = new Manual();
         while (true) {
             int input = gameEngine.getPlayerInputAsInt();
             if (input == 1) {
                 manual.printCommands();
-                System.out.println("1. Display a list of commands available in the game.");        
-                System.out.println("2. Display a description of the various items available in the game.");        
-                System.out.println("3. Display a combat manual");        
-                System.out.println("4. Display a manual describing trade and economy in the game");
-                System.out.println("5. Display a description of character classes.");        
-                System.out.println("6. Return to the main menu.");
-            } else if (input == 2) {
-                manual.printItems();
                 
                 System.out.println("");
-                System.out.println("1. Display a list of commands available in the game.");        
-                System.out.println("2. Display a description of the various items available in the game.");        
-                System.out.println("3. Display a combat manual");        
-                System.out.println("4. Display a manual describing trade and economy in the game");
-                System.out.println("5. Display a description of character classes.");        
-                System.out.println("6. Return to the main menu.");
-            } else if (input == 3) {
+                System.out.println("1. Display a list of commands available in the game.");               
+                System.out.println("2. Display a combat manual");        
+                System.out.println("3. Display a manual describing trade and economy in the game");
+                System.out.println("4. Display a description of character classes.");        
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 2) {
                 manual.combatManual();
                 
                 System.out.println("");
-                System.out.println("1. Display a list of commands available in the game.");        
-                System.out.println("2. Display a description of the various items available in the game.");        
-                System.out.println("3. Display a combat manual");        
-                System.out.println("4. Display a manual describing trade and economy in the game");
-                System.out.println("5. Display a description of character classes.");        
-                System.out.println("6. Return to the main menu.");
-            } else if (input == 4) {
+                System.out.println("1. Display a list of commands available in the game.");               
+                System.out.println("2. Display a combat manual");        
+                System.out.println("3. Display a manual describing trade and economy in the game");
+                System.out.println("4. Display a description of character classes.");        
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 3) {
                 manual.enconomyManual();
                 
                 System.out.println("");
-                System.out.println("1. Display a list of commands available in the game.");        
-                System.out.println("2. Display a description of the various items available in the game.");        
-                System.out.println("3. Display a combat manual");        
-                System.out.println("4. Display a manual describing trade and economy in the game");
-                System.out.println("5. Display a description of character classes.");        
-                System.out.println("6. Return to the main menu.");
-            } else if (input == 5) {
+                System.out.println("1. Display a list of commands available in the game.");               
+                System.out.println("2. Display a combat manual");        
+                System.out.println("3. Display a manual describing trade and economy in the game");
+                System.out.println("4. Display a description of character classes.");        
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 4) {
                 manual.characterManual();
 
                 System.out.println("");
-                System.out.println("1. Display a list of commands available in the game.");        
-                System.out.println("2. Display a description of the various items available in the game.");        
-                System.out.println("3. Display a combat manual");        
-                System.out.println("4. Display a manual describing trade and economy in the game");
-                System.out.println("5. Display a description of character classes.");        
-                System.out.println("6. Return to the main menu.");
-            } else if (input == 6) {
+                System.out.println("1. Display a list of commands available in the game.");               
+                System.out.println("2. Display a combat manual");        
+                System.out.println("3. Display a manual describing trade and economy in the game");
+                System.out.println("4. Display a description of character classes.");        
+                System.out.println("5. Return to the main menu.");
+            } else if (input == 5) {
                 displayMenu();
                 break;
             }

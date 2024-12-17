@@ -18,6 +18,7 @@ public class Quest {
     @Expose private List<Item> rewards;
     @Expose private GameState gameState;
     @Expose private boolean isPrimary;
+    @Expose private boolean isFinal;
     @Expose private String completionMessage;
     @Expose private String newRegionFilePath;
     @Expose private String newAdjacencyFilePath;
@@ -25,7 +26,7 @@ public class Quest {
     @Expose private String newPeopleFilePath;
     @Expose private String newDialogueFilePath;
 
-    public Quest(String questId, String title, String description, Boolean isPrimary, 
+    public Quest(String questId, String title, String description, Boolean isPrimary, boolean isFinal,
                 List<Objective> objectives, List<Item> rewards, String completionMessage, 
                 String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
                 String newPeopleFilePath, String newDialogueFilePath, GameState gameState) {
@@ -33,6 +34,7 @@ public class Quest {
         this.title = title;
         this.description = description;
         this.isPrimary = isPrimary;
+        this.isFinal = isFinal;
         this.status = "inactive"; // Default status
         this.objectives = new HashMap<>();
         for (Objective objective : objectives) {

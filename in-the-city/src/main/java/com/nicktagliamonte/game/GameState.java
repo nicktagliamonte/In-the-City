@@ -17,9 +17,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,7 +67,7 @@ public class GameState {
         this.itemContext = "";
         this.safeZoneInventory = new safeZoneInventory();
         if (!fromSaveFile) {
-            introSequence(introFilePath);
+            //introSequence(introFilePath); TODO: uncomment this
             initializePlayer();
             loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
         } else {
@@ -297,16 +299,13 @@ public class GameState {
         }
     }
 
-    @SuppressWarnings("deprecation")
     public void loadRegionDialogue(String filepath) {
-        try (FileReader reader = new FileReader(filepath)) {
-            // Create a Gson instance with a custom deserializer
+        try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filepath), "UTF-8")) {
             Gson gson = new GsonBuilder()
                     .registerTypeAdapter(RegionDialogue.class, new DialogueDeserializer())
                     .create();
 
-            // Load and parse the JSON file
-            RegionDialogue regionDialogue = gson.fromJson(new JsonParser().parse(reader), RegionDialogue.class);
+            RegionDialogue regionDialogue = gson.fromJson(JsonParser.parseReader(reader), RegionDialogue.class);
             this.currentRegionDialogue = regionDialogue;
         } catch (IOException e) {
             e.printStackTrace();
@@ -1108,6 +1107,13 @@ public class GameState {
                     Character.getNumericValue(location.charAt(3)));
             combatants.add(neutralToFight.actAsAdversary());
         } else if (character instanceof Adversary) {
+            for (String allyName : ((Adversary) character).getAllies()) {
+                for (NPC person : getCurrentRoom().getPeopleInRoom().values()) {
+                    if (person.getName().equalsIgnoreCase(allyName)) {
+                        combatants.add(person);
+                    }
+                }
+            }
             combatants.add(character);
         }
 

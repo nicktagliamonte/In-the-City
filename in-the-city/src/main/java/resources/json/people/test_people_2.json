@@ -21,31 +21,6 @@
                 ],
                 "canGiveQuest": false
             },
-            "(2,5)": {
-                "type": "adversary",
-                "name": "Robert",
-                "health": 10.0,
-                "inventory": {
-                    "item1": {
-                        "type": "FuelCell",
-                        "name": "FuelCore-Beta",
-                        "description": "A high-density energy source.",
-                        "weight": 4.0,
-                        "consumable": true
-                    }
-                },
-                "description": "A scoundrel with a sneer.",
-                "maxHealth": 10.0,
-                "damage": 7,
-                "ac": 4,
-                "str": 6,
-                "dex": 5,
-                "con": 5,
-                "Intelligence": 4,
-                "wis": 3,
-                "charisma": 2,
-                "alignmentImpact": 120
-            },
             "(3,2)": {
                 "type": "neutral",
                 "name": "Arthur",
@@ -91,6 +66,65 @@
                 "description": "A technologist.",
                 "damage": 6,
                 "characterClass": "technologist"
+            }
+        },
+        "The Abandoned Shop": {
+            "(2,2)": {
+                "type": "adversary",
+                "name": "Robert",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A well dressed man.",
+                "maxHealth": 10.0,
+                "damage": 7,
+                "ac": 4,
+                "str": 6,
+                "dex": 5,
+                "con": 5,
+                "Intelligence": 4,
+                "wis": 3,
+                "charisma": 2,
+                "alignmentImpact": 120,
+                "allies": [
+                    "Jane",
+                    "Elvin"
+                ]
+            },
+            "(2,3)": {
+                "type": "adversary",
+                "name": "Jane",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A scoundrel with a sneer.",
+                "maxHealth": 10.0,
+                "damage": 7,
+                "ac": 4,
+                "str": 6,
+                "dex": 5,
+                "con": 5,
+                "Intelligence": 4,
+                "wis": 3,
+                "charisma": 2,
+                "alignmentImpact": 120,
+                "allies": []
+            },
+            "(2,4)": {
+                "type": "adversary",
+                "name": "Elvin",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A tall, strong man with a thick brow.",
+                "maxHealth": 10.0,
+                "damage": 7,
+                "ac": 4,
+                "str": 6,
+                "dex": 5,
+                "con": 5,
+                "Intelligence": 4,
+                "wis": 3,
+                "charisma": 2,
+                "alignmentImpact": 120,
+                "allies": []
             }
         }
     }
