@@ -75,7 +75,7 @@
       {
         "type": "door",
         "coordinates": "(0,0)",
-        "description": "A doorway \"The Chamber\"",
+        "description": "A doorway high on a ledge leading to \"The Chamber\"",
         "adjoiningRoom": "The Chamber",
         "isStairsUp": true,
         "lockType": "pickable",

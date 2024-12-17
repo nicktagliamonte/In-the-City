@@ -2,14 +2,13 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-  - region 2
-    - update regionadversary so that region 2 represents an increase in difficulty
-    - update all characters for the same purpose
-    - update room descriptions, item descriptions, npc descriptions, everything
   - survival
     - add at least a food and water item 
+    - add a weapon, have it be a quest 1 reward
     - make sure that hunger and thirst states are working
-  - replace all instances of "working" or other such test text (except for persistence)
+  - completeness
+    - throw in some spells for the technologist
+- replace all instances of "working" or other such test text (except for persistence)
 - get rid of all the 'can assign quest' stuff, across MANY files both java and json
 - replace welcome to the mastermind puzzle (find in files)
 - hunt down any remaining apostrophes with the yellow box around them

@@ -6,8 +6,9 @@ import java.util.Random;
 
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Adversary;
+import com.nicktagliamonte.characters.CityStreetAdversary;
 import com.nicktagliamonte.characters.Friend;
-import com.nicktagliamonte.characters.TestRegionAdversary;
+import com.nicktagliamonte.characters.TheDilapidatedBuildingAdversary;
 import com.nicktagliamonte.items.FuelCell;
 import com.nicktagliamonte.items.Item;
 
@@ -50,7 +51,13 @@ public class RandomEventManager {
             //TODO: the regionadversary constructors should also have some kind of randomization function to set the stats to some random number within a range
             //i.e. dead zone health 1-10, liacouras health 50-70
             //or whatever numbers make sense at the time
-            Adversary adversary = new TestRegionAdversary();
+            Adversary adversary = null;
+            if (gameState.getCurrentRegion().getRegionName().equals("The Dilapidated Building")) {
+                adversary = new TheDilapidatedBuildingAdversary();
+            } else {
+                adversary = new CityStreetAdversary();
+            }
+            
             gameState.enterCombat(adversary);
         }
     }
