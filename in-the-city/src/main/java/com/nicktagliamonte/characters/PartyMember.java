@@ -1,6 +1,8 @@
 package com.nicktagliamonte.characters;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.items.Item;
@@ -70,7 +72,12 @@ public class PartyMember extends NPC{
             }
             System.out.println("No items in inventory");
         } else {
-            inventory.forEach(item -> System.out.println(item.getName()));
+            Map<String, Long> itemCount = inventory.stream()
+                    .collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
+
+            // Print items with their counts, formatted
+            itemCount.forEach((name, count) -> 
+                System.out.printf("%-15s %d%n", name, count));
         }
     }
 }

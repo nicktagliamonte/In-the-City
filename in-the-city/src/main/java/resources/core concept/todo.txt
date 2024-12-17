@@ -1,22 +1,6 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- Add sleep function(s), probably many of them, before printing to the console so that messages don't appear many at once but instead prit one-at-a-time.
-  - format output for readability in general.  
-- Update the inventory function.  
-  - Rather than listing a million fuel cells if you hold a million fuel cells, format as:  
-    ```
-    fuel cell   50  
-    otherItem   1  
-    etc  
-    ```  
-  - Also, make sure it shows the inventory for the whole party.  
-- There should be a way to see remaining carry weight.  
-- Annotate that lockpicking a given room will NOT have you enter that room.  this will allow you to strategically unlock rooms for future quick entry rather than forcing you in immediately
-  - But the converse to this is that certain rooms should relock after a given ammount of time, which is more labor intensive than something this low on the list should be. i added this wile i was creating the quest system which was very difficult
-- update the manuals to use the nicer formatting for section headers seen in the economy manual
-- Trim the name entered by the user to be all lowercase but first letter upper case.
-- Double check all manuals.  for example, a character class guide would be good.  see CS notebook page opposite map for class skill proficiencies (negotiator is good at theivery for example)
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
 - Add an "introduction" screen.  
   - in general, add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro.

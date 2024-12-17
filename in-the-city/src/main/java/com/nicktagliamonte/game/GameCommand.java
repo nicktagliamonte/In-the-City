@@ -551,20 +551,21 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (!gameState.getCurrentRoom().getIsSafe()) {
+                System.out.println("\nYour Inventory");
+                System.out.println("──────────────────────");
                 gameState.getPlayer().listInventory();
+                System.out.println("Remaining Carry Weight: " + gameState.getPlayer().getRemainingCarryWeight());
+                
             } else {
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                System.out.println("Your inventory: ");
+                System.out.println("\nYour inventory: ");
+                System.out.println("──────────────────────");
                 gameState.getPlayer().listInventory();
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
+                System.out.println("Remaining Carry Weight: " + gameState.getPlayer().getRemainingCarryWeight());             
                 System.out.println("");
                 try {
                     Thread.sleep(15);

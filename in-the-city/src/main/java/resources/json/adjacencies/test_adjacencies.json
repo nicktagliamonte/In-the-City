@@ -11,7 +11,8 @@
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 1,
-        "dexScore": 0
+        "dexScore": 0,
+        "relockTime": 50
       },
       {
         "type": "stairs",
@@ -23,7 +24,8 @@
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100,
-        "dexScore": 0
+        "dexScore": 0,
+        "relockTime": 50
       },
       {
         "type": "door",
@@ -35,7 +37,8 @@
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100,
-        "dexScore": 5
+        "dexScore": 5,
+        "relockTime": 50
       }
     ],
     "Room 2": [
@@ -49,7 +52,8 @@
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100,
-        "dexScore": 0
+        "dexScore": 0,
+        "relockTime": 50
       }
     ],
     "upstairs": [
@@ -63,7 +67,8 @@
         "isLocked": false,
         "baseChances": 5,
         "difficulty": 100,
-        "dexScore": 0
+        "dexScore": 0,
+        "relockTime": 50
       }
     ],
     "Room 3": [
@@ -77,7 +82,8 @@
         "isLocked": true,
         "baseChances": 5,
         "difficulty": 100,
-        "dexScore": 5
+        "dexScore": 5,
+        "relockTime": 50
       }
     ]
   }

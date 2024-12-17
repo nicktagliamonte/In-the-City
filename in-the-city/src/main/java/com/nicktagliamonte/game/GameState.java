@@ -83,13 +83,17 @@ public class GameState {
     public void initializePlayer() {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+        String name = "";
+        while (name.isEmpty()) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println("Enter a name: ");
+            name = scanner.nextLine().trim();
         }
-        System.out.println("Enter a name: ");
-        String name = scanner.nextLine();
+        name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         CharacterClass characterClass;
         do {
             try {
@@ -1256,6 +1260,7 @@ public class GameState {
 
     @SuppressWarnings("resource")
     public void enterCombinationLockSequence(String roomName, Adjacency adj) {
+        
         try {
             Thread.sleep(15);
         } catch (InterruptedException e) {

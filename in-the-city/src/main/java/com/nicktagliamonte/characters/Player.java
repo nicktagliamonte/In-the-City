@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.Spells.Spell;
@@ -265,7 +266,13 @@ public class Player extends Person {
             }
             System.out.println("No items in inventory.");
         } else {
-            inventory.forEach(item -> System.out.println(item.getName()));
+            // Count occurrences of each item name
+            Map<String, Long> itemCount = inventory.stream()
+                    .collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
+
+            // Print items with their counts, formatted
+            itemCount.forEach((name, count) -> 
+                System.out.printf("%-15s %d%n", name, count));
         }
     }
 
