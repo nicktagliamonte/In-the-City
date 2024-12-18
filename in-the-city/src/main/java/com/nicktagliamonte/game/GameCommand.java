@@ -399,10 +399,18 @@ public enum GameCommand {
             // Check for NPCs in the room
             List<NPC> peopleInRoom = new ArrayList<>(gameState.getCurrentRoom().getPeopleInRoom().values());
     
+            boolean personFound = false;
             for (NPC person : peopleInRoom) {
                 if (person.getName().equalsIgnoreCase(itemName)) {
                     person.getDescription();
+                    personFound = true;
+                    break;
                 }
+            }
+    
+            // If no item or person was found, print the message
+            if (itemToExamine == null && !personFound) {
+                System.out.println("There is no such item here: " + itemName);
             }
     
             // Clean up
@@ -410,7 +418,7 @@ public enum GameCommand {
             peopleInRoom.clear();
             gameState.itemContext = "";
         }
-    },    
+    },   
     TAKE {
         @Override
         public void execute(String[] args, GameState gameState) {

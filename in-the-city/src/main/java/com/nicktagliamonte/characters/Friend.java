@@ -10,8 +10,8 @@ public class Friend extends NPC {
     @Expose private boolean canGiveQuest;
 
     public Friend(String name, double health, List<Item> inventory, String description, double maxHealth,
-                  List<String> questDialogue, boolean canGiveQuest) {
-        super(name, health, inventory, description, maxHealth);
+                  List<String> questDialogue, boolean canGiveQuest, boolean dynamicDialogue) {
+        super(name, health, inventory, description, maxHealth, dynamicDialogue);
         this.questDialogue = questDialogue;
         this.canGiveQuest = canGiveQuest;
     }

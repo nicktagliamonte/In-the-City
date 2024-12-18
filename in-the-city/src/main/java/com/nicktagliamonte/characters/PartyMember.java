@@ -13,10 +13,10 @@ public class PartyMember extends NPC{
     @Expose private double damage;
     @Expose private double maxHealth;
 
-    public PartyMember(String name, List<Item> inventory, String description, double damage, CharacterClass characterClass) {
+    public PartyMember(String name, List<Item> inventory, String description, double damage, CharacterClass characterClass, boolean dynamicDialogue) {
         super(name, characterClass.getHealth(), inventory, description, characterClass.getHealth(),
                 characterClass.getStrength(), characterClass.getDexterity(), characterClass.getConstitution(), characterClass.getIntelligence(), 
-                characterClass.getWisdom(), characterClass.getCharisma(), characterClass.getAc(), 0);
+                characterClass.getWisdom(), characterClass.getCharisma(), characterClass.getAc(), 0, dynamicDialogue);
         this.damage = damage;
         this.characterClass = characterClass;
         this.maxCarryWeight = characterClass.getMaxCarryWeight();

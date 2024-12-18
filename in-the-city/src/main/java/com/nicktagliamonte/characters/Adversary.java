@@ -11,16 +11,17 @@ public class Adversary extends NPC{
     @Expose private List<String> allies = new ArrayList<>();
 
     public Adversary(String name, double health, List<Item> inventory, String description, double maxHealth, double damage, double ac, double str, double dex, 
-                     double con, double Intelligence, double wis, double charisma, double alignmentImpact, List<String> allies) {
+                     double con, double Intelligence, double wis, double charisma, double alignmentImpact, List<String> allies, boolean dynamicDialogue) {
         //adversary dialogue will only be used in specific cases -- largely, and until later in game, this will be ignored.
-        super(name, health, inventory, description, maxHealth, str, dex, con, Intelligence, wis, charisma, ac, alignmentImpact);
+        super(name, health, inventory, description, maxHealth, str, dex, con, Intelligence, wis, charisma, ac, alignmentImpact, dynamicDialogue);
         this.damage = damage;
         this.allies = allies;
     }
 
     public Adversary(Neutral neutral) {
         super(neutral.getName(), neutral.getHealth(), neutral.getInventory(), neutral.getDescription(), neutral.getHealth(), neutral.getStrength(),
-        neutral.getDexterity(), neutral.getConstitution(), neutral.getIntelligence(), neutral.getWisdom(), neutral.getCharisma(), neutral.getAc(), neutral.getAlignmentImpact());
+        neutral.getDexterity(), neutral.getConstitution(), neutral.getIntelligence(), neutral.getWisdom(), neutral.getCharisma(), neutral.getAc(), 
+        neutral.getAlignmentImpact(), neutral.getDynamicDialogue());
         this.damage = neutral.getDamage();
     }
 

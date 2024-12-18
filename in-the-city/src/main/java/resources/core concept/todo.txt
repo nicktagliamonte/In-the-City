@@ -1,9 +1,8 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- dialogue is getting kinda tricky.  you can't really have npc's always start at the same spot necessarily.  that's fine for generic npc's, but quest givers? they need to update their starting state based on what you have done... (probably add a map of string, string to gamestate which will hold an npc name and the last used dialogueid.  starting conversation will mean checking that and if the person is not on there, starting at the start.  else, start at the last dialogue id and print some text to indicate like "where did we leave off?" or somethign. also do a check so that if you have completed the quest indicated in the dialogue id, it won't show up)
-- make sure the same quest can't be assigned twice (this only actually matters for side quests, but still)
 - add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro, which will mean pulling some of the corrent introduction.json out into a separate file for region intro
+- make the LOOK command output more user friendly
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
   - Check **ALL** TODO comments in every file.  

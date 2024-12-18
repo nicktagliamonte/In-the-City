@@ -20,7 +20,8 @@
                 "questDialogue": [
                     "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
                 ],
-                "canGiveQuest": false
+                "canGiveQuest": false,
+                "dynamicDialogue": true
             },
             "(2,4)": {
                 "type": "adversary",
@@ -54,7 +55,8 @@
                 "wis": 5,
                 "charisma": 5,
                 "alignmentImpact": 150,
-                "allies": []
+                "allies": [],
+                "dynamicDialogue": true
             },
             "(4,5)": {
                 "type": "neutral",
@@ -83,7 +85,8 @@
                 "Intelligence": 5,
                 "wis": 5,
                 "charisma": 5,
-                "alignmentImpact": -150
+                "alignmentImpact": -150,
+                "dynamicDialogue": true
             },
             "(1,3)": {
                 "type": "partymember",
@@ -98,7 +101,8 @@
                 },
                 "description": "idk what this even does yet",
                 "damage": 5,
-                "characterClass": "technologist"
+                "characterClass": "technologist",
+                "dynamicDialogue": true
             }
         }
     }

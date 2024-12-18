@@ -1,6 +1,6 @@
 {
   "Sam": {
-    "start": {
+    "start_1": {
       "npcLine": "Didn't expect to see anyone else here. You lost too?",
       "options": [
         { "text": "Yeah, seems like we're both in a mess.", "nextDialogueId": "sam_warmup_1", "impact": 5 },
@@ -77,10 +77,18 @@
     "sam_rude_2": {
       "npcLine": "Then don't expect me to stick my neck out for you. Good luck, hero.",
       "options": []
+    },
+    "start_2": {
+      "npcLine": "Go take a look at the computer!",
+      "options": []
+    },
+    "start_3": {
+      "npcLine": "It's unbelievable what they're doing. I'll head over to the other room and try to get on the computer myself...",
+      "options": []
     }
   },
   "Nora": {
-    "start": {
+    "start_1": {
       "npcLine": "Oh, hey there! You look like you're keeping busy. Need something, or are you just passing through?",
       "options": [
         { "text": "Do you have anything you need help with?", "nextDialogueId": "assign_quest_001", "impact": 0 },
@@ -112,10 +120,21 @@
         { "text": "I'll take a look.", "nextDialogueId": "assign_quest_001", "impact": 0 },
         { "text": "It's probably nothing. Take care, Nora.", "nextDialogueId": "exit", "impact": 0 }
       ]
+    },
+    "start_2": {
+      "npcLine": "It really makes more sense to get information about this from Miles.",
+      "options": [
+        { "text": "Thanks, I'll run it by him.", "nextDialogueId": "exit", "impact": 0 },
+        { "text": "Sure, let me just walk 8 feet to the left and do that for you.", "nextDialogueId": "exit", "impact": -3 }
+      ]
+    },
+    "start_3": {
+      "npcLine": "I appreciate your help with this.",
+      "options": []
     }
   },
   "Miles": {
-    "start": {
+    "start_1": {
       "npcLine": "What's up?",
       "options": [
         { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "quest_001_objective_001", "impact": 0 },

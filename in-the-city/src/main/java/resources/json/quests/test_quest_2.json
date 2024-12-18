@@ -28,7 +28,10 @@
       }
     },
     "rewards": [],
+    "itemToChoose": [],
+    "spellToChoose": {},
     "completionMessage": "With this issue solved, the issue of your own safety is all that is left to address. There is nothing more for you here, and it is time to go on down this street to see what awaits you next.",
+    "questGiverName": "Arthur",
     "newRegionFilePath": "",
     "newAdjacencyFilePath": "",
     "newItemsFilePath": "",

@@ -15,7 +15,8 @@
                 "questDialogue": [
                     "Hey there, partner! Let me know if you need a hand!"
                 ],
-                "canGiveQuest": false
+                "canGiveQuest": false,
+                "dynamicDialogue": true
             },
             "(3,2)": {
                 "type": "neutral",
@@ -41,7 +42,8 @@
                 "Intelligence": 6,
                 "wis": 5,
                 "charisma": 7,
-                "alignmentImpact": 0
+                "alignmentImpact": 0,
+                "dynamicDialogue": true
             },
             "(8,8)": {
                 "type": "partymember",
@@ -53,7 +55,8 @@
                 },
                 "description": "A technologist.",
                 "damage": 6,
-                "characterClass": "technologist"
+                "characterClass": "technologist",
+                "dynamicDialogue": true
             }
         },
         "The Abandoned Shop": {
@@ -76,7 +79,8 @@
                 "allies": [
                     "Jane",
                     "Elvin"
-                ]
+                ],
+                "dynamicDialogue": true
             },
             "(2,3)": {
                 "type": "adversary",
@@ -94,7 +98,8 @@
                 "wis": 3,
                 "charisma": 2,
                 "alignmentImpact": 120,
-                "allies": []
+                "allies": [],
+                "dynamicDialogue": false
             },
             "(2,4)": {
                 "type": "adversary",
@@ -112,7 +117,8 @@
                 "wis": 3,
                 "charisma": 2,
                 "alignmentImpact": 120,
-                "allies": []
+                "allies": [],
+                "dynamicDialogue": true
             }
         }
     }

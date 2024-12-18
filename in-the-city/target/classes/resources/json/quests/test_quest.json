@@ -62,7 +62,7 @@
       "acbonus": 2
     }    
   ],
-  "itemToChoose": {
+  "itemToChoose": [{
     "type": "Weapon",
     "name": "Rusty Knife",
     "description": "A crude, rusted blade with a jagged edge. It's seen better days but can still cut through soft materials.",
@@ -70,11 +70,12 @@
     "consumable": false,
     "value": 5,
     "damage": "1d4"
-  },
+  }],
   "spellToChoose": {
     "type": "IonSurge"
   },
   "completionMessage": "You've completed the test quest. With the puzzle solved, your journey has taken its first steps. Prepare yourself for what comes next.",
+  "questGiverName": "Nora",
   "newRegionFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region_2.json",
   "newAdjacencyFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies_2.json",
   "newItemsFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items_2.json",

@@ -749,14 +749,14 @@ public class GameState {
         // this is a minor nightmare when it comes time.
     }
 
-    public void enterDialogue(Person character) throws FileNotFoundException {
+    public void enterDialogue(NPC character) throws FileNotFoundException {
         gameTimer.pause();
         inDialogue = true;
-
+    
         // Get all dialogues for this character
         Map<String, Dialogue> dialogues = currentRegionDialogue.getDialogue(character.getName());
-
-        if (dialogues == null || !dialogues.containsKey("start")) {
+    
+        if (dialogues == null || !dialogues.containsKey("start_1")) {
             try {
                 Thread.sleep(15);
             } catch (InterruptedException e) {
@@ -764,13 +764,19 @@ public class GameState {
             }
             System.out.println(character.getName() + " doesn't want to talk to you.");
             return;
+        }        
+    
+        // Check if all dialogue nodes are exhausted and print a message if necessary
+        if (!dialogues.containsKey(character.getStartNode())) {
+            System.out.println(character.getName() + " has nothing more to say to you. They will be leaving soon.");
+            return;
         }
-
-        Dialogue currentDialogue = dialogues.get("start");
-
+    
+        Dialogue currentDialogue = dialogues.get(character.getStartNode());
+    
         @SuppressWarnings("resource")
         Scanner dialogueScanner = new Scanner(System.in);
-
+    
         try {
             while (inDialogue) {
                 try {
@@ -780,16 +786,16 @@ public class GameState {
                 }
                 System.out.println(currentDialogue.getNpcLine());
                 List<DialogueOption> options = currentDialogue.getOptions();
-
+    
                 if (options.isEmpty()) {
                     exitDialogue();
                     break;
                 }
-
+    
                 // Filter options based on active quests
                 List<DialogueOption> availableOptions = new ArrayList<>();
-                List<Quest> activeQuests = player.getActiveQuests(); // Assumes a method returning active quests
-
+                List<Quest> activeQuests = player.getActiveQuests();
+    
                 for (DialogueOption option : options) {
                     String nextId = option.getNextDialogueId();
                     if (nextId.startsWith("quest") || nextId.startsWith("objective")) {
@@ -802,7 +808,7 @@ public class GameState {
                         availableOptions.add(option);
                     }
                 }
-
+    
                 // Display available options
                 if (availableOptions.isEmpty()) {
                     try {
@@ -814,7 +820,7 @@ public class GameState {
                     exitDialogue();
                     break;
                 }
-
+    
                 for (int i = 0; i < availableOptions.size(); i++) {
                     try {
                         Thread.sleep(15);
@@ -823,20 +829,20 @@ public class GameState {
                     }
                     System.out.println((i + 1) + ": " + availableOptions.get(i).getText());
                 }
-
+    
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
                 DialogueOption selectedOption = availableOptions.get(choice);
-
+    
                 double alignmentDelta = (player.getAlignment() * (selectedOption.getImpact() / 100));
                 player.adjustAlignment(alignmentDelta);
-
+    
                 String nextId = selectedOption.getNextDialogueId();
-
+    
                 // Handle quest assignment or completion
                 if (nextId.startsWith("assign")) {
                     currentDialogue = dialogues.get(nextId);
                     String questFilePath = currentDialogue.getNpcLine();
-
+    
                     Quest quest = deserializeQuest(questFilePath);
                     if (quest != null) {
                         try {
@@ -845,11 +851,12 @@ public class GameState {
                             Thread.currentThread().interrupt();
                         }
                         System.out.println("Do you want to accept quest: " + quest.getTitle() + "? (yes/no)");
-
+    
                         String playerResponse = dialogueScanner.nextLine().trim().toLowerCase();
                         if (playerResponse.equals("yes")) {
                             player.addQuest(quest);
                             setRoomAccessibility(quest);
+                            incrementStartNode(character);  // Increment startNode on quest acceptance
                             try {
                                 Thread.sleep(15);
                             } catch (InterruptedException e) {
@@ -873,11 +880,11 @@ public class GameState {
                         }
                         System.out.println("Sorry, there was an error loading the quest.");
                     }
-
+    
                     exitDialogue();
                     break;
                 }
-
+    
                 if (nextId.contains("objective")) {
                     List<Quest> questLog = player.getActiveQuests();
                     for (Quest quest : questLog) {
@@ -885,17 +892,18 @@ public class GameState {
                             if (!objective.getIsCompleted() && objective.getType().equalsIgnoreCase("dialogue")
                                     && objective.getTarget().equalsIgnoreCase(character.getName())) {
                                 quest.completeObjective(objective.getId());
+                                incrementStartNode(character);  // Increment startNode on objective completion
                                 break;
                             }
                         }
                     }
                 }
-
+    
                 if (nextId.equalsIgnoreCase("exit")) {
                     exitDialogue();
                     break;
                 }
-
+    
                 currentDialogue = dialogues.get(nextId);
                 if (currentDialogue == null) {
                     try {
@@ -915,6 +923,38 @@ public class GameState {
                 Thread.currentThread().interrupt();
             }
             System.out.println("Invalid choice. Please try again.");
+        }
+    }
+
+    public void incrementStartNode(NPC character) {
+        String currentStartNode = character.getStartNode();
+        String[] parts = currentStartNode.split("_");
+        if (parts.length == 2) {
+            int nextNodeNumber = Integer.parseInt(parts[1]) + 1;
+            character.setStartNode("start_" + nextNodeNumber);
+        }
+    }
+
+    public void incrementStartNode(String questGiverName) {
+        NPC character = null;
+        for (Room room : currentRegion.getRooms()) {
+            for (NPC npc : room.getPeopleInRoom().values()) {
+                if (npc.getName().equalsIgnoreCase(questGiverName)) {
+                    character = npc;
+                    break;
+                }
+            }
+        }
+
+        if (character == null) {
+            return;
+        }
+        
+        String currentStartNode = character.getStartNode();
+        String[] parts = currentStartNode.split("_");
+        if (parts.length == 2) {
+            int nextNodeNumber = Integer.parseInt(parts[1]) + 1;
+            character.setStartNode("start_" + nextNodeNumber);
         }
     }
 

@@ -23,8 +23,9 @@ public class Quest {
     @Expose private boolean isPrimary;
     @Expose private boolean isFinal;
     @Expose private String completionMessage;    
-    @Expose private Item itemToChoose;
+    @Expose private List<Item> itemToChoose;
     @Expose private Spell spellToChoose;
+    @Expose private String questGiverName;
     @Expose private String newRegionFilePath;
     @Expose private String newAdjacencyFilePath;
     @Expose private String newItemsFilePath;
@@ -32,9 +33,9 @@ public class Quest {
     @Expose private String newDialogueFilePath;
 
     public Quest(String questId, String title, String description, Boolean isPrimary, boolean isFinal,
-                List<Objective> objectives, List<Item> rewards, String completionMessage, Item itemToChoose, 
+                List<Objective> objectives, List<Item> rewards, String completionMessage, List<Item> itemToChoose, 
                 Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
-                String newPeopleFilePath, String newDialogueFilePath, GameState gameState) {
+                String newPeopleFilePath, String newDialogueFilePath, String questGiverName, GameState gameState) {
         this.questId = questId;
         this.title = title;
         this.description = description;
@@ -53,13 +54,22 @@ public class Quest {
         this.completionMessage = completionMessage;
         this.itemToChoose = itemToChoose;
         this.spellToChoose = spellToChoose;
+        this.questGiverName = questGiverName;
     }
 
-    public Item getItemToChoose() {
+    public String getQuestGiverName() {
+        return questGiverName;
+    }
+
+    public void setQuestGiverName(String questGiverName) {
+        this.questGiverName = questGiverName;
+    }
+
+    public List<Item> getItemToChoose() {
         return itemToChoose;
     }
 
-    public void setItemToChoose(Item itemToChoose) {
+    public void setItemToChoose(List<Item> itemToChoose) {
         this.itemToChoose = itemToChoose;
     }
 
@@ -176,11 +186,22 @@ public class Quest {
 
     public void giveRewards() {
         if ("complete".equals(status)) {
+            gameState.incrementStartNode(questGiverName);
             if (isPrimary) {
                 if (!isFinal) {
                     System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                     gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
-
+                    if (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
+                        rewardChoice();
+                    } else {
+                        if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.get(0).getWeight()) {
+                            gameState.getPlayer().addItemToInventory(itemToChoose.get(0));
+                            System.out.println(itemToChoose.get(0).getName() + " has been added to your inventory.");
+                        } else {
+                            gameState.safeZoneInventory.addItemToInventory(itemToChoose.get(0));
+                            System.out.println(itemToChoose.get(0).getName() + " has been added to the safe zone inventory.");
+                        }
+                    }
                 }                
             } else {
                 System.out.println("You receive " + String.format("%.2f", gameState.getPlayer().getNextLevelXp() / 3) + " xp");
@@ -189,25 +210,14 @@ public class Quest {
             for (Item reward : rewards) {
                 System.out.println("You received: " + reward.getName() + " in safe zone inventory.");
                 gameState.safeZoneInventory.addItemToInventory(reward);
-            }
-            if (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
-                rewardChoice();
-            } else {
-                if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.getWeight()) {
-                    gameState.getPlayer().addItemToInventory(itemToChoose);
-                    System.out.println(itemToChoose.getName() + " has been added to your inventory.");
-                } else {
-                    gameState.safeZoneInventory.addItemToInventory(itemToChoose);
-                    System.out.println(itemToChoose.getName() + " has been added to the safe zone inventory.");
-                }
-            }
+            }            
         }
     }
 
     public void rewardChoice() {
         System.out.println("You can choose to learn a new spell, or receive the following item: ");
         System.out.println("1. " + spellToChoose.getName() + ", a spell which does " + spellToChoose.getDamage() + " damage");
-        System.out.println("2. " + itemToChoose.getName() + ", a weapon which does " + ((Weapon) itemToChoose).getDieQuantity() + "d" + ((Weapon) itemToChoose).getDieFaces() + " damage");
+        System.out.println("2. " + itemToChoose.get(0).getName() + ", a weapon which does " + ((Weapon) itemToChoose).getDieQuantity() + "d" + ((Weapon) itemToChoose).getDieFaces() + " damage");
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
@@ -221,11 +231,11 @@ public class Quest {
                     gameState.getPlayer().addSpell(spellToChoose);
                     System.out.println("That spell will now be useable in combat.");
                 } else if (choice == 2) {
-                    if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.getWeight()) {
-                        gameState.getPlayer().addItemToInventory(itemToChoose);
+                    if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.get(0).getWeight()) {
+                        gameState.getPlayer().addItemToInventory(itemToChoose.get(0));
                         System.out.println("That weapon has been added to your inventory.");
                     } else {
-                        gameState.safeZoneInventory.addItemToInventory(itemToChoose);
+                        gameState.safeZoneInventory.addItemToInventory(itemToChoose.get(0));
                         System.out.println("That weapon has been added to the safe zone inventory.");
                     }
                 } else {

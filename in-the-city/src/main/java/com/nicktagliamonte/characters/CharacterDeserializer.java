@@ -40,8 +40,9 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double maxHealth = jsonObject.get("maxHealth").getAsDouble();
                 List<String> questDialogue = context.deserialize(jsonObject.getAsJsonArray("questDialogue"), List.class);
                 boolean canGiveQuest = jsonObject.get("canGiveQuest").getAsBoolean();
+                boolean friendDynamicDialogue = jsonObject.get("dynamicDialogue").getAsBoolean();
 
-                return new Friend(name, health, inventory, description, maxHealth, questDialogue, canGiveQuest);
+                return new Friend(name, health, inventory, description, maxHealth, questDialogue, canGiveQuest, friendDynamicDialogue);
             case "adversary":
                 String adversaryName = jsonObject.get("name").getAsString();
                 double adversaryHealth = jsonObject.get("health").getAsDouble();
@@ -69,9 +70,11 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 for (JsonElement allyElement : adversaryAlliesJson) {
                     adversaryAllies.add(allyElement.getAsString());
                 }
+                boolean adversaryDynamicDialogue = jsonObject.get("dynamicDialogue").getAsBoolean();
 
                 return new Adversary(adversaryName, adversaryHealth, adversaryInventory, adversaryDescription, adversaryMaxHealth, adversaryDamage, adversaryAc,
-                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma, adversaryAlignmentImpact, adversaryAllies);
+                        adversaryStr, adversaryDex, adversaryCon, adversaryIntelligence, adversaryWis, adversaryCharisma, adversaryAlignmentImpact, adversaryAllies, 
+                        adversaryDynamicDialogue);
             case "neutral":
                 String neutralName = jsonObject.get("name").getAsString();
                 double neutralHealth = jsonObject.get("health").getAsDouble();
@@ -98,11 +101,12 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double neutralCharisma = jsonObject.get("charisma").getAsDouble();
                 //NOTE!!! this is the impact that fighting this character will have on alignment, and calculating alignment delta works by treating this as a percent.
                 //i.e. fighting Miles decreases alignment by 150% of the current value
-                double neutralAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();    
+                double neutralAlignmentImpact = jsonObject.get("alignmentImpact").getAsDouble();  
+                boolean neutralDynamicDialogue = jsonObject.get("dynamicDialogue").getAsBoolean();  
 
                 return new Neutral(neutralName, neutralHealth, neutralInventory, neutralDescription, neutralMaxHealth, 
                                    neutralQuestDialogue, neutralCanGiveQuest, neutralDamage, moralityFlag, neutralAc, neutralStr, neutralDex, neutralCon,
-                                   neutralIntelligence, neutralWis, neutralCharisma, neutralAlignmentImpact);
+                                   neutralIntelligence, neutralWis, neutralCharisma, neutralAlignmentImpact, neutralDynamicDialogue);
             case "partymember":
                 String partyMemberName = jsonObject.get("name").getAsString();
                 JsonObject partyMemberInventoryJson = jsonObject.getAsJsonObject("inventory");
@@ -117,8 +121,9 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 double partyMemberDamage = jsonObject.get("damage").getAsDouble();
                 String characterClassName = jsonObject.get("characterClass").getAsString();
                 CharacterClass characterClass = new CharacterClass(characterClassName);
+                boolean partyMemberDynamicDialogue = jsonObject.get("dynamicDialogue").getAsBoolean();
 
-                return new PartyMember(partyMemberName, partyMemberInventory, partyMemberDescription, partyMemberDamage, characterClass);
+                return new PartyMember(partyMemberName, partyMemberInventory, partyMemberDescription, partyMemberDamage, characterClass, partyMemberDynamicDialogue);
             default:
                 throw new JsonParseException("unknown npc type " + npcType);
         }

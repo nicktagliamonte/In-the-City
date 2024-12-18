@@ -12,7 +12,7 @@ import com.nicktagliamonte.items.Water;
 
 public class TheDilapidatedBuildingFriend extends Friend {
     public TheDilapidatedBuildingFriend() {
-        super("buddy", 15, new ArrayList<>(), "A friendly face", 15, null, true);
+        super("buddy", 15, new ArrayList<>(), "A friendly face", 15, null, true, false);
 
         int randomInt = 5 + (int)(Math.random() * 11);
         Random random = new Random();

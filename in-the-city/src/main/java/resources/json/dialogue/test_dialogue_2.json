@@ -1,6 +1,6 @@
 {
   "Arthur": {
-    "start": {
+    "start_1": {
       "npcLine": "Looking to trade? I've got what you need.",
       "options": [
         { "text": "I heard you're worried about the gang in the shop.", "nextDialogueId": "arthur_fear_gang", "impact": 5 },
@@ -39,10 +39,17 @@
     "assign_quest_002": {
       "npcLine": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\quests\\test_quest_2.json",
       "options": []
+    },
+    "start_2": {
+      "npcLine": "Have you...Taken Care Of...robert yet?",
+      "options": [
+        { "text": "Still working on it.", "nextDialogueId": "exit", "impact": 0 },
+        { "text": "People don't talk like that. Don't say that to me again.", "nextDialogueId": "exit", "impact": -5 }
+      ]
     }
   },
   "Maud": {
-    "start": {
+    "start_1": {
       "npcLine": "Oh, hello there! You seem like you've got something on your mind. What's up?",
       "options": [
         { "text": "I'm looking for work. Got anything for me?", "nextDialogueId": "maud_work_offer", "impact": 5 },
@@ -124,10 +131,16 @@
     "maud_post_quest": {
       "npcLine": "I hope so.",
       "options": []
-    }
+    },
+    "start_2": {
+      "npcLine": "I know it's a difficult, but try to do something about Robert. We don't have many more people to spare.",
+      "options": [
+        { "text": "I'll see what I can do.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    }    
   },
   "Henry": {
-    "start": {
+    "start_1": {
       "npcLine": "Hey there. You need something technical done? I'm your guy.",
       "options": [
         { "text": "I could use a hand with something. What do you specialize in?", "nextDialogueId": "henry_specialization", "impact": 5 },

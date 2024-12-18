@@ -20,9 +20,12 @@ public class NPC extends Person {
     @Expose private double ac;
     @Expose private double alignmentImpact;
     @Expose private List<Quest> quests;
+    @Expose private boolean dynamicDialogue;
+    @Expose private String startNode = "start_1";
 
     public NPC(String name, double health, List<Item> inventory, String description, double maxHealth,
-                double strength, double dexterity, double constitution, double Intelligence, double wisdom, double charisma, double ac, double alignmentImpact) {
+                double strength, double dexterity, double constitution, double Intelligence, double wisdom, 
+                double charisma, double ac, double alignmentImpact, boolean dynamicDialogue) {
         super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
@@ -36,13 +39,31 @@ public class NPC extends Person {
         this.ac = ac;
         this.alignmentImpact = alignmentImpact;
         this.quests = new ArrayList<>();
+        this.dynamicDialogue = dynamicDialogue;
     }
 
-    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth) {
+    public NPC(String name, double health, List<Item> inventory, String description, double maxHealth, boolean dynamicDialogue) {
         super(name, maxHealth, inventory);
         this.description = description;
         this.maxHealth = maxHealth;
         this.deathSavingThrows = 0;
+        this.dynamicDialogue = dynamicDialogue;
+    }
+
+    public String getStartNode() {
+        return startNode;
+    }
+
+    public void setStartNode(String startNode) {
+        this.startNode = startNode;
+    }
+
+    public boolean getDynamicDialogue() {
+        return dynamicDialogue;
+    }
+
+    public void setDynamicDialogue(boolean dynamicDialogue) {
+        this.dynamicDialogue = dynamicDialogue;
     }
 
     public void setQuests(List<Quest> quests) {
