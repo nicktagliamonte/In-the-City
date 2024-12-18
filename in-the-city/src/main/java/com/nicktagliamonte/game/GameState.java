@@ -1,5 +1,8 @@
 package com.nicktagliamonte.game;
 
+import com.nicktagliamonte.Spells.PlasmaBolt;
+import com.nicktagliamonte.Spells.Spell;
+import com.nicktagliamonte.Spells.SpellDeserializer;
 import com.nicktagliamonte.characters.*;
 import com.nicktagliamonte.items.*;
 import com.nicktagliamonte.puzzles.MastermindPuzzle;
@@ -107,6 +110,14 @@ public class GameState {
         } while (characterClass == null);
 
         this.player = new Player(name.trim(), characterClass);
+
+        if (player.getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
+            player.addSpell(new PlasmaBolt());
+            System.out.println("As you get up, you feel a weight in your pack.");
+            System.out.println("Some metalic device is in there, with a trigger.");
+            System.out.println("You can use this device to case Plasma Bolt in combat.");
+        }
+
         gameEngine.player = this.player;
     }
 
@@ -903,6 +914,7 @@ public class GameState {
     private Quest deserializeQuest(String questFilePath) throws FileNotFoundException {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .registerTypeAdapter(Spell.class, new SpellDeserializer())
                 .excludeFieldsWithoutExposeAnnotation()
                 .create();
         FileReader reader = new FileReader(questFilePath);

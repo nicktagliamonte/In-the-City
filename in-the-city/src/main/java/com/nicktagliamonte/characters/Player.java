@@ -637,4 +637,8 @@ public class Player extends Person {
 
         return completedQuests;
     }
+
+    public void addItemToInventory(Item item) {
+        inventory.add(item);
+    }
 }

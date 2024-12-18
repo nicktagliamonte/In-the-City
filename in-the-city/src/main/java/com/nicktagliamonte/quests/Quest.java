@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import com.google.gson.annotations.Expose;
+import com.nicktagliamonte.Spells.Spell;
 import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.Weapon;
 
 public class Quest {
     @Expose private String questId;
@@ -19,7 +22,9 @@ public class Quest {
     @Expose private GameState gameState;
     @Expose private boolean isPrimary;
     @Expose private boolean isFinal;
-    @Expose private String completionMessage;
+    @Expose private String completionMessage;    
+    @Expose private Item itemToChoose;
+    @Expose private Spell spellToChoose;
     @Expose private String newRegionFilePath;
     @Expose private String newAdjacencyFilePath;
     @Expose private String newItemsFilePath;
@@ -27,8 +32,8 @@ public class Quest {
     @Expose private String newDialogueFilePath;
 
     public Quest(String questId, String title, String description, Boolean isPrimary, boolean isFinal,
-                List<Objective> objectives, List<Item> rewards, String completionMessage, 
-                String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
+                List<Objective> objectives, List<Item> rewards, String completionMessage, Item itemToChoose, 
+                Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
                 String newPeopleFilePath, String newDialogueFilePath, GameState gameState) {
         this.questId = questId;
         this.title = title;
@@ -46,6 +51,24 @@ public class Quest {
         }        
         this.gameState = gameState;
         this.completionMessage = completionMessage;
+        this.itemToChoose = itemToChoose;
+        this.spellToChoose = spellToChoose;
+    }
+
+    public Item getItemToChoose() {
+        return itemToChoose;
+    }
+
+    public void setItemToChoose(Item itemToChoose) {
+        this.itemToChoose = itemToChoose;
+    }
+
+    public Spell getSpellToChoose() {
+        return spellToChoose;
+    }
+
+    public void setSpellToChoose(Spell spellToChoose) {
+        this.spellToChoose = spellToChoose;
     }
 
     public Quest() {
@@ -133,11 +156,6 @@ public class Quest {
         if (objectives.containsKey(objectiveId)) {
             Objective objective = objectives.get(objectiveId);
             objective.setIsCompleted(true);
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
             System.out.println(objective.getCompletionMessage());
             if (checkProgress()) {
                 try {
@@ -162,21 +180,59 @@ public class Quest {
                 if (!isFinal) {
                     System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                     gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
+
                 }                
             } else {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
                 System.out.println("You receive " + String.format("%.2f", gameState.getPlayer().getNextLevelXp() / 3) + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
             }
             for (Item reward : rewards) {
-                if (reward.getWeight() <= gameState.getPlayer().getRemainingCarryWeight()) {
-                    System.out.println("You received: " + reward.getName() + " in safe zone inventory.");
-                    gameState.safeZoneInventory.addItemToInventory(reward);
+                System.out.println("You received: " + reward.getName() + " in safe zone inventory.");
+                gameState.safeZoneInventory.addItemToInventory(reward);
+            }
+            if (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
+                rewardChoice();
+            } else {
+                if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.getWeight()) {
+                    gameState.getPlayer().addItemToInventory(itemToChoose);
+                    System.out.println(itemToChoose.getName() + " has been added to your inventory.");
+                } else {
+                    gameState.safeZoneInventory.addItemToInventory(itemToChoose);
+                    System.out.println(itemToChoose.getName() + " has been added to the safe zone inventory.");
                 }
+            }
+        }
+    }
+
+    public void rewardChoice() {
+        System.out.println("You can choose to learn a new spell, or receive the following item: ");
+        System.out.println("1. " + spellToChoose.getName() + ", a spell which does " + spellToChoose.getDamage() + " damage");
+        System.out.println("2. " + itemToChoose.getName() + ", a weapon which does " + ((Weapon) itemToChoose).getDieQuantity() + "d" + ((Weapon) itemToChoose).getDieFaces() + " damage");
+
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0; 
+
+        while (choice != 1 && choice != 2) {
+            System.out.print("Enter 1 to choose the spell or 2 to choose the item: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine()); 
+                if (choice == 1) {
+                    gameState.getPlayer().addSpell(spellToChoose);
+                    System.out.println("That spell will now be useable in combat.");
+                } else if (choice == 2) {
+                    if (gameState.getPlayer().getRemainingCarryWeight() >= itemToChoose.getWeight()) {
+                        gameState.getPlayer().addItemToInventory(itemToChoose);
+                        System.out.println("That weapon has been added to your inventory.");
+                    } else {
+                        gameState.safeZoneInventory.addItemToInventory(itemToChoose);
+                        System.out.println("That weapon has been added to the safe zone inventory.");
+                    }
+                } else {
+                    System.out.println("Invalid input. Please enter 1 or 2.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number (1 or 2).");
             }
         }
     }

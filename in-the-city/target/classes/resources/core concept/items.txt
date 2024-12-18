@@ -95,52 +95,6 @@ Items
         Cost: 150 generic units
         Weight: 6 units
         Damage: 3d8
-6. ranged weapons (give use an energy cost)
-    1. Slingshot
-        Description: A simple, handcrafted slingshot made from elastic materials and a sturdy frame, effective for small projectiles.
-        Cost: 5 generic units
-        Weight: 1 unit
-        Damage: 1d4
-    2. Reinforced Crossbow
-        Description: A durable crossbow with a metal frame, capable of firing bolts with significant force.
-        Cost: 15 generic units
-        Weight: 4 units
-        Damage: 1d8
-    3. Rusted Pistol
-        Description: An old but functional sidearm, the rusted pistol is a reliable weapon for close to mid-range combat.
-        Cost: 25 generic units
-        Weight: 2 units
-        Damage: 1d10
-    4. Compact Plasma Pistol
-        Description: A lightweight pistol that fires bolts of superheated plasma, capable of melting through light armor.
-        Cost: 50 generic units
-        Weight: 2.5 units
-        Damage: 2d6
-    5. Energy Rifle
-        Description: A high-powered rifle that uses energy cells to fire concentrated beams of energy, highly effective at range.
-        Cost: 75 generic units
-        Weight: 4 units
-        Damage: 2d8
-    6. Tactical SMG
-        Description: A compact submachine gun designed for close-quarters combat. Its lightweight frame and high rate of fire make it ideal for quick engagements.
-        Cost: 85 generic units
-        Weight: 4 units
-        Damage: 2d6
-    7. Smart Rifle
-        Description: A futuristic rifle equipped with targeting systems and smart ammunition that adjusts trajectory for precision shots.
-        Cost: 100 generic units
-        Weight: 5 units
-        Damage: 3d6
-    8. Railgun
-        Description: A powerful energy weapon that uses magnetic fields to launch projectiles at incredible speeds, causing massive damage.
-        Cost: 120 generic units
-        Weight: 7 units
-        Damage: 3d8
-    9. Voidcaster
-        Description: A highly advanced weapon that manipulates gravitational forces to fire projectiles that warp space around them, creating devastating effects.
-        Cost: 200 generic units
-        Weight: 8 units
-        Damage: 4d6
 7. spells
     (a) combat
     Direct Attack Spells
@@ -221,16 +175,6 @@ Items
             * yield scrap/water/food/medical -> energy -> relic
             * one time use
             * expire 3 day/night cycle after being set
-9. collectables
-    Balance Wheel
-    Escapement
-    Gear Train
-    Main Spring
-    Dial
-    Hands
-    Case
-    Crown
-    Pallet Fork
 10. buff items
     (a) str
         Strength Gauntlets
