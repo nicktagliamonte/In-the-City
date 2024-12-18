@@ -124,5 +124,12 @@
         "accessible": true,
         "denialMessage": ""
       }
+    ],
+    "transitionText": [
+      "*-_~.#+*~.-*~#-_.+*~#~.-*~*~#.-~*+.-~#~.#*~_~-.*+#~-~.-*~.",
+      "You try to absorb the news about what has been going on here.",
+      "There is still a lot of confusion. How did you get here? What is your role in all this?",
+      "There is little else to do in this building.",
+      "Turning your attention outside, you exit to the street..."
     ]
   }  

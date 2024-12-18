@@ -9,6 +9,7 @@ public class Region {
     @Expose private List<Room> rooms;
     @Expose private String regionName;
     @Expose private boolean hasSafeZone = false;
+    @Expose private String[] transitionText;
 
     public List<Room> getRooms() {
         return rooms;
@@ -32,5 +33,46 @@ public class Region {
 
     public void setHasSafeZone(boolean hasSafeZone) {
         this.hasSafeZone = hasSafeZone;
+    }
+
+    public String[] getTransitionText() {
+        return transitionText;
+    }
+
+    public void setTransitionText(String[] transitionText) {
+        this.transitionText = transitionText;
+    }
+
+    public void transition() {
+        for (int i = 0; i < transitionText.length; i++) {
+            if (i == 0) {
+                displaySlow();
+                i += 2;
+            }
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println(transitionText[i]);
+        }
+    }
+
+    public void displaySlow() {
+        char[] chars = transitionText[0].toCharArray();
+        for (char letter : chars) {
+            System.out.print(letter);
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("\n" + transitionText[1]);
     }
 }

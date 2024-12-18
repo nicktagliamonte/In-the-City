@@ -133,5 +133,17 @@
       "accessible": true,
       "denialMessage": ""
     }
+  ],
+  "transitionText": [
+    "You open your eyes slowly.",
+    "The air is damp and smells faintly of mildew.",
+    "Light spills in through a cracked window, illuminating motes of dust that hover lazily.",
+    "You're lying on cold, splintered floorboards.",
+    "A sharp ache in your ribs suggests you fell, or were dropped, but you don't remember how you got here.",
+    "As you shift to get up, the floor groans around you.",
+    "Cracks snake through the walls, paint peels and doors hang ajar.",
+    "Somewhere outside, far off, you think you hear the faint echo of footsteps -- or maybe it's just the wind.",
+    "There is no one else here.",
+    "To begin..."
   ]
 }

@@ -3,9 +3,12 @@ package com.nicktagliamonte.game;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.Map.Entry;
 import java.util.Random;
 
@@ -40,22 +43,38 @@ public enum GameCommand {
                 message.append("This is the region's safe zone. There will be no combat events here unless you initiate them.\n");
             }
     
-            // Handle items in the room
+            // Handle items in the room with quantity check and coordinates display
             if (!visibleItems.isEmpty()) {
                 message.append("Items here: ");
                 boolean firstItem = true;
-                // Iterate over each entry in the visibleItems map
+                Map<String, Integer> itemCounts = new HashMap<>();
+    
+                // Count occurrences of each item and collect unique coordinates
+                Map<String, Set<String>> itemCoordinates = new HashMap<>();
                 for (Map.Entry<String, List<Item>> entry : visibleItems.entrySet()) {
-                    // For each list of items, iterate through them
                     for (Item item : entry.getValue()) {
-                        if (!firstItem) {
-                            message.append(", ");
-                        }
-                        message.append(item.getName())
-                                .append(" at ")
-                                .append(entry.getKey());
-                        firstItem = false;
+                        itemCounts.put(item.getName(), itemCounts.getOrDefault(item.getName(), 0) + 1);
+    
+                        // Collect unique coordinates for each item
+                        itemCoordinates.computeIfAbsent(item.getName(), _ -> new HashSet<>()).add(entry.getKey());
                     }
+                }
+    
+                // Build the message with item quantities and unique coordinates
+                for (Map.Entry<String, Integer> entry : itemCounts.entrySet()) {
+                    if (!firstItem) {
+                        message.append(", ");
+                    }
+                    int quantity = entry.getValue();
+                    String itemName = entry.getKey();
+                    
+                    // Get the unique coordinates for the item
+                    Set<String> coordinates = itemCoordinates.get(itemName);
+                    String coordinatesStr = String.join(", ", coordinates);
+                    
+                    message.append(quantity).append(" ").append(itemName).append((quantity > 1) ? "s" : "")
+                            .append(" at ").append(coordinatesStr);
+                    firstItem = false;
                 }
                 message.append("\n");
             } else {

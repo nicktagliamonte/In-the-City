@@ -1,8 +1,6 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro, which will mean pulling some of the corrent introduction.json out into a separate file for region intro
-- make the LOOK command output more user friendly
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
   - Check **ALL** TODO comments in every file.  

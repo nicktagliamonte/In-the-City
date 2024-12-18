@@ -130,6 +130,7 @@ public class GameState {
                 .create();
         try (FileReader regionReader = new FileReader(regionFilePath)) {
             currentRegion = gson.fromJson(regionReader, Region.class);
+            currentRegion.transition();
             for (Room room : currentRegion.getRooms()) {
                 if (room.getIsSafe()) {
                     currentRegion.setHasSafeZone(true);
@@ -949,7 +950,7 @@ public class GameState {
         if (character == null) {
             return;
         }
-        
+
         String currentStartNode = character.getStartNode();
         String[] parts = currentStartNode.split("_");
         if (parts.length == 2) {
