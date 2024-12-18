@@ -30,6 +30,10 @@ public class Trap extends Item {
     }
 
     public void springTrap(List<Item> items) {
+        System.out.println("A trap you set has been sprung. The following items have been added to your safe zone inventory:");
+        for (Item item : items) {
+            System.out.println(item.getName());
+        }
         gameState.safeZoneInventory.addListOfItemsToInventory(items);
     }
 

@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.SmallMagicalTrap;
 import com.nicktagliamonte.items.SmallTrap;
 import com.nicktagliamonte.items.Trap;
 import com.nicktagliamonte.quests.Quest;
@@ -230,16 +231,11 @@ public class Menu {
 
     private void openCrafting() {
         // Crafting logic here
-        if (hasTechnologist()) {
-            
-            System.out.println("There are 3 types of traps you can make.");
-            
-            System.out.println("1. Small Magical Trap (1 scrap)");
-            
-            System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
-            
-            System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
-            
+        if (hasTechnologist()) {            
+            System.out.println("There are 3 types of traps you can make.");            
+            System.out.println("1. Small Magical Trap (1 scrap)");            
+            System.out.println("2. Large Magical Trap (2 scrap, 1 food)");            
+            System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");            
             System.out.println("4. Return to the main menu");
 
             while (true) {
@@ -247,39 +243,37 @@ public class Menu {
                 
                 if (input == 1) {
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+
+                    Trap trap = new SmallMagicalTrap(gameEngine.getGameState());
+                    gameEngine.getGameState().getPlayer().craftItem(trap);
                     
-                    System.out.println("There are 3 types of traps you can make.");
+                    List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
+                    inventory.add(trap);
                     
-                    System.out.println("1. Small Magical Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("There are 3 types of traps you can make.");                    
+                    System.out.println("1. Small Magical Trap (1 scrap)");                    
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+
+                    System.out.println("This is a later game item which is not available in this demo version.  Stick around for the full game!");
                     
-                    System.out.println("There are 3 types of traps you can make.");
-                    
-                    System.out.println("1. Small Magical Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("There are 3 types of traps you can make.");                    
+                    System.out.println("1. Small Magical Trap (1 scrap)");                    
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     gameEngine.getGameState().getPlayer().gainXP(4, gameEngine.getGameState());
+
+                    System.out.println("This is a later game item which is not available in this demo version.  Stick around for the full game!");
                     
-                    System.out.println("There are 3 types of traps you can make.");
-                    
-                    System.out.println("1. Small Magical Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("There are 3 types of traps you can make.");                    
+                    System.out.println("1. Small Magical Trap (1 scrap)");                    
+                    System.out.println("2. Large Magical Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Magical Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();
@@ -292,14 +286,10 @@ public class Menu {
             }
         } else {
             
-            System.out.println("There are 3 types of traps you can make.");
-            
-            System.out.println("1. Small Trap (1 scrap)");
-            
-            System.out.println("2. Large Trap (2 scrap, 1 food)");
-            
-            System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
-            
+            System.out.println("There are 3 types of traps you can make.");            
+            System.out.println("1. Small Trap (1 scrap)");            
+            System.out.println("2. Large Trap (2 scrap, 1 food)");            
+            System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");            
             System.out.println("4. Return to the main menu");
 
             while (true) {
@@ -313,34 +303,28 @@ public class Menu {
                     List<Item> inventory = gameEngine.getGameState().getPlayer().getInventory();
                     inventory.add(trap);
                     
-                    System.out.println("There are 3 types of traps you can make.");
-                    
-                    System.out.println("1. Small Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("There are 3 types of traps you can make.");                    
+                    System.out.println("1. Small Trap (1 scrap)");                    
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 2) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
+
+                    System.out.println("This is a later game item which is not available in this demo version.  Stick around for the full game!");
                     
-                    System.out.println("1. Small Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("1. Small Trap (1 scrap)");                    
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 3) {
                     gameEngine.getGameState().getPlayer().gainXP(2, gameEngine.getGameState());
+
+                    System.out.println("This is a later game item which is not available in this demo version.  Stick around for the full game!");
                     
-                    System.out.println("1. Small Trap (1 scrap)");
-                    
-                    System.out.println("2. Large Trap (2 scrap, 1 food)");
-                    
-                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");
-                    
+                    System.out.println("1. Small Trap (1 scrap)");                    
+                    System.out.println("2. Large Trap (2 scrap, 1 food)");                    
+                    System.out.println("3. Defensive Trap (3 scrap, 2 fuel)");                    
                     System.out.println("4. Return to the main menu");
                 } else if (input == 4) {
                     displayMenu();

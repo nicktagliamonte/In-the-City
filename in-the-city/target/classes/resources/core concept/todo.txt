@@ -3,7 +3,6 @@ Keep adding individual game elements in a "test data" format.
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
   - completeness
-    - futz around with traps, have them actually do something
     - room access control - you can be too scared to go in.
       - have this impact the shop in region 2 -- until you are assigned the main quest, trying to enter triggers an event which prevents entry
     - add TheCityStreetAdversary.java, and a regionFriend for each region.  update randomeventmanager with both

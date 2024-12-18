@@ -5,16 +5,16 @@ import java.util.*;
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.game.GameState;
 
-public class SmallTrap extends Trap {
-    @Expose private static final int DURATION = 600;
+public class SmallMagicalTrap extends Trap {
+    @Expose private static final int DURATION = 1000;
     @Expose private static final int INTERVAL = 1000;
-    @Expose private static final double SUCCESS_RATE = 0.75;
+    @Expose private static final double SUCCESS_RATE = 0.85;
     @Expose private int elapsedTime = 0;
     @Expose private boolean success;
     @Expose private Random random = new Random();
     GameState gameState;
 
-    public SmallTrap(GameState gameState) {
+    public SmallMagicalTrap(GameState gameState) {
         super("Small Trap", "A small trap. Good for finding simple supplies.", 1, true, 1, gameState);
         Map<Item, Integer> cost = new HashMap<Item, Integer>();
         cost.put(new Scrap(), 1);
@@ -51,7 +51,7 @@ public class SmallTrap extends Trap {
     }
 
     public int getWeightedNumberOfItems() {
-        double[] probabilities = {0.20, 0.60, 0.80, 0.90, 0.95, 1.00};
+        double[] probabilities = {0.10, 0.50, 0.70, 0.90, 0.95, 1.00};
 
         double roll = random.nextDouble();
 
@@ -70,7 +70,7 @@ public class SmallTrap extends Trap {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("You set a small trap.  Hopefully it catches something.");
+        System.out.println("You set a small magical trap.  Hopefully it catches something.");
         super.setTrap(gameState.getCurrentRoom().getPlayerPosition());
         success = random.nextDouble() < SUCCESS_RATE;
         elapsedTime = 0;

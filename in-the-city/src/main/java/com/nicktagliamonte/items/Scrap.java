@@ -1,0 +1,36 @@
+package com.nicktagliamonte.items;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.nicktagliamonte.characters.NPC;
+import com.nicktagliamonte.characters.PartyMember;
+import com.nicktagliamonte.game.GameState;
+
+public class Scrap extends Item{
+    public Scrap() {
+        super("Scrap", "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).", 1.0, false, 1, "", true);
+    }
+
+    @Override
+    public void use(GameState gameState) {
+        boolean hasTechnologist;
+        List<String> partyClasses = new ArrayList<>();
+        for (NPC member : gameState.getCurrentParty()) {
+            PartyMember pm = (PartyMember) member;
+            partyClasses.add(pm.getCharacterClass().getClassName());
+        }
+
+        hasTechnologist = (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist") || 
+        partyClasses.contains("technologist"));
+
+        if (hasTechnologist) {
+            //TODO: magical trap
+        } else {
+            System.out.println("You craft the item into a small trap");
+            gameState.getPlayer().gainXP(2, gameState);
+            Trap trap = new SmallTrap(gameState);
+            gameState.getPlayer().craftItem(trap);
+        }        
+    }
+}
