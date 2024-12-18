@@ -46,17 +46,14 @@ Currently:
 - Each of the puzzles have a hint mechanic and player rewards for completion.
 - An escape room style section where the door locks behind the player on entry, and the player has to solve a puzzle to unlock it.
 
+- Right now, these elements all exist in a very minor, loosely held together story which takes place through 3 quests seen in 2 regions. It is playable in that state, and could hypothetically be cloned from here and run locally if you wanted to.
+- Testing is an upcoming effort and, pending testing results, a full story will come next.
+
 ## Upcoming Work:  
 
-### Phase 6: Working Demo  
-Keep adding individual game elements in a "test data" format.      
-- Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-- Add an "introduction" screen.  
-  - This will be called from a method in the game engine (which, when I get to persistence, can be put in an if/else depending on what is passed into `main`).  
-  - Just introduce the game before proceeding.  
-- Reassess demo at this time.  
-  - In the planning stage, currently seems like this is a full demo.  
-  - Check **ALL** TODO comments in every file.  
+### Phase 6: Working Demo   
+- Reassess demo  
+  - In the planning stage, currently seems like this is a full demo. Pass it over for some play testing  
 - (Assuming that the demo is in fact done) host the demo.  
   - Find out what changes need to be made to host the demo online.  
     - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
