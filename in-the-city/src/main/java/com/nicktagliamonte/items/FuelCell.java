@@ -9,7 +9,7 @@ public class FuelCell extends Item {
 
     @Override
     public void use(GameState gameState) {
-        // TODO: Specific logic for using a Fuel Cell
+        // TODO: Specific logic for using a Fuel Cell (which relies i think on having a conveyance?)
         try {
             Thread.sleep(15);
         } catch (InterruptedException e) {

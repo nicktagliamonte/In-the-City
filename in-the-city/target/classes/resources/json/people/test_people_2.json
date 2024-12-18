@@ -7,11 +7,7 @@
                 "health": 45.0,
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "",
-                        "description": "A small, high-energy fuel cell.",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     }
                 },
                 "description": "A friendly face with a big smile.",
@@ -27,11 +23,7 @@
                 "health": 25.0,
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "",
-                        "description": "A reliable energy pack.",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "FoodRation"
                     }
                 },
                 "description": "A wandering trader with no allegiance.",
@@ -56,11 +48,7 @@
                 "name": "Henry",
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "",
-                        "description": "A premium energy cell.",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     }
                 },
                 "description": "A technologist.",

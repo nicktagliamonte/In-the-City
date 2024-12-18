@@ -19,7 +19,7 @@
     "completionLock": "The Chamber",
     "completionItems": [
         {
-          "type": "FuelCell"
+          "type": "FoodRation"
         }
       ]
   }  

@@ -51,6 +51,10 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 int mastermindValue = jsonObject.get("value").getAsInt(); 
                 String mastermindDataPath = jsonObject.get("dataPath").getAsString();
                 return new MastermindPuzzleItem(mastermindName, mastermindDescription, mastermindWeight, mastermindIsConsumable, mastermindValue, "mastermind", mastermindDataPath);
+            case "FoodRation":
+                return new FoodRation();
+            case "Water":
+                return new Water();
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

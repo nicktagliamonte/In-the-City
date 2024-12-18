@@ -109,7 +109,7 @@ public class GameTimer {
 
     public void checkForHunger() {
         int time = gameState.getPlayer().timeSinceFood++;
-        if (time == 200) {
+        if (time == 2000) {
             gameState.getPlayer().setStatus("Hunger");
             try {
                 Thread.sleep(15);
@@ -122,7 +122,7 @@ public class GameTimer {
 
     public void checkForThirst() {
         int time = gameState.getPlayer().timeSinceWater++;
-        if (time == 100) {
+        if (time == 1000) {
             gameState.getPlayer().setStatus("Thirst");
             try {
                 Thread.sleep(15);

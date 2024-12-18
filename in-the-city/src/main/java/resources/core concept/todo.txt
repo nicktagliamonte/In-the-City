@@ -3,15 +3,26 @@ Keep adding individual game elements in a "test data" format.
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
   - survival
-    - add at least a food and water item 
     - add a weapon, have it be a quest 1 reward
+    - make unarmed combat use the player strength for damage 
     - make sure that hunger and thirst states are working
   - completeness
     - throw in some spells for the technologist
+    - make the player choose a reward!
+    - make the computer terminal puzzle rely on plugging in the plug
+      - make it so that you can't do anything with the plug until talking to whoever assigns the side quest
+      - make the plug an object
+      - make its use method (gotten to by examine) set a flag on the computer terminal (object or puzzle, not sure yet) which makes that puzzle accessible
+    - futz around with traps, have them actually do something
+    - room access control - you can be too scared to go in.
+      - have this impact the shop in region 2 -- until you are assigned the main quest, trying to enter triggers an event which prevents entry
+    - add TheCityStreetAdversary.java, and a regionFriend for each region.  update randomeventmanager with both
+    - update all region maps based on all test_item jsons
+    - make examine [NPC name] show that npc description (consequently, update the test_people descriptions)
 - replace all instances of "working" or other such test text (except for persistence)
 - get rid of all the 'can assign quest' stuff, across MANY files both java and json
 - replace welcome to the mastermind puzzle (find in files)
-- hunt down any remaining apostrophes with the yellow box around them
+- hunt down any remaining apostrophes with the yellow box around them or emdashes
 - dialogue is getting kinda tricky.  you can't really have npc's always start at the same spot necessarily.  that's fine for generic npc's, but quest givers? they need to update their starting state based on what you have done... (probably add a map of string, string to gamestate which will hold an npc name and the last used dialogueid.  starting conversation will mean checking that and if the person is not on there, starting at the start.  else, start at the last dialogue id and print some text to indicate like "where did we leave off?" or somethign. also do a check so that if you have completed the quest indicated in the dialogue id, it won't show up)
 - make sure the same quest can't be assigned twice (this only actually matters for side quests, but still)
 - add a screen for loading new regions to the load region section.  this will require an update to both region json's to add a field for the introduction.  there should be sleep functions involved.  the region 1 intro can be the game intro, which will mean pulling some of the corrent introduction.json out into a separate file for region intro

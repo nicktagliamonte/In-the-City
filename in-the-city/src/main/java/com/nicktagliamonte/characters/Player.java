@@ -35,8 +35,8 @@ public class Player extends Person {
     @Expose private List<Spell> spellbook;
     @Expose private int deathSavingThrows;
     @Expose private String status;
-    public int timeSinceFood = 0; //TODO: once there is a food item, have this reset to 0 when food is eaten and remove substring hunger from player status
-    public int timeSinceWater = 0; //TODO: see above, but for water
+    public int timeSinceFood = 0;
+    public int timeSinceWater = 0;
     @Expose private double alignment;
     @Expose private boolean isHiding;
     public int level;

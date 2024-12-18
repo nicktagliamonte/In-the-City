@@ -7,18 +7,10 @@
                 "health": 50.0,
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     },
                     "item2": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "FoodRation"
                     }
                 },
                 "description": "a friendly face",
@@ -34,18 +26,10 @@
                 "health": 5.0,
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "FoodRation"
                     },
                     "item2": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     },
                     "item3": {
                         "type": "Mastermind Puzzle",
@@ -76,18 +60,10 @@
                 "health": 5.0,
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     },
                     "item2": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "FoodRation"
                     }
                 },
                 "description": "a face",
@@ -112,18 +88,10 @@
                 "name": "Sam",
                 "inventory": {
                     "item1": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "FoodRation"
                     },
                     "item2": {
-                        "type": "FuelCell",
-                        "name": "fillerDate",
-                        "description": "fillerData",
-                        "weight": 4.0,
-                        "consumable": true
+                        "type": "Water"
                     }
                 },
                 "description": "idk what this even does yet",

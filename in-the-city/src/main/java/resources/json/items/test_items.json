@@ -2,10 +2,10 @@
   "items": {
     "The Chamber": {
       "(1,2)": {
-        "type": "FuelCell"
+        "type": "Water"
       },
       "(2,3)": {
-        "type": "FuelCell"
+        "type": "FoodRation"
       },
       "(5,6)": {
         "type": "Armor",
@@ -28,7 +28,7 @@
     },
     "The Hall": {
       "(0,0)": {
-        "type": "FuelCell"
+        "type": "Water"
       }
     },
     "The Observation Deck": {

@@ -2,24 +2,18 @@
     "items": {
       "The Street": {
         "(3,7)": {
-          "type": "FuelCell"
+          "type": "FoodRation"
         },
         "(2,9)": {
-          "type": "FuelCell"
+          "type": "FoodRation"
         },
         "(8,1)": {
-          "type": "Armor",
-          "name": "Light Leather Armor",
-          "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
-          "weight": 3,
-          "consumable": false,
-          "value": 5,
-          "acbonus": 2
+          "type": "Water"
         }
       },
       "The Abandoned Shop": {
         "(0,1)": {
-          "type": "FuelCell"
+          "type": "Water"
         },
         "(4,5)": {
           "type": "Armor",
