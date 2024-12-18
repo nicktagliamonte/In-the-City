@@ -7,10 +7,12 @@
                 "health": 50.0,
                 "inventory": {
                     "item1": {
-                        "type": "Water"
+                        "type": "Water",
+                        "quantity": 1
                     },
                     "item2": {
-                        "type": "FoodRation"
+                        "type": "FoodRation",
+                        "quantity": 1
                     }
                 },
                 "description": "a friendly face",

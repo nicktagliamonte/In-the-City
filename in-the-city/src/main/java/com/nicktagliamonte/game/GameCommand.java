@@ -29,67 +29,72 @@ public enum GameCommand {
             // Get the current position from GameState
             String currentRoom = gameState.getCurrentRoom().getName();
             String roomDescription = gameState.getRoomDescription(currentRoom);
-            Map<String, Item> visibleItems = gameState.getCurrentRoom().getItemsInRoom();
+            Map<String, List<Item>> visibleItems = gameState.getCurrentRoom().getItemsInRoom();
             Map<String, NPC> characters = gameState.getCurrentRoom().getPeopleInRoom();
             List<NPC> party = gameState.getCurrentParty();
-
+    
             // Construct the dynamic message based on the game state
             StringBuilder message = new StringBuilder();
             message.append("You look around and see: \n").append(roomDescription).append("\n");
             if (gameState.getCurrentRoom().getIsSafe()) {
                 message.append("This is the region's safe zone. There will be no combat events here unless you initiate them.\n");
             }
-
+    
+            // Handle items in the room
             if (!visibleItems.isEmpty()) {
                 message.append("Items here: ");
-                // Iterate over the entries of the visibleItems map
-                for (Map.Entry<String, Item> entry : visibleItems.entrySet()) {
-                    // For each item, append its name and key (coordinates)
-                    message.append(entry.getValue().getName())
-                            .append(" at ")
-                            .append(entry.getKey());
-
-                    // Add a comma between items, but not after the last item
-                    if (visibleItems.size() > 1
-                            && !entry.equals(visibleItems.entrySet().toArray()[visibleItems.size() - 1])) {
-                        message.append(", ");
+                boolean firstItem = true;
+                // Iterate over each entry in the visibleItems map
+                for (Map.Entry<String, List<Item>> entry : visibleItems.entrySet()) {
+                    // For each list of items, iterate through them
+                    for (Item item : entry.getValue()) {
+                        if (!firstItem) {
+                            message.append(", ");
+                        }
+                        message.append(item.getName())
+                                .append(" at ")
+                                .append(entry.getKey());
+                        firstItem = false;
                     }
                 }
                 message.append("\n");
             } else {
                 message.append("There are no notable items here.\n");
             }
-
+    
+            // Handle characters in the room
             if (!characters.isEmpty()) {
                 message.append("People here: ");
+                boolean firstCharacter = true;
                 for (Map.Entry<String, NPC> entry : characters.entrySet()) {
+                    if (!firstCharacter) {
+                        message.append(", ");
+                    }
                     message.append(entry.getValue().getName())
                             .append(" at ")
                             .append(entry.getKey());
-
-                    if (characters.size() > 1
-                            && !entry.equals(characters.entrySet().toArray()[characters.size() - 1])) {
-                        message.append(", ");
-                    }
+                    firstCharacter = false;
                 }
                 message.append("\n");
             } else {
                 message.append("There are no notable people here.\n");
             }
-
+    
+            // Handle party members
             if (!party.isEmpty()) {
                 message.append("Party members here: ");
+                boolean firstPartyMember = true;
                 for (NPC partyMember : party) {
-                    message.append(partyMember.getName());
-
-                    if (party.size() > 1 && !partyMember.equals(party.toArray()[party.size() - 1])) {
+                    if (!firstPartyMember) {
                         message.append(", ");
                     }
+                    message.append(partyMember.getName());
+                    firstPartyMember = false;
                 }
             } else {
                 message.append("There are no party members with you.");
             }
-
+    
             // Print the message
             try {
                 Thread.sleep(15);
@@ -339,26 +344,33 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             String itemName = "";
-
+    
             if (args.length < 1 && gameState.itemContext.equals("")) {
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                System.out.println("You need to use this command in the form Examine [Item Name]");
+                System.out.println("You need to use this command in the form Examine [Item/Person Name]");
                 return;
             } else if (args.length < 1) {
                 itemName = gameState.itemContext;
             } else {
                 itemName = args[0];
             }
-
-            List<Item> itemsInRoom = new ArrayList<>(gameState.getCurrentRoom().getItemsInRoom().values());
+    
+            // Collect all items from the current room
+            List<Item> itemsInRoom = new ArrayList<>();
+            for (List<Item> itemsList : gameState.getCurrentRoom().getItemsInRoom().values()) {
+                itemsInRoom.addAll(itemsList); // Add all items in each list to the final list
+            }
+    
+            // Add items from the safe zone if it's a safe zone
             if (gameState.getCurrentRoom().getIsSafe()) {
                 itemsInRoom.addAll(gameState.safeZoneInventory.getInventory());
             }
-
+    
+            // Find the item to examine
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(itemName)) {
@@ -366,34 +378,39 @@ public enum GameCommand {
                     break;
                 }
             }
-
+    
             if (itemToExamine != null && (itemToExamine.getPuzzleType().equals(""))) {
                 System.out.println(itemToExamine.getDescription());
                 if (itemToExamine instanceof Plug) {
                     itemToExamine.use(gameState);
+                    return;
                 }
             } else if (itemToExamine != null && (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence"))) {
                 if (itemToExamine.getInteractable()) {
                     gameState.launchSequencePuzzle(itemToExamine.getDataPath());
                 } else {
                     System.out.println(itemToExamine.getDescription());
+                    return;
                 }                
             } else if (itemToExamine != null && (itemToExamine.getPuzzleType().equalsIgnoreCase("mastermind"))) {
                 gameState.launchMastermindPuzzle(itemToExamine.getDataPath());
             }
-            else {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+    
+            // Check for NPCs in the room
+            List<NPC> peopleInRoom = new ArrayList<>(gameState.getCurrentRoom().getPeopleInRoom().values());
+    
+            for (NPC person : peopleInRoom) {
+                if (person.getName().equalsIgnoreCase(itemName)) {
+                    person.getDescription();
                 }
-                System.out.println("There is no such item here: " + args[0]);
             }
-
+    
+            // Clean up
             itemsInRoom.clear();
+            peopleInRoom.clear();
             gameState.itemContext = "";
         }
-    },
+    },    
     TAKE {
         @Override
         public void execute(String[] args, GameState gameState) {
@@ -443,24 +460,29 @@ public enum GameCommand {
                 }
             }
     
-            Map<String, Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom();
+            Map<String, List<Item>> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom();
             String itemLocation = null;
-            for (Entry<String, Item> item : itemsInRoom.entrySet()) {
-                if (item.getValue().getName().equalsIgnoreCase(itemName)) {
-                    itemToTake = item.getValue();
-                    itemLocation = item.getKey();
-                    gameState.getCurrentRoom().updateMapEntry('.', 
-                            Character.getNumericValue(itemLocation.charAt(1)), 
-                            Character.getNumericValue(itemLocation.charAt(3)));
-                    break;
+    
+            // Iterate through the room's items, which are now lists at each coordinate
+            for (Map.Entry<String, List<Item>> entry : itemsInRoom.entrySet()) {
+                for (Item item : entry.getValue()) {
+                    if (item.getName().equalsIgnoreCase(itemName)) {
+                        itemToTake = item;
+                        itemLocation = entry.getKey();  // Get the location of the item
+                        gameState.getCurrentRoom().updateMapEntry('.', 
+                                Character.getNumericValue(itemLocation.charAt(1)), 
+                                Character.getNumericValue(itemLocation.charAt(3)));
+                        entry.getValue().remove(item);  // Remove the item from the list at the location
+                        break;
+                    }
                 }
+                if (itemToTake != null) break; // If we found the item, exit outer loop
             }
     
             if (itemToTake != null) {
                 if (gameState.getPlayer().getRemainingCarryWeight() > itemToTake.getWeight()) {
                     gameState.getPlayer().addItem(itemToTake);
                     gameState.getPlayer().reduceRemainingCarryWeight(itemToTake.getWeight());
-                    gameState.getCurrentRoom().removeItemFromRoom(itemLocation);
                     System.out.printf("added %s to inventory\n", itemToTake.getName());
                     gameState.itemContext = itemToTake.getName();
                 } else {

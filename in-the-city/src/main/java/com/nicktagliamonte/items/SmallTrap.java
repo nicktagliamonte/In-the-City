@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.game.GameState;
 
 public class SmallTrap extends Trap {
-    @Expose private static final int DURATION = 600;
+    @Expose private static final int DURATION = 60;
     @Expose private static final int INTERVAL = 1000;
     @Expose private static final double SUCCESS_RATE = 0.75;
     @Expose private int elapsedTime = 0;
@@ -70,7 +70,7 @@ public class SmallTrap extends Trap {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("You set a small trap.  Hopefully it catches something.");
+        System.out.println("You set a small trap. Hopefully it catches something.");
         super.setTrap(gameState.getCurrentRoom().getPlayerPosition());
         success = random.nextDouble() < SUCCESS_RATE;
         elapsedTime = 0;
@@ -82,9 +82,13 @@ public class SmallTrap extends Trap {
                 elapsedTime++;
                 if (elapsedTime >= DURATION) {
                     timer.cancel();
+                    if (success) {
+                        springTrap(); // Only spring the trap after the duration if successful
+                    } else {
+                        System.out.println("The trap didn't catch anything.");
+                    }
                     expire();
                 }
-                springTrap();
             }
         }, 0, INTERVAL);
     }

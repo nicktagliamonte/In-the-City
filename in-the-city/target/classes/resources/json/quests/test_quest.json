@@ -10,7 +10,7 @@
       "type": "dialogue",
       "target": "Miles",
       "isCompleted": false,
-      "completionMessage": "You’ve spoken with Miles, setting the stage for what’s to come. The conversation revealed crucial information, though it seems there’s more yet to uncover."
+      "completionMessage": "You've spoken with Miles, setting the stage for what's to come. The conversation revealed crucial information, though it seems there's more yet to uncover."
     },
     "objective_002": {
       "id": "objective_002",
@@ -24,28 +24,28 @@
       "type": "item",
       "target": "codex",
       "isCompleted": false,
-      "completionMessage": "You’ve found Victor’s puzzle box. Now, it’s time to solve its secrets and uncover what it holds. Your next step awaits in the solution."
+      "completionMessage": "You've found Victor's puzzle box. Now, it's time to solve its secrets and uncover what it holds. Your next step awaits in the solution."
     },
     "objective_004": {
       "id": "objective_004",
       "type": "puzzle",
       "target": "codex",
       "isCompleted": false,
-      "completionMessage": "The puzzle box is solved. With its secrets unlocked, you now know what you must do next—but beware, Miles is still on your tail, and he’ll want the box."
+      "completionMessage": "The puzzle box is solved. With its secrets unlocked, you now know what you must do next—but beware, Miles is still on your tail, and he'll want the box."
     },
     "objective_005": {
       "id": "objective_005",
       "type": "stealth",
       "target": "5",
       "isCompleted": false,
-      "completionMessage": "You’ve hidden from Miles, successfully evading his notice. Now, to finish the quest, you must move toward The Chamber—quietly, if you can."
+      "completionMessage": "You've hidden from Miles, successfully evading his notice. Now, to finish the quest, you must move toward The Chamber—quietly, if you can."
     },
     "objective_006": {
       "id": "objective_006",
       "type": "movement",
       "target": "The Chamber",
       "isCompleted": false,
-      "completionMessage": "You’ve made it to The Chamber, completing the final step of your journey for now. But the quest isn’t over yet—the next chapter awaits."
+      "completionMessage": "You've made it to The Chamber, completing the final step of your journey for now. But the quest isn't over yet—the next chapter awaits."
     }
   },
   "rewards": [
@@ -74,7 +74,7 @@
   "spellToChoose": {
     "type": "IonSurge"
   },
-  "completionMessage": "You’ve completed the test quest. With the puzzle solved, your journey has taken its first steps. Prepare yourself for what comes next.",
+  "completionMessage": "You've completed the test quest. With the puzzle solved, your journey has taken its first steps. Prepare yourself for what comes next.",
   "newRegionFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\regions\\test_region_2.json",
   "newAdjacencyFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\adjacencies\\test_adjacencies_2.json",
   "newItemsFilePath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\items\\test_items_2.json",

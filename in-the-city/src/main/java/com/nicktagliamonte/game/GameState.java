@@ -136,7 +136,7 @@ public class GameState {
                 }
             }
             loadAdjacencyList(adjacenciesFilePath);
-            loaditemsInRoom(itemsFilePath);
+            loadItemsInRoom(itemsFilePath);
             loadPeopleInRoom(peopleFilePath);
             loadRegionDialogue(dialogueFilePath);
             initializeCurrentRoom();
@@ -191,69 +191,70 @@ public class GameState {
         }
     }
 
-    private void loaditemsInRoom(String itemsFilePath) {
+    private void loadItemsInRoom(String itemsFilePath) {
         Gson gson = new GsonBuilder()
-                .registerTypeAdapter(Item.class, new ItemDeserializer())
+                .registerTypeAdapter(new TypeToken<List<Item>>() {}.getType(), new ItemDeserializer())
                 .create();
-
+    
         try (FileReader itemsReader = new FileReader(itemsFilePath)) {
             // Parse the JSON structure for rooms and their coordinates with item details
             JsonObject jsonObject = gson.fromJson(itemsReader, JsonObject.class);
             JsonObject itemsJson = jsonObject.getAsJsonObject("items");
-
-            Map<String, Map<String, Item>> tempItemsMap = new HashMap<>();
-
+    
+            Map<String, Map<String, List<Item>>> tempItemsMap = new HashMap<>();
+    
             // Iterate over each room and parse item data
             for (Map.Entry<String, JsonElement> roomEntry : itemsJson.entrySet()) {
                 String roomName = roomEntry.getKey();
                 JsonObject roomItemsJson = roomEntry.getValue().getAsJsonObject();
-                Map<String, Item> itemsMap = new HashMap<>();
-
+                Map<String, List<Item>> itemsMap = new HashMap<>();
+    
                 // Iterate over each coordinate and parse item info
                 for (Map.Entry<String, JsonElement> coordinateEntry : roomItemsJson.entrySet()) {
                     String coordinates = coordinateEntry.getKey();
                     JsonObject itemJson = coordinateEntry.getValue().getAsJsonObject();
-
-                    // Deserialize the item using the custom ItemDeserializer
-                    Item item = gson.fromJson(itemJson, Item.class); // Deserialize item at the coordinate level
-
-                    // Add the item to the map for the current room
-                    itemsMap.put(coordinates, item);
+    
+                    // Deserialize the item JSON into a List<Item> using the custom deserializer
+                    List<Item> items = gson.fromJson(itemJson, new TypeToken<List<Item>>() {}.getType());
+    
+                    // Add the list of items to the map for the current coordinate
+                    itemsMap.put(coordinates, items);
                 }
-
+    
                 // Add this room's item map to the main map
                 tempItemsMap.put(roomName, itemsMap);
             }
-
+    
             // Create a mapping of room names to actual Room objects
             Map<String, Room> roomNameToRoomMap = new HashMap<>();
             for (Room room : currentRegion.getRooms()) {
                 roomNameToRoomMap.put(room.getName(), room);
             }
-
+    
             // Set the items in each room
-            for (Map.Entry<String, Map<String, Item>> roomEntry : tempItemsMap.entrySet()) {
+            for (Map.Entry<String, Map<String, List<Item>>> roomEntry : tempItemsMap.entrySet()) {
                 String roomName = roomEntry.getKey();
-                Map<String, Item> itemsInRoom = roomEntry.getValue();
-
+                Map<String, List<Item>> itemsInRoom = roomEntry.getValue();
+    
                 // Find the actual Room object by name
                 Room currentRoom = roomNameToRoomMap.get(roomName);
-
+    
                 if (currentRoom != null) {
                     currentRoom.setItemsInRoom(itemsInRoom); // Set items for this room
                 }
             }
-
+    
+            // Ensure that every room has its items initialized, even if empty
             for (Room room : currentRegion.getRooms()) {
                 if (room.getItemsInRoom() == null) {
-                    room.setItemsInRoom(new HashMap<String, Item>());
+                    room.setItemsInRoom(new HashMap<>());
                 }
             }
-
+    
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }    
 
     private void loadPeopleInRoom(String peopleFilePath) {
         Gson gson = new GsonBuilder()
@@ -482,18 +483,20 @@ public class GameState {
             }
         }
 
-        // Check for the waypoint as an item
-        for (Map.Entry<String, Item> entry : currentRoom.getItemsInRoom().entrySet()) {
-            if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
-                itemContext = waypointName;
-                Point targetPosition = parsePositionString(entry.getKey());
-                return moveToAdjacentPosition(targetPosition, "item " + waypointName);
+        for (Map.Entry<String, List<Item>> entry : currentRoom.getItemsInRoom().entrySet()) {
+            // Iterate over each item in the list at this location
+            for (Item item : entry.getValue()) {
+                if (item.getName().equalsIgnoreCase(waypointName)) {
+                    itemContext = waypointName;
+                    Point targetPosition = parsePositionString(entry.getKey());
+                    return moveToAdjacentPosition(targetPosition, "item " + waypointName);
+                }
             }
         }
 
         // Waypoint not found
         return "Waypoint \"" + waypointName
-                + "\" not found in this room. Use look for a set of available rooms, where the room name will be enclosed in quotations.";
+                + "\" not found in this room. Use look for a set of available waypoints, which take the form of items and people.";
     }
 
     private Point parsePositionString(String positionString) {
@@ -700,14 +703,17 @@ public class GameState {
     }
 
     public void setCurrentRoom(Room room) {
+        if (!room.isAccessible()) {
+            System.out.println(room.getDenialMessage());
+            return;
+        }
+
         currentRoom = room;
         currentRoom.triggerTransitionEvent();
         currentRoom.updateMapEntry('Y',
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
                 Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
 
-        // update people in new room to act as adversary if player alignment is
-        // sufficiently low
         Map<String, NPC> people = getCurrentRoom().getPeopleInRoom();
         Iterator<Map.Entry<String, NPC>> iterator = people.entrySet().iterator();
         while (iterator.hasNext()) {
@@ -843,6 +849,7 @@ public class GameState {
                         String playerResponse = dialogueScanner.nextLine().trim().toLowerCase();
                         if (playerResponse.equals("yes")) {
                             player.addQuest(quest);
+                            setRoomAccessibility(quest);
                             try {
                                 Thread.sleep(15);
                             } catch (InterruptedException e) {
@@ -1296,6 +1303,18 @@ public class GameState {
             currentPuzzle.startPuzzleLoop();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void setRoomAccessibility(Quest quest) {
+        for (Objective objective : quest.getObjectives().values()) {
+            if (objective.getType().equalsIgnoreCase("movement")) {
+                for (Room room : currentRegion.getRooms()) {
+                    if (room.getName().equalsIgnoreCase(objective.getTarget())) {
+                        room.setAccessible(true);
+                    }
+                }
+            }
         }
     }
 

@@ -1,16 +1,14 @@
 package com.nicktagliamonte.game;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Adversary;
-import com.nicktagliamonte.characters.CityStreetAdversary;
 import com.nicktagliamonte.characters.Friend;
+import com.nicktagliamonte.characters.TheCityStreetAdversary;
+import com.nicktagliamonte.characters.TheCityStreetFriend;
 import com.nicktagliamonte.characters.TheDilapidatedBuildingAdversary;
-import com.nicktagliamonte.items.FuelCell;
-import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.characters.TheDilapidatedBuildingFriend;
 
 public class RandomEventManager {
     @Expose private GameState gameState;
@@ -55,7 +53,7 @@ public class RandomEventManager {
             if (gameState.getCurrentRegion().getRegionName().equals("The Dilapidated Building")) {
                 adversary = new TheDilapidatedBuildingAdversary();
             } else {
-                adversary = new CityStreetAdversary();
+                adversary = new TheCityStreetAdversary();
             }
             
             gameState.enterCombat(adversary);
@@ -76,9 +74,12 @@ public class RandomEventManager {
             //TODO: the regionFriend constructors should also have some kind of randomization function to set the inventory to some random set within a range
             //i.e. dead zone 1 fuelcell, liacouras 10 swords
             //or whatever items make sense at the time
-            List<Item> inventory = new ArrayList<>();
-            inventory.add(new FuelCell());
-            Friend friend = new Friend("null", 0, inventory, "a friend", 0, null, false);
+            Friend friend = null;
+            if (gameState.getCurrentRegion().getRegionName().equals("The Dilapidated Building")) {
+                friend = new TheDilapidatedBuildingFriend();
+            } else {
+                friend = new TheCityStreetFriend();
+            }
             gameState.enterBarter(friend);
         }
     }

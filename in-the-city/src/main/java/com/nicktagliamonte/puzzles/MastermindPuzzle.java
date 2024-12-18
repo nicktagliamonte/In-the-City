@@ -27,13 +27,6 @@ public class MastermindPuzzle {
     public void startPuzzleLoop() {
         Scanner scanner = new Scanner(System.in);
 
-        try {
-            Thread.sleep(15);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-        System.out.println("Welcome to the Mastermind puzzle!");
-
         while (attemptsLeft > 0 && !isSolved) {
             try {
                 Thread.sleep(15);

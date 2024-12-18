@@ -3,7 +3,7 @@
   "rooms": [
     {
       "name": "The Chamber",
-      "description": "The room is dimly lit, with light spilling through a cracked window, casting shadows on an old wooden table. The air is heavy with mildew, and the floor creaks beneath you, its splintered boards bearing the weight of years. There is a computer terminal in the corner, with a thick power cable leading to the wall.",
+      "description": "The room is dimly lit, with light spilling through a cracked window, casting shadows on an old wooden table. The air is heavy with mildew, and the floor creaks beneath you, its splintered boards bearing the weight of years. There is a computer terminal in the corner, with a thick power cable leading to the wall. In the corner, you see a discarded pile of scrap.",
       "width": 10,
       "height": 10,
       "hasPlayer": true,
@@ -27,18 +27,20 @@
       "map": [
         [" ", " ", " ", " ", "E", ".", " ", " ", " ", " "],
         [" ", " ", ".", ".", ".", ".", ".", ".", " ", " "],
-        [" ", ".", ".", ".", ".", ".", ".", ".", ".", " "],
+        [" ", ".", ".", ".", ".", ".", ".", "I", "I", " "],
         [" ", ".", ".", ".", ".", "I", ".", ".", ".", " "],
         [".", ".", ".", ".", ".", ".", ".", "E", ".", "."],
         [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
-        [" ", ".", "I", ".", ".", ".", ".", ".", ".", " "],
+        [" ", "I", "I", ".", ".", ".", ".", ".", ".", " "],
         [" ", "I", ".", ".", ".", ".", ".", ".", ".", " "],
         [" ", " ", ".", ".", ".", ".", ".", ".", " ", " "],
         [" ", " ", " ", " ", ".", ".", " ", " ", " ", " "]
       ],
       "isSafe": false, 
       "isEconomic": true,
-      "nextRoomToSafeZone": "The Safe Zone"
+      "nextRoomToSafeZone": "The Safe Zone",
+      "accessible": true,
+      "denialMessage": ""
     },
     {
       "name": "The Hall",
@@ -73,7 +75,9 @@
       ],
       "isSafe": false,
       "isEconomic": false,
-      "nextRoomToSafeZone": "The Chamber"
+      "nextRoomToSafeZone": "The Chamber",
+      "accessible": true,
+      "denialMessage": ""
     },
     {
       "name": "The Safe Zone",
@@ -95,7 +99,9 @@
       ],
       "isSafe": true, 
       "isEconomic": false,
-      "nextRoomToSafeZone": ""
+      "nextRoomToSafeZone": "",
+      "accessible": true,
+      "denialMessage": ""
     },
     {
       "name": "The Observation Deck",
@@ -123,7 +129,9 @@
       ],
       "isSafe": false, 
       "isEconomic": false,
-      "nextRoomToSafeZone": "The Chamber"
+      "nextRoomToSafeZone": "The Chamber",
+      "accessible": true,
+      "denialMessage": ""
     }
   ]
 }

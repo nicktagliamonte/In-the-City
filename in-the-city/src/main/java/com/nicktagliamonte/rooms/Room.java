@@ -9,8 +9,6 @@ import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.game.GameState;
 import com.nicktagliamonte.items.Item;
 
-//TODO: for story progression, there should be some kind of access control for certain rooms that equates to being too scared to go in
-
 public class Room {
     @Expose private String name;
     @Expose private String description;
@@ -19,7 +17,7 @@ public class Room {
     @Expose private int playerX;
     @Expose private int playerY;
     @Expose private List<Adjacency> adjacentRooms;
-    @Expose private Map<String, Item> itemsInRoom;
+    @Expose private Map<String, List<Item>> itemsInRoom;
     @Expose private Map<String, NPC> peopleInRoom;
     @Expose private TransitionEvent transitionEvent;
     @Expose private boolean hasPlayer;
@@ -28,9 +26,12 @@ public class Room {
     @Expose private boolean isSafe;
     @Expose private boolean isEconomic;
     @Expose private String nextRoomToSafeZone;
+    @Expose private boolean accessible;
+    @Expose private String denialMessage;
 
     public Room(String name, String description, int width, int height, boolean hasPlayer, TransitionEvent transitionEvent, 
-                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, boolean isEconomic, String nextRoomToSafeZone) {
+                int[][] mask, int playerX, int playerY, char[][] map, boolean isSafe, boolean isEconomic, String nextRoomToSafeZone,
+                boolean accessible, String denialMessage) {
         this.name = name;
         this.description = description;
         this.width = width;
@@ -51,6 +52,24 @@ public class Room {
         this.isSafe = isSafe;
         this.isEconomic = isEconomic;
         this.nextRoomToSafeZone = nextRoomToSafeZone;
+        this.accessible = accessible;
+        this.denialMessage = denialMessage;
+    }
+
+    public boolean isAccessible() {
+        return accessible;
+    }
+
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
+
+    public String getDenialMessage() {
+        return denialMessage;
+    }
+
+    public void setDenialMessage(String denialMessage) {
+        this.denialMessage = denialMessage;
     }
 
     public boolean getIsEconomic() {
@@ -94,11 +113,11 @@ public class Room {
         this.adjacentRooms = adjacentRooms;
     }
 
-    public Map<String, Item> getItemsInRoom() {
+    public Map<String, List<Item>> getItemsInRoom() {
         return itemsInRoom;
     }
 
-    public void setItemsInRoom(Map<String, Item> itemsInRoom) {
+    public void setItemsInRoom(Map<String, List<Item>> itemsInRoom) {
         this.itemsInRoom = itemsInRoom;
     }
 
@@ -107,7 +126,17 @@ public class Room {
     }
 
     public void addItemToRoom(String location, Item item) {
-        this.itemsInRoom.put(location, item);
+        // Check if the location already has a list of items
+        List<Item> itemList = this.itemsInRoom.get(location);
+    
+        // If the list doesn't exist, create a new one
+        if (itemList == null) {
+            itemList = new ArrayList<>();
+            this.itemsInRoom.put(location, itemList);  // Put the newly created list at the location
+        }
+    
+        // Add the item to the list at the specified location
+        itemList.add(item);
     }
 
     public Map<String, NPC> getPeopleInRoom() {
@@ -229,10 +258,14 @@ public class Room {
                     System.out.println("You fail to access " + adj.getAdjoiningRoomName() + " because of a failed dex check. You cannot access the room right now.");
                     return this;
                 }
-                return adj.getAdjoiningRoom();
+                if (adj.getAdjoiningRoom().isAccessible()) {
+                    return adj.getAdjoiningRoom();
+                } else {
+                    System.out.println(adj.getAdjoiningRoom().getDenialMessage());
+                    return this;
+                }
             }
-        }
-    
+        }    
         return this;
     }
 

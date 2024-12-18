@@ -31,8 +31,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 JsonObject inventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> inventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : inventoryJson.entrySet()) {
-                    Item item = context.deserialize(entry.getValue(), Item.class);
-                    inventory.add(item);
+                    List<Item> items = context.deserialize(entry.getValue(), Item.class);
+                    for (Item item : items) {
+                        inventory.add(item);
+                    }
                 }
                 String description = jsonObject.get("description").getAsString();
                 double maxHealth = jsonObject.get("maxHealth").getAsDouble();
@@ -46,8 +48,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 JsonObject adversaryInventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> adversaryInventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : adversaryInventoryJson.entrySet()) {
-                    Item item = context.deserialize(entry.getValue(), Item.class);
-                    adversaryInventory.add(item);
+                    List<Item> items = context.deserialize(entry.getValue(), Item.class);
+                    for (Item item : items) {
+                        adversaryInventory.add(item);
+                    }
                 }
                 String adversaryDescription = jsonObject.get("description").getAsString();
                 double adversaryMaxHealth = jsonObject.get("maxHealth").getAsDouble();
@@ -74,8 +78,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 JsonObject neutralInventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> neutralInventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : neutralInventoryJson.entrySet()) {
-                    Item item = context.deserialize(entry.getValue(), Item.class);
-                    neutralInventory.add(item);
+                    List<Item> items = context.deserialize(entry.getValue(), Item.class);
+                    for (Item item : items) {
+                        neutralInventory.add(item);
+                    }
                 }
                 String neutralDescription = jsonObject.get("description").getAsString();
                 double neutralMaxHealth = jsonObject.get("maxHealth").getAsDouble();
@@ -102,8 +108,10 @@ public class CharacterDeserializer implements JsonDeserializer<NPC>{
                 JsonObject partyMemberInventoryJson = jsonObject.getAsJsonObject("inventory");
                 List<Item> partyMemberInventory = new ArrayList<>();
                 for (Map.Entry<String, JsonElement> entry : partyMemberInventoryJson.entrySet()) {
-                    Item item = context.deserialize(entry.getValue(), Item.class);
-                    partyMemberInventory.add(item);
+                    List<Item> items = context.deserialize(entry.getValue(), Item.class);
+                    for (Item item : items) {
+                        partyMemberInventory.add(item);
+                    }
                 }
                 String partyMemberDescription = jsonObject.get("description").getAsString();
                 double partyMemberDamage = jsonObject.get("damage").getAsDouble();

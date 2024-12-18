@@ -1,5 +1,7 @@
 package com.nicktagliamonte.items;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.lang.reflect.Type;
 
 import com.google.gson.JsonDeserializationContext;
@@ -8,10 +10,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
-public class ItemDeserializer implements JsonDeserializer<Item> {
+public class ItemDeserializer implements JsonDeserializer<List<Item>> {
     @SuppressWarnings("unused")
     @Override
-    public Item deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public List<Item> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
 
         // Check if "type" exists in the JSON object to avoid NullPointerException
@@ -20,11 +22,17 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
         }
 
         String itemType = jsonObject.get("type").getAsString();
+        int quantity = jsonObject.has("quantity") ? jsonObject.get("quantity").getAsInt() : 1;
+
+        List<Item> items = new ArrayList<>();
 
         // Handle different types based on the "type" field
         switch (itemType) {
             case "FuelCell":
-                return new FuelCell();
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new FuelCell());
+                }
+                return items;
             case "Armor":
                 String name = jsonObject.get("name").getAsString();
                 String description = jsonObject.get("description").getAsString();
@@ -32,9 +40,15 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 boolean isConsumable = jsonObject.get("consumable").getAsBoolean();
                 int value = jsonObject.get("value").getAsInt();
                 int acBonus = jsonObject.get("acbonus").getAsInt();
-                return new Armor(name, description, weight, value, acBonus);
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Armor(name, description, weight, value, acBonus));
+                }                
+                return items;
             case "PuzzleBox":
-                return new PuzzleBox();
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new PuzzleBox());  
+                }
+                return items;
             case "Sequence Puzzle":
                 String sequenceName = jsonObject.get("name").getAsString();
                 String sequenceDescription = jsonObject.get("description").getAsString();
@@ -42,7 +56,10 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 boolean sequenceIsConsumable = jsonObject.get("consumable").getAsBoolean();
                 int sequenceValue = jsonObject.get("value").getAsInt(); 
                 String sequenceDataPath = jsonObject.get("dataPath").getAsString();
-                return new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath, false);
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath, false));    
+                }                
+                return items;
             case "Mastermind Puzzle":
                 String mastermindName = jsonObject.get("name").getAsString();
                 String mastermindDescription = jsonObject.get("description").getAsString();
@@ -50,11 +67,20 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 boolean mastermindIsConsumable = jsonObject.get("consumable").getAsBoolean();
                 int mastermindValue = jsonObject.get("value").getAsInt(); 
                 String mastermindDataPath = jsonObject.get("dataPath").getAsString();
-                return new MastermindPuzzleItem(mastermindName, mastermindDescription, mastermindWeight, mastermindIsConsumable, mastermindValue, "mastermind", mastermindDataPath);
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new MastermindPuzzleItem(mastermindName, mastermindDescription, mastermindWeight, mastermindIsConsumable, mastermindValue, "mastermind", mastermindDataPath));        
+                }                
+                return items;
             case "FoodRation":
-                return new FoodRation();
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new FoodRation());    
+                }
+                return items;
             case "Water":
-                return new Water();
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Water());
+                }
+                return items;
             case "Weapon":
                 String weaponName = jsonObject.get("name").getAsString();
                 String weaponDescription = jsonObject.get("description").getAsString();
@@ -62,14 +88,25 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 boolean weaponIsConsumable = jsonObject.get("consumable").getAsBoolean();
                 int weaponValue = jsonObject.get("value").getAsInt();
                 String weaponDamage = jsonObject.get("damage").getAsString();
-                return new Weapon(weaponName, weaponDescription, weaponWeight, weaponValue, weaponDamage);
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Weapon(weaponName, weaponDescription, weaponWeight, weaponValue, weaponDamage));    
+                }                
+                return items;
             case "Plug":
                 String itemName = jsonObject.get("name").getAsString();
                 String itemDescription = jsonObject.get("description").getAsString();
                 double itemWeight = jsonObject.get("weight").getAsDouble();
                 boolean itemIsConsumable = jsonObject.get("consumable").getAsBoolean();
                 int itemValue = jsonObject.get("value").getAsInt();
-                return new Plug(itemName, itemDescription, itemWeight, itemIsConsumable, itemValue);
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Plug(itemName, itemDescription, itemWeight, itemIsConsumable, itemValue));    
+                }   
+                return items;
+            case "Scrap":
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Scrap());
+                }
+                return items;
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);
         }
