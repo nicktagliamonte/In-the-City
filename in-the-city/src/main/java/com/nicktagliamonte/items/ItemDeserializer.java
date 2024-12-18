@@ -42,7 +42,7 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 boolean sequenceIsConsumable = jsonObject.get("consumable").getAsBoolean();
                 int sequenceValue = jsonObject.get("value").getAsInt(); 
                 String sequenceDataPath = jsonObject.get("dataPath").getAsString();
-                return new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath);
+                return new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath, false);
             case "Mastermind Puzzle":
                 String mastermindName = jsonObject.get("name").getAsString();
                 String mastermindDescription = jsonObject.get("description").getAsString();
@@ -63,7 +63,13 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 int weaponValue = jsonObject.get("value").getAsInt();
                 String weaponDamage = jsonObject.get("damage").getAsString();
                 return new Weapon(weaponName, weaponDescription, weaponWeight, weaponValue, weaponDamage);
-            // Add more cases for different item types
+            case "Plug":
+                String itemName = jsonObject.get("name").getAsString();
+                String itemDescription = jsonObject.get("description").getAsString();
+                double itemWeight = jsonObject.get("weight").getAsDouble();
+                boolean itemIsConsumable = jsonObject.get("consumable").getAsBoolean();
+                int itemValue = jsonObject.get("value").getAsInt();
+                return new Plug(itemName, itemDescription, itemWeight, itemIsConsumable, itemValue);
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);
         }

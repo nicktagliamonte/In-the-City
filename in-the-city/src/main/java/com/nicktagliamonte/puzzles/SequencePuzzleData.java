@@ -35,7 +35,6 @@ public class SequencePuzzleData {
         this.completionItems = completionItems;
     }
 
-    // Getters
     public List<Item> getCompletionItems() {
         return completionItems;
     }

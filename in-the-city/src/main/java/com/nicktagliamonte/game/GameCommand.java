@@ -16,6 +16,7 @@ import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
+import com.nicktagliamonte.items.Plug;
 import com.nicktagliamonte.items.Weapon;
 import com.nicktagliamonte.rooms.Adjacency;
 import com.nicktagliamonte.rooms.Room;
@@ -365,14 +366,16 @@ public enum GameCommand {
             }
 
             if (itemToExamine != null && (itemToExamine.getPuzzleType().equals(""))) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
                 System.out.println(itemToExamine.getDescription());
+                if (itemToExamine instanceof Plug) {
+                    itemToExamine.use(gameState);
+                }
             } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence")) {
-                gameState.launchSequencePuzzle(itemToExamine.getDataPath());
+                if (itemToExamine.getInteractable()) {
+                    gameState.launchSequencePuzzle(itemToExamine.getDataPath());
+                } else {
+                    System.out.println(itemToExamine.getDescription());
+                }                
             } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("mastermind")) {
                 gameState.launchMastermindPuzzle(itemToExamine.getDataPath());
             }

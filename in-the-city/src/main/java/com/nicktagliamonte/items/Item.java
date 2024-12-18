@@ -13,14 +13,16 @@ public class Item {
     @Expose private double value;
     @Expose private String puzzleType;
     @Expose private String dataPath;
+    @Expose private boolean interactable;
 
-    public Item(String name, String description, double weight, boolean isConsumable, double value, String puzzleType) {
+    public Item(String name, String description, double weight, boolean isConsumable, double value, String puzzleType, boolean isInteractable) {
         this.name = name;
         this.description = description;
         this.weight = weight;
         this.isConsumable = isConsumable;
         this.value = value;
         this.puzzleType = puzzleType;
+        this.interactable = isInteractable;
     }
 
     public Item(String name, String description, double weight, boolean isConsumable, double value, String puzzleType, String dataPath) {
@@ -31,6 +33,30 @@ public class Item {
         this.value = value;
         this.puzzleType = puzzleType;
         this.dataPath = dataPath;
+    }
+
+    public Item(String sequenceName, String sequenceDescription, double sequenceWeight, boolean sequenceIsConsumable,
+            int sequenceValue, String puzzleType, String sequenceDataPath, boolean isInteractable) {
+        this.name = sequenceName;
+        this.description = sequenceDescription;
+        this.weight = sequenceWeight;
+        this.isConsumable =sequenceIsConsumable;
+        this.value = sequenceValue;
+        this.puzzleType = puzzleType;
+        this.dataPath = sequenceDataPath;
+        this.interactable = isInteractable;
+    }
+    
+    public boolean getInteractable() {
+        return interactable;
+    }
+
+    public void setInteractable(boolean interactable) {
+        this.interactable = interactable;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDataPath() {

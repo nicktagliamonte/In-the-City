@@ -10,7 +10,7 @@ public class Trap extends Item {
     GameState gameState;
 
     public Trap(String name, String description, double weight, boolean isConsumable, int value, GameState gameState) {
-        super(name, description, weight, isConsumable, value, "");
+        super(name, description, weight, isConsumable, value, "", true);
         this.gameState = gameState;
     }
 

@@ -24,6 +24,14 @@
         "consumable": false,
         "value": 0,
         "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_001.json"
+      },
+      "(8,7)": {
+        "type": "Plug",
+        "name": "Plug",
+        "description": "A power cord attached to the computer terminal, lying on the floor near an outlet.",
+        "weight": 500,
+        "consumable": false,
+        "value": 0
       }
     },
     "The Hall": {

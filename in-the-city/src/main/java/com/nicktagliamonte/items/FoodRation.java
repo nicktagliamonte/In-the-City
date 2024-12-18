@@ -4,7 +4,7 @@ import com.nicktagliamonte.game.GameState;
 
 public class FoodRation extends Item {
     public FoodRation() {
-        super("Food Ration", "Preserved and easily portable food items (canned goods, dried meats, grains).", 2.0, true, 5.0, "");
+        super("Food Ration", "Preserved and easily portable food items (canned goods, dried meats, grains).", 2.0, true, 5.0, "", true);
     }
 
     @Override

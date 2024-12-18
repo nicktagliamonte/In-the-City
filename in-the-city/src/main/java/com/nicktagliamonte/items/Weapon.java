@@ -12,7 +12,7 @@ public class Weapon extends Item {
     @Expose private int dieFaces;
 
     public Weapon(String name, String description, double weight, int value, String dieString) {
-        super(name, description, weight, false, value, "");
+        super(name, description, weight, false, value, "", true);
         isEquipped = false;
         String[] dieArray = dieString.split("d");
         this.dieQuantity = Integer.valueOf(dieArray[0]);

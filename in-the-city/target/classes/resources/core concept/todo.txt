@@ -3,10 +3,6 @@ Keep adding individual game elements in a "test data" format.
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
   - completeness
-    - make the computer terminal puzzle rely on plugging in the plug
-      - make it so that you can't do anything with the plug until talking to whoever assigns the side quest
-      - make the plug an object
-      - make its use method (gotten to by examine) set a flag on the computer terminal (object or puzzle, not sure yet) which makes that puzzle accessible
     - futz around with traps, have them actually do something
     - room access control - you can be too scared to go in.
       - have this impact the shop in region 2 -- until you are assigned the main quest, trying to enter triggers an event which prevents entry

@@ -13,7 +13,7 @@ public class MastermindPuzzleItem extends Item{
     @Expose private String dataPath;
 
     public MastermindPuzzleItem(String name, String description, double weight, boolean isConsumable, double value, String puzzleType, String dataPath) {
-        super(name, description, weight, isConsumable, value, puzzleType);
+        super(name, description, weight, isConsumable, value, puzzleType, true);
         this.dataPath = dataPath;
     }
 
