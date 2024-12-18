@@ -14,7 +14,6 @@ Keep adding individual game elements in a "test data" format.
 - **Phase 7: Codebase Creation**  
   - Create files for all items.  
     - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
-    - Update item manual
     - add item creation to the crafting menu (see Menu.java todos)
   - And all spells.  
   - And all NPCs.  
