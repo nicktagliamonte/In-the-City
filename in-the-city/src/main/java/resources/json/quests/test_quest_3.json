@@ -10,7 +10,7 @@
         "type": "movement",
         "target": "The Chamber",
         "isCompleted": false,
-        "completionMessage": "After speaking with Sam, it looks like you need to examine the computer terminal."
+        "completionMessage": "After speaking with Sam, it looks like you need to examine the computer terminal and/or plug."
       },
       "objective_002": {
         "id": "objective_002",

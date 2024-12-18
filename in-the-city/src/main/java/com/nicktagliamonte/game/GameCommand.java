@@ -1,6 +1,7 @@
 package com.nicktagliamonte.game;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -353,10 +354,11 @@ public enum GameCommand {
                 itemName = args[0];
             }
 
-            Collection<Item> itemsInRoom = gameState.getCurrentRoom().getItemsInRoom().values();
+            List<Item> itemsInRoom = new ArrayList<>(gameState.getCurrentRoom().getItemsInRoom().values());
             if (gameState.getCurrentRoom().getIsSafe()) {
                 itemsInRoom.addAll(gameState.safeZoneInventory.getInventory());
             }
+
             Item itemToExamine = null;
             for (Item item : itemsInRoom) {
                 if (item.getName().equalsIgnoreCase(itemName)) {
@@ -370,13 +372,13 @@ public enum GameCommand {
                 if (itemToExamine instanceof Plug) {
                     itemToExamine.use(gameState);
                 }
-            } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence")) {
+            } else if (itemToExamine != null && (itemToExamine.getPuzzleType().equalsIgnoreCase("sequence"))) {
                 if (itemToExamine.getInteractable()) {
                     gameState.launchSequencePuzzle(itemToExamine.getDataPath());
                 } else {
                     System.out.println(itemToExamine.getDescription());
                 }                
-            } else if (itemToExamine.getPuzzleType().equalsIgnoreCase("mastermind")) {
+            } else if (itemToExamine != null && (itemToExamine.getPuzzleType().equalsIgnoreCase("mastermind"))) {
                 gameState.launchMastermindPuzzle(itemToExamine.getDataPath());
             }
             else {

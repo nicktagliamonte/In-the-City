@@ -10,6 +10,8 @@ Keep adding individual game elements in a "test data" format.
     - update all region maps based on all test_item jsons
     - make examine [NPC name] show that npc description (consequently, update the test_people descriptions)
 - replace all instances of "working" or other such test text (except for persistence)
+- update the description in water
+- adjust the message that comes up if move to waypoint doesn't find the right waypoint
 - get rid of all the 'can assign quest' stuff, across MANY files both java and json
 - replace welcome to the mastermind puzzle (find in files)
 - hunt down any remaining apostrophes with the yellow box around them or emdashes

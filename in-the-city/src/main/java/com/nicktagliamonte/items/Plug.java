@@ -8,7 +8,7 @@ import com.nicktagliamonte.quests.Quest;
 
 public class Plug extends Item {
     public Plug(String name, String description, double weight, boolean isConsumable, double value) {
-        super(name, description, weight, isConsumable, value, description, false);
+        super(name, description, weight, isConsumable, value, "", false);
     }
 
     @Override
