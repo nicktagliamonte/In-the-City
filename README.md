@@ -45,7 +45,6 @@ Currently:
   - A mastermind style "arrange the items correctly" puzzle.
 - Each of the puzzles have a hint mechanic and player rewards for completion.
 - An escape room style section where the door locks behind the player on entry, and the player has to solve a puzzle to unlock it.
-
 - Right now, these elements all exist in a very minor, loosely held together story which takes place through 3 quests seen in 2 regions. It is playable in that state, and could hypothetically be cloned from here and run locally if you wanted to.
 - Testing is an upcoming effort and, pending testing results, a full story will come next.
 
