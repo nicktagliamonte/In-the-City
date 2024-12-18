@@ -55,6 +55,14 @@ public class ItemDeserializer implements JsonDeserializer<Item> {
                 return new FoodRation();
             case "Water":
                 return new Water();
+            case "Weapon":
+                String weaponName = jsonObject.get("name").getAsString();
+                String weaponDescription = jsonObject.get("description").getAsString();
+                double weaponWeight = jsonObject.get("weight").getAsDouble();
+                boolean weaponIsConsumable = jsonObject.get("consumable").getAsBoolean();
+                int weaponValue = jsonObject.get("value").getAsInt();
+                String weaponDamage = jsonObject.get("damage").getAsString();
+                return new Weapon(weaponName, weaponDescription, weaponWeight, weaponValue, weaponDamage);
             // Add more cases for different item types
             default:
                 throw new JsonParseException("Unknown item type: " + itemType);

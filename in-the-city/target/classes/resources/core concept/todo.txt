@@ -2,13 +2,11 @@
 Keep adding individual game elements in a "test data" format.  
 
 - Build out some SLIGHT story elements.  fill out the dialogue options with npc's, spice up the descriptions, give the characters real names
-  - survival
-    - add a weapon, have it be a quest 1 reward
-    - make unarmed combat use the player strength for damage 
-    - make sure that hunger and thirst states are working
   - completeness
-    - throw in some spells for the technologist
+    - throw in some spells for the technologist - 1 that they start with and 1 that they learn after completing quest 1
     - make the player choose a reward!
+      - if the player is not a technologist, then they can't choose a spell because they can't learn spells.
+      - have some rewards go in a special list of items where the player has to pick one.  have them go to the player inventory or the safe zone depending on available carry weight.  adjust deserialization, the quest java file to add a field for rewardToChoose, the quest completion to enter a loop where it prints them along with a number to get player choice
     - make the computer terminal puzzle rely on plugging in the plug
       - make it so that you can't do anything with the plug until talking to whoever assigns the side quest
       - make the plug an object

@@ -60,6 +60,15 @@
       "consumable": false,
       "value": 5,
       "acbonus": 2
+    },
+    {
+      "type": "Weapon",
+      "name": "Rusty Knife",
+      "description": "A crude, rusted blade with a jagged edge. It's seen better days but can still cut through soft materials.",
+      "weight": 1,
+      "consumable": false,
+      "value": 5,
+      "damage": "1d4"
     }
   ],
   "completionMessage": "You’ve completed the test quest. With the puzzle solved, your journey has taken its first steps. Prepare yourself for what comes next.",

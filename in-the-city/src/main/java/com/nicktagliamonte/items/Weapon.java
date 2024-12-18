@@ -1,18 +1,22 @@
 package com.nicktagliamonte.items;
 
+import java.util.Random;
+
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Player;
 
 public class Weapon extends Item {
     @Expose private boolean isEquipped;
     @Expose private int attackModifier;
-    @Expose private int damage;
+    @Expose private int dieQuantity;
+    @Expose private int dieFaces;
 
-    public Weapon(String name, String description, double weight, int value, int attackModifier, int damage) {
+    public Weapon(String name, String description, double weight, int value, String dieString) {
         super(name, description, weight, false, value, "");
         isEquipped = false;
-        this.attackModifier = attackModifier;
-        this.damage = damage;
+        String[] dieArray = dieString.split("d");
+        this.dieQuantity = Integer.valueOf(dieArray[0]);
+        this.dieFaces = Integer.valueOf(dieArray[1]);
     }
 
     public void equip(Player player) {
@@ -58,12 +62,48 @@ public class Weapon extends Item {
         }
     }
 
+    public boolean isEquipped() {
+        return isEquipped;
+    }
+
+    public void setEquipped(boolean isEquipped) {
+        this.isEquipped = isEquipped;
+    }
+
     public int getAttackModifier() {
         return attackModifier;
     }
 
-    public int getDamage() {
-        //TODO: make this be a roll based on the damage range of the weapon, so probably change damage type from int to map <quantity of die, number of faces>
-        return damage;
+    public void setAttackModifier(int attackModifier) {
+        this.attackModifier = attackModifier;
     }
+
+    public int getDamage() {
+        Random random = new Random();
+        int totalDamage = 0;
+
+        for (int i = 0; i < dieQuantity; i++) {
+            totalDamage += random.nextInt(dieFaces) + 1;
+        }
+
+        return totalDamage;
+    }
+
+    public int getDieQuantity() {
+        return dieQuantity;
+    }
+
+    public void setDieQuantity(int dieQuantity) {
+        this.dieQuantity = dieQuantity;
+    }
+
+    public int getDieFaces() {
+        return dieFaces;
+    }
+
+    public void setDieFaces(int dieFaces) {
+        this.dieFaces = dieFaces;
+    }
+
+    
 }

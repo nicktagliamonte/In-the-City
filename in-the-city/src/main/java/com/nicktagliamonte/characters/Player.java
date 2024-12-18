@@ -375,9 +375,9 @@ public class Player extends Person {
 
     public int rollWeaponDamage() {
         if (!hasWeapon) {
-            return (int) (Math.random() * level) + 1;
+            return (int) (Math.random() * strength) + 1;
         } else {
-            return weapon.getDamage();
+            return (weapon.getDamage() + (int) (Math.random() * strength) + 1);
         }
     }
 
