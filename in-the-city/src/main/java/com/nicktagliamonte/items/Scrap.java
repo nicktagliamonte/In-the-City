@@ -25,7 +25,10 @@ public class Scrap extends Item{
         partyClasses.contains("technologist"));
 
         if (hasTechnologist) {
-            //TODO: magical trap
+            System.out.println("You craft the item into a small magical trap");
+            gameState.getPlayer().gainXP(4, gameState);
+            Trap trap = new SmallMagicalTrap(gameState);
+            gameState.getPlayer().craftItem(trap);
         } else {
             System.out.println("You craft the item into a small trap");
             gameState.getPlayer().gainXP(2, gameState);

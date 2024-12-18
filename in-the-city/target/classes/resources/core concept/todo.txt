@@ -3,7 +3,6 @@ Keep adding individual game elements in a "test data" format.
 
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
-  - Check **ALL** TODO comments in every file.  
     - that means making all of the specific items mentioned in todo's including all the traps (5 to go) and the things you get from traps
 - (Assuming that the demo is in fact done) host the demo.  
   - Find out what changes need to be made to host the demo game online.   

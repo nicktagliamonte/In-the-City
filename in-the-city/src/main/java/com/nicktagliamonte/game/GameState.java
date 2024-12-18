@@ -70,7 +70,7 @@ public class GameState {
         this.itemContext = "";
         this.safeZoneInventory = new safeZoneInventory();
         if (!fromSaveFile) {
-            //introSequence(introFilePath); TODO: uncomment this
+            introSequence(introFilePath);
             initializePlayer();
             loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
         } else {
