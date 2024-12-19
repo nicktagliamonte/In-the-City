@@ -1,6 +1,7 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
+- i have a lot of things which futz with player inventory but very few which impact player carry weight.  every time the player inventory is impacted, so is their carry weight
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
     - that means making all of the specific items mentioned in todo's including all the traps (5 to go) and the things you get from traps

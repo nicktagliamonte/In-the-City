@@ -41,8 +41,9 @@ public class ItemDeserializer implements JsonDeserializer<List<Item>> {
                 boolean isConsumable = jsonObject.get("consumable").getAsBoolean();
                 int value = jsonObject.get("value").getAsInt();
                 int acBonus = jsonObject.get("acbonus").getAsInt();
+                int minLevel = jsonObject.get("minLevel").getAsInt();
                 for (int i = 0; i < quantity; i++) {
-                    items.add(new Armor(name, description, weight, value, acBonus));
+                    items.add(new Armor(name, description, weight, value, acBonus, minLevel));
                 }                
                 return items;
             case "PuzzleBox":
@@ -106,6 +107,11 @@ public class ItemDeserializer implements JsonDeserializer<List<Item>> {
             case "Scrap":
                 for (int i = 0; i < quantity; i++) {
                     items.add(new Scrap());
+                }
+                return items;
+            case "Relic":
+                for (int i = 0; i < quantity; i++) {
+                    items.add(new Relic());
                 }
                 return items;
             default:

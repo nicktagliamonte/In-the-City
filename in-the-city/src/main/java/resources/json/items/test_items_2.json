@@ -25,13 +25,14 @@
         },
         "(4,5)": {
           "type": "Armor",
-          "name": "Heavy Plate Armor",
-          "description": "A heavy suit of plate armor offering superior protection at the cost of mobility.",
-          "weight": 15,
+          "name": "Studded Leather Armor",
+          "description": "Leather armor reinforced with metal studs for additional protection without sacrificing agility.",
+          "weight": 3.5,
           "consumable": false,
-          "value": 20,
-          "acbonus": 5,
-          "quantity": 1
+          "value": 25,
+          "acbonus": 3,
+          "quantity": 1,
+          "minLevel": 2
         }
       }
     }

@@ -19,9 +19,10 @@
         "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
         "weight": 3,
         "consumable": false,
-        "value": 5,
+        "value": 20,
         "acbonus": 2,
-        "quantity": 1
+        "quantity": 1,
+        "minLevel": 1
       },
       "(7,7)": {
         "type": "Sequence Puzzle",

@@ -18,6 +18,7 @@ import com.nicktagliamonte.characters.NPC;
 import com.nicktagliamonte.characters.Neutral;
 import com.nicktagliamonte.characters.PartyMember;
 import com.nicktagliamonte.characters.Person;
+import com.nicktagliamonte.characters.Player;
 import com.nicktagliamonte.items.Armor;
 import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Plug;
@@ -747,45 +748,30 @@ public enum GameCommand {
     EQUIP {
         @Override
         public void execute(String[] args, GameState gameState) {
-            String itemName = "";
-
-            if (args.length < 1 && gameState.itemContext.equals("")) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
+            // Determine the item name
+            String itemName = (args.length < 1) ? gameState.itemContext : args[0];
+            
+            if (itemName.isEmpty()) {
                 System.out.println("You need to use this command in the form Equip [Item Name]");
                 return;
-            } else if (args.length < 1) {
-                itemName = gameState.itemContext;
-            } else {
-                itemName = args[0];
             }
-
+    
+            // Attempt to get the item from the player's inventory
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
-
-            if (item != null && item instanceof Armor) {
-                Armor armorItem = (Armor) item;
-                armorItem.equip(gameState.getPlayer());
-                List<Item> inventory = gameState.getPlayer().getInventory();
-                inventory.remove(item);
-                gameState.getPlayer().setInventory(inventory);
-            } else if (item != null && item instanceof Weapon) {
-                Weapon weaponItem = (Weapon) item;
-                weaponItem.equip(gameState.getPlayer());
-                List<Item> inventory = gameState.getPlayer().getInventory();
-                inventory.remove(item);
-                gameState.getPlayer().setInventory(inventory);
-            } else {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+    
+            if (item instanceof Armor armor) {
+                if (gameState.getPlayer().getLevel() >= armor.getMinLevel()) {
+                    armor.equip(gameState.getPlayer());
+                } else {
+                    System.out.println("You are not high enough level to equip this armor.");
                 }
-                System.out.println("You don't have \"" + itemName + ",\" or it is not a weapon or armor.");
+            } else if (item instanceof Weapon weapon) {
+                weapon.equip(gameState.getPlayer());
+            } else {
+                System.out.println("You don't have \"" + itemName + "\" or it is not a weapon or armor.");
             }
-
+    
+            // Clear the item context
             gameState.itemContext = "";
         }
     },
@@ -793,45 +779,33 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length == 0) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
                 System.out.println("Specify an item to dequip.");
                 return;
             }
-
+    
             String itemName = args[0].toLowerCase();
-            Armor armor = gameState.getPlayer().getArmor();
-            Weapon weapon = gameState.getPlayer().getWeapon();
-
+            Player player = gameState.getPlayer();
+            Armor armor = player.getArmor();
+            Weapon weapon = player.getWeapon();
+    
             if (armor == null && weapon == null) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You are not wearing any armor or holding any weapon to remove");
+                System.out.println("You are not wearing any armor or holding any weapon to remove.");
                 return;
             }
-
-            if (armor.getName().equalsIgnoreCase(itemName)) {
-                gameState.getPlayer().removeArmor();
-                gameState.getPlayer().addItem(armor);
-            } else if (weapon.getName().equalsIgnoreCase(itemName)) {
-                gameState.getPlayer().removeWeapon();
-                gameState.getPlayer().addItem(weapon);
+    
+            if (armor != null && armor.getName().equalsIgnoreCase(itemName)) {
+                player.removeArmor();
+                player.addItem(armor);
+                System.out.println("Successfully dequipped " + armor.getName() + ".");
+            } else if (weapon != null && weapon.getName().equalsIgnoreCase(itemName)) {
+                player.removeWeapon();
+                player.addItem(weapon);
+                System.out.println("Successfully dequipped " + weapon.getName() + ".");
             } else {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You are not wearing that armor or weilding that weapon currently.");
+                System.out.println("You are not wearing or wielding \"" + itemName + "\" currently.");
             }
         }
-    },
+    },    
     TALK {
         @Override
         public void execute(String[] args, GameState gameState) {

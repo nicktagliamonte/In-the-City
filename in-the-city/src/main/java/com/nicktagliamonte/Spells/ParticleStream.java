@@ -6,12 +6,12 @@ import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Adversary;
 import com.nicktagliamonte.characters.Player;
 
-public class IonSurge extends Spell {
+public class ParticleStream extends Spell {
     @Expose private int dieQuantity = 1;
     @Expose private int dieFaces = 6;
 
-    public IonSurge() {
-        super("Ion Surge", "Releases a wave of ionized particles that zaps enemies within a short range.", "1d6");
+    public ParticleStream() {
+        super("Particle Stream", "Fires a continuous stream of high-velocity particles that shred through armor.", "3d4");
     }
 
     @Override

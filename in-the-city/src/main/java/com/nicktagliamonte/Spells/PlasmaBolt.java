@@ -16,35 +16,30 @@ public class PlasmaBolt extends Spell {
 
     @Override
     public void cast(Player caster, Adversary adversary) {
-        Random random = new Random();
-        int totalDamage = 0;
+        int baseDamage = new Random().ints(dieQuantity, 1, dieFaces + 1).sum();
+        int strengthBonus = (int) (Math.random() * caster.getStrength()) + 1;
+        int totalDamage = baseDamage + strengthBonus;
 
-        for (int i = 0; i < dieQuantity; i++) {
-            totalDamage += random.nextInt(dieFaces) + 1;
+        // Apply hunger penalty if the caster is in hunger
+        if (caster.inHunger()) {
+            totalDamage = Math.max(totalDamage - caster.getLevel(), 1);
         }
 
-        totalDamage += (int) (Math.random() * caster.getStrength()) + 1;
+        // Inflict damage on the adversary
+        adversary.takeDamage(totalDamage);
 
-        if (caster.inHunger()) {
-            int damageModified = totalDamage - caster.getLevel();
-            if (damageModified < 1) {
-                damageModified = 1;
-            }
-            adversary.takeDamage(damageModified);
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            System.out.println(caster.getName() + " casts " + getName() + " and deals " + (damageModified) + " damage to " + adversary.getName() + "!");
-        } else {
-            adversary.takeDamage(totalDamage);
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            System.out.println(caster.getName() + " casts " + getName() + " and deals " + totalDamage + " damage to " + adversary.getName() + "!");
+        // Notify the user
+        pauseForEffect();
+        System.out.println(caster.getName() + " casts " + getName() + " and deals " 
+            + totalDamage + " damage to " + adversary.getName() + "!");
+    }
+
+    // Helper method to handle the delay
+    private void pauseForEffect() {
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }

@@ -47,6 +47,10 @@ public class Item {
         this.interactable = isInteractable;
     }
     
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public boolean getInteractable() {
         return interactable;
     }
