@@ -538,73 +538,74 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (args.length < 1) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You need to specify an item to drop");
+                displayMessageWithDelay("You need to specify an item to drop");
                 return;
             }
-
-            Item itemToDrop = null;
-            List<Item> itemsInInventory = gameState.getPlayer().getInventory();
-
-            if (itemsInInventory == null && !gameState.getCurrentRoom().getIsSafe()) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("Inventory is empty, cannot drop item");
+    
+            String itemName = args[0];
+            Player player = gameState.getPlayer();
+            Room currentRoom = gameState.getCurrentRoom();
+            safeZoneInventory safeZoneInventory = gameState.safeZoneInventory;
+    
+            // Attempt to drop item from player's inventory
+            Item itemToDrop = findItemByName(player.getInventory(), itemName);
+    
+            if (itemToDrop != null) {
+                dropItemFromInventory(player, currentRoom, itemToDrop);
                 return;
             }
-
-            for (Item item : itemsInInventory) {
-                if (item.getName().equalsIgnoreCase(args[0])) {
-                    itemToDrop = item;
-                    gameState.getCurrentRoom().updateMapEntry('I',
-                            Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(1)),
-                            Character.getNumericValue(gameState.getCurrentRoom().getPlayerPosition().charAt(4)));
-                    break;
-                }
-            }
-
-            if (itemToDrop == null && !gameState.getCurrentRoom().getIsSafe()) {
-                System.out.printf("There is no %s in inventory", args[0]);
-            } else {
-                itemsInInventory.remove(itemToDrop);
-                gameState.getPlayer().setInventory(itemsInInventory);
-                gameState.getPlayer().increaseRemainingCarryWeight(itemToDrop.getWeight());
-                gameState.getCurrentRoom().addItemToRoom(gameState.getCurrentRoom().getPlayerPosition(),
-                        itemToDrop);
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("Dropped " + itemToDrop.getName());
+    
+            // Handle case when inventory is empty or item not found
+            if (!currentRoom.getIsSafe()) {
+                displayMessageWithDelay("There is no " + itemName + " in your inventory");
                 return;
             }
-
-            if (gameState.getCurrentRoom().getIsSafe() && !gameState.safeZoneInventory.inventory.isEmpty()) {
-                for (Item item : gameState.safeZoneInventory.inventory) {
-                    if (item.getName().equalsIgnoreCase(args[0])) {
-                        itemToDrop = item;
-                        gameState.safeZoneInventory.removeItemFromInventory(itemToDrop);
-                        try {
-                            Thread.sleep(15);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                        }
-                        System.out.println("Dropped " + itemToDrop.getName() + " from safe zone inventory");
-                        return;
-                    }
+    
+            // Attempt to drop item from the safe zone inventory
+            if (safeZoneInventory != null) {
+                itemToDrop = findItemByName(safeZoneInventory.inventory, itemName);
+                if (itemToDrop != null) {
+                    safeZoneInventory.removeItemFromInventory(itemToDrop);
+                    displayMessageWithDelay("Dropped " + itemToDrop.getName() + " from safe zone inventory");
+                    return;
                 }
-                System.out.printf("There is no %s in your inventory or in the safe zone.", args[0]);
             }
+    
+            // Final message if the item is not found anywhere
+            displayMessageWithDelay("There is no " + itemName + " in your inventory or in the safe zone.");
         }
-    },
+    
+        // Helper method to find an item by name in a list
+        private Item findItemByName(List<Item> items, String name) {
+            if (items == null) return null;
+            for (Item item : items) {
+                if (item.getName().equalsIgnoreCase(name)) {
+                    return item;
+                }
+            }
+            return null;
+        }
+    
+        // Helper method to handle dropping an item from the player's inventory
+        private void dropItemFromInventory(Player player, Room room, Item item) {
+            player.removeItemFromInventory(item);
+            room.addItemToRoom(room.getPlayerPosition(), item);
+            room.updateMapEntry('I',
+                    Character.getNumericValue(room.getPlayerPosition().charAt(1)),
+                    Character.getNumericValue(room.getPlayerPosition().charAt(4)));
+            displayMessageWithDelay("Dropped " + item.getName());
+        }
+    
+        // Helper method to display a message with a delay
+        private void displayMessageWithDelay(String message) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println(message);
+        }
+    },    
     INVENTORY {
         @Override
         public void execute(String[] args, GameState gameState) {
@@ -639,86 +640,123 @@ public enum GameCommand {
         @Override
         public void execute(String[] args, GameState gameState) {
             if (!gameState.getCurrentRoom().getIsSafe()) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("Return to the safe zone to transfer your items and safely free up some carry weight, or just drop items on the ground here.");
+                displayMessageWithDelay("Return to the safe zone to transfer your items and safely free up some carry weight, or just drop items on the ground here.");
+                return;
+            }
+    
+            if (args.length < 1) {
+                displayMessageWithDelay("Specify an item to transfer or use 'ALL' to transfer everything.");
+                return;
+            }
+    
+            String itemName = args[0];
+            
+            if (itemName.equalsIgnoreCase("all")) {
+                transferAllItemsToSafeZone(gameState);
             } else {
-                if (args[0].equalsIgnoreCase("all")) {
-                    List<Item> playerInventory = gameState.getPlayer().getInventory();
-                    double carryWeightDelta = 0;
-                    for (Item item : playerInventory) {
-                        carryWeightDelta += item.getWeight();
-                    }
-                    gameState.safeZoneInventory.addListOfItemsToInventory(playerInventory);
-                    playerInventory.clear();
-                    gameState.getPlayer().setInventory(playerInventory);
-                    gameState.getPlayer().reduceRemainingCarryWeight(carryWeightDelta);
-                    try {
-                        Thread.sleep(15);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
-                    System.out.println("Transferred your full inventory to the safe zone.");
-                } else {
-                    List<Item> playerInventory = gameState.getPlayer().getInventory();
-                    for (Item item : playerInventory) {
-                        if (item.getName().equalsIgnoreCase(args[0])) {
-                            gameState.safeZoneInventory.addItemToInventory(item);
-                            playerInventory.remove(item);
-                            gameState.getPlayer().reduceRemainingCarryWeight(item.getWeight());
-                            gameState.getPlayer().setInventory(playerInventory);
-                            return;
-                        }
-                    }
-                    System.out.printf("Item of name %s not found in your inventory to transfer.  Use INVENTORY for a list of your items, or TRANSFER ALL to move your entire inventory into the safe zone.", args[0]);
-                }
+                transferSingleItemToSafeZone(gameState, itemName);
             }
         }
-    },
+    
+        // Helper method to display a message with a delay
+        private void displayMessageWithDelay(String message) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println(message);
+        }
+    
+        // Helper method to transfer all items to the safe zone
+        private void transferAllItemsToSafeZone(GameState gameState) {
+            List<Item> playerInventory = gameState.getPlayer().getInventory();
+            double carryWeightDelta = playerInventory.stream().mapToDouble(Item::getWeight).sum();
+    
+            gameState.safeZoneInventory.addListOfItemsToInventory(playerInventory);
+            playerInventory.clear();
+            gameState.getPlayer().setInventory(playerInventory);
+            gameState.getPlayer().reduceRemainingCarryWeight(carryWeightDelta);
+    
+            displayMessageWithDelay("Transferred your full inventory to the safe zone.");
+        }
+    
+        // Helper method to transfer a single item to the safe zone
+        private void transferSingleItemToSafeZone(GameState gameState, String itemName) {
+            List<Item> playerInventory = gameState.getPlayer().getInventory();
+            Item itemToTransfer = findItemByName(playerInventory, itemName);
+    
+            if (itemToTransfer != null) {
+                gameState.safeZoneInventory.addItemToInventory(itemToTransfer);
+                gameState.getPlayer().removeItemFromInventory(itemToTransfer);
+                displayMessageWithDelay("Transferred " + itemToTransfer.getName() + " to the safe zone.");
+            } else {
+                displayMessageWithDelay("Item of name " + itemName + " not found in your inventory to transfer. Use INVENTORY for a list of your items, or TRANSFER ALL to move your entire inventory into the safe zone.");
+            }
+        }
+    
+        // Helper method to find an item by name in a list
+        private Item findItemByName(List<Item> items, String name) {
+            return items.stream()
+                    .filter(item -> item.getName().equalsIgnoreCase(name))
+                    .findFirst()
+                    .orElse(null);
+        }
+    },    
     USE {
         @Override
         public void execute(String[] args, GameState gameState) {
-            String itemName = "";
-
-            if (args.length < 1 && gameState.itemContext.equals("")) {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("Enter this command in the format USE [item name]");
+            String itemName = resolveItemName(args, gameState);
+    
+            if (itemName == null) {
+                displayMessageWithDelay("Enter this command in the format USE [item name]");
                 return;
-            } else if (args.length < 1) {
-                itemName = gameState.itemContext;
-            } else {
-                itemName = args[0].toLowerCase();
             }
-
+    
+            Item item = findItem(itemName, gameState);
+    
+            if (item != null) {
+                useItem(item, gameState);
+            } else {
+                displayMessageWithDelay("You don't have that item.");
+            }
+        }
+    
+        // Helper method to resolve item name from args or itemContext
+        private String resolveItemName(String[] args, GameState gameState) {
+            if (args.length < 1 && gameState.itemContext.equals("")) {
+                return null; // Item name is required
+            }
+            return args.length < 1 ? gameState.itemContext.toLowerCase() : args[0].toLowerCase();
+        }
+    
+        // Helper method to find an item in either player inventory or safe zone inventory
+        private Item findItem(String itemName, GameState gameState) {
             Item item = gameState.getPlayer().getItemFromInventory(itemName);
             if (item == null && gameState.getCurrentRoom().getIsSafe()) {
                 item = gameState.safeZoneInventory.getItemFromInventory(itemName);
             }
-
-            if (item != null && item.getIsConsumable()) {
-                List<Item> inventory = gameState.getPlayer().getInventory();
-                inventory.remove(item);
-                gameState.getPlayer().setInventory(inventory);
-                item.use(gameState);
-            } else if (item != null) {
-                item.use(gameState);
-            } else {
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You don't have that item.");
-            }
+            return item;
         }
-    },
+    
+        // Helper method to handle item usage
+        private void useItem(Item item, GameState gameState) {
+            if (item.getIsConsumable()) {
+                gameState.getPlayer().removeItemFromInventory(item);
+            }
+            item.use(gameState);
+        }
+    
+        // Helper method to display messages with delay
+        private void displayMessageWithDelay(String message) {
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println(message);
+        }
+    },    
     EAT {
         @Override
         public void execute(String[] args, GameState gameState) {

@@ -1,7 +1,7 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- i have a lot of things which futz with player inventory but very few which impact player carry weight.  every time the player inventory is impacted, so is their carry weight
+- iterate through the game, take all exceedingly long methods, and optimize them.  there's a huge amount of redundancy
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
     - that means making all of the specific items mentioned in todo's including all the traps (5 to go) and the things you get from traps
@@ -16,7 +16,6 @@ Keep adding individual game elements in a "test data" format.
   - Create files for all items.  
     - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
     - add item creation to the crafting menu (see Menu.java todos)
-  - And all spells.  
   - And all NPCs.  
   - And everything and anything else.  
     - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit. 

@@ -1,7 +1,5 @@
 package com.nicktagliamonte.items;
 
-import java.util.List;
-
 import com.google.gson.annotations.Expose;
 import com.nicktagliamonte.characters.Player;
 import com.nicktagliamonte.game.GameState;
@@ -36,9 +34,7 @@ public class Armor extends Item {
         player.setArmor(this);
         
         // Remove armor from inventory
-        List<Item> inventory = player.getInventory();
-        inventory.remove(this);
-        player.setInventory(inventory);
+        player.removeItemFromInventory(this);
     
         // Mark armor as equipped
         isEquipped = true;

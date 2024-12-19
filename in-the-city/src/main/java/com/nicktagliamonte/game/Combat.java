@@ -2,6 +2,7 @@ package com.nicktagliamonte.game;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -274,14 +275,24 @@ public class Combat {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+
+        // Display items and their quantities in inventory
         System.out.println("Choose an item to use (0 to cancel):");
-        for (int i = 0; i < inventory.size(); i++) {
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            System.out.println((i + 1) + ". " + inventory.get(i).getName() + " - " + inventory.get(i).getDescription());
+        System.out.println("────────────────────────────────────────────────");
+
+        // Create a map to track item quantities
+        Map<String, Integer> itemQuantities = new HashMap<>();
+        
+        // Count the quantities of each item
+        for (Item item : inventory) {
+            itemQuantities.put(item.getName(), itemQuantities.getOrDefault(item.getName(), 0) + 1);
+        }
+
+        // Display items with quantities
+        int index = 1;
+        for (Item item : inventory) {
+            int quantity = itemQuantities.get(item.getName());  // Get the quantity from the map
+            System.out.println(index++ + ". " + item.getName() + " - " + item.getDescription() + " (x" + quantity + ")");
         }
 
         int choice = gameState.getGameEngine().getPlayerInputAsInt();
@@ -302,10 +313,17 @@ public class Combat {
             Thread.currentThread().interrupt();
         }
         System.out.println("You used: " + selectedItem.getName());
-        selectedItem.use(gameState); // this should work based on runtime polymorphism (the use method from the item
-                            // subclass will be called)
+        selectedItem.use(gameState); // This should work based on runtime polymorphism (the use method from the item subclass will be called)
+
         if (selectedItem.getIsConsumable()) {
-            inventory.remove(selectedItem);
+            // Decrease the quantity in the player's inventory
+            int quantity = itemQuantities.get(selectedItem.getName());
+            if (quantity > 1) {
+                // Update the inventory to reflect the reduced quantity
+                itemQuantities.put(selectedItem.getName(), quantity - 1);
+            } else {
+                inventory.remove(selectedItem);
+            }
         }
     }
 

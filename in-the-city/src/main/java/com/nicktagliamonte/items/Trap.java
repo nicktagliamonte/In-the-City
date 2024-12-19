@@ -23,9 +23,7 @@ public class Trap extends Item {
     }
 
     public void setTrap(String coordinates) {
-        List<Item> currentInventory = gameState.getPlayer().getInventory();
-        currentInventory.remove(this);
-        gameState.getPlayer().setInventory(currentInventory);
+        gameState.getPlayer().removeItemFromInventory(this);
         gameState.getCurrentRoom().addItemToRoom(coordinates, this);
     }
 

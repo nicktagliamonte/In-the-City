@@ -163,10 +163,15 @@ public class Quest {
     }
 
     public void completeObjective(String objectiveId) {
+        // Check if the objective exists
         if (objectives.containsKey(objectiveId)) {
             Objective objective = objectives.get(objectiveId);
             objective.setIsCompleted(true);
             System.out.println(objective.getCompletionMessage());
+    
+            // Mark previous objectives as completed
+            markPreviousObjectivesCompleted(objectiveId);
+    
             if (checkProgress()) {
                 try {
                     Thread.sleep(15);
@@ -179,6 +184,27 @@ public class Quest {
                     gameState.updateRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
                 } else if (isFinal) {
                     gameState.credits();
+                }
+            }
+        }
+    }
+    
+    private void markPreviousObjectivesCompleted(String objectiveId) {
+        // Extract the numeric part of the objectiveId
+        int targetObjectiveNumber = Integer.parseInt(objectiveId.split("_")[1]);
+    
+        // Iterate through all objectives and mark completed objectives before the target objective
+        for (Map.Entry<String, Objective> entry : objectives.entrySet()) {
+            String currentObjectiveId = entry.getKey();
+            // Extract the numeric part of the current objective ID
+            int currentObjectiveNumber = Integer.parseInt(currentObjectiveId.split("_")[1]);
+    
+            // If the current objective number is less than the target, mark it as completed
+            if (currentObjectiveNumber < targetObjectiveNumber) {
+                Objective currentObjective = entry.getValue();
+                if (!currentObjective.getIsCompleted()) {
+                    currentObjective.setIsCompleted(true);
+                    System.out.println("Previous objective completed: " + currentObjective.getCompletionMessage());
                 }
             }
         }

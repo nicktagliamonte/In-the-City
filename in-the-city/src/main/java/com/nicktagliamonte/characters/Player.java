@@ -640,5 +640,16 @@ public class Player extends Person {
 
     public void addItemToInventory(Item item) {
         inventory.add(item);
+        reduceRemainingCarryWeight(item.getWeight());
+    }
+
+    public void removeItemFromInventory(Item item) {
+        for (Item itemInInventory : inventory) {
+            if (item.getName().equalsIgnoreCase(itemInInventory.getName())) {
+                inventory.remove(itemInInventory);
+                reduceRemainingCarryWeight(itemInInventory.getWeight());
+                break;
+            }
+        }
     }
 }
