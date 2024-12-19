@@ -31,10 +31,12 @@ public class Manual {
         System.out.println("┌───────────────────────┐");
         System.out.println("|  OBJECT INTERACTIONS  |");
         System.out.println("└───────────────────────┘");
-        System.out.println("   EXAMINE [ITEM NAME]: Gives a more detailed description of the item specified by [ITEM NAME]\n\tUse LOOK and/or INVENTORY to get a list of available items.");
+        System.out.println("   EXAMINE [PERSON/ITEM NAME]: Gives a more detailed description of the person or item specified by [PERSON/ITEM NAME]\n\tUse LOOK and/or INVENTORY to get a list of available items.");
         System.out.println("   INVENTORY: Lists all items currently in your inventory\n\tIf you are currently in the safe zone, lists items in the safe zone.\n\tIt will also show your remaining carry weight.");
         System.out.println("   TAKE [ITEM NAME]: Adds [ITEM NAME] to the player/party inventory, if there is room.\n\tIf you are in the safe zone, the game will first try to take the item from the safe zone before moving onto general items in the room.\n\tOtherwise, the game will just take an item of the name you specify off the floor, as long as it is available.");
         System.out.println("   USE [ITEM NAME]: Uses [ITEM NAME], if it has a use.");
+        System.out.println("   EAT: If you have a food ration in your inventory, this will consume 1 ration.");
+        System.out.println("   DRINK: If you have water in your inventory, drink some water.");
         System.out.println("   DROP [ITEM NAME]: Removes [ITEM NAME] from inventory, if there is an item of such name in inventory");
         System.out.println("   EQUIP [ITEM NAME]: Equips [ITEM NAME] if it is a weapon, armor, or enhancement item, if there is an item of such name in inventory");
         System.out.println("   DEQUIP [ITEM NAME]: Removes [ITEM NAME] from armor slot and adds it back to inventory, if there is an item of such name currently equipped.\n\tI know dequip is technically not an English word but the game is already written with that being the word for \"stop having this item equipped\", so");

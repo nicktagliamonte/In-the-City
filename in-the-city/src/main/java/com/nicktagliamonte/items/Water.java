@@ -10,6 +10,11 @@ public class Water extends Item {
     @Override
     public void use(GameState gameState) {
         gameState.getPlayer().timeSinceWater = 0;
-        System.out.println("You drink the water.");
+        if (gameState.getPlayer().getHealth() + (gameState.getPlayer().getMaxHealth() / 25) > gameState.getPlayer().getMaxHealth()) {
+            gameState.getPlayer().setHealth(gameState.getPlayer().getMaxHealth());
+        } else {
+            gameState.getPlayer().setHealth(gameState.getPlayer().getHealth() + (gameState.getPlayer().getMaxHealth() / 25));
+        }
+        System.out.println("You drink the water. It quenches your thirst, and makes you feel a bit better.");
     }
 }

@@ -23,6 +23,7 @@ public class ItemDeserializer implements JsonDeserializer<List<Item>> {
 
         String itemType = jsonObject.get("type").getAsString();
         int quantity = jsonObject.has("quantity") ? jsonObject.get("quantity").getAsInt() : 1;
+        boolean interactable = jsonObject.has("interactable") ? jsonObject.get("interactable").getAsBoolean() : true;
 
         List<Item> items = new ArrayList<>();
 
@@ -57,7 +58,7 @@ public class ItemDeserializer implements JsonDeserializer<List<Item>> {
                 int sequenceValue = jsonObject.get("value").getAsInt(); 
                 String sequenceDataPath = jsonObject.get("dataPath").getAsString();
                 for (int i = 0; i < quantity; i++) {
-                    items.add(new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath, false));    
+                    items.add(new Item(sequenceName, sequenceDescription, sequenceWeight, sequenceIsConsumable, sequenceValue, "sequence", sequenceDataPath, interactable));    
                 }                
                 return items;
             case "Mastermind Puzzle":

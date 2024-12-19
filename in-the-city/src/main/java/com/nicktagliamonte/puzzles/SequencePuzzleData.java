@@ -1,5 +1,6 @@
 package com.nicktagliamonte.puzzles;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,9 +20,9 @@ public class SequencePuzzleData {
     @Expose private String completionLock;
     @Expose private List<Item> completionItems;
 
-    // Constructor
-    public SequencePuzzleData(String id, String itemName, int numberOfPieces, String description, List<PuzzlePiece> sequence, 
-                                List<Integer> solution, Map<String, String> hints, int reward, String completionMessage, String completionLock, List<Item> completionItems) {
+    public SequencePuzzleData(String id, String itemName, int numberOfPieces, String description, List<PuzzlePiece> sequence,
+                          List<Integer> solution, Map<String, String> hints, int reward, String completionMessage,
+                          String completionLock, List<Item> completionItems) {
         this.id = id;
         this.itemName = itemName;
         this.numberOfPieces = numberOfPieces;
@@ -36,7 +37,23 @@ public class SequencePuzzleData {
     }
 
     public List<Item> getCompletionItems() {
-        return completionItems;
+        List<Item> returnArray = new ArrayList<>();
+        for (Object item : completionItems) {
+            if (item instanceof Item) {
+                returnArray.add((Item) item); // Add directly if it's an Item
+            } else if (item instanceof List<?>) {
+                for (Object subItem : (List<?>) item) {
+                    if (subItem instanceof Item) {
+                        returnArray.add((Item) subItem); // Add items from nested lists
+                    } else {
+                        throw new IllegalArgumentException("Invalid item type in completionItems");
+                    }
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid item type in completionItems");
+            }
+        }
+        return returnArray;
     }
 
     public String getCompletionMessage() {

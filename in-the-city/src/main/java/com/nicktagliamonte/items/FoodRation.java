@@ -9,8 +9,12 @@ public class FoodRation extends Item {
 
     @Override
     public void use(GameState gameState) {
-        //logic to print a message indicatingthat the food was eaten, and to have some impact on hunger
         gameState.getPlayer().timeSinceFood = 0;
-        System.out.println("You eat the food ration.");
+        if (gameState.getPlayer().getHealth() + (gameState.getPlayer().getMaxHealth() / 20) > gameState.getPlayer().getMaxHealth()) {
+            gameState.getPlayer().setHealth(gameState.getPlayer().getMaxHealth());
+        } else {
+            gameState.getPlayer().setHealth(gameState.getPlayer().getHealth() + (gameState.getPlayer().getMaxHealth() / 20));
+        }
+        System.out.println("You eat the food ration. It restores a little bit of health, and sate your hunger.");
     }
 }

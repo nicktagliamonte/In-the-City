@@ -9,7 +9,7 @@ import com.nicktagliamonte.game.GameState;
 
 public class Scrap extends Item{
     public Scrap() {
-        super("Scrap", "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).", 1.0, false, 1, "", true);
+        super("Scrap material", "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).", 1.0, false, 1, "", true);
     }
 
     @Override

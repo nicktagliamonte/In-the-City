@@ -1,5 +1,6 @@
 package com.nicktagliamonte.puzzles;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -40,7 +41,23 @@ public class MastermindPuzzleData {
     }
 
     public List<Item> getCompletionItems() {
-        return completionItems;
+        List<Item> returnArray = new ArrayList<>();
+        for (Object item : completionItems) {
+            if (item instanceof Item) {
+                returnArray.add((Item) item); // Add directly if it's an Item
+            } else if (item instanceof List<?>) {
+                for (Object subItem : (List<?>) item) {
+                    if (subItem instanceof Item) {
+                        returnArray.add((Item) subItem); // Add items from nested lists
+                    } else {
+                        throw new IllegalArgumentException("Invalid item type in completionItems");
+                    }
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid item type in completionItems");
+            }
+        }
+        return returnArray;
     }
 
     public String getCompletionMessage() {

@@ -185,10 +185,25 @@ public class Quest {
     }    
 
     public void giveRewards() {
+        List<Item> finalList = new ArrayList<>();
+        for (Object item : itemToChoose) {
+            if (item instanceof Item) {
+                finalList.add((Item) item);
+            } else if (item instanceof List<?>) {
+                for (Object subItem : (List<?>) item) {
+                    if (subItem instanceof Item) {
+                        finalList.add((Item) subItem);
+                    }
+                }
+            }
+        }
+        this.itemToChoose = finalList;
+        
         if ("complete".equals(status)) {
             gameState.incrementStartNode(questGiverName);
             if (isPrimary) {
                 if (!isFinal) {
+                    
                     System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                     gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
                     if (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {

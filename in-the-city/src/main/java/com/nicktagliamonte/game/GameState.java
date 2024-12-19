@@ -544,13 +544,8 @@ public class GameState {
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()
                     && totalDex >= adj.getdexScore()) {
-                setCurrentRoom(adj.getAdjoiningRoom());
-                try {
-                    Thread.sleep(15);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                System.out.println("You have entered " + currentRoom.getName());
+                setCurrentRoom(adj.getAdjoiningRoom());                
+                System.out.println("You have entered " + adj.getAdjoiningRoomName());
                 return;
             } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
                 try {
@@ -1237,13 +1232,15 @@ public class GameState {
                 player.gainXP(20, this);
                 success = true;
                 break;
+            } else if (playerInput < lockValue) {
+                System.out.println("The lock resists. You might have better luck with higher numbers.");
             } else {
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-                System.out.println("The lock resists. Keep trying...");
+                System.out.println("Try a lower number.");
             }
         }
 

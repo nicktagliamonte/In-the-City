@@ -234,8 +234,7 @@ public enum GameCommand {
     ASCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            String[] argsTokens = args[0].split(" ");
-            if (argsTokens.length < 2) {
+            if (args.length < 2) {
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {
@@ -247,6 +246,7 @@ public enum GameCommand {
                 String input = scanner.nextLine();
                 gameState.ascend(input);
             } else {
+                String[] argsTokens = args[0].split(" ");
                 gameState.ascend(argsTokens[1]);
             }
         }
@@ -254,8 +254,7 @@ public enum GameCommand {
     DESCEND {
         @Override
         public void execute(String[] args, GameState gameState) {
-            String[] argsTokens = args[0].split(" ");
-            if (argsTokens.length < 2) {
+            if (args.length < 2) {
                 try {
                     Thread.sleep(15);
                 } catch (InterruptedException e) {
@@ -267,6 +266,7 @@ public enum GameCommand {
                 String input = scanner.nextLine();
                 gameState.descend(input);
             } else {
+                String[] argsTokens = args[0].split(" ");
                 gameState.descend(argsTokens[1]);
             }
         }
@@ -330,6 +330,9 @@ public enum GameCommand {
                         Thread.currentThread().interrupt();
                     }
                     System.out.println(targetRoomName + " requires a combination to unlock, you cannot pick it.");
+                    return;
+                } else if (adjacency.getLockType().equalsIgnoreCase("unpickable")) {
+                    System.out.println("This lock cannot be picked.");
                     return;
                 } else if (adjacency.getAdjoiningRoomName().equalsIgnoreCase(targetRoomName)) {
                     try {
@@ -698,7 +701,12 @@ public enum GameCommand {
                 item = gameState.safeZoneInventory.getItemFromInventory(itemName);
             }
 
-            if (item != null) {
+            if (item != null && item.getIsConsumable()) {
+                List<Item> inventory = gameState.getPlayer().getInventory();
+                inventory.remove(item);
+                gameState.getPlayer().setInventory(inventory);
+                item.use(gameState);
+            } else if (item != null) {
                 item.use(gameState);
             } else {
                 try {
@@ -708,6 +716,32 @@ public enum GameCommand {
                 }
                 System.out.println("You don't have that item.");
             }
+        }
+    },
+    EAT {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            List<Item> inventory = gameState.getPlayer().getInventory();
+            for (Item item : inventory) {
+                if (item.getName().equalsIgnoreCase("food ration")) {
+                    item.use(gameState);
+                    break;
+                }
+            }
+            System.out.println("You don't have any food to eat. Find some, or set a trap to catch some.");
+        }
+    },
+    DRINK {
+        @Override
+        public void execute(String[] args, GameState gameState) {
+            List<Item> inventory = gameState.getPlayer().getInventory();
+            for (Item item : inventory) {
+                if (item.getName().equalsIgnoreCase("water")) {
+                    item.use(gameState);
+                    break;
+                }
+            }
+            System.out.println("You don't have any water to drink. Find some, or set a trap to catch some.");
         }
     },
     EQUIP {

@@ -78,7 +78,7 @@
         "description": "A doorway high on a ledge leading to \"The Chamber\"",
         "adjoiningRoom": "The Chamber",
         "isStairsUp": true,
-        "lockType": "pickable",
+        "lockType": "unpickable",
         "isLocked": true,
         "baseChances": 5,
         "difficulty": 100,
