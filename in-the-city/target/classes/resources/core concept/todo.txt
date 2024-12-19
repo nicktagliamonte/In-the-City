@@ -1,7 +1,128 @@
 ### Phase 6: Working Demo  
 Keep adding individual game elements in a "test data" format.  
 
-- iterate through the game, take all exceedingly long methods, and optimize them.  there's a huge amount of redundancy
+- Optimize!
+  - characters
+    - friend
+    - neutral
+    - NPC
+    - partymember
+    - person
+    - player
+    - citystreetadv
+    - citystreetfriend
+    - dilapidatedadv
+    - dilapidatedfriend
+  - game
+    - barter
+    - combat
+    - credits
+    - dialogue
+    - dialoguedeserializer
+    - dialogueoption
+    - direction
+    - gamecommand
+      - look
+      - move
+      - enter
+      - ascend
+      - descend
+      - unlock
+      - lockpick
+      - examine
+      - take
+      - drop
+      - inventory
+      - transfer
+      - use
+      - eat
+      - drink
+      - equip
+      - dequip
+      - talk
+      - join
+      - rob
+      - menu
+      - locate
+      - hide
+      - unhide
+      - fight
+      - quit
+    - gameEngine
+      - while (isrunning)
+        - the quest loop individually
+      - getplayerinputasint
+      - checkforrandomevent
+    - gamestate (warning - low level, vital systems at play. once a thing declares a submethod to delay printing something, remind all future requests of that method)
+      - constructor
+      - initializeplayer
+      - loadRegion
+      - loadAdjacencyList
+      - loadItemsInRoom
+      - loadPeopleInRoom
+      - loadRegionDialogue
+      - changelocation
+      - movetowaypoint
+      - movetoadjacentposition
+      - enterbycommand
+      - ascend
+      - descend
+      - addpartymember
+      - setcurrentroom
+      - enterdialogue
+      - enterbarter
+      - entercombat
+      - startlockpickingsequence
+      - enterCombinationLockSequence
+    - gametimer
+    - introduction
+    - randomeventmanager (i think this can be done in one)
+    - region
+    - regiondialogue
+    - safezoneinventory
+  - items
+    - armor
+    - foodration
+    - fuelcell
+    - item
+    - itemdeserializer (WARNING -- this has already caused big problems when refactoring!)
+    - key
+    - mastermindpuzzleitem
+    - medical
+    - plug
+    - puzzlebox
+    - relic
+    - scrap
+    - small magical trap
+    - small trap
+    - trap
+    - water
+    - weapon
+  - puzzles
+    - mastermind
+    - masterminddata
+    - sequence
+    - sequencedata
+  - quests
+    - objective
+    - quest
+  - rooms
+    - adjacency
+    - adjacencydeserializer
+    - room
+    - transitionevent
+  - spells
+    - arcaneconduit
+    - cryoburst
+    - emppulse
+    - gravitywell
+    - ionsurge
+    - nanoswarm
+    - particlestream
+    - plasmabolt
+    - spell
+    - spelldeserializer
+    - thermallance
 - Reassess demo at this time, have stoobics test the game.  
   - In the planning stage, currently seems like this is a full demo.  
     - that means making all of the specific items mentioned in todo's including all the traps (5 to go) and the things you get from traps
