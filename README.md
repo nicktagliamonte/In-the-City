@@ -46,7 +46,7 @@ Currently:
 - Each of the puzzles have a hint mechanic and player rewards for completion.
 - An escape room style section where the door locks behind the player on entry, and the player has to solve a puzzle to unlock it.
 - Right now, these elements all exist in a very minor, loosely held together story which takes place through 3 quests seen in 2 regions. It is playable in that state, and could hypothetically be cloned from here and run locally if you wanted to.
-- Testing is an upcoming effort and, pending testing results, a full story will come next.
+### Testing is an ongoing effort and, pending testing results, a full story will come next.
 
 ## Upcoming Work:  
 
@@ -61,15 +61,9 @@ Currently:
 
 ### NEXT PHASES  
 
-**Phase 7: Codebase Creation**  
-- Create files for all items.  
-  - If the deserializer gives you issues, put JSON methods in the switch statements rather than before it (see `CharacterDeserializer`).  
-  - Update item manual
-  - add item creation to the crafting menu (see Menu.java todos)
-- And all spells.  
-- And all NPCs.  
-- And everything and anything else.  
-  - Pay close attention to the conveyance. It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit. 
+**Phase 7: Conveyance Creation**  
+- It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit, it will be a party member, and its inventory will be the safe zone inventory
+- Add a dismiss command to dismiss the conveyance
 
 **Phase 8: Persistence**  
 - Create methods for saving and loading game states to test persistence.  
