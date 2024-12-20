@@ -59,14 +59,10 @@ Currently:
 
 ### NEXT PHASES  
 
-**Phase 7: Conveyance Creation**  
-- It'll be basically an NPC, I guess. It will have an inventory with functionally no weight limit, it will be a party member, and its inventory will be the safe zone inventory
-- Add a dismiss command to dismiss the conveyance
-
-**Phase 8: Persistence**  
+**Phase 7: Persistence**  
 - Create methods for saving and loading game states to test persistence.  
 
-**Phase 9: The Actual Game Itself**  
+**Phase 8: The Actual Game Itself**  
 - Start coding the levels one-by-one, modularly add them to the game.  
 
 ## Information:  
