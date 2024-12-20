@@ -51,9 +51,7 @@ Currently:
 ## Upcoming Work:  
 
 ### Phase 6: Working Demo   
-- Reassess demo  
-  - In the planning stage, currently seems like this is a full demo. Pass it over for some play testing  
-- (Assuming that the demo is in fact done) host the demo.  
+- Host the demo.  
   - Find out what changes need to be made to host the demo online.  
     - Possibly just host the demo game online, and make the one with levels and save states run local. That way, you can have persistence without a backend.  
     - If that isn't reasonable, update the README to provide a detailed description of running the game.  
@@ -74,4 +72,4 @@ Currently:
 ## Information:  
 
 If you somehow stumbled onto this page and are interested in someday playing a text-based adventure game set in a far-future Philadelphia that draws primary influence from "A Dark Room," "Unsleeping City," and "Annihilation" and is overall kind of a bummer, **don't read anything in the resources folder** because it contains significant spoilers.  
-I'll make the test game playable and include instructions for that much later.  Current ETA is probably around 12/25/24
+I'll make the test game playable and include instructions for that later.  Current ETA is probably around 12/25/24
