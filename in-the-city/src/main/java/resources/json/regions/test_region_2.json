@@ -1,0 +1,135 @@
+{
+    "regionName": "The City Street",
+    "rooms": [
+      {
+        "name": "The Street",
+        "description": "The Street is a desolate stretch of pavement, littered with debris and abandoned vehicles, with some scrap items scattered throughout. Faint echoes of distant footsteps reverberate through the empty air, and the occasional rustle of wind moves trash across the cracked asphalt. Faded, weather-worn storefronts line either side, their windows long since shattered or boarded up, and the once-bustling area now feels eerily quiet. The faint scent of decay lingers, and the hum of the city seems distant here, as though even the streets have given up on the idea of normalcy. This part of town feels abandoned, despite the few people wandering by.",
+        "width": 14,
+        "height": 14,
+        "hasPlayer": true,
+        "transitionEvent": {
+          "description": "The air feels heavy as you step inside."
+        },
+        "mask": [
+          [0,0,0,1,1,1,0,0,0,1,1,0,0,0],
+          [0,1,1,1,1,1,1,1,0,1,1,1,0,0],
+          [1,1,1,1,1,1,1,1,1,1,1,0,0,0],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,0,1],
+          [0,1,1,1,1,1,1,1,1,1,1,1,1,0],
+          [0,0,1,1,1,1,1,1,0,1,1,1,0,0],
+          [0,0,1,1,1,1,0,0,0,0,1,1,0,0],
+          [0,0,0,0,1,1,0,0,0,1,1,1,0,0],
+          [0,0,0,1,1,0,1,0,0,0,0,0,0,0],
+          [0,0,1,1,0,0,1,0,0,1,1,0,1,0],
+          [0,0,1,0,1,1,1,1,1,1,0,0,0,0],
+          [0,1,1,0,0,0,0,0,0,0,0,0,0,0]
+        ],
+        "playerX": 7,
+        "playerY": 8,
+        "map": [
+            [" "," "," ",".",".","."," "," "," ",".","."," "," "," "],
+            [" ",".",".",".",".",".",".","."," ",".",".","."," "," "],
+            [".",".",".",".",".",".",".",".",".",".","."," "," "," "],
+            [".",".",".",".",".",".",".",".",".",".",".",".","."," "],
+            ["E",".","I",".",".",".",".",".",".",".",".",".",".","."],
+            [".",".",".","I",".",".",".",".","P",".",".","."," ","."],
+            [" ",".",".","I",".",".",".",".",".",".",".",".","."," "],
+            [" "," ",".",".",".",".",".","E"," ",".",".","."," "," "],
+            [" "," ","A",".",".","."," "," "," "," ",".","."," "," "],
+            [" "," "," "," ",".","."," "," "," ",".",".","."," "," "],
+            [" "," "," ",".","."," ","."," "," "," "," "," "," "," "],
+            [" "," ",".","N"," "," ","."," "," ",".","."," ","."," "],
+            [" "," ","."," ",".",".",".",".","I","."," "," "," "," "],
+            [" ","F","."," "," "," "," "," "," "," "," "," "," "," "]
+        ],
+        "isSafe": false,
+        "isEconomic": true,
+        "nextRoomToSafeZone": "The Abandoned Shop",
+        "accessible": true,
+        "denialMessage": ""
+      },
+      {
+        "name": "The Abandoned Shop",
+        "description": "The abandoned shop has been taken over by Robert and his gang. The windows are covered with sheets, and the door is locked from the inside. Inside, the air is thick with tension. Crates, discarded furniture, and old debris are scattered about, but there's an unsettling sense of organization. The gang has made this place their base of operations, and signs of their presence are everywhere—from makeshift barricades to scribbled warnings on the walls. It’s clear that this place is no longer abandoned, and anyone who enters may face the wrath of Robert’s crew.",
+        "width": 10,
+        "height": 6,
+        "hasPlayer": false,
+        "transitionEvent": {
+          "description": "You wonder what used to fill these shelves."
+        },
+        "mask": [
+          [1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1]
+        ],
+        "playerX": 5,
+        "playerY": 0,
+        "map": [
+          [".", ".", ".", ".", "I", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          ["I", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", "E", ".", ".", ".", "."]
+        ],
+        "isSafe": false,
+        "isEconomic": false,
+        "nextRoomToSafeZone": "The Attic",
+        "accessible": false,
+        "denialMessage": "Looking in the window, you see a gang gathered inside. This is not a space where you are welcome."
+      },
+      {
+        "name": "The Attic",
+        "description": "The attic is a stark contrast to the chaos below. Above the abandoned shop, it’s an empty, gutted apartment. The walls are bare, and the floor creaks underfoot, but there’s a strange sense of safety here. Dust hangs in the air, and remnants of old furniture litter the space. It’s clear that this was once a living area, but now it’s a quiet refuge—far removed from the dangers of the gang's stronghold downstairs. The only sound is the occasional drip of water from the leaky roof, but despite the isolation, it feels like a place to regroup and plan.",
+        "width": 15,
+        "height": 10,
+        "hasPlayer": false,
+        "transitionEvent": {
+          "description": "A chill runs through the room as you step deeper inside."
+        },
+        "mask": [
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        ],
+        "playerX": 7,
+        "playerY": 5,
+        "map": [
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", "E", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+          [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."]
+        ],
+        "isSafe": true,
+        "isEconomic": false,
+        "nextRoomToSafeZone": "",
+        "accessible": true,
+        "denialMessage": ""
+      }
+    ],
+    "transitionText": [
+      "*-_~.#+*~.-*~#-_.+*~#~.-*~*~#.-~*+.-~#~.#*~_~-.*+#~-~.-*~.",
+      "You try to absorb the news about what has been going on here.",
+      "There is still a lot of confusion. How did you get here? What is your role in all this?",
+      "There is little else to do in this building.",
+      "Turning your attention outside, you exit to the street..."
+    ]
+  }  

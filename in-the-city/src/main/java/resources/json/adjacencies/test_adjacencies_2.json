@@ -1,0 +1,58 @@
+{
+    "adjacencies": {
+      "The Street": [
+        {
+          "type": "door",
+          "coordinates": "(0,9)",
+          "description": "A sturdy wooden door leading to 'The Abandoned Shop'.",
+          "adjoiningRoom": "The Abandoned Shop",
+          "isStairsUp": false,
+          "lockType": "none",
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1,
+          "dexScore": 0
+        },
+        {
+          "type": "stairs",
+          "coordinates": "(7,6)",
+          "description": "A creaky set of stairs leading up to 'The Attic'.",
+          "adjoiningRoom": "The Attic",
+          "isStairsUp": true,
+          "lockType": "none",
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1,
+          "dexScore": 0
+        }
+      ],
+      "The Abandoned Shop": [
+        {
+          "type": "door",
+          "coordinates": "(5,0)",
+          "description": "A sturdy wooden door leading to 'The Street'.",
+          "adjoiningRoom": "The Street",
+          "isStairsUp": false,
+          "lockType": "none",
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1,
+          "dexScore": 0
+        }
+      ],
+      "The Attic": [
+        {
+          "type": "stairs",
+          "coordinates": "(5,7)",
+          "description": "A creaky set of stairs leading down to 'The Street'.",
+          "adjoiningRoom": "The Street",
+          "isStairsUp": false,
+          "lockType": "none",
+          "isLocked": false,
+          "baseChances": 5,
+          "difficulty": 1,
+          "dexScore": 0
+        }
+      ]
+    }
+  }  

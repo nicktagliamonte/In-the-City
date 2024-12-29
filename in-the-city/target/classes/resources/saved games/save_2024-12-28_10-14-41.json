@@ -1,0 +1,1116 @@
+{
+  "turnsInStealth": 0,
+  "gameState": {
+    "inDialogue": false,
+    "currentRegion": {
+      "rooms": [
+        {
+          "name": "The Chamber",
+          "description": "The room is dimly lit, with light spilling through a cracked window, casting shadows on an old wooden table. The air is heavy with mildew, and the floor creaks beneath you, its splintered boards bearing the weight of years. There is a computer terminal in the corner, with a thick power cable leading to the wall. In the corner, you see a discarded pile of scrap.",
+          "width": 10,
+          "height": 10,
+          "playerX": 5,
+          "playerY": 5,
+          "hasPlayer": true,
+          "isSafe": false,
+          "isEconomic": true,
+          "nextRoomToSafeZone": "The Safe Zone",
+          "accessible": true,
+          "denialMessage": "",
+          "adjacentRooms": [
+            {
+              "type": "door",
+              "coordinates": "(4,9)",
+              "description": "large wooden double doors leading to \"The Hall\"",
+              "isStairsUp": false,
+              "lockType": "none",
+              "isLocked": false,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 0,
+              "adjoiningRoom": "The Hall"
+            },
+            {
+              "type": "stairs",
+              "coordinates": "(7,5)",
+              "description": "a narrow, rotting ladder going \"The Safe Zone\"",
+              "isStairsUp": true,
+              "lockType": "none",
+              "isLocked": false,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 0,
+              "adjoiningRoom": "The Safe Zone"
+            },
+            {
+              "type": "door",
+              "coordinates": "(0,4)",
+              "description": "A doorway high on a ledge leading to \"The Observation Deck\"",
+              "isStairsUp": true,
+              "lockType": "none",
+              "isLocked": false,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 5,
+              "adjoiningRoom": "The Observation Deck"
+            }
+          ],
+          "itemsInRoom": {
+            "(1,2)": [
+              {
+                "name": "Water",
+                "description": "Water that is potable...enough.",
+                "weight": 0.0,
+                "isConsumable": true,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Water",
+                "quantity": 1
+              }
+            ],
+            "(7,7)": [
+              {
+                "name": "Computer Terminal",
+                "description": "A computer terminal with a series of dials below a large monitor",
+                "weight": 500.0,
+                "isConsumable": false,
+                "value": 0.0,
+                "puzzleType": "sequence",
+                "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_001.json",
+                "interactable": true,
+                "type": "sequence",
+                "quantity": 1
+              }
+            ],
+            "(1,3)": [
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              },
+              {
+                "name": "Scrap material",
+                "description": "Random, salvaged parts from machines (e.g., screws, metal shards, old wires, wood).",
+                "weight": 1.0,
+                "isConsumable": false,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Scrap",
+                "quantity": 1
+              }
+            ],
+            "(2,3)": [
+              {
+                "name": "Food Ration",
+                "description": "Preserved and easily portable food items (canned goods, dried meats, grains).",
+                "weight": 2.0,
+                "isConsumable": true,
+                "value": 5.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "FoodRation",
+                "quantity": 1
+              }
+            ],
+            "(8,7)": [
+              {
+                "name": "Plug",
+                "description": "A power cord attached to the computer terminal, lying on the floor near an outlet.",
+                "weight": 500.0,
+                "isConsumable": false,
+                "value": 0.0,
+                "puzzleType": "",
+                "interactable": false,
+                "type": "Plug",
+                "quantity": 1
+              }
+            ],
+            "(5,6)": [
+              {
+                "acBonus": 2,
+                "isEquipped": false,
+                "minLevel": 1,
+                "name": "Light Leather Armor",
+                "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
+                "weight": 3.0,
+                "isConsumable": false,
+                "value": 20.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Armor",
+                "quantity": 1
+              }
+            ]
+          },
+          "peopleInRoom": {},
+          "transitionEvent": {
+            "description": "Welcome, or welcome back"
+          },
+          "mask": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "map": [
+            [
+              " ",
+              " ",
+              " ",
+              " ",
+              "E",
+              ".",
+              " ",
+              " ",
+              " ",
+              " "
+            ],
+            [
+              " ",
+              " ",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              " ",
+              " "
+            ],
+            [
+              " ",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "I",
+              "I",
+              " "
+            ],
+            [
+              " ",
+              ".",
+              ".",
+              ".",
+              ".",
+              "I",
+              ".",
+              ".",
+              ".",
+              " "
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "Y",
+              ".",
+              "E",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              " ",
+              "I",
+              "I",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              " "
+            ],
+            [
+              " ",
+              "I",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              " "
+            ],
+            [
+              " ",
+              " ",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              " ",
+              " "
+            ],
+            [
+              " ",
+              " ",
+              " ",
+              " ",
+              ".",
+              ".",
+              " ",
+              " ",
+              " ",
+              " "
+            ]
+          ]
+        },
+        {
+          "name": "The Hall",
+          "description": "The hall stretches ahead, dimly lit by flickering overhead lights. The walls are lined with faded wallpaper, some areas peeling and others marked by years of wear. The floor is covered with worn tiles, some chipped and cracked. Doors lead off to various rooms, their frames slightly askew. The faint murmur of voices echoes through the space, but the atmosphere is otherwise quiet, save for the occasional shuffle of feet.",
+          "width": 6,
+          "height": 8,
+          "playerX": 2,
+          "playerY": 0,
+          "hasPlayer": false,
+          "isSafe": false,
+          "isEconomic": false,
+          "nextRoomToSafeZone": "The Chamber",
+          "accessible": true,
+          "denialMessage": "",
+          "adjacentRooms": [
+            {
+              "type": "door",
+              "coordinates": "(2,0)",
+              "description": "large wooden double doors leading to \"The Chamber\"",
+              "isStairsUp": false,
+              "lockType": "none",
+              "isLocked": false,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 0,
+              "adjoiningRoom": "The Chamber"
+            }
+          ],
+          "itemsInRoom": {
+            "(0,0)": [
+              {
+                "name": "Water",
+                "description": "Water that is potable...enough.",
+                "weight": 0.0,
+                "isConsumable": true,
+                "value": 1.0,
+                "puzzleType": "",
+                "interactable": true,
+                "type": "Water",
+                "quantity": 1
+              }
+            ]
+          },
+          "peopleInRoom": {
+            "(1,2)": {
+              "questDialogue": [
+                "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
+              ],
+              "canGiveQuest": false,
+              "description": "a friendly face",
+              "maxHealth": 50.0,
+              "deathSavingThrows": 0,
+              "strength": 0.0,
+              "dexterity": 0.0,
+              "constitution": 0.0,
+              "Intelligence": 0.0,
+              "wisdom": 0.0,
+              "charisma": 0.0,
+              "ac": 0.0,
+              "alignmentImpact": 0.0,
+              "dynamicDialogue": true,
+              "startNode": "start_1",
+              "name": "Nora",
+              "health": 50.0,
+              "inventory": [
+                {
+                  "name": "Water",
+                  "description": "Water that is potable...enough.",
+                  "weight": 0.0,
+                  "isConsumable": true,
+                  "value": 1.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "Water",
+                  "quantity": 1
+                },
+                {
+                  "name": "Food Ration",
+                  "description": "Preserved and easily portable food items (canned goods, dried meats, grains).",
+                  "weight": 2.0,
+                  "isConsumable": true,
+                  "value": 5.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "FoodRation",
+                  "quantity": 1
+                }
+              ],
+              "initiative": 0,
+              "type": "Friend"
+            },
+            "(1,3)": {
+              "characterClass": "technologist",
+              "maxCarryWeight": 13.0,
+              "damage": 5.0,
+              "description": "idk what this even does yet",
+              "maxHealth": 18.0,
+              "deathSavingThrows": 0,
+              "strength": 6.0,
+              "dexterity": 8.0,
+              "constitution": 8.0,
+              "Intelligence": 12.0,
+              "wisdom": 10.0,
+              "charisma": 6.0,
+              "ac": 5.0,
+              "alignmentImpact": 0.0,
+              "quests": [],
+              "dynamicDialogue": true,
+              "startNode": "start_1",
+              "name": "Sam",
+              "health": 18.0,
+              "inventory": [
+                {
+                  "name": "Food Ration",
+                  "description": "Preserved and easily portable food items (canned goods, dried meats, grains).",
+                  "weight": 2.0,
+                  "isConsumable": true,
+                  "value": 5.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "FoodRation",
+                  "quantity": 1
+                },
+                {
+                  "name": "Water",
+                  "description": "Water that is potable...enough.",
+                  "weight": 0.0,
+                  "isConsumable": true,
+                  "value": 1.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "Water",
+                  "quantity": 1
+                }
+              ],
+              "initiative": 0,
+              "type": "PartyMember"
+            },
+            "(2,4)": {
+              "damage": 5.0,
+              "allies": [],
+              "description": "",
+              "maxHealth": 5.0,
+              "deathSavingThrows": 0,
+              "strength": 5.0,
+              "dexterity": 5.0,
+              "constitution": 5.0,
+              "Intelligence": 5.0,
+              "wisdom": 5.0,
+              "charisma": 5.0,
+              "ac": 5.0,
+              "alignmentImpact": 150.0,
+              "quests": [],
+              "dynamicDialogue": true,
+              "startNode": "start_1",
+              "name": "Victor",
+              "health": 5.0,
+              "inventory": [
+                {
+                  "name": "Food Ration",
+                  "description": "Preserved and easily portable food items (canned goods, dried meats, grains).",
+                  "weight": 2.0,
+                  "isConsumable": true,
+                  "value": 5.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "FoodRation",
+                  "quantity": 1
+                },
+                {
+                  "name": "Water",
+                  "description": "Water that is potable...enough.",
+                  "weight": 0.0,
+                  "isConsumable": true,
+                  "value": 1.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "Water",
+                  "quantity": 1
+                },
+                {
+                  "name": "Codex",
+                  "description": "A small silo-shaped object with a series of dials.",
+                  "weight": 1.0,
+                  "isConsumable": true,
+                  "value": 0.0,
+                  "puzzleType": "mastermind",
+                  "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\mastermind puzzles\\mastermind_puzzle_001.json",
+                  "interactable": true,
+                  "type": "Mastermind Puzzle",
+                  "quantity": 1
+                }
+              ],
+              "initiative": 0,
+              "type": "Adversary"
+            },
+            "(4,5)": {
+              "canGiveQuest": false,
+              "damage": 1.0,
+              "moralityFlag": -0.5,
+              "description": "a face",
+              "maxHealth": 5.0,
+              "deathSavingThrows": 0,
+              "strength": 5.0,
+              "dexterity": 5.0,
+              "constitution": 5.0,
+              "Intelligence": 5.0,
+              "wisdom": 5.0,
+              "charisma": 5.0,
+              "ac": 0.0,
+              "alignmentImpact": -150.0,
+              "quests": [],
+              "dynamicDialogue": true,
+              "startNode": "start_1",
+              "name": "Miles",
+              "health": 5.0,
+              "inventory": [
+                {
+                  "name": "Water",
+                  "description": "Water that is potable...enough.",
+                  "weight": 0.0,
+                  "isConsumable": true,
+                  "value": 1.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "Water",
+                  "quantity": 1
+                },
+                {
+                  "name": "Food Ration",
+                  "description": "Preserved and easily portable food items (canned goods, dried meats, grains).",
+                  "weight": 2.0,
+                  "isConsumable": true,
+                  "value": 5.0,
+                  "puzzleType": "",
+                  "interactable": true,
+                  "type": "FoodRation",
+                  "quantity": 1
+                }
+              ],
+              "initiative": 0,
+              "type": "Neutral",
+              "questDialogue": [
+                "this is going to need to be FAR more complicated when i get to it...have fun future me, hello from the past"
+              ]
+            }
+          },
+          "transitionEvent": {
+            "description": "You hear a thump in the distance"
+          },
+          "mask": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "map": [
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              "N",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              "A",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              "P",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              "F",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              "I",
+              ".",
+              "E",
+              ".",
+              ".",
+              "."
+            ]
+          ]
+        },
+        {
+          "name": "The Safe Zone",
+          "description": "a tiny attic room",
+          "width": 2,
+          "height": 2,
+          "playerX": 0,
+          "playerY": 0,
+          "hasPlayer": false,
+          "isSafe": true,
+          "isEconomic": false,
+          "nextRoomToSafeZone": "",
+          "accessible": true,
+          "denialMessage": "",
+          "adjacentRooms": [
+            {
+              "type": "stairs",
+              "coordinates": "(0,0)",
+              "description": "a narrow, rotting ladder going down into \"The Chamber\"",
+              "isStairsUp": false,
+              "lockType": "none",
+              "isLocked": false,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 0,
+              "adjoiningRoom": "The Chamber"
+            }
+          ],
+          "itemsInRoom": {},
+          "peopleInRoom": {},
+          "transitionEvent": {
+            "description": "You climb up the ladder, rung by creaky rung"
+          },
+          "mask": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "map": [
+            [
+              ".",
+              "."
+            ],
+            [
+              "E",
+              "."
+            ]
+          ]
+        },
+        {
+          "name": "The Observation Deck",
+          "description": "The observation deck is a cramped, almost claustrophobic room, its entrance hidden and difficult to find. Inside, the space is shrouded in near-complete darkness, broken only by the faint gleam of enormous mirrors scattered throughout. The mirrors are cracked and smudged, their surfaces reflecting ghostly shapes that seem to shift with the darkness, and each is flanked by a small dial that looks like it could be rotated. The air is heavy and stale, untouched by the usual hum of activity, leaving the room feeling abandoned and still.",
+          "width": 5,
+          "height": 5,
+          "playerX": 0,
+          "playerY": 0,
+          "hasPlayer": false,
+          "isSafe": false,
+          "isEconomic": false,
+          "nextRoomToSafeZone": "The Chamber",
+          "accessible": true,
+          "denialMessage": "",
+          "adjacentRooms": [
+            {
+              "type": "door",
+              "coordinates": "(0,0)",
+              "description": "A doorway high on a ledge leading to \"The Chamber\"",
+              "isStairsUp": true,
+              "lockType": "unpickable",
+              "isLocked": true,
+              "baseChances": 0,
+              "difficulty": 0,
+              "combination": 0,
+              "dexScore": 5,
+              "adjoiningRoom": "The Chamber"
+            }
+          ],
+          "itemsInRoom": {
+            "(0,4)": [
+              {
+                "name": "Mirror",
+                "description": "A large mirror",
+                "weight": 500.0,
+                "isConsumable": false,
+                "value": 0.0,
+                "puzzleType": "sequence",
+                "dataPath": "P:\\coding\\In-the-City\\in-the-city\\src\\main\\java\\resources\\json\\sequence puzzles\\sequence_puzzle_002.json",
+                "interactable": true,
+                "type": "sequence",
+                "quantity": 1
+              }
+            ]
+          },
+          "peopleInRoom": {},
+          "transitionEvent": {
+            "description": "You struggle to the top of the ledge, open the door, and enter The Observation Deck.  You hear the door lock behind you."
+          },
+          "mask": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "map": [
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              "I"
+            ],
+            [
+              "I",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              ".",
+              ".",
+              ".",
+              ".",
+              "."
+            ],
+            [
+              "E",
+              ".",
+              ".",
+              ".",
+              "I"
+            ]
+          ]
+        }
+      ],
+      "regionName": "The Dilapidated Building",
+      "hasSafeZone": true,
+      "transitionText": [
+        "You open your eyes slowly.",
+        "The air is damp and smells faintly of mildew.",
+        "Light spills in through a cracked window, illuminating motes of dust that hover lazily.",
+        "You\u0027re lying on cold, splintered floorboards.",
+        "A sharp ache in your ribs suggests you fell, or were dropped, but you don\u0027t remember how you got here.",
+        "As you shift to get up, the floor groans around you.",
+        "Cracks snake through the walls, paint peels and doors hang ajar.",
+        "Somewhere outside, far off, you think you hear the faint echo of footsteps -- or maybe it\u0027s just the wind.",
+        "There is no one else here.",
+        "To begin..."
+      ]
+    },
+    "currentRoom": "The Chamber",
+    "player": {
+      "characterClass": {
+        "className": "survivalist",
+        "strength": 10.0,
+        "dexterity": 8.0,
+        "constitution": 10.0,
+        "Intelligence": 6.0,
+        "wisdom": 6.0,
+        "charisma": 8.0,
+        "maxCarryWeight": 15.0,
+        "health": 22.0,
+        "ac": 5.0
+      },
+      "strength": 10.0,
+      "dexterity": 8.0,
+      "constitution": 10.0,
+      "intelligence": 6.0,
+      "wisdom": 6.0,
+      "charisma": 8.0,
+      "maxCarryWeight": 15.0,
+      "remainingCarryWeight": 15.0,
+      "ac": 18.0,
+      "maxHealth": 22.0,
+      "hasWeapon": false,
+      "spellbook": [],
+      "deathSavingThrows": 0,
+      "status": " ",
+      "timeSinceFood": 1,
+      "timeSinceWater": 1,
+      "alignment": 0.0,
+      "isHiding": false,
+      "level": 1,
+      "currentXP": 0.0,
+      "nextLevelXP": 100.0,
+      "nextLevelXPReward": 1.0,
+      "questLog": [],
+      "name": "Nico",
+      "health": 22.0,
+      "inventory": [],
+      "initiative": 0
+    },
+    "currentParty": {},
+    "safeZoneInventory": {
+      "safeZoneInventory": []
+    }
+  }
+}

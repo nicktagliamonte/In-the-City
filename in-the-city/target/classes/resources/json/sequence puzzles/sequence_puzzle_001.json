@@ -1,0 +1,21 @@
+{
+    "id": "sequence_puzzle_001",
+    "itemName": "computer terminal",
+    "numberOfPieces": 3,
+    "description": "A series of 3 dials sits belows a large computer monitor. Turn them in the correct sequence to power on the device. Use 'verify' to check your answer.",
+    "sequence": [
+      {"dial": 1, "correctPosition": 1, "state": "unmoved", "movedText": "A light in dial 3 starts to glow faintly.", "unmovedText": "All the dial lights go out, any noise from the machine goes silent."},
+      {"dial": 2, "correctPosition": 3, "state": "unmoved", "movedText": "The system seems to be coming to life.", "unmovedText": "Nothing happens, the machine stays inert."},
+      {"dial": 3, "correctPosition": 2, "state": "unmoved", "movedText": "A reassuring hum comes from the machine.", "unmovedText": "The machine goes quiet."}
+    ],
+    "solution": [1, 3, 2],
+    "hints": {
+      "1": "The first dial should be turned first.",
+      "3": "The third dial comes second.",
+      "2": "The second dial is last."
+    },
+    "reward": 10,
+    "completionMessage": "As the last dial is turned into place, the machine illuminates.",
+    "completionLock": "",
+    "completionItems": []
+  }  

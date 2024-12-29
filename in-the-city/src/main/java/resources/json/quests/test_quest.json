@@ -1,0 +1,86 @@
+{
+  "questId": "quest_001",
+  "title": "Victor's Puzzle",
+  "description": "Strange events have been unfolding, with people disappearing without a trace. Rumors circulate of a mysterious puzzle box in the possession of a man named Victor, the last person seen near the disappearances. Your task is simple, though perilous: find Victor, deal with whatever he's become, and retrieve the puzzle box. Its secrets may hold the key to understanding the disappearances and guiding you toward your next steps. But beware—you're not the only one seeking answers, and Miles has his eyes on you.",
+  "isPrimary": true,
+  "isFinal": false,
+  "objectives": {
+    "objective_001": {
+      "id": "objective_001",
+      "type": "dialogue",
+      "target": "Miles",
+      "isCompleted": false,
+      "completionMessage": "You've spoken with Miles, setting the stage for what's to come. The conversation revealed crucial information, though it seems there's more yet to uncover."
+    },
+    "objective_002": {
+      "id": "objective_002",
+      "type": "combat",
+      "target": "Victor",
+      "isCompleted": false,
+      "completionMessage": "Victor has been dealt with. He carried something important that could guide you forward. Search the area for the item and take it to progress."
+    },
+    "objective_003": {
+      "id": "objective_003",
+      "type": "item",
+      "target": "codex",
+      "isCompleted": false,
+      "completionMessage": "You've found Victor's puzzle box. Now, it's time to solve its secrets and uncover what it holds. Your next step awaits in the solution."
+    },
+    "objective_004": {
+      "id": "objective_004",
+      "type": "puzzle",
+      "target": "codex",
+      "isCompleted": false,
+      "completionMessage": "The puzzle box is solved. With its secrets unlocked, you now know what you must do next—but beware, Miles is still on your tail, and he'll want the box."
+    },
+    "objective_005": {
+      "id": "objective_005",
+      "type": "stealth",
+      "target": "5",
+      "isCompleted": false,
+      "completionMessage": "You've hidden from Miles, successfully evading his notice. Now, to finish the quest, you must move toward The Chamber—quietly, if you can."
+    },
+    "objective_006": {
+      "id": "objective_006",
+      "type": "movement",
+      "target": "The Chamber",
+      "isCompleted": false,
+      "completionMessage": "You've made it to The Chamber, completing the final step of your journey for now. But the quest isn't over yet—the next chapter awaits."
+    }
+  },
+  "rewards": [
+    {
+      "type": "Water"
+    },
+    {
+      "type": "Armor",
+        "name": "Light Leather Armor",
+        "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
+        "weight": 3,
+        "consumable": false,
+        "value": 20,
+        "acBonus": 2,
+        "quantity": 1,
+        "minLevel": 1
+    }    
+  ],
+  "itemToChoose": [{
+    "type": "Weapon",
+    "name": "Rusty Knife",
+    "description": "A crude, rusted blade with a jagged edge. It's seen better days but can still cut through soft materials.",
+    "weight": 1,
+    "consumable": false,
+    "value": 5,
+    "damage": "1d4"
+  }],
+  "spellToChoose": {
+    "type": "IonSurge"
+  },
+  "completionMessage": "You've completed the test quest. With the puzzle solved, your journey has taken its first steps. Prepare yourself for what comes next.",
+  "questGiverName": "Nora",
+  "newRegionFilePath": "test_region_2.json",
+  "newAdjacencyFilePath": "test_adjacencies_2.json",
+  "newItemsFilePath": "test_items_2.json",
+  "newPeopleFilePath": "test_people_2.json",
+  "newDialogueFilePath": "test_dialogue_2.json"
+}

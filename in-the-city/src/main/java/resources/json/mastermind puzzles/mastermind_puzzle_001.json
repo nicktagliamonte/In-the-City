@@ -1,0 +1,17 @@
+{
+    "id": "mastermind_puzzle_001",
+    "itemName": "codex",
+    "numberOfDigits": 4,
+    "description": "A series of 4 dials makes up the central part of this sile-shaped object. Try rotating them to view the output.",
+    "solution": [1, 4, 3, 7],
+    "maxAttempts": 10,
+    "hints": {
+      "1": "The first number is 1.",
+      "2": "The second number is 4."
+    },
+    "reward": 10,
+    "completionMessage": "You finish the puzzle. Inside is an invoice, detailing the exchange of people to someone named Robert.",
+    "completionLock": "",
+    "completionItems": []
+  }
+  

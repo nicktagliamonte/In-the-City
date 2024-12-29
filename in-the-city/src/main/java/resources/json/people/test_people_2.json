@@ -1,0 +1,125 @@
+{
+    "people": {
+        "The Street": {
+            "(1,0)": {
+                "type": "friend",
+                "name": "Maud",
+                "health": 45.0,
+                "inventory": {
+                    "item1": {
+                        "type": "Water"
+                    }
+                },
+                "description": "A friendly face with a big smile.",
+                "maxHealth": 45.0,
+                "questDialogue": [
+                    "Hey there, partner! Let me know if you need a hand!"
+                ],
+                "canGiveQuest": false,
+                "dynamicDialogue": true
+            },
+            "(3,2)": {
+                "type": "neutral",
+                "name": "Arthur",
+                "health": 25.0,
+                "inventory": {
+                    "item1": {
+                        "type": "FoodRation"
+                    }
+                },
+                "description": "A wandering trader with no allegiance.",
+                "maxHealth": 25.0,
+                "questDialogue": [
+                    "Looking to trade? I've got what you need."
+                ],
+                "canGiveQuest": false,
+                "damage": 2,
+                "moralityFlag": 0.0,
+                "ac": 3,
+                "strength": 4,
+                "dexterity": 5,
+                "constitution": 5,
+                "Intelligence": 6,
+                "wisdom": 5,
+                "charisma": 7,
+                "alignmentImpact": 0,
+                "dynamicDialogue": true
+            },
+            "(8,8)": {
+                "type": "partymember",
+                "name": "Henry",
+                "inventory": {
+                    "item1": {
+                        "type": "Water"
+                    }
+                },
+                "description": "A technologist.",
+                "damage": 6,
+                "characterClass": "technologist",
+                "dynamicDialogue": true
+            }
+        },
+        "The Abandoned Shop": {
+            "(2,2)": {
+                "type": "adversary",
+                "name": "Robert",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A well dressed man.",
+                "maxHealth": 10.0,
+                "damage": 7,
+                "ac": 4,
+                "strength": 4,
+                "dexterity": 5,
+                "constitution": 5,
+                "Intelligence": 6,
+                "wisdom": 5,
+                "charisma": 7,
+                "alignmentImpact": 120,
+                "allies": [
+                    "Jane",
+                    "Elvin"
+                ],
+                "dynamicDialogue": true
+            },
+            "(2,3)": {
+                "type": "adversary",
+                "name": "Jane",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A scoundrel with a sneer.",
+                "maxHealth": 10.0,
+                "damage": 5,
+                "ac": 6,
+                "strength": 4,
+                "dexterity": 5,
+                "constitution": 5,
+                "Intelligence": 6,
+                "wisdom": 5,
+                "charisma": 7,
+                "alignmentImpact": 120,
+                "allies": [],
+                "dynamicDialogue": false
+            },
+            "(2,4)": {
+                "type": "adversary",
+                "name": "Elvin",
+                "health": 10.0,
+                "inventory": {},
+                "description": "A tall, strong man with a thick brow.",
+                "maxHealth": 10.0,
+                "damage": 5,
+                "ac": 6,
+                "strength": 4,
+                "dexterity": 5,
+                "constitution": 5,
+                "Intelligence": 6,
+                "wisdom": 5,
+                "charisma": 7,
+                "alignmentImpact": 120,
+                "allies": [],
+                "dynamicDialogue": true
+            }
+        }
+    }
+}

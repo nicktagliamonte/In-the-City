@@ -1,0 +1,31 @@
+{
+    "questId": "quest_003",
+    "title": "Computer Puzzle",
+    "description": "The people Victor was working for are here, having taken up residence in a nearby abandoned shop.",
+    "isPrimary": false,
+    "isFinal": false,
+    "objectives": {
+      "objective_001": {
+        "id": "objective_001",
+        "type": "movement",
+        "target": "The Chamber",
+        "isCompleted": false,
+        "completionMessage": "After speaking with Sam, it looks like you need to examine the computer terminal and/or plug."
+      },
+      "objective_002": {
+        "id": "objective_002",
+        "type": "puzzle",
+        "target": "Computer Terminal",
+        "isCompleted": false,
+        "completionMessage": "With the monitor lit up, you see pages and pages of information detailing the recent disappearances in the area. The documents show that Robert, the leader of the gang, has been involved in selling people to some unknown force in exchange for large sums of money. The names of those missing are listed, along with dates and notes that indicate the transactions were arranged through a hidden network. The information is unsettling, hinting at something far darker than you initially thought. It's clear that Robert is at the center of this, but the full extent of his connections is still unclear. You'll need to inform Sam about this as soon as possible."
+      }
+    },
+    "rewards": [],
+    "completionMessage": "You're not sure what to do with this information but tell Sam.",
+    "questGiverName": "Sam",
+    "newRegionFilePath": "",
+    "newAdjacencyFilePath": "",
+    "newItemsFilePath": "",
+    "newPeopleFilePath": "",
+    "newDialogueFilePath": ""
+  }

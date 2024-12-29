@@ -1,0 +1,66 @@
+{
+  "items": {
+    "The Chamber": {
+      "(1,2)": {
+        "type": "Water",
+        "quantity": 1
+      },
+      "(1,3)": {
+        "type": "Scrap",
+        "quantity": 10
+      },
+      "(2,3)": {
+        "type": "FoodRation",
+        "quantity": 1
+      },
+      "(5,6)": {
+        "type": "Armor",
+        "name": "Light Leather Armor",
+        "description": "Flexible leather armor designed for ease of movement while offering modest protection.",
+        "weight": 3,
+        "consumable": false,
+        "value": 20,
+        "acBonus": 2,
+        "quantity": 1,
+        "minLevel": 1
+      },
+      "(7,7)": {
+        "type": "Sequence Puzzle",
+        "name": "Computer Terminal",
+        "description": "A computer terminal with a series of dials below a large monitor",
+        "weight": 500,
+        "consumable": false,
+        "value": 0,
+        "dataPath": "sequence_puzzle_001.json",
+        "quantity": 1
+      },
+      "(8,7)": {
+        "type": "Plug",
+        "name": "Plug",
+        "description": "A power cord attached to the computer terminal, lying on the floor near an outlet.",
+        "weight": 500,
+        "consumable": false,
+        "value": 0,
+        "quantity": 1
+      }
+    },
+    "The Hall": {
+      "(0,0)": {
+        "type": "Water",
+        "quantity": 1
+      }
+    },
+    "The Observation Deck": {
+      "(0,4)": {
+        "type": "Sequence Puzzle",
+        "name": "Mirror",
+        "description": "A large mirror",
+        "weight": 500,
+        "consumable": false,
+        "value": 0,
+        "dataPath": "sequence_puzzle_002.json",
+        "quantity": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "Sam": {
+    "start_1": {
+      "npcLine": "Didn't expect to see anyone else here. You lost too?",
+      "options": [
+        { "text": "Yeah, seems like we're both in a mess.", "nextDialogueId": "sam_warmup_1", "impact": 5 },
+        { "text": "I can handle myself.", "nextDialogueId": "sam_cautious_1", "impact": 0 },
+        { "text": "Not your problem. Back off.", "nextDialogueId": "sam_rude_1", "impact": -10 },
+        { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "sam_warmup_1": {
+      "npcLine": "Heh. Yeah. Safety's hard to come by these days. But it's easier when you're not alone.",
+      "options": [
+        { "text": "You saying we should team up?", "nextDialogueId": "sam_join_hint", "impact": 10 },
+        { "text": "How long have you been out here?", "nextDialogueId": "sam_story_1", "impact": 5 },
+        { "text": "I'll be fine on my own.", "nextDialogueId": "sam_cautious_2", "impact": 0 }
+      ]
+    },
+    "sam_join_hint": {
+      "npcLine": "Yeah, something like that. If you want me watching your back, just say 'join Sam' when we're done talking. Could be we both make it out of here alive.",
+      "options": [
+        { "text": "Sounds like a plan.", "nextDialogueId": "sam_agree", "impact": 10 },
+        { "text": "I'll think about it.", "nextDialogueId": "sam_story_1", "impact": 0 },
+        { "text": "I work alone.", "nextDialogueId": "sam_rude_2", "impact": -5 }
+      ]
+    },
+    "sam_agree": {
+      "npcLine": "Good. Strength in numbers, right? But first, there's something you could do for me.",
+      "options": [
+        { "text": "What is it?", "nextDialogueId": "sam_assignment", "impact": 10 },
+        { "text": "Do it yourself.", "nextDialogueId": "exit", "impact": -10 }
+      ]
+    },
+    "sam_assignment": {
+      "npcLine": "In the other room, the chamber, there's a computer terminal. Try to get it powered on, if you can.",
+      "options": [
+        { "text": "Sure, I'll give it a try.", "nextDialogueId": "assign_quest_003", "impact": 10 },
+        { "text": "I'll see if I can get to it", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "assign_quest_003": {
+      "npcLine": "test_quest_3.json",
+      "options": []
+    },
+    "sam_story_1": {
+      "npcLine": "Been out here long enough to know this place has no kindness in it. You get smart or you get dead. Simple as that.",
+      "options": [
+        { "text": "Fair enough. Stay safe.", "nextDialogueId": "exit", "impact": 5 },
+        { "text": "Anything I should watch out for?", "nextDialogueId": "sam_advice", "impact": 5 }
+      ]
+    },
+    "sam_advice": {
+      "npcLine": "Plenty. Noise gets attention. Don't trust open doors. And if you see someone desperate, don't hesitate. They won't.",
+      "options": [
+        { "text": "Got it. Thanks.", "nextDialogueId": "exit", "impact": 5 }
+      ]
+    },
+    "sam_cautious_1": {
+      "npcLine": "Suit yourself. Just remember, no one's invincible out here.",
+      "options": [
+        { "text": "I'll be fine.", "nextDialogueId": "exit", "impact": 0 },
+        { "text": "What's your story?", "nextDialogueId": "sam_story_1", "impact": 5 }
+      ]
+    },
+    "sam_cautious_2": {
+      "npcLine": "If you say so. Just don't end up like the others.",
+      "options": []
+    },
+    "sam_rude_1": {
+      "npcLine": "Easy there. You're not the only one having a bad day.",
+      "options": [
+        { "text": "Fair enough. Let's start over.", "nextDialogueId": "sam_warmup_1", "impact": 5 },
+        { "text": "Leave me alone.", "nextDialogueId": "exit", "impact": -10 }
+      ]
+    },
+    "sam_rude_2": {
+      "npcLine": "Then don't expect me to stick my neck out for you. Good luck, hero.",
+      "options": []
+    },
+    "start_2": {
+      "npcLine": "Go take a look at the computer!",
+      "options": []
+    },
+    "start_3": {
+      "npcLine": "It's unbelievable what they're doing. I'll head over to the other room and try to get on the computer myself...",
+      "options": []
+    }
+  },
+  "Nora": {
+    "start_1": {
+      "npcLine": "Oh, hey there! You look like you're keeping busy. Need something, or are you just passing through?",
+      "options": [
+        { "text": "Do you have anything you need help with?", "nextDialogueId": "assign_quest_001", "impact": 0 },
+        { "text": "What are you up to?", "nextDialogueId": "nora_daily_routine", "impact": 0 },
+        { "text": "This place is quiet... too quiet.", "nextDialogueId": "nora_response_to_quiet", "impact": 0 },
+        { "text": "Goodbye.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "assign_quest_001": {
+      "npcLine": "test_quest.json",
+      "options": []
+    },
+    "nora_daily_routine": {
+      "npcLine": "Oh, nothing special. Just running errands, keeping myself busy. It's good to have a routine, you know?",
+      "options": [
+        { "text": "Anything interesting happen recently?", "nextDialogueId": "nora_small_talk", "impact": 0 },
+        { "text": "Sounds productive. Carry on.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "nora_response_to_quiet": {
+      "npcLine": "Quiet can be nice, but you're right—it's a little eerie sometimes. Keeps me on my toes, though!",
+      "options": [
+        { "text": "Stay safe out here.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "nora_small_talk": {
+      "npcLine": "Actually yes. Miles might know more, but let me show you something.",
+      "options": [
+        { "text": "I'll take a look.", "nextDialogueId": "assign_quest_001", "impact": 0 },
+        { "text": "It's probably nothing. Take care, Nora.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "start_2": {
+      "npcLine": "It really makes more sense to get information about this from Miles.",
+      "options": [
+        { "text": "Thanks, I'll run it by him.", "nextDialogueId": "exit", "impact": 0 },
+        { "text": "Sure, let me just walk 8 feet to the left and do that for you.", "nextDialogueId": "exit", "impact": -3 }
+      ]
+    },
+    "start_3": {
+      "npcLine": "I appreciate your help with this.",
+      "options": []
+    }
+  },
+  "Miles": {
+    "start_1": {
+      "npcLine": "What's up?",
+      "options": [
+        { "text": "I was told to talk to you regarding a quest", "nextDialogueId": "quest_001_objective_001", "impact": 0 },
+        { "text": "Nothing, I have to get going.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "quest_001_objective_001": {
+      "npcLine": "People have been vanishing without a trace, one by one. we're growing desperate, and we're no closer to understanding what's behind it all. But there's one lead. Victor, the last known person to have been seen near the disappearances, has something that might help. His puzzle box. Find him, kill him, and bring it back to me. I'll be able to solve it, but only if you can retrieve it first.",
+      "options": [
+        { "text": "And if I keep the box for myself?", "nextDialogueId": "bad", "impact": -1 },
+        { "text": "I'll bring it to you once I have it.", "nextDialogueId": "exit", "impact": 0 }
+      ]
+    },
+    "bad": {
+      "npcLine": "I suppose there's nothing I'll be able to do about that.",
+      "options": []
+    }
+  }
+}  

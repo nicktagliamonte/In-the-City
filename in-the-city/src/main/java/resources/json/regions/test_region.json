@@ -1,0 +1,149 @@
+{
+  "regionName": "The Dilapidated Building",
+  "rooms": [
+    {
+      "name": "The Chamber",
+      "description": "The room is dimly lit, with light spilling through a cracked window, casting shadows on an old wooden table. The air is heavy with mildew, and the floor creaks beneath you, its splintered boards bearing the weight of years. There is a computer terminal in the corner, with a thick power cable leading to the wall. In the corner, you see a discarded pile of scrap.",
+      "width": 10,
+      "height": 10,
+      "hasPlayer": true,
+      "transitionEvent": {
+        "description": "Welcome, or welcome back"
+      },
+      "mask": [
+        [0,0,0,0,1,1,0,0,0,0],
+        [0,0,1,1,1,1,1,1,0,0],
+        [0,1,1,1,1,1,1,1,1,0],
+        [0,1,1,1,1,1,1,1,1,0],
+        [1,1,1,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,1,1,1,1],
+        [0,1,1,1,1,1,1,1,1,0],
+        [0,1,1,1,1,1,1,1,1,0],
+        [0,0,1,1,1,1,1,1,0,0],
+        [0,0,0,0,1,1,0,0,0,0]
+      ],
+      "playerX": 5,
+      "playerY": 5,
+      "map": [
+        [" ", " ", " ", " ", "E", ".", " ", " ", " ", " "],
+        [" ", " ", ".", ".", ".", ".", ".", ".", " ", " "],
+        [" ", ".", ".", ".", ".", ".", ".", "I", "I", " "],
+        [" ", ".", ".", ".", ".", "I", ".", ".", ".", " "],
+        [".", ".", ".", ".", ".", ".", ".", "E", ".", "."],
+        [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+        [" ", "I", "I", ".", ".", ".", ".", ".", ".", " "],
+        [" ", "I", ".", ".", ".", ".", ".", ".", ".", " "],
+        [" ", " ", ".", ".", ".", ".", ".", ".", " ", " "],
+        [" ", " ", " ", " ", ".", ".", " ", " ", " ", " "]
+      ],
+      "isSafe": false, 
+      "isEconomic": true,
+      "nextRoomToSafeZone": "The Safe Zone",
+      "accessible": true,
+      "denialMessage": ""
+    },
+    {
+      "name": "The Hall",
+      "description": "The hall stretches ahead, dimly lit by flickering overhead lights. The walls are lined with faded wallpaper, some areas peeling and others marked by years of wear. The floor is covered with worn tiles, some chipped and cracked. Doors lead off to various rooms, their frames slightly askew. The faint murmur of voices echoes through the space, but the atmosphere is otherwise quiet, save for the occasional shuffle of feet.",
+      "width": 6,
+      "height": 8,
+      "hasPlayer": false,
+      "transitionEvent": {
+        "description": "You hear a thump in the distance"
+      },
+      "mask": [
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1],
+        [1,1,1,1,1,1]
+      ],
+      "playerX": 2,
+      "playerY": 0,
+      "map": [
+        [".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", "N", "."],
+        [".", ".", "A", ".", ".", "."],
+        [".", "P", ".", ".", ".", "."],
+        [".", "F", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", "."],
+        ["I", ".", "E", ".", ".", "."]
+      ],
+      "isSafe": false,
+      "isEconomic": false,
+      "nextRoomToSafeZone": "The Chamber",
+      "accessible": true,
+      "denialMessage": ""
+    },
+    {
+      "name": "The Safe Zone",
+      "description": "a tiny attic room",
+      "width": 2,
+      "height": 2,
+      "transitionEvent": {
+        "description": "You climb up the ladder, rung by creaky rung"
+      },
+      "mask": [
+        [1,1],
+        [1,1]
+      ],
+      "playerX": 0,
+      "playerY": 0,
+      "map": [
+        [".", "."],
+        ["E", "."]
+      ],
+      "isSafe": true, 
+      "isEconomic": false,
+      "nextRoomToSafeZone": "",
+      "accessible": true,
+      "denialMessage": ""
+    },
+    {
+      "name": "The Observation Deck",
+      "description": "The observation deck is a cramped, almost claustrophobic room, its entrance hidden and difficult to find. Inside, the space is shrouded in near-complete darkness, broken only by the faint gleam of enormous mirrors scattered throughout. The mirrors are cracked and smudged, their surfaces reflecting ghostly shapes that seem to shift with the darkness, and each is flanked by a small dial that looks like it could be rotated. The air is heavy and stale, untouched by the usual hum of activity, leaving the room feeling abandoned and still.",
+      "width": 5,
+      "height": 5,
+      "transitionEvent": {
+        "description": "You struggle to the top of the ledge, open the door, and enter The Observation Deck.  You hear the door lock behind you."
+      },
+      "mask": [
+        [1,1,1,1,1],
+        [1,1,1,1,1],
+        [1,1,1,1,1],
+        [1,1,1,1,1],
+        [1,1,1,1,1]
+      ],
+      "playerX": 0,
+      "playerY": 0,
+      "map": [
+        [".", ".",".",".","I"],
+        ["I", ".",".",".","."],
+        [".", ".",".",".","."],
+        [".", ".",".",".","."],
+        ["E", ".",".",".","I"]
+      ],
+      "isSafe": false, 
+      "isEconomic": false,
+      "nextRoomToSafeZone": "The Chamber",
+      "accessible": true,
+      "denialMessage": ""
+    }
+  ],
+  "transitionText": [
+    "You open your eyes slowly.",
+    "The air is damp and smells faintly of mildew.",
+    "Light spills in through a cracked window, illuminating motes of dust that hover lazily.",
+    "You're lying on cold, splintered floorboards.",
+    "A sharp ache in your ribs suggests you fell, or were dropped, but you don't remember how you got here.",
+    "As you shift to get up, the floor groans around you.",
+    "Cracks snake through the walls, paint peels and doors hang ajar.",
+    "Somewhere outside, far off, you think you hear the faint echo of footsteps -- or maybe it's just the wind.",
+    "There is no one else here.",
+    "To begin..."
+  ]
+}

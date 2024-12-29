@@ -1,0 +1,41 @@
+{
+    "questId": "quest_002",
+    "title": "Victor's bosses",
+    "description": "The people Victor was working for are here, having taken up residence in a nearby abandoned shop.",
+    "isPrimary": true,
+    "isFinal": true,
+    "objectives": {
+      "objective_001": {
+        "id": "objective_001",
+        "type": "dialogue",
+        "target": "Maud",
+        "isCompleted": false,
+        "completionMessage": "After speaking with Maud, there is a clearer path forward.  Enter the abandoned shop to find more"
+      },
+      "objective_002": {
+        "id": "objective_002",
+        "type": "movement",
+        "target": "The Abandoned Shop",
+        "isCompleted": false,
+        "completionMessage": "There are enemies here, and you need to defeat them."
+      },
+      "objective_003": {
+        "id": "objective_003",
+        "type": "combat",
+        "target": "Robert",
+        "isCompleted": false,
+        "completionMessage": "Victor's boss is gone, and the disappearances should end."
+      }
+    },
+    "rewards": [],
+    "itemToChoose": [],
+    "spellToChoose": {},
+    "completionMessage": "With this issue solved, the issue of your own safety is all that is left to address. There is nothing more for you here, and it is time to go on down this street to see what awaits you next.",
+    "questGiverName": "Arthur",
+    "newRegionFilePath": "",
+    "newAdjacencyFilePath": "",
+    "newItemsFilePath": "",
+    "newPeopleFilePath": "",
+    "newDialogueFilePath": ""
+  }
+  

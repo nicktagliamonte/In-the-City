@@ -1,0 +1,90 @@
+{
+  "adjacencies": {
+    "The Chamber": [
+      {
+        "type": "door",
+        "coordinates": "(4,9)",
+        "description": "large wooden double doors leading to \"The Hall\"",
+        "adjoiningRoom": "The Hall",
+        "isStairsUp": false,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 1,
+        "dexScore": 0,
+        "relockTime": 50
+      },
+      {
+        "type": "stairs",
+        "coordinates": "(7,5)",
+        "description": "a narrow, rotting ladder going \"The Safe Zone\"",
+        "adjoiningRoom": "The Safe Zone",
+        "isStairsUp": true,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 0,
+        "relockTime": 50
+      },
+      {
+        "type": "door",
+        "coordinates": "(0,4)",
+        "description": "A doorway high on a ledge leading to \"The Observation Deck\"",
+        "adjoiningRoom": "The Observation Deck",
+        "isStairsUp": true,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 5,
+        "relockTime": 50
+      }
+    ],
+    "The Hall": [
+      {
+        "type": "door",
+        "coordinates": "(2,0)",
+        "description": "large wooden double doors leading to \"The Chamber\"",
+        "adjoiningRoom": "The Chamber",
+        "isStairsUp": false,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 0,
+        "relockTime": 50
+      }
+    ],
+    "The Safe Zone": [
+      {
+        "type": "stairs",
+        "coordinates": "(0,0)",
+        "description": "a narrow, rotting ladder going down into \"The Chamber\"",
+        "adjoiningRoom": "The Chamber",
+        "isStairsUp": false,
+        "lockType": "none",
+        "isLocked": false,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 0,
+        "relockTime": 50
+      }
+    ],
+    "The Observation Deck": [
+      {
+        "type": "door",
+        "coordinates": "(0,0)",
+        "description": "A doorway high on a ledge leading to \"The Chamber\"",
+        "adjoiningRoom": "The Chamber",
+        "isStairsUp": true,
+        "lockType": "unpickable",
+        "isLocked": true,
+        "baseChances": 5,
+        "difficulty": 100,
+        "dexScore": 5,
+        "relockTime": 50
+      }
+    ]
+  }
+}

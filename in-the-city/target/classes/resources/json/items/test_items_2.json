@@ -1,0 +1,40 @@
+{
+    "items": {
+      "The Street": {
+        "(3,7)": {
+          "type": "FoodRation",
+          "quantity": 1
+        },
+        "(3,8)": {
+          "type": "Scrap",
+          "quantity": 10
+        },
+        "(2,9)": {
+          "type": "FoodRation",
+          "quantity": 1
+        },
+        "(8,1)": {
+          "type": "Water",
+          "quantity": 1
+        }
+      },
+      "The Abandoned Shop": {
+        "(0,1)": {
+          "type": "Water",
+          "quantity": 1
+        },
+        "(4,5)": {
+          "type": "Armor",
+          "name": "Studded Leather Armor",
+          "description": "Leather armor reinforced with metal studs for additional protection without sacrificing agility.",
+          "weight": 3.5,
+          "consumable": false,
+          "value": 25,
+          "acBonus": 3,
+          "quantity": 1,
+          "minLevel": 2
+        }
+      }
+    }
+  }
+  

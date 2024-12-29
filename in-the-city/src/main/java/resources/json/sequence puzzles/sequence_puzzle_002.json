@@ -1,0 +1,25 @@
+{
+    "id": "sequence_puzzle_002",
+    "itemName": "mirror",
+    "numberOfPieces": 3,
+    "description": "You approach one of the mirrors in the room. It looks like it can swivel on its base thanks to a dial. The other two mirrors appear to have the same dial.",
+    "sequence": [
+      {"dial": 1, "correctPosition": 1, "state": "unmoved", "movedText": "A beam of light can be seen going to mirror 2.", "unmovedText": "All lights go out. The room is plunged into darkness."},
+      {"dial": 2, "correctPosition": 2, "state": "unmoved", "movedText": "The light continues to the 3rd mirror, beginning to illuminate the room.", "unmovedText": "Darkness increases as the light goes out."},
+      {"dial": 3, "correctPosition": 2, "state": "unmoved", "movedText": "This mirror, near the back of the room, relies on the light from the other two.", "unmovedText": "Little happens."}
+    ],
+    "solution": [1, 2, 3],
+    "hints": {
+      "1": "The first mirror should be turned first.",
+      "2": "The second comes second.",
+      "3": "The third mirror is last."
+    },
+    "reward": 10,
+    "completionMessage": "The light illuminating the room makes an item come into view on a platform in the center. You hear the lock to The Chamber click unlocked.",
+    "completionLock": "The Chamber",
+    "completionItems": [
+        {
+          "type": "FoodRation"
+        }
+      ]
+  }  
