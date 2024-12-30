@@ -55,6 +55,7 @@ public class GameState {
     @Expose public transient GameTimer gameTimer;
     @Expose public transient String itemContext;
     @Expose public safeZoneInventory safeZoneInventory;
+    @Expose public Load load;
 
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
             String peopleFilePath, String dialogueFilePath, String introFilePath, boolean fromSaveFile) {
@@ -75,6 +76,7 @@ public class GameState {
     }
 
     public GameState(GameEngine gameEngine, Load load) {
+        this.load = load;
         this.gameEngine = gameEngine;
         this.player = gameEngine.getPlayer();
         this.inDialogue = load.inDialogue;
@@ -1233,7 +1235,15 @@ public class GameState {
 
     public void playerDead() {
         if (fromSaveFile) {
-            // TODO: handle this when i handle persistence (reload the save data)
+            this.player = load.player;
+            this.inDialogue = load.inDialogue;
+            this.itemContext = "";
+            this.currentRegion = load.region;
+            this.currentParty = load.currentParty;
+            safeZoneInventory.setInventory(load.safeZoneInventory.getInventory());
+            initializeCurrentRoomFromSave(load);
+            loadRegionDialogueFromSave();
+            setTrapFields();
         } else {
             // it's harsh, but reinitialize the gamestate with the data that it had when the
             // game started
