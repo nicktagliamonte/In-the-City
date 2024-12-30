@@ -1,4 +1,5 @@
-# In The City
+![In The City Icon](https://github.com/nicktagliamonte/In-the-City/raw/main/in-the-city/src/main/java/resources/images/icon.ico)
+# In the City
 
 ## Installation Instructions  
 **Note:** This game is currently only compatible with Windows systems.  
