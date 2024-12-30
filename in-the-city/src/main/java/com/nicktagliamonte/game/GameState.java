@@ -371,9 +371,9 @@ public class GameState {
         String baseDir = System.getProperty("user.dir");
 
         // Construct relative paths to dialogue files
-        String dialoguePath1 = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
+        String dialoguePath1 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
                                 + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue.json";
-        String dialoguePath2 = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
+        String dialoguePath2 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
                                 + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue_2.json";
 
         // Load dialogue based on region
@@ -916,7 +916,7 @@ public class GameState {
                     String questFilePath = "";
                     if (questFileName != null && !questFileName.isEmpty()) {
                         questFilePath = System.getProperty("user.dir") 
-                                        + File.separator + "src" + File.separator + "main" 
+                                        + File.separator + "app" + File.separator + "src" + File.separator + "main" 
                                         + File.separator + "java" + File.separator + "resources" 
                                         + File.separator + "json" + File.separator + "quests" 
                                         + File.separator + questFileName;

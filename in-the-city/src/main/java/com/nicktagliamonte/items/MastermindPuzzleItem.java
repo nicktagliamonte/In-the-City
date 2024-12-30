@@ -19,7 +19,7 @@ public class MastermindPuzzleItem extends Item{
 
         // Prepend the base path for mastermind puzzles if dataPath is provided
         if (dataPath != null && !dataPath.isEmpty()) {
-            this.mastermindDataPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
+            this.mastermindDataPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
                             + "resources" + File.separator + "json" + File.separator + "mastermind puzzles" + File.separator + dataPath;
         }
         

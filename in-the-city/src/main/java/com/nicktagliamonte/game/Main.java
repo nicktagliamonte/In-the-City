@@ -48,7 +48,7 @@ public class Main {
 
     public static String loadPrompt() {
         // Define the saved games folder path
-        File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator 
+        File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator 
                                     + "main" + File.separator + "java" + File.separator + "resources" + File.separator + "saved games");
     
         // Check if the directory exists

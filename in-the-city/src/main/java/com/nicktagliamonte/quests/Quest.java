@@ -63,7 +63,7 @@ public class Quest {
         this.questGiverName = questGiverName;
 
         // Base directory for constructing paths
-        String baseDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" 
+        String baseDir = System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator + "main" 
                         + File.separator + "java" + File.separator + "resources" + File.separator + "json";
 
         // Construct full paths only if the file name is not empty
@@ -103,7 +103,7 @@ public class Quest {
         this.questGiverName = questGiverName;
 
         // Base directory for constructing paths
-        String baseDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" 
+        String baseDir = System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator + "main" 
                         + File.separator + "java" + File.separator + "resources" + File.separator + "json";
 
         // Construct full paths only if the file name is not empty

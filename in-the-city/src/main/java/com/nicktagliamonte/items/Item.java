@@ -44,10 +44,10 @@ public class Item {
         // Adjust dataPath based on puzzleType using relative paths
         if (puzzleType != null) {
             if (puzzleType.toLowerCase().contains("sequence")) {
-                this.dataPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
+                this.dataPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
                                 + "resources" + File.separator + "json" + File.separator + "sequence puzzles" + File.separator + this.dataPath;
             } else if (puzzleType.toLowerCase().contains("mastermind")) {
-                this.dataPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
+                this.dataPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
                                 + "resources" + File.separator + "json" + File.separator + "mastermind puzzles" + File.separator + this.dataPath;
             }
         }
@@ -68,7 +68,7 @@ public class Item {
 
         // Always add "sequence puzzles" to the front of dataPath in this constructor
         if (puzzleType != null && puzzleType.toLowerCase().contains("sequence")) {
-            this.dataPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
+            this.dataPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator
                             + "resources" + File.separator + "json" + File.separator + "sequence puzzles" + File.separator + this.dataPath;
         }
     }

@@ -29,27 +29,27 @@ public class GameEngine {
         String baseDir = System.getProperty("user.dir");
     
         // Construct the file paths relative to the base directory
-        String regionsPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String regionsPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                             + File.separator + "resources" + File.separator + "json" + File.separator + "regions"
                             + File.separator + "test_region.json";
         
-        String adjacenciesPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String adjacenciesPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                                 + File.separator + "resources" + File.separator + "json" + File.separator + "adjacencies"
                                 + File.separator + "test_adjacencies.json";
     
-        String itemsPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String itemsPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                            + File.separator + "resources" + File.separator + "json" + File.separator + "items"
                            + File.separator + "test_items.json";
     
-        String peoplePath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String peoplePath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                             + File.separator + "resources" + File.separator + "json" + File.separator + "people"
                             + File.separator + "test_people.json";
     
-        String dialoguePath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String dialoguePath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                               + File.separator + "resources" + File.separator + "json" + File.separator + "dialogue"
                               + File.separator + "test_dialogue.json";
     
-        String introductionPath = baseDir + File.separator + "src" + File.separator + "main" + File.separator + "java" 
+        String introductionPath = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" 
                                   + File.separator + "resources" + File.separator + "json" + File.separator + "introduction"
                                   + File.separator + "introduction.json";
         

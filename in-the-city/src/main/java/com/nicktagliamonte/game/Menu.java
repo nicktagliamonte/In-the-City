@@ -358,7 +358,7 @@ public class Menu {
     private void saveGame() {
         try {
             // Define the directory for saved games
-            File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator 
+            File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator 
                                     + "main" + File.separator + "java" + File.separator + "resources" + File.separator + "saved games");
             
             // Create the directory if it doesn't exist
@@ -382,7 +382,7 @@ public class Menu {
 
     private void loadGame() {
         // Define the saved games folder path
-        File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator 
+        File saveDirectory = new File(System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator 
                                     + "main" + File.separator + "java" + File.separator + "resources" + File.separator + "saved games");
     
         // Check if the directory exists
