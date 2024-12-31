@@ -927,7 +927,7 @@ public class GameState {
                     }
     
                     Quest quest = null;
-                    if (questFilePath.equals("")) {
+                    if (!(questFilePath.equals(""))) {
                         quest = deserializeQuest(questFilePath);
                     }
                     if (quest != null) {
