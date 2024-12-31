@@ -5,7 +5,7 @@
 **Note:** This game is currently only compatible with Windows systems.  
 
 1. **Download the Installer**  
-   Go to the [Releases page](https://github.com/nicktagliamonte/In-the-City/releases/) and download the latest installer (`InTheCity-0.1.exe`).
+   Go to the [Releases page](https://github.com/nicktagliamonte/In-the-City/releases/) and download the latest installer (`InTheCity-0.2.exe`).
    
 2. **Run the Installer**  
    Extract if needed, then double-click the `.exe` file to launch the installer. The game will be installed in **Program Files/InTheCity**.
