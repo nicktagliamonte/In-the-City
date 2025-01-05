@@ -70,7 +70,7 @@ public class GameState {
         this.gameTimer = new GameTimer(this);
         this.itemContext = "";
         this.safeZoneInventory = new safeZoneInventory();
-        introSequence(introFilePath);
+        //introSequence(introFilePath);
         initializePlayer();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
     }
