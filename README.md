@@ -5,13 +5,18 @@
 **Note:** This game is currently only compatible with Windows systems.  
 
 1. **Download the Installer**  
-   Go to the [Releases page](https://github.com/nicktagliamonte/In-the-City/releases/) and download the latest installer (`InTheCity-0.1.exe`).
+   Go to the [Releases page](https://github.com/nicktagliamonte/In-the-City/releases/) and download the latest installer (`InTheCity-0.2.exe`).
    
 2. **Run the Installer**  
    Extract if needed, then double-click the `.exe` file to launch the installer. The game will be installed in **Program Files/InTheCity**.
 
 3. **Play the Game**  
    Go to **Program Files/InTheCity** and double-click the `.exe` to launch the game, or create a shortcut for easier access.
+
+4. **Save the Game**  
+   Save files will automatically be placed in **Program Files/InTheCity/app/src/main/java/resources/saved games**. They will automatically be timestamped, so loading the most recent save is easy.  
+   If you move the file after it's made, complications with loading can occur. It's best to keep the save files at that location. They're only really useful when activated by the game anyway, and that's where it will look for them.  
+   They're also just plain old JSON files though, so if you want to manually write new bizarre items or other data into the game, that's where to do it. Let me know what happens.  
 
 ---
 
