@@ -19,29 +19,47 @@ import com.nicktagliamonte.items.Item;
 import com.nicktagliamonte.items.Weapon;
 
 public class Quest {
-    @Expose private String questId;
-    @Expose private String title;
-    @Expose private String description;
-    @Expose private Map<String, Objective> objectives;
-    @Expose private String status;  // "inactive", "active", "complete"
-    @Expose private List<Item> rewards;
-    @Expose private transient GameState gameState;
-    @Expose private boolean isPrimary;
-    @Expose private boolean isFinal;
-    @Expose private String completionMessage;    
-    @Expose private List<Item> itemToChoose;
-    @Expose private Spell spellToChoose;
-    @Expose private String questGiverName;
-    @Expose private String newRegionFilePath;
-    @Expose private String newAdjacencyFilePath;
-    @Expose private String newItemsFilePath;
-    @Expose private String newPeopleFilePath;
-    @Expose private String newDialogueFilePath;
+    @Expose
+    private String questId;
+    @Expose
+    private String title;
+    @Expose
+    private String description;
+    @Expose
+    private Map<String, Objective> objectives;
+    @Expose
+    private String status; // "inactive", "active", "complete"
+    @Expose
+    private List<Item> rewards;
+    @Expose
+    private transient GameState gameState;
+    @Expose
+    private boolean isPrimary;
+    @Expose
+    private boolean isFinal;
+    @Expose
+    private String completionMessage;
+    @Expose
+    private List<Item> itemToChoose;
+    @Expose
+    private Spell spellToChoose;
+    @Expose
+    private String questGiverName;
+    @Expose
+    private String newRegionFilePath;
+    @Expose
+    private String newAdjacencyFilePath;
+    @Expose
+    private String newItemsFilePath;
+    @Expose
+    private String newPeopleFilePath;
+    @Expose
+    private String newDialogueFilePath;
 
     public Quest(String questId, String title, String description, Boolean isPrimary, boolean isFinal,
-                List<Objective> objectives, List<Item> rewards, String completionMessage, List<Item> itemToChoose, 
-                Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
-                String newPeopleFilePath, String newDialogueFilePath, String questGiverName, GameState gameState) {
+            List<Objective> objectives, List<Item> rewards, String completionMessage, List<Item> itemToChoose,
+            Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
+            String newPeopleFilePath, String newDialogueFilePath, String questGiverName, GameState gameState) {
         this.questId = questId;
         this.title = title;
         this.description = description;
@@ -55,34 +73,23 @@ public class Quest {
         this.rewards = new ArrayList<>();
         for (Item item : rewards) {
             this.rewards.add(item);
-        }        
+        }
         this.gameState = gameState;
         this.completionMessage = completionMessage;
         this.itemToChoose = itemToChoose;
         this.spellToChoose = spellToChoose;
         this.questGiverName = questGiverName;
-
-        // Base directory for constructing paths
-        String baseDir = System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator + "main" 
-                        + File.separator + "java" + File.separator + "resources" + File.separator + "json";
-
-        // Construct full paths only if the file name is not empty
-        this.newRegionFilePath = newRegionFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "regions" + File.separator + newRegionFilePath;
-        this.newAdjacencyFilePath = newAdjacencyFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "adjacencies" + File.separator + newAdjacencyFilePath;
-        this.newItemsFilePath = newItemsFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "items" + File.separator + newItemsFilePath;
-        this.newPeopleFilePath = newPeopleFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "people" + File.separator + newPeopleFilePath;
-        this.newDialogueFilePath = newDialogueFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "dialogue" + File.separator + newDialogueFilePath;
+        this.newRegionFilePath = newRegionFilePath;
+        this.newAdjacencyFilePath = newAdjacencyFilePath;
+        this.newItemsFilePath = newItemsFilePath;
+        this.newPeopleFilePath = newPeopleFilePath;
+        this.newDialogueFilePath = newDialogueFilePath;
     }
 
     public Quest(String questId, String title, String description, Boolean isPrimary, boolean isFinal,
-                List<Objective> objectives, List<Item> rewards, String completionMessage, List<Item> itemToChoose, 
-                Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath, 
-                String newPeopleFilePath, String newDialogueFilePath, String questGiverName) {
+            List<Objective> objectives, List<Item> rewards, String completionMessage, List<Item> itemToChoose,
+            Spell spellToChoose, String newRegionFilePath, String newAdjacencyFilePath, String newItemsFilePath,
+            String newPeopleFilePath, String newDialogueFilePath, String questGiverName) {
         this.questId = questId;
         this.title = title;
         this.description = description;
@@ -96,27 +103,31 @@ public class Quest {
         this.rewards = new ArrayList<>();
         for (Item item : rewards) {
             this.rewards.add(item);
-        }  
+        }
         this.completionMessage = completionMessage;
         this.itemToChoose = itemToChoose;
         this.spellToChoose = spellToChoose;
         this.questGiverName = questGiverName;
+        this.newRegionFilePath = newRegionFilePath;
+        this.newAdjacencyFilePath = newAdjacencyFilePath;
+        this.newItemsFilePath = newItemsFilePath;
+        this.newPeopleFilePath = newPeopleFilePath;
+        this.newDialogueFilePath = newDialogueFilePath;
+    }
 
-        // Base directory for constructing paths
-        String baseDir = System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator + "main" 
-                        + File.separator + "java" + File.separator + "resources" + File.separator + "json";
+    public void flattenRewards(List<Item> listToFlatten) {
+        List<Item> flattenedRewards = new ArrayList<>();
+        for (Object itemOrList : listToFlatten) {
+            if (itemOrList instanceof Iterable<?>) {
+                for (Object nestedItem : (Iterable<?>) itemOrList) {
+                    flattenedRewards.add((Item) nestedItem);
+                }
+            } else {
+                flattenedRewards.add((Item) itemOrList);
+            }
+        }
 
-        // Construct full paths only if the file name is not empty
-        this.newRegionFilePath = newRegionFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "regions" + File.separator + newRegionFilePath;
-        this.newAdjacencyFilePath = newAdjacencyFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "adjacencies" + File.separator + newAdjacencyFilePath;
-        this.newItemsFilePath = newItemsFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "items" + File.separator + newItemsFilePath;
-        this.newPeopleFilePath = newPeopleFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "people" + File.separator + newPeopleFilePath;
-        this.newDialogueFilePath = newDialogueFilePath.isEmpty() ? "" 
-            : baseDir + File.separator + "dialogue" + File.separator + newDialogueFilePath;
+        this.rewards = flattenedRewards;
     }
 
     public GameState getGameState() {
@@ -204,9 +215,9 @@ public class Quest {
     }
 
     public Quest() {
-        //method stub for easier gson deserialization
+        // method stub for easier gson deserialization
     }
-    
+
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
     }
@@ -290,10 +301,10 @@ public class Quest {
             Objective objective = objectives.get(objectiveId);
             objective.setIsCompleted(true);
             System.out.println(objective.getCompletionMessage());
-    
+
             // Mark previous objectives as completed
             markPreviousObjectivesCompleted(objectiveId);
-    
+
             if (checkProgress()) {
                 try {
                     Thread.sleep(15);
@@ -303,24 +314,39 @@ public class Quest {
                 System.out.println(completionMessage);
                 giveRewards();
                 if (isPrimary && !isFinal) {
-                    gameState.updateRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath, newDialogueFilePath);
+                    // Base directory for constructing paths
+                    String baseDir = System.getProperty("user.dir") + File.separator + "app" + File.separator + "src" + File.separator + "main"
+                            + File.separator + "java" + File.separator + "resources" + File.separator + "json";
+
+                    // Construct full paths
+                    this.newRegionFilePath = baseDir + File.separator + "regions" + File.separator + newRegionFilePath;
+                    this.newAdjacencyFilePath = baseDir + File.separator + "adjacencies" + File.separator
+                            + newAdjacencyFilePath;
+                    this.newItemsFilePath = baseDir + File.separator + "items" + File.separator + newItemsFilePath;
+                    this.newPeopleFilePath = baseDir + File.separator + "people" + File.separator + newPeopleFilePath;
+                    this.newDialogueFilePath = baseDir + File.separator + "dialogue" + File.separator
+                            + newDialogueFilePath;
+
+                    gameState.updateRegion(newRegionFilePath, newAdjacencyFilePath, newItemsFilePath, newPeopleFilePath,
+                            newDialogueFilePath);
                 } else if (isFinal) {
                     gameState.credits();
                 }
             }
         }
     }
-    
+
     private void markPreviousObjectivesCompleted(String objectiveId) {
         // Extract the numeric part of the objectiveId
         int targetObjectiveNumber = Integer.parseInt(objectiveId.split("_")[1]);
-    
-        // Iterate through all objectives and mark completed objectives before the target objective
+
+        // Iterate through all objectives and mark completed objectives before the
+        // target objective
         for (Map.Entry<String, Objective> entry : objectives.entrySet()) {
             String currentObjectiveId = entry.getKey();
             // Extract the numeric part of the current objective ID
             int currentObjectiveNumber = Integer.parseInt(currentObjectiveId.split("_")[1]);
-    
+
             // If the current objective number is less than the target, mark it as completed
             if (currentObjectiveNumber < targetObjectiveNumber) {
                 Objective currentObjective = entry.getValue();
@@ -330,7 +356,7 @@ public class Quest {
                 }
             }
         }
-    }    
+    }
 
     public void giveRewards() {
         List<Item> finalList = new ArrayList<>();
@@ -346,12 +372,12 @@ public class Quest {
             }
         }
         this.itemToChoose = finalList;
-        
+
         if ("complete".equals(status)) {
             gameState.incrementStartNode(questGiverName);
             if (isPrimary) {
                 if (!isFinal) {
-                    
+
                     System.out.println("You receive " + gameState.getPlayer().getNextLevelXp() + " xp");
                     gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp(), gameState);
                     if (gameState.getPlayer().getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
@@ -362,34 +388,41 @@ public class Quest {
                             System.out.println(itemToChoose.get(0).getName() + " has been added to your inventory.");
                         } else {
                             gameState.safeZoneInventory.addItemToInventory(itemToChoose.get(0));
-                            System.out.println(itemToChoose.get(0).getName() + " has been added to the safe zone inventory.");
+                            System.out.println(
+                                    itemToChoose.get(0).getName() + " has been added to the safe zone inventory.");
                         }
                     }
-                }                
+                }
             } else {
-                System.out.println("You receive " + String.format("%.2f", gameState.getPlayer().getNextLevelXp() / 3) + " xp");
+                System.out.println(
+                        "You receive " + String.format("%.2f", gameState.getPlayer().getNextLevelXp() / 3) + " xp");
                 gameState.getPlayer().gainXP(gameState.getPlayer().getNextLevelXp() / 3, gameState);
+            }
+            while (this.rewards.get(0) instanceof Iterable<?>) {
+                flattenRewards(this.rewards);
             }
             for (Item reward : rewards) {
                 System.out.println("You received: " + reward.getName() + " in safe zone inventory.");
                 gameState.safeZoneInventory.addItemToInventory(reward);
-            }            
+            }
         }
     }
 
     public void rewardChoice() {
         System.out.println("You can choose to learn a new spell, or receive the following item: ");
-        System.out.println("1. " + spellToChoose.getName() + ", a spell which does " + spellToChoose.getDamage() + " damage");
-        System.out.println("2. " + itemToChoose.get(0).getName() + ", a weapon which does " + ((Weapon) itemToChoose).getDieQuantity() + "d" + ((Weapon) itemToChoose).getDieFaces() + " damage");
+        System.out.println(
+                "1. " + spellToChoose.getName() + ", a spell which does " + spellToChoose.getDamage() + " damage");
+        System.out.println("2. " + itemToChoose.get(0).getName() + ", a weapon which does "
+                + ((Weapon) itemToChoose).getDieQuantity() + "d" + ((Weapon) itemToChoose).getDieFaces() + " damage");
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
-        int choice = 0; 
+        int choice = 0;
 
         while (choice != 1 && choice != 2) {
             System.out.print("Enter 1 to choose the spell or 2 to choose the item: ");
             try {
-                choice = Integer.parseInt(scanner.nextLine()); 
+                choice = Integer.parseInt(scanner.nextLine());
                 if (choice == 1) {
                     gameState.getPlayer().addSpell(spellToChoose);
                     System.out.println("That spell will now be useable in combat.");
@@ -413,22 +446,24 @@ public class Quest {
     @SuppressWarnings("unchecked")
     public String toSerializableFormat() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    
+
         // First, convert the base `Quest` object to JSON
         String baseJson = gson.toJson(this);
         JsonObject jsonObject = JsonParser.parseString(baseJson).getAsJsonObject();
-    
+
         // Add the "type" field to specify the quest type
         jsonObject.addProperty("type", "Quest");
-    
-        // Serialize the objectives (assuming the objectives is a Map or similar structure)
+
+        // Serialize the objectives (assuming the objectives is a Map or similar
+        // structure)
         JsonObject objectivesJson = new JsonObject();
         for (Map.Entry<String, Objective> entry : objectives.entrySet()) {
-            // Ensure the Objective is serialized properly (use its toSerializableFormat method)
+            // Ensure the Objective is serialized properly (use its toSerializableFormat
+            // method)
             objectivesJson.add(entry.getKey(), JsonParser.parseString(entry.getValue().toSerializableFormat()));
         }
         jsonObject.add("objectives", objectivesJson);
-    
+
         // Serialize the rewards
         List<Item> flattenedRewards = new ArrayList<>();
         for (Object reward : rewards) {
@@ -449,7 +484,7 @@ public class Quest {
             rewardsJson.add(JsonParser.parseString(item.toSerializableFormat()));
         }
         jsonObject.add("rewards", rewardsJson);
-    
+
         // Serialize the itemToChoose (assuming itemToChoose is a List of Item objects)
         List<Item> flattenedItemToChoose = new ArrayList<>();
         for (Object item : itemToChoose) {
@@ -469,7 +504,7 @@ public class Quest {
             itemToChooseJson.add(JsonParser.parseString(item.toSerializableFormat()));
         }
         jsonObject.add("itemToChoose", itemToChooseJson);
-    
+
         // Serialize the spellToChoose (if it exists)
         if (spellToChoose != null) {
             jsonObject.add("spellToChoose", JsonParser.parseString(spellToChoose.toSerializableFormat()));
@@ -481,7 +516,7 @@ public class Quest {
         jsonObject.addProperty("newItemsFilePath", extractFileName(newItemsFilePath));
         jsonObject.addProperty("newPeopleFilePath", extractFileName(newPeopleFilePath));
         jsonObject.addProperty("newDialogueFilePath", extractFileName(newDialogueFilePath));
-    
+
         // Return the final JSON string
         return gson.toJson(jsonObject);
     }

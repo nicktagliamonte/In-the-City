@@ -39,23 +39,40 @@ import java.util.Scanner;
 import java.awt.Point;
 
 public class GameState {
-    @Expose private Region currentRegion;
-    @Expose private Room currentRoom;
-    @Expose public Player player;
-    @Expose public transient GameEngine gameEngine;
-    @Expose private List<NPC> currentParty;
-    @Expose private transient RegionDialogue currentRegionDialogue;
-    @Expose private boolean inDialogue = false;
-    @Expose private transient String regionFilePath;
-    @Expose private transient String adjacencyFilePath;
-    @Expose private transient String itemsFilePath;
-    @Expose private transient String peopleFilePath;
-    @Expose private transient String dialogueFilePath;
-    @Expose private transient boolean fromSaveFile;
-    @Expose public transient GameTimer gameTimer;
-    @Expose public transient String itemContext;
-    @Expose public safeZoneInventory safeZoneInventory;
-    @Expose public Load load;
+    @Expose
+    private Region currentRegion;
+    @Expose
+    private Room currentRoom;
+    @Expose
+    public Player player;
+    @Expose
+    public transient GameEngine gameEngine;
+    @Expose
+    private List<NPC> currentParty;
+    @Expose
+    private transient RegionDialogue currentRegionDialogue;
+    @Expose
+    private boolean inDialogue = false;
+    @Expose
+    private transient String regionFilePath;
+    @Expose
+    private transient String adjacencyFilePath;
+    @Expose
+    private transient String itemsFilePath;
+    @Expose
+    private transient String peopleFilePath;
+    @Expose
+    private transient String dialogueFilePath;
+    @Expose
+    private transient boolean fromSaveFile;
+    @Expose
+    public transient GameTimer gameTimer;
+    @Expose
+    public transient String itemContext;
+    @Expose
+    public safeZoneInventory safeZoneInventory;
+    @Expose
+    public Load load;
 
     public GameState(GameEngine gameEngine, String regionFilePath, String adjacencyFilePath, String itemsFilePath,
             String peopleFilePath, String dialogueFilePath, String introFilePath, boolean fromSaveFile) {
@@ -70,7 +87,7 @@ public class GameState {
         this.gameTimer = new GameTimer(this);
         this.itemContext = "";
         this.safeZoneInventory = new safeZoneInventory();
-        //introSequence(introFilePath);
+        introSequence(introFilePath);
         initializePlayer();
         loadRegion(regionFilePath, adjacencyFilePath, itemsFilePath, peopleFilePath, dialogueFilePath);
     }
@@ -99,15 +116,15 @@ public class GameState {
 
     public void initializePlayer() {
         Scanner scanner = new Scanner(System.in);
-        
+
         // Get the player's name
         String name = getPlayerName(scanner);
-        
+
         // Get the player's character class
         CharacterClass characterClass = getCharacterClass(scanner);
-    
+
         this.player = new Player(name, characterClass);
-    
+
         // Special setup for Technologist class
         if (player.getCharacterClass().getClassName().equalsIgnoreCase("technologist")) {
             player.addSpell(new PlasmaBolt());
@@ -115,10 +132,10 @@ public class GameState {
             System.out.println("Some metallic device is in there, with a trigger.");
             System.out.println("You can use this device to cast Plasma Bolt in combat.");
         }
-    
+
         gameEngine.player = this.player;
     }
-    
+
     private String getPlayerName(Scanner scanner) {
         String name = "";
         while (name.isEmpty()) {
@@ -129,7 +146,7 @@ public class GameState {
         // Capitalize the first letter and ensure the rest is lowercase
         return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
-    
+
     private CharacterClass getCharacterClass(Scanner scanner) {
         CharacterClass characterClass;
         do {
@@ -137,22 +154,22 @@ public class GameState {
             System.out.println("Enter a class (survivalist, technologist, or negotiator): ");
             String classInput = scanner.nextLine().trim();
             characterClass = CharacterClass.createCharacterClass(classInput);
-            
+
             if (characterClass == null) {
                 System.out.println("Invalid class! Please choose from: survivalist, technologist, or negotiator.");
             }
         } while (characterClass == null);
-        
+
         return characterClass;
     }
-    
+
     private void sleep() {
         try {
             Thread.sleep(15);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-    }    
+    }
 
     public void loadRegion(String regionFilePath, String adjacenciesFilePath, String itemsFilePath,
             String peopleFilePath, String dialogueFilePath) {
@@ -227,156 +244,161 @@ public class GameState {
 
     private void loadItemsInRoom(String itemsFilePath) {
         Gson gson = new GsonBuilder()
-                .registerTypeAdapter(new TypeToken<List<Item>>() {}.getType(), new ItemDeserializer())
+                .registerTypeAdapter(new TypeToken<List<Item>>() {
+                }.getType(), new ItemDeserializer())
                 .create();
-    
+
         try {
             sleep(); // Replace Thread.sleep(15) with sleep()
             try (FileReader itemsReader = new FileReader(itemsFilePath)) {
                 // Parse the JSON structure for rooms and their coordinates with item details
                 JsonObject jsonObject = gson.fromJson(itemsReader, JsonObject.class);
                 JsonObject itemsJson = jsonObject.getAsJsonObject("items");
-    
+
                 Map<String, Map<String, List<Item>>> tempItemsMap = new HashMap<>();
-    
+
                 // Iterate over each room and parse item data
                 for (Map.Entry<String, JsonElement> roomEntry : itemsJson.entrySet()) {
                     String roomName = roomEntry.getKey();
                     JsonObject roomItemsJson = roomEntry.getValue().getAsJsonObject();
                     Map<String, List<Item>> itemsMap = new HashMap<>();
-    
+
                     // Iterate over each coordinate and parse item info
                     for (Map.Entry<String, JsonElement> coordinateEntry : roomItemsJson.entrySet()) {
                         String coordinates = coordinateEntry.getKey();
                         JsonObject itemJson = coordinateEntry.getValue().getAsJsonObject();
-    
+
                         // Deserialize the item JSON into a List<Item> using the custom deserializer
-                        List<Item> items = gson.fromJson(itemJson, new TypeToken<List<Item>>() {}.getType());
-    
+                        List<Item> items = gson.fromJson(itemJson, new TypeToken<List<Item>>() {
+                        }.getType());
+
                         // Add the list of items to the map for the current coordinate
                         itemsMap.put(coordinates, items);
                     }
-    
+
                     // Add this room's item map to the main map
                     tempItemsMap.put(roomName, itemsMap);
                 }
-    
+
                 // Create a mapping of room names to actual Room objects
                 Map<String, Room> roomNameToRoomMap = new HashMap<>();
                 for (Room room : currentRegion.getRooms()) {
                     roomNameToRoomMap.put(room.getName(), room);
                 }
-    
+
                 // Set the items in each room
                 for (Map.Entry<String, Map<String, List<Item>>> roomEntry : tempItemsMap.entrySet()) {
                     String roomName = roomEntry.getKey();
                     Map<String, List<Item>> itemsInRoom = roomEntry.getValue();
-    
+
                     // Find the actual Room object by name
                     Room currentRoom = roomNameToRoomMap.get(roomName);
-    
+
                     if (currentRoom != null) {
                         currentRoom.setItemsInRoom(itemsInRoom); // Set items for this room
                     }
                 }
-    
+
                 // Ensure that every room has its items initialized, even if empty
                 for (Room room : currentRegion.getRooms()) {
                     if (room.getItemsInRoom() == null) {
                         room.setItemsInRoom(new HashMap<>());
                     }
                 }
-    
+
                 sleep(); // Replace Thread.sleep(15) with sleep()
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
 
     private void loadPeopleInRoom(String peopleFilePath) {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Item.class, new ItemDeserializer())
                 .registerTypeAdapter(NPC.class, new CharacterDeserializer())
                 .create();
-    
+
         try (FileReader peopleReader = new FileReader(peopleFilePath)) {
             JsonObject jsonObject = gson.fromJson(peopleReader, JsonObject.class);
             JsonObject peopleJson = jsonObject.getAsJsonObject("people");
-    
+
             Map<String, Map<String, NPC>> tempPeopleMap = new HashMap<>();
-    
+
             for (Map.Entry<String, JsonElement> roomEntry : peopleJson.entrySet()) {
                 String roomName = roomEntry.getKey();
                 JsonObject roomPeopleJson = roomEntry.getValue().getAsJsonObject();
                 Map<String, NPC> peopleMap = new HashMap<>();
-    
+
                 for (Map.Entry<String, JsonElement> coordinateEntry : roomPeopleJson.entrySet()) {
                     String coordinates = coordinateEntry.getKey();
                     JsonObject personJson = coordinateEntry.getValue().getAsJsonObject();
-    
+
                     NPC npc = gson.fromJson(personJson, NPC.class);
-    
+
                     peopleMap.put(coordinates, npc);
                 }
-    
+
                 tempPeopleMap.put(roomName, peopleMap);
             }
-    
+
             Map<String, Room> roomNameToRoomMap = new HashMap<>();
             for (Room room : currentRegion.getRooms()) {
                 roomNameToRoomMap.put(room.getName(), room);
             }
-    
+
             for (Map.Entry<String, Map<String, NPC>> roomEntry : tempPeopleMap.entrySet()) {
                 String roomName = roomEntry.getKey();
                 Map<String, NPC> peopleInRoom = roomEntry.getValue();
-    
+
                 Room currentRoom = roomNameToRoomMap.get(roomName);
-    
+
                 if (currentRoom != null) {
                     currentRoom.setPeopleInRoom(peopleInRoom);
                 }
             }
-    
+
             // Ensure every room has an initialized people map
             for (Room room : currentRegion.getRooms()) {
                 if (room.getPeopleInRoom() == null) {
                     room.setPeopleInRoom(new HashMap<>());
                 }
             }
-    
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
 
     public void loadRegionDialogue(String filepath) {
         try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filepath), "UTF-8")) {
             Gson gson = new GsonBuilder()
                     .registerTypeAdapter(RegionDialogue.class, new DialogueDeserializer())
                     .create();
-    
+
             RegionDialogue regionDialogue = gson.fromJson(JsonParser.parseReader(reader), RegionDialogue.class);
             this.currentRegionDialogue = regionDialogue;
-    
+
             sleep(); // Optional: Adding a sleep after loading dialogue if necessary
-    
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // TODO: update these paths with the paths to the real game data when it is written
+    // TODO: update these paths with the paths to the real game data when it is
+    // written
     public void loadRegionDialogueFromSave() {
         // Get the base directory of the game
         String baseDir = System.getProperty("user.dir");
 
         // Construct relative paths to dialogue files
-        String dialoguePath1 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
-                                + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue.json";
-        String dialoguePath2 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" 
-                                + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue_2.json";
+        String dialoguePath1 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main"
+                + File.separator + "java" + File.separator + "resources"
+                + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue.json";
+        String dialoguePath2 = baseDir + File.separator + "app" + File.separator + "src" + File.separator + "main"
+                + File.separator + "java" + File.separator + "resources"
+                + File.separator + "json" + File.separator + "dialogue" + File.separator + "test_dialogue_2.json";
 
         // Load dialogue based on region
         String currentRegionName = currentRegion.getRegionName();
@@ -406,8 +428,8 @@ public class GameState {
     private void initializeCurrentRoomFromSave(Load load) {
         currentRoom = load.currentRoom;
         currentRoom.updateMapEntry('Y',
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
-                        Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
+                Character.getNumericValue(currentRoom.getPlayerPosition().charAt(1)),
+                Character.getNumericValue(currentRoom.getPlayerPosition().charAt(4)));
     }
 
     private void setTrapFields() {
@@ -425,7 +447,7 @@ public class GameState {
                         }
                     }
                 }
-            }        
+            }
 
             for (NPC npc : room.getPeopleInRoom().values()) {
                 for (Item item : npc.getInventory()) {
@@ -559,7 +581,7 @@ public class GameState {
                 return "You move to (" + newX + ", " + newY + ").";
             }
         }
-    
+
         // Check for the waypoint as an NPC
         for (Map.Entry<String, NPC> entry : currentRoom.getPeopleInRoom().entrySet()) {
             if (entry.getValue().getName().equalsIgnoreCase(waypointName)) {
@@ -567,7 +589,7 @@ public class GameState {
                 return moveToAdjacentPosition(targetPosition, "NPC " + waypointName);
             }
         }
-    
+
         // Check for the waypoint as an exit (adjacent room)
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoom().getName().equalsIgnoreCase(waypointName)) {
@@ -591,7 +613,7 @@ public class GameState {
                 }
             }
         }
-    
+
         // Check for the waypoint as an item
         for (Map.Entry<String, List<Item>> entry : currentRoom.getItemsInRoom().entrySet()) {
             for (Item item : entry.getValue()) {
@@ -602,27 +624,27 @@ public class GameState {
                 }
             }
         }
-    
+
         // Waypoint not found
         return "Waypoint \"" + waypointName
                 + "\" not found in this room. Use look for a set of available waypoints, which take the form of items and people.";
     }
-    
+
     private Point parsePositionString(String positionString) {
         positionString = positionString.replaceAll("[()]", ""); // Remove parentheses
         String[] coordinates = positionString.split(",");
         int x = Integer.parseInt(coordinates[0].trim());
         int y = Integer.parseInt(coordinates[1].trim());
         return new Point(x, y);
-    }    
+    }
 
     private String moveToAdjacentPosition(Point targetPosition, String targetDescription) {
         int[][] walkableMask = currentRoom.getMask();
         int targetX = targetPosition.x;
         int targetY = targetPosition.y;
-    
+
         // Check adjacent positions (N, E, S, W)
-        for (int[] delta : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+        for (int[] delta : new int[][] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } }) {
             int newX = targetX + delta[0];
             int newY = targetY + delta[1];
             if (isWithinBounds(newX, newY, walkableMask) && walkableMask[newY][newX] == 1) {
@@ -636,19 +658,19 @@ public class GameState {
                 return "You move next to the " + targetDescription + ". You are at (" + newX + ", " + newY + ").";
             }
         }
-    
+
         return "No walkable position found near the " + targetDescription + ".";
     }
-    
+
     private boolean isWithinBounds(int x, int y, int[][] mask) {
         return x >= 0 && x < mask[0].length && y >= 0 && y < mask.length;
-    }    
+    }
 
     public void enterByCommand(String roomName) {
         Random rand = new Random();
         int roll = rand.nextInt(20) + 1;
         double totalDex = roll + player.getDexterity();
-    
+
         for (Adjacency adj : currentRoom.getAdjacentRooms()) {
             if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName) && !adj.getIsLocked()
                     && totalDex >= adj.getdexScore()) {
@@ -656,41 +678,43 @@ public class GameState {
                 System.out.println("You have entered " + adj.getAdjoiningRoomName());
                 return;
             } else if (adj.getAdjoiningRoomName().equalsIgnoreCase(roomName)) {
-                sleep();  // Use the sleep helper
+                sleep(); // Use the sleep helper
                 System.out.println(roomName + " is locked.");
                 return;
             } else if (adj.getdexScore() > totalDex) {
-                sleep();  // Use the sleep helper
+                sleep(); // Use the sleep helper
                 System.out.println("You fail to reach " + roomName);
                 return;
             }
         }
-        sleep();  // Use the sleep helper
-        System.out.println("No such room was found. Use LOOK for a list of usable exits, where the connecting room name will be enclosed in quotes.");
+        sleep(); // Use the sleep helper
+        System.out.println(
+                "No such room was found. Use LOOK for a list of usable exits, where the connecting room name will be enclosed in quotes.");
     }
 
     public void ascend(String roomName) {
         Random rand = new Random();
         int roll = rand.nextInt(20) + 1;
         double totalDex = roll + player.getDexterity();
-    
+
         for (Adjacency adjacency : currentRoom.getAdjacentRooms()) {
             if (adjacency.getType().equals("stairs") && adjacency.getIsStairsUp()
                     && adjacency.getAdjoiningRoom().getName().equalsIgnoreCase(roomName)
                     && adjacency.getdexScore() <= totalDex) {
                 setCurrentRoom(adjacency.getAdjoiningRoom());
-                sleep();  // Use the sleep helper
+                sleep(); // Use the sleep helper
                 System.out.println("You have entered " + currentRoom.getName());
                 return;
             } else if (adjacency.getdexScore() > totalDex) {
-                sleep();  // Use the sleep helper
+                sleep(); // Use the sleep helper
                 System.out.println("You fail to access " + roomName
                         + " because of a failed dexterity check. The room is too difficult for you to access.");
                 return;
             }
         }
-        sleep();  // Use the sleep helper
-        System.out.println("Use ASCEND with the name of a valid adjoining room. Use LOOK to get a list of adjoining rooms.");
+        sleep(); // Use the sleep helper
+        System.out.println(
+                "Use ASCEND with the name of a valid adjoining room. Use LOOK to get a list of adjoining rooms.");
     }
 
     public void descend(String roomName) {
@@ -726,7 +750,8 @@ public class GameState {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
+        System.out.println(
+                "Use DESCEND with the name of a valid adjoining room.  Use LOOK to get a list of adjoining rooms");
     }
 
     public List<NPC> getCurrentParty() {
@@ -825,10 +850,10 @@ public class GameState {
     public void enterDialogue(NPC character) throws FileNotFoundException {
         gameTimer.pause();
         inDialogue = true;
-    
+
         // Get all dialogues for this character
         Map<String, Dialogue> dialogues = currentRegionDialogue.getDialogue(character.getName());
-    
+
         if (dialogues == null || !dialogues.containsKey("start_1")) {
             try {
                 Thread.sleep(15);
@@ -837,19 +862,19 @@ public class GameState {
             }
             System.out.println(character.getName() + " doesn't want to talk to you.");
             return;
-        }        
-    
+        }
+
         // Check if all dialogue nodes are exhausted and print a message if necessary
         if (!dialogues.containsKey(character.getStartNode())) {
             System.out.println(character.getName() + " has nothing more to say to you. They will be leaving soon.");
             return;
         }
-    
+
         Dialogue currentDialogue = dialogues.get(character.getStartNode());
-    
+
         @SuppressWarnings("resource")
         Scanner dialogueScanner = new Scanner(System.in);
-    
+
         try {
             while (inDialogue) {
                 try {
@@ -859,16 +884,16 @@ public class GameState {
                 }
                 System.out.println(currentDialogue.getNpcLine());
                 List<DialogueOption> options = currentDialogue.getOptions();
-    
+
                 if (options.isEmpty()) {
                     exitDialogue();
                     break;
                 }
-    
+
                 // Filter options based on active quests
                 List<DialogueOption> availableOptions = new ArrayList<>();
                 List<Quest> activeQuests = player.getActiveQuests();
-    
+
                 for (DialogueOption option : options) {
                     String nextId = option.getNextDialogueId();
                     if (nextId.startsWith("quest") || nextId.startsWith("objective")) {
@@ -881,7 +906,7 @@ public class GameState {
                         availableOptions.add(option);
                     }
                 }
-    
+
                 // Display available options
                 if (availableOptions.isEmpty()) {
                     try {
@@ -893,7 +918,7 @@ public class GameState {
                     exitDialogue();
                     break;
                 }
-    
+
                 for (int i = 0; i < availableOptions.size(); i++) {
                     try {
                         Thread.sleep(15);
@@ -902,30 +927,30 @@ public class GameState {
                     }
                     System.out.println((i + 1) + ": " + availableOptions.get(i).getText());
                 }
-    
+
                 int choice = Integer.parseInt(dialogueScanner.nextLine()) - 1;
                 DialogueOption selectedOption = availableOptions.get(choice);
-    
+
                 double alignmentDelta = (player.getAlignment() * (selectedOption.getImpact() / 100));
                 player.adjustAlignment(alignmentDelta);
-    
+
                 String nextId = selectedOption.getNextDialogueId();
-    
+
                 // Handle quest assignment or completion
                 if (nextId.startsWith("assign")) {
                     currentDialogue = dialogues.get(nextId);
                     String questFileName = currentDialogue.getNpcLine();
                     String questFilePath = "";
                     if (questFileName != null && !questFileName.isEmpty()) {
-                        questFilePath = System.getProperty("user.dir") 
-                                        + File.separator + "app" + File.separator + "src" + File.separator + "main" 
-                                        + File.separator + "java" + File.separator + "resources" 
-                                        + File.separator + "json" + File.separator + "quests" 
-                                        + File.separator + questFileName;
+                        questFilePath = System.getProperty("user.dir")
+                                + File.separator + "app" + File.separator + "src" + File.separator + "main"
+                                + File.separator + "java" + File.separator + "resources"
+                                + File.separator + "json" + File.separator + "quests"
+                                + File.separator + questFileName;
                     } else {
                         System.out.println("No quest file name provided by NPC dialogue.");
                     }
-    
+
                     Quest quest = null;
                     if (!(questFilePath.equals(""))) {
                         quest = deserializeQuest(questFilePath);
@@ -950,7 +975,7 @@ public class GameState {
                         if (playerResponse.equals("y")) {
                             player.addQuest(quest);
                             setRoomAccessibility(quest);
-                            incrementStartNode(character);  // Increment startNode on quest acceptance
+                            incrementStartNode(character); // Increment startNode on quest acceptance
                             try {
                                 Thread.sleep(15);
                             } catch (InterruptedException e) {
@@ -964,7 +989,8 @@ public class GameState {
                             } catch (InterruptedException e) {
                                 Thread.currentThread().interrupt();
                             }
-                            System.out.println("You did not accept this quest. Hopefully, it will still be available later if you want it.");
+                            System.out.println(
+                                    "You did not accept this quest. Hopefully, it will still be available later if you want it.");
                         }
                     } else {
                         try {
@@ -974,11 +1000,11 @@ public class GameState {
                         }
                         System.out.println("Sorry, there was an error loading the quest.");
                     }
-    
+
                     exitDialogue();
                     break;
                 }
-    
+
                 if (nextId.contains("objective")) {
                     List<Quest> questLog = player.getActiveQuests();
                     for (Quest quest : questLog) {
@@ -986,18 +1012,18 @@ public class GameState {
                             if (!objective.getIsCompleted() && objective.getType().equalsIgnoreCase("dialogue")
                                     && objective.getTarget().equalsIgnoreCase(character.getName())) {
                                 quest.completeObjective(objective.getId());
-                                incrementStartNode(character);  // Increment startNode on objective completion
+                                incrementStartNode(character); // Increment startNode on objective completion
                                 break;
                             }
                         }
                     }
                 }
-    
+
                 if (nextId.equalsIgnoreCase("exit")) {
                     exitDialogue();
                     break;
                 }
-    
+
                 currentDialogue = dialogues.get(nextId);
                 if (currentDialogue == null) {
                     try {
@@ -1081,21 +1107,21 @@ public class GameState {
         gameTimer.pause();
         sleep();
         System.out.println("Entering barter mode with " + npc.getName());
-    
+
         boolean hasNegotiator = player.getCharacterClass().getClassName().equalsIgnoreCase("negotiator");
-        
+
         // Check if any party member is a negotiator
         for (NPC member : currentParty) {
             PartyMember partyMember = (PartyMember) member;
             if (partyMember.getCharacterClass().getClassName().equalsIgnoreCase("negotiator")) {
                 hasNegotiator = true;
-                break;  // No need to continue if a negotiator is found
+                break; // No need to continue if a negotiator is found
             }
         }
-    
+
         Barter barter = new Barter(player, player.getInventory(), npc.getInventory(), 0.0, hasNegotiator);
-        
-        Scanner scanner = new Scanner(System.in);  // Using try-with-resources to automatically close the scanner
+
+        Scanner scanner = new Scanner(System.in); // Using try-with-resources to automatically close the scanner
         boolean inBarter = true;
 
         while (inBarter) {
@@ -1109,38 +1135,38 @@ public class GameState {
 
             switch (choice) {
                 case 1:
-                    sleep();  // Replaced repetitive sleep calls with a helper method
+                    sleep(); // Replaced repetitive sleep calls with a helper method
                     System.out.println("Enter items to offer (comma-separated names):");
                     String offerInput = scanner.nextLine();
                     List<Item> offeredItems = parseItems(offerInput, player.getInventory());
                     barter.playerOffersItems(offeredItems);
                     break;
                 case 2:
-                    sleep();  // Replaced repetitive sleep calls with a helper method
+                    sleep(); // Replaced repetitive sleep calls with a helper method
                     System.out.println("Enter item name to purchase:");
                     String itemName = scanner.nextLine();
                     Item itemSelected = null;
                     for (Item item : npc.getInventory()) {
                         if (item.getName().equalsIgnoreCase(itemName)) {
                             itemSelected = item;
-                            break;  // Stop once the item is found
+                            break; // Stop once the item is found
                         }
                     }
                     if (itemSelected != null) {
                         barter.playerSelectsItem(itemSelected);
                     } else {
-                        sleep();  // Replaced repetitive sleep calls with a helper method
+                        sleep(); // Replaced repetitive sleep calls with a helper method
                         System.out.println("Item not found.");
                     }
                     break;
                 case 3:
                     gameTimer.resume();
                     inBarter = false;
-                    sleep();  // Replaced repetitive sleep calls with a helper method
+                    sleep(); // Replaced repetitive sleep calls with a helper method
                     System.out.println("Exiting Barter.");
                     break;
                 default:
-                    sleep();  // Replaced repetitive sleep calls with a helper method
+                    sleep(); // Replaced repetitive sleep calls with a helper method
                     System.out.println("Invalid choice.");
             }
         }
@@ -1254,26 +1280,26 @@ public class GameState {
 
     @SuppressWarnings("resource")
     public void startLockpickingSequence(String roomName, Adjacency adjacency) {
-        sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+        sleep(); // Replaced Thread.sleep(15) with sleep() helper method
         System.out.println("You are attempting to pick the lock of " + roomName);
 
         double intelligenceBonus = player.getIntelligence() / 2;
         int baseChances = adjacency.getBaseChances() + (int) Math.floor(intelligenceBonus);
         boolean success = false;
 
-        sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+        sleep(); // Replaced Thread.sleep(15) with sleep() helper method
         System.out.println("The lock feels intricate. You have " + baseChances + " attempts.");
         for (int attempt = 1; attempt <= baseChances; attempt++) {
-            sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+            sleep(); // Replaced Thread.sleep(15) with sleep() helper method
             System.out.println("Attempt " + attempt + ": What will you do?");
-            
-            sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+
+            sleep(); // Replaced Thread.sleep(15) with sleep() helper method
             System.out.println("Enter a number between 1 and " + adjacency.getDifficulty() + ":");
             int playerInput = new Scanner(System.in).nextInt();
             int lockValue = (int) (Math.random() * adjacency.getDifficulty()) + 1;
 
             if (playerInput == lockValue) {
-                sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+                sleep(); // Replaced Thread.sleep(15) with sleep() helper method
                 System.out.println("You hear a satisfying click! The lock opens.");
                 player.gainXP(20, this);
                 success = true;
@@ -1281,13 +1307,13 @@ public class GameState {
             } else if (playerInput < lockValue) {
                 System.out.println("The lock resists. You might have better luck with higher numbers.");
             } else {
-                sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+                sleep(); // Replaced Thread.sleep(15) with sleep() helper method
                 System.out.println("Try a lower number.");
             }
         }
 
         if (!success) {
-            sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+            sleep(); // Replaced Thread.sleep(15) with sleep() helper method
             System.out.println("You failed to pick the lock. Maybe try again later.");
         } else {
             unlockRoom(roomName);
@@ -1310,17 +1336,17 @@ public class GameState {
 
     @SuppressWarnings("resource")
     public void enterCombinationLockSequence(String roomName, Adjacency adj) {
-        sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+        sleep(); // Replaced Thread.sleep(15) with sleep() helper method
         System.out.println("You are attempting to unlock " + roomName);
 
-        sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+        sleep(); // Replaced Thread.sleep(15) with sleep() helper method
         System.out.println("Enter the combination for the room:");
 
         int playerInput = new Scanner(System.in).nextInt();
 
         if (playerInput == adj.getCombination()) {
             adj.setIsLocked(false);
-            sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+            sleep(); // Replaced Thread.sleep(15) with sleep() helper method
             System.out.println("You hear a satisfying click. The lock opens.");
 
             for (Quest quest : player.getActiveQuests()) {
@@ -1333,7 +1359,7 @@ public class GameState {
                 }
             }
         } else {
-            sleep();  // Replaced Thread.sleep(15) with sleep() helper method
+            sleep(); // Replaced Thread.sleep(15) with sleep() helper method
             System.out.println("That combination was incorrect.");
         }
     }
@@ -1380,9 +1406,9 @@ public class GameState {
 
     public String toSerializableFormat() {
         Gson gson = new GsonBuilder()
-                        .excludeFieldsWithoutExposeAnnotation()
-                        .setPrettyPrinting()
-                        .create();
+                .excludeFieldsWithoutExposeAnnotation()
+                .setPrettyPrinting()
+                .create();
 
         JsonObject gameStateJson = new JsonObject();
 
@@ -1408,14 +1434,16 @@ public class GameState {
         if (currentParty != null) {
             JsonObject partyJson = new JsonObject();
             for (int i = 0; i < currentParty.size(); i++) {
-                partyJson.add("NPC_" + i, gson.fromJson(((PartyMember) currentParty.get(i)).toSerializableFormat(), JsonObject.class));
+                partyJson.add("NPC_" + i,
+                        gson.fromJson(((PartyMember) currentParty.get(i)).toSerializableFormat(), JsonObject.class));
             }
             gameStateJson.add("currentParty", partyJson);
         }
 
         // Serialize `safeZoneInventory`
         if (safeZoneInventory != null) {
-            gameStateJson.add("safeZoneInventory", gson.fromJson(safeZoneInventory.toSerializableFormat(), JsonObject.class));
+            gameStateJson.add("safeZoneInventory",
+                    gson.fromJson(safeZoneInventory.toSerializableFormat(), JsonObject.class));
         }
 
         return gson.toJson(gameStateJson);
